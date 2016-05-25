@@ -1,0 +1,9 @@
+# humanstxt.org/
+
+# TEAM
+
+	Jaime Jimenez - jaime.github.io
+
+# TECHNOLOGY
+
+	CoAP, MQTT, LWM2M, C, NodeJS, JS, JEKYLL

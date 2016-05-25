@@ -1,42 +1,162 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Your awesome title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 May 2016 15:21:16 +0300</pubDate>
-    <lastBuildDate>Wed, 25 May 2016 15:21:16 +0300</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
-    
-      <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
+<link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
+<link href="http://localhost:3000/" rel="alternate" type="text/html" />
+<updated>2016-05-25T18:21:31+03:00</updated>
+<id>http://localhost:3000/</id>
+<title>Jaime Jiménez</title>
+<entry>
+<title>Semantic Interoperability Workshop II</title>
+<link href="http://localhost:3000/iotsii/" rel="alternate" type="text/html" title="Semantic Interoperability Workshop II" />
+<published>2016-03-26T12:00:00+02:00</published>
+<updated>2016-03-26T12:00:00+02:00</updated>
+<id>http://localhost:3000/iotsii</id>
+<content type="html" xml:base="http://localhost:3000/iotsii/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;As we mentioned on the &lt;a href=&quot;/making-things-interoperate/&quot;&gt;previous article&lt;/a&gt;, IoT Standards for constrained devices are rapidly consolidating.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.ietf.org/blog/wp-content/uploads/2016/03/group_pic_smaller.jpg&quot; alt=&quot;IOTSI Folks&quot; /&gt;&lt;em&gt;Everyone in there, I am the guy in between the one in red and the one in blue&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;interaction-model&quot;&gt; Interaction model&lt;/h2&gt;
 
-</description>
-        <pubDate>Wed, 25 May 2016 15:16:06 +0300</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2016/05/25/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2016/05/25/welcome-to-jekyll.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Among the topics and presentations I found particularly interesting that of 
+&lt;a href=&quot;https://github.com/mkovatsc&quot;&gt;mkovatsc&lt;/a&gt;. He explained the Runtime Discovery Process for a IoT Client node.&lt;/p&gt;
+
+&lt;p&gt;You get one entry point (in CoAP it is the RD) and the client tries to perform discovery in order to find and follow links in order to discover capabilities. You submit forms to interact with them. This way you can create processes that span over multiple devices involved in the process. If later one you find that you need something else, you can add new functionality at runtime, next client that comes along will have the same logic but see different capabilities of functionality and therefore use it.&lt;/p&gt;
+
+&lt;p&gt;Parts of the information have to be shared a priori. The process is incremental, but once discovered, you don’t need to perform the same operation every time, you can go to the bookmark.&lt;/p&gt;
+
+&lt;p&gt;The following are examples of all those in HTML.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Links (Anchors) with human-readable information
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;about.html&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;More information&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;style.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+// Templated Links to perform a query with a parameter.
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;get&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;search.php&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;query&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+
+// Embedded Links which are used to embed other resources.
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;logo.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;audio&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;audio.ogg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;video&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;video.mp4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+// Forms with the concrete method to be used and the 
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;age&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;homepage&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The challenge is to define the human-readable parts as machine-readable. For that a vocabulary is necessary to give meaning to the tags. Such information needs to be share beforehand.&lt;/p&gt;
+
+&lt;p&gt;In some models everything has to be shared from the beginning, therefore any change would involve changing the whole “framework”. By forcing to share only the bare minimum, you avoid such problem.&lt;/p&gt;
+
+&lt;p&gt;Some organizations have created predefined interfaces, all of them are predefined and described, they even provide code generation. The device logic has to support such interfaces, no changes are possible at runtime.&lt;/p&gt;
+</content>
+<category term="iotsi" />
+<category term="semantic interoperability" />
+<summary>Work in progress!!</summary>
+</entry>
+<entry>
+<title>Semantic Interoperability Workshop I</title>
+<link href="http://localhost:3000/iotsi/" rel="alternate" type="text/html" title="Semantic Interoperability Workshop I" />
+<published>2016-02-01T09:00:00+02:00</published>
+<updated>2016-02-01T09:00:00+02:00</updated>
+<id>http://localhost:3000/iotsi</id>
+<content type="html" xml:base="http://localhost:3000/iotsi/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
+
+&lt;p&gt;This article is featured at the &lt;a href=&quot;http://www.ericsson.com/research-blog/internet-of-things/semantic-interoperability-internet-things/&quot;&gt;Ericsson Research Blog&lt;/a&gt;, you can read there the full version.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Standards for constrained devices are rapidly consolidating. Semantic Interoperability is the next step in the IoT consolidation and is already happening. In March, the Internet Architecture Board will hold a workshop about interoperability at the application level. We in Ericsson Research will contribute (and host!) – and ask for you to join as well.&lt;/p&gt;
+
+&lt;p&gt;Proof of the consolidation is the closer cooperation and interoperation between Alliances and Standards bodies in the IoT space.&lt;/p&gt;
+
+&lt;p&gt;One could say that there is not much of a discussion anymore at the Network layer – the Internet Protocol (IP) rules there, already supporting constrained devices via many networking technologies, such as 6LowPAN. IP is being extended to other traditionally non-IP standards like ZigBee or Bluetooth as well.&lt;/p&gt;
+
+&lt;p&gt;At layers above Network, there are not that many protocols either. They generally run over UDP, TCP and/or SMS. If we were to make a distinction we could see REST-based ones like Constrained Application Protocol (CoAP) and HTTP or more broker-based ones like MQTT or XMPP. Additional functionality has been built on top of these basic communication mechanisms, for instance at the IETF with the definition of a Broker-like system for publish/subscribe type of communication, Resource Directory , Web Linking for Constrained Devices or the CoAP Interfaces that have become part of several other standards.&lt;/p&gt;
+
+&lt;p&gt;Vendors working on the IoT space are traditionally building vertically integrated systems with these protocols as building blocks. On top of those systems they add their own application semantics, interfaces and proprietary solutions. This situation makes it more complicated for multiple of these systems to integrate or interoperate with each other, even if they use extremely similar protocol stacks.&lt;/p&gt;
+
+&lt;p&gt;To fix this problem, several organizations are launching various standardization efforts in this area. Some examples include the work by the OMA LWM2M and their management objects, IPSO an their Starter and Expansion Packs the Cluster Library developed by the Zigbee Alliance , the Thing Description work of W3C or the UPnP Management and Control:1 specifications.Other noteworthy efforts include the ontology work in ETSI SmartM2M and also the European research community in IERC and the Activity Chain on semantic interoperability that published a position paper on the topic.
+Link to the European research community. (IERC)&lt;/p&gt;
+
+&lt;p&gt;Many of these models would not currently work together due to small differences in serialization or small design choices made along the way. The Internet Architecture Board (IAB) has previously held workshops with similar harmonization targets on different topics (e.g. pervasive monitoring, Internet middleboxes, bringing constrained devices to the Internet…).&lt;/p&gt;
+
+&lt;p&gt;Next March, the IAB will held a Semantic Interoperability Workshop, in order to discuss the state of the art in data and information models, the different schemas, the role of metadata, different interworking experiences and there is even room for harmonizing the various models.&lt;/p&gt;
+
+&lt;p&gt;Ericsson will be there as venue host – in San Jose, California – and Ericsson researchers will participate as experts from some of the participating organisations as well as members of the program committee, trying to make a future in which devices truly interoperate.&lt;/p&gt;
+
+&lt;p&gt;If you are interested and work in the area, you just have to submit a brief position paper (3 pages) of your work and opinions to the questions on the workshop per email to iotsi@iab.org and check the &lt;a href=&quot;https://www.iab.org/&quot;&gt;IOTSI website&lt;/a&gt;&lt;/p&gt;
+</content>
+<category term="iotsi" />
+<category term="semantic interoperability" />
+<summary>Work in progress!!</summary>
+</entry>
+<entry>
+<title>Capillary Networks</title>
+<link href="http://localhost:3000/capillary-networks/" rel="alternate" type="text/html" title="Capillary Networks" />
+<published>2015-09-26T12:00:00+03:00</published>
+<updated>2015-09-26T12:00:00+03:00</updated>
+<id>http://localhost:3000/capillary-networks</id>
+<content type="html" xml:base="http://localhost:3000/capillary-networks/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
+
+&lt;p&gt;As we mentioned on the &lt;a href=&quot;/making-things-interoperate/&quot;&gt;previous article&lt;/a&gt;, IoT Standards for constrained devices are rapidly consolidating.&lt;/p&gt;
+
+&lt;p&gt;TBD&lt;/p&gt;
+
+&lt;p&gt;http://openmobilealliance.org/group-management-for-capillary-networks/&lt;/p&gt;
+
+&lt;p&gt;http://www.ericsson.com/research-blog/5g/evolved-capillary-networks/&lt;/p&gt;
+
+&lt;p&gt;As the Internet of Things (IoT) becomes a reality, large numbers of very heterogeneous devices will have to be managed. How can this be done in the most efficient way?&lt;/p&gt;
+
+&lt;p&gt;This type of device management will expand, not only to automated software updates or error reporting of the devices, but also about how do they interact with their surroundings, with people and with other devices. That type of management will be based on the actual semantic properties of the devices. Moreover, features like energy consumption, processing power and network efficiency will be important than ever. In this context, the problem of how to manage different sensors on different locations at once becomes paramount; one single extra message per device can greatly increase network congestion.&lt;/p&gt;
+
+&lt;p&gt;As we wrote in our Evolved Capillary Networks blog, we initially focus on two key aspects; Distributed Cloud and now Group Management.&lt;/p&gt;
+</content>
+<category term="iotsi" />
+<category term="semantic interoperability" />
+<summary>Work in progress!!</summary>
+</entry>
+<entry>
+<title>Making things interoperate</title>
+<link href="http://localhost:3000/making-things-interoperate/" rel="alternate" type="text/html" title="Making things interoperate" />
+<published>2014-10-08T09:00:00+03:00</published>
+<updated>2014-10-08T09:00:00+03:00</updated>
+<id>http://localhost:3000/making-things-interoperate</id>
+<content type="html" xml:base="http://localhost:3000/making-things-interoperate/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
+
+&lt;p&gt;This article is about IPSO Smart Objects and interoperability. It was featured at the &lt;a href=&quot;http://www.ericsson.com/research-blog/internet-of-things/making-things-interoperate/&quot;&gt;Ericsson Research Blog&lt;/a&gt;, you can read there the full version.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;ipso-so-release&quot;&gt;IPSO SO release&lt;/h2&gt;
+
+&lt;p&gt;When the scale of connected devices grows, interoperability will be what makes the Internet of Things open and successful.&lt;/p&gt;
+
+&lt;p&gt;Last week the &lt;a href=&quot;http://www.ipso-alliance.org/&quot;&gt;IP for Smart Objects (IPSO) Alliance&lt;/a&gt; released its Smart Objects &lt;a href=&quot;http://github.com/IPSO-Alliance/&quot;&gt;Starter Pack&lt;/a&gt;  the IPSO first draft on semantic Interoperability for the Internet of Things (IoT). This document, together with the existing Constrained Application Protocol (CoAP) RFC and the OMA Lightweight M2M specification compose the backbone of what the future of IoT can be like.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.ericsson.com/research-blog/wp-content/uploads/2014/10/Iot-Picture-Jaime.jpg&quot; alt=&quot;CoAP+LWM2M+IPSO IoT device Stack&quot; /&gt;&lt;em&gt;CoAP+LWM2M+IPSO IoT device Stack&lt;/em&gt;&lt;/p&gt;
+
+</content>
+<category term="iot" />
+<category term="ipso" />
+<category term="semantic interoperability" />
+<summary>Work in progress!!</summary>
+</entry>
+</feed>
