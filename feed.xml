@@ -1,18 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-<generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
-<link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
-<link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-05-25T18:21:31+03:00</updated>
-<id>http://localhost:3000/</id>
-<title>Jaime Jiménez</title>
-<entry>
-<title>Semantic Interoperability Workshop II</title>
-<link href="http://localhost:3000/iotsii/" rel="alternate" type="text/html" title="Semantic Interoperability Workshop II" />
-<published>2016-03-26T12:00:00+02:00</published>
-<updated>2016-03-26T12:00:00+02:00</updated>
-<id>http://localhost:3000/iotsii</id>
-<content type="html" xml:base="http://localhost:3000/iotsii/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="http://jaimejim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://jaimejim.github.io/" rel="alternate" type="text/html" /><updated>2016-05-26T08:04:10+03:00</updated><id>http://jaimejim.github.io/</id><title>Jaime Jiménez</title><entry><title>Semantic Interoperability Workshop II</title><link href="http://jaimejim.github.io/iotsii/" rel="alternate" type="text/html" title="Semantic Interoperability Workshop II" /><published>2016-03-26T12:00:00+02:00</published><updated>2016-03-26T12:00:00+02:00</updated><id>http://jaimejim.github.io/iotsii</id><content type="html" xml:base="http://jaimejim.github.io/iotsii/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
 
@@ -20,7 +6,7 @@
 
 &lt;p&gt;&lt;img src=&quot;https://www.ietf.org/blog/wp-content/uploads/2016/03/group_pic_smaller.jpg&quot; alt=&quot;IOTSI Folks&quot; /&gt;&lt;em&gt;Everyone in there, I am the guy in between the one in red and the one in blue&lt;/em&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;interaction-model&quot;&gt; Interaction model&lt;/h2&gt;
+&lt;p&gt;## Interaction model&lt;/p&gt;
 
 &lt;p&gt;Among the topics and presentations I found particularly interesting that of 
 &lt;a href=&quot;https://github.com/mkovatsc&quot;&gt;mkovatsc&lt;/a&gt;. He explained the Runtime Discovery Process for a IoT Client node.&lt;/p&gt;
@@ -58,19 +44,7 @@
 
 &lt;p&gt;In some models everything has to be shared from the beginning, therefore any change would involve changing the whole “framework”. By forcing to share only the bare minimum, you avoid such problem.&lt;/p&gt;
 
-&lt;p&gt;Some organizations have created predefined interfaces, all of them are predefined and described, they even provide code generation. The device logic has to support such interfaces, no changes are possible at runtime.&lt;/p&gt;
-</content>
-<category term="iotsi" />
-<category term="semantic interoperability" />
-<summary>Work in progress!!</summary>
-</entry>
-<entry>
-<title>Semantic Interoperability Workshop I</title>
-<link href="http://localhost:3000/iotsi/" rel="alternate" type="text/html" title="Semantic Interoperability Workshop I" />
-<published>2016-02-01T09:00:00+02:00</published>
-<updated>2016-02-01T09:00:00+02:00</updated>
-<id>http://localhost:3000/iotsi</id>
-<content type="html" xml:base="http://localhost:3000/iotsi/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
+&lt;p&gt;Some organizations have created predefined interfaces, all of them are predefined and described, they even provide code generation. The device logic has to support such interfaces, no changes are possible at runtime.&lt;/p&gt;</content><category term="iotsi" /><category term="semantic interoperability" /><summary>Work in progress!!</summary></entry><entry><title>Semantic Interoperability Workshop I</title><link href="http://jaimejim.github.io/iotsi/" rel="alternate" type="text/html" title="Semantic Interoperability Workshop I" /><published>2016-02-01T09:00:00+02:00</published><updated>2016-02-01T09:00:00+02:00</updated><id>http://jaimejim.github.io/iotsi</id><content type="html" xml:base="http://jaimejim.github.io/iotsi/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
 
@@ -97,19 +71,7 @@ Link to the European research community. (IERC)&lt;/p&gt;
 
 &lt;p&gt;Ericsson will be there as venue host – in San Jose, California – and Ericsson researchers will participate as experts from some of the participating organisations as well as members of the program committee, trying to make a future in which devices truly interoperate.&lt;/p&gt;
 
-&lt;p&gt;If you are interested and work in the area, you just have to submit a brief position paper (3 pages) of your work and opinions to the questions on the workshop per email to iotsi@iab.org and check the &lt;a href=&quot;https://www.iab.org/&quot;&gt;IOTSI website&lt;/a&gt;&lt;/p&gt;
-</content>
-<category term="iotsi" />
-<category term="semantic interoperability" />
-<summary>Work in progress!!</summary>
-</entry>
-<entry>
-<title>Capillary Networks</title>
-<link href="http://localhost:3000/capillary-networks/" rel="alternate" type="text/html" title="Capillary Networks" />
-<published>2015-09-26T12:00:00+03:00</published>
-<updated>2015-09-26T12:00:00+03:00</updated>
-<id>http://localhost:3000/capillary-networks</id>
-<content type="html" xml:base="http://localhost:3000/capillary-networks/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
+&lt;p&gt;If you are interested and work in the area, you just have to submit a brief position paper (3 pages) of your work and opinions to the questions on the workshop per email to iotsi@iab.org and check the &lt;a href=&quot;https://www.iab.org/&quot;&gt;IOTSI website&lt;/a&gt;&lt;/p&gt;</content><category term="iotsi" /><category term="semantic interoperability" /><summary>Work in progress!!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://www.ericsson.com/research-blog/wp-content/uploads/2016/02/Jamie´s-picture-to-blog-1.jpeg" /></entry><entry><title>Capillary Networks</title><link href="http://jaimejim.github.io/capillary-networks/" rel="alternate" type="text/html" title="Capillary Networks" /><published>2015-09-26T12:00:00+03:00</published><updated>2015-09-26T12:00:00+03:00</updated><id>http://jaimejim.github.io/capillary-networks</id><content type="html" xml:base="http://jaimejim.github.io/capillary-networks/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
 
@@ -125,19 +87,7 @@ Link to the European research community. (IERC)&lt;/p&gt;
 
 &lt;p&gt;This type of device management will expand, not only to automated software updates or error reporting of the devices, but also about how do they interact with their surroundings, with people and with other devices. That type of management will be based on the actual semantic properties of the devices. Moreover, features like energy consumption, processing power and network efficiency will be important than ever. In this context, the problem of how to manage different sensors on different locations at once becomes paramount; one single extra message per device can greatly increase network congestion.&lt;/p&gt;
 
-&lt;p&gt;As we wrote in our Evolved Capillary Networks blog, we initially focus on two key aspects; Distributed Cloud and now Group Management.&lt;/p&gt;
-</content>
-<category term="iotsi" />
-<category term="semantic interoperability" />
-<summary>Work in progress!!</summary>
-</entry>
-<entry>
-<title>Making things interoperate</title>
-<link href="http://localhost:3000/making-things-interoperate/" rel="alternate" type="text/html" title="Making things interoperate" />
-<published>2014-10-08T09:00:00+03:00</published>
-<updated>2014-10-08T09:00:00+03:00</updated>
-<id>http://localhost:3000/making-things-interoperate</id>
-<content type="html" xml:base="http://localhost:3000/making-things-interoperate/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
+&lt;p&gt;As we wrote in our Evolved Capillary Networks blog, we initially focus on two key aspects; Distributed Cloud and now Group Management.&lt;/p&gt;</content><category term="iotsi" /><category term="semantic interoperability" /><summary>Work in progress!!</summary></entry><entry><title>Making things interoperate</title><link href="http://jaimejim.github.io/making-things-interoperate/" rel="alternate" type="text/html" title="Making things interoperate" /><published>2014-10-08T09:00:00+03:00</published><updated>2014-10-08T09:00:00+03:00</updated><id>http://jaimejim.github.io/making-things-interoperate</id><content type="html" xml:base="http://jaimejim.github.io/making-things-interoperate/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
 
@@ -151,12 +101,4 @@ Link to the European research community. (IERC)&lt;/p&gt;
 
 &lt;p&gt;Last week the &lt;a href=&quot;http://www.ipso-alliance.org/&quot;&gt;IP for Smart Objects (IPSO) Alliance&lt;/a&gt; released its Smart Objects &lt;a href=&quot;http://github.com/IPSO-Alliance/&quot;&gt;Starter Pack&lt;/a&gt;  the IPSO first draft on semantic Interoperability for the Internet of Things (IoT). This document, together with the existing Constrained Application Protocol (CoAP) RFC and the OMA Lightweight M2M specification compose the backbone of what the future of IoT can be like.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.ericsson.com/research-blog/wp-content/uploads/2014/10/Iot-Picture-Jaime.jpg&quot; alt=&quot;CoAP+LWM2M+IPSO IoT device Stack&quot; /&gt;&lt;em&gt;CoAP+LWM2M+IPSO IoT device Stack&lt;/em&gt;&lt;/p&gt;
-
-</content>
-<category term="iot" />
-<category term="ipso" />
-<category term="semantic interoperability" />
-<summary>Work in progress!!</summary>
-</entry>
-</feed>
+&lt;p&gt;&lt;img src=&quot;http://www.ericsson.com/research-blog/wp-content/uploads/2014/10/Iot-Picture-Jaime.jpg&quot; alt=&quot;CoAP+LWM2M+IPSO IoT device Stack&quot; /&gt;&lt;em&gt;CoAP+LWM2M+IPSO IoT device Stack&lt;/em&gt;&lt;/p&gt;</content><category term="iot" /><category term="ipso" /><category term="semantic interoperability" /><summary>Work in progress!!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://www.ericsson.com/research-blog/wp-content/uploads/2014/10/iot-small-house.jpg" /></entry></feed>
