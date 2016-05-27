@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="http://jaimejim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://jaimejim.github.io/" rel="alternate" type="text/html" /><updated>2016-05-26T08:04:10+03:00</updated><id>http://jaimejim.github.io/</id><title>Jaime Jiménez</title><entry><title>Semantic Interoperability Workshop II</title><link href="http://jaimejim.github.io/iotsii/" rel="alternate" type="text/html" title="Semantic Interoperability Workshop II" /><published>2016-03-26T12:00:00+02:00</published><updated>2016-03-26T12:00:00+02:00</updated><id>http://jaimejim.github.io/iotsii</id><content type="html" xml:base="http://jaimejim.github.io/iotsii/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="http://jaimejim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://jaimejim.github.io/" rel="alternate" type="text/html" /><updated>2016-05-27T21:18:56+03:00</updated><id>http://jaimejim.github.io/</id><title>Jaime Jiménez</title><entry><title>Semantic Interoperability Workshop II</title><link href="http://jaimejim.github.io/iotsii/" rel="alternate" type="text/html" title="Semantic Interoperability Workshop II" /><published>2016-03-26T12:00:00+02:00</published><updated>2016-03-26T12:00:00+02:00</updated><id>http://jaimejim.github.io/iotsii</id><content type="html" xml:base="http://jaimejim.github.io/iotsii/">&lt;h1 id=&quot;work-in-progress-almost-ready&quot;&gt;Work in progress!! Almost Ready!&lt;/h1&gt;
 
-&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 
 &lt;p&gt;As we mentioned on the &lt;a href=&quot;/making-things-interoperate/&quot;&gt;previous article&lt;/a&gt;, IoT Standards for constrained devices are rapidly consolidating.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://www.ietf.org/blog/wp-content/uploads/2016/03/group_pic_smaller.jpg&quot; alt=&quot;IOTSI Folks&quot; /&gt;&lt;em&gt;Everyone in there, I am the guy in between the one in red and the one in blue&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;## Interaction model&lt;/p&gt;
+&lt;h2 id=&quot;interaction-model&quot;&gt;Interaction model&lt;/h2&gt;
 
 &lt;p&gt;Among the topics and presentations I found particularly interesting that of 
 &lt;a href=&quot;https://github.com/mkovatsc&quot;&gt;mkovatsc&lt;/a&gt;. He explained the Runtime Discovery Process for a IoT Client node.&lt;/p&gt;
@@ -44,7 +44,7 @@
 
 &lt;p&gt;In some models everything has to be shared from the beginning, therefore any change would involve changing the whole “framework”. By forcing to share only the bare minimum, you avoid such problem.&lt;/p&gt;
 
-&lt;p&gt;Some organizations have created predefined interfaces, all of them are predefined and described, they even provide code generation. The device logic has to support such interfaces, no changes are possible at runtime.&lt;/p&gt;</content><category term="iotsi" /><category term="semantic interoperability" /><summary>Work in progress!!</summary></entry><entry><title>Semantic Interoperability Workshop I</title><link href="http://jaimejim.github.io/iotsi/" rel="alternate" type="text/html" title="Semantic Interoperability Workshop I" /><published>2016-02-01T09:00:00+02:00</published><updated>2016-02-01T09:00:00+02:00</updated><id>http://jaimejim.github.io/iotsi</id><content type="html" xml:base="http://jaimejim.github.io/iotsi/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
+&lt;p&gt;Some organizations have created predefined interfaces, all of them are predefined and described, they even provide code generation. The device logic has to support such interfaces, no changes are possible at runtime.&lt;/p&gt;</content><category term="iotsi" /><category term="semantic interoperability" /><summary>Work in progress!! Almost Ready!</summary></entry><entry><title>Semantic Interoperability Workshop I</title><link href="http://jaimejim.github.io/iotsi/" rel="alternate" type="text/html" title="Semantic Interoperability Workshop I" /><published>2016-02-01T09:00:00+02:00</published><updated>2016-02-01T09:00:00+02:00</updated><id>http://jaimejim.github.io/iotsi</id><content type="html" xml:base="http://jaimejim.github.io/iotsi/">&lt;h1 id=&quot;work-in-progress&quot;&gt;Work in progress!!&lt;/h1&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
 
