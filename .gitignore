@@ -2,3 +2,7 @@
 *.xml
 
 drafts/IOTSU/Makefile
+
+*.mkd
+
+drafts/Makefile
