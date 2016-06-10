@@ -17,7 +17,9 @@ Abstract
    solutions for software upgrades on the constrained space.  Some of
    the issues are still open and should be subject of discussion.
    Ideally some implementation guidelines should be made when using CoAP
-   [RFC7252], HTTP [RFC7230] or MQTT as transfer protocols.
+   [RFC7252], HTTP [RFC7230] or MQTT as transfer protocols.  The
+   sections are purposedly left short as they are open issues that
+   should be discussed.
 
 Status of This Memo
 
@@ -48,8 +50,6 @@ Copyright Notice
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
-   the Trust Legal Provisions and are provided without warranty as
-   described in the Simplified BSD License.
 
 
 
@@ -58,14 +58,17 @@ Jimenez & Ocak          Expires December 3, 2016                [Page 1]
 Internet-Draft        draft-jimenez-iotsu-soft-exp             June 2016
 
 
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Architecture  . . . . . . . . . . . . . . . . . . . . . . . .   2
-   3.  Dealing with Sleepy endpoints . . . . . . . . . . . . . . . .   2
+   3.  Dealing with Sleepy endpoints . . . . . . . . . . . . . . . .   3
    4.  Device Initiated Communication  . . . . . . . . . . . . . . .   3
    5.  Manager Initiated Communication . . . . . . . . . . . . . . .   3
-   6.  Delegation on other nodes . . . . . . . . . . . . . . . . . .   3
+   6.  Delegation on other nodes . . . . . . . . . . . . . . . . . .   4
    7.  Using Multiple Stacks . . . . . . . . . . . . . . . . . . . .   4
    8.  Runtime Discovery . . . . . . . . . . . . . . . . . . . . . .   5
    9.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   5
@@ -76,7 +79,7 @@ Table of Contents
 
    In this short paper we try to raise some issues we have found when
    dealing with software upgrades in the IoT domain.  Dealing with
-   sleepy endpoint is at Section 3.  The case for device initiated
+   sleepy endpoints is at Section 3.  The case for device initiated
    communication is on Section 4 and manager initiated on Section 5.
    Delegation on gateways or other nodes is in Section 6.  The use of an
    alternative stack for software upgrades is at Section 7.  A possible
@@ -85,7 +88,9 @@ Table of Contents
 
 2.  Architecture
 
-   We start with the assumption of the followign CoAP-based stack:
+   We start with the assumption of a device that is constrained but does
+   not require gateways for communication as it uses some operator-based
+   connectivity (though we do not assume SMS transport).
 
    Device                                      Manager
    +--------------------+                      +--------------------+
@@ -98,14 +103,9 @@ Table of Contents
    |     4G/NB-IoT      |                      |        ANY         |
    +--------------------+                      +--------------------+
 
-   This simple, generic set up already presents several problems,
-   specially when dealing with the operator environment.
-
-3.  Dealing with Sleepy endpoints
-
-   The fact that devices are sleepy poses several problems for doing
-   software updates.  Namely that you do not have a connected endpoint
-   most of the time and that therefore the device will have to contact
+   This simple, generic set up presents several problems, specially when
+   dealing with the operator environment.  We enumerate some of them
+   below.
 
 
 
@@ -114,6 +114,11 @@ Jimenez & Ocak          Expires December 3, 2016                [Page 2]
 Internet-Draft        draft-jimenez-iotsu-soft-exp             June 2016
 
 
+3.  Dealing with Sleepy endpoints
+
+   The fact that devices are sleepy poses several problems for doing
+   software updates.  Namely that you do not have a connected endpoint
+   most of the time and that therefore the device will have to contact
    the manager or the manager will have to poll the device pretty
    frequently.  The case for polling does not scale and therefore it is
    hardly a solution.
@@ -155,13 +160,8 @@ Internet-Draft        draft-jimenez-iotsu-soft-exp             June 2016
    implement the logic of linking observation of any resource to send
    software update to the device.
 
-6.  Delegation on other nodes
 
-   Many of the IoT devices may not have connectivity to the manager and
-   gateways are used to provide such connectivity to the manager in the
-   e.g. core network.  Gateways used in this use case are more capable
-   to perform complex operations and to support different protocol
-   stacks together, which can be used to update the device software.
+
 
 
 
@@ -169,6 +169,14 @@ Jimenez & Ocak          Expires December 3, 2016                [Page 3]
 
 Internet-Draft        draft-jimenez-iotsu-soft-exp             June 2016
 
+
+6.  Delegation on other nodes
+
+   Many of the IoT devices may not have connectivity to the manager and
+   gateways are used to provide such connectivity to the manager in the
+   e.g. core network.  Gateways used in this use case are more capable
+   to perform complex operations and to support different protocol
+   stacks together, which can be used to update the device software.
 
    For our implementation we assumed that the gateway supports, at
    least, both CoAP and HTTP stacks.  The communication between the
@@ -210,14 +218,6 @@ Internet-Draft        draft-jimenez-iotsu-soft-exp             June 2016
       for reporting sensor data.  For firmware upgrades a command is
       sent to the device with the URL where the new binaries are (i.e.
       https://company/devicetype/version00.zip), the device then sets a
-      whole different communication channel just for that, as well as a
-      dedicated DTLS/TLS connection.  This is too much overhead for many
-      constrained devices.
-
-   MQTT+CoAP  similar to previous scenario, MQTT is the base protocol
-      for communication and firmware upgrade command is sent to the
-      device in an MQTT message, which includes the CoAP URL to the
-      binary to be downloaded.  The device opens a UDP connection to the
 
 
 
@@ -226,6 +226,14 @@ Jimenez & Ocak          Expires December 3, 2016                [Page 4]
 Internet-Draft        draft-jimenez-iotsu-soft-exp             June 2016
 
 
+      whole different communication channel just for that, as well as a
+      dedicated DTLS/TLS connection.  This is too much overhead for many
+      constrained devices.
+
+   MQTT+CoAP  similar to previous scenario, MQTT is the base protocol
+      for communication and firmware upgrade command is sent to the
+      device in an MQTT message, which includes the CoAP URL to the
+      binary to be downloaded.  The device opens a UDP connection to the
       CoAP endpoint and downloads the binary with e.g.  CoAP blockwise
       transfer.  This scenario may occur when the node serving the
       software package supports only CoAP.
@@ -265,14 +273,6 @@ Internet-Draft        draft-jimenez-iotsu-soft-exp             June 2016
               Resource Directory", draft-ietf-core-resource-directory-07
               (work in progress), March 2016.
 
-   [IOTSIWS]  IAB, "IoT Workshop for Semantic Interoperability (IOTSI) -
-              Main Page and Position Papers", 2016,
-              <https://www.iab.org/activities/workshops/iotsi/>.
-
-   [RFC7230]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
-              Protocol (HTTP/1.1): Message Syntax and Routing", RFC
-              7230, DOI 10.17487/RFC7230, June 2014,
-              <http://www.rfc-editor.org/info/rfc7230>.
 
 
 
@@ -281,6 +281,15 @@ Jimenez & Ocak          Expires December 3, 2016                [Page 5]
 
 Internet-Draft        draft-jimenez-iotsu-soft-exp             June 2016
 
+
+   [IOTSIWS]  IAB, "IoT Workshop for Semantic Interoperability (IOTSI) -
+              Main Page and Position Papers", 2016,
+              <https://www.iab.org/activities/workshops/iotsi/>.
+
+   [RFC7230]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
+              Protocol (HTTP/1.1): Message Syntax and Routing", RFC
+              7230, DOI 10.17487/RFC7230, June 2014,
+              <http://www.rfc-editor.org/info/rfc7230>.
 
    [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
               Application Protocol (CoAP)", RFC 7252, DOI 10.17487/
@@ -299,15 +308,6 @@ Authors' Addresses
    Ericsson
 
    Email: mert.ocak@ericsson.com
-
-
-
-
-
-
-
-
-
 
 
 
