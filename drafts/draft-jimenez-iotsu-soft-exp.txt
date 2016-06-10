@@ -8,7 +8,7 @@ Intended status: Informational                                  Ericsson
 Expires: December 3, 2016                                  June 01, 2016
 
 
-                  Software Upgdate Experiences for IoT
+                  Software Update Experiences for IoT
                       draft-jimenez-iotsu-soft-exp
 
 Abstract
