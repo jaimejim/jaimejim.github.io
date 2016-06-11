@@ -1,0 +1,133 @@
+CoRE WG General:
+ ☐ Github right now has all users as POs, we will move slowly towards a pull request. 
+ ☐ Current set up. New stuff goes to the Github repository, old stuff goes in the IETF issue tracker.
+ 
+TCP TLS draft-ietf-core-coap-tcp-tls:
+ ☐ We need to discuss whether the signalling messages can be push to a different document. Discussion on Mailing list @Carsten
+ ☐ Brian Raymor to become editor TCP/TLS Document. Possibly yes. We have to think about further instructions for him. 
+      Problems: Technical content, multiple proposals. 
+      Needed ideas? Actual Requirements?
+      Settings negotiation?
+      Basic diagnostics
+ Interested parties: Brian, Hannes, Simon, Carsten, Klaus. 
+      CoAP over TCP (Class 2) (NAT traversal)
+      CoAP draft about signaling messages to rise these items. 
+      Klaus 
+
+ETCH draft-ietf-core-etch:
+ ☐ FETCH = HTTP SEARCH
+ ☐ Examples to be sent by Peter/Carsten
+ ☐ ETCH First cover issues, then ask for new version (2 weeks). Then ask for feedback on mailing list (2 weeks). If there are no objections then WGLC (2 weeks) @Jaime @due(16-05-30 13:42)
+ ☐ ETCH target IESG submission @due(16-07-25 15:25)
+ 
+HTTP draft-ietf-core-http-mapping:
+ ☐ HTTP mapping Finished, no issues left. Read and send to second WGLC (2 weeks). @Jaime @due(16-06-11 21:30) @critical
+ ☐ HTTP mapping IESG submission @due(16-07-15 15:31)
+     WGLC takes a couple of weeks, authors need a couple of weeks for changes. Thus WGLC 1 month before (1st week of June). The assumption is that we will find a couple of nits that need to be done by the authors. 
+
+CoRE Links draft-ietf-core-links-json:
+ ☐ Core Links has still some Issues, Draft with no issues to be submitted @due(16-06-27 15:36)
+     #402  A reference implementation for links-json would be useful. | @Carsten
+     #403  Should the RFC 7390 part of links-json be split off? | YES. 
+     #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers | 
+ ☐ Core Link tentative WGLC @due(16-07-18 15:36)
+ ☐ Jaime to send JSON Objects of LWM2M to Carsten @Jaime
+
+RD draft-ietf-core-resource-directory:
+ ☐ Read diffs provided by Oscar: https://tools.ietf.org/rfcdiff?url1=draft-ietf-core-resource-directory-07.txt&url2=http://users.piuha.net/eoscdia/draft-ietf-core-resource-directory-08.txt  @Carsten @Peter
+ ☐ Should RD include additional functionality for W3C-TD? @due(16-06-11 20:57)
+ ☐ New version to be submitted @due(16-06-14 20:58)
+ ☐ WGLC @due(16-08-01 15:28), depending on W3C-TD dependency
+ ☐ Shepherd: WGLC, IETF process. Oscar to be shepherd after Carsten reads and comments. 
+
+SenML draft-ietf-core-senml:
+ ☐ Ari to send updates, change editorial items. @due(16-06-16 23:52)
+ ☐ Issue 407. Waiting for reply from authors. Say that we want to have the result at noon next Monday. Is this document ready for WGLC (no tickets)
+ ☐ SenML draft-ietf-core-senml IESG @due(16-08-01 15:28)
+
+COMI - YANG CBOR draft-ietf-core-yang-cbor:
+ INFO
+     draft-bormann-core-uri-cbor-query-latest.md 
+     draft-ietf-core-yang-cbor-latest.md
+     draft-somaraju-core-sid-latest.md
+     draft-turner-cool-problem-latest.md
+     draft-veillette-core-cool-latest.md
+ Notes 
+     YANG --> Data Modeling  (Andy Biermann, Martin Björklund, Jürgen Schönwälder)
+     COMI Work is about laying the groundwork. Target would be to have things a bit like https://tools.ietf.org/html/rfc7388 
+     Backward compatibility 
+     Target is to have in Berlin a WG document.
+ ☐ COMI Meeting Wednesday call for WG document?
+ ☐ Document status is early. SID? Work TBD, https://tools.ietf.org/html/draft-somaraju-core-sid-00   
+ ☐ IESG Submission of all documents CBOR draft-ietf-core-yang-cbor @due(17-01-10 21:01) 
+ 
+Interfaces draft-ietf-core-interfaces:
+ Notes
+   Draft has expired. It needs to be changed a lot (MiKos) 
+   Collections seems useful. Link Bindings, futures....
+   We need to figure out what do we want to have written there. Should it be informational or normative?
+ ☐ Restart work after W3C in Beijing @due(16-08-06 21:03)
+ ☐ IESG by February 2017
+  
+Core Block draft-ietf-core-block:
+ ☐ To get well-known-core and firm_upgrades. 
+ ☐ IESG Phase. Few comments from Alexey that Carsten has to address, mostly editorial. @Carsten
+
+PubSub draft-ietf-koster-pubsub:
+ Notes
+   Present what we are trying to do in Berlin. Target is to clarify the open question about this work.
+   We should find out what do people find so attractive about MQTT/TCP solutions. In Berlin, T2TRG?
+ ☐ Restart work after W3C in Beijing @due(16-08-06 21:03)
+ 
+ 
+Alternative transports draft-ietf-bill:
+ Notes
+   To be picked after TCP draft is done?
+ ☐ To be presented in Berlin.
+
+-------------
+
+NEXT WEEK: 
+ ☐ Milestones https://datatracker.ietf.org/wg/core/milestones/ 
+ ☐ Code to get timeline out of this tasks @Jaime @high
+
+Milestones:
+ 
+ Submissions to IESG:
+   ☐ ETCH Submission IESG draft-ietf-core-etch target IESG submission @due(16-07-25 15:25)
+   ☐ HTTP Mapping Submission IESG draft-ietf-core-http-mapping Second WGLC @due(16-07-15 15:28)
+   ☐ CoRE Links Submission IESG draft-ietf-core-links-json @due(16-08-01 15:28)
+   ☐ SenML draft-ietf-core-senml IESG @due(16-08-01 15:28)
+   ☐ TCP TLS draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
+   ☐ RD draft-ietf-core-resource-directory @due(16-08-01 15:28)
+   ☐ COMI - YANG CBOR draft-ietf-core-yang-cbor @due(17-01-10 21:01)
+   ☐ Interfaces draft-ietf-core-interfaces @due(17-03-01 21:03)
+ 
+ Working Group Adoptions:
+ 
+Important Dates:
+  ☐ Internet Draft Cut-off @due(16-07-08 09:31)
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+// ⌘+R to see groups of tasks
+// c, tab — @critical;
+// h, tab — @high;
+// l, tab — @low;
+// s, tab — @started
+// ⌘ + enter or ⌘ + i: new task
+// ⌘ + d: toggle task as completed.
+// ⌘ + shift + a will archive the done tasks, by removing them from your list and appending them to the bottom of the file under Archive project
+// ctrl + c: toggle task as cancelled on Mac
+// ⌘+shift+U opens the URL under the cursor www.github.com or skype:nickname
+// ctrl+o opens the file in sublime
+// Convert current document to HTML with ⌘ + shift + p : Types Task View as HTML
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ Meet Carsten @done (16-05-23 15:16) @project(CoRE WG General)
+ ✔ Moving TCP repository to Github. Write message to mailing list once done. @Carsten  @done (16-06-07 21:31) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
+ ✔ Wednesday Signaling document for TCP @Carsten @done (16-06-11 23:51) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
+ ✔ ETCH Add items to Issue tracker: examples of fetch. @due(16-05-30 13:42) @critical  @done (16-05-30 18:31) @project(ETCH draft-ietf-core-etch)
+ ✔ RD discussion with authors and Chairs  @done (16-06-04 08:23) @project(RD draft-ietf-core-resource-directory)
+ ✔ Ask for WGLC on Mailing list. Jaime to be shepherd of the document ask on mailing list (mention Carsten might be coauthor) @Jaime @due(16-06-02 15:53) @critical @done (16-05-30 16:54) @project(SenML draft-ietf-core-senml)
+ ✔ YANG CBOR discussion.  @done (16-06-11 23:52) @project(COMI - YANG CBOR draft-ietf-core-yang-cbor)
+ ✔ Publish/Subscribe discussion. @done (16-06-07 21:10). It relates to the Streaming discussion on W3C. Similar problem/solution as websockets in the Web, to get tight-coupling. @project(NEXT WEEK)
