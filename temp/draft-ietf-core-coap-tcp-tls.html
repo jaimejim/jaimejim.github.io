@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="utf-8">
-<title>160610-coap-tcp-tls</title>
+<title>draft-ietf-core-coap-tcp-tls</title>
 
 
 <style type="text/css">
@@ -452,21 +452,21 @@ pre[class*="language-"] {
 
 <body>
 
-<h2 id="toc_0">CoRE CoAP &amp; TCP/TLS notes</h2>
+<h2 id="toc_0">CoAP &amp; Streams</h2>
 
-<h4 id="toc_1">Jaime Jiménez</h4>
+<p><a href="http://jaimejim.github.io">Jaime Jimenez</a></p>
 
-<h3 id="toc_2">Actions to be taken</h3>
+<h3 id="toc_1">Actions to be taken</h3>
 
 <ol>
-<li>asdasd</li>
-<li>ss</li>
-<li>dd</li>
+<li>To be</li>
+<li>discussed with</li>
+<li>Brian</li>
 </ol>
 
 <hr>
 
-<h4 id="toc_3">Summary draft-ietf-core-coap-tcp-tls-02</h4>
+<h4 id="toc_2">Summary draft-ietf-core-coap-tcp-tls-02</h4>
 
 <p><a href="https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls-02">A TCP and TLS Transport for the Constrained Application Protocol (CoAP)</a></p>
 
@@ -499,7 +499,7 @@ pre[class*="language-"] {
 
 <hr>
 
-<h4 id="toc_4">Summary draft-bormann-core-coap-sig-00</h4>
+<h4 id="toc_3">Summary draft-bormann-core-coap-sig-00</h4>
 
 <p><a href="https://tools.ietf.org/html/draft-bormann-core-coap-sig-00">CoAP Signaling Messages</a></p>
 
@@ -522,7 +522,7 @@ pre[class*="language-"] {
 
 <hr>
 
-<h4 id="toc_5">Summary draft-bormann-core-block-bert-01</h4>
+<h4 id="toc_4">Summary draft-bormann-core-block-bert-01</h4>
 
 <p><a href="https://tools.ietf.org/html/draft-bormann-core-block-bert-01">Block-wise transfers in CoAP</a></p>
 
@@ -541,7 +541,7 @@ pre[class*="language-"] {
 
 <hr>
 
-<h4 id="toc_6">Summary draft-savolainen-core-coap-websockets-06</h4>
+<h4 id="toc_5">Summary draft-savolainen-core-coap-websockets-06</h4>
 
 <p><a href="https://tools.ietf.org/html/draft-savolainen-core-coap-websockets-06">CoAP over WebSockets</a></p>
 
@@ -561,7 +561,7 @@ pre[class*="language-"] {
 <li>Presents a similar problematic as the signalling document, shouldn&#39;t this be merged?</li>
 </ul>
 
-<h4 id="toc_7">Summary Hannes&#39; draft-ietf-core-coap-tcp-tls-02</h4>
+<h4 id="toc_6">Summary Hannes&#39; draft-ietf-core-coap-tcp-tls-02</h4>
 
 <p>[I need a link here]</p>
 
@@ -574,17 +574,16 @@ pre[class*="language-"] {
 <ul>
 <li>The introduction that explains the use cases on TCP-02-03 could use some more work to make it more similar to draft-savolainen-core-coap-websockets-06.<br></li>
 <li>The new parts as they are do not seem as implementable/complete as the other documents. </li>
-<li>Are the keep-alive exchanges exactly the same as ping-pong messages on signalling&amp;websockets docs cause it looks like that to me. </li>
-<li></li>
+<li>Are the keep-alive exchanges exactly the same as ping-pong messages on signalling&amp;websockets docs cause it looks like that to me.</li>
 </ul>
 
 <hr>
 
-<h2 id="toc_8">CoAP-TCP-TLS discussion</h2>
+<h2 id="toc_7">CoAP-TCP-TLS discussion</h2>
 
-<h3 id="toc_9">10th June 2016</h3>
+<h3 id="toc_8">10th June 2016</h3>
 
-<h3 id="toc_10">Attendees</h3>
+<h3 id="toc_9">Attendees</h3>
 
 <ul>
 <li>Brian Raymor</li>
@@ -596,12 +595,14 @@ pre[class*="language-"] {
 <li>Jaime Jiménez</li>
 </ul>
 
-<h3 id="toc_11">Issue</h3>
+<h3 id="toc_10">Discussion</h3>
 
 <p><em>Hannes</em>: Procedures, multiple drafts... merging with the CoAP over Websockets document. Some feel CoAP TCP draft is progressing a bit slow.
 <a href="https://tools.ietf.org/html/draft-tschofenig-core-coap-tcp-tls-05">CoAP-TCP-TLS</a></p>
 
 <p><em>Carsten</em>: Let&#39;s do the Issue tracker later. Target is to move completely to github.  Technically the document is stable. There are some items:</p>
+
+<p><strong>Open Issues</strong></p>
 
 <ul>
 <li>387   Should ALPN always be required? 
@@ -621,9 +622,9 @@ Warning that this won&#39;t easilly interface with UDP ones.</li>
 
 <p><em>Carsten</em>: Well we agree on the problem maybe on the solution. </p>
 
-<p><em>Hannes</em>: I proposed a solution and there can be very issues. However, it seems that there is no ne The bird document is about reinterpreting the message length differently. </p>
+<p><em>Hannes</em>: I proposed a solution and there can be very issues. However, it seems that there is no <q>bert document</q>(?!) is about reinterpreting the message length differently. </p>
 
-<p><em>Carsten</em>: Today we had a discussion about the Bird approach and was useful, we need to maintain the architectural integrity.</p>
+<p><em>Carsten</em>: Today we had a discussion about the bert approach and was useful, we need to maintain the architectural integrity.</p>
 
 <p><em>Hannes</em>: My hope was to get something out soon, get feedback, spin the document again, etc. Discussions need to happen on the mailing list. We need to involve them.</p>
 
@@ -639,7 +640,7 @@ Warning that this won&#39;t easilly interface with UDP ones.</li>
 
 <p><em>Brian</em>: It is fine to have some period of unstability. I am concern that the chair is also the editor. </p>
 
-<p><em>Carsten</em>: I am not the editor on this one, Jaime is...</p>
+<p><em>Carsten</em>: I am not the chair on this one, Jaime is...</p>
 
 <p><em>Jaime</em>: Have to read it through and understand it better to provide meaningful feedback.</p>
 
@@ -655,8 +656,7 @@ Warning that this won&#39;t easilly interface with UDP ones.</li>
 
 <hr>
 
-<p><em>Discussion</em>: With Websockets people believe you don&#39;t get firewall, ...
-Issues with proxies, firewalls, etc... it is all funky stuff. </p>
+<p><em>Discussion</em>: With Websockets people believe you don&#39;t get firewall, ...issues with proxies, firewalls, etc... it is all funky stuff. </p>
 
 <p><em>Hannes</em>: I would like more information on this, cause it could be interesting. </p>
 
@@ -686,7 +686,7 @@ Issues with proxies, firewalls, etc... it is all funky stuff. </p>
 
 <p><em>Hannes</em>: Some of the LoWPAN think that link layer security is sufficient. It is just a question about which cypher. </p>
 
-<p><em>Matthias</em>: Do we get the lenght informaiton, signalling, signalling that we need?</p>
+<p><em>Matthias</em>: Do we get the lenght information, signaling, etc, that we need?</p>
 
 <p><em>Hannes</em>: Length yes... rest somewhat.</p>
 
@@ -712,14 +712,17 @@ Issues with proxies, firewalls, etc... it is all funky stuff. </p>
 
 <p><em>Klaus</em>: Websockets should be made later. First the signalling document. </p>
 
-<p>Stable 0.2 Document.
-Bird part can be put back. 
-Signalling part needs discussion. Best way to do it would be to extract Hannes work and put it on the right place. </p>
-
-<p>Issues are on the document sent by Hannes/Brian.</p>
+<ul>
+<li>Stable 0.2 Document.</li>
+<li>Bert part can be put back. </li>
+<li>Signalling part needs discussion. Best way to do it would be to extract Hannes work and put it on the right place. </li>
+<li>Issues are on the document sent by Hannes/Brian.</li>
+</ul>
 
 <p><em>Matthias/Carsten/Hannes</em>: 
 ClientHello/ServerHello solves issues raised in the issue tracker.</p>
+
+<p>ETC ETC</p>
 
 
 
