@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>corewg.todo</title>
+<style type="text/css">
+ * {
+  margin:0; padding:0;
+ }
+ span { display: inline-block; }         /* prevent unsupposed empty lines */
+ span[class|="tag"] { display: inline; } /* add proper wrapping for tags */
+ pre {
+  margin: 30px;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 20px;
+  white-space: pre-wrap;
+ }
+ .empty-line {
+  /* span, either empty or containing whitespaces/tabs */
+ }
+ body { color: rgba(248,248,242,1.0); background: rgba(34,34,34,1.0); font-weight: normal; font-style: normal; }
+.done { font-weight: normal; font-style: italic; color: rgba(117,113,94,1.0); }
+.tag { font-weight: bold; font-style: normal; color: rgba(102,217,239,1.0); }
+.note { color: rgba(117,113,94,1.0); font-weight: normal; font-style: normal; }
+.open { font-weight: normal; font-style: italic; color: rgba(248,248,240,1.0); }
+.bullet-done { font-weight: bold; font-style: normal; color: rgba(166,226,46,1.0); }
+.bullet-cancelled { color: rgba(170,31,42,1.0); font-weight: normal; font-style: normal; }
+.cancelled { font-weight: normal; font-style: italic; color: rgba(117,113,94,1.0); }
+.tag-done { color: rgba(211,208,200,0.31); font-weight: normal; font-style: normal; }
+.tag-cancelled { color: rgba(211,208,200,0.31); font-weight: normal; font-style: normal; }
+.header { font-weight: bold; font-style: normal; background: rgba(0,0,0,0.06); color: rgba(249,38,114,1.0); width: 100%; }
+.sep-archive { color: rgba(117,113,94,1.0); font-weight: normal; font-style: normal; }
+.sep { color: rgba(117,113,94,1.0); font-weight: normal; font-style: normal; }
+a { font-weight: bold; font-style: normal; color: rgba(0,62,114,0.56); }
+.tag-today { font-weight: bold; font-style: normal; background: rgba(34,34,34,1.0); color: rgba(174,129,255,1.0); }
+.tag-high { font-weight: bold; font-style: normal; background: rgba(255,127,0,1.0); color: rgba(0,0,0,1.0); }
+.tag-low { font-weight: bold; font-style: normal; background: rgba(34,34,34,1.0); color: rgba(255,255,255,1.0); }
+.tag-critical { font-weight: bold; font-style: normal; background: rgba(255,0,0,1.0); color: rgba(0,0,0,1.0); }
+</style>
+</head>
+<body>
+<pre>
+<span class="header">CoRE WG General:</span>
+<span class="done"> <span class="bullet-done">✔</span> Meet Carsten <span class="tag-done">@done (16-05-23 15:16)</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> Github right now has all users as POs, we will move slowly towards a pull request. </span>
+<span class="open"> <span class="bullet-pending">☐</span> Current set up. New stuff goes to the Github repository, old stuff goes in the IETF issue tracker.</span>
+<span class="empty-line"> </span>
+<span class="header">TCP TLS draft-ietf-core-coap-tcp-tls:</span>
+<span class="open"> <span class="bullet-pending">☐</span> We need to discuss whether the signalling messages can be push to a different document. Discussion on Mailing list <span class="tag">@Carsten</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> Brian Raymor to become editor TCP/TLS Document. Possibly yes. We have to think about further instructions for him. </span>
+<span class="note">      Problems: Technical content, multiple proposals. </span>
+<span class="note">      Needed ideas? Actual Requirements?</span>
+<span class="note">      Settings negotiation?</span>
+<span class="note">      Basic diagnostics</span>
+<span class="note"> Interested parties: Hannes, Simon, Carsten, Klaus. </span>
+<span class="note">      CoAP over TCP (Class 2) (NAT traversal)</span>
+<span class="note">      CoAP draft about signaling messages to rise these items. </span>
+<span class="note">      Klaus </span>
+<span class="done"> <span class="bullet-done">✔</span> Moving TCP repository to Github. Write message to mailing list once done. <span class="tag-done">@Carsten  @done (16-06-07 21:31)</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> Wednesday Signaling document for TCP <span class="tag">@Carsten</span></span>
+<span class="empty-line"></span>
+<span class="header">ETCH draft-ietf-core-etch:</span>
+<span class="open"> <span class="bullet-pending">☐</span> FETCH = HTTP SEARCH</span>
+<span class="done"> <span class="bullet-done">✔</span> ETCH Add items to Issue tracker: examples of fetch. <span class="tag-done">@due(16-05-30 13:42) @critical  @done (16-05-30 18:31)</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> Examples to be sent by Peter/Carsten</span>
+<span class="open"> <span class="bullet-pending">☐</span> ETCH First cover issues, then ask for new version (2 weeks). Then ask for feedback on mailing list (2 weeks). If there are no objections then WGLC (2 weeks) <span class="tag">@Jaime @due(16-05-30 13:42)</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> ETCH target IESG submission <span class="tag">@due(16-07-25 15:25)</span></span>
+<span class="empty-line"> </span>
+<span class="header">HTTP draft-ietf-core-http-mapping:</span>
+<span class="open"> <span class="bullet-pending">☐</span> HTTP mapping Finished, no issues left. Read and send to second WGLC (2 weeks). <span class="tag">@Jaime @due(16-06-11 21:30) </span><span class="tag-critical">@</span><span class="tag-critical">critical</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> HTTP mapping IESG submission <span class="tag">@due(16-07-15 15:31)</span></span>
+<span class="note">     WGLC takes a couple of weeks, authors need a couple of weeks for changes. Thus WGLC 1 month before (1st week of June). The assumption is that we will find a couple of nits that need to be done by the authors. </span>
+<span class="empty-line"></span>
+<span class="header">CoRE Links draft-ietf-core-links-json:</span>
+<span class="open"> <span class="bullet-pending">☐</span> Core Links has still some Issues, Draft with no issues to be submitted <span class="tag">@due(16-06-27 15:36)</span></span>
+<span class="note">     #402  A reference implementation for links-json would be useful. | @Carsten</span>
+<span class="note">     #403  Should the RFC 7390 part of links-json be split off? | YES. </span>
+<span class="note">     #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers | </span>
+<span class="open"> <span class="bullet-pending">☐</span> Core Link tentative WGLC <span class="tag">@due(16-07-18 15:36)</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> Jaime to send JSON Objects of LWM2M to Carsten <span class="tag">@Jaime </span><span class="tag-critical">@</span><span class="tag-critical">critical</span></span>
+<span class="empty-line"></span>
+<span class="header">RD draft-ietf-core-resource-directory:</span>
+<span class="open"> <span class="bullet-pending">☐</span> Read diffs provided by Oscar: https://tools.ietf.org/rfcdiff?url1=draft-ietf-core-resource-directory-07.txt&amp;url2=http://users.piuha.net/eoscdia/draft-ietf-core-resource-directory-08.txt  <span class="tag">@Carsten @Peter</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> Should RD include additional functionality for W3C-TD? <span class="tag">@due(16-06-11 20:57)</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> New version to be submitted <span class="tag">@due(16-06-14 20:58)</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> WGLC <span class="tag">@due(16-08-01 15:28)</span></span>
+<span class="note">     Depending on W3C-TD dependency</span>
+<span class="open"> <span class="bullet-pending">☐</span> Shepherd: WGLC, IETF process. Oscar to be shepherd after Carsten reads and comments. </span>
+<span class="done"> <span class="bullet-done">✔</span> RD discussion with authors and Chairs  <span class="tag-done">@done (16-06-04 08:23)</span></span>
+<span class="empty-line"></span>
+<span class="header">SenML draft-ietf-core-senml:</span>
+<span class="done"> <span class="bullet-done">✔</span> Ask for WGLC on Mailing list. Jaime to be shepherd of the document ask on mailing list (mention Carsten might be coauthor) <span class="tag-done">@Jaime @due(16-06-02 15:53) @critical @done (16-05-30 16:54)</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> Ari to send updates, change editorial items.</span>
+<span class="open"> <span class="bullet-pending">☐</span> Issue 407. Waiting for reply from authors. </span>
+<span class="note">     Say that we want to have the result at noon next Monday. Is this document ready for WGLC (no tickets)</span>
+<span class="open"> <span class="bullet-pending">☐</span> SenML draft-ietf-core-senml IESG <span class="tag">@due(16-08-01 15:28)</span></span>
+<span class="empty-line"></span>
+<span class="header">COMI - YANG CBOR draft-ietf-core-yang-cbor:</span>
+<span class="open"> <span class="bullet-pending">☐</span> YANG CBOR discussion. </span>
+<span class="open"> <span class="bullet-pending">☐</span> COMI Meeting Wednesday call for WG document?</span>
+<span class="open"> <span class="bullet-pending">☐</span> Document status is early. SID? Work TBD, https://tools.ietf.org/html/draft-somaraju-core-sid-00  </span>
+<span class="open"> <span class="bullet-pending">☐</span> Target is to have in Berlin a WG document. </span>
+<span class="note">     draft-bormann-core-uri-cbor-query-latest.md </span>
+<span class="note">     draft-ietf-core-yang-cbor-latest.md</span>
+<span class="note">     draft-somaraju-core-sid-latest.md</span>
+<span class="note">     draft-turner-cool-problem-latest.md</span>
+<span class="note">     draft-veillette-core-cool-latest.md</span>
+<span class="open"> <span class="bullet-pending">☐</span> Notes on YANG. </span>
+<span class="note">     YANG --&gt; Data Modeling  (Andy Biermann, Martin Björklund, Jürgen Schönwälder)</span>
+<span class="note">     COMI Work is about laying the groundwork. Target would be to have things a bit like https://tools.ietf.org/html/rfc7388 </span>
+<span class="note">     Backward compatibility </span>
+<span class="open"> <span class="bullet-pending">☐</span> IESG Submission of all documents CBOR draft-ietf-core-yang-cbor <span class="tag">@due(17-01-10 21:01) </span></span>
+<span class="empty-line"> </span>
+<span class="header">Interfaces draft-ietf-core-interfaces:</span>
+<span class="open"> <span class="bullet-pending">☐</span> Draft has expired. It needs to be changed a lot (MiKos) </span>
+<span class="open"> <span class="bullet-pending">☐</span> Collections seems useful. Link Bindings, futures....</span>
+<span class="open"> <span class="bullet-pending">☐</span> We need to figure out what do we want to have written there. Should it be informational or normative?</span>
+<span class="open"> <span class="bullet-pending">☐</span> Restart work after W3C in Beijing <span class="tag">@due(16-08-06 21:03)</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> IESG by February 2017</span>
+<span class="empty-line">  </span>
+<span class="header">Core Block draft-ietf-core-block:</span>
+<span class="open"> <span class="bullet-pending">☐</span> To get well-known-core and firm_upgrades. </span>
+<span class="open"> <span class="bullet-pending">☐</span> IESG Phase. Few comments from Alexey that Carsten has to address, mostly editorial. <span class="tag">@Carsten</span></span>
+<span class="empty-line"></span>
+<span class="header">PubSub draft-ietf-koster-pubsub:</span>
+<span class="open"> <span class="bullet-pending">☐</span> Restart work after W3C in Beijing <span class="tag">@due(16-08-06 21:03)</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> Present what we are trying to do in Berlin. Target is to clarify the open question about this work.</span>
+<span class="open"> <span class="bullet-pending">☐</span> We should find out what do people find so attractive about MQTT/TCP solutions. In Berlin, T2TRG?</span>
+<span class="empty-line"> </span>
+<span class="header">Alternative transports draft-ietf-bill:</span>
+<span class="open"> <span class="bullet-pending">☐</span> To be picked after TCP draft is done?</span>
+<span class="open"> <span class="bullet-pending">☐</span> To be presented in Berlin.</span>
+<span class="empty-line"></span>
+<span class="sep">-------------</span>
+<span class="empty-line"></span>
+<span class="header">NEXT WEEK: </span>
+<span class="open"> <span class="bullet-pending">☐</span> Milestones https://datatracker.ietf.org/wg/core/milestones/ </span>
+<span class="done"> <span class="bullet-done">✔</span> Publish/Subscribe discussion. <span class="tag-done">@done (16-06-07 21:10)</span></span>
+<span class="note">      Relates to the Streaming discussion on W3C. Similar problem/solution as websockets in the Web, to get tight-coupling.</span>
+<span class="open"> <span class="bullet-pending">☐</span> Code to get timeline out of this tasks <span class="tag">@Jaime </span><span class="tag-high">@</span><span class="tag-high">high</span></span>
+<span class="empty-line"></span>
+<span class="header">Milestones:</span>
+<span class="empty-line"> </span>
+<span class="header"> Submissions to IESG:</span>
+<span class="open">   <span class="bullet-pending">☐</span> ETCH Submission IESG draft-ietf-core-etch target IESG submission <span class="tag">@due(16-07-25 15:25)</span></span>
+<span class="open">   <span class="bullet-pending">☐</span> HTTP Mapping Submission IESG draft-ietf-core-http-mapping Second WGLC <span class="tag">@due(16-07-15 15:28)</span></span>
+<span class="open">   <span class="bullet-pending">☐</span> CoRE Links Submission IESG draft-ietf-core-links-json <span class="tag">@due(16-08-01 15:28)</span></span>
+<span class="open">   <span class="bullet-pending">☐</span> SenML draft-ietf-core-senml IESG <span class="tag">@due(16-08-01 15:28)</span></span>
+<span class="open">   <span class="bullet-pending">☐</span> TCP TLS draft-ietf-core-coap-tcp-tls <span class="tag">@due(16-10-10 20:54)</span></span>
+<span class="open">   <span class="bullet-pending">☐</span> RD draft-ietf-core-resource-directory <span class="tag">@due(16-08-01 15:28)</span></span>
+<span class="open">   <span class="bullet-pending">☐</span> COMI - YANG CBOR draft-ietf-core-yang-cbor <span class="tag">@due(17-01-10 21:01)</span></span>
+<span class="open">   <span class="bullet-pending">☐</span> Interfaces draft-ietf-core-interfaces <span class="tag">@due(17-03-01 21:03)</span></span>
+<span class="empty-line"> </span>
+<span class="header"> Working Group Adoptions:</span>
+<span class="empty-line"> </span>
+<span class="header">Important Dates:</span>
+<span class="open">  <span class="bullet-pending">☐</span> Internet Draft Cut-off <span class="tag">@due(16-07-08 09:31)</span></span>
+<span class="empty-line">   </span>
+</pre>
+</body></html>
