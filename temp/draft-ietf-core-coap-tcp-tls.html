@@ -507,11 +507,31 @@ pre[class*="language-"] {
 <li>Add link to <a href="http://conferences.sigcomm.org/imc/2010/papers/p260.pdf">http://conferences.sigcomm.org/imc/2010/papers/p260.pdf</a>. Isn&#39;t the author Seppo Hätönen?</li>
 <li>Which is the status of ref-I-D.bormann-core-cocoa?</li>
 <li>Is the APLN Extension for CoAP defined?</li>
+<li><strong>Very nice</strong> comparison between <code>coap+udp</code> and <code>coap+tcp</code> headers, would be nice to have it in the other docs.</li>
 </ul>
 
 <hr>
 
-<h4 id="toc_3">Summary draft-bormann-core-coap-sig-00</h4>
+<h4 id="toc_3">Summary Hannes&#39; draft-ietf-core-coap-tcp-tls-02</h4>
+
+<p>[I need a link here]</p>
+
+<p>It adds a new section, Shim Layer Protocol that is used for signaling and a framing section. It also presents some possible client/server exchange.</p>
+
+<p>The handshake has a serve name indication, a version indication, connection closure and keep-alive exchanges. </p>
+
+<p><strong>Comments</strong></p>
+
+<ul>
+<li>The introduction that explains the use cases on TCP-02-03 could use some more work to make it more similar to draft-savolainen-core-coap-websockets-06.<br></li>
+<li>The new parts as they are do not seem as implementable/complete as the other documents. </li>
+<li>Are the keep-alive exchanges exactly the same as ping-pong messages on signalling&amp;websockets docs cause it looks like that to me.</li>
+<li>Carsten should read. Carsten&amp;Hannes should sync.</li>
+</ul>
+
+<hr>
+
+<h4 id="toc_4">Summary draft-bormann-core-coap-sig-00</h4>
 
 <p><a href="https://tools.ietf.org/html/draft-bormann-core-coap-sig-00">CoAP Signaling Messages</a></p>
 
@@ -528,13 +548,14 @@ pre[class*="language-"] {
 <p><strong>Comments</strong></p>
 
 <ul>
-<li>Very early version. Hannes should read. Carsten&amp;Hannes should sync.</li>
-<li>Capability and Settings should probably be separated. Diagrams, etc.</li>
+<li>Early version. Hannes should read. Carsten&amp;Hannes should sync.</li>
+<li>Capability and Settings should probably be separated. </li>
+<li>Diagrams, etc.</li>
 </ul>
 
 <hr>
 
-<h4 id="toc_4">Summary draft-bormann-core-block-bert-01</h4>
+<h4 id="toc_5">Summary draft-bormann-core-block-bert-01</h4>
 
 <p><a href="https://tools.ietf.org/html/draft-bormann-core-block-bert-01">Block-wise transfers in CoAP</a></p>
 
@@ -544,15 +565,16 @@ pre[class*="language-"] {
 
 <ul>
 <li>References on TCP/TLS doc needed.</li>
-<li>The document could have been writen in more simple terms, it is hard to read.<br></li>
+<li>The document could have been writen in more simple terms, it is quite hard to read.<br></li>
 <li>Which of the 3 roles of block option is intended here? </li>
 <li>Value 7 for SZX would indicate a block size of 2048 and was reserved. the usage in this document would indicate that it isn&#39;t reserved anymore?</li>
 <li>Add something like the following to explain the diagrams: <code>Block Option:NUM/M/BlockSize</code></li>
+<li>Sequence diagrams don&#39;t work well as visual representations for blocks.</li>
 </ul>
 
 <hr>
 
-<h4 id="toc_5">Summary draft-savolainen-core-coap-websockets-06</h4>
+<h4 id="toc_6">Summary draft-savolainen-core-coap-websockets-06</h4>
 
 <p><a href="https://tools.ietf.org/html/draft-savolainen-core-coap-websockets-06">CoAP over WebSockets</a></p>
 
@@ -565,33 +587,16 @@ pre[class*="language-"] {
 <p><strong>Comments</strong></p>
 
 <ul>
-<li>What is the different between websockets and a plain tcp socket? Shouldn&#39;t we have one document for <q>stream-based transports</q>?</li>
-<li>The introduction and overview are <strong>very good</strong> and useful, I would have like to have this already on draft-ietf-core-coap-tcp-tls-02. Which makes me think if we shouldn&#39;t have some template structure for this.</li>
-<li>How do we relate all stream-based protocols?</li>
+<li>What is the different between websockets and a plain tcp socket? </li>
+<li><strong>Shouldn&#39;t we have one document for <q>stream-based transports</q>?</strong></li>
+<li>The introduction and overview are <strong>very good</strong> and useful, I would have like to have this already on draft-ietf-core-coap-tcp-tls-02. </li>
+<li><strong>Shouldn&#39;t we have some template structure for all these documents?</strong></li>
 <li>CoAP Server inside a Web Browser (!?). This sounds like something from <q>Inception</q>.</li>
 <li>The way it is presented, as a Delta over <a href="https://tools.ietf.org/html/rfc7252">RFC7252</a> makes it <strong>very readable</strong>.</li>
-<li>Presents a similar problematic as the signalling document, shouldn&#39;t this be merged?</li>
+<li>Presents a similar problematic as the signalling document, shouldn&#39;t these be merged?</li>
 </ul>
 
-<h4 id="toc_6">Summary Hannes&#39; draft-ietf-core-coap-tcp-tls-02</h4>
-
-<p>[I need a link here]</p>
-
-<p>It adds a new section, Shim Layer Protocol that is used for signaling and a framing section. It also presents some possible client/server exchange.</p>
-
-<p>The handshake has a serve name indication, a version indication, connection closure and keep-alive exchanges. </p>
-
-<p><strong>Comments</strong></p>
-
-<ul>
-<li>The introduction that explains the use cases on TCP-02-03 could use some more work to make it more similar to draft-savolainen-core-coap-websockets-06.<br></li>
-<li>The new parts as they are do not seem as implementable/complete as the other documents. </li>
-<li>Are the keep-alive exchanges exactly the same as ping-pong messages on signalling&amp;websockets docs cause it looks like that to me.</li>
-</ul>
-
-<hr>
-
-<h2 id="toc_7">CoAP-TCP-TLS discussion</h2>
+<h1 id="toc_7">CoAP-TCP-TLS Webex call</h1>
 
 <h3 id="toc_8">10th June 2016</h3>
 
