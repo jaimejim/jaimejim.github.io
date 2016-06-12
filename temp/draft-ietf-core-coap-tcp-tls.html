@@ -452,16 +452,28 @@ pre[class*="language-"] {
 
 <body>
 
-<h2 id="toc_0">CoAP &amp; Streams</h2>
+<h2 id="toc_0">CoAP TCP TLS</h2>
 
-<p><a href="http://jaimejim.github.io">Jaime Jimenez</a></p>
+<p>by <a href="http://jaimejim.github.io">Jaime Jimenez</a></p>
 
-<h3 id="toc_1">Actions to be taken</h3>
+<h3 id="toc_1">What to do next</h3>
 
 <ol>
-<li>To be</li>
-<li>discussed with</li>
-<li>Brian</li>
+<li>Announce Brian as editor.</li>
+<li>Announce Carsten as author for this doc, no chair hat.</li>
+<li>Hannes and Carsten to work on one signaling document...
+
+<ol>
+<li> ... as part of draft-ietf-core-coap-tcp-tls-03?</li>
+<li> ... as a separate one ... 
+
+<ul>
+<li>... draft-bormann-core-coap-sig-00?</li>
+<li>... a different new one?</li>
+</ul></li>
+</ol></li>
+<li>Someone moves issues to Github.</li>
+<li>Move on.</li>
 </ol>
 
 <hr>
@@ -492,9 +504,9 @@ pre[class*="language-"] {
 <p><strong>Comments</strong></p>
 
 <ul>
-<li>Add link to http://conferences.sigcomm.org/imc/2010/papers/p260.pdf isn&#39;t the author Seppo Hätönen?</li>
-<li>Which is the status of https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls-02#ref-I-D.bormann-core-cocoa</li>
-<li>Where is APLN Extension for CoAP defined?</li>
+<li>Add link to <a href="http://conferences.sigcomm.org/imc/2010/papers/p260.pdf">http://conferences.sigcomm.org/imc/2010/papers/p260.pdf</a>. Isn&#39;t the author Seppo Hätönen?</li>
+<li>Which is the status of ref-I-D.bormann-core-cocoa?</li>
+<li>Is the APLN Extension for CoAP defined?</li>
 </ul>
 
 <hr>
@@ -531,9 +543,8 @@ pre[class*="language-"] {
 <p><strong>Comments</strong></p>
 
 <ul>
-<li>IMO unrelated to the TCP/TLS discussion.</li>
 <li>References on TCP/TLS doc needed.</li>
-<li>The document is not very clear and written in a very convoluted fashion.<br></li>
+<li>The document could have been writen in more simple terms, it is hard to read.<br></li>
 <li>Which of the 3 roles of block option is intended here? </li>
 <li>Value 7 for SZX would indicate a block size of 2048 and was reserved. the usage in this document would indicate that it isn&#39;t reserved anymore?</li>
 <li>Add something like the following to explain the diagrams: <code>Block Option:NUM/M/BlockSize</code></li>
@@ -555,7 +566,8 @@ pre[class*="language-"] {
 
 <ul>
 <li>What is the different between websockets and a plain tcp socket? Shouldn&#39;t we have one document for <q>stream-based transports</q>?</li>
-<li>The introduction and overview are <strong>very good</strong> and useful, I would have like to have this already on draft-ietf-core-coap-tcp-tls-02.</li>
+<li>The introduction and overview are <strong>very good</strong> and useful, I would have like to have this already on draft-ietf-core-coap-tcp-tls-02. Which makes me think if we shouldn&#39;t have some template structure for this.</li>
+<li>How do we relate all stream-based protocols?</li>
 <li>CoAP Server inside a Web Browser (!?). This sounds like something from <q>Inception</q>.</li>
 <li>The way it is presented, as a Delta over <a href="https://tools.ietf.org/html/rfc7252">RFC7252</a> makes it <strong>very readable</strong>.</li>
 <li>Presents a similar problematic as the signalling document, shouldn&#39;t this be merged?</li>
