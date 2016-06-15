@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="utf-8">
-<title>draft-ietf-core-coap-tcp-tls</title>
+<title>draft-ietf-core-http-mapping</title>
 
 
 <style type="text/css">
@@ -452,289 +452,27 @@ pre[class*="language-"] {
 
 <body>
 
-<h2 id="toc_0">CoAP TCP TLS</h2>
+<h2 id="toc_0">CoAP HTTP Mapping</h2>
 
 <h3 id="toc_1">What to do next</h3>
 
-<ol>
-<li>Announce Brian as editor.</li>
-<li>Announce Carsten as author for this doc, no chair hat.</li>
-<li>Announce the new Github repo.</li>
-<li>Move issues to Github.</li>
-<li>Hannes and Carsten to work on one signaling document...
-
 <ul>
-<li>... <del>as part of draft-ietf-core-coap-tcp-tls-03?</del></li>
-<li>... as draft-bormann-core-coap-sig-00, then merge afterwards with tcp-tls-xx</li>
-</ul></li>
-<li>WG Call for consensus of draft-bormann-core-block-bert-01 as we need to add that to tcp-tls-xx too.</li>
-<li>When ready add core-coap-websockets-XX. Get help from Klaus.</li>
-</ol>
-
-<hr>
-
-<h4 id="toc_2">Summary draft-ietf-core-coap-tcp-tls-02</h4>
-
-<p><a href="https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls-02">A TCP and TLS Transport for the Constrained Application Protocol (CoAP)</a></p>
-
-<p>This is a draft that simply describes a shim header that conveys length information about each CoAP message for use over TCP. CoAP header is changed from:</p>
-
-<div><pre><code class="language-none"> 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|Ver| T |  TKL  |      Code     |      Message ID   ...
-| Token                             ...</code></pre></div>
-
-<p>to </p>
-
-<div><pre><code class="language-none"> 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|Len=13 |  TKL  | Length (8-bit)|      Code     | TKL bytes ...</code></pre></div>
-
-<p>Although message size limitations do not apply, <a href="https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls-02#ref-I-D.ietf-core-block">core-block</a> should still be used for large payloads (&gt;1k), the main reason (IMO) is to prevent head-of-line blocking and allow for other operations on the device.</p>
-
-<p>Two new URI schemes are defined: <code>coap+tcp</code> (port 5683) or <code>coaps+tcp</code> (port 443, and using <a href="https://tools.ietf.org/html/rfc7301">RFC7301</a>, APLN Extension for CoAP)</p>
-
-<p><strong>Comments</strong></p>
-
-<ul>
-<li>Add link to <a href="http://conferences.sigcomm.org/imc/2010/papers/p260.pdf">http://conferences.sigcomm.org/imc/2010/papers/p260.pdf</a>. Isn&#39;t the author Seppo Hätönen?</li>
-<li>Which is the status of ref-I-D.bormann-core-cocoa?</li>
-<li>Is the APLN Extension for CoAP defined? Section 8.3 the only part neded?</li>
-<li><strong>Very nice</strong> comparison between <code>coap+udp</code> and <code>coap+tcp</code> headers, would be nice to have it in the other docs.</li>
+<li>Send issues back to authors  @due(16-06-11 21:30).</li>
+<li>HTTP Mapping Submission IESG draft-ietf-core-http-mapping Second WGLC @due(16-07-15 15:28).</li>
+<li>HTTP mapping IESG submission @due(16-07-15 15:31).</li>
 </ul>
 
 <hr>
 
-<h4 id="toc_3">Summary Hannes&#39; draft-ietf-core-coap-tcp-tls-02</h4>
+<h3 id="toc_2">Summary draft-ietf-core-coap-tcp-tls-02</h3>
 
-<p>[I need a link here]</p>
+<p>Describes how to do HTTP-to-CoAP Mapping to allow HTTP clients to access CoAP via a proxy.</p>
 
-<p>It adds a new section, Shim Layer Protocol that is used for signaling and a framing section. It also presents some possible client/server exchange.</p>
+<p>It introduces three concepts, the HC Proxy, a Forward Proxy, a Reverse Proxy and an Interception Proxy.</p>
 
-<p>The handshake has a serve name indication, a version indication, connection closure and keep-alive exchanges. </p>
+<p><strong>URI Mapping</strong></p>
 
-<p><strong>Comments</strong></p>
-
-<ul>
-<li>The introduction that explains the use cases on TCP-02-03 could use some more work to make it more similar to draft-savolainen-core-coap-websockets-06.<br></li>
-<li>The new parts as they are do not seem as implementable/complete as the other documents. </li>
-<li>Are the keep-alive exchanges exactly the same as ping-pong messages on signalling&amp;websockets docs cause it looks like that to me.</li>
-<li>Carsten should read. Carsten&amp;Hannes should sync.</li>
-</ul>
-
-<hr>
-
-<h4 id="toc_4">Summary draft-bormann-core-coap-sig-00</h4>
-
-<p><a href="https://tools.ietf.org/html/draft-bormann-core-coap-sig-00">CoAP Signaling Messages</a></p>
-
-<p>Signaling goes as any other CoAP message. Options, which can be elective or critical, have a different number space as the rest of the options. The draft defines 5 types of signaling messages. </p>
-
-<ol>
-<li>Capability Messages</li>
-<li>Settings Messages</li>
-<li>Ping and Pong Messages</li>
-<li>Release Messages</li>
-<li>Abort Messages</li>
-</ol>
-
-<p><strong>Comments</strong></p>
-
-<ul>
-<li>Early version. Hannes should read. Carsten&amp;Hannes should sync.</li>
-<li>Capability and Settings should probably be separated. </li>
-<li>Diagrams, etc.</li>
-</ul>
-
-<hr>
-
-<h4 id="toc_5">Summary draft-bormann-core-block-bert-01</h4>
-
-<p><a href="https://tools.ietf.org/html/draft-bormann-core-block-bert-01">Block-wise transfers in CoAP</a></p>
-
-<p>It connects back to the draft-ietf-core-coap-tcp-tls-02 document and how to use block for large payloads. </p>
-
-<p><strong>Comments</strong></p>
-
-<ul>
-<li>References on TCP/TLS doc needed.</li>
-<li>The document could have been writen in more simple terms, it is quite hard to read.<br></li>
-<li>Which of the 3 roles of block option is intended here? </li>
-<li>Value 7 for SZX would indicate a block size of 2048 and was reserved. the usage in this document would indicate that it isn&#39;t reserved anymore?</li>
-<li>Add something like the following to explain the diagrams: <code>Block Option:NUM/M/BlockSize</code></li>
-<li>Sequence diagrams don&#39;t work well as visual representations for blocks.</li>
-</ul>
-
-<hr>
-
-<h4 id="toc_6">Summary draft-savolainen-core-coap-websockets-06</h4>
-
-<p><a href="https://tools.ietf.org/html/draft-savolainen-core-coap-websockets-06">CoAP over WebSockets</a></p>
-
-<p>This document specifies how to retrieve and update CoAP resources using CoAP requests and responses over the WebSocket Protocol.</p>
-
-<p>It introduces few senarios where this would be needed and the rationale for its usage: btw WS endpoints, with a CoAP Forwarding Proxy, and a CoAP Server inside a Web Browser (!?). </p>
-
-<p><code>coap+ws</code> uses port 80 as default. The WebSocket client includes <code>coap.v1</code> in the list of protocols to identify this one.</p>
-
-<p><strong>Comments</strong></p>
-
-<ul>
-<li>What is the different between websockets and a plain tcp socket? </li>
-<li><strong>Shouldn&#39;t we have one document for <q>stream-based transports</q>?</strong></li>
-<li>The introduction and overview are <strong>very good</strong> and useful, I would have like to have this already on draft-ietf-core-coap-tcp-tls-02. </li>
-<li><strong>Shouldn&#39;t we have some template structure for all these documents?</strong></li>
-<li>CoAP Server inside a Web Browser (!?). This sounds like something from <q>Inception</q>.</li>
-<li>The way it is presented, as a Delta over <a href="https://tools.ietf.org/html/rfc7252">RFC7252</a> makes it <strong>very readable</strong>.</li>
-<li>Presents a similar problematic as the signalling document, shouldn&#39;t these be merged?</li>
-</ul>
-
-<h1 id="toc_7">CoAP-TCP-TLS Webex call</h1>
-
-<h3 id="toc_8">10th June 2016</h3>
-
-<h3 id="toc_9">Attendees</h3>
-
-<ul>
-<li>Brian Raymor</li>
-<li>Hannes Tschofenig</li>
-<li>Carsten Bormann</li>
-<li>Simon Levy</li>
-<li>Klaus Hartke</li>
-<li>Matthias Kovatsch</li>
-<li>Jaime Jiménez</li>
-</ul>
-
-<h3 id="toc_10">Discussion</h3>
-
-<p><em>Hannes</em>: Procedures, multiple drafts... merging with the CoAP over Websockets document. Some feel CoAP TCP draft is progressing a bit slow.
-<a href="https://tools.ietf.org/html/draft-tschofenig-core-coap-tcp-tls-05">CoAP-TCP-TLS</a></p>
-
-<p><em>Carsten</em>: Let&#39;s do the Issue tracker later. Target is to move completely to github.  Technically the document is stable. There are some items:</p>
-
-<p><strong>Open Issues</strong></p>
-
-<ul>
-<li>387   Should ALPN always be required? 
-Yes, this is important.</li>
-<li>390   Connection close reason coap-tcp-tls            protocol enhancement.
-Yes, this should be a feature of the signalling.</li>
-<li>394   Ping/pong
-There is a need to keep the NAT binding alive.</li>
-<li>395   Session resumption.
-No, makes it too complex for the server. </li>
-<li>400   Give better guidance on message sizes for CoAP over TCP/TLS.
-Warning that this won&#39;t easilly interface with UDP ones.</li>
-<li>Shim layer issues?</li>
-</ul>
-
-<p><em>Hannes</em>: I feel that there are still several issues open. </p>
-
-<p><em>Carsten</em>: Well we agree on the problem maybe on the solution. </p>
-
-<p><em>Hannes</em>: I proposed a solution and there can be very issues. However, it seems that there is no <q>bert document</q>(?!) is about reinterpreting the message length differently. </p>
-
-<p><em>Carsten</em>: Today we had a discussion about the bert approach and was useful, we need to maintain the architectural integrity.</p>
-
-<p><em>Hannes</em>: My hope was to get something out soon, get feedback, spin the document again, etc. Discussions need to happen on the mailing list. We need to involve them.</p>
-
-<p><em>Carsten</em>: Agreed we got some formal contributions and we need to discuss them. </p>
-
-<p><em>Brian</em>: It feels a bit discouraging to have to wait for your approval on the direction. We should have iterative discussions. The draft is not stable now at 0.2. </p>
-
-<p><em>Hannes</em>: It takes too long to move this forward. </p>
-
-<p><em>Brian</em>: I agree with Hannes. We can work on the ping-pong issues.</p>
-
-<p><em>Carsten</em>: Some of the changes are big architectural changes. The pingpong issue is rather small. That&#39;s why this is done in separate drafts. Right now the TCP draft is implementable, if we start adding half-baked stuff it is no longer implementable.</p>
-
-<p><em>Brian</em>: It is fine to have some period of unstability. I am concern that the chair is also the editor. </p>
-
-<p><em>Carsten</em>: I am not the chair on this one, Jaime is...</p>
-
-<p><em>Jaime</em>: Have to read it through and understand it better to provide meaningful feedback.</p>
-
-<p>... audio choppy ... </p>
-
-<p><em>Hannes</em>: Is the expectation that each version is implementable standalone? Other issues? Many folks on OMA are interested.</p>
-
-<p><em>Matthias</em>: We don&#39;t care about the speed that much. We need more ...</p>
-
-<hr>
-
-<p>(choppy audio change to phone call)</p>
-
-<hr>
-
-<p><em>Discussion</em>: With Websockets people believe you don&#39;t get firewall, ...issues with proxies, firewalls, etc... it is all funky stuff. </p>
-
-<p><em>Hannes</em>: I would like more information on this, cause it could be interesting. </p>
-
-<p><em>Carsten</em>: Websockets integration is editorial work. A single document for applications, websockets text should be on the tcp/tls document. It is easier to integrate the two documents. </p>
-
-<p><em>Hannes</em>: What about timeline for the integration.</p>
-
-<p><em>Brian</em>: Are we going to use it as is? MQTT uses it. Why would we change the framing. </p>
-
-<p><em>Carsten</em>: Which changes?</p>
-
-<p><em>Brian</em>: The websocket draft calls out a number of cases where there is information removed. The TCP draft would remove the same. </p>
-
-<p><em>Carsten</em>: It is more about ... (couldn&#39;t get that) ... </p>
-
-<p><em>Hannes</em>: The use cases have been described are not the same. The websockets document, the initial handshacking happens over TCP. </p>
-
-<p><em>Klaus</em>: It is more or less the same. </p>
-
-<p><em>Hannes</em>: Simon was suggesting to focus on the handshake mechanism.</p>
-
-<p><em>Klaus</em>: Websockets and TLS is not the same as TLS and TCP.</p>
-
-<p><em>Hannes</em>: Simon, do you still think the idea of using TLS is a good idea? </p>
-
-<p><em>Simon</em>:I think it is something we should entertain, the direction that QUIK took is good.</p>
-
-<p><em>Hannes</em>: Some of the LoWPAN think that link layer security is sufficient. It is just a question about which cypher. </p>
-
-<p><em>Matthias</em>: Do we get the lenght information, signaling, etc, that we need?</p>
-
-<p><em>Hannes</em>: Length yes... rest somewhat.</p>
-
-<p><em>Carsten</em>: There is no way to use the TLS framing as the CoAP framing. We can simply use the websockets framing. We have CoAP over UDP and was good. CoAP over TCP does not add complexity. </p>
-
-<p><em>Hannes</em>: Why was it a good decission?</p>
-
-<p><em>Carsten</em>: CoAP would not exist if we have said that it only works over DTLS.</p>
-
-<p><em>Matthias</em>: The length information we can get it with all three transports, even if there is redundant information. For the signalling, people wanna have some keepalive for their applicaitons, I am not sure this works with TLS. </p>
-
-<p><em>Hannes</em>: I tried to capture all this options in the issue tracker. </p>
-
-<p><em>Matthias</em>: We have a nice assumption that TCP/TLS and Websockets would work, what I see is missing is the signalling. </p>
-
-<p><em>Hannes</em>: I provided a write-up for how to do that. We have two write-ups on the signalling exchange, we have a websockets document, how do we make everyone happy. </p>
-
-<p><em>Klaus</em>: Make divisions for the draft...</p>
-
-<p><em>Matthias</em>: Websockets draft has a technical description is a bit outdated but there is useful text that we could move over. We have to be careful with </p>
-
-<p><em>Hannes</em>: Have Carsten edited the document We have two incomplete versions and we need to ... Brian was confused about which draft to integrate. </p>
-
-<p><em>Klaus</em>: Websockets should be made later. First the signalling document. </p>
-
-<ul>
-<li>Stable 0.2 Document.</li>
-<li>Bert part can be put back. </li>
-<li>Signalling part needs discussion. Best way to do it would be to extract Hannes work and put it on the right place. </li>
-<li>Issues are on the document sent by Hannes/Brian.</li>
-</ul>
-
-<p><em>Matthias/Carsten/Hannes</em>: 
-ClientHello/ServerHello solves issues raised in the issue tracker.</p>
-
-<p>ETC ETC</p>
+<h3 id="toc_3">Comments</h3>
 
 
 

@@ -6,3 +6,7 @@ drafts/IOTSU/Makefile
 *.mkd
 
 drafts/Makefile
+
+temp/draft-ietf-core-coap-tcp-tls.md
+
+temp/draft-ietf-core-http-mapping.md
