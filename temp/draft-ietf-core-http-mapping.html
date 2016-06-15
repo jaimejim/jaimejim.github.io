@@ -454,17 +454,33 @@ pre[class*="language-"] {
 
 <h2 id="toc_0">CoAP HTTP Mapping</h2>
 
-<h3 id="toc_1">What to do next</h3>
+<h3 id="toc_1">Timeline</h3>
 
 <ul>
-<li>Send issues back to authors  <code>@due(16-06-11 21:30)</code>.</li>
-<li>HTTP Mapping Submission IESG draft-ietf-core-http-mapping Second WGLC <code>@due(16-07-15 15:28)</code>.</li>
+<li>Send issues back to authors  <code>@due(16-06-15 21:30)</code>.</li>
+<li>HTTP Mapping Submission IESG draft-ietf-core-http-mapping Second WGLC <code>@due(16-06-22 15:28)</code>.</li>
 <li>HTTP mapping IESG submission <code>@due(16-07-15 15:31)</code>.</li>
+</ul>
+
+<h3 id="toc_2">Comments</h3>
+
+<ul>
+<li>This question might be a naive one but of the existing mappings, why have <code>{+cu}</code> or <code>{+su}</code> if <code>{+tu}</code> superseeds both?</li>
+<li>For the content transcoding part you might want to mention some of the work done in ACE draft-selander-ace-object-security. I leave it to your discretion as content transcoding is not really advisable.</li>
+<li>Which is the implementation status of the draft?</li>
+</ul>
+
+<h3 id="toc_3">Editorial</h3>
+
+<ul>
+<li>First time <code>{+tu}</code> is used probably should be expanded to <q>target uri</q> or similar.</li>
+<li><q>There is no default <strong>mapping</strong> for the HC Proxy URI.</q></li>
+<li><q>it <strong>would</strong> be able to successfully forward.</q></li>
 </ul>
 
 <hr>
 
-<h3 id="toc_2">Summary draft-ietf-core-http-mapping-10</h3>
+<h3 id="toc_4">Summary draft-ietf-core-http-mapping-10</h3>
 
 <p>Describes how to do HTTP-to-CoAP Mapping to allow HTTP clients to access a CoAP Server via a proxy.</p>
 
@@ -523,24 +539,12 @@ Res:  2.05 Content
 
 <p>The HC proxy also performs bidirectional <strong>Media Type Mapping</strong> of <a href="https://tools.ietf.org/html/rfc7231#section-3.1.1.1">Media Types</a> and <a href="https://tools.ietf.org/html/rfc7231#section-3.1.2.2">content encodings</a> into <a href="https://tools.ietf.org/html/rfc7252#section-12.3">CoAP Content-Formats</a></p>
 
-<p>The mapping will depend on whether the application is tightly or loosely coupled with the proxy. For unsupported media types the HC Proxy should simply answer with a <code>415 Unsupported Media Type</code> response.</p>
+<p>The mapping will depend on whether the application is tightly or loosely coupled with the proxy. For HTTP unsupported media types the HC Proxy should simply answer with a <code>415 Unsupported Media Type</code> response.
+When dealing with an unrecognised CoAP <q>cf</q> the HC proxy can use the <code>application/coap-payload</code> and append that content format <code>;cf=</code> whichever is the content format number.</p>
 
-<p><strong>URI Mapping</strong></p>
+<p>CoAP content formats are more limited or tightly coupled to applications than Internet ones. Thus, it is not possible to have fine-grained subclasses and optional parameters, instead you get a simple integer value. To solve that the draft optionally proposes looser coupling for specific types like XML, JSON or others.</p>
 
-<h3 id="toc_3">Comments</h3>
-
-<ul>
-<li>First time <code>{+tu}</code> is used probably should be expanded to <q>target uri</q>.</li>
-<li>Of the existing mappings, why have <code>{+cu}</code> or <code>{+su}</code> if <code>{+tu}</code> superseeds both?</li>
-<li>Which is the implementation status of this?</li>
-</ul>
-
-<h3 id="toc_4">Editorial</h3>
-
-<ul>
-<li>There is no default <strong>mapping</strong> for the HC Proxy URI.</li>
-<li>it <strong>would</strong> be able to successfully forward.</li>
-</ul>
+<p>Although possible, <strong>content transcoding</strong> is generally not advisable as it would tamper with the payload and might cause loss of information. </p>
 
 
 
