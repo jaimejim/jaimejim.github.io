@@ -472,7 +472,7 @@ pre[class*="language-"] {
 
 <p>They define basic <a href="https://tools.ietf.org/html/draft-ietf-core-http-mapping-10#section-4">use cases</a>: legacy building control apps, making sensor data available to 3rd parties and smartphone for using home sensors. </p>
 
-<p>The mapping has multiple parts: URI Mapping, Media Type Mapping, Response Mapping and Other Addtional Mapping Guidelines. </p>
+<p>The mapping has multiple parts: URI Mapping, Media Type Mapping, Response Mapping and Other Additional Mapping Guidelines. </p>
 
 <p><a href="https://tools.ietf.org/html/draft-ietf-core-http-mapping-10#section-5">CoAP URI mapping</a> is needed on cases where <code>coap</code> and <code>coaps</code> are is not supported by default on browsers/network tools. </p>
 
@@ -500,7 +500,30 @@ qq = [ &quot;?&quot; query ]      </code></pre></div>
 
 <p><code>http://p.example.com/hc?s=coaps&amp;hp=s.example.com&amp;p=/light&amp;q=on</code></p>
 
-<p>There is a <strong>discovery</strong>  process for the HC functionality both on the HTTP and the CoAP side. For CoAP devices, they should get back an anchor URI of the HC proxy as well as the URI mapping.</p>
+<p>There is a <strong>discovery</strong>  process for the HC functionality both on the HTTP and the CoAP side. A sample discovery on the HTTP would look like this:</p>
+
+<div><pre><code class="language-javascript">Req:  GET /.well-known/core?rt=core.hc HTTP/1.1
+      Host: p.example.com
+      
+
+Res:  HTTP/1.1 200 OK
+      Content-Type: application/link-format
+      Content-Length: 18
+      // if plain link-format
+      &lt;/hc&gt;;rt=&quot;core.hc&quot;
+      // if JSON link-format
+      [{&quot;href&quot;:&quot;/hc&quot;,&quot;rt&quot;:&quot;core.hc&quot;}]</code></pre></div>
+
+<p>For CoAP devices, they should also get back an anchor URI of the HC proxy as well as the URI mapping. The following example shows a CoaP request with the <code>hct</code> attribute.</p>
+
+<div><pre><code class="language-javascript">Req:  GET coap://[ff02::1]/.well-known/core?rt=core.hc
+Res:  2.05 Content
+      &lt;/hc&gt;;anchor=&quot;http://p.example.com&quot;;
+      rt=&quot;core.hc&quot;;hct=&quot;?uri={+tu}&quot;</code></pre></div>
+
+<p>The HC proxy also performs bidirectional <strong>Media Type Mapping</strong> of <a href="https://tools.ietf.org/html/rfc7231#section-3.1.1.1">Media Types</a> and <a href="https://tools.ietf.org/html/rfc7231#section-3.1.2.2">content encodings</a> into <a href="https://tools.ietf.org/html/rfc7252#section-12.3">CoAP Content-Formats</a></p>
+
+<p>The mapping will depend on whether the application is tightly or loosely coupled with the proxy. For unsupported media types the HC Proxy should simply answer with a <code>415 Unsupported Media Type</code> response.</p>
 
 <p><strong>URI Mapping</strong></p>
 
@@ -514,7 +537,10 @@ qq = [ &quot;?&quot; query ]      </code></pre></div>
 
 <h3 id="toc_4">Editorial</h3>
 
-<p>There is no default <strong>mapping</strong> for the HC Proxy URI.</p>
+<ul>
+<li>There is no default <strong>mapping</strong> for the HC Proxy URI.</li>
+<li>it <strong>would</strong> be able to successfully forward.</li>
+</ul>
 
 
 
