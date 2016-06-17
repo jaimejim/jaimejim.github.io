@@ -452,23 +452,33 @@ pre[class*="language-"] {
 
 <body>
 
-<h2 id="toc_0">CoAP TCP TLS</h2>
+<h2 id="toc_0">Status CoAP TCP/TLS</h2>
+
+<p>author: Jaime Jiménez</p>
 
 <h3 id="toc_1">Timeline</h3>
 
 <ol>
-<li>Announce Brian as editor.</li>
-<li>Announce Carsten as author for this doc, no chair hat.</li>
-<li>✔ Announce the new Github repo.</li>
-<li>Move issues (10) to Github, copy-paste (Brian to confirm to Jaime) and then close on the tracker.</li>
-<li>✔ Hannes and Carsten to work on one signaling document...
+<li class="task-list-item"><input type="checkbox"> Announce Brian as editor.
+</li>
+<li class="task-list-item"><input type="checkbox"> Announce Carsten as author for this doc, no chair hat.
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Announce the new Github repo.
+</li>
+<li class="task-list-item"><input type="checkbox"> Move issues (10) to Github, copy-paste (Brian to confirm to Jaime) and then close on the tracker. Add Travis validation.
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Hannes and Carsten to work on one signaling document...
 
 <ul>
 <li>... <del>as part of draft-ietf-core-coap-tcp-tls-03?</del></li>
-<li>... as draft-bormann-core-coap-sig-00, then merge afterwards with tcp-tls-xx . Make draft available on separate Github repo.</li>
-</ul></li>
-<li>When ready add core-coap-websockets-XX. Get help from Klaus. Ready for merging now. Brian to start merging.</li>
-<li>✔ WG Call for consensus of draft-bormann-core-block-bert-01 as we need to add that to tcp-tls-xx too.</li>
+<li class="task-list-item"><input type="checkbox" checked> ... as draft-bormann-core-coap-sig-00, then merge afterwards with tcp-tls-xx . Make draft available on separate Github repo.
+</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox"> When ready add core-coap-websockets-XX. Get help from Klaus. Ready for merging now. Brian to start merging.
+</li>
+<li class="task-list-item"><input type="checkbox" checked> WG Call for consensus of draft-bormann-core-block-bert-01 as we need to add that to tcp-tls-xx too.
+</li>
 </ol>
 
 <hr>
@@ -611,7 +621,7 @@ pre[class*="language-"] {
 
 <h3 id="toc_10">Discussion</h3>
 
-<p><em>Hannes</em>: Procedures, multiple drafts... merging with the CoAP over Websockets document. Some feel CoAP TCP draft is progressing a bit slow.
+<p><em>Hannes</em>: Procedures, multiple drafts... merging with the CoAP over Websockets document. Some feel CoAP TCP draft is progressing a bit slow.<br>
 <a href="https://tools.ietf.org/html/draft-tschofenig-core-coap-tcp-tls-05">CoAP-TCP-TLS</a></p>
 
 <p><em>Carsten</em>: Let&#39;s do the Issue tracker later. Target is to move completely to github.  Technically the document is stable. There are some items:</p>
@@ -733,7 +743,7 @@ Warning that this won&#39;t easilly interface with UDP ones.</li>
 <li>Issues are on the document sent by Hannes/Brian.</li>
 </ul>
 
-<p><em>Matthias/Carsten/Hannes</em>: 
+<p><em>Matthias/Carsten/Hannes</em>: <br>
 ClientHello/ServerHello solves issues raised in the issue tracker.</p>
 
 <p>ETC ETC</p>
@@ -812,11 +822,11 @@ ClientHello/ServerHello solves issues raised in the issue tracker.</p>
 
 <ul>
 <li>PinPong using resource does not allow for custody option. Also it is too verbose messagewise.</li>
-<li><a href="http://www.ietf.org/mail-archive/web/hybi/current/msg09540.html">hybi discussion as reference</a>. Focuses more on liveness than keepalives, just sends Ping.</li>
-<li> HTTP/2 RFC</li>
+<li><a href="http://www.ietf.org/mail-archive/web/hybi/current/msg09540.html">Hybi discussion as reference</a>. Focuses more on liveness than keepalives, just sends Ping. <a href="https://groups.google.com/forum/#!searchin/spdy-dev/ping/spdy-dev/xgyPztsAKls/HdQUvRdmMZMJ">Firefox discussion</a></li>
+<li><a href="https://tools.ietf.org/html/rfc7540#section-6.7">HTTP/2 RFC</a></li>
 <li><a href="https://tools.ietf.org/html/rfc6520">Heartbeat extension in TLS</a> as reference.</li>
 <li>Discussion on mailing list.</li>
-<li>Move to the Signaling Github.</li>
+<li>Move to the Signalling Github.</li>
 </ul>
 
 
