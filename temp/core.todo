@@ -14,8 +14,6 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
  ✔ Brian Raymor to become editor TCP/TLS Document. yes. @done (16-06-13 15:30) @external
  ✔ Websockets ready for merging  @done (16-06-16 21:11)
  ☐ Brian to move forward on version 03
- ✔ Consensus call on BERT confirmation, then integrate @due(16-06-22 11:21) @done (16-06-22 19:26)
- ✘ Consensus call on BERT confirmation, then integrate @due(16-06-22 11:21) @cancelled (16-06-22 19:31)
  ☐ Consensus call on BERT confirmation, then integrate @due(16-06-22 11:21)
  ☐ Hannes and Simon to accept Github invite.
  ☐ WGLC of draft-ietf-core-coap-tcp-tls (if we choose not to have signalling on the same doc) @due(16-07-16 13:53)
