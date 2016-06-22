@@ -517,6 +517,28 @@ How do I use this script:
 
 <h1 id="toc_2">Introduction</h1>
 
+<p>MQTT is a Client Server publish/subscribe messaging transport (or transfer) protocol. Networkwise it works over a TCP/IP connection. It also supports TLS <a href="https://tools.ietf.org/html/rfc5246">[RFC5246]</a> and WebSockets [RFC6455]. Non-reliable transports (i.e. UDP) are not supported. TCP is used to offer some form of QoS for applications. The pub/sub model is hub and spoke based, though implementations may provide clustered hubs to avoid a single point of failure(EMQTT). There is a separate extension (MQTT-SN), which is not part of the standard) which is adapted more to non-TCP/IP networks, such as UDP/Zigbee etc.</p>
+
+<p>The protocol is very simple, with two main entities a Client and a Server (commonly referred as Broker). The Client is the one initiating the connection to the server, and can take the roles of publisher or subscriber. The Broker is a program or device that acts as an intermediary between Clients which publish and Clients which subscribe. The Broker can accept connections from clients, forward messages and process subscriptions and publications.</p>
+
+<p>These pub/sub pattern is driven by what MQTT calls topics. Those topics are a simple text-form identifiers or labels for an applicaiton message for a communication. A Subscription is an operaiton on a topic, and is associated with a single Session. </p>
+
+<p>MQTT allows filtering topics by means of wildcards, which is a way to perform search on a Broker that contains many topics. it will depend on how the topic name is structured that the wildcards will be more or less effective (i.e. if the topics are aleatorily named, then you cannot search on the Broker).</p>
+
+<p>MQTT also has something called Session (not to confuse with TCP Session) which is a stateful interaction between a Client and a Server. Some Sessions last the same as the TCP session other span accross multiple consecutive network connecitons. </p>
+
+<p>In order to perform a subscription, only the Broker address and the actual topic are required. For example:<br>
+mqtt sub -t &#39;TOPIC&#39; -h &#39;test.mosquitto.org&#39; -v</p>
+
+<p>For a publication, the actual content of the publication is obviously needed too. For example:<br>
+mqtt pub -t &#39;TOPIC&#39; -h &#39;test.mosquitto.org&#39; -m &#39;PUBLICATION&#39;</p>
+
+<p>The biggest strength of MQTT is its simplicity, which has helped to make it very common on prototypes and small deployments everywhere. Nevertheless this is also its biggest drawback. The lack of a standard way to define topics has created a wealth of non-easily-interoperable deployments. They required a good knowledge of the broker topics, namescpace and identifiers in order to enable interoperability. </p>
+
+<p>The Device Management space suffers from that lack too, only recently there have been some efforts to standardize Device Management over MQTT (IBM Watson https://docs.internetofthings.ibmcloud.com/applications/mqtt.html, Eclipse Kura http://eclipse.github.io/kura/ref/mqtt-namespace.html), they focus on identifying a common Namespace and creating new identifiers for applicaitons working over MQTT (i.e. on Eclipse Kura they would be account<u>name, client</u>id, app<u>id, resource</u>id). </p>
+
+<p>Due to its simplicity and popularity there is a wealth of MQTT implementations to choose from such as the Eclipse Mosquitto and Paho projects, the  Mosca broker and the mqttjs client.</p>
+
 <p>MQTT is defined by OASIS as:</p>
 
 <p><div class="mermaid"><br>
