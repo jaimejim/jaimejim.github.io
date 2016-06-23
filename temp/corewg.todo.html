@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>corewg.todo</title>
+<title>corewg_pub.todo</title>
 <style type="text/css">
  * {
   margin:0; padding:0;
@@ -31,10 +31,10 @@
 <span class="note">IETF - CoRE Working Group </span>
 <span class="sep">-------------------------</span>
 <span class="empty-line"></span>
+<span class="note">NB: Except for Milestones, @due dates are orientative.</span>
+<span class="empty-line"></span>
 <span class="header">CoRE WG General:</span>
 <span class="open"> <span class="bullet-pending">☐</span> Github right now has all users, we will move slowly towards a pull request. All authors should have commit access and everyone else (including authors) send pull request. Current set up. New stuff goes to the Github repository, old stuff goes in the IETF issue tracker. So far TCP/TLS, ETCH and CBOR-YANG are there, SenML to go there too. </span>
-<span class="open"> <span class="bullet-pending">☐</span> Split this document as two: progress report and internal items. Add "@ext" tag to the stuff we wanna share, remove "@due" tag from those, unless it is a milestone, optionally just write a tentative date. Remove the done tasks. <span class="tag-high">@high</span></span>
-<span class="open"> <span class="bullet-pending">☐</span> Check RFC formatting and send feedback on the line spacing for https://core-wg.github.io/etch/ and check more on http://greenbytes.de/tech/webdav/rfc2629xslt/rfc2629xslt.html </span>
 <span class="open"> <span class="bullet-pending">☐</span> Prepare agenda for CoRE WG, try to have a draft agenda <span class="tag">@due(16-06-26 14:01)</span>, actual deadline <span class="tag">@due(16-07-08 14:01) </span><span class="tag-high">@high</span> </span>
 <span class="empty-line"></span>
 <span class="header">TCP TLS draft-ietf-core-coap-tcp-tls:</span>
@@ -43,16 +43,14 @@
 <span class="done"> <span class="bullet-done">✔</span> We need to discuss whether the signalling messages can be push to a different document. Discussion on Mailing list <span class="tag-done">@Carsten @done (16-06-13 15:29). </span></span>
 <span class="done"> <span class="bullet-done">✔</span> Brian Raymor to become editor TCP/TLS Document. yes. <span class="tag-done">@done (16-06-13 15:30) @external</span></span>
 <span class="done"> <span class="bullet-done">✔</span> Websockets ready for merging  <span class="tag-done">@done (16-06-16 21:11)</span></span>
-<span class="open"> <span class="bullet-pending">☐</span> Brian to move forward on version 03</span>
+<span class="done"> <span class="bullet-done">✔</span> Brian to move forward on version 03 <span class="tag-done">@done (16-06-23 12:13)</span></span>
+<span class="done"> <span class="bullet-done">✔</span> Consensus call on BERT confirmation, then integrate <span class="tag-done">@due(16-06-22 11:21) @done (16-06-22 19:26)</span></span>
 <span class="open"> <span class="bullet-pending">☐</span> Consensus call on BERT confirmation, then integrate <span class="tag">@due(16-06-22 11:21)</span></span>
-<span class="open"> <span class="bullet-pending">☐</span> Hannes and Simon to accept Github invite.</span>
 <span class="open"> <span class="bullet-pending">☐</span> WGLC of draft-ietf-core-coap-tcp-tls (if we choose not to have signalling on the same doc) <span class="tag">@due(16-07-16 13:53)</span></span>
 <span class="open"> <span class="bullet-pending">☐</span> IESG Submission of draft-ietf-core-coap-tcp-tls <span class="tag">@due(16-10-10 20:54) </span></span>
-<span class="open"> <span class="bullet-pending">☐</span> Check out https://trac.tools.ietf.org/wg/core/trac/ticket/393 <span class="tag">@jaime </span><span class="tag-low">@low</span> <span class="tag">@due(16-06-19 21:49)</span></span>
-<span class="open"> <span class="bullet-pending">☐</span> Read http://www.ietf.org/mail-archive/web/hybi/current/msg09540.html https://tools.ietf.org/html/rfc6520 <span class="tag">@due(16-06-19 21:58)</span></span>
-<span class="empty-line"> </span>
+<span class="empty-line"></span>
 <span class="header">ETCH draft-ietf-core-etch:</span>
-<span class="open"> <span class="bullet-pending">☐</span> FETCH examples to be sent by Peter/Carsten <span class="tag">@due(16-06-21 13:49) </span><span class="tag-critical">@</span><span class="tag-critical">critical</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> FETCH examples to be sent by Peter/Carsten <span class="tag">@due(16-06-21 13:49) </span><span class="tag-high">@</span><span class="tag-high">high</span></span>
 <span class="open"> <span class="bullet-pending">☐</span> ETCH First cover issues, then ask for new version (2 weeks). Then ask for feedback on mailing list (2 weeks). If there are no objections then WGLC (2 weeks) <span class="tag">@Jaime @due(16-05-30 13:42)</span></span>
 <span class="open"> <span class="bullet-pending">☐</span> WGLC of draft-ietf-core-etch <span class="tag">@due(16-06-22 13:54)</span></span>
 <span class="open"> <span class="bullet-pending">☐</span> IESG Submission of draft-ietf-core-etch <span class="tag">@due(16-07-25 15:25)</span></span>
@@ -61,19 +59,17 @@
 <span class="header">  Notes:</span>
 <span class="note">    Summary available http://jaimejim.github.io/temp/draft-ietf-core-http-mapping</span>
 <span class="done"> <span class="bullet-done">✔</span> HTTP mapping Finished, no issues left. Read and send to second WGLC (2 weeks). <span class="tag-done">@Jaime @due(16-06-11 21:30) @critical @done (16-06-16 10:59)</span></span>
-<span class="open"> <span class="bullet-pending">☐</span> WGLC takes a couple of weeks, authors need a couple of weeks for changes. Thus WGLC 1 month before (1st week of June). The assumption is that we will find a couple of nits that need to be done by the authors. </span>
 <span class="open"> <span class="bullet-pending">☐</span> WGLC (only one Week) of draft-ietf-core-http-mapping <span class="tag">@due(16-06-25 13:58) </span><span class="tag-critical">@</span><span class="tag-critical">critical</span></span>
 <span class="open"> <span class="bullet-pending">☐</span> IESG Submission of draft-ietf-core-http-mapping <span class="tag">@due(16-07-15 15:28)</span></span>
 <span class="empty-line"></span>
 <span class="header">CoRE-Links draft-ietf-core-links-json:</span>
-<span class="open"> <span class="bullet-pending">☐</span> Core Links has still some Issues, Draft with no issues to be submitted <span class="tag">@due(16-06-27 15:36) @Carsten</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> Core Links has still some Issues, Draft with no issues to be submitted <span class="tag">@due(16-06-27 15:36)</span></span>
 <span class="note">     #402  A reference implementation for links-json would be useful. | @Carsten</span>
 <span class="note">     #403  Should the RFC 7390 part of links-json be split off? | YES. </span>
 <span class="note">     #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers | </span>
 <span class="open"> <span class="bullet-pending">☐</span> Jaime to send JSON Objects of LWM2M to Carsten <span class="tag">@Jaime </span><span class="tag-critical">@</span><span class="tag-critical">critical</span></span>
 <span class="open"> <span class="bullet-pending">☐</span> WGLC of draft-ietf-core-links-json <span class="tag">@due(16-07-02 14:00)</span></span>
 <span class="open"> <span class="bullet-pending">☐</span> IESG Submission of draft-ietf-core-links-json <span class="tag">@due(16-08-01 15:28)</span></span>
-<span class="open"> <span class="bullet-pending">☐</span> Try to read and make summary (as for HTTP or TCP) <span class="tag">@jaime </span><span class="tag-high">@</span><span class="tag-high">high</span></span>
 <span class="empty-line"></span>
 <span class="header">RD draft-ietf-core-resource-directory:</span>
 <span class="done"> <span class="bullet-done">✔</span> Read diffs provided by Oscar: https://tools.ietf.org/rfcdiff?url1=draft-ietf-core-resource-directory-07.txt&amp;url2=http://users.piuha.net/eoscdia/draft-ietf-core-resource-directory-08.txt  <span class="tag-done">@Carsten @Peter @done (16-06-16 10:57)</span></span>
@@ -83,30 +79,21 @@
 <span class="open"> <span class="bullet-pending">☐</span> Start preparing the Writeup for the IESG <span class="tag">@Oscar @Jaime</span>, publish on Oscar/Jaime github or on CoRE's misc github <span class="tag">@due(16-07-01 14:12)</span></span>
 <span class="open"> <span class="bullet-pending">☐</span> WGLC <span class="tag">@due(16-08-01 15:28)</span>, depending on W3C-TD dependency </span>
 <span class="open"> <span class="bullet-pending">☐</span> IESG Submission of draft-ietf-core-resource-directory <span class="tag">@due(16-09-01 15:28)</span></span>
-<span class="open"> <span class="bullet-pending">☐</span> Try to read and make summary (as for HTTP or TCP) <span class="tag">@jaime </span><span class="tag-high">@</span><span class="tag-high">high</span></span>
 <span class="empty-line"></span>
 <span class="header">SenML draft-ietf-core-senml:</span>
 <span class="open"> <span class="bullet-pending">☐</span> Ari to send updates, change editorial items. <span class="tag">@due(16-06-16 23:52) </span><span class="tag-critical">@</span><span class="tag-critical">critical</span></span>
-<span class="open"> <span class="bullet-pending">☐</span> Issue 407. Waiting for reply from authors. Say that we want to have the result at noon next Monday. Is this document ready for WGLC (no tickets)</span>
 <span class="open"> <span class="bullet-pending">☐</span> WGLC of draft-ietf-core-senml <span class="tag">@due(16-06-25 14:00)</span></span>
 <span class="open"> <span class="bullet-pending">☐</span> IESG Submission of draft-ietf-core-senml  <span class="tag">@due(16-08-01 15:28)</span></span>
 <span class="empty-line"></span>
 <span class="header">COMI-YANG CBOR draft-ietf-core-yang-cbor:</span>
 <span class="header">  Notes: </span>
-<span class="note">     YANG --&gt; Data Modeling  (Andy Biermann, Martin Björklund, Jürgen Schönwälder)</span>
-<span class="note">     COMI Work is about laying the groundwork. Target would be to have things a bit like https://tools.ietf.org/html/rfc7388 </span>
-<span class="note">     Backward compatibility </span>
-<span class="note">     Target is to have in Berlin a WG document</span>
 <span class="header">     Related documents:</span>
 <span class="note">     draft-bormann-core-uri-cbor-query-latest.md </span>
 <span class="note">     draft-ietf-core-yang-cbor-latest.md</span>
 <span class="note">     draft-somaraju-core-sid-latest.md</span>
 <span class="note">     draft-turner-cool-problem-latest.md</span>
 <span class="note">     draft-veillette-core-cool-latest.md</span>
-<span class="open"> <span class="bullet-pending">☐</span> COMI Meeting Wednesday call for WG document?</span>
-<span class="open"> <span class="bullet-pending">☐</span> Document status is early. SID? Work TBD, https://tools.ietf.org/html/draft-somaraju-core-sid-00   </span>
-<span class="open"> <span class="bullet-pending">☐</span> IESG Submission of draft-ietf-core-yang-cbor <span class="tag">@due(17-01-10 21:01) </span></span>
-<span class="open"> <span class="bullet-pending">☐</span> LWM2M/IPSO Object to YANG <span class="tag">@Jaime @due(16-07-01 13:02) </span><span class="tag-critical">@critical</span> </span>
+<span class="open"> <span class="bullet-pending">☐</span> IESG Submission of draft-ietf-core-yang-cbor</span>
 <span class="empty-line"> </span>
 <span class="header">Interfaces draft-ietf-core-interfaces:</span>
 <span class="note"> Notes</span>
@@ -119,8 +106,7 @@
 <span class="header">Block draft-ietf-core-block:</span>
 <span class="note"> Notes</span>
 <span class="note">   To get well-known-core and firmware upgrades. </span>
-<span class="open"> <span class="bullet-pending">☐</span> IESG Phase. Few comments from Alexey that Carsten has to address, mostly editorial. <span class="tag">@Carsten </span><span class="tag-critical">@</span><span class="tag-critical">critical</span></span>
-<span class="open"> <span class="bullet-pending">☐</span> Try to read and make summary (as for HTTP or TCP). Dig up the comments by Alexey and see what is still open <span class="tag">@jaime </span><span class="tag-high">@</span><span class="tag-high">high</span></span>
+<span class="open"> <span class="bullet-pending">☐</span> IESG Phase. </span>
 <span class="empty-line"></span>
 <span class="header">PubSub draft-ietf-koster-pubsub:</span>
 <span class="note"> Notes</span>
@@ -134,11 +120,6 @@
 <span class="note">   To be presented in Berlin?</span>
 <span class="empty-line"></span>
 <span class="sep">-------------</span>
-<span class="empty-line"></span>
-<span class="header">NEXT WEEK: </span>
-<span class="open"> <span class="bullet-pending">☐</span> Milestones https://datatracker.ietf.org/wg/core/milestones/ </span>
-<span class="open"> <span class="bullet-pending">☐</span> Code to get timeline out of this tasks <span class="tag">@Jaime </span><span class="tag-high">@</span><span class="tag-high">high</span></span>
-<span class="open"> <span class="bullet-pending">☐</span> Prepare slides for IETF, discuss what to present.</span>
 <span class="empty-line"></span>
 <span class="header">Milestones:</span>
 <span class="empty-line"></span>
@@ -160,36 +141,7 @@
 <span class="header">Important Dates:</span>
 <span class="open">  <span class="bullet-pending">☐</span> Internet Draft Cut-off <span class="tag">@due(16-07-08 09:31)</span></span>
 <span class="open">  <span class="bullet-pending">☐</span> CoAP Implementation Workshop <span class="tag">@due(16-09-12 12:32) </span></span>
-<span class="open">  <span class="bullet-pending">☐</span> Forward Matteo CoRE Mailing list message matteo.collina@gmail.com <span class="tag">@Jaime</span></span>
+<span class="empty-line"></span>
 <span class="empty-line">  </span>
-<span class="empty-line">  </span>
-<span class="empty-line"></span>
-<span class="empty-line"></span>
-<span class="empty-line"></span>
-<span class="sep-archive">＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</span>
-<span class="note">// ⌘+R to see groups of tasks</span>
-<span class="note">// c, tab — @critical;</span>
-<span class="note">// h, tab — @high;</span>
-<span class="note">// l, tab — @low;</span>
-<span class="note">// s, tab — @started</span>
-<span class="note">// ⌘ + enter or ⌘ + i: new task</span>
-<span class="note">// ⌘ + d: toggle task as completed.</span>
-<span class="note">// ⌘ + shift + a will archive the done tasks, by removing them from your list and appending them to the bottom of the file under Archive project</span>
-<span class="note">// ctrl + c: toggle task as cancelled on Mac</span>
-<span class="note">// ⌘+shift+U opens the URL under the cursor www.github.com or skype:nickname</span>
-<span class="note">// ctrl+o opens the file in sublime</span>
-<span class="note">// Convert current document to HTML with ⌘ + shift + p : Types Task View as HTML</span>
-<span class="sep-archive">＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</span>
-<span class="empty-line"></span>
-<span class="empty-line"></span>
-<span class="header">Archive:</span>
-<span class="done"> <span class="bullet-done">✔</span> Meet Carsten <span class="tag-done">@done (16-05-23 15:16) @project(CoRE WG General)</span></span>
-<span class="done"> <span class="bullet-done">✔</span> Moving TCP repository to Github. Write message to mailing list once done. <span class="tag-done">@Carsten  @done (16-06-07 21:31) @project(TCP TLS draft-ietf-core-coap-tcp-tls)</span></span>
-<span class="done"> <span class="bullet-done">✔</span> Wednesday Signaling document for TCP <span class="tag-done">@Carsten @done (16-06-11 23:51) @project(TCP TLS draft-ietf-core-coap-tcp-tls)</span></span>
-<span class="done"> <span class="bullet-done">✔</span> ETCH Add items to Issue tracker: examples of fetch. <span class="tag-done">@due(16-05-30 13:42) @critical  @done (16-05-30 18:31) @project(ETCH draft-ietf-core-etch)</span></span>
-<span class="done"> <span class="bullet-done">✔</span> RD discussion with authors and Chairs  <span class="tag-done">@done (16-06-04 08:23) @project(RD draft-ietf-core-resource-directory)</span></span>
-<span class="done"> <span class="bullet-done">✔</span> Ask for WGLC on Mailing list. Jaime to be shepherd of the document ask on mailing list (mention Carsten might be coauthor) <span class="tag-done">@Jaime @due(16-06-02 15:53) @critical @done (16-05-30 16:54) @project(SenML draft-ietf-core-senml)</span></span>
-<span class="done"> <span class="bullet-done">✔</span> YANG CBOR discussion.  <span class="tag-done">@done (16-06-11 23:52) @project(COMI - YANG CBOR draft-ietf-core-yang-cbor)</span></span>
-<span class="done"> <span class="bullet-done">✔</span> Publish/Subscribe discussion. <span class="tag-done">@done (16-06-07 21:10). It relates to the Streaming discussion on W3C. Similar problem/solution as websockets in the Web, to get tight-coupling. @project(NEXT WEEK)</span></span>
 </pre>
 </body></html>
