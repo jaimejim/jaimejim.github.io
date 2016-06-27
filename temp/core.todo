@@ -3,9 +3,9 @@ IETF - CoRE Working Group
 
 CoRE WG General:
  ☐ [GEN] Github right now has all users, we will move slowly towards a pull request. All authors should have commit access and everyone else (including authors) send pull request. Current set up. New stuff goes to the Github repository, old stuff goes in the IETF issue tracker. So far TCP/TLS, ETCH and CBOR-YANG are there, SenML to go there too. 
- ☐ [GEN] Split this document as two: progress report and internal items. Add "@ext" tag to the stuff we wanna share, remove "@due" tag from those, unless it is a milestone, optionally just write a tentative date. Remove the done tasks. @high
- ☐ [GEN] Check RFC formatting and send feedback on the line spacing for https://core-wg.github.io/etch/ and check more on http://greenbytes.de/tech/webdav/rfc2629xslt/rfc2629xslt.html 
- ☐ [GEN] Prepare agenda for CoRE WG, try to have a draft agenda @due(16-06-26 14:01), actual deadline @due(16-07-08 14:01) @high 
+ ☐ [GEN] Split this document as two: progress report and internal items. Add "@pri" tag to the stuff we don't wanna share, remove "@due" tag from those, unless it is a milestone, optionally just write a tentative date. Remove the done tasks. @high @pri
+ ☐ [GEN] Check RFC formatting and send feedback on the line spacing for https://core-wg.github.io/etch/ and check more on http://greenbytes.de/tech/webdav/rfc2629xslt/rfc2629xslt.html @jaime  
+ ☐ [GEN] Prepare agenda for CoRE WG, try to have a draft agenda @due(16-06-26 14:01), actual deadline @due(16-07-08 14:01), Ask for agenda items and try to define objectives for the time we are using (specific issues or consensus). Check the old items. Look into archives and send the requests @jaime @critical @due(16-07-02 14:27) @pri
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
   Notes: 
@@ -14,9 +14,11 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
  ✔ [TCP] Brian Raymor to become editor TCP/TLS Document. yes. @done (16-06-13 15:30) @external
  ✔ [TCP] Websockets ready for merging  @done (16-06-16 21:11)
  ✔ [TCP] Brian to move forward on version 03 @done (16-06-24 19:15)
- ✔ [TCP] Consensus call on BERT confirmation, then integrate @due(16-06-22 11:21) @done (16-06-22 19:26)
  ✔ [TCP] Consensus call on BERT confirmation, then integrate @due(16-06-22 11:21) @done (16-06-24 19:14)
  ✔ [TCP] Hannes and Simon to accept Github invite. @done (16-06-24 19:15)
+ ☐ [TCP] Talk to AD or RFC Editor about number of authors.
+ ☐ [TCP] Check with Brian status of https://core-wg.github.io/coap-tcp-tls/ @high @due(16-06-30 14:31)
+ ☐ [TCP] Signaling draft, ask for adoption of v02. @due(16-06-28 14:32) @critical @jaime
  ☐ [TCP] WGLC of draft-ietf-core-coap-tcp-tls (if we choose not to have signalling on the same doc) @due(16-07-16 13:53)
  ☐ [TCP] IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54) 
  ✔ [TCP] Check out https://trac.tools.ietf.org/wg/core/trac/ticket/393 @jaime @low @due(16-06-19 21:49) @done (16-06-24 19:22)
@@ -25,7 +27,7 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
 ETCH draft-ietf-core-etch:
  ✔ [ETCH] FETCH examples to be sent by Peter/Carsten @due(16-06-21 13:49) @critical @done (16-06-24 18:52)
  ✔ [ETCH] ETCH First cover issues, then ask for new version (2 weeks). Then ask for feedback on mailing list (2 weeks). If there are no objections then WGLC (2 weeks) @Jaime @due(16-05-30 13:42) @done (16-06-24 19:15)
- ☐ [ETCH] WGLC of draft-ietf-core-etch @due(16-06-25 13:54)
+ ☐ [ETCH] WGLC of draft-ietf-core-etch @due(16-06-28 14:34) @jaime @critical
  ☐ [ETCH] IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
  
 HTTP draft-ietf-core-http-mapping:
@@ -33,31 +35,32 @@ HTTP draft-ietf-core-http-mapping:
     Summary available http://jaimejim.github.io/temp/draft-ietf-core-http-mapping
  ✔ [HTTP] HTTP mapping Finished, no issues left. Read and send to second WGLC (2 weeks). @Jaime @due(16-06-11 21:30) @critical @done (16-06-16 10:59)
  ✔ [HTTP] WGLC takes a couple of weeks, authors need a couple of weeks for changes. Thus WGLC 1 month before (1st week of June). The assumption is that we will find a couple of nits that need to be done by the authors.  @done (16-06-24 19:16)
- ☐ [HTTP] WGLC (only one Week) of draft-ietf-core-http-mapping @due(16-06-24 13:58) @critical
+ ☐ [HTTP] WGLC (only one Week) of draft-ietf-core-http-mapping @due(16-06-29 13:58) @critical
  ☐ [HTTP] IESG Submission of draft-ietf-core-http-mapping @due(16-07-15 15:28)
 
 CoRE-Links draft-ietf-core-links-json:
- ☐ [LNKS] Core Links has still some Issues, Draft with no issues to be submitted @due(16-06-27 15:36) @Carsten
+ ☐ [LNKS] Core Links has still some Issues, Draft with no issues to be submitted @due(16-06-29 15:36) @Carsten
      #402  A reference implementation for links-json would be useful. | @Carsten
      #403  Should the RFC 7390 part of links-json be split off? | YES. 
      #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers | 
- ☐ [LNKS] Jaime to send JSON Objects of LWM2M to Carsten @Jaime @critical
+ ☐ [LNKS] Jaime to send JSON Objects of LWM2M to Carsten @Jaime @high
  ☐ [LNKS] WGLC of draft-ietf-core-links-json @due(16-07-02 14:00)
  ☐ [LNKS] IESG Submission of draft-ietf-core-links-json @due(16-08-01 15:28)
  ☐ [LNKS] Try to read and make summary (as for HTTP or TCP) @jaime @high
 
 RD draft-ietf-core-resource-directory:
  ✔ [RD] Read diffs provided by Oscar: https://tools.ietf.org/rfcdiff?url1=draft-ietf-core-resource-directory-07.txt&url2=http://users.piuha.net/eoscdia/draft-ietf-core-resource-directory-08.txt  @Carsten @Peter @done (16-06-16 10:57)
- ☐ [RD] Should RD include additional functionality for W3C-TD? @due(16-06-11 20:57)
- ☐ [RD] New version draft-ietf-core-resource-directory-08 to be submitted @due(16-06-19 14:14) @critical
+ ✔ [RD] Should RD include additional functionality for W3C-TD? @due(16-06-11 20:57) @done (16-06-27 14:42)
+ ☐ [RD] New version draft-ietf-core-resource-directory-08 to be submitted @due(16-06-19 14:14) @jaime ,to ping him @critical
  ✔ Shepherd: WGLC, IETF process. Oscar to be shepherd after Carsten reads and comments.  @done (16-06-16 14:11)
- ☐ [RD] Start preparing the RD Writeup for the IESG @Oscar @Jaime, publish on Oscar/Jaime github or on CoRE's misc github @due(16-06-24 14:12)
+ ☐ [RD] Start preparing the RD Writeup for the IESG @Oscar @Jaime, publish on Oscar/Jaime github or on CoRE's misc github @due(16-07-04 14:42) @low
  ☐ [RD] WGLC @due(16-08-01 15:28), depending on W3C-TD dependency 
  ☐ [RD] IESG Submission of draft-ietf-core-resource-directory @due(16-09-01 15:28)
  ☐ [RD] Try to read and make summary (as for HTTP or TCP) @jaime @high
 
 SenML draft-ietf-core-senml:
- ☐ [SML] Ari to send SenML updates, change editorial items. @due(16-06-16 23:52) @critical
+ ☐ [SML] Send reminder to Cullen to push over the repo to the WG site. @critical @due(16-06-28 14:44) @jaime
+ ☐ [SML] Ari to send SenML updates, change editorial items. @due(16-07-02 14:43) @critical 
  ☐ [SML] Issue 407. Waiting for reply from authors. Say that we want to have the result at noon next Monday. Is this document ready for WGLC (no tickets)
  ☐ [SML] WGLC of draft-ietf-core-senml @due(16-06-25 14:00)
  ☐ [SML] IESG Submission of draft-ietf-core-senml  @due(16-08-01 15:28)
@@ -65,29 +68,39 @@ SenML draft-ietf-core-senml:
 COMI-YANG CBOR draft-ietf-core-yang-cbor:
   Notes: 
      Target like https://tools.ietf.org/html/rfc7388 
+     Main doc https://tools.ietf.org/html/draft-ietf-core-yang-cbor-01
      Related documents:
      draft-bormann-core-uri-cbor-query-latest.md 
      draft-ietf-core-yang-cbor-latest.md
      draft-somaraju-core-sid-latest.md
      draft-turner-cool-problem-latest.md
      draft-veillette-core-cool-latest.md
- ✔ [COMI] COMI Meeting Wednesday call for WG document? @done (16-06-24 19:17)
- ☐ [COMI] IESG Submission of draft-ietf-core-yang-cbor @due(17-01-10 21:01) 
- ☐ [COMI] LWM2M/IPSO Object to YANG @Jaime @due(16-07-01 13:02) @critical 
+ ✔ [COYA] COMI Meeting Wednesday call for WG document? @done (16-06-24 19:17)
+ ☐ [COYA] Call for adoption for the merge document??
+ ☐ [COYA] Plan ad-hoc meeting on device management during IETF96.
+ ☐ [COYA] IESG Submission of draft-ietf-core-yang-cbor @due(17-01-10 21:01) 
+ ☐ [COYA] LWM2M/IPSO Object to YANG @Jaime @due(16-07-01 13:02) @critical 
  
+COMI Draft:
+ ☐ [COMI] draft-ietf-core-comi (checkproper name) @due(16-08-27 15:01)
+
 Interfaces draft-ietf-core-interfaces:
  Notes
    Draft has expired. It needs to be changed a lot (MiKos) 
    Collections seems useful. Link Bindings, futures....
    Should it be informational or normative?
+ ☐ [INTF] Christian Groves to become Editor? @due(16-06-27 14:51) 
  ☐ [INTF] Restart work after W3C in Beijing @due(16-08-06 21:03)
  ☐ [INTF] IESG Submission of draft-ietf-core-interfaces @due(17-03-01 21:03)
   
 Block draft-ietf-core-block:
  Notes
    To get well-known-core and firmware upgrades. 
- ☐ [BLCK] IESG Phase. Few comments from Alexey that Carsten has to address, mostly editorial. @Carsten @critical
- ☐ [BLCK] Try to read and make summary (as for HTTP or TCP). Dig up the comments by Alexey and see what is still open @jaime @high
+ ☐ [BLCK] IESG Phase. Few comments from Alexey that Carsten has to address, mostly editorial. @Carsten @due(16-07-04 14:53)
+ ☐ [BLCK] Try to read and make summary (as for HTTP or TCP). Dig up the comments by Alexey and see what is still open @jaime @low
+
+Freezer
+---------
 
 PubSub draft-ietf-koster-pubsub:
  Notes
@@ -103,35 +116,32 @@ Alternative transports draft-ietf-bill:
 -------------
 
 NEXT WEEK: 
- ☐ Milestones https://datatracker.ietf.org/wg/core/milestones/ 
- ☐ Code to get timeline out of this tasks @Jaime @high
- ☐ Prepare slides for IETF, discuss what to present.
+ ✔ Milestones https://datatracker.ietf.org/wg/core/milestones/  @done (16-06-27 14:56)
+ ✔ Distributed IoT Internet @done (16-06-27 15:20) https://trac.tools.ietf.org/group/irtf/trac/wiki/blockchain-federation
+ ☐ Code to get timeline out of this tasks @jaime @low
+ ☐ Prepare slides for IETF @due(16-07-01 15:20) @high https://tools.ietf.org/wg/core/agenda
 
 Milestones:
 
  Issue WGA:
- Issue WGLC:  
+   ☐ draft-ietf-core-comi (check proper name) @due(16-08-27 15:01)
 
  Submissions to IESG:
    ☐ IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
    ☐ IESG Submission of draft-ietf-core-http-mapping @due(16-07-15 15:28)
-   ☐ IESG Submission of draft-ietf-core-links-json @due(16-08-01 15:28)
-   ☐ IESG Submission of draft-ietf-core-senml  @due(16-08-01 15:28)
+   ☐ IESG Submission of draft-ietf-core-links-json @due(16-08-15 15:28)
+   ☐ IESG Submission of draft-ietf-core-senml  @due(16-08-15 15:28)
+   ☐ IESG Submission of draft-ietf-core-resource-directory @due(16-09-15 15:28)
    ☐ IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
-   ☐ IESG Submission of draft-ietf-core-resource-directory @due(16-09-01 15:28)
-   ☐ IESG Submission of draft-ietf-core-yang-cbor @due(17-01-10 21:01)
+   ☐ IESG Submission of draft-ietf-core-yang-cbor @due(16-12-15 21:01)
    ☐ IESG Submission of draft-ietf-core-interfaces @due(17-03-01 21:03)
- 
- Working Group Adoptions:
  
 Important Dates:
   ☐ Internet Draft Cut-off @due(16-07-08 09:31)
   ☐ CoAP Implementation Workshop @due(16-09-12 12:32) 
-  ✔ Forward Matteo CoRE Mailing list message matteo.collina@gmail.com @Jaime @done (16-06-24 19:19)
   ☐ IETF 96 CORE Sessions
   Tuesday, Afternoon Session I 1400-1600. Room Name: Charlottenburg II/III size: 175
   Thursday, Afternoon Session II 1620-1820. Room Name: Tiergarten size: 110
-  
   
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 // ⌘+R to see groups of tasks
