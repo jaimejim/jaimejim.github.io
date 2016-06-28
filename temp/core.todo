@@ -5,7 +5,8 @@ CoRE WG General:
  ☐ [GEN] Github right now has all users, we will move slowly towards a pull request. All authors should have commit access and everyone else (including authors) send pull request. Current set up. New stuff goes to the Github repository, old stuff goes in the IETF issue tracker. So far TCP/TLS, ETCH and CBOR-YANG are there, SenML to go there too. 
  ☐ [GEN] Split this document as two: progress report and internal items. Add "@pri" tag to the stuff we don't wanna share, remove "@due" tag from those, unless it is a milestone, optionally just write a tentative date. Remove the done tasks. @high @pri
  ☐ [GEN] Check RFC formatting and send feedback on the line spacing for https://core-wg.github.io/etch/ and check more on http://greenbytes.de/tech/webdav/rfc2629xslt/rfc2629xslt.html @jaime  
- ☐ [GEN] Prepare agenda for CoRE WG, try to have a draft agenda @due(16-06-26 14:01), actual deadline @due(16-07-08 14:01), Ask for agenda items and try to define objectives for the time we are using (specific issues or consensus). Check the old items. Look into archives and send the requests @jaime @critical @due(16-07-02 14:27) @pri
+ ☐ [GEN] Prepare agenda for CoRE WG, try to have a draft agenda @due(16-06-26 14:01), actual deadline @due(16-07-08 14:01)
+ ✔ Ask for agenda items and try to define objectives for the time we are using (specific issues or consensus). Check the old items. Look into archives and send the requests @jaime @critical @due(16-07-02 14:27) @pri @done (16-06-28 12:13)
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
   Notes: 
@@ -27,7 +28,7 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
 ETCH draft-ietf-core-etch:
  ✔ [ETCH] FETCH examples to be sent by Peter/Carsten @due(16-06-21 13:49) @critical @done (16-06-24 18:52)
  ✔ [ETCH] ETCH First cover issues, then ask for new version (2 weeks). Then ask for feedback on mailing list (2 weeks). If there are no objections then WGLC (2 weeks) @Jaime @due(16-05-30 13:42) @done (16-06-24 19:15)
- ☐ [ETCH] WGLC of draft-ietf-core-etch @due(16-06-28 14:34) @jaime @critical
+ ✔ [ETCH] WGLC of draft-ietf-core-etch @due(16-06-28 14:34) @jaime @critical @done (16-06-27 19:38)
  ☐ [ETCH] IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
  
 HTTP draft-ietf-core-http-mapping:
@@ -51,7 +52,7 @@ CoRE-Links draft-ietf-core-links-json:
 RD draft-ietf-core-resource-directory:
  ✔ [RD] Read diffs provided by Oscar: https://tools.ietf.org/rfcdiff?url1=draft-ietf-core-resource-directory-07.txt&url2=http://users.piuha.net/eoscdia/draft-ietf-core-resource-directory-08.txt  @Carsten @Peter @done (16-06-16 10:57)
  ✔ [RD] Should RD include additional functionality for W3C-TD? @due(16-06-11 20:57) @done (16-06-27 14:42)
- ☐ [RD] New version draft-ietf-core-resource-directory-08 to be submitted @due(16-06-19 14:14) @jaime ,to ping him @critical
+ ☐ [RD] New version draft-ietf-core-resource-directory-08 to be submitted @due(16-06-19 14:14) @jaime ,to ping author
  ✔ Shepherd: WGLC, IETF process. Oscar to be shepherd after Carsten reads and comments.  @done (16-06-16 14:11)
  ☐ [RD] Start preparing the RD Writeup for the IESG @Oscar @Jaime, publish on Oscar/Jaime github or on CoRE's misc github @due(16-07-04 14:42) @low
  ☐ [RD] WGLC @due(16-08-01 15:28), depending on W3C-TD dependency 
@@ -59,7 +60,7 @@ RD draft-ietf-core-resource-directory:
  ☐ [RD] Try to read and make summary (as for HTTP or TCP) @jaime @high
 
 SenML draft-ietf-core-senml:
- ☐ [SML] Send reminder to Cullen to push over the repo to the WG site. @critical @due(16-06-28 14:44) @jaime
+ ✔ [SML] Send reminder to Cullen to push over the repo to the WG site https://github.com/core-wg. @critical @due(16-06-28 14:44) @jaime @done (16-06-28 12:23)
  ☐ [SML] Ari to send SenML updates, change editorial items. @due(16-07-02 14:43) @critical 
  ☐ [SML] Issue 407. Waiting for reply from authors. Say that we want to have the result at noon next Monday. Is this document ready for WGLC (no tickets)
  ☐ [SML] WGLC of draft-ietf-core-senml @due(16-06-25 14:00)
