@@ -18,6 +18,7 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
  ✔ [TCP] Consensus call on BERT confirmation, then integrate @due(16-06-22 11:21) @done (16-06-24 19:14)
  ✔ [TCP] Hannes and Simon to accept Github invite. @done (16-06-24 19:15)
  ☐ [TCP] Talk to AD or RFC Editor about number of authors.
+ ☐ [TCP] IETF96 presentation required? 
  ☐ [TCP] Check with Brian status of https://core-wg.github.io/coap-tcp-tls/ @high @due(16-06-30 14:31)
  ☐ [TCP] Signaling draft, ask for adoption of v02. @due(16-06-28 14:32) @critical @jaime
  ☐ [TCP] WGLC of draft-ietf-core-coap-tcp-tls (if we choose not to have signalling on the same doc) @due(16-07-16 13:53)
@@ -37,14 +38,14 @@ HTTP draft-ietf-core-http-mapping:
  ✔ [HTTP] HTTP mapping Finished, no issues left. Read and send to second WGLC (2 weeks). @Jaime @due(16-06-11 21:30) @critical @done (16-06-16 10:59)
  ✔ [HTTP] WGLC takes a couple of weeks, authors need a couple of weeks for changes. Thus WGLC 1 month before (1st week of June). The assumption is that we will find a couple of nits that need to be done by the authors.  @done (16-06-24 19:16)
  ✔ [HTTP] WGLC (only one Week) of draft-ietf-core-http-mapping @due(16-06-29 13:58) @critical @done (16-07-04 12:09)
- ☐ [HTTP] IESG Submission of draft-ietf-core-http-mapping @due(16-07-15 15:28)
+ ☐ [HTTP] IESG Submission of draft-ietf-core-http-mapping @due(16-07-15 15:28) @Jaime
 
 CoRE-Links draft-ietf-core-links-json:
  ☐ [LNKS] Core Links has still some Issues, Draft with no issues to be submitted @due(16-06-29 15:36) @Carsten
      #402  A reference implementation for links-json would be useful. | @Carsten
      #403  Should the RFC 7390 part of links-json be split off? | YES. 
      #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers | 
- ☐ [LNKS] Jaime to send JSON Objects of LWM2M to Carsten @Jaime @high
+ ☐ [LNKS] Jaime to send JSON Objects of LWM2M to Carsten @Jaime @low
  ☐ [LNKS] WGLC of draft-ietf-core-links-json @due(16-07-02 14:00)
  ☐ [LNKS] IESG Submission of draft-ietf-core-links-json @due(16-08-01 15:28)
  ☐ [LNKS] Try to read and make summary (as for HTTP or TCP) @jaime @high
@@ -61,7 +62,7 @@ RD draft-ietf-core-resource-directory:
 
 SenML draft-ietf-core-senml:
  ✔ [SML] Send reminder to Cullen to push over the repo to the WG site https://github.com/core-wg. @critical @due(16-06-28 14:44) @jaime @done (16-06-28 12:23)
- ☐ [SML] Ari to send SenML updates, change editorial items. @due(16-07-02 14:43) @critical 
+ ☐ [SML] Ari to send SenML updates, change editorial items. @due(16-07-02 14:43) @high
  ☐ [SML] Issue 407. Waiting for reply from authors. Say that we want to have the result at noon next Monday. Is this document ready for WGLC (no tickets)
  ☐ [SML] WGLC of draft-ietf-core-senml @due(16-06-25 14:00)
  ☐ [SML] IESG Submission of draft-ietf-core-senml  @due(16-08-01 15:28)
@@ -90,7 +91,7 @@ Interfaces draft-ietf-core-interfaces:
    Draft has expired. It needs to be changed a lot (MiKos) 
    Collections seems useful. Link Bindings, futures....
    Should it be informational or normative?
- ☐ [INTF] Christian Groves to become Editor? @due(16-06-27 14:51) 
+ ✔ [INTF] Christian Groves to become Editor? @due(16-06-27 14:51)  @done (16-07-06 10:08)
  ☐ [INTF] Restart work after W3C in Beijing @due(16-08-06 21:03)
  ☐ [INTF] IESG Submission of draft-ietf-core-interfaces @due(17-03-01 21:03)
   
@@ -121,6 +122,7 @@ NEXT WEEK:
  ✔ Distributed IoT Internet @done (16-06-27 15:20) https://trac.tools.ietf.org/group/irtf/trac/wiki/blockchain-federation
  ☐ Code to get timeline out of this tasks @jaime @low
  ☐ Prepare slides for IETF @due(16-07-01 15:20) @high https://tools.ietf.org/wg/core/agenda
+ ☐ Possible slots for Agenda: http://jaimejim.github.io/temp/ietf96slot @due(16-07-10 13:39)
 
 Milestones:
 
