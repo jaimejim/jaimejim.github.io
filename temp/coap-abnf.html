@@ -543,22 +543,8 @@ sub-delims    = &quot;!&quot; / &quot;$&quot; / &quot;&amp;&quot; / &quot;&#39;&
 
 <h3 id="toc_2">RFC7252</h3>
 
-<div><pre><code class="language-none">query = *( pchar / &quot;/&quot; / &quot;?&quot; )
-coap-URI = &quot;coap:&quot; &quot;//&quot; host [ &quot;:&quot; port ] path-abempty [ &quot;?&quot; query ]
-coaps-URI = &quot;coaps:&quot; &quot;//&quot; host [ &quot;:&quot; port ] path-abempty [ &quot;?&quot; query ]
-path = path-abempty    ; begins with &quot;/&quot; or is empty
-                    / path-absolute   ; begins with &quot;/&quot; but not &quot;//&quot;
-                    / path-noscheme   ; begins with a non-colon segment
-                    / path-rootless   ; begins with a segment
-                    / path-empty      ; zero characters
-
-path-abempty  = *( &quot;/&quot; segment )
-path-absolute = &quot;/&quot; [ segment-nz *( &quot;/&quot; segment ) ]
-path-noscheme = segment-nz-nc *( &quot;/&quot; segment )
-path-rootless = segment-nz *( &quot;/&quot; segment )
-path-empty    = 0&lt;pchar&gt;
-URI-reference = URI / relative-ref
-fragment    = *( pchar / &quot;/&quot; / &quot;?&quot; )</code></pre></div>
+<div><pre><code class="language-none">coap-URI = &quot;coap:&quot; &quot;//&quot; host [ &quot;:&quot; port ] path-abempty [ &quot;?&quot; query ]
+coaps-URI = &quot;coaps:&quot; &quot;//&quot; host [ &quot;:&quot; port ] path-abempty [ &quot;?&quot; query ]</code></pre></div>
 
 <h3 id="toc_3">draft-ietf-core-http-mapping-12</h3>
 
