@@ -501,28 +501,6 @@ pre.line-numbers > code {
 
 <p>They can be tested here <a href="https://tools.ietf.org/tools/bap/abnf.cgi">https://tools.ietf.org/tools/bap/abnf.cgi</a>, just click to copy.</p>
 
-<script>
-var copyToClipboard = (function() {
-  var _dataString = null;
-  document.addEventListener("copy", function(e){
-    if (_dataString !== null) {
-      try {
-        e.clipboardData.setData("text/plain", _dataString);
-        e.preventDefault();
-      } finally {
-        _dataString = null;
-      }
-    }
-  });
-  return function(data) {
-    _dataString = data;
-    document.execCommand("copy");
-  };
-})();
-</script>
-
-<p><button onclick="copyToClipboard(this.textContent)"></p>
-
 <div><pre class="line-numbers"><code class="language-c">
 ;  ---------
 ; | RFC5234 |
@@ -698,15 +676,15 @@ reg-rel-type   = LOALPHA *( LOALPHA / DIGIT / &quot;.&quot; / &quot;-&quot; )
 ext-rel-type   = URI
 cardinal       = &quot;0&quot; / ( %x31-39 *DIGIT )
 LOALPHA        = %x61-7A   ; a-z
-quoted-string  = &lt;defined in [RFC2616]&gt;
-URI            = &lt;defined in [RFC3986]&gt;
-URI-Reference  = &lt;defined in [RFC3986]&gt;
-type-name      = &lt;defined in [RFC4288]&gt;
-subtype-name   = &lt;defined in [RFC4288]&gt;
-MediaDesc      = &lt;defined in [W3C.HTML.4.01]&gt;
-Language-Tag   = &lt;defined in [RFC5646]&gt;
-ext-value      = &lt;defined in [RFC5987]&gt;
-parmname       = &lt;defined in [RFC5987]&gt;
+;quoted-string  = &lt;defined in [RFC2616]&gt;
+;URI            = &lt;defined in [RFC3986]&gt;
+;URI-Reference  = &lt;defined in [RFC3986]&gt;
+;type-name      = &lt;defined in [RFC4288]&gt;
+;subtype-name   = &lt;defined in [RFC4288]&gt;
+;MediaDesc      = &lt;defined in [W3C.HTML.4.01]&gt;
+;Language-Tag   = &lt;defined in [RFC5646]&gt;
+;ext-value      = &lt;defined in [RFC5987]&gt;
+;parmname       = &lt;defined in [RFC5987]&gt;
 
 
 ;  ---------------------------------
