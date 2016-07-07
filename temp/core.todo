@@ -38,7 +38,8 @@ HTTP draft-ietf-core-http-mapping:
  ✔ [HTTP] HTTP mapping Finished, no issues left. Read and send to second WGLC (2 weeks). @Jaime @due(16-06-11 21:30) @critical @done (16-06-16 10:59)
  ✔ [HTTP] WGLC takes a couple of weeks, authors need a couple of weeks for changes. Thus WGLC 1 month before (1st week of June). The assumption is that we will find a couple of nits that need to be done by the authors.  @done (16-06-24 19:16)
  ✔ [HTTP] WGLC (only one Week) of draft-ietf-core-http-mapping @due(16-06-29 13:58) @critical @done (16-07-04 12:09)
- ☐ [HTTP] IESG Submission of draft-ietf-core-http-mapping @due(16-07-15 15:28) @Jaime
+ ☐ [HTTP] Shepperd Writeup draft-ietf-core-http-mapping @due(16-07-09 15:28) @Jaime
+ ☐ [HTTP] IESG Submission draft-ietf-core-http-mapping @due(16-07-15 15:28) @Jaime
 
 CoRE-Links draft-ietf-core-links-json:
  ☐ [LNKS] Core Links has still some Issues, Draft with no issues to be submitted @due(16-06-29 15:36) @Carsten
