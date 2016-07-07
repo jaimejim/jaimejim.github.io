@@ -469,7 +469,7 @@ pre[class*="language-"] {
 </li>
 </ul>
 
-<h3 id="toc_2">Comments</h3>
+<h3 id="toc_2">Comments on v10</h3>
 
 <ul>
 <li>This question might be a naive one but of the existing mappings, why have <code>{+cu}</code> or <code>{+su}</code> if <code>{+tu}</code> superseeds both?
@@ -507,7 +507,7 @@ pre[class*="language-"] {
 
 <h3 id="toc_4">Summary draft-ietf-core-http-mapping-10</h3>
 
-<p><a href="https://tools.ietf.org/html/draft-ietf-core-http-mapping-10">Guidelines for HTTP-to-CoAP Mapping Implementations</a></p>
+<p><a href="https://tools.ietf.org/html/draft-ietf-core-http-mapping-12">Guidelines for HTTP-to-CoAP Mapping Implementations</a></p>
 
 <p>Describes how to do HTTP-to-CoAP Mapping to allow HTTP clients to access a CoAP Server via a proxy.</p>
 
@@ -573,9 +573,119 @@ When dealing with an unrecognised CoAP <q>cf</q> the HC proxy can use the <code>
 
 <p>Although possible, <strong>content transcoding</strong> is generally not advisable as it would tamper with the payload and might cause loss of information. </p>
 
+<hr>
+
 <p><span id="shepherd-writeup"></span></p>
 
-<h3 id="toc_5">Shepherd Writeup</h3>
+<h2 id="toc_5">Shepherd Writeup</h2>
+
+<h3 id="toc_6">Summary</h3>
+
+<p>Document Shepherd: <a href="jaime.jimenez@ericsson.com">Jaime Jiménez</a><br>
+Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
+
+<p>This document provides reference information for implementing a cross-protocol network proxy that performs translation from the HTTP protocol to the CoAP protocol.  This will enable a HTTP client to access resources on a CoAP server through the proxy.  This document describes how a HTTP request is mapped to a CoAP request, and then how a CoAP response is mapped back to a HTTP response.  This includes guidelines for URI mapping, media type mapping and additional proxy implementation issues.  This document covers the Reverse, Forward and Interception cross-protocol proxy cases.</p>
+
+<p>The document is intended as an Informational RFC.</p>
+
+<h3 id="toc_7">Review and Consensus</h3>
+
+<p>The document has gone through multiple expert reviews over the years and was last presented on IETF95. It is noteworthy that the document focuses on the reverse HTTP-CoAP proxy case, the forward proxy case was well specified in RFC7252.  </p>
+
+<p>There are several implementations available:</p>
+
+<ol>
+<li>Squid HTTP-CoAP mapping module, Angelo Castellani. <a href="http://telecom.dei.unipd.it/iot">http://telecom.dei.unipd.it/iot</a></li>
+<li>HTTP-CoAP proxy based on EvCoAP, Thomas Fossati, and Salvatore Loreto. <a href="https://github.com/koanlogic/webthings/tree/master/bridge/sw/lib/evcoap">https://github.com/koanlogic/webthings/tree/master/bridge/sw/lib/evcoap</a></li>
+<li>FIWARE (Ericsson) implementation. <a href="https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Gateway_Device_Management_-_Ericsson_Gateway_-_User_and_Programmers_Guide#HTTP-CoAP_mapping">https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Gateway_Device_Management_-_Ericsson_Gateway_-_User_and_Programmers_Guide#HTTP-CoAP_mapping</a></li>
+<li>Oliver Kline implementation, <a href="https://media.itm.uni-luebeck.de/people/kleine/poster_kleine_ssp.pdf">https://media.itm.uni-luebeck.de/people/kleine/poster_kleine_ssp.pdf</a> available here: <a href="http://core.ietf.narkive.com/d4MCPLLl/http-coap-proxy-setup">http://core.ietf.narkive.com/d4MCPLLl/http-coap-proxy-setup</a></li>
+</ol>
+
+<h3 id="toc_8">Intellectual Property</h3>
+
+<div><pre><code class="language-none">Awaiting confirmation.</code></pre></div>
+
+<p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG.</p>
+
+<h3 id="toc_9">Other Points</h3>
+
+<p>Appendix-A should be removed before publication. <a href="https://tools.ietf.org/html/draft-ietf-core-http-mapping-12#appendix-A">https://tools.ietf.org/html/draft-ietf-core-http-mapping-12#appendix-A</a></p>
+
+<p>The working group seems very happy with this document as it is. Future work that make use of it is already being planned as addition to other drafts (draft-ietf-core-etch).</p>
+
+<h3 id="toc_10">Checklist</h3>
+
+<ul>
+<li class="task-list-item"><input type="checkbox" checked> Does the shepherd stand behind the document and think the document is ready for publication?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Is the correct RFC type indicated in the title page header?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Is the abstract both brief and sufficient, and does it stand alone as a brief summary?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Is the intent of the document accurately and adequately explained in the introduction?
+</li>
+<li class="task-list-item"><input type="checkbox"> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed?
+</li>
+</ul>
+
+<div><pre><code class="language-none">I don&#39;t know what this means</code></pre></div>
+
+<ul>
+<li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? 
+</li>
+</ul>
+
+<div><pre><code class="language-none">Some warnings are shown:
+https://tools.ietf.org/idnits?url=https://tools.ietf.org/id/draft-ietf-core-http-mapping-12.txt
+
+== The document seems to lack the recommended RFC 2119 boilerplate, even if it appears to use RFC 2119 keywords.    (The document does seem to have the reference to RFC 2119 which the ID-Checklist requires).
+-- The document date (July 1, 2016) is 6 days in the past.  Is this intentional?
+-- Found something which looks like a code comment -- if you have code  sections in the document, please surround them with &#39;&lt;CODE BEGINS&gt;&#39; and &#39;&lt;CODE ENDS&gt;&#39; lines.</code></pre></div>
+
+<ul>
+<li class="task-list-item"><input type="checkbox"> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?
+</li>
+</ul>
+
+<div><pre><code class="language-none">Work in progress, awaiting reply.</code></pre></div>
+
+<ul>
+<li class="task-list-item"><input type="checkbox" checked> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified?
+</li>
+<li class="task-list-item"><input type="checkbox"> Are all normative references made to documents that are ready for advancement and are otherwise in a clear state?
+</li>
+</ul>
+
+<div><pre><code class="language-none">Clear state, but non-Standard reference 
+[I-D.ietf-core-block]</code></pre></div>
+
+<ul>
+<li class="task-list-item"><input type="checkbox" checked> If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> If this is a <q>bis</q> document, have all of the errata been considered?
+</li>
+</ul>
+
+<p><strong>IANA Considerations:</strong></p>
+
+<div><pre><code class="language-none">Must double-check this.</code></pre></div>
+
+<ul>
+<li class="task-list-item"><input type="checkbox" checked> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions.
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?
+</li>
+<li class="task-list-item"><input type="checkbox"> Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)?
+</li>
+<li class="task-list-item"><input type="checkbox"> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
+</li>
+<li class="task-list-item"><input type="checkbox"> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
+</li>
+<li class="task-list-item"><input type="checkbox"> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?
+</li>
+<li class="task-list-item"><input type="checkbox">  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified?
+</li>
+</ul>
 
 
 
