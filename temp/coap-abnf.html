@@ -495,11 +495,33 @@ pre.line-numbers > code {
 
 <body>
 
-<p>; ## CoAP-related ABNF</p>
+<h2 id="toc_0">CoAP-related ABNF</h2>
 
-<p>; <em>Disclaimer: This is still work in progress</em></p>
+<p><em>Disclaimer: This is still work in progress</em></p>
 
-<p>; They can be tested here <a href="https://tools.ietf.org/tools/bap/abnf.cgi">https://tools.ietf.org/tools/bap/abnf.cgi</a></p>
+<p>They can be tested here <a href="https://tools.ietf.org/tools/bap/abnf.cgi">https://tools.ietf.org/tools/bap/abnf.cgi</a>, just click to copy.</p>
+
+<script>
+var copyToClipboard = (function() {
+  var _dataString = null;
+  document.addEventListener("copy", function(e){
+    if (_dataString !== null) {
+      try {
+        e.clipboardData.setData("text/plain", _dataString);
+        e.preventDefault();
+      } finally {
+        _dataString = null;
+      }
+    }
+  });
+  return function(data) {
+    _dataString = data;
+    document.execCommand("copy");
+  };
+})();
+</script>
+
+<p><button onclick="copyToClipboard(this.textContent)"></p>
 
 <div><pre class="line-numbers"><code class="language-c">
 ;  ---------
@@ -697,6 +719,8 @@ p  = path-abempty     ; from [RFC3986], Section 3.3
 q  = query            ; from [RFC3986], Section 3.4
 qq = [ &quot;?&quot; query ]    ; qq is empty if and only if &#39;query&#39; is empty
 tu = coap-URI / coaps-URI  ; from [RFC7252], Section 6.1 and 6.2</code></pre></div>
+
+<p></button></p>
 
 
 
