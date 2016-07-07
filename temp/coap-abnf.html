@@ -458,9 +458,11 @@ pre[class*="language-"] {
 
 <p>They can be tested here <a href="https://tools.ietf.org/tools/bap/abnf.cgi">https://tools.ietf.org/tools/bap/abnf.cgi</a></p>
 
-<h3 id="toc_1">RFC3986</h3>
+<div><pre><code class="language-java">;  ---------
+; | RFC3986 |
+;  ---------
 
-<div><pre><code class="language-none">URI           = scheme &quot;:&quot; hier-part [ &quot;?&quot; query ] [ &quot;#&quot; fragment ]
+URI           = scheme &quot;:&quot; hier-part [ &quot;?&quot; query ] [ &quot;#&quot; fragment ]
 hier-part     = &quot;//&quot; authority path-abempty
                  / path-absolute
                  / path-rootless
@@ -539,16 +541,71 @@ reserved      = gen-delims / sub-delims
 gen-delims    = &quot;:&quot; / &quot;/&quot; / &quot;?&quot; / &quot;#&quot; / &quot;[&quot; / &quot;]&quot; / &quot;@&quot;
 sub-delims    = &quot;!&quot; / &quot;$&quot; / &quot;&amp;&quot; / &quot;&#39;&quot; / &quot;(&quot; / &quot;)&quot;
                  / &quot;*&quot; / &quot;+&quot; / &quot;,&quot; / &quot;;&quot; / &quot;=&quot;
-   </code></pre></div>
+  
+;  ---------
+; | RFC7252 |
+;  ---------
 
-<h3 id="toc_2">RFC7252</h3>
+coap-URI = &quot;coap:&quot; &quot;//&quot; host [ &quot;:&quot; port ] path-abempty [ &quot;?&quot; query ]
+coaps-URI = &quot;coaps:&quot; &quot;//&quot; host [ &quot;:&quot; port ] path-abempty [ &quot;?&quot; query ]
 
-<div><pre><code class="language-none">coap-URI = &quot;coap:&quot; &quot;//&quot; host [ &quot;:&quot; port ] path-abempty [ &quot;?&quot; query ]
-coaps-URI = &quot;coaps:&quot; &quot;//&quot; host [ &quot;:&quot; port ] path-abempty [ &quot;?&quot; query ]</code></pre></div>
 
-<h3 id="toc_3">draft-ietf-core-http-mapping-12</h3>
+;  ---------
+; | RFC6690 |
+;  ---------
 
-<div><pre><code class="language-none">s  = &quot;coap&quot; / &quot;coaps&quot; ; from [RFC7252], Sections 6.1 and 6.2
+Link            = link-value-list
+link-value-list = [ link-value *[ &quot;,&quot; link-value ]]
+link-value     = &quot;&lt;&quot; URI-Reference &quot;&gt;&quot; *( &quot;;&quot; link-param )
+link-param     = ( ( &quot;rel&quot; &quot;=&quot; relation-types )
+                   / ( &quot;anchor&quot; &quot;=&quot; DQUOTE URI-Reference DQUOTE )
+                   / ( &quot;rev&quot; &quot;=&quot; relation-types )
+                   / ( &quot;hreflang&quot; &quot;=&quot; Language-Tag )
+                   / ( &quot;media&quot; &quot;=&quot; ( MediaDesc
+                          / ( DQUOTE MediaDesc DQUOTE ) ) )
+                   / ( &quot;title&quot; &quot;=&quot; quoted-string )
+                   / ( &quot;title*&quot; &quot;=&quot; ext-value )
+                   / ( &quot;type&quot; &quot;=&quot; ( media-type / quoted-mt ) )
+                   / ( &quot;rt&quot; &quot;=&quot; relation-types )
+                   / ( &quot;if&quot; &quot;=&quot; relation-types )
+                   / ( &quot;sz&quot; &quot;=&quot; cardinal )
+                   / ( link-extension ) )
+link-extension = ( parmname [ &quot;=&quot; ( ptoken / quoted-string ) ] )
+                   / ( ext-name-star &quot;=&quot; ext-value )
+ext-name-star  = parmname &quot;*&quot; ; reserved for RFC-2231-profiled
+                                  ; extensions.  Whitespace NOT
+                                  ; allowed in between.
+ptoken         = 1*ptokenchar
+ptokenchar     = &quot;!&quot; / &quot;#&quot; / &quot;$&quot; / &quot;%&quot; / &quot;&amp;&quot; / &quot;&#39;&quot; / &quot;(&quot;
+                   / &quot;)&quot; / &quot;*&quot; / &quot;+&quot; / &quot;-&quot; / &quot;.&quot; / &quot;/&quot; / DIGIT
+                   / &quot;:&quot; / &quot;&lt;&quot; / &quot;=&quot; / &quot;&gt;&quot; / &quot;?&quot; / &quot;@&quot; / ALPHA
+                   / &quot;[&quot; / &quot;]&quot; / &quot;^&quot; / &quot;_&quot; / &quot;`&quot; / &quot;{&quot; / &quot;|&quot;
+                   / &quot;}&quot; / &quot;~&quot;
+media-type     = type-name &quot;/&quot; subtype-name
+quoted-mt      = DQUOTE media-type DQUOTE
+relation-types = relation-type
+                   / DQUOTE relation-type *( 1*SP relation-type ) DQUOTE
+relation-type  = reg-rel-type / ext-rel-type
+reg-rel-type   = LOALPHA *( LOALPHA / DIGIT / &quot;.&quot; / &quot;-&quot; )
+ext-rel-type   = URI
+cardinal       = &quot;0&quot; / ( %x31-39 *DIGIT )
+LOALPHA        = %x61-7A   ; a-z
+quoted-string  = &lt;defined in [RFC2616]&gt;
+URI            = &lt;defined in [RFC3986]&gt;
+URI-Reference  = &lt;defined in [RFC3986]&gt;
+type-name      = &lt;defined in [RFC4288]&gt;
+subtype-name   = &lt;defined in [RFC4288]&gt;
+MediaDesc      = &lt;defined in [W3C.HTML.4.01]&gt;
+Language-Tag   = &lt;defined in [RFC5646]&gt;
+ext-value      = &lt;defined in [RFC5987]&gt;
+parmname       = &lt;defined in [RFC5987]&gt;
+
+
+;  ---------------------------------
+; | draft-ietf-core-http-mapping-12 |
+;  ---------------------------------
+ 
+s  = &quot;coap&quot; / &quot;coaps&quot; ; from [RFC7252], Sections 6.1 and 6.2
 hp = host [&quot;:&quot; port]  ; from [RFC3986], Sections 3.2.2 and 3.2.3
 p  = path-abempty     ; from [RFC3986], Section 3.3
 q  = query            ; from [RFC3986], Section 3.4
@@ -559,6 +616,14 @@ tu = coap-URI / coaps-URI  ; from [RFC7252], Section 6.1 and 6.2</code></pre></d
 
 <script type="text/javascript">
 var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:{pattern:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+Prism.languages.java=Prism.languages.extend("clike",{keyword:/\b(abstract|continue|for|new|switch|assert|default|goto|package|synchronized|boolean|do|if|private|this|break|double|implements|protected|throw|byte|else|import|public|throws|case|enum|instanceof|return|transient|catch|extends|int|short|try|char|final|interface|static|void|class|finally|long|strictfp|volatile|const|float|native|super|while)\b/,number:/\b0b[01]+\b|\b0x[\da-f]*\.?[\da-fp\-]+\b|\b\d*\.?\d+(?:e[+-]?\d+)?[df]?\b/i,operator:{pattern:/(^|[^.])(?:\+[+=]?|-[-=]?|!=?|<<?=?|>>?>?=?|==?|&[&=]?|\|[|=]?|\*=?|\/=?|%=?|\^=?|[?:~])/m,lookbehind:!0}}),Prism.languages.insertBefore("java","function",{annotation:{alias:"punctuation",pattern:/(^|[^.])@\w+/,lookbehind:!0}});
 </script>
 
 
