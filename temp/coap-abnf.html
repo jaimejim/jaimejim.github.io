@@ -499,14 +499,14 @@ pre.line-numbers > code {
 
 <p><em>Disclaimer: This is still work in progress</em></p>
 
-<p>They can be tested here <a href="https://tools.ietf.org/tools/bap/abnf.cgi">https://tools.ietf.org/tools/bap/abnf.cgi</a>, just click to copy.</p>
+<p>They can be tested here <a href="https://tools.ietf.org/tools/bap/abnf.cgi">https://tools.ietf.org/tools/bap/abnf.cgi</a>.</p>
 
-<div><pre class="line-numbers"><code class="language-c">
-;  ---------
+<div><pre class="line-numbers"><code class="language-c">;  ---------
 ; | RFC5234 |
 ;  ---------
 
-ALPHA          =  %x41-5A / %x61-7A   ; A-Z / a-z
+ALPHA          =  %x41-5A / %x61-7A   
+                                 ; A-Z / a-z
 BIT            =  &quot;0&quot; / &quot;1&quot;
 CHAR           =  %x01-7F
                                 ; any 7-bit US-ASCII character,

@@ -447,6 +447,49 @@ pre[class*="language-"] {
 }
 </style>
 
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
 
 </head>
 
@@ -521,7 +564,7 @@ pre[class*="language-"] {
 
 <p>In the <strong>simple form</strong> there are few mapping templates for coap.  The default URI mapping consist on appending one URI after the other (i.e. adding target uri or <code>/{+tu}</code>), for example: <code>http://p.example.com/hc/coap://s.example.com/light</code>. Other mapping might be discovered on <code>./well-known/core</code>, on those cases the HC should use resource type: <code>core.hc</code> and attribute type <code>hct</code>. All the possible mappings are:</p>
 
-<div><pre><code class="language-javascript">// default mapping
+<div><pre class="line-numbers"><code class="language-javascript">// default mapping
 /{+tu}
 // for coap uris
 ?coap_target_uri={+cu}
@@ -533,7 +576,7 @@ pre[class*="language-"] {
 
 <p>In the <strong>enhanced form</strong> more sophisticated mappings can be expressed. And certain template variables have been created for it:</p>
 
-<div><pre><code class="language-javascript">s  = &quot;coap&quot; / &quot;coaps&quot; 
+<div><pre class="line-numbers"><code class="language-javascript">s  = &quot;coap&quot; / &quot;coaps&quot; 
 hp = host [&quot;:&quot; port]  
 p  = path-abempty     
 q  = query           
@@ -545,7 +588,7 @@ qq = [ &quot;?&quot; query ]      </code></pre></div>
 
 <p>There is a <strong>discovery</strong>  process for the HC functionality both on the HTTP and the CoAP side. A sample discovery on the HTTP would look like this:</p>
 
-<div><pre><code class="language-javascript">Req:  GET /.well-known/core?rt=core.hc HTTP/1.1
+<div><pre class="line-numbers"><code class="language-javascript">Req:  GET /.well-known/core?rt=core.hc HTTP/1.1
       Host: p.example.com
       
 
@@ -559,7 +602,7 @@ Res:  HTTP/1.1 200 OK
 
 <p>For CoAP devices, they should also get back an anchor URI of the HC proxy as well as the URI mapping. The following example shows a CoaP request with the <code>hct</code> attribute.</p>
 
-<div><pre><code class="language-javascript">Req:  GET coap://[ff02::1]/.well-known/core?rt=core.hc
+<div><pre class="line-numbers"><code class="language-javascript">Req:  GET coap://[ff02::1]/.well-known/core?rt=core.hc
 Res:  2.05 Content
       &lt;/hc&gt;;anchor=&quot;http://p.example.com&quot;;
       rt=&quot;core.hc&quot;;hct=&quot;?uri={+tu}&quot;</code></pre></div>
@@ -603,7 +646,7 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 
 <h3 id="toc_8">Intellectual Property</h3>
 
-<div><pre><code class="language-none">Awaiting confirmation.</code></pre></div>
+<div><pre class="line-numbers"><code class="language-none">Awaiting confirmation.</code></pre></div>
 
 <p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG.</p>
 
@@ -628,26 +671,21 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 </li>
 </ul>
 
-<div><pre><code class="language-none">I don&#39;t know what this means</code></pre></div>
+<div><pre class="line-numbers"><code class="language-none">I don&#39;t know what this means</code></pre></div>
 
 <ul>
-<li class="task-list-item"><input type="checkbox"> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? 
+<li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? 
 </li>
 </ul>
 
-<div><pre><code class="language-none">No errors, but some warnings are shown:
-https://tools.ietf.org/idnits?url=https://tools.ietf.org/id/draft-ietf-core-http-mapping-12.txt
-
-== The document seems to lack the recommended RFC 2119 boilerplate, even if it appears to use RFC 2119 keywords.    (The document does seem to have the reference to RFC 2119 which the ID-Checklist requires).
--- The document date (July 1, 2016) is 6 days in the past.  Is this intentional?
--- Found something which looks like a code comment -- if you have code  sections in the document, please surround them with &#39;&lt;CODE BEGINS&gt;&#39; and &#39;&lt;CODE ENDS&gt;&#39; lines.</code></pre></div>
+<div><pre class="line-numbers"><code class="language-none">No errors, but some warnings are shown. I had to aggregate all here: http://jaimejim.github.io/temp/coap-abnf</code></pre></div>
 
 <ul>
 <li class="task-list-item"><input type="checkbox"> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?
 </li>
 </ul>
 
-<div><pre><code class="language-none">Work in progress, awaiting reply.</code></pre></div>
+<div><pre class="line-numbers"><code class="language-none">Work in progress, awaiting reply.</code></pre></div>
 
 <ul>
 <li class="task-list-item"><input type="checkbox" checked> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified?
@@ -656,7 +694,7 @@ https://tools.ietf.org/idnits?url=https://tools.ietf.org/id/draft-ietf-core-http
 </li>
 </ul>
 
-<div><pre><code class="language-none">Clear state, but non-Standard reference 
+<div><pre class="line-numbers"><code class="language-none">Clear state, but non-Standard reference 
 [I-D.ietf-core-block]</code></pre></div>
 
 <ul>
@@ -674,7 +712,7 @@ Does not apply
 
 <p><strong>IANA Considerations:</strong></p>
 
-<div><pre><code class="language-none">Must double-check this.</code></pre></div>
+<div><pre class="line-numbers"><code class="language-none">Must double-check this.</code></pre></div>
 
 <ul>
 <li class="task-list-item"><input type="checkbox" checked> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions.
@@ -705,6 +743,10 @@ Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:
 
 <script type="text/javascript">
 Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,number:/\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,"function":/[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i}),Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,lookbehind:!0,greedy:!0}}),Prism.languages.insertBefore("javascript","class-name",{"template-string":{pattern:/`(?:\\\\|\\?[^\\])*?`/,greedy:!0,inside:{interpolation:{pattern:/\$\{[^}]+\}/,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:Prism.languages.javascript}},string:/[\s\S]+/}}}),Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,lookbehind:!0,inside:Prism.languages.javascript,alias:"language-javascript"}}),Prism.languages.js=Prism.languages.javascript;
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
 </script>
 
 
