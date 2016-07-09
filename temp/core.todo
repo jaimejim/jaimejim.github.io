@@ -38,7 +38,7 @@ HTTP draft-ietf-core-http-mapping:
  ✔ [HTTP] HTTP mapping Finished, no issues left. Read and send to second WGLC (2 weeks). @Jaime @due(16-06-11 21:30) @critical @done (16-06-16 10:59)
  ✔ [HTTP] WGLC takes a couple of weeks, authors need a couple of weeks for changes. Thus WGLC 1 month before (1st week of June). The assumption is that we will find a couple of nits that need to be done by the authors.  @done (16-06-24 19:16)
  ✔ [HTTP] WGLC (only one Week) of draft-ietf-core-http-mapping @due(16-06-29 13:58) @critical @done (16-07-04 12:09)
- ☐ [HTTP] Shepperd Writeup draft-ietf-core-http-mapping @due(16-07-09 15:28) @Jaime
+ ☐ [HTTP] Shepperd Writeup draft-ietf-core-http-mapping @due(16-07-09 15:28) http://jaimejim.github.io/temp/draft-ietf-core-http-mapping#shepherd-writeup @Jaime
  ☐ [HTTP] IESG Submission draft-ietf-core-http-mapping @due(16-07-15 15:28) @Jaime
 
 CoRE-Links draft-ietf-core-links-json:
@@ -46,11 +46,12 @@ CoRE-Links draft-ietf-core-links-json:
      #402  A reference implementation for links-json would be useful. | @Carsten
      #403  Should the RFC 7390 part of links-json be split off? | YES. 
      #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers | 
- ☐ [LNKS] Jaime to send JSON Objects of LWM2M to Carsten @Jaime @low
- ☐ [LNKS] WGLC of draft-ietf-core-links-json @due(16-07-02 14:00)
+ ✔ [LNKS] WGLC of draft-ietf-core-links-json @due(16-07-02 14:00) @done (16-07-09 10:26)
+ ☐ [LNKS] WGLC ends @due(16-07-30 10:27)
  ☐ [LNKS] IESG Submission of draft-ietf-core-links-json @due(16-08-01 15:28)
  ☐ [LNKS] Try to read and make summary (as for HTTP or TCP) @jaime @high
-
+ ☐ [LNKS] Jaime to send JSON Objects of LWM2M to Carsten @Jaime @low
+ 
 RD draft-ietf-core-resource-directory:
  ✔ [RD] Read diffs provided by Oscar: https://tools.ietf.org/rfcdiff?url1=draft-ietf-core-resource-directory-07.txt&url2=http://users.piuha.net/eoscdia/draft-ietf-core-resource-directory-08.txt  @Carsten @Peter @done (16-06-16 10:57)
  ✔ [RD] Should RD include additional functionality for W3C-TD? @due(16-06-11 20:57) @done (16-06-27 14:42)
