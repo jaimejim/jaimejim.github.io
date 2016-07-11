@@ -533,7 +533,7 @@ pre.line-numbers > code {
 <a href="https://github.com/koanlogic/webthings/tree/master/bridge/sw/lib/evcoap">https://github.com/koanlogic/webthings/tree/master/bridge/sw/lib/evcoap</a></li>
 <li>FIWARE (Ericsson) implementation.
 <a href="https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Gateway_Device_Management_-_Ericsson_Gateway_-_User_and_Programmers_Guide#HTTP-CoAP_mapping">https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Gateway_Device_Management_-_Ericsson_Gateway_-_User_and_Programmers_Guide#HTTP-CoAP_mapping</a></li>
-<li>German University (Oliver Kline) implementation, <a href="https://media.itm.uni-luebeck.de/people/kleine/poster_kleine_ssp.pdf">https://media.itm.uni-luebeck.de/people/kleine/poster_kleine_ssp.pdf</a> available here: <a href="http://core.ietf.narkive.com/d4MCPLLl/http-coap-proxy-setup">http://core.ietf.narkive.com/d4MCPLLl/http-coap-proxy-setup</a></li>
+<li>German University (Oliver Kleine) implementation, <a href="https://media.itm.uni-luebeck.de/people/kleine/poster_kleine_ssp.pdf">https://media.itm.uni-luebeck.de/people/kleine/poster_kleine_ssp.pdf</a> available here: <a href="http://core.ietf.narkive.com/d4MCPLLl/http-coap-proxy-setup">http://core.ietf.narkive.com/d4MCPLLl/http-coap-proxy-setup</a></li>
 <li>Californium also supports a HTTP-CoAP proxy function but they do not explicitly state that it is based on our draft. <a href="http://www.eclipse.org/californium/">http://www.eclipse.org/californium/</a></li>
 </ol></li>
 </ul>
@@ -641,7 +641,7 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 <li>Squid HTTP-CoAP mapping module, Angelo Castellani. <a href="http://telecom.dei.unipd.it/iot">http://telecom.dei.unipd.it/iot</a></li>
 <li>HTTP-CoAP proxy based on EvCoAP, Thomas Fossati, and Salvatore Loreto. <a href="https://github.com/koanlogic/webthings/tree/master/bridge/sw/lib/evcoap">https://github.com/koanlogic/webthings/tree/master/bridge/sw/lib/evcoap</a></li>
 <li>FIWARE (Ericsson) implementation. <a href="https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Gateway_Device_Management_-_Ericsson_Gateway_-_User_and_Programmers_Guide#HTTP-CoAP_mapping">https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Gateway_Device_Management_-_Ericsson_Gateway_-_User_and_Programmers_Guide#HTTP-CoAP_mapping</a></li>
-<li>Oliver Kline implementation, <a href="https://media.itm.uni-luebeck.de/people/kleine/poster_kleine_ssp.pdf">https://media.itm.uni-luebeck.de/people/kleine/poster_kleine_ssp.pdf</a> available here: <a href="http://core.ietf.narkive.com/d4MCPLLl/http-coap-proxy-setup">http://core.ietf.narkive.com/d4MCPLLl/http-coap-proxy-setup</a></li>
+<li>Oliver Kleine implementation, <a href="https://media.itm.uni-luebeck.de/people/kleine/poster_kleine_ssp.pdf">https://media.itm.uni-luebeck.de/people/kleine/poster_kleine_ssp.pdf</a> available here: <a href="http://core.ietf.narkive.com/d4MCPLLl/http-coap-proxy-setup">http://core.ietf.narkive.com/d4MCPLLl/http-coap-proxy-setup</a></li>
 </ol>
 
 <h3 id="toc_8">Intellectual Property</h3>
@@ -655,7 +655,7 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 <p>On the IANA section, the part that describes <code>Interoperability considerations: <br>
 Published specification: (this I-D - TBD)</code> should be updated with the <code>RFCXXXX</code> reference.</p>
 
-<p>The working group seems very happy with this document as it is. Future work that make use of it is already being planned as addition to other drafts (draft-ietf-core-etch).</p>
+<p>The working group has very good consensus on this document as it is. HTTP mapping aspects raised by future CoAP extensions will then be addressed by these extensions or in separate documents.</p>
 
 <h3 id="toc_10">Checklist</h3>
 
@@ -672,14 +672,14 @@ Published specification: (this I-D - TBD)</code> should be updated with the <cod
 </li>
 </ul>
 
-<div><pre class="line-numbers"><code class="language-none">in progress</code></pre></div>
+<div><pre class="line-numbers"><code class="language-none">in progress, asked authors. </code></pre></div>
 
 <ul>
 <li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? 
 </li>
 </ul>
 
-<div><pre class="line-numbers"><code class="language-none">No errors, but some warnings are shown. 
+<div><pre class="line-numbers"><code class="language-none">No errors, but some warnings are shown about existing ABNF. 
 I aggregated all CoAP ABNF refs here: http://jaimejim.github.io/temp/coap-abnf</code></pre></div>
 
 <ul>
@@ -723,7 +723,7 @@ Not that I know of.
 Not that I know of.
 </code> 
 </li>
-<li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified?
+<li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified? <code>Does not apply</code> 
 </li>
 </ul></li>
 </ul>

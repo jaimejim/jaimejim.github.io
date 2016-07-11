@@ -48,7 +48,7 @@ CoRE-Links draft-ietf-core-links-json:
      #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers | 
  ✔ [LNKS] WGLC of draft-ietf-core-links-json @due(16-07-02 14:00) @done (16-07-09 10:26)
  ☐ [LNKS] WGLC ends @due(16-07-30 10:27)
- ☐ [LNKS] IESG Submission of draft-ietf-core-links-json @due(16-08-01 15:28)
+ ☐ [LNKS] IESG Submission of draft-ietf-core-links-json @due(16-08-15 15:28)
  ☐ [LNKS] Try to read and make summary (as for HTTP or TCP) @jaime @high
  ☐ [LNKS] Jaime to send JSON Objects of LWM2M to Carsten @Jaime @low
  
