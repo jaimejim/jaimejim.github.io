@@ -14,7 +14,7 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
  ☐ [TCP] Read http://www.ietf.org/mail-archive/web/hybi/current/msg09540.html https://tools.ietf.org/html/rfc6520 to understand how other documents handle signalling @due(16-07-16 16:07)
  
 ETCH draft-ietf-core-etch:
- ☐ [ETCH] WGLC of draft-ietf-core-etch @due(16-06-28 14:34) @jaime @critical check today. IETF96 Tuesday will be discussed for more comments. 
+ ✔ [ETCH] WGLC of draft-ietf-core-etch @due(16-06-28 14:34) @jaime @critical check today. IETF96 Tuesday will be discussed for more comments.  @done (16-07-12 12:29)
  ☐ [ETCH] Shepperd Writeup @due(16-07-18 15:28) @jaime @critical
  ☐ [ETCH] IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
  
@@ -31,7 +31,7 @@ CoRE-Links draft-ietf-core-links-json:
      #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers | 
  ☐ [LNKS] WGLC issued, it ends @due(16-07-30 10:27)
  ☐ [LNKS] IESG Submission of draft-ietf-core-links-json @due(16-08-15 15:28)
- ☐ [LNKS] Find mailing list about Media Types, required formal reviews @due(16-07-18 16:20) @critical
+ ☐ [LNKS] Find mailing list about Media Types, required formal reviews @due(16-07-18 16:20), @carsten @critical
  ☐ [LNKS] Ad Content format values on IANA considerations.
  ☐ [LNKS] Shepperd Writeup @due(16-07-18 15:28) @jaime @critical
  ☐ [LNKS] Jaime to send JSON Objects of LWM2M to Carsten @Jaime @low
@@ -45,7 +45,7 @@ RD draft-ietf-core-resource-directory:
 
 SenML draft-ietf-core-senml:
  ✔ [SML] Ari to send SenML updates, change editorial items. @due(16-07-02 14:43) @high @done (16-07-11 16:37)
- ☐ [SML] Issue 407. Waiting for reply from authors. Say that we want to have the result at noon next Monday. Is this document ready for WGLC (no tickets)
+ ✔ [SML] Issue 407. Waiting for reply from authors. Say that we want to have the result at noon next Monday. Is this document ready for WGLC (no tickets) @done (16-07-12 12:34)
  ☐ [SML] WGLC after Berlin of draft-ietf-core-senml @due(16-07-18 16:40)
  ☐ [SML] IESG Submission of draft-ietf-core-senml  @due(16-08-01 15:28)
 
@@ -86,6 +86,9 @@ Block draft-ietf-core-block:
  ☐ [BLCK] IESG Approved, next step is for secretariat to send announcement. 
  ☐ [BLCK] AUTH48 for last changes from RFC Editor. https://www.rfc-editor.org/pubprocess/  https://www.rfc-editor.org/current_queue.php
  ☐ [BLCK] Try to read and make summary (as for HTTP or TCP). Dig up the comments by Alexey and see what is still open @jaime @low
+
+CoRE Application Descriptions draft-hartke-core-apps:
+ ☐ [CAPPS] Read laytest version.
 
 Freezer
 ---------
