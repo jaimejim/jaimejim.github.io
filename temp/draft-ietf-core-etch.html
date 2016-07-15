@@ -499,7 +499,7 @@ pre.line-numbers > code {
 
 <p>Author: <a href="jaimejim.github.io">Jaime Jiménez</a></p>
 
-<h3 id="toc_1">Timeline</h3>
+<h3 id="toc_1">Tentative Timeline</h3>
 
 <ul>
 <li class="task-list-item"><input type="checkbox" checked> <a href="#summary">draft summary</a> 
@@ -531,9 +531,9 @@ pre.line-numbers > code {
 <p><q>With PATCH, however, the enclosed entity contains a set of instructions describing how a resource currently residing on the origin server should be modified to produce a new version.  The PATCH method affects the resource identified by the Request-URI, and it also MAY have side effects on other resources; i.e., new resources may be created, or existing ones modified, by the application of a PATCH.</q></p>
 </blockquote></li>
 </ul></li>
-<li><p>The FETCH media types are not defined, or I can&#39;t see them.</p></li>
+<li><p>As I think Ari pointed out, the FETCH media types are not defined.</p></li>
 <li><p>Strong ETag in an If-Match header on the PATCH request is used for HTTP idempotent operations. For CoAP a new iPATCH method is used instead (or so I understood). Is this correct?</p></li>
-<li><p>What are the implications on the HTTP Mapping draft-ietf-core-http-mapping?</p></li>
+<li><p>What are the implications on the HTTP Mapping draft-ietf-core-http-mapping? Where will the HTTP PATCH -&gt; CoAP PATCH be done?</p></li>
 <li><p>After discussing with Klaus he pointed out that maybe it is not necessary to have two methods for PATCH. Isn&#39;t it possible to learn wether the requested operation is idempotent or not from the payload?</p></li>
 <li><p>Which is the implementation status of the draft?</p></li>
 <li><p>Have you checked with an expert for the media types? For the shepherd writeup a formal review is required.</p></li>
