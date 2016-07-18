@@ -1,4 +1,3 @@
-<plaintext>
 ;  CoAP-related ABNF
 ;  *Disclaimer: This is still work in progress*
 ;  They can be tested here ;
