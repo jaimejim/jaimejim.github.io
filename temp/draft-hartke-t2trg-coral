@@ -1,0 +1,78 @@
+## Status T2TRG CoRAL
+Author: [Jaime Jiménez](http://jaimejim.github.io/)
+
+### Comments on v00
+
+* On CoRE Apps
+>  Applications that don't wish to register a relation type can use an
+   extension relation type, which is a URI that uniquely identifies the
+   relation type (similar to a URI used as an XML namespace names).  For
+   example, an application can use "http://example.com/foo" as link
+   relation type without having to register it.
+
+   * Is the link relation "http://example.com/foo" or is it what comes after the host (i.e. "foo").
+
+* On the example below "/abs_link/", "/terms... ", etc are not part of the serialization. Which is the format of the example (does not look like CBOR)?
+
+```
+[ /abs_link/          0,
+  /terms-of-service/ 64,
+  [ /format/          3, 0 /text//plain/,
+    /href.scheme/     4, "coap",
+    /href.host.name/  6, "example.com",
+    /href.port/      11, 5683,
+    /href.path/      12, "info",
+    /href.path/      12, "tos" ]]
+```
+
+* To represent multiple transport support, you would need to make another section where you define the numeric identifier for each transport. The serialization will contain then one link relation per transport supported, right? If so is there a link relation type called "transport" just like the one you have for "format"?
+
+* Are there other registries that should be known other than these three?
+      <http://www.iana.org/assignments/media-types>.
+      <http://www.iana.org/assignments/media-type-structured-suffix>.
+      <http://www.iana.org/assignments/core-parameters>.
+
+* Are there other changes to the serialization other than using numeric identifiers for the link relations? New symbols or formats that extend CBOR?
+
+* Are "<<<" and ">>>" new separators? Are they already part of CBOR?
+* > A flag in the serialized link indicates
+  * Which is flag in the example?
+
+* I don't get the namespaces in 2.3. Does CoRAL also gives numeric identifiers to those? Who hosts the registry of those identifiers?
+
+* You don't use ABNF notation in Section 3. How does CBOR validate it?
+
+### Summary of v00
+[The Constrained RESTful Application Language (CoRAL)](https://tools.ietf.org/html/draft-hartke-t2trg-coral-00)
+
+CoRAL is
+> a compact, binary representation format (serialization format) for Web links and forms that is based on the Concise Binary Object Representation (CBOR)
+
+Web links, as defined by (RFC5988)[https://tools.ietf.org/html/rfc5988#section-3] are comprised of context, a link relation type, a link target URI and, optionally, a set of target attributes.
+
+CoRAL uses [I-D.hartke-core-apps] link relation types. Which are the same as the ones in the IANA registry http://www.iana.org/assignments/link-relations/link-relations.xhtml but with a number as identifier in order to save bandwidth. New identifiers can be registered with IANA.
+
+Example:
+
+The Web link:
+
+```
+ <coap://example.com/info/tos>;rel=terms-of-service;type=text/plain
+```
+
+CoRAL serialization:
+
+```
+[ /abs_link/          0,
+       /terms-of-service/ 64,
+       [ /format/          3, 0 /text//plain/,
+         /href.scheme/     4, "coap",
+         /href.host.name/  6, "example.com",
+         /href.port/      11, 5683,
+         /href.path/      12, "info",
+         /href.path/      12, "tos" ]]
+```
+
+Representations of the link's target can also be added after the link.
+
+CoRAL also supports Forms, instead of **link-relation** types, **form-relation** types are used.

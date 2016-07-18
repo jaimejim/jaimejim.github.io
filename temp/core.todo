@@ -26,7 +26,7 @@ HTTP draft-ietf-core-http-mapping:
 CoRE-Links draft-ietf-core-links-json:
      #402  A reference implementation for links-json would be useful. | @Carsten
      #403  Should the RFC 7390 part of links-json be split off? | YES.
-     #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers | 
+     #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers
  ☐ [LNKS] WGLC issued, it ends @due(16-07-30 10:27)
  ☐ [LNKS] IESG Submission of draft-ietf-core-links-json @due(16-08-15 15:28)
  ☐ [LNKS] Find mailing list about Media Types, required formal reviews @due(16-07-18 16:20), @carsten @critical
@@ -115,8 +115,8 @@ To be added to datatracker: https://datatracker.ietf.org/wg/core/milestones/
    ☐ draft-ietf-core-comi (check proper name) @due(16-08-27 15:01)
 
  Submissions to IESG:
-   ☐ IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
    ☐ IESG Submission of draft-ietf-core-http-mapping @due(16-07-15 15:28)
+   ☐ IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
    ☐ IESG Submission of draft-ietf-core-links-json @due(16-08-15 15:28)
    ☐ IESG Submission of draft-ietf-core-senml  @due(16-08-15 15:28)
    ☐ IESG Submission of draft-ietf-core-resource-directory @due(16-09-15 15:28)
