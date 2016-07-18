@@ -497,12 +497,12 @@ pre.line-numbers > code {
 
 <h2 id="toc_0">Status CoRE ETCH</h2>
 
-<p>Author: <a href="jaimejim.github.io">Jaime Jiménez</a></p>
+<p>Author: <a href="http://jaimejim.github.io/">Jaime Jiménez</a></p>
 
 <h3 id="toc_1">Tentative Timeline</h3>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked> <a href="#summary">draft summary</a> 
+<li class="task-list-item"><input type="checkbox" checked> <a href="#summary">draft summary</a>
 </li>
 <li class="task-list-item"><input type="checkbox"> <a href="#shepherd-writeup">Shepherd Writeup</a> @Jaime <code>in progress</code> <code>@due(16-07-15 15:28)</code>.
 </li>
@@ -514,7 +514,7 @@ pre.line-numbers > code {
 
 <ul>
 <li><blockquote>
-<p><q>FETCH request cannot be generated from a link alone</q>. </p>
+<p><q>FETCH request cannot be generated from a link alone</q>.</p>
 </blockquote>
 
 <ul>
@@ -531,7 +531,7 @@ pre.line-numbers > code {
 <p><q>With PATCH, however, the enclosed entity contains a set of instructions describing how a resource currently residing on the origin server should be modified to produce a new version.  The PATCH method affects the resource identified by the Request-URI, and it also MAY have side effects on other resources; i.e., new resources may be created, or existing ones modified, by the application of a PATCH.</q></p>
 </blockquote></li>
 </ul></li>
-<li><p>As I think Ari pointed out, the FETCH media types are not defined.</p></li>
+<li><p>As it was pointed out, the FETCH media types are not defined.</p></li>
 <li><p>Strong ETag in an If-Match header on the PATCH request is used for HTTP idempotent operations. For CoAP a new iPATCH method is used instead (or so I understood). Is this correct?</p></li>
 <li><p>What are the implications on the HTTP Mapping draft-ietf-core-http-mapping? Where will the HTTP PATCH -&gt; CoAP PATCH be done?</p></li>
 <li><p>After discussing with Klaus he pointed out that maybe it is not necessary to have two methods for PATCH. Isn&#39;t it possible to learn wether the requested operation is idempotent or not from the payload?</p></li>
@@ -542,7 +542,7 @@ pre.line-numbers > code {
 <h3 id="toc_3">Editorial</h3>
 
 <ul>
-<li><em>as specified in sections 5.9</em>. 
+<li><em>as specified in sections 5.9</em>.
 
 <ul>
 <li>The link does not point to RFC7252.</li>
@@ -559,7 +559,7 @@ pre.line-numbers > code {
 
 <p>This document adds three new CoAP methods, FETCH, to perform the equivalent of a GET with a request body; and the twin methods PATCH and iPATCH, to perform partial modifications of an existing CoAP resource.</p>
 
-<p><a href="https://tools.ietf.org/html/draft-ietf-core-etch-01#page-5">FETCH</a> is modelled after the HTTP GET operation. A <em>normal</em> GET returns a representation of resource identified by the URI. In FETCH the server returns a representation as specified by the request parameters, thus it can&#39;t be assumed to be complete. Requests can be expressed as form relations on <a href="https://tools.ietf.org/html/draft-hartke-core-apps-03">CoRE Application Descriptions</a>. <br>
+<p><a href="https://tools.ietf.org/html/draft-ietf-core-etch-01#page-5">FETCH</a> is modelled after the HTTP GET operation. A <em>normal</em> GET returns a representation of resource identified by the URI. In FETCH the server returns a representation as specified by the request parameters, thus it can&#39;t be assumed to be complete. Requests can be expressed as form relations on <a href="https://tools.ietf.org/html/draft-hartke-core-apps-03">CoRE Application Descriptions</a>.<br>
 FETCH operations don&#39;t alter the state of the targeted resource, thus are safe and idempotent, the responses are cacheable. CoAP Observe can also be used on a FETCH request.</p>
 
 <p>Being this a resource in JSON:</p>
@@ -587,18 +587,18 @@ Content-Format: application/json
     &quot;foo&quot;: [&quot;bar&quot;,&quot;baz&quot;]
 }</code></pre></div>
 
-<p><a href="https://tools.ietf.org/html/draft-ietf-core-etch-01#page-5">PATCH and iPATCH</a> are mapped after the <a href="https://tools.ietf.org/html/rfc5789">HTTP PATCH method</a> </p>
+<p><a href="https://tools.ietf.org/html/draft-ietf-core-etch-01#page-5">PATCH and iPATCH</a> are mapped after the <a href="https://tools.ietf.org/html/rfc5789">HTTP PATCH method</a></p>
 
 <p>The PUT payload normally contains a full representation of a resource. PATCH payload contains a set of instructions describing how a resource on the origin server should be modified to produce a new version.  The PATCH method affects the resource identified by the Request-URI, and it also <strong>MAY have side effects on other resources</strong>,  new resources may be created, or existing ones modified.</p>
 
-<p>In fact the PATCH method strikes me as pretty dangerous for multiple reasons: </p>
+<p>In fact the PATCH method strikes me as pretty dangerous for multiple reasons:</p>
 
 <ol>
 <li>As seen above PATCH has effect on multiple resources.</li>
-<li>Collisions can also occur and the resource might be corrupted for the subsequent PATCH operations (PATCH is not safe nor idempotent). </li>
+<li>Collisions can also occur and the resource might be corrupted for the subsequent PATCH operations (PATCH is not safe nor idempotent).</li>
 </ol>
 
-<p>Neither PATCH nor iPATCH guarantee that that a resource can be modified. </p>
+<p>Neither PATCH nor iPATCH guarantee that that a resource can be modified.</p>
 
 <p>To ensure idempotent operations HTTP PATCH clients use a strong ETag [RFC2616] in an If-Match header on the PATCH request; CoAP uses a new method iPATCH.</p>
 
@@ -651,13 +651,13 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 
 <h3 id="toc_7">Review and Consensus</h3>
 
-<p>The document has gone through multiple expert reviews </p>
+<p>The document has gone through multiple expert reviews</p>
 
 <div><pre class="line-numbers"><code class="language-none">Implementation status tbd</code></pre></div>
 
 <h3 id="toc_8">Intellectual Property</h3>
 
-<p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG. <code>Ask authors, TBD</code> </p>
+<p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG. <code>Ask authors, TBD</code></p>
 
 <h3 id="toc_9">Other Points</h3>
 
@@ -684,11 +684,11 @@ I think the abstract can be a bit too verbose. Also it only mentions FETCH, PATC
 <div><pre class="line-numbers"><code class="language-none">TBD</code></pre></div>
 
 <ul>
-<li class="task-list-item"><input type="checkbox"> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? 
+<li class="task-list-item"><input type="checkbox"> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests?
 </li>
 </ul>
 
-<div><pre class="line-numbers"><code class="language-none">No errors, but some warnings are shown about existing ABNF. 
+<div><pre class="line-numbers"><code class="language-none">No errors, but some warnings are shown about existing ABNF.
 I aggregated all CoAP ABNF refs here: http://jaimejim.github.io/temp/coap-abnf</code></pre></div>
 
 <ul>
@@ -698,9 +698,9 @@ I aggregated all CoAP ABNF refs here: http://jaimejim.github.io/temp/coap-abnf</
 </li>
 <li class="task-list-item"><p><input type="checkbox"> Are all normative references made to documents that are ready for advancement and are otherwise in a clear state?</p>
 </li>
-<li class="task-list-item"><p><input type="checkbox" checked> If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction? <code>Does not apply</code> </p>
+<li class="task-list-item"><p><input type="checkbox" checked> If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction? <code>Does not apply</code></p>
 </li>
-<li class="task-list-item"><p><input type="checkbox" checked> If this is a <q>bis</q> document, have all of the errata been considered? <code>Does not apply</code> </p>
+<li class="task-list-item"><p><input type="checkbox" checked> If this is a <q>bis</q> document, have all of the errata been considered? <code>Does not apply</code></p>
 </li>
 <li><p>IANA Considerations:<br>
 <code><br>
@@ -717,19 +717,19 @@ Where are the Fetch Media Types?<br>
 <li class="task-list-item"><input type="checkbox"> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
 <code>
 TBD
-</code> 
+</code>
 </li>
 <li class="task-list-item"><input type="checkbox"> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
 <code>
 Not that I know of.
-</code> 
+</code>
 </li>
 <li class="task-list-item"><input type="checkbox"> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?
 <code>
 Not that I know of.
-</code> 
+</code>
 </li>
-<li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified? <code>Does not apply</code> 
+<li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified? <code>Does not apply</code>
 </li>
 </ul></li>
 </ul>
