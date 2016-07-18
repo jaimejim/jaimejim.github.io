@@ -48,9 +48,9 @@ Author: [Jaime Jiménez](http://jaimejim.github.io/)
 CoRAL is
 > a compact, binary representation format (serialization format) for Web links and forms that is based on the Concise Binary Object Representation (CBOR)
 
-Web links, as defined by (RFC5988)[https://tools.ietf.org/html/rfc5988#section-3] are comprised of context, a link relation type, a link target URI and, optionally, a set of target attributes.
+Web links, as defined by [RFC5988](https://tools.ietf.org/html/rfc5988#section-3) are comprised of context, a link relation type, a link target URI and, optionally, a set of target attributes.
 
-CoRAL uses [I-D.hartke-core-apps] link relation types. Which are the same as the ones in the IANA registry http://www.iana.org/assignments/link-relations/link-relations.xhtml but with a number as identifier in order to save bandwidth. New identifiers can be registered with IANA.
+CoRAL uses [I-D.hartke-core-apps] link relation types. Which are the same as the ones in the IANA registry <http://www.iana.org/assignments/link-relations/link-relations.xhtml> but with a number as identifier in order to save bandwidth. New identifiers can be registered with IANA.
 
 Example:
 
@@ -75,4 +75,6 @@ CoRAL serialization:
 
 Representations of the link's target can also be added after the link.
 
-CoRAL also supports Forms, instead of **link-relation** types, **form-relation** types are used.
+CoRAL also supports Forms, instead of *link-relation* types, *form-relation* types are used.
+
+The **Data Format**
