@@ -3,7 +3,7 @@ IETF - CoRE Working Group
 
 CoRE WG General:
  ☐ [GEN] Check RFC formatting and send feedback on the line spacing for https://core-wg.github.io/etch/ and check more on http://greenbytes.de/tech/webdav/rfc2629xslt/rfc2629xslt.html @jaime
- ☐ [GEN] Update https://datatracker.ietf.org/wg/core/documents/ status @jaime @critical
+ ☐ [GEN] Update https://datatracker.ietf.org/wg/core/documents/ status @jaime @high
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
   Notes:
@@ -11,7 +11,7 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
  ☐ [TCP] Talk to AD or RFC Editor about number of authors.
  ☐ [TCP] READ last version before IETF96 https://core-wg.github.io/coap-tcp-tls/ @due(16-07-16 16:07) @carsten @jaime @critical
  ☐ [TCP] IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
- ☐ [TCP] Read http://www.ietf.org/mail-archive/web/hybi/current/msg09540.html https://tools.ietf.org/html/rfc6520 to understand how other documents handle signalling @due(16-07-16 16:07)
+ ☐ [TCP] Read http://www.ietf.org/mail-archive/web/hybi/current/msg09540.html https://tools.ietf.org/html/rfc6520 to understand how other documents handle signaling @due(16-07-16 16:07)
 
 ETCH draft-ietf-core-etch:
  ☐ [ETCH] Shepperd Writeup (in progress) @due(16-07-18 15:28) @jaime @high
@@ -82,7 +82,7 @@ Block draft-ietf-core-block:
  ☐ [BLCK] Try to read and make summary (as for HTTP or TCP). Dig up the comments by Alexey and see what is still open @jaime @low
 
 CoRE Application Descriptions draft-hartke-core-apps:
- ☐ [CAPPS] Read laytest version.
+ ☐ [CAPPS] Read latest version.
 
 Freezer
 ---------
@@ -106,7 +106,6 @@ Alternative transports draft-ietf-bill:
 -------------
 
 NEXT WEEK:
- ☐ Code to get timeline out of this tasks @jaime @low
  ☐ Prepare slides for IETF @due(16-07-01 15:20) @high https://tools.ietf.org/wg/core/agenda
 
 Milestones:
