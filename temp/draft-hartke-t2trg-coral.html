@@ -501,50 +501,88 @@ pre.line-numbers > code {
 
 <h3 id="toc_1">Comments on v00</h3>
 
-<ul>
-<li><p>On CoRE Apps</p>
+<p><strong>[JJ]</strong> On CoRE Apps</p>
 
 <blockquote>
 <p>Applications that don&#39;t wish to register a relation type can use an<br>
-extension relation type, which is a URI that uniquely identifies the<br>
-relation type (similar to a URI used as an XML namespace names).  For<br>
-example, an application can use <q>http://example.com/foo</q> as link<br>
-relation type without having to register it.</p>
+   extension relation type, which is a URI that uniquely identifies the<br>
+   relation type (similar to a URI used as an XML namespace names).  For<br>
+   example, an application can use <q>http://example.com/foo</q> as link<br>
+   relation type without having to register it.</p>
 </blockquote>
 
 <ul>
 <li>Is the link relation <q>http://example.com/foo</q> or is it what comes after the host (i.e. <q>foo</q>).</li>
-</ul></li>
-<li><p>On the example below <q>/abs_link/</q>, <q>/terms...</q>, etc are not part of the serialization. Which is the format of the example (does not look like CBOR)?</p></li>
 </ul>
 
-<div><pre class="line-numbers"><code class="language-none">[ /abs_link/          0,
-  /terms-of-service/ 64,
-  [ /format/          3, 0 /text//plain/,
-    /href.scheme/     4, &quot;coap&quot;,
-    /href.host.name/  6, &quot;example.com&quot;,
-    /href.port/      11, 5683,
-    /href.path/      12, &quot;info&quot;,
-    /href.path/      12, &quot;tos&quot; ]]</code></pre></div>
+<p><strong>[KH]</strong> It&#39;s <q>http://example.com/foo</q>. The idea is to avoid registration in a central place by including a domain name under your control in the link relation type. So there is no collision between <q>http://uni-bremen.de/foo</q> and <q>http://ericsson.com/foo</q>. The same concept is used in XML namespace names.</p>
 
-<ul>
-<li><p>To represent multiple transport support, you would need to make another section where you define the numeric identifier for each transport. The serialization will contain then one link relation per transport supported, right? If so is there a link relation type called <q>transport</q> just like the one you have for <q>format</q>?</p></li>
-<li><p>Are there other registries that should be known other than these three?<br>
+<p><strong>[JJ]</strong> On the first example `<q>/abs_link/</q>, <q>/terms...</q> etc are not part of the serialization. Which is the format of the example (does not look like CBOR)?</p>
+
+<p><strong>[KH]</strong> That&#39;s CBOR Extended Diagnostic Format <a href="https://tools.ietf.org/html/draft-greevenbosch-appsawg-cbor-cddl-08#appendix-G">https://tools.ietf.org/html/draft-greevenbosch-appsawg-cbor-cddl-08#appendix-G</a>. Text enclosed in slashes are comments <a href="https://tools.ietf.org/html/draft-greevenbosch-appsawg-cbor-cddl-08#appendix-G.5">https://tools.ietf.org/html/draft-greevenbosch-appsawg-cbor-cddl-08#appendix-G.5</a>.</p>
+
+<p>In JSON the same example would be written as <code>[ 0, 64, [ 3, 0, 4, &quot;coap&quot;, 6, &quot;example.com&quot;, 11, 5683, 12, &quot;info&quot;, 12, &quot;tos&quot; ] ]</code>.</p>
+
+<p>So it&#39;s really just arrays with a bunch of numbers and strings.</p>
+
+<p><strong>[JJ]</strong> To represent multiple transport support, you would need to make another section where you define the numeric identifier for each transport. The serialization will contain then one link relation per transport supported, right? If so is there a link relation type called <q>transport</q> just like the one you have for <q>format</q>?</p>
+
+<p><strong>[KH]</strong> Let&#39;s say there is a CoAP server that supports both CoAP-over-UDP and CoAP-over-TCP. Then the easiest way to inform a CoAP client of the transports is to provide two links; for example</p>
+
+<div><pre class="line-numbers"><code class="language-none">  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;coap://example.org/bla.css&quot;/&gt;
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;coap+tcp://example.org/bla.css&quot;/&gt;</code></pre></div>
+
+<p>in HTML syntax (except that a web browser would try to load both stylesheets and not pick the link with the preferred transport).</p>
+
+<p>(<q>stylesheet</q> is the link relation type here; it indicates the meaning of the link, namely that the link target is a stylesheet that should be applied to the link source. <q>type</q> is a link attribute, not a link relation type; it indicates the media type of the stylesheet; since we have content formats in CoAP, the equivalent link attribute is called <q>format</q> in Coral)</p>
+
+<p>Note how the hrefs in the two links are the same except for the URI scheme. So one could imagine a more compact way to express two links that differ only in the URI scheme, like</p>
+
+<p><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{coap or coap+tcp}://example.org/bla.css&quot;/&gt;</code></p>
+
+<p>That&#39;s what I plan for the next version of Coral.</p>
+
+<p><strong>[JJ]</strong> Are there other registries that should be known other than these three?<br>
   <a href="http://www.iana.org/assignments/media-types">http://www.iana.org/assignments/media-types</a>.<br>
   <a href="http://www.iana.org/assignments/media-type-structured-suffix">http://www.iana.org/assignments/media-type-structured-suffix</a>.<br>
-  <a href="http://www.iana.org/assignments/core-parameters">http://www.iana.org/assignments/core-parameters</a>.</p></li>
-<li><p>Are there other changes to the serialization other than using numeric identifiers for the link relations? New symbols or formats that extend CBOR?</p></li>
-<li><p>Are <q>&lt;&lt;&lt;</q> and <q>&gt;&gt;&gt;</q> new separators? Are they already part of CBOR?</p></li>
-<li><blockquote>
+  <a href="http://www.iana.org/assignments/core-parameters">http://www.iana.org/assignments/core-parameters</a>.</p>
+
+<p><strong>[KH]</strong> The complete list from the core-apps draft is</p>
+
+<ul>
+<li>URI schemes: http://www.iana.org/assignments/uri-schemes</li>
+<li>Media types and content formats
+<a href="http://www.iana.org/assignments/media-types">http://www.iana.org/assignments/media-types</a>
+<a href="http://www.iana.org/assignments/media-type-structured-suffix">http://www.iana.org/assignments/media-type-structured-suffix</a>
+<a href="http://www.iana.org/assignments/core-parameters">http://www.iana.org/assignments/core-parameters</a></li>
+<li>Link relation types : <a href="http://www.iana.org/assignments/link-relations">http://www.iana.org/assignments/link-relations</a></li>
+<li>Form relation types needs to be Well-known URIs
+<a href="http://www.iana.org/assignments/well-known-uris">http://www.iana.org/assignments/well-known-uris</a></li>
+</ul>
+
+<p><strong>[JJ]</strong> Are there other changes to the serialisation other than using numeric identifiers for the link relations? New symbols or formats that extend CBOR?</p>
+
+<p><strong>[KH]</strong> I&#39;m using numeric identifiers for content formats, methods, link relation types and form relation types. URIs and link attributes are expressed as array elements; this does not require anything that CBOR (or JSON) does not already provide.</p>
+
+<p><strong>[JJ]</strong> Are <code>&lt;&lt;&lt;</code> and <code>&gt;&gt;&gt;</code> new separators? Are they already part of CBOR?</p>
+
+<p><strong>[KH]</strong> Yes, these are new separators. They represent binary data (which CBOR already supports, so it&#39;s just an extension to the CBOR Diagnostic Format).</p>
+
+<p><strong>[JJ]</strong> Which is flag in the example?</p>
+
+<blockquote>
 <p>A flag in the serialized link indicates</p>
 </blockquote>
 
-<ul>
-<li>Which is flag in the example?</li>
-</ul></li>
-<li><p>I don&#39;t get the namespaces in 2.3. Does CoRAL also gives numeric identifiers to those? Who hosts the registry of those identifiers?</p></li>
-<li><p>You don&#39;t use ABNF notation in Section 3. How does CBOR validate it?</p></li>
-</ul>
+<p><strong>[KH]</strong> The flags are a bit difficult to spot in the example. They are encoded in the first array element; see Figure 1 in the Coral draft.</p>
+
+<p><strong>[JJ]</strong> I don&#39;t get the namespaces in 2.3. Does CoRAL also gives numeric identifiers to those? Who hosts the registry of those identifiers?</p>
+
+<p><strong>[KH]</strong> There are two types of link relation types: link relation types registered in the IANA registry and extension link relation types (see <a href="https://tools.ietf.org/html/rfc5988#section-4">https://tools.ietf.org/html/rfc5988#section-4</a>). In Coral, you can only use numeric relation type identifiers, not string identifiers. So someone has to map the string identifiers to the numeric identifiers somewhere. For registered relation types, the idea is to delegate this  task to IANA. For extension relation types, the idea is that the application designers maintains the mapping somewhere.</p>
+
+<p><strong>[JJ]</strong> You don&#39;t use ABNF notation in Section 3. How does CBOR validate it?</p>
+
+<p><strong>[KH]</strong> That&#39;s CDDL notation (<a href="https://tools.ietf.org/html/draft-greevenbosch-appsawg-cbor-cddl-07">https://tools.ietf.org/html/draft-greevenbosch-appsawg-cbor-cddl-07</a>).</p>
 
 <h3 id="toc_2">Summary of v00</h3>
 
