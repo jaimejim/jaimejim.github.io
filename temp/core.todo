@@ -16,12 +16,14 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
 
 ETCH draft-ietf-core-etch:
  ☐ [ETCH] Shepperd Writeup (in progress) @due(16-07-18 15:28) @jaime @high
+ ☐ Requested Media Type Expert Review. Awaiting for authors.
  ☐ [ETCH] IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
 
 HTTP draft-ietf-core-http-mapping:
   Notes:
     Summary available http://jaimejim.github.io/temp/draft-ietf-core-http-mapping
  ☐ [HTTP] Shepperd Writeup draft-ietf-core-http-mapping @due(16-07-09 15:28), http://jaimejim.github.io/temp/draft-ietf-core-http-mapping#shepherd-writeup @Jaime
+ ☐ Requested Media Type Expert Review. Awaiting for authors.
  ☐ [HTTP] IESG Submission draft-ietf-core-http-mapping @due(16-07-15 15:28) @Jaime
 
 CoRE-Links draft-ietf-core-links-json:
