@@ -63,7 +63,8 @@ COMI-YANG CBOR draft-ietf-core-yang-cbor:
  ☐ [COYA] LWM2M/IPSO Object to YANG @Jaime @due(16-07-01 13:02) @critical
 
 COMI Draft:
- ☐ [COMI] draft-ietf-core-comi (checkproper name) @due(16-08-27 15:01)
+ ☐ [COMI] draft-vanderstok-ietf-comi @due(16-08-27 15:01)
+ ☐ [COMI] add table from objectid/name, how to express access type, range, enum...  (use pyyang compiler)
 
 Interfaces draft-ietf-core-interfaces:
  Notes
