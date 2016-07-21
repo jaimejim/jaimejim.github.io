@@ -3,30 +3,33 @@ IETF - CoRE Working Group
 
 CoRE WG General:
  ☐ [GEN] Check RFC formatting and send feedback on the line spacing for https://core-wg.github.io/etch/ and check more on http://greenbytes.de/tech/webdav/rfc2629xslt/rfc2629xslt.html @jaime
- ☐ [GEN] Update https://datatracker.ietf.org/wg/core/documents/ status @jaime @high
+ ☐ [GEN] Update https://datatracker.ietf.org/wg/core/documents/ status @jaime @critical
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
   Notes:
     Summary available http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls.html
+ ☐ [TCP] Request PORT for CoAP TCP @due(16-07-20)
  ☐ [TCP] Talk to AD or RFC Editor about number of authors.
  ☐ [TCP] READ last version before IETF96 https://core-wg.github.io/coap-tcp-tls/ @due(16-07-16 16:07) @carsten @jaime @critical
  ☐ [TCP] IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
- ☐ [TCP] Read http://www.ietf.org/mail-archive/web/hybi/current/msg09540.html https://tools.ietf.org/html/rfc6520 to understand how other documents handle signaling @due(16-07-16 16:07)
+ ☐ [TCP] Read http://www.ietf.org/mail-archive/web/hybi/current/msg09540.html https://tools.ietf.org/html/rfc6520 to understand how other documents handle signalling @due(16-07-16 16:07)
 
 ETCH draft-ietf-core-etch:
  ☐ [ETCH] Shepperd Writeup (in progress) @due(16-07-18 15:28) @jaime @high
+ ☐ Requested Media Type Expert Review. Awaiting for authors.
  ☐ [ETCH] IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
 
 HTTP draft-ietf-core-http-mapping:
   Notes:
     Summary available http://jaimejim.github.io/temp/draft-ietf-core-http-mapping
  ☐ [HTTP] Shepperd Writeup draft-ietf-core-http-mapping @due(16-07-09 15:28), http://jaimejim.github.io/temp/draft-ietf-core-http-mapping#shepherd-writeup @Jaime
+ ☐ Requested Media Type Expert Review. Awaiting for authors.
  ☐ [HTTP] IESG Submission draft-ietf-core-http-mapping @due(16-07-15 15:28) @Jaime
 
 CoRE-Links draft-ietf-core-links-json:
      #402  A reference implementation for links-json would be useful. | @Carsten
      #403  Should the RFC 7390 part of links-json be split off? | YES.
-     #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers | 
+     #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers
  ☐ [LNKS] WGLC issued, it ends @due(16-07-30 10:27)
  ☐ [LNKS] IESG Submission of draft-ietf-core-links-json @due(16-08-15 15:28)
  ☐ [LNKS] Find mailing list about Media Types, required formal reviews @due(16-07-18 16:20), @carsten @critical
@@ -60,7 +63,8 @@ COMI-YANG CBOR draft-ietf-core-yang-cbor:
  ☐ [COYA] LWM2M/IPSO Object to YANG @Jaime @due(16-07-01 13:02) @critical
 
 COMI Draft:
- ☐ [COMI] draft-ietf-core-comi (checkproper name) @due(16-08-27 15:01)
+ ☐ [COMI] draft-vanderstok-ietf-comi @due(16-08-27 15:01)
+ ☐ [COMI] add table from objectid/name, how to express access type, range, enum...  (use pyyang compiler) @due((16-08-05)
 
 Interfaces draft-ietf-core-interfaces:
  Notes
@@ -115,8 +119,8 @@ To be added to datatracker: https://datatracker.ietf.org/wg/core/milestones/
    ☐ draft-ietf-core-comi (check proper name) @due(16-08-27 15:01)
 
  Submissions to IESG:
-   ☐ IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
    ☐ IESG Submission of draft-ietf-core-http-mapping @due(16-07-15 15:28)
+   ☐ IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
    ☐ IESG Submission of draft-ietf-core-links-json @due(16-08-15 15:28)
    ☐ IESG Submission of draft-ietf-core-senml  @due(16-08-15 15:28)
    ☐ IESG Submission of draft-ietf-core-resource-directory @due(16-09-15 15:28)
