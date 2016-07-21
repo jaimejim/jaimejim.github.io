@@ -633,7 +633,7 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 
 <h3 id="toc_7">Review and Consensus</h3>
 
-<p>The document has gone through multiple expert reviews over the years and was last presented on IETF95. It is noteworthy that the document focuses on the reverse HTTP-CoAP proxy case, the forward proxy case was well specified in RFC7252.  </p>
+<p>The document has gone through multiple expert reviews over the years and was last presented on IETF95. </p>
 
 <p>There are several implementations available:</p>
 
@@ -642,6 +642,7 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 <li>HTTP-CoAP proxy based on EvCoAP, Thomas Fossati, and Salvatore Loreto. <a href="https://github.com/koanlogic/webthings/tree/master/bridge/sw/lib/evcoap">https://github.com/koanlogic/webthings/tree/master/bridge/sw/lib/evcoap</a></li>
 <li>FIWARE (Ericsson) implementation. <a href="https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Gateway_Device_Management_-_Ericsson_Gateway_-_User_and_Programmers_Guide#HTTP-CoAP_mapping">https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Gateway_Device_Management_-_Ericsson_Gateway_-_User_and_Programmers_Guide#HTTP-CoAP_mapping</a></li>
 <li>Oliver Kleine implementation, <a href="https://media.itm.uni-luebeck.de/people/kleine/poster_kleine_ssp.pdf">https://media.itm.uni-luebeck.de/people/kleine/poster_kleine_ssp.pdf</a> available here: <a href="http://core.ietf.narkive.com/d4MCPLLl/http-coap-proxy-setup">http://core.ietf.narkive.com/d4MCPLLl/http-coap-proxy-setup</a></li>
+<li>Californium uses the default URI Mapping (section 5.3): <a href="http://example.org/proxy/coap://coap.example.org">http://example.org/proxy/coap://coap.example.org</a></li>
 </ol>
 
 <h3 id="toc_8">Intellectual Property</h3>
@@ -649,8 +650,6 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 <p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG.</p>
 
 <h3 id="toc_9">Other Points</h3>
-
-<p><strong>TODO: Check for possible errors on the submission tool and comment on them, if I haven&#39;t.</strong></p>
 
 <p>Appendix-A should be removed before publication. <a href="https://tools.ietf.org/html/draft-ietf-core-http-mapping-12#appendix-A">https://tools.ietf.org/html/draft-ietf-core-http-mapping-12#appendix-A</a></p>
 
@@ -676,7 +675,7 @@ Published specification: (this I-D - TBD)</code> should be updated with the <cod
 </li>
 </ul>
 
-<div><pre class="line-numbers"><code class="language-none">Edited, see https://tools.ietf.org//rfcdiff?url1=https://tools.ietf.org/id/draft-ietf-core-http-mapping-10.txt&amp;url2=https://tools.ietf.org/id/draft-ietf-core-http-mapping-13.txt </code></pre></div>
+<div><pre class="line-numbers"><code class="language-none">Yes, some edits have been done, see https://tools.ietf.org//rfcdiff?url1=https://tools.ietf.org/id/draft-ietf-core-http-mapping-10.txt&amp;url2=https://tools.ietf.org/id/draft-ietf-core-http-mapping-13.txt </code></pre></div>
 
 <ul>
 <li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? 
@@ -712,21 +711,16 @@ I aggregated all CoAP ABNF refs here: http://jaimejim.github.io/temp/coap-abnf</
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)?
 </li>
-<li class="task-list-item"><input type="checkbox"> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
-<code>
-in progress
-</code> 
+<li class="task-list-item"><input type="checkbox" checked> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
 </li>
-<li class="task-list-item"><input type="checkbox"> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
-<code>
-Not that I know of.
-</code> 
+<li class="task-list-item"><input type="checkbox" checked> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
 </li>
-<li class="task-list-item"><input type="checkbox"> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?
-<code>
-Not that I know of.
-</code> 
+<li class="task-list-item"><input type="checkbox" checked> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?
+<code>Does not apply</code> 
 </li>
+</ul>
+
+<ul>
 <li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified? <code>Does not apply</code> 
 </li>
 </ul></li>
