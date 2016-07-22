@@ -3,27 +3,29 @@ IETF - CoRE Working Group
 
 CoRE WG General:
  ☐ [GEN] Check RFC formatting and send feedback on the line spacing for https://core-wg.github.io/etch/ and check more on http://greenbytes.de/tech/webdav/rfc2629xslt/rfc2629xslt.html @jaime
- ☐ [GEN] Update https://datatracker.ietf.org/wg/core/documents/ status @jaime @critical
+ ☐ [GEN] Update https://datatracker.ietf.org/wg/core/documents/ status @jaime
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
   Notes:
     Summary available http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls.html
- ☐ [TCP] Request PORT for CoAP TCP @due(16-07-20)
+ ☐ [TCP] Request PORT for CoAP TCP @due(2016-07-22 08:20)
  ☐ [TCP] Talk to AD or RFC Editor about number of authors.
- ☐ [TCP] READ last version before IETF96 https://core-wg.github.io/coap-tcp-tls/ @due(16-07-16 16:07) @carsten @jaime @critical
+ ✔ [TCP] READ last version before IETF96 https://core-wg.github.io/coap-tcp-tls/ @due(16-07-16 16:07) @carsten @jaime @critical @done(2016-07-22 08:20) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
  ☐ [TCP] IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
+ ☐ [TCP] [IETF96] Update Github Issues with comments from the meeting.
  ☐ [TCP] Read http://www.ietf.org/mail-archive/web/hybi/current/msg09540.html https://tools.ietf.org/html/rfc6520 to understand how other documents handle signalling @due(16-07-16 16:07)
 
 ETCH draft-ietf-core-etch:
- ☐ [ETCH] Shepperd Writeup (in progress) @due(16-07-18 15:28) @jaime @high
- ☐ Requested Media Type Expert Review. Awaiting for authors.
+ ☐ [ETCH] [IETF96] Address comments (preconditions and use of iPTACH/PATCH) on mailing list before shepherd-writeup @due(16-07-25)
+ ☐ [ETCH] [IETF96] shepherd-writeup (in progress in parallel) @due(16-07-18 15:28) @jaime @high
+ ☐ [ETCH] Awaiting for authors to initiate expert review on the media types @due(2016-07-22 08:23)
  ☐ [ETCH] IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
 
 HTTP draft-ietf-core-http-mapping:
   Notes:
     Summary available http://jaimejim.github.io/temp/draft-ietf-core-http-mapping
- ☐ [HTTP] Shepperd Writeup draft-ietf-core-http-mapping @due(16-07-09 15:28), http://jaimejim.github.io/temp/draft-ietf-core-http-mapping#shepherd-writeup @Jaime
- ☐ Requested Media Type Expert Review. Awaiting for authors.
+ ✔ [HTTP] Shepperd Writeup draft-ietf-core-http-mapping @due(16-07-09 15:28),  http://jaimejim.github.io/temp/draft-ietf-core-http-mapping#shepherd-writeup @Jaime @done(2016-07-22 08:55) @project(HTTP draft-ietf-core-http-mapping)
+ ✔ Requested Media Type Expert Review. Awaiting for authors. @done(2016-07-22 08:12) @project(HTTP draft-ietf-core-http-mapping)
  ☐ [HTTP] IESG Submission draft-ietf-core-http-mapping @due(16-07-15 15:28) @Jaime
 
 CoRE-Links draft-ietf-core-links-json:
@@ -32,22 +34,24 @@ CoRE-Links draft-ietf-core-links-json:
      #404  The group-format representations in CBOR use textual representations of IP addresses and port numbers
  ☐ [LNKS] WGLC issued, it ends @due(16-07-30 10:27)
  ☐ [LNKS] IESG Submission of draft-ietf-core-links-json @due(16-08-15 15:28)
- ☐ [LNKS] Find mailing list about Media Types, required formal reviews @due(16-07-18 16:20), @carsten @critical
+ ☐ [LNKS] [IETF96] Authors should request formal reviews for media types to iana mailing list (cc chairs) @due(16-07-30 10:00)
+ ✔ [LNKS] Find mailing list about Media Types, required formal reviews @due(16-07-18 16:20), @carsten @critical @done(2016-07-22 08:14) @project(CoRE-Links draft-ietf-core-links-json)
  ☐ [LNKS] Ad Content format values on IANA considerations.
- ☐ [LNKS] Shepperd Writeup @due(16-07-18 15:28) @jaime @critical
- ☐ [LNKS] Jaime to send JSON Objects of LWM2M to Carsten @Jaime @low
+ ☐ [LNKS] Shepperd Writeup @due(16-07-30 10:00) @jaime
 
 RD draft-ietf-core-resource-directory:
  ☐ [RD] Start preparing the RD Writeup for the IESG @Oscar @Jaime, publish on Oscar/Jaime github or on CoRE's misc github @due(16-07-04 14:42) @low
+ ☐ [RD] [EITF96] New reviews by Hannes T, Klaus H, Darshak, Bill S, Christian G, Sebastian (?), Matthias K.
  ☐ [RD] WGLC @due(16-08-01 15:28), depending on W3C-TD dependency
  ☐ [RD] IESG Submission of draft-ietf-core-resource-directory @due(16-09-01 15:28)
- ☐ [RD] Try to read and make summary (as for HTTP or TCP) @jaime @critical
 
 SenML draft-ietf-core-senml:
- ☐ [SML] WGLC after Berlin of draft-ietf-core-senml @due(16-07-18 16:40)
+
+ ☐ [SML] [IETF96] Several items to be taken on mailing list. @due(16-07-22 16:40)
+ ✘ [SML] WGLC after Berlin of draft-ietf-core-senml @due(16-07-18 16:40) @cancelled(2016-07-22 09:26) @project(SenML draft-ietf-core-senml)
  ☐ [SML] IESG Submission of draft-ietf-core-senml  @due(16-08-01 15:28)
 
-COMI-YANG CBOR draft-ietf-core-yang-cbor:
+COMI-COOL CBOR draft-ietf-core-yang-cbor:
   Notes:
      Target like https://tools.ietf.org/html/rfc7388
      Main doc https://tools.ietf.org/html/draft-ietf-core-yang-cbor-01
@@ -57,25 +61,31 @@ COMI-YANG CBOR draft-ietf-core-yang-cbor:
      draft-somaraju-core-sid-latest.md
      draft-turner-cool-problem-latest.md
      draft-veillette-core-cool-latest.md
- ☐ [COYA] Call for adoption for the merge document??
- ☐ [COYA] Plan ad-hoc meeting on device management during IETF96. @Carsten, to send invite for tuesday morning on IETF. @critical
- ☐ [COYA] IESG Submission of draft-ietf-core-yang-cbor @due(17-01-10 21:01)
- ☐ [COYA] LWM2M/IPSO Object to YANG @Jaime @due(16-07-01 13:02) @critical
+ ☐ [COCOL] Call for adoption for the merge document??
+ ☐ [COCOL] Plan ad-hoc meeting on device management during IETF96. @Carsten, to send invite for tuesday morning on IETF. @critical
+ ☐ [COCOL] IESG Submission of draft-ietf-core-yang-cbor @due(17-01-10 21:01)
+ ☐ [COCOL] [IETF96] draft-veillette-core-cool–02 6 people read it. Agreed to split document.
+ ☐ [COCOL] [IETF96] agree to move draft-somaraju-core-sid–01 forward.
+ ☐ [COCOL] [IETF96] fix draft-veillette-core-cool for YANG choices.
 
 COMI Draft:
  ☐ [COMI] draft-vanderstok-ietf-comi @due(16-08-27 15:01)
  ☐ [COMI] add table from objectid/name, how to express access type, range, enum...  (use pyyang compiler) @due((16-08-05)
 
+ PubSub draft-ietf-koster-pubsub:
+  ☐ [PBSB] Carsten to read the draft @high
+  ☐ [PBSB] [IETF96] Confirm WGA on mailing list. Review by Jeng Wei, Hannes, Jim, Bill, Peter, ??
+  ✔ [PBSB] WG Item on IETF96? Check if it is in the charter @due(16-07-21 16:55) @done(2016-07-22 10:12) @project(COMI Draft / PubSub draft-ietf-koster-pubsub)
+  ✔ [PBSB] Restart work after W3C in Beijing @due(16-08-06 21:03) @done(2016-07-22 10:12) @project(COMI Draft / PubSub draft-ietf-koster-pubsub)
+
 Interfaces draft-ietf-core-interfaces:
- Notes
-   Draft has expired. It needs to be changed a lot (MiKos)
-   Collections seems useful. Link Bindings, futures....
-   Should it be informational or normative?
  ☐ [INTF] Restart work after W3C in Beijing @due(16-08-06 21:03)
+ ☐ [INTF] Document split confirmed.
  ☐ [INTF] IESG Submission of draft-ietf-core-interfaces @due(17-03-01 21:03)
 
 DynLink draft-groves-core-dynlink:
- ☐ [DNLNK] Check in Berlin if this should be WG item.
+ ✔ [DLNK] Check in Berlin if this should be WG item. @done(2016-07-22 08:56) @project(DynLink draft-groves-core-dynlink)
+ ☐ [DLNK] [IETF96] 3 people have read this. Confirm WGA to the mailing list.
 
 Block draft-ietf-core-block:
  Notes
@@ -85,26 +95,25 @@ Block draft-ietf-core-block:
  ☐ [BLCK] AUTH48 for last changes from RFC Editor. https://www.rfc-editor.org/pubprocess/  https://www.rfc-editor.org/current_queue.php
  ☐ [BLCK] Try to read and make summary (as for HTTP or TCP). Dig up the comments by Alexey and see what is still open @jaime @low
 
-CoRE Application Descriptions draft-hartke-core-apps:
- ☐ [CAPPS] Read latest version.
-
 CoRE Object Security CoAP draft-selander-ace-object-security:
-  ☐ [OSCO] End of the year WGLC.
+  ☐ [OSCOAP] End of the year WGLC.
+  ☐ [OSCOAP] Confirm WGA on mailing list.
+  ☐ [OSCOAP] [IETF96] 12 people read it. Reviews promised by Jim, Sandeep Kumar and Thomas Watteyne.
 
+Congestion Control draft-bormann-core-cocoa:
+  ☐ [CCA] [IETF96] Show of hands showed positive. Confirm WGA on mailing list.
 
 Freezer
 ---------
 
+Security Requirements draft-hartke-core-e2e-security-reqs:
+  ☐ [SCRQ] [IETF96] Jim pointed out possible issues with BIRT. Take to mailing list.
+
+CoRE Application Descriptions draft-hartke-core-apps:
+ ☐ [CAPPS] Read latest version.
+
 Protocol Negotiation draft-silverajan-core-coap-protocol-negotiation:
  ☐ [PRNE] Present alternatives, obtain WG direction. Connection to TCP/TLS. @due(16-07-21 16:58)
-
-PubSub draft-ietf-koster-pubsub:
- Notes
-   Present what we are trying to do in Berlin. Target is to clarify the open question about this work.
-   We should find out what do people find so attractive about MQTT/TCP solutions. In Berlin, T2TRG?
- ☐ [PBSB] Carsten to read the draft @high
- ☐ [PBSB] WG Item on IETF96? Check if it is in the charter @due(16-07-21 16:55)
- ☐ [PBSB] Restart work after W3C in Beijing @due(16-08-06 21:03)
 
 Alternative transports draft-ietf-bill:
  Notes
