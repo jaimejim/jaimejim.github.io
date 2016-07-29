@@ -26,7 +26,11 @@ HTTP draft-ietf-core-http-mapping:
     Summary available http://jaimejim.github.io/temp/draft-ietf-core-http-mapping
  ✔ [HTTP] Shepperd Writeup draft-ietf-core-http-mapping @due(16-07-09 15:28),  http://jaimejim.github.io/temp/draft-ietf-core-http-mapping#shepherd-writeup @Jaime @done(2016-07-22 08:55) @project(HTTP draft-ietf-core-http-mapping)
  ✔ Requested Media Type Expert Review. Awaiting for authors. @done(2016-07-22 08:12) @project(HTTP draft-ietf-core-http-mapping)
- ☐ [HTTP] IESG Submission draft-ietf-core-http-mapping @due(16-07-15 15:28) @Jaime
+ ✔ [HTTP] IESG Submission draft-ietf-core-http-mapping @due(16-07-15 15:28) @Jaime @done(2016-07-22 11:07) @project(HTTP draft-ietf-core-http-mapping)
+ ☐ [HTTP] Alexey AD review @due(2016-08-15 11:08) @iesg
+ ☐ [HTTP] IETFLC  @due(2016-08-28 11:08) @iesg
+ ☐ [HTTP] AD go ahead if IETFLC OK. @iesg
+ ☐ [HTTP] IESG Ballot (ADs read it). @iesg
 
 CoRE-Links draft-ietf-core-links-json:
      #402  A reference implementation for links-json would be useful. | @Carsten
@@ -132,7 +136,7 @@ To be added to datatracker: https://datatracker.ietf.org/wg/core/milestones/
    ☐ draft-ietf-core-comi (check proper name) @due(16-08-27 15:01)
 
  Submissions to IESG:
-   ☐ IESG Submission of draft-ietf-core-http-mapping @due(16-07-15 15:28)
+   ✔ IESG Submission of draft-ietf-core-http-mapping @due(16-07-15 15:28) @done(2016-07-22 11:06) @project(Submissions to IESG)
    ☐ IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
    ☐ IESG Submission of draft-ietf-core-links-json @due(16-08-15 15:28)
    ☐ IESG Submission of draft-ietf-core-senml  @due(16-08-15 15:28)
