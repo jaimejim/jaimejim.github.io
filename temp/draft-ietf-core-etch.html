@@ -519,8 +519,13 @@ pre.line-numbers > code {
 
 <ul>
 <li>sorry for the naive question but I would like to know the main difference between FETCH and simply adding query parameters to the URI, using the <q>?</q>. That could be something to be added to the document.</li>
+<li>Limited to UTF8 and cannot provide type for the query parameters (we want to use CBOR query parameters).</li>
 </ul></li>
-<li><p>What about Response Codes in RFC7252 that operate on full resource representations, do they apply? What happens when multiple resources get modified, you get one response per resource or per request? <code>I assume per request/transaction</code></p></li>
+<li><p>What about Response Codes in RFC7252 that operate on full resource representations, do they apply? What happens when multiple resources get modified, you get one response per resource or per request? <code>I assume per request/transaction</code></p>
+
+<ul>
+<li>Yes, it will depend on the payload formatting. Answers will be added as an array to the response payload (in FETCH,PATCH does not need that).</li>
+</ul></li>
 <li><blockquote>
 <p><q>The difference between the PUT and PATCH requests is extensively documented in [RFC5789].</q></p>
 </blockquote>
@@ -529,14 +534,37 @@ pre.line-numbers > code {
 <li><p>I didn&#39;t find the HTTP PATCH document that extensive on documenting the difference. But there are some good paragraphs on section 2. I think you should consider adding some explanation on the PATCH section, something on those lines:</p></li>
 <li><blockquote>
 <p><q>With PATCH, however, the enclosed entity contains a set of instructions describing how a resource currently residing on the origin server should be modified to produce a new version.  The PATCH method affects the resource identified by the Request-URI, and it also MAY have side effects on other resources; i.e., new resources may be created, or existing ones modified, by the application of a PATCH.</q></p>
-</blockquote></li>
+</blockquote>
+
+<ul>
+<li>It is a normative reference and people should read it in order to understand it.</li>
 </ul></li>
-<li><p>As it was pointed out, the FETCH media types are not defined.</p></li>
-<li><p>Strong ETag in an If-Match header on the PATCH request is used for HTTP idempotent operations. For CoAP a new iPATCH method is used instead (or so I understood). Is this correct?</p></li>
-<li><p>What are the implications on the HTTP Mapping draft-ietf-core-http-mapping? Where will the HTTP PATCH -&gt; CoAP PATCH be done?</p></li>
-<li><p>After discussing with Klaus H he pointed out that maybe it is not necessary to have two methods for PATCH. Isn&#39;t it possible to learn whether the requested operation is idempotent or not from the payload?</p></li>
-<li><p>Which is the implementation status of the draft?</p></li>
-<li><p>Have you checked with an expert for the media types? A formal review is required for the shepherd writeup to be complete.</p></li>
+</ul></li>
+<li><p>As it was pointed out, the FETCH media types are not defined.</p>
+
+<ul>
+<li>There are no new media types existing media types are existing. Content Format registry is being address. </li>
+</ul></li>
+<li><p>if the If-Match header is there on the PATCH request is used for HTTP idempotent operations. For CoAP a new iPATCH method is used instead (or so I understood). Is this correct?</p>
+
+<ul>
+<li> Not quite. IF-MATCH is used if you need to know something about the structure of the resource.<br></li>
+</ul></li>
+<li><p>What are the implications on the HTTP Mapping draft-ietf-core-http-mapping? Where will the HTTP PATCH -&gt; CoAP PATCH be done?</p>
+
+<ul>
+<li>TBD on another document.</li>
+</ul></li>
+<li><p>Which is the implementation status of the draft?</p>
+
+<ul>
+<li> None known.</li>
+</ul></li>
+<li><p>Have you checked with an expert for the media types? A formal review is required for the shepherd writeup to be complete.</p>
+
+<ul>
+<li>No KNEW media types. The owner of the Contant Format registry should have a look (Zach Shelby). </li>
+</ul></li>
 </ul>
 
 <h3 id="toc_3">Editorial</h3>
@@ -653,7 +681,7 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 
 <p>The document has gone through multiple expert reviews</p>
 
-<div><pre class="line-numbers"><code class="language-none">Ask for implementation status</code></pre></div>
+<div><pre class="line-numbers"><code class="language-none">Ask for implementation status, ask for expert reviews.</code></pre></div>
 
 <h3 id="toc_8">Intellectual Property</h3>
 
@@ -670,13 +698,13 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Is the correct RFC type indicated in the title page header?
 </li>
-<li class="task-list-item"><input type="checkbox"> Is the abstract both brief and sufficient, and does it stand alone as a brief summary? <code>I think the abstract can be a bit too verbose. Also it only mentions FETCH, PATCH and iPATCH towards the end.</code>
+<li class="task-list-item"><input type="checkbox"> Is the abstract both brief and sufficient, and does it stand alone as a brief summary? 
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Is the intent of the document accurately and adequately explained in the introduction?
 </li>
-<li class="task-list-item"><input type="checkbox"> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed? <code>mailing list: media-types@iana.org</code>
+<li class="task-list-item"><input type="checkbox"> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed? <code>Authors have to do this mailing list: media-types@iana.org, core-parameters...</code>
 </li>
-<li class="task-list-item"><p><input type="checkbox"> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? <code>ABNF can be checked against: http://jaimejim.github.io/temp/coap-abnf</code></p>
+<li class="task-list-item"><p><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? <code>There is no ABNF in this draft</code></p>
 </li>
 <li class="task-list-item"><p><input type="checkbox"> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79? <code>TBD</code></p>
 </li>
@@ -688,7 +716,7 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 </li>
 <li class="task-list-item"><p><input type="checkbox" checked> If this is a <q>bis</q> document, have all of the errata been considered? <code>Does not apply</code></p>
 </li>
-<li><p><strong>IANA</strong> Considerations: <code>Are the media types correct?</code></p>
+<li><p><strong>IANA</strong> Considerations: </p>
 
 <ul>
 <li class="task-list-item"><input type="checkbox"> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions.
@@ -699,11 +727,11 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 </li>
 <li class="task-list-item"><input type="checkbox"> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
 </li>
-<li class="task-list-item"><input type="checkbox"> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call? <code>Not that I know of.</code>
+<li class="task-list-item"><input type="checkbox"> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call? 
 </li>
-<li class="task-list-item"><input type="checkbox"> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives? <code>Not that I know of.</code>
+<li class="task-list-item"><input type="checkbox"> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives? 
 </li>
-<li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified? <code>Does not apply</code>
+<li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified?
 </li>
 </ul></li>
 </ul>
