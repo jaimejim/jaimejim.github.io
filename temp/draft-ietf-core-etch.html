@@ -555,7 +555,7 @@ pre.line-numbers > code {
 <li><p>As it was pointed out, the FETCH media types are not defined.</p>
 
 <ul>
-<li>There are no new media types existing media types are existing. Content Format registry is being address. </li>
+<li>There are no new media types, existing media types are used. Content Format registry is being addressed. </li>
 </ul></li>
 <li><p>if the If-Match header is there on the PATCH request is used for HTTP idempotent operations. For CoAP a new iPATCH method is used instead (or so I understood). Is this correct?</p>
 
@@ -587,6 +587,7 @@ pre.line-numbers > code {
 <ul>
 <li>The link does not point to RFC7252.</li>
 </ul></li>
+<li>Extra <q>typo on  *</q>y-coord<q>: 45</q>,*</li>
 </ul>
 
 <hr>
@@ -606,7 +607,7 @@ FETCH operations don&#39;t alter the state of the targeted resource, thus are sa
 
 <div><pre class="line-numbers"><code class="language-c"> {
     &quot;x-coord&quot;: 256,
-    &quot;y-coord&quot;: 45&quot;,
+    &quot;y-coord&quot;: 45,
     &quot;foo&quot;: [&quot;bar&quot;,&quot;baz&quot;]
  }</code></pre></div>
 
@@ -706,9 +707,9 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 
 <h3 id="toc_9">Other Points</h3>
 
-<p><code><br>
-TBD<br>
-</code></p>
+<blockquote>
+<p>There is a downref to RFC 2616: This is in there because the security considerations of RFC 7252 reference (the now obsoleted) RFC 2616. The authors are not aware of someone having done the work to collect the relevant security considerations from the splinters of RFC 2616 (RFC 7230 and following).</p>
+</blockquote>
 
 <h3 id="toc_10">Checklist</h3>
 
@@ -717,18 +718,22 @@ TBD<br>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Is the correct RFC type indicated in the title page header?
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Is the abstract both brief and sufficient, and does it stand alone as a brief summary? <code>The abstract is OK, but in my opinion it could benefit form a bit or rewriting, of the four paragraphs only the last one talks about the draft, the first three are context (which is not bad per se)</code>
+<li class="task-list-item"><input type="checkbox" checked> Is the abstract both brief and sufficient, and does it stand alone as a brief summary? 
+<code>The abstract is OK, but in my opinion it could benefit form a bit or rewriting,</code>
+<code>of the four paragraphs only the last one talks about the draft, the first three</code>
+<code>are context (which is not bad per se)</code>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Is the intent of the document accurately and adequately explained in the introduction?
 </li>
-<li class="task-list-item"><input type="checkbox"> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed? <code>I am not sure if the two new media type entries need verification by media-types@iana.org The Content Format editor should check the content format.</code>
+<li class="task-list-item"><input type="checkbox"> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed? <code>I am not sure if the two new media type entries need verification by media-types@iana.org</code>
+<code>The Content Format editor should check the content format.</code>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? <code>There is no ABNF in this draft</code>
 </li>
 <li class="task-list-item"><input type="checkbox"> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79? <code>TBD once the last version is submitted</code>
 </li>
-<li class="task-list-item"><input type="checkbox"> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified? <code>There is a normative reference to [I-D.ietf-core-block], is that correct?
-Shouldn&#39;t [RFC6902], [RFC7396] be informative?</code>
+<li class="task-list-item"><input type="checkbox"> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified? <code>There is a normative reference to [I-D.ietf-core-block], is that correct?</code>
+<code>Shouldn&#39;t [RFC6902], [RFC7396] be informative?</code>
 </li>
 <li class="task-list-item"><input type="checkbox"> Are all normative references made to documents that are ready for advancement and are otherwise in a clear state? 
 <code>There is a normative reference to [I-D.ietf-core-block]</code>
@@ -740,8 +745,9 @@ Shouldn&#39;t [RFC6902], [RFC7396] be informative?</code>
 <li><p><strong>IANA</strong> Considerations: </p>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions. <code>I wonder if adding a link to the CoRE Parameters registry could help, but it looks OK to me. http://www.iana.org/assignments/core-parameters/core-parameters.xhtml#method-codes</code>
+<li class="task-list-item"><input type="checkbox" checked> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions. <code>I wonder if adding a link to the CoRE Parameters registry could help, but it looks OK to me.</code>
 </li>
+<li><code>http://www.iana.org/assignments/core-parameters/core-parameters.xhtml#method-codes</code></li>
 <li class="task-list-item"><input type="checkbox" checked> Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?
 </li>
 <li class="task-list-item"><input type="checkbox"> Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)? <code>The two new entries to the content format registry (51 and 52) require expert review.</code>
