@@ -514,9 +514,11 @@ pre.line-numbers > code {
 
 <ul>
 <li>Which is the implementation status of the draft?</li>
-<li>Have you checked with an expert for the media types? A formal review is required for the shepherd writeup to be complete. </li>
+<li>Can all core-link relations or expressions be translated to JSON and CBOR? Is there no <em>loss in translation</em>? If there is, it should be mentioned in 2.2 if it hasn&#39;t already.</li>
+<li>From IETF96, JSON-LD was considered as an option by some, and as something to be left out of this draft for now. What is the author&#39;s opinion?</li>
+<li>A formal review is required for new media types. Have you checked that with media-types@iana.org? </li>
 <li>Have table 1 references been checked at WGLC?</li>
-<li>CDDL in figures 1 and 2 should be validated if it hasn&#39;t. </li>
+<li>CDDL in figures 1 and 2 should be validated if they hadn&#39;t. </li>
 </ul>
 
 <h3 id="toc_3">Editorial</h3>
@@ -528,6 +530,12 @@ pre.line-numbers > code {
 <blockquote>
 <p>This specification defines a common approach for translating between the CoRE-specific bespoke formats, JSON and CBOR formats.  Where applicable, mapping from other formats (e.g.  CoRE Link Format) into JSON or CBOR is also described.<br>
 This specification defines a common format for representing CoRE Web Linking in JSON and CBOR.</p>
+</blockquote>
+
+<p>into something like this:</p>
+
+<blockquote>
+<p>This specification defines a common format for representing CoRE Web Linking in JSON and CBOR, as well as translating from CoRE Link Format to both of them. </p>
 </blockquote></li>
 </ul>
 
@@ -539,13 +547,27 @@ This specification defines a common format for representing CoRE Web Linking in 
 
 <p><a href="https://tools.ietf.org/html/draft-ietf-core-links-json-06">Representing CoRE Formats in JSON and CBOR</a></p>
 
-<p>The draft defines a format for representing Web links <a href="https://tools.ietf.org/html/rfc5988">RFC5988</a> in JSON (generic in use)and CBOR (used in the constrained space over CoAP) in CoRE link format <a href="https://tools.ietf.org/html/rfc6690">RFC6690</a>. </p>
+<p>The draft defines a format for representing Web links <a href="https://tools.ietf.org/html/rfc5988">RFC5988</a> in JSON (generic in use) and CBOR (used in the constrained space over CoAP) in CoRE link format <a href="https://tools.ietf.org/html/rfc6690">RFC6690</a>. </p>
 
 <p>Both formats are defined on their respective RFCs: JavaScript Object Notation (JSON) <a href="https://tools.ietf.org/html/rfc7159">RFC7159</a> and Concise Binary Object Representation (CBOR) <a href="https://tools.ietf.org/html/rfc7049">RFC7049</a>.</p>
 
-<p>A link-format document is a collection of web links <code>link-value</code>, each of which is a collection of attributes <code>link-param</code> applied to a <code>URI-Reference</code>. </p>
+<p>A link-format document is a collection of web links <code>link-value</code>, each of which is a collection of attributes <code>link-param</code> applied to a <code>URI-Reference</code>. The <a href="https://tools.ietf.org/html/draft-ietf-core-links-json-06#section-2.2">Information Model mapping</a> is straightforward for the collection of links and attributes, requiring CBOR an extra mapping to the encoded values, its CDDL being:</p>
 
-<p>Request to the CoAP Server</p>
+<div><pre class="line-numbers"><code class="language-c">                                   +           +
+links = [* link]                   |           |
+link = {                           |  JSON     |
+  href: tstr    ; resource URI     |           |
+  * label =&gt; tstr / true           |           |
+}                                  +           |
+label = tstr / &amp;(                              | CBOR
+  href: 1,   rel: 2,        anchor: 3,         |
+  rev: 4,    hreflang: 5,   media: 6,          |
+  title: 7,  type: 8,       rt: 9,             |
+  if: 10,    sz: 11,        ct: 12,            |
+  obs: 13,                                     |
+)                                              +</code></pre></div>
+
+<p>There is one example of mapping, answer to the following request to the CoAP Server:</p>
 
 <div><pre class="line-numbers"><code class="language-c">REQ: GET /.well-known/core?anchor=/sensors/temp</code></pre></div>
 
@@ -560,7 +582,7 @@ This specification defines a common format for representing CoRE Web Linking in 
 
 <p>Same response in JSON:</p>
 
-<div><pre class="line-numbers"><code class="language-javascript">&quot;[{&quot;href&quot;:&quot;/sensors&quot;,&quot;ct&quot;:&quot;40&quot;,&quot;title&quot;:&quot;Sensor
+<div><pre class="line-numbers"><code class="language-c">&quot;[{&quot;href&quot;:&quot;/sensors&quot;,&quot;ct&quot;:&quot;40&quot;,&quot;title&quot;:&quot;Sensor
  Index&quot;},{&quot;href&quot;:&quot;/sensors/temp&quot;,&quot;rt&quot;:&quot;temperature-
  c&quot;,&quot;if&quot;:&quot;sensor&quot;},{&quot;href&quot;:&quot;/sensors/light&quot;,&quot;rt&quot;:&quot;light-
  lux&quot;,&quot;if&quot;:&quot;sensor&quot;},{&quot;href&quot;:&quot;http://www.example.com/sensors/
@@ -579,7 +601,7 @@ This specification defines a common format for representing CoRE Web Linking in 
 
 <p>The full example of hexadecimal CBOR is found in <a href="https://tools.ietf.org/html/draft-ietf-core-links-json-06#page-8">Section 2.4.2</a>. </p>
 
-<p>Sizewise the result is the following: </p>
+<p>Sizewise the results are:</p>
 
 <table>
 <thead>
@@ -587,24 +609,28 @@ This specification defines a common format for representing CoRE Web Linking in 
 <th style="text-align: left">Notation</th>
 <th style="text-align: center">Binary</th>
 <th style="text-align: right">Size</th>
+<th style="text-align: right">% to Link Format</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td style="text-align: left">Link Format</td>
-<td style="text-align: center">No</td>
-<td style="text-align: right">?</td>
+<td style="text-align: center">no</td>
+<td style="text-align: right">257 bytes</td>
+<td style="text-align: right">--------</td>
 </tr>
 <tr>
 <td style="text-align: left">JSON</td>
-<td style="text-align: center">No</td>
+<td style="text-align: center">no</td>
 <td style="text-align: right">321 bytes</td>
+<td style="text-align: right">&gt; 25 %</td>
 </tr>
 <tr>
 <td style="text-align: left">CBOR</td>
 <td style="text-align: center">yes</td>
 <td style="text-align: right">203 bytes</td>
+<td style="text-align: right">&lt; 21 %</td>
 </tr>
 </tbody>
 </table>
@@ -624,20 +650,19 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 
 <p>Web Linking (RFC5988) provides a way to represent links between Web resources as well as the relations expressed by them and attributes of such a link. In constrained networks, a collection of Web links can be exchanged in the CoRE link format (RFC6690). Outside of constrained environments, it may be useful to represent these collections of Web links in JSON, and similarly, inside constrained environments, in CBOR. This specification defines a common format for this.</p>
 
+<p>The document is intended for Standards Track.</p>
+
 <h3 id="toc_7">Review and Consensus</h3>
 
 <p>The document has gone through multiple expert reviews and has been discussed on multiple IETF meetings. Before the last IETF the WGLC was completed. </p>
 
-<p><code>Status on comments from IETF96?</code> </p>
-
-<p>There are no known implementations available. </p>
-
-<p><code>Ask for implementation status changes, ask for expert reviews on the content format registry (Zach).<br>
-</code></p>
+<p><code>Address comments section (on v 06) above please</code> </p>
 
 <h3 id="toc_8">Intellectual Property</h3>
 
-<p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG. <code>Ask authors, TBD</code></p>
+<p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG. </p>
+
+<p><code>Ask authors, TBD</code></p>
 
 <h3 id="toc_9">Other Points</h3>
 
@@ -652,21 +677,19 @@ TBD<br>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Is the correct RFC type indicated in the title page header?
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Is the abstract both brief and sufficient, and does it stand alone as a brief summary? <code>The abstract is OK, but in my opinion it could benefit form a bit or rewriting, of the four paragraphs only the last one talks about the draft, the first three are context (which is not bad per se)</code>
+<li class="task-list-item"><input type="checkbox" checked> Is the abstract both brief and sufficient, and does it stand alone as a brief summary?
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Is the intent of the document accurately and adequately explained in the introduction?
 </li>
-<li class="task-list-item"><input type="checkbox"> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed? <code>I am not sure if the two new media type entries need verification by media-types@iana.org The Content Format editor should check the content format.</code>
+<li class="task-list-item"><input type="checkbox"> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed? <code>New media type entries (link-format+json and link-format+cbor) need verification by media-types@iana.org. The CDDL should be verified.</code>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? <code>There is no ABNF in this draft</code>
+<li class="task-list-item"><input type="checkbox"> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? <code>Need information on how to check CDDL</code>
 </li>
 <li class="task-list-item"><input type="checkbox"> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79? <code>TBD once the last version is submitted</code>
 </li>
-<li class="task-list-item"><input type="checkbox"> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified? <code>There is a normative reference to [I-D.ietf-core-block], is that correct?
-Shouldn&#39;t [RFC6902], [RFC7396] be informative?</code>
+<li class="task-list-item"><input type="checkbox" checked> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified? <code>Both seem correct to me</code>
 </li>
-<li class="task-list-item"><input type="checkbox"> Are all normative references made to documents that are ready for advancement and are otherwise in a clear state? 
-<code>There is a normative reference to [I-D.ietf-core-block]</code>
+<li class="task-list-item"><input type="checkbox" checked> Are all normative references made to documents that are ready for advancement and are otherwise in a clear state? 
 </li>
 <li class="task-list-item"><input type="checkbox" checked> If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction? <code>Does not apply</code>
 </li>
@@ -675,11 +698,11 @@ Shouldn&#39;t [RFC6902], [RFC7396] be informative?</code>
 <li><p><strong>IANA</strong> Considerations: </p>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions. <code>I wonder if adding a link to the CoRE Parameters registry could help, but it looks OK to me. http://www.iana.org/assignments/core-parameters/core-parameters.xhtml#method-codes</code>
+<li class="task-list-item"><input type="checkbox" checked> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions. <code>Are the new media type IDs assigned sequentially or do we request something concrete to IANA? URL to check http://www.iana.org/assignments/core-parameters/core-parameters.xhtml</code>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?
 </li>
-<li class="task-list-item"><input type="checkbox"> Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)? <code>The two new entries to the content format registry (51 and 52) require expert review.</code>
+<li class="task-list-item"><input type="checkbox"> Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)? <code>The new two media types require expert review.</code>
 </li>
 <li class="task-list-item"><input type="checkbox"> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
 </li>
@@ -704,10 +727,6 @@ Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:
 
 <script type="text/javascript">
 Prism.languages.c=Prism.languages.extend("clike",{keyword:/\b(asm|typeof|inline|auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while)\b/,operator:/\-[>-]?|\+\+?|!=?|<<?=?|>>?=?|==?|&&?|\|?\||[~^%?*\/]/,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)[ful]*\b/i}),Prism.languages.insertBefore("c","string",{macro:{pattern:/(^\s*)#\s*[a-z]+([^\r\n\\]|\\.|\\(?:\r\n?|\n))*/im,lookbehind:!0,alias:"property",inside:{string:{pattern:/(#\s*include\s*)(<.+?>|("|')(\\?.)+?\3)/,lookbehind:!0},directive:{pattern:/(#\s*)\b(define|elif|else|endif|error|ifdef|ifndef|if|import|include|line|pragma|undef|using)\b/,lookbehind:!0,alias:"keyword"}}},constant:/\b(__FILE__|__LINE__|__DATE__|__TIME__|__TIMESTAMP__|__func__|EOF|NULL|stdin|stdout|stderr)\b/}),delete Prism.languages.c["class-name"],delete Prism.languages.c["boolean"];
-</script>
-
-<script type="text/javascript">
-Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,number:/\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,"function":/[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i}),Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,lookbehind:!0,greedy:!0}}),Prism.languages.insertBefore("javascript","class-name",{"template-string":{pattern:/`(?:\\\\|\\?[^\\])*?`/,greedy:!0,inside:{interpolation:{pattern:/\$\{[^}]+\}/,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:Prism.languages.javascript}},string:/[\s\S]+/}}}),Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,lookbehind:!0,inside:Prism.languages.javascript,alias:"language-javascript"}}),Prism.languages.js=Prism.languages.javascript;
 </script>
 
 <script type="text/javascript">
