@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="utf-8">
-<title>draft-ietf-core-etch</title>
+<title>draft-ietf-core-senml</title>
 
 
 <style type="text/css">
@@ -495,7 +495,7 @@ pre.line-numbers > code {
 
 <body>
 
-<h2 id="toc_0">Status CoRE ETCH</h2>
+<h2 id="toc_0">Status CoRE LINKS</h2>
 
 <p>Author: <a href="http://jaimejim.github.io/">Jaime Jiménez</a></p>
 
@@ -504,235 +504,191 @@ pre.line-numbers > code {
 <ul>
 <li class="task-list-item"><input type="checkbox" checked> <a href="#summary">draft summary</a>
 </li>
-<li class="task-list-item"><input type="checkbox"> <a href="#shepherd-writeup">Shepherd Writeup</a> @Jaime <code>in progress</code> <code>@due(16-07-15 15:28) -&gt; Delayed @due(10-08-15 15:28)</code>. 
+<li class="task-list-item"><input type="checkbox"> <a href="#shepherd-writeup">Shepherd Writeup</a> @Jaime <code>in progress, @due(10-08-15 15:28)</code> 
 </li>
-<li><p>Q/A</p>
-
-<ul>
-<li class="task-list-item"><input type="checkbox" checked> Are there implementations of the draft?
-</li>
-<li class="task-list-item"><input type="checkbox" checked> IPR declaration.
-</li>
-<li class="task-list-item"><input type="checkbox"> Content Format check by Zach.
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Normative reference core-block.
-</li>
-</ul></li>
-<li class="task-list-item"><p><input type="checkbox"> IESG submission <code>@due(16-07-25 15:31) -&gt; Delayed @due(16-08-15 15:28)</code>.</p>
+<li class="task-list-item"><input type="checkbox"> IESG Submission <code>@due(16-08-15 15:28)</code>
 </li>
 </ul>
 
-<h3 id="toc_2">Comments on v01</h3>
+<h3 id="toc_2">Comments on v06</h3>
 
 <ul>
-<li><blockquote>
-<p><q>FETCH request cannot be generated from a link alone</q>.</p>
-</blockquote>
-
-<ul>
-<li>sorry for the naive question but I would like to know the main difference between FETCH and simply adding query parameters to the URI, using the <q>?</q>. That could be something to be added to the document.</li>
-<li>Limited to UTF8 and cannot provide type for the query parameters (we want to use CBOR query parameters).</li>
-</ul></li>
-<li><p>What about Response Codes in RFC7252 that operate on full resource representations, do they apply? What happens when multiple resources get modified, you get one response per resource or per request? <code>I assume per request/transaction</code></p>
-
-<ul>
-<li>Yes, it will depend on the payload formatting. Answers will be added as an array to the response payload (in FETCH,PATCH does not need that).</li>
-</ul></li>
-<li><blockquote>
-<p><q>The difference between the PUT and PATCH requests is extensively documented in [RFC5789].</q></p>
-</blockquote>
-
-<ul>
-<li><p>I didn&#39;t find the HTTP PATCH document that extensive on documenting the difference. But there are some good paragraphs on section 2. I think you should consider adding some explanation on the PATCH section, something on those lines:</p></li>
-<li><blockquote>
-<p><q>With PATCH, however, the enclosed entity contains a set of instructions describing how a resource currently residing on the origin server should be modified to produce a new version.  The PATCH method affects the resource identified by the Request-URI, and it also MAY have side effects on other resources; i.e., new resources may be created, or existing ones modified, by the application of a PATCH.</q></p>
-</blockquote>
-
-<ul>
-<li>It is a normative reference and people should read it in order to understand it.</li>
-</ul></li>
-</ul></li>
-<li><p>As it was pointed out, the FETCH media types are not defined.</p>
-
-<ul>
-<li>There are no new media types, existing media types are used. Content Format registry is being addressed. </li>
-</ul></li>
-<li><p>if the If-Match header is there on the PATCH request is used for HTTP idempotent operations. For CoAP a new iPATCH method is used instead (or so I understood). Is this correct?</p>
-
-<ul>
-<li> Not quite. IF-MATCH is used if you need to know something about the structure of the resource.<br></li>
-</ul></li>
-<li><p>What are the implications on the HTTP Mapping draft-ietf-core-http-mapping? Where will the HTTP PATCH -&gt; CoAP PATCH be done?</p>
-
-<ul>
-<li>TBD on another document.</li>
-</ul></li>
-<li><p>Which is the implementation status of the draft?</p>
-
-<ul>
-<li> None known.</li>
-</ul></li>
-<li><p>Have you checked with an expert for the media types? A formal review is required for the shepherd writeup to be complete.</p>
-
-<ul>
-<li>No KNEW media types. The owner of the Content Format registry should have a look (Zach Shelby). </li>
-</ul></li>
+<li>Which is the implementation status of the draft?</li>
+<li>Can all core-link relations or expressions be translated to JSON and CBOR? Is there no <em>loss in translation</em>? If there is, it should be mentioned in 2.2 if it hasn&#39;t already.</li>
+<li>From IETF96, JSON-LD was considered as an option by some, and as something to be left out of this draft for now. What is the author&#39;s opinion?</li>
+<li>Have Christian Amsüss <a href="mailto:c.amsuess@energyharvesting.at">c.amsuess@energyharvesting.at</a> comments from the WGLC been addressed?</li>
+<li>A formal review is required for new media types. Have you checked that with media-types@iana.org? </li>
+<li>Have table 1 references been checked at WGLC?</li>
+<li>CDDL in figures 1 and 2 should be validated if they hadn&#39;t. </li>
 </ul>
 
-<h3 id="toc_3">Comments on v02</h3>
+<h3 id="toc_3">Editorial</h3>
 
 <ul>
-<li>IMO WGLC have been addressed.</li>
-</ul>
+<li><p>When converting between a bespoke syntax such as that defined by <strong>CoRE Link Format</strong> [RFC6690]</p></li>
+<li><p>IMO the following excerpt needs rewriting: </p>
 
-<h3 id="toc_4">Editorial</h3>
+<blockquote>
+<p>This specification defines a common approach for translating between the CoRE-specific bespoke formats, JSON and CBOR formats.  Where applicable, mapping from other formats (e.g.  CoRE Link Format) into JSON or CBOR is also described.<br>
+This specification defines a common format for representing CoRE Web Linking in JSON and CBOR.</p>
+</blockquote>
 
-<ul>
-<li><em>as specified in sections 5.9</em>.
+<p>into something like this:</p>
 
-<ul>
-<li>The link does not point to RFC7252.</li>
-</ul></li>
-<li>Extra <q>typo on  *</q>y-coord<q>: 45</q>,*</li>
+<blockquote>
+<p>This specification defines a common format for representing CoRE Web Linking in JSON and CBOR, as well as translating from CoRE Link Format to both of them. </p>
+</blockquote></li>
 </ul>
 
 <hr>
 
 <p><span id="summary"></span></p>
 
-<h3 id="toc_5">Summary draft-ietf-core-etch-01</h3>
+<h3 id="toc_4">Summary draft-ietf-core-links-json-06</h3>
 
-<p><a href="https://tools.ietf.org/html/draft-ietf-core-etch-01">Patch and Fetch Methods for Constrained Application Protocol (CoAP)</a></p>
+<p><a href="https://tools.ietf.org/html/draft-ietf-core-links-json-06">Representing CoRE Formats in JSON and CBOR</a></p>
 
-<p>This document adds three new CoAP methods, FETCH, to perform the equivalent of a GET with a request body; and the twin methods PATCH and iPATCH, to perform partial modifications of an existing CoAP resource.</p>
+<p>The draft defines a format for representing and translating Web links <a href="https://tools.ietf.org/html/rfc5988">RFC5988</a> from CoRE link format <a href="https://tools.ietf.org/html/rfc6690">RFC6690</a> to JSON (generic in use) and CBOR (used in the constrained space over CoAP)</p>
 
-<p><a href="https://tools.ietf.org/html/draft-ietf-core-etch-01#page-5">FETCH</a> is modelled after the HTTP GET operation. A <em>normal</em> GET returns a representation of resource identified by the URI. In FETCH the server returns a representation as specified by the request parameters, thus it can&#39;t be assumed to be complete. Requests can be expressed as form relations on <a href="https://tools.ietf.org/html/draft-hartke-core-apps-03">CoRE Application Descriptions</a>.<br>
-FETCH operations don&#39;t alter the state of the targeted resource, thus are safe and idempotent, the responses are cacheable. CoAP Observe can also be used on a FETCH request.</p>
+<p>Both formats are defined on their respective RFCs: JavaScript Object Notation (JSON) <a href="https://tools.ietf.org/html/rfc7159">RFC7159</a> and Concise Binary Object Representation (CBOR) <a href="https://tools.ietf.org/html/rfc7049">RFC7049</a>.</p>
 
-<p>Being this a resource in JSON:</p>
+<p>A link-format document is a collection of web links <code>link-value</code>, each of which is a collection of attributes <code>link-param</code> applied to a <code>URI-Reference</code>. The <a href="https://tools.ietf.org/html/draft-ietf-core-links-json-06#section-2.2">Information Model mapping</a> is straightforward for the collection of links and attributes, requiring CBOR an extra mapping to the encoded values, its CDDL being:</p>
 
-<div><pre class="line-numbers"><code class="language-c"> {
-    &quot;x-coord&quot;: 256,
-    &quot;y-coord&quot;: 45,
-    &quot;foo&quot;: [&quot;bar&quot;,&quot;baz&quot;]
- }</code></pre></div>
+<div><pre class="line-numbers"><code class="language-c">                                   +           +
+links = [* link]                   |           |
+link = {                           |  JSON     |
+  href: tstr    ; resource URI     |           |
+  * label =&gt; tstr / true           |           |
+}                                  +           |
+label = tstr / &amp;(                              | CBOR
+  href: 1,   rel: 2,        anchor: 3,         |
+  rev: 4,    hreflang: 5,   media: 6,          |
+  title: 7,  type: 8,       rt: 9,             |
+  if: 10,    sz: 11,        ct: 12,            |
+  obs: 13,                                     |
+)                                              +</code></pre></div>
 
-<p>The Request would be:</p>
+<p>There is one example of mapping, answer to the following request to the CoAP Server:</p>
 
-<div><pre class="line-numbers"><code class="language-c">FETCH CoAP://www.example.com/object
-Content-Format: NNN (application/example-map-keys+json)
-Accept: application/json
-[
-    &quot;foo&quot;
-]</code></pre></div>
+<div><pre class="line-numbers"><code class="language-c">REQ: GET /.well-known/core?anchor=/sensors/temp</code></pre></div>
 
-<p>The server response would be:</p>
+<p>Response form in CoRE Link Format:</p>
 
-<div><pre class="line-numbers"><code class="language-c">2.05 Content
-Content-Format: 50 (application/json)
-{
-    &quot;foo&quot;: [&quot;bar&quot;,&quot;baz&quot;]
-}</code></pre></div>
+<div><pre class="line-numbers"><code class="language-c">&lt;/sensors&gt;;ct=40;title=&quot;Sensor Index&quot;,
+&lt;/sensors/temp&gt;;rt=&quot;temperature-c&quot;;if=&quot;sensor&quot;,
+&lt;/sensors/light&gt;;rt=&quot;light-lux&quot;;if=&quot;sensor&quot;,
+&lt;http://www.example.com/sensors/t123&gt;;anchor=&quot;/sensors/temp&quot;
+;rel=&quot;describedby&quot;,
+&lt;/t&gt;;anchor=&quot;/sensors/temp&quot;;rel=&quot;alternate&quot;</code></pre></div>
 
-<p><a href="https://tools.ietf.org/html/draft-ietf-core-etch-01#page-5">PATCH and iPATCH</a> are mapped after the <a href="https://tools.ietf.org/html/rfc5789">HTTP PATCH method</a></p>
+<p>Same response in JSON:</p>
 
-<p>The PUT payload normally contains a full representation of a resource. PATCH payload contains a set of instructions describing how a resource on the origin server should be modified to produce a new version.  The PATCH method affects the resource identified by the Request-URI, and it also <strong>MAY have side effects on other resources</strong>,  new resources may be created, or existing ones modified.</p>
+<div><pre class="line-numbers"><code class="language-c">&quot;[{&quot;href&quot;:&quot;/sensors&quot;,&quot;ct&quot;:&quot;40&quot;,&quot;title&quot;:&quot;Sensor
+ Index&quot;},{&quot;href&quot;:&quot;/sensors/temp&quot;,&quot;rt&quot;:&quot;temperature-
+ c&quot;,&quot;if&quot;:&quot;sensor&quot;},{&quot;href&quot;:&quot;/sensors/light&quot;,&quot;rt&quot;:&quot;light-
+ lux&quot;,&quot;if&quot;:&quot;sensor&quot;},{&quot;href&quot;:&quot;http://www.example.com/sensors/
+ t123&quot;,&quot;anchor&quot;:&quot;/sensors/
+ temp&quot;,&quot;rel&quot;:&quot;describedby&quot;},{&quot;href&quot;:&quot;/t&quot;,&quot;anchor&quot;:&quot;/sensors/
+ temp&quot;,&quot;rel&quot;:&quot;alternate&quot;}]&quot;</code></pre></div>
 
-<p>In fact the PATCH method strikes me as pretty dangerous for multiple reasons:</p>
+<p>Same response in CBOR diagnostic format, in which there is a substitution of the <a href="https://tools.ietf.org/html/draft-ietf-core-links-json-06#page-6">common attribute names</a>:</p>
 
-<ol>
-<li>As seen above PATCH has effect on multiple resources.</li>
-<li>Collisions can also occur and the resource might be corrupted for the subsequent PATCH operations (PATCH is not safe nor idempotent).</li>
-</ol>
+<div><pre class="line-numbers"><code class="language-c">[{1: &quot;/sensors&quot;, 12: &quot;40&quot;, 7: &quot;Sensor Index&quot;},
+ {1: &quot;/sensors/temp&quot;, 9: &quot;temperature-c&quot;, 10: &quot;sensor&quot;},
+ {1: &quot;/sensors/light&quot;, 9: &quot;light-lux&quot;, 10: &quot;sensor&quot;},
+ {1: &quot;http://www.example.com/sensors/t123&quot;, 3: &quot;/sensors/temp&quot;,
+  2: &quot;describedby&quot;},
+ {1: &quot;/t&quot;, 3: &quot;/sensors/temp&quot;, 2: &quot;alternate&quot;}]</code></pre></div>
 
-<p>Neither PATCH nor iPATCH guarantee that that a resource can be modified.</p>
+<p>The full example of hexadecimal CBOR is found in <a href="https://tools.ietf.org/html/draft-ietf-core-links-json-06#page-8">Section 2.4.2</a>. </p>
 
-<p>To ensure idempotent operations HTTP PATCH clients use a strong ETag [RFC2616] in an If-Match header on the PATCH request; CoAP uses a new method iPATCH.</p>
+<p>Sizewise the results are:</p>
 
-<p>Original document in JSON:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left">Notation</th>
+<th style="text-align: center">Binary</th>
+<th style="text-align: right">Size</th>
+<th style="text-align: right">% to Link Format</th>
+</tr>
+</thead>
 
-<div><pre class="line-numbers"><code class="language-c"> {
-    &quot;x-coord&quot;: 256,
-    &quot;y-coord&quot;: 45,
-    &quot;foo&quot;: [&quot;bar&quot;,&quot;baz&quot;]
- }</code></pre></div>
-
-<p>As an example of PATCH request:</p>
-
-<div><pre class="line-numbers"><code class="language-c">REQ: iPATCH CoAP://www.example.com/object
-Content-Format: 51 (application/json-patch+json)
-[
-   { &quot;op&quot;:&quot;replace&quot;, &quot;path&quot;:&quot;x-coord&quot;, &quot;value&quot;:45}
-]</code></pre></div>
-
-<p>JSON document final state:</p>
-
-<div><pre class="line-numbers"><code class="language-c"> {
-    &quot;x-coord&quot;: 45,
-    &quot;y-coord&quot;: 45,
-    &quot;foo&quot;: [&quot;bar&quot;,&quot;baz&quot;]
- }</code></pre></div>
-
-<p>There is a whole set of <a href="https://tools.ietf.org/html/draft-ietf-core-etch-01#page-12">possible errors and how can they be handled</a>.</p>
+<tbody>
+<tr>
+<td style="text-align: left">Link Format</td>
+<td style="text-align: center">no</td>
+<td style="text-align: right">257 bytes</td>
+<td style="text-align: right">--------</td>
+</tr>
+<tr>
+<td style="text-align: left">JSON</td>
+<td style="text-align: center">no</td>
+<td style="text-align: right">321 bytes</td>
+<td style="text-align: right">&gt; 25 %</td>
+</tr>
+<tr>
+<td style="text-align: left">CBOR</td>
+<td style="text-align: center">yes</td>
+<td style="text-align: right">203 bytes</td>
+<td style="text-align: right">&lt; 21 %</td>
+</tr>
+</tbody>
+</table>
 
 <hr>
 
 <p><span id="shepherd-writeup"></span></p>
 
-<h2 id="toc_6">Shepherd Writeup</h2>
+<h2 id="toc_5">Shepherd Writeup</h2>
 
-<h3 id="toc_7">Summary</h3>
+<h3 id="toc_6">Summary</h3>
 
 <p>Document Shepherd: <a href="jaime.jimenez@ericsson.com">Jaime Jiménez</a><br>
 Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 
-<p>The existing Constrained Application Protocol (CoAP) methods only allow access to a complete resource.  This does not permit applications to access parts of a resource.  In case of resources with larger or complex data, or in situations where a resource continuity is required, replacing or requesting the whole resource is undesirable.  Several applications using CoAP will need to perform partial resource accesses.</p>
+<p>JavaScript Object Notation, JSON (RFC7159) is a text-based data format which is popular for Web based data exchange.  Concise Binary Object Representation, CBOR (RFC7049) is a binary data format which has been optimized for data exchange for the Internet of Things (IoT). For many IoT scenarios, CBOR formats will be preferred since it can help decrease transmission payload sizes as well as implementation code sizes compared to other data formats.</p>
 
-<p>Similar to HTTP, the existing Constrained Application Protocol (CoAP) GET method only allows the specification of a URI and request parameters in CoAP options, not the transfer of a request payload detailing the request.  This leads to some applications to using POST where actually a cacheable, idempotent, safe request is desired.</p>
+<p>Web Linking (RFC5988) provides a way to represent links between Web resources as well as the relations expressed by them and attributes of such a link. In constrained networks, a collection of Web links can be exchanged in the CoRE link format (RFC6690). Outside of constrained environments, it may be useful to represent these collections of Web links in JSON, and similarly, inside constrained environments, in CBOR. This specification defines a common format for this.</p>
 
-<p>Again similar to HTTP, the existing Constrained Application Protocol (CoAP) PUT method only allows to replace a complete resource.  This also leads applications to use POST where actually a cacheable, possibly idempotent request is desired.</p>
+<p>The document is intended for Standards Track.</p>
 
-<p>This specification adds new CoAP methods, FETCH, to perform the equivalent of a GET with a request body; and the twin methods PATCH and iPATCH, to modify parts of an existing CoAP resource.</p>
-
-<p>The document is intended as an Standards Track RFC.</p>
-
-<h3 id="toc_8">Review and Consensus</h3>
+<h3 id="toc_7">Review and Consensus</h3>
 
 <p>The document has gone through multiple expert reviews and has been discussed on multiple IETF meetings. Before the last IETF the WGLC was completed. </p>
 
-<p>There are no known implementations available. </p>
+<p><code>Address comments section (on v 06) above please</code> </p>
 
-<h3 id="toc_9">Intellectual Property</h3>
+<h3 id="toc_8">Intellectual Property</h3>
 
-<p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG.</p>
+<p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG. </p>
 
-<h3 id="toc_10">Other Points</h3>
+<p><code>Ask authors, TBD</code></p>
 
-<blockquote>
-<p>There is a downref to RFC 2616: This is in there because the security considerations of RFC 7252 reference (the now obsoleted) RFC 2616. The authors are not aware of someone having done the work to collect the relevant security considerations from the splinters of RFC 2616 (RFC 7230 and following).</p>
-</blockquote>
+<h3 id="toc_9">Other Points</h3>
 
-<h3 id="toc_11">Checklist</h3>
+<p><code><br>
+TBD<br>
+</code></p>
+
+<h3 id="toc_10">Checklist</h3>
 
 <ul>
 <li class="task-list-item"><input type="checkbox" checked> Does the shepherd stand behind the document and think the document is ready for publication?
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Is the correct RFC type indicated in the title page header?
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Is the abstract both brief and sufficient, and does it stand alone as a brief summary? 
+<li class="task-list-item"><input type="checkbox" checked> Is the abstract both brief and sufficient, and does it stand alone as a brief summary?
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Is the intent of the document accurately and adequately explained in the introduction?
 </li>
-<li class="task-list-item"><input type="checkbox"> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed?
-<code>The Content Format editor should check the content format.</code>
+<li class="task-list-item"><input type="checkbox"> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed? <code>New media type entries (link-format+json and link-format+cbor) need verification by media-types@iana.org. The CDDL should be verified.</code>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? 
-<code>There is no ABNF in this draft</code>
+<li class="task-list-item"><input type="checkbox"> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? <code>Need information on how to check CDDL</code>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79? 
+<li class="task-list-item"><input type="checkbox"> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79? <code>TBD once the last version is submitted</code>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified? 
-<code>There is a normative reference to [I-D.ietf-core-block] but that shouldn&#39;t be a problem as it is in late stages</code>
+<li class="task-list-item"><input type="checkbox" checked> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified? <code>Both seem correct to me</code>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Are all normative references made to documents that are ready for advancement and are otherwise in a clear state? 
 </li>
@@ -743,21 +699,17 @@ Area Director: <a href="aamelnikov@fastmail.fm">Alexey Melnikov</a></p>
 <li><p><strong>IANA</strong> Considerations: </p>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions. 
-<code>I wonder if adding a link to the CoRE Parameters registry could help, but it looks OK to me.</code>
-<code>http://www.iana.org/assignments/core-parameters/core-parameters.xhtml#method-codes</code>
+<li class="task-list-item"><input type="checkbox" checked> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions. <code>Are the new media type IDs assigned sequentially or do we request something concrete to IANA? URL to check http://www.iana.org/assignments/core-parameters/core-parameters.xhtml</code>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)? 
-<code>The two new entries to the content format registry (51 and 52) require expert review.</code>
+<li class="task-list-item"><input type="checkbox"> Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)? <code>The new two media types require expert review.</code>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
+<li class="task-list-item"><input type="checkbox"> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
 </li>
 <li class="task-list-item"><input type="checkbox"> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call? 
 </li>
-<li class="task-list-item"><input type="checkbox" checked> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives? 
-<code>no new registries</code>
+<li class="task-list-item"><input type="checkbox" checked> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives? <code>no new registries</code>
 </li>
 <li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified?
 </li>
