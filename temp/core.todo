@@ -61,9 +61,10 @@ SenML draft-ietf-core-senml:
 
  ☐ [SML] [IETF96] Several items to be taken on mailing list. @due(16-07-22 16:40)
  ✘ [SML] WGLC after Berlin of draft-ietf-core-senml @due(16-07-18 16:40) @cancelled(2016-07-22 09:26) @project(SenML draft-ietf-core-senml)
+ ☐ [SML] WGLC @due(16-09-01 16:40)
  ☐ [SML] New items after Berlin. It will require some work.
  ☐ [SML] New Registry. Check with IANA.
- ☐ [SML] IESG Submission of draft-ietf-core-senml  @due(16-08-01 15:28) delayed to @due(16-08-20 15:28)
+ ☐ [SML] IESG Submission of draft-ietf-core-senml  @due(16-08-01 15:28) delayed to @due(16-09-29 15:28)
 
 COMI-COOL CBOR draft-ietf-core-yang-cbor:
   Notes:
@@ -79,12 +80,12 @@ COMI-COOL CBOR draft-ietf-core-yang-cbor:
  ☐ [COCOL] Plan ad-hoc meeting on device management during IETF96. @Carsten, to send invite for tuesday morning on IETF. @critical
  ☐ [COCOL] IESG Submission of draft-ietf-core-yang-cbor @due(17-01-10 21:01)
  ☐ [COCOL] [IETF96] draft-veillette-core-cool–02 6 people read it. Agreed to split document.
- ☐ [COCOL] [IETF96] agree to move draft-somaraju-core-sid–01 forward.
+ ☐ [COCOL] [IETF96] agree to move draft-somaraju-core-sid–01 forward. Confirm on mailing list @jaime
  ☐ [COCOL] [IETF96] fix draft-veillette-core-cool for YANG choices.
 
-COMI Draft:
- ☐ [COMI] draft-vanderstok-ietf-comi @due(16-08-27 15:01)
- ☐ [COMI] add table from objectid/name, how to express access type, range, enum...  (use pyyang compiler) @due((16-08-05)
+ COMI Draft:
+  ☐ [COMI] draft-vanderstok-ietf-comi @due(16-08-27 15:01)
+  ☐ [COMI] add table from objectid/name, how to express access type, range, enum...  (use pyyang compiler) @due((16-08-05)
 
  PubSub draft-ietf-koster-pubsub:
   ☐ [PBSB] Carsten to read the draft @high
