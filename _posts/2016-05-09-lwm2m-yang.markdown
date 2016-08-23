@@ -1,5 +1,5 @@
 ---
-title: "Mapping LWM2M / IPSO and YANG models"
+title: "Mapping LWM2M, IPSO and YANG models"
 layout: post
 date: 2016-06-10 09:00
 tag:
