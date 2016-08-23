@@ -10,7 +10,7 @@ blog: true
 star: true
 ---
 
-I am a pretty organized person, chairing [CoRE](https://datatracker.ietf.org/wg/core/charter/) and [IPSO SO](http://ipso-alliance.github.io/pub/) as well of years of project work has made realize the importance of concrete action points and tracking.
+I would claim to be a pretty organized person, mostly because I have to if I don't want to go crazy tracking the work happening on various standard orgs, internal projects and mailing lists.
 
 As I only have ten fingers I am sadly not capable of using [orgmode](http://orgmode.org) efficiently. If you are one of the *chosen ones* that can exclusively use Emacs I strongly recommend it. Instead, I use **[PlainTasks](https://github.com/aziz/PlainTasks)** (first on Sublime, now on Atom), kudos to [@aziz](https://github.com/aziz) for doing them BTW.
 
