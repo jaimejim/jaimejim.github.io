@@ -1,22 +1,12 @@
 
 *.xml
 
-drafts/IOTSU/Makefile
-
-*.mkd
-
 drafts/Makefile
 
-temp/draft-ietf-core-coap-tcp-tls.md
-
-temp/draft-ietf-core-http-mapping.md
-
-minutes/160609kapua.md
+temp/*.md
 
 *.key
 
 *.ppt
-
-*.md
 
 *.yml
