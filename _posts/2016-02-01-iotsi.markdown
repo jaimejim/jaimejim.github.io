@@ -1,0 +1,34 @@
+---
+title: "Semantic Interoperability Workshop I"
+layout: post
+date: 2016-02-01 09:00
+image: http://www.ericsson.com/research-blog/wp-content/uploads/2016/02/Jamie´s-picture-to-blog-1.jpeg
+tag:
+- iotsi
+- semantic interoperability
+blog: true
+star: true
+---
+
+This article is featured at the [Ericsson Research Blog](http://www.ericsson.com/research-blog/internet-of-things/semantic-interoperability-internet-things/).
+
+---
+Standards for constrained devices are rapidly consolidating. Semantic Interoperability is the next step in the IoT consolidation and is already happening. In March, the Internet Architecture Board will hold a workshop about interoperability at the application level. We in Ericsson Research will contribute (and host!) – and ask for you to join as well.
+
+Proof of the consolidation is the closer cooperation and interoperation between Alliances and Standards bodies in the IoT space.
+
+One could say that there is not much of a discussion anymore at the Network layer – the Internet Protocol (IP) rules there, already supporting constrained devices via many networking technologies, such as 6LowPAN. IP is being extended to other traditionally non-IP standards like ZigBee or Bluetooth as well.
+
+At layers above Network, there are not that many protocols either. They generally run over UDP, TCP and/or SMS. If we were to make a distinction we could see REST-based ones like Constrained Application Protocol (CoAP) and HTTP or more broker-based ones like MQTT or XMPP. Additional functionality has been built on top of these basic communication mechanisms, for instance at the IETF with the definition of a [Broker-like system for publish/subscribe type of communication](https://tools.ietf.org/html/draft-koster-core-coap-pubsub-04), [Resource Directory](https://tools.ietf.org/html/draft-koster-core-coap-pubsub-04) , Web Linking for Constrained Devices or the CoAP Interfaces that have become part of several other standards.
+
+Vendors working on the IoT space are traditionally building vertically integrated systems with these protocols as building blocks. On top of those systems they add their own application semantics, interfaces and proprietary solutions. This situation makes it more complicated for multiple of these systems to integrate or interoperate with each other, even if they use extremely similar protocol stacks.
+
+To fix this problem, several organizations are launching various standardization efforts in this area. Some examples include the work by the OMA LWM2M and their management objects, IPSO an their [Starter and Expansion Packs](http://ipso-alliance.github.io/pub/) the [Cluster Library](http://www.zigbee.org/download/standards-zigbee-cluster-library/) developed by the Zigbee Alliance  the Thing Description work of W3C or the UPnP Management and Control:1 specifications.Other noteworthy efforts include the ontology work in ETSI SmartM2M and also the European research community in IERC and the Activity Chain on semantic interoperability that published a position paper on the topic.
+
+Many of these models would not currently work together due to small differences in serialization or small design choices made along the way. The Internet Architecture Board (IAB) has previously held workshops with similar harmonization targets on different topics (e.g. pervasive monitoring, Internet middleboxes, bringing constrained devices to the Internet…).
+
+Next March, the IAB will held a **Semantic Interoperability Workshop**, in order to discuss the state of the art in data and information models, the different schemas, the role of metadata, different interworking experiences and there is even room for harmonizing the various models.
+
+Ericsson will be there as venue host – in San Jose, California – and Ericsson researchers will participate as experts from some of the participating organisations as well as members of the program committee, trying to make a future in which devices truly interoperate.
+
+If you are interested and work in the area, you just have to submit a brief position paper (3 pages) of your work and opinions to the questions on the workshop per email to iotsi@iab.org and check the [IOTSI Workshop Website](https://www.iab.org/activities/workshops/iotsi/).

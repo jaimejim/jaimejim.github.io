@@ -1,0 +1,55 @@
+---
+title: "Semantic Interoperability Workshop II"
+layout: post
+date: 2016-03-26 12:00
+tag:
+- iotsi
+- semantic interoperability
+blog: true
+star: true
+---
+
+
+As we mentioned on the [previous article](/making-things-interoperate/), IoT Standards for constrained devices are rapidly consolidating.
+
+![IOTSI Folks](https://www.ietf.org/blog/wp-content/uploads/2016/03/group_pic_smaller.jpg)*Attendees from various consortia*
+
+## Interaction model
+
+Among the topics and presentations I found particularly interesting that of
+[mkovatsc](https://github.com/mkovatsc). He explained the Runtime Discovery Process for a IoT Client node.
+
+The process is basically the following. Using CoAP as example protocol, a device would get an entry point from which it will follow links, for example the Resource Directory (RD). As the client finds new links it also discovers new capabilities. Since this process is perennial on the device, you can at any point during the runtime of the device submit add functionality, for example by using forms and and letting the device interact with them. You can also create processes that span over multiple devices involved in the process. If later on, you find that you need some new functionality or you add a new device to your network the next client that comes along will have the same logic as the other clients but see this different capabilities of functionality and therefore use it.
+
+The process is incremental, but once discovered, you don't need to perform the same operation every time, the process can use bookmarks to record that functionality.
+
+The following are examples of all those in HTML.
+
+~~~~~~~~~~~ html
+// Links (Anchors) with human-readable information
+<a href="about.html">More information</a>
+<link rel="stylesheet" href="style.css">
+
+// Templated Links to perform a query with a parameter.
+<form method="get" action="search.php">
+  <input id="query" type="text">
+</form>
+
+// Embedded Links which are used to embed other resources.
+<img src="logo.png">
+<audio src="audio.ogg">
+<video src="video.mp4">
+
+// Forms with the concrete method to be used and the
+<form method="post" action="">
+  <input id="name" type="text">
+  <input id="age" type="text">
+  <input id="homepage" type="text">
+</form>
+~~~~~~~~~~~
+
+The challenge is to define the human-readable parts as machine-readable. For that a vocabulary is necessary to give meaning to the tags. Such information needs to be share beforehand.
+
+In some models everything has to be shared from the beginning, therefore any change would involve changing the whole "framework". By forcing to share only the bare minimum, you avoid such problem.
+
+Some organizations have created predefined interfaces, all of them are predefined and described, they even provide code generation. The device logic has to support such interfaces, no changes are possible at runtime.

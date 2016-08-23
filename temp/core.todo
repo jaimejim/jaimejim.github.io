@@ -102,7 +102,7 @@ DynLink draft-groves-core-dynlink:
  ✔ [DLNK] Check in Berlin if this should be WG item. @done(2016-07-22 08:56) @project(DynLink draft-groves-core-dynlink)
  ☐ [DLNK] [IETF96] 3 people have read this. Confirm WGA to the mailing list. @jaime
 
-Block draft-ietf-core-block:
+Block draft-ietf-core-block -> RFC7959:
  Notes
    To get well-known-core and firmware upgrades.
  ☐ [BLCK] IESG Phase. Few comments from Alexey that Carsten has to address, mostly editorial. @Carsten @due(16-07-04 14:53)
