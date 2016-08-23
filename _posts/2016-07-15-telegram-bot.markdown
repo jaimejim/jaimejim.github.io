@@ -1,7 +1,7 @@
 ---
 title: "Simple Telegram Bot for Task Management"
 layout: post
-date: 2016-06-10 09:00
+date: 2016-07-15 18:14
 tag:
 - JS
 - bot

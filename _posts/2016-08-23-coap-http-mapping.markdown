@@ -1,7 +1,7 @@
 ---
 title: "Mapping HTTP to CoAP"
 layout: post
-date: 2016-06-10 09:00
+date: 2016-08-23 11:00
 tag:
 - CoAP
 - HTTP
