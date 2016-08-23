@@ -16,7 +16,11 @@ The first of such documents is the [Guidelines for HTTP-to-CoAP Mapping Implemen
 
 The point of the draft (soon RFC) is to describe how to do HTTP-to-CoAP Mapping to allow HTTP clients to access a CoAP Server via a proxy. This works under the assumption that, despite the similarities between CoAP and HTTP, not all browsers will implement support for it and that some legacy devices will need proxying. Another assumption is that users will like to use their smartphones with their home sensors.
 
-The mapping is fairly straightforward as CoAP is deisgn to mirror HTTP. In its **simple form**, you simply append one URI after the other (i.e. adding target uri or `/{+tu}` to the existing URI), for example: `http://p.example.com/hc/coap://s.example.com/light`. Other mapping might be discovered on `./well-known/core`, on those cases the HC should use resource type: `core.hc` and attribute type `hct`.
+The mapping is fairly straightforward as CoAP is deisgn to mirror HTTP. In its **simple form**, you simply append one URI after the other (i.e. adding target uri or `/{+tu}` to the existing URI), for example:
+
+`http://p.example.com/hc/coap://s.example.com/light`
+
+Other mapping might be discovered on `./well-known/core`, on those cases the HC should use resource type: `core.hc` and attribute type `hct`.
 
 In the **enhanced form** more sophisticated mappings can be expressed. And certain template variables have been created for it, namely:
 
