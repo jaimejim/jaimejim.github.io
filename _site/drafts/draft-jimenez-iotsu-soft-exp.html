@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head profile="http://www.w3.org/2006/03/hcard http://dublincore.org/documents/2008/08/04/dc-html/">
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+
+  <title>Software Upgrade Experiences for IoT</title>
+
+  <style type="text/css" title="Xml2Rfc (sans serif)">
+  /*<![CDATA[*/
+	  a {
+	  text-decoration: none;
+	  }
+      /* info code from SantaKlauss at http://www.madaboutstyle.com/tooltip2.html */
+      a.info {
+          /* This is the key. */
+          position: relative;
+          z-index: 24;
+          text-decoration: none;
+      }
+      a.info:hover {
+          z-index: 25;
+          color: #FFF; background-color: #900;
+      }
+      a.info span { display: none; }
+      a.info:hover span.info {
+          /* The span will display just on :hover state. */
+          display: block;
+          position: absolute;
+          font-size: smaller;
+          top: 2em; left: -5em; width: 15em;
+          padding: 2px; border: 1px solid #333;
+          color: #900; background-color: #EEE;
+          text-align: left;
+      }
+	  a.smpl {
+	  color: black;
+	  }
+	  a:hover {
+	  text-decoration: underline;
+	  }
+	  a:active {
+	  text-decoration: underline;
+	  }
+	  address {
+	  margin-top: 1em;
+	  margin-left: 2em;
+	  font-style: normal;
+	  }
+	  body {
+	  color: black;
+	  font-family: verdana, helvetica, arial, sans-serif;
+	  font-size: 10pt;
+	  max-width: 55em;
+	  
+	  }
+	  cite {
+	  font-style: normal;
+	  }
+	  dd {
+	  margin-right: 2em;
+	  }
+	  dl {
+	  margin-left: 2em;
+	  }
+	
+	  ul.empty {
+	  list-style-type: none;
+	  }
+	  ul.empty li {
+	  margin-top: .5em;
+	  }
+	  dl p {
+	  margin-left: 0em;
+	  }
+	  dt {
+	  margin-top: .5em;
+	  }
+	  h1 {
+	  font-size: 14pt;
+	  line-height: 21pt;
+	  page-break-after: avoid;
+	  }
+	  h1.np {
+	  page-break-before: always;
+	  }
+	  h1 a {
+	  color: #333333;
+	  }
+	  h2 {
+	  font-size: 12pt;
+	  line-height: 15pt;
+	  page-break-after: avoid;
+	  }
+	  h3, h4, h5, h6 {
+	  font-size: 10pt;
+	  page-break-after: avoid;
+	  }
+	  h2 a, h3 a, h4 a, h5 a, h6 a {
+	  color: black;
+	  }
+	  img {
+	  margin-left: 3em;
+	  }
+	  li {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  ol {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  ol p {
+	  margin-left: 0em;
+	  }
+	  p {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  pre {
+	  margin-left: 3em;
+	  background-color: lightyellow;
+	  padding: .25em;
+	  }
+	  pre.text2 {
+	  border-style: dotted;
+	  border-width: 1px;
+	  background-color: #f0f0f0;
+	  width: 69em;
+	  }
+	  pre.inline {
+	  background-color: white;
+	  padding: 0em;
+	  }
+	  pre.text {
+	  border-style: dotted;
+	  border-width: 1px;
+	  background-color: #f8f8f8;
+	  width: 69em;
+	  }
+	  pre.drawing {
+	  border-style: solid;
+	  border-width: 1px;
+	  background-color: #f8f8f8;
+	  padding: 2em;
+	  }
+	  table {
+	  margin-left: 2em;
+	  }
+	  table.tt {
+	  vertical-align: top;
+	  }
+	  table.full {
+	  border-style: outset;
+	  border-width: 1px;
+	  }
+	  table.headers {
+	  border-style: outset;
+	  border-width: 1px;
+	  }
+	  table.tt td {
+	  vertical-align: top;
+	  }
+	  table.full td {
+	  border-style: inset;
+	  border-width: 1px;
+	  }
+	  table.tt th {
+	  vertical-align: top;
+	  }
+	  table.full th {
+	  border-style: inset;
+	  border-width: 1px;
+	  }
+	  table.headers th {
+	  border-style: none none inset none;
+	  border-width: 1px;
+	  }
+	  table.left {
+	  margin-right: auto;
+	  }
+	  table.right {
+	  margin-left: auto;
+	  }
+	  table.center {
+	  margin-left: auto;
+	  margin-right: auto;
+	  }
+	  caption {
+	  caption-side: bottom;
+	  font-weight: bold;
+	  font-size: 9pt;
+	  margin-top: .5em;
+	  }
+	
+	  table.header {
+	  border-spacing: 1px;
+	  width: 95%;
+	  font-size: 10pt;
+	  color: white;
+	  }
+	  td.top {
+	  vertical-align: top;
+	  }
+	  td.topnowrap {
+	  vertical-align: top;
+	  white-space: nowrap; 
+	  }
+	  table.header td {
+	  background-color: gray;
+	  width: 50%;
+	  }
+	  table.header a {
+	  color: white;
+	  }
+	  td.reference {
+	  vertical-align: top;
+	  white-space: nowrap;
+	  padding-right: 1em;
+	  }
+	  thead {
+	  display:table-header-group;
+	  }
+	  ul.toc, ul.toc ul {
+	  list-style: none;
+	  margin-left: 1.5em;
+	  margin-right: 0em;
+	  padding-left: 0em;
+	  }
+	  ul.toc li {
+	  line-height: 150%;
+	  font-weight: bold;
+	  font-size: 10pt;
+	  margin-left: 0em;
+	  margin-right: 0em;
+	  }
+	  ul.toc li li {
+	  line-height: normal;
+	  font-weight: normal;
+	  font-size: 9pt;
+	  margin-left: 0em;
+	  margin-right: 0em;
+	  }
+	  li.excluded {
+	  font-size: 0pt;
+	  }
+	  ul p {
+	  margin-left: 0em;
+	  }
+	
+	  .comment {
+	  background-color: yellow;
+	  }
+	  .center {
+	  text-align: center;
+	  }
+	  .error {
+	  color: red;
+	  font-style: italic;
+	  font-weight: bold;
+	  }
+	  .figure {
+	  font-weight: bold;
+	  text-align: center;
+	  font-size: 9pt;
+	  }
+	  .filename {
+	  color: #333333;
+	  font-weight: bold;
+	  font-size: 12pt;
+	  line-height: 21pt;
+	  text-align: center;
+	  }
+	  .fn {
+	  font-weight: bold;
+	  }
+	  .hidden {
+	  display: none;
+	  }
+	  .left {
+	  text-align: left;
+	  }
+	  .right {
+	  text-align: right;
+	  }
+	  .title {
+	  color: #990000;
+	  font-size: 18pt;
+	  line-height: 18pt;
+	  font-weight: bold;
+	  text-align: center;
+	  margin-top: 36pt;
+	  }
+	  .vcardline {
+	  display: block;
+	  }
+	  .warning {
+	  font-size: 14pt;
+	  background-color: yellow;
+	  }
+	
+	
+	  @media print {
+	  .noprint {
+		display: none;
+	  }
+	
+	  a {
+		color: black;
+		text-decoration: none;
+	  }
+	
+	  table.header {
+		width: 90%;
+	  }
+	
+	  td.header {
+		width: 50%;
+		color: black;
+		background-color: white;
+		vertical-align: top;
+		font-size: 12pt;
+	  }
+	
+	  ul.toc a::after {
+		content: leader('.') target-counter(attr(href), page);
+	  }
+	
+	  ul.ind li li a {
+		content: target-counter(attr(href), page);
+	  }
+	
+	  .print2col {
+		column-count: 2;
+		-moz-column-count: 2;
+		column-fill: auto;
+	  }
+	  }
+	
+	  @page {
+	  @top-left {
+		   content: "Internet-Draft"; 
+	  } 
+	  @top-right {
+		   content: "December 2010"; 
+	  } 
+	  @top-center {
+		   content: "Abbreviated Title";
+	  } 
+	  @bottom-left {
+		   content: "Doe"; 
+	  } 
+	  @bottom-center {
+		   content: "Expires June 2011"; 
+	  } 
+	  @bottom-right {
+		   content: "[Page " counter(page) "]"; 
+	  } 
+	  }
+	
+	  @page:first { 
+		@top-left {
+		  content: normal;
+		}
+		@top-right {
+		  content: normal;
+		}
+		@top-center {
+		  content: normal;
+		}
+	  }
+  /*]]>*/
+  </style>
+
+  <link href="#rfc.toc" rel="Contents"/>
+<link href="#rfc.section.1" rel="Chapter" title="1 Introduction"/>
+<link href="#rfc.section.2" rel="Chapter" title="2 Architecture"/>
+<link href="#rfc.section.3" rel="Chapter" title="3 Dealing with Sleepy endpoints"/>
+<link href="#rfc.section.4" rel="Chapter" title="4 Device Initiated Communication"/>
+<link href="#rfc.section.5" rel="Chapter" title="5 Manager Initiated Communication"/>
+<link href="#rfc.section.6" rel="Chapter" title="6 Delegation on other nodes"/>
+<link href="#rfc.section.7" rel="Chapter" title="7 Using Multiple Stacks"/>
+<link href="#rfc.section.8" rel="Chapter" title="8 Runtime Discovery"/>
+<link href="#rfc.section.9" rel="Chapter" title="9 Acknowledgements"/>
+<link href="#rfc.references" rel="Chapter" title="10 Informative References"/>
+<link href="#rfc.authors" rel="Chapter"/>
+
+
+  <meta name="generator" content="xml2rfc version 2.4.8 - http://tools.ietf.org/tools/xml2rfc" />
+  <link rel="schema.dct" href="http://purl.org/dc/terms/" />
+
+  <meta name="dct.creator" content="Jimenez, J. and M. Ocak" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-jimenez-iotsu-soft-exp" />
+  <meta name="dct.issued" scheme="ISO8601" content="2016-6-01" />
+  <meta name="dct.abstract" content="This document provides a summary of found problems and possible solutions for software upgrades on the constrained space. Some of the issues are still open and should be subject of discussion. Ideally some implementation guidelines should be made when using CoAP " />
+  <meta name="description" content="This document provides a summary of found problems and possible solutions for software upgrades on the constrained space. Some of the issues are still open and should be subject of discussion. Ideally some implementation guidelines should be made when using CoAP " />
+
+</head>
+
+<body>
+
+  <table class="header">
+    <tbody>
+    
+    	<tr>
+  <td class="left">Network Working Group</td>
+  <td class="right">J. Jimenez</td>
+</tr>
+<tr>
+  <td class="left">Internet-Draft</td>
+  <td class="right">M. Ocak</td>
+</tr>
+<tr>
+  <td class="left">Intended status: Informational</td>
+  <td class="right">Ericsson</td>
+</tr>
+<tr>
+  <td class="left">Expires: December 3, 2016</td>
+  <td class="right">June 01, 2016</td>
+</tr>
+
+    	
+    </tbody>
+  </table>
+
+  <p class="title">Software Upgrade Experiences for IoT<br />
+  <span class="filename">draft-jimenez-iotsu-soft-exp</span></p>
+  
+  <h1 id="rfc.abstract">
+  <a href="#rfc.abstract">Abstract</a>
+</h1>
+<p>This document provides a summary of found problems and possible solutions for software upgrades on the constrained space. Some of the issues are still open and should be subject of discussion. Ideally some implementation guidelines should be made when using CoAP <a href="#RFC7252">[RFC7252]</a>, HTTP <a href="#RFC7230">[RFC7230]</a> or MQTT as transfer protocols.</p>
+<h1 id="rfc.status">
+  <a href="#rfc.status">Status of This Memo</a>
+</h1>
+<p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
+<p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
+<p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
+<p>This Internet-Draft will expire on December 3, 2016.</p>
+<h1 id="rfc.copyrightnotice">
+  <a href="#rfc.copyrightnotice">Copyright Notice</a>
+</h1>
+<p>Copyright (c) 2016 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
+
+  
+  <hr class="noprint" />
+  <h1 class="np" id="rfc.toc"><a href="#rfc.toc">Table of Contents</a></h1>
+  <ul class="toc">
+
+  	<li>1.   <a href="#rfc.section.1">Introduction</a></li>
+<li>2.   <a href="#rfc.section.2">Architecture</a></li>
+<li>3.   <a href="#rfc.section.3">Dealing with Sleepy endpoints</a></li>
+<li>4.   <a href="#rfc.section.4">Device Initiated Communication</a></li>
+<li>5.   <a href="#rfc.section.5">Manager Initiated Communication</a></li>
+<li>6.   <a href="#rfc.section.6">Delegation on other nodes</a></li>
+<li>7.   <a href="#rfc.section.7">Using Multiple Stacks</a></li>
+<li>8.   <a href="#rfc.section.8">Runtime Discovery</a></li>
+<li>9.   <a href="#rfc.section.9">Acknowledgements</a></li>
+<li>10.   <a href="#rfc.references">Informative References</a></li>
+<li><a href="#rfc.authors">Authors' Addresses</a></li>
+
+
+  </ul>
+
+  <h1 id="rfc.section.1"><a href="#rfc.section.1">1.</a> <a href="#introduction" id="introduction">Introduction</a></h1>
+<p id="rfc.section.1.p.1">In this short paper we try to raise some issues we have found when dealing with software upgrades in the IoT domain. Dealing with sleepy endpoint is at <a href="#sleepy">Section 3</a>. The case for device initiated communication is on <a href="#devini">Section 4</a> and manager initiated on <a href="#serverini">Section 5</a>. Delegation on gateways or other nodes is in <a href="#delegation">Section 6</a>. The use of an alternative stack for software upgrades is at <a href="#many">Section 7</a>. A possible long-term architecture that enables to do runtime updates on the constrained device is at <a href="#run">Section 8</a></p>
+<h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> <a href="#architecture" id="architecture">Architecture</a></h1>
+<p id="rfc.section.2.p.1">We start with the assumption of the followign CoAP-based stack:</p>
+<pre>
+Device                                      Manager
++--------------------+                      +--------------------+
+| CoAP Server/Client |                      | CoAP Server/Client |
++--------------------+                      +--------------------+
+|        UDP         | +-----------------&gt;  |        UDP         |
++--------------------+                      +--------------------+
+|     IPv4/IPv6      | &lt;-----------------+  |     IPv4/IPv6      |
++--------------------+                      +--------------------+
+|     4G/NB-IoT      |                      |        ANY         |
++--------------------+                      +--------------------+
+</pre>
+<p id="rfc.section.2.p.2">This simple, generic set up already presents several problems, specially when dealing with the operator environment.</p>
+<h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#sleepy" id="sleepy">Dealing with Sleepy endpoints</a></h1>
+<p id="rfc.section.3.p.1">The fact that devices are sleepy poses several problems for doing software updates. Namely that you do not have a connected endpoint most of the time and that therefore the device will have to contact the manager or the manager will have to poll the device pretty frequently. The case for polling does not scale and therefore it is hardly a solution.</p>
+<p id="rfc.section.3.p.2">Nevertheless it is very common to use polling on the constrained space since the server has more capabilities and thus can query the device providing that there are no NATs or firewalls (See <a href="#devini">Section 4</a>)</p>
+<h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> <a href="#devini" id="devini">Device Initiated Communication</a></h1>
+<p id="rfc.section.4.p.1">The first issue are NATs and Firewalls. Constrained devices do not have the capabilities nor the inclination to punch holes through NATs and keep them open, that task has to be delegated elsewhere.</p>
+<p id="rfc.section.4.p.2">What we have done in order to overcome this obstacle is to set an observation on the device. Assuming that the device has previously registered on a Resource Directory (RD) <a href="#I-D.ietf-core-resource-directory">[I-D.ietf-core-resource-directory]</a> that the manager has access to, the manager would then observe the status of the device (0:off, 1:on). Whenever the device wakes up it will send a notification to the manager. During the time the NAT is open the manager will be able to send data through the holes in the NAT.</p>
+<pre>
+D&lt;--M: CoAP GET /Radio_link_status, Token: 0x4a, Observe: 0  
+D--&gt;M: 2.05 Content, Token: 0x4a, payload: 1, time: 1464619477
+D--&gt;M: 2.05 Content, Token: 0x4a, payload: 1, time: 1464520998
+</pre>
+<h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> <a href="#serverini" id="serverini">Manager Initiated Communication</a></h1>
+<p id="rfc.section.5.p.1">NATs and Firewalls are persistent issues to resolve also in manager initiated communication. However, we could re-use the capabilities of CoAP to overcome this issue.</p>
+<p id="rfc.section.5.p.2">In this approach, there is no need to set a separate observation on the status of the device as defined in <a href="#devini">Section 4</a>. When the device sends a notification to any existing observation on any resource, the manager can initiate the software update during the established connection through NAT. This approach requires the manager to implement the logic of linking observation of any resource to send software update to the device.</p>
+<h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> <a href="#delegation" id="delegation">Delegation on other nodes</a></h1>
+<p id="rfc.section.6.p.1">Many of the IoT devices may not have connectivity to the manager and gateways are used to provide such connectivity to the manager in the e.g. core network. Gateways used in this use case are more capable to perform complex operations and to support different protocol stacks together, which can be used to update the device software.</p>
+<p id="rfc.section.6.p.2">For our implementation we assumed that the gateway supports, at least, both CoAP and HTTP stacks. The communication between the device and the gateway is performed using CoAP. Gateway can retrieve the software update from the manager through HTTP without NAT issues and cache the downloaded package. One other way for the gateway to retrieve the software package could be to observe software update resource on the manager via CoAP observe option. The manager notifies the gateway with CoAP notifcation when there is a software update available. When the device wakes up and connects to the gateway, the gateway can push the cached software update to the device.</p>
+<p id="rfc.section.6.p.3">However, this approach requires the Gateway to have the required credentials to perform such software update operation. This can be achieved e.g. by having a CoAP proxy on the Gateway.</p>
+<p id="rfc.section.6.p.4">Gateway retrieving software package via HTTP:</p>
+<pre>
+G--&gt;M: HTTP GET /swupdate  
+G&lt;--M: 200 Content, payload: swpackage
+D&lt;--G: COAP POST /sw, Token: 0xbb, payload: swpackage
+</pre>
+<p id="rfc.section.6.p.5">Gateway retrieving software package via CoAP Observe option:</p>
+<pre>
+G--&gt;M: COAP GET /swupdate, Token: 0x6a, Observe: 0  
+G&lt;--M: 2.05 Content, Token: 0x6a, payload: swpackage
+D&lt;--G: COAP POST /sw, Token: 0xbb, payload: swpackage
+</pre>
+<h1 id="rfc.section.7"><a href="#rfc.section.7">7.</a> <a href="#many" id="many">Using Multiple Stacks</a></h1>
+<p id="rfc.section.7.p.1">We have seen how in some cases devices have multiple stack combinations and updates go through an &#8220;alternative channel&#8221;. For example:</p>
+<p/>
+
+<dl>
+  <dt>MQTT+HTTP</dt>
+  <dd style="margin-left: 8">in this scenario MQTT is used as the base protocol for communication. Having publish/subscribe architecture simplifies the (1:n) and (n:1) communication use cases that are very common for reporting sensor data. For firmware upgrades a command is sent to the device with the URL where the new binaries are (i.e. https://company/devicetype/version00.zip), the device then sets a whole different communication channel just for that, as well as a dedicated DTLS/TLS connection. This is too much overhead for many constrained devices.</dd>
+  <dt>MQTT+CoAP</dt>
+  <dd style="margin-left: 8">similar to previous scenario, MQTT is the base protocol for communication and firmware upgrade command is sent to the device in an MQTT message, which includes the CoAP URL to the binary to be downloaded. The device opens a UDP connection to the CoAP endpoint and downloads the binary with e.g. CoAP blockwise transfer. This scenario may occur when the node serving the software package supports only CoAP.</dd>
+</dl>
+<h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> <a href="#run" id="run">Runtime Discovery</a></h1>
+<p id="rfc.section.8.p.1">Instead of sending bulk binaries with several megabytes of data, a simpler approach would be to send partial modifications related to the software update when possible.</p>
+<p id="rfc.section.8.p.2">Similarly as it was shown in the IOTSI Workshop <a href="#IOTSIWS">[IOTSIWS]</a>, Runtime Discovery is also a very powerful mechanism to provide updated services and software to a device.</p>
+<p id="rfc.section.8.p.3">A device could use a single entry point for its firmware information (e.g. &#8220;/fw&#8221;), then device would periodically perform discovery on that point and in order to discover new capabilities. Links to the new capabilities could be discoverable on demand. Only very basic semantics would be shared a-priori.</p>
+<p id="rfc.section.8.p.4">Current software upgrade mechanism do not allow for changes at runtime. There are predefined interfaces that would break whenever the API changes, making it compulsory to send new software to the device that would need to install it, reboot, etc. The device logic has to support such interfaces, no changes are possible at runtime.</p>
+<h1 id="rfc.section.9"><a href="#rfc.section.9">9.</a> <a href="#acknowledgements" id="acknowledgements">Acknowledgements</a></h1>
+<p id="rfc.section.9.p.1">Runtime Discovery ideas are inspired from Matthias Kovatsch&#8217;s presentations on HATEOAS at <a href="#IOTSIWS">[IOTSIWS]</a>. Thanks to Carsten Bormann and Jari Arkko for the valuable feedback.</p>
+<h1 id="rfc.references"><a href="#rfc.references">10.</a> Informative References</h1>
+<table>
+  <tbody>
+    <tr>
+      <td class="reference">
+        <b id="I-D.ietf-core-resource-directory">[I-D.ietf-core-resource-directory]</b>
+      </td>
+      <td class="top"><a>Shelby, Z.</a>, <a>Koster, M.</a>, <a>Bormann, C.</a> and <a>P. Stok</a>, "<a href="http://tools.ietf.org/html/draft-ietf-core-resource-directory-07">CoRE Resource Directory</a>", Internet-Draft draft-ietf-core-resource-directory-07, March 2016.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="IOTSIWS">[IOTSIWS]</b>
+      </td>
+      <td class="top"><a>IAB</a>, "<a href="https://www.iab.org/activities/workshops/iotsi/">IoT Workshop for Semantic Interoperability (IOTSI) - Main Page and Position Papers</a>", 2016.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC7230">[RFC7230]</b>
+      </td>
+      <td class="top"><a>Fielding, R.</a> and <a>J. Reschke</a>, "<a href="http://tools.ietf.org/html/rfc7230">Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing</a>", RFC 7230, DOI 10.17487/RFC7230, June 2014.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC7252">[RFC7252]</b>
+      </td>
+      <td class="top"><a>Shelby, Z.</a>, <a>Hartke, K.</a> and <a>C. Bormann</a>, "<a href="http://tools.ietf.org/html/rfc7252">The Constrained Application Protocol (CoAP)</a>", RFC 7252, DOI 10.17487/RFC7252, June 2014.</td>
+    </tr>
+  </tbody>
+</table>
+<h1 id="rfc.authors">
+  <a href="#rfc.authors">Authors' Addresses</a>
+</h1>
+<div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Jaime Jimenez</span> 
+	  <span class="n hidden">
+		<span class="family-name">Jimenez</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Ericsson</span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality"></span> 
+		<span class="region"></span>
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline"></span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:jaime.jimenez@ericsson.com">jaime.jimenez@ericsson.com</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Mert Ocak</span> 
+	  <span class="n hidden">
+		<span class="family-name">Ocak</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Ericsson</span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality"></span> 
+		<span class="region"></span>
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline"></span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:mert.ocak@ericsson.com">mert.ocak@ericsson.com</a></span>
+
+  </address>
+</div>
+
+</body>
+</html>
