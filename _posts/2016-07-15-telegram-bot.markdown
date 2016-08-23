@@ -1,5 +1,5 @@
 ---
-title: "Simple telegram bot for task management"
+title: "Simple Telegram Bot for Task Management"
 layout: post
 date: 2016-06-10 09:00
 tag:
@@ -10,21 +10,41 @@ blog: true
 star: true
 ---
 
-CoRE WG tasks
-http://jaimejim.github.io/temp/coretodo.txt
+I am a pretty organized person, chairing [CoRE](https://datatracker.ietf.org/wg/core/charter/) and [IPSO SO](http://ipso-alliance.github.io/pub/) as well of years of project work has made realize the importance of concrete action points and tracking.
 
-![Telegram Bot running]({{ site.url }}/assets/images/telegram_bot.png)
+As I only have ten fingers I am sadly not capable of using [orgmode](http://orgmode.org) efficiently. If you are one of the *chosen ones* that can exclusively use Emacs I strongly recommend it. Instead, I use **[PlainTasks](https://github.com/aziz/PlainTasks)** (first on Sublime, now on Atom), kudos to [@aziz](https://github.com/aziz) for doing them BTW.
 
+A fairly active IETF working Group has a relatively large number of items that need to be done, for example these are the [tasks for CoRE](http://jaimejim.github.io/temp/coretodo.txt). I aggregate them by draft/RFC, for example ETCH would be:
 
-Plaintasks
+```
+ETCH draft-ietf-core-etch:
+Notes:
+    Summary available
+    http://jaimejim.github.io/temp/draft-ietf-core-etch
+ ✔ [ETCH] [IETF96] Address comments (preconditions and use of iPTACH/PATCH)
+ on mailing list before shepherd-writeup @due(16-07-25) @done(2016-08-15 11:06)
+ ✔ [ETCH] [IETF96] shepherd-writeup (in progress in parallel)
+ @due(16-07-18 15:28) @jaime @high @done(2016-08-15 11:06)
+ ☐ [ETCH] Awaiting for authors to initiate expert review on the media types
+ @due(2016-08-22 08:23)
+ ☐ [ETCH] Awaiting for authors to confirm IPR @due(2016-08-22 08:23)
+ ☐ [ETCH] IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25) delayed
+ to @due(16-08-20 15:25)
+ ☐ [ETCH] IETFLC @iesg
+ ☐ [ETCH] AD go ahead if IETFLC OK. @iesg
+ ☐ [ETCH] IESG Ballot (ADs read it). @iesg  
+```
 
-Orgmode
-https://github.com/aziz/PlainTasks
-(kudos to [@aziz](https://github.com/aziz) for doing them)
+On my computer I have a cron job that alerts me when a task is happening, but to sync among several people is not that easy. I quickly noticed that several of us were chatting through [Telegram](https://telegram.org/blog/bot-revolution), thus I thought that maybe a bot that sends us reminders could be helpful.
 
-Beforehand I would like to apologize for the shitty code, it works but it isn't pretty.
+Telegram has enabled an API for developers to create bots, quickly several implementations popped out, in particular I found [Telegram Node Bot](https://github.com/Naltox/telegram-node-bot) pretty useful.
+I won't repeat what the Github README says, so just go ahead and check it out.
+
+As it turns out, it was very quick and simple to put together a bot to fetch the task list, find the the due action points, and just send them over Telegram. Beforehand I would like to apologize for the shitty code, it works but it isn't pretty.
 
 ``` js
+// Belvedere Bot 0.1
+// @jaimejim http://jaimejim.github.io
 var http = require('http')
 var fs = require('fs')
 var tg = require('telegram-node-bot')('insert-your-token-here')
@@ -39,7 +59,8 @@ function gettas (callback) {
       var txt = ''
       while (i !== -1){
         var dt = getdate(body.substring(i + 5, i + 13))
-        if ((dt.getYear() == ct.getYear()) && (dt.getMonth() == ct.getMonth()) && (dt.getDay() == ct.getDay())) {
+        if ((dt.getYear() == ct.getYear()) && (dt.getMonth() == ct.getMonth())
+        && (dt.getDay() == ct.getDay())) {
           txt = body.substring(0, i)
           out = out + '\n' + body.substring(txt.lastIndexOf(' ☐ '), i)
         } else {
@@ -80,23 +101,17 @@ function getdate (st) {
 }
 ```
 
+On the server side you could install [forever](https://github.com/foreverjs/forever) in case the bot crashes (which it did a couple of times for me):
 
-sudo npm -g install forever
-   69  npm -g install forever
-   70  sudo npm -g install forever
-   71  forever start belvederebot.js
-   72  ps
-   73  ps -e
-   74  man forever
-   75  forever list
-   76  cat /home/jaime/.forever/9VUC.log
-   77  forever belvederebot.js stop
-   78  list
-   79  forever list
-   80  forever belvederebot.js stop
-   81  forever stop belvederebot.js
-   82  forever list
-   83  forever options
-   84  forever start belvederebot.js
-   85  forever stop belvederebot.js
-   86  forever start belvederebot.js
+``` bash
+$jaime:~$ [sudo] npm install forever -g
+$jaime:~$ forever start belvederebot.js
+info:    Forever started process(es):
+data:        uid  command         script          forever pid  id logfile                       uptime       
+data:    [0] KtcN /usr/bin/nodejs belvederebot.js 4987    1019    
+/home/jaime/.forever/KtcN.log 0:0:24:4.495
+$jaime:~$ forever list
+```
+
+And that's all, this is how the bot looks like once running.
+![Telegram Bot running]({{ site.url }}/assets/images/telegram_bot.png)
