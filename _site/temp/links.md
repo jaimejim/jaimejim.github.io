@@ -1,4 +1,4 @@
-### CoRE Relevant Links for IETF
+### CoRE Relevant Links for the IETF
 
 Agenda: <https://datatracker.ietf.org/meeting/96/agenda.txt>
 
