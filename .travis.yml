@@ -1,8 +1,8 @@
 notifications:
- email:
+  email:
     on_success: never
     on_failure: change
-    
+
 language: ruby
 rvm:
   - 2.1
@@ -10,10 +10,6 @@ rvm:
 branches:
   only:
     - master
-
-language: ruby
-rvm:
- - 2.1
 
 sudo: false
 
