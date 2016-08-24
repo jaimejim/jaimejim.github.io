@@ -8,7 +8,7 @@ Author: [Jaime Jiménez](http://jaimejim.github.io/)
 * Q/A
 	* [x] Are there implementations of the draft?
 	* [x] IPR declaration.
- 	* [x] Content Format check by Zach. (checked according to last email)
+ 	* [ ] Content Format check in progress.
 	* [x] Normative reference core-block.
 
 * [x] IESG submission `@due(16-07-25 15:31) -> Delayed @due(16-08-24 15:28) `.
@@ -196,7 +196,7 @@ There is a downref to RFC 2616: This is in there because the security considerat
 `http://www.iana.org/assignments/core-parameters/core-parameters.xhtml#method-codes`
 	* [x] Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?
 	* [x] Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)?
-`The two new entries to the content format registry (51 and 52) require expert review.`
+`The two new entries to the content format registry (51 and 52) require expert review and a request has been SENT to that list.`
 	* [x] Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
 	* [x] For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
 	* [x] For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?

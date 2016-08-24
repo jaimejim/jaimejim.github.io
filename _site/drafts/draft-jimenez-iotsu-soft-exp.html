@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -53,7 +53,7 @@
 	  font-family: verdana, helvetica, arial, sans-serif;
 	  font-size: 10pt;
 	  max-width: 55em;
-
+	  
 	  }
 	  cite {
 	  font-style: normal;
@@ -64,7 +64,7 @@
 	  dl {
 	  margin-left: 2em;
 	  }
-
+	
 	  ul.empty {
 	  list-style-type: none;
 	  }
@@ -193,7 +193,7 @@
 	  font-size: 9pt;
 	  margin-top: .5em;
 	  }
-
+	
 	  table.header {
 	  border-spacing: 1px;
 	  width: 95%;
@@ -205,7 +205,7 @@
 	  }
 	  td.topnowrap {
 	  vertical-align: top;
-	  white-space: nowrap;
+	  white-space: nowrap; 
 	  }
 	  table.header td {
 	  background-color: gray;
@@ -248,7 +248,7 @@
 	  ul p {
 	  margin-left: 0em;
 	  }
-
+	
 	  .comment {
 	  background-color: yellow;
 	  }
@@ -299,22 +299,22 @@
 	  font-size: 14pt;
 	  background-color: yellow;
 	  }
-
-
+	
+	
 	  @media print {
 	  .noprint {
 		display: none;
 	  }
-
+	
 	  a {
 		color: black;
 		text-decoration: none;
 	  }
-
+	
 	  table.header {
 		width: 90%;
 	  }
-
+	
 	  td.header {
 		width: 50%;
 		color: black;
@@ -322,44 +322,44 @@
 		vertical-align: top;
 		font-size: 12pt;
 	  }
-
+	
 	  ul.toc a::after {
 		content: leader('.') target-counter(attr(href), page);
 	  }
-
+	
 	  ul.ind li li a {
 		content: target-counter(attr(href), page);
 	  }
-
+	
 	  .print2col {
 		column-count: 2;
 		-moz-column-count: 2;
 		column-fill: auto;
 	  }
 	  }
-
+	
 	  @page {
 	  @top-left {
-		   content: "Internet-Draft";
-	  }
+		   content: "Internet-Draft"; 
+	  } 
 	  @top-right {
-		   content: "December 2010";
-	  }
+		   content: "December 2010"; 
+	  } 
 	  @top-center {
 		   content: "Abbreviated Title";
-	  }
+	  } 
 	  @bottom-left {
-		   content: "Doe";
-	  }
+		   content: "Doe"; 
+	  } 
 	  @bottom-center {
-		   content: "Expires June 2011";
-	  }
+		   content: "Expires June 2011"; 
+	  } 
 	  @bottom-right {
-		   content: "[Page " counter(page) "]";
+		   content: "[Page " counter(page) "]"; 
+	  } 
 	  }
-	  }
-
-	  @page:first {
+	
+	  @page:first { 
 		@top-left {
 		  content: normal;
 		}
@@ -402,7 +402,7 @@
 
   <table class="header">
     <tbody>
-
+    
     	<tr>
   <td class="left">Network Working Group</td>
   <td class="right">J. Jimenez</td>
@@ -420,13 +420,13 @@
   <td class="right">June 01, 2016</td>
 </tr>
 
-
+    	
     </tbody>
   </table>
 
   <p class="title">Software Upgrade Experiences for IoT<br />
   <span class="filename">draft-jimenez-iotsu-soft-exp</span></p>
-
+  
   <h1 id="rfc.abstract">
   <a href="#rfc.abstract">Abstract</a>
 </h1>
@@ -444,7 +444,7 @@
 <p>Copyright (c) 2016 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
 
-
+  
   <hr class="noprint" />
   <h1 class="np" id="rfc.toc"><a href="#rfc.toc">Table of Contents</a></h1>
   <ul class="toc">
@@ -488,7 +488,7 @@ Device                                      Manager
 <p id="rfc.section.4.p.1">The first issue are NATs and Firewalls. Constrained devices do not have the capabilities nor the inclination to punch holes through NATs and keep them open, that task has to be delegated elsewhere.</p>
 <p id="rfc.section.4.p.2">What we have done in order to overcome this obstacle is to set an observation on the device. Assuming that the device has previously registered on a Resource Directory (RD) <a href="#I-D.ietf-core-resource-directory">[I-D.ietf-core-resource-directory]</a> that the manager has access to, the manager would then observe the status of the device (0:off, 1:on). Whenever the device wakes up it will send a notification to the manager. During the time the NAT is open the manager will be able to send data through the holes in the NAT.</p>
 <pre>
-D&lt;--M: CoAP GET /Radio_link_status, Token: 0x4a, Observe: 0
+D&lt;--M: CoAP GET /Radio_link_status, Token: 0x4a, Observe: 0  
 D--&gt;M: 2.05 Content, Token: 0x4a, payload: 1, time: 1464619477
 D--&gt;M: 2.05 Content, Token: 0x4a, payload: 1, time: 1464520998
 </pre>
@@ -501,13 +501,13 @@ D--&gt;M: 2.05 Content, Token: 0x4a, payload: 1, time: 1464520998
 <p id="rfc.section.6.p.3">However, this approach requires the Gateway to have the required credentials to perform such software update operation. This can be achieved e.g. by having a CoAP proxy on the Gateway.</p>
 <p id="rfc.section.6.p.4">Gateway retrieving software package via HTTP:</p>
 <pre>
-G--&gt;M: HTTP GET /swupdate
+G--&gt;M: HTTP GET /swupdate  
 G&lt;--M: 200 Content, payload: swpackage
 D&lt;--G: COAP POST /sw, Token: 0xbb, payload: swpackage
 </pre>
 <p id="rfc.section.6.p.5">Gateway retrieving software package via CoAP Observe option:</p>
 <pre>
-G--&gt;M: COAP GET /swupdate, Token: 0x6a, Observe: 0
+G--&gt;M: COAP GET /swupdate, Token: 0x6a, Observe: 0  
 G&lt;--M: 2.05 Content, Token: 0x6a, payload: swpackage
 D&lt;--G: COAP POST /sw, Token: 0xbb, payload: swpackage
 </pre>
@@ -563,16 +563,16 @@ D&lt;--G: COAP POST /sw, Token: 0xbb, payload: swpackage
 <div class="avoidbreak">
   <address class="vcard">
 	<span class="vcardline">
-	  <span class="fn">Jaime Jimenez</span>
+	  <span class="fn">Jaime Jimenez</span> 
 	  <span class="n hidden">
 		<span class="family-name">Jimenez</span>
 	  </span>
 	</span>
 	<span class="org vcardline">Ericsson</span>
 	<span class="adr">
-
+	  
 	  <span class="vcardline">
-		<span class="locality"></span>
+		<span class="locality"></span> 
 		<span class="region"></span>
 		<span class="code"></span>
 	  </span>
@@ -584,16 +584,16 @@ D&lt;--G: COAP POST /sw, Token: 0xbb, payload: swpackage
 </div><div class="avoidbreak">
   <address class="vcard">
 	<span class="vcardline">
-	  <span class="fn">Mert Ocak</span>
+	  <span class="fn">Mert Ocak</span> 
 	  <span class="n hidden">
 		<span class="family-name">Ocak</span>
 	  </span>
 	</span>
 	<span class="org vcardline">Ericsson</span>
 	<span class="adr">
-
+	  
 	  <span class="vcardline">
-		<span class="locality"></span>
+		<span class="locality"></span> 
 		<span class="region"></span>
 		<span class="code"></span>
 	  </span>
