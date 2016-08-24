@@ -4,14 +4,14 @@ Author: [Jaime Jiménez](http://jaimejim.github.io/)
 
 ###Tentative Timeline
 * [x] [draft summary](#summary)
-* [x] [Shepherd Writeup](#shepherd-writeup) @Jaime `in progress` `@due(16-07-15 15:28) -> Delayed @due(10-08-15 15:28) `. 
+* [x] [Shepherd Writeup](#shepherd-writeup) @Jaime `in progress` `@due(16-07-15 15:28) -> Delayed @due(10-08-15 15:28) `.
 * Q/A
 	* [x] Are there implementations of the draft?
 	* [x] IPR declaration.
- 	* [ ] Content Format check by Zach.
+ 	* [x] Content Format check by Zach. (checked according to last email)
 	* [x] Normative reference core-block.
 
-* [ ] IESG submission `@due(16-07-25 15:31) -> Delayed @due(16-08-15 15:28) `.
+* [x] IESG submission `@due(16-07-25 15:31) -> Delayed @due(16-08-24 15:28) `.
 
 ###Comments on v01
 * >"FETCH request cannot be generated from a link alone".
@@ -28,7 +28,7 @@ Author: [Jaime Jiménez](http://jaimejim.github.io/)
 		* It is a normative reference and people should read it in order to understand it.
 
 * As it was pointed out, the FETCH media types are not defined.
-	* There are no new media types, existing media types are used. Content Format registry is being addressed. 
+	* There are no new media types, existing media types are used. Content Format registry is being addressed.
 
 * if the If-Match header is there on the PATCH request is used for HTTP idempotent operations. For CoAP a new iPATCH method is used instead (or so I understood). Is this correct?
 	*  Not quite. IF-MATCH is used if you need to know something about the structure of the resource.  
@@ -40,7 +40,7 @@ Author: [Jaime Jiménez](http://jaimejim.github.io/)
 	*  None known.
 
 * Have you checked with an expert for the media types? A formal review is required for the shepherd writeup to be complete.
-	* No KNEW media types. The owner of the Content Format registry should have a look (Zach Shelby). 
+	* No KNEW media types. The owner of the Content Format registry should have a look (Zach Shelby).
 
 ###Comments on v02
 
@@ -160,9 +160,9 @@ The document is intended as an Standards Track RFC.
 
 ###Review and Consensus
 
-The document has gone through multiple expert reviews and has been discussed on multiple IETF meetings. Before the last IETF the WGLC was completed. 
+The document has gone through multiple expert reviews and has been discussed on multiple IETF meetings. Before the last IETF the WGLC was completed.
 
-There are no known implementations available. 
+There are no known implementations available.
 
 ###Intellectual Property
 
@@ -177,29 +177,28 @@ There is a downref to RFC 2616: This is in there because the security considerat
 
 * [x] Does the shepherd stand behind the document and think the document is ready for publication?
 * [x] Is the correct RFC type indicated in the title page header?
-* [x] Is the abstract both brief and sufficient, and does it stand alone as a brief summary? 
+* [x] Is the abstract both brief and sufficient, and does it stand alone as a brief summary?
 * [x] Is the intent of the document accurately and adequately explained in the introduction?
-* [ ] Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed?
-`The Content Format editor should check the content format.`
-* [x] Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? 
+* [x] Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed?
+* [x] Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests?
 ` There is no ABNF in this draft`
-* [x] Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79? 
-* [x] Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified? 
+* [x] Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?
+* [x] Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified?
 `There is a normative reference to [I-D.ietf-core-block] but that shouldn't be a problem as it is in late stages`
-* [x] Are all normative references made to documents that are ready for advancement and are otherwise in a clear state? 
+* [x] Are all normative references made to documents that are ready for advancement and are otherwise in a clear state?
 * [x] If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction? `Does not apply`
 * [x] If this is a "bis" document, have all of the errata been considered? `Does not apply`
 
-* **IANA** Considerations: 
+* **IANA** Considerations:
 
-	* [x] Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what's being requested, so they can perform the required actions. 
+	* [x] Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what's being requested, so they can perform the required actions.
 `I wonder if adding a link to the CoRE Parameters registry could help, but it looks OK to me. `
 `http://www.iana.org/assignments/core-parameters/core-parameters.xhtml#method-codes`
 	* [x] Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?
-	* [x] Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)? 
+	* [x] Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)?
 `The two new entries to the content format registry (51 and 52) require expert review.`
 	* [x] Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
-	* [x] For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call? 
-	* [x] For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives? 
+	* [x] For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
+	* [x] For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?
 `no new registries`
 	* [x]  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified?
