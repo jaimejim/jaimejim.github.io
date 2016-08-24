@@ -40,7 +40,7 @@ On my computer I have a cron job that alerts me when a task is happening, but to
 Telegram has enabled an API for developers to create bots, quickly several implementations popped out, in particular I found [Telegram Node Bot](https://github.com/Naltox/telegram-node-bot) pretty useful.
 I won't repeat what the Github README says, so just go ahead and check it out.
 
-As it turns out, it was very quick and simple to put together a bot to fetch the task list, find the the due action points, and just send them over Telegram. Beforehand I would like to apologize for the shitty code, it works but it isn't pretty.
+As it turns out, it was very quick and simple to put together a bot to fetch the task list, find the the due action points, and just send them over Telegram. Beforehand I would like to apologize for the ~~shitty~~ *suboptimal* code, it works but it isn't pretty.
 
 ``` js
 // Belvedere Bot 0.1
