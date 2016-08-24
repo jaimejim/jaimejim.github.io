@@ -1,6 +1,9 @@
+---
 language: ruby
 rvm:
 - 2.1
+
+sudo: false
 
 before_script:
  - chmod +x travis.sh
@@ -14,4 +17,3 @@ env:
 branches:
   only:
     - gh-pages
-
