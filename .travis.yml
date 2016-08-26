@@ -3,15 +3,8 @@ notifications:
     on_success: never
     on_failure: change
 
-language: ruby
-rvm:
-  - 2.1
-
 branches:
   only:
     - master
 
-sudo: false
-
-script:
-  echo 'Testing travis...'
+script: echo 'Testing travis...'
