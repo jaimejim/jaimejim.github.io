@@ -15,5 +15,3 @@ sudo: false
 
 script:
   echo 'Testing travis...'
-  bundle exec jekyll build
-  bundle exec htmlproofer ./_site --disable-external --only-4xx --check-favicon --check-html

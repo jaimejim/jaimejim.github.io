@@ -13,11 +13,11 @@ As the standards I contribute to show below, my current research focus is REST-t
 
 **The Internet Engineering Task Force (IETF)**
 
-I am currently co-chairing the [CoRE WG](https://datatracker.ietf.org/wg/core/charter/) which takes care of standardizing CoAP and CoAP related standards. The point of [CoAP](https://tools.ietf.org/html/rfc7252) is to have a HTTP-like protocol for very resource constrained devices, thus connecting devices and the larger Internet. Before that I have been a contributor of these and other IETF groups and drafts. I am also the main author of [RFC7650](https://tools.ietf.org/html/rfc7650).
+I am currently co-chairing the [CoRE WG](https://datatracker.ietf.org/wg/core/charter/) which takes care of standardizing CoAP and CoAP related standards. The point of [CoAP](https://tools.ietf.org/html/rfc7252) is to have a HTTP-like protocol for very resource constrained devices, thus connecting devices and the larger Internet. Before that I have been a contributor of these and other IETF groups and drafts. I am also the main author of [RFC7650](https://tools.ietf.org/html/rfc7650) and other drafts.
 
 **IP for Smart Objects (IPSO)**
 
-I am also a key contributor and chair of the [IPSO Semantic Committee](http://www.ipso-alliance.org). IPSO has been working on enabling IoT for about a decade already. Originally tasked with fostering the introduction of IPv6 it then produced data models to enable interoperable devices, agnostic of the application layer. In addition to chairing the semantics working group I also helped [mentoring other companies](http://challenge.ipso-alliance.org/judges-mentors), built the [Public Github Repository](http://ipso-alliance.github.io/pub/) with the XML definitions, added [continuous validation support](https://travis-ci.org/IPSO-Alliance/pub) as well as built relations with other groups other orgs like OMA LWM2M or [BIPSO](http://bluetoother.github.io/bipso/#/).
+I am also a key contributor and chair of the [IPSO Semantic Group](http://www.ipso-alliance.org). IPSO has been working on enabling IoT for about a decade already. Originally tasked with fostering the introduction of IPv6 it then produced data models to enable interoperable devices, agnostic of the application layer. In addition to chairing the semantics working group I also helped [mentoring other companies](http://challenge.ipso-alliance.org/judges-mentors), built the [Public Github Repository](http://ipso-alliance.github.io/pub/) with the XML definitions, added [continuous validation support](https://travis-ci.org/IPSO-Alliance/pub) as well as built relations with other groups other orgs like OMA LWM2M or [BIPSO](http://bluetoother.github.io/bipso/#/).
 
 **Open Mobile Alliance - Lightweight Machine to Machine (OMA-LWM2M)**
 
@@ -38,4 +38,4 @@ During my studies I did performance analysis and development of applications tha
 
 ### IPR
 
-As a researcher I often stumble upon good ideas in our projects. Companies tend to do patents for those ideas that their products are based on. Thus I have done [several patents](https://www.google.com/?tbm=pts&gws_rd=ssl#tbm=pts&q=ininventor:%22Jaime+JIMÉNEZ%22+OR+%22Jaime+JIMENEZ%22) over the years.
+As a researcher I often stumble upon good ideas in our projects. Companies tend to do patents for those ideas that their products are based on. Thus I have done several [patents](goo.gl/GU132Y) over the years.
