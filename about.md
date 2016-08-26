@@ -17,7 +17,7 @@ I am currently co-chairing the [CoRE WG](https://datatracker.ietf.org/wg/core/ch
 
 **IP for Smart Objects (IPSO)**
 
-I am also a key contributor and chair of the [IPSO Semantic Group](http://www.ipso-alliance.org). IPSO has been working on enabling IoT for about a decade already. Originally tasked with fostering the introduction of IPv6 it then produced data models to enable interoperable devices, agnostic of the application layer. In addition to chairing the semantics working group I also helped [mentoring other companies](http://challenge.ipso-alliance.org/judges-mentors), built the [Public Github Repository](http://ipso-alliance.github.io/pub/) with the XML definitions, added [continuous validation support](https://travis-ci.org/IPSO-Alliance/pub) as well as built relations with other groups other orgs like OMA LWM2M or [BIPSO](http://bluetoother.github.io/bipso/#/).
+I am also a key contributor and chair of the [IPSO Semantic Group](http://www.ipso-alliance.org). IPSO has been working on enabling IoT for about a decade already. Originally tasked with fostering the introduction of IPv6 it then produced data models to enable interoperable devices, agnostic of the application layer. In addition to chairing the semantics working group I also helped [mentoring other companies](http://challenge.ipso-alliance.org/judges-mentors), built the [IPSO SO Github Registry](http://ipso-alliance.github.io/pub/) with the XML definitions and documentation as well as [continuous validation support](https://travis-ci.org/IPSO-Alliance/pub). During this time I also built relations with other related groups such as OMA LWM2M or [BIPSO](http://bluetoother.github.io/bipso/#/).
 
 **Open Mobile Alliance - Lightweight Machine to Machine (OMA-LWM2M)**
 
