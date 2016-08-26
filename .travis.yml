@@ -1,17 +1,24 @@
+language: ruby
+rvm:
+- 2.1
+
 notifications:
   email:
     on_success: never
     on_failure: never
 
+# branch whitelist, only for GitHub Pages
 branches:
   only:
-    - master
-
+  - gh-pages     # test the gh-pages branch
+  
 before_script:
- - chmod +x travis.sh
+ - chmod +x ./travis.sh
 
 script: ./travis.sh
 
 env:
   global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+
+sudo: false # route your build to the container-based infrastructure for a faster build
