@@ -10,6 +10,8 @@ blog: true
 star: true
 ---
 
+**Menu 2:** this is a menu this is a [url](asasass.google.com)
+
 When discussing the state of current standardization I often find myself having to think through on how to summarize and simplify what a draft is about. I find that exercise very useful and I thought of providing a series of short summaries about the drafts the WG is currently working on.
 
 The first of such documents is the [Guidelines for HTTP-to-CoAP Mapping Implementations](https://tools.ietf.org/html/draft-ietf-core-http-mapping-13).
