@@ -556,11 +556,11 @@ pre.line-numbers > code {
 
 <p>It introduces <a href="https://tools.ietf.org/html/draft-ietf-core-http-mapping-10#section-2">four possible entities</a>, the HC Proxy, a Forward Proxy, a Reverse Proxy and an Interception Proxy.</p>
 
-<p>They define basic <a href="https://tools.ietf.org/html/draft-ietf-core-http-mapping-10#section-4">use cases</a>: legacy building control apps, making sensor data available to 3rd parties and smartphone for using home sensors. </p>
+<p>They define basic <a href="https://tools.ietf.org/html/draft-ietf-core-http-mapping-10#section-4">use cases</a>: legacy building control apps, making sensor data available to 3rd parties and smartphone for using home sensors.</p>
 
-<p>The mapping has multiple parts: URI Mapping, Media Type Mapping, Response Mapping and Other Additional Mapping Guidelines. </p>
+<p>The mapping has multiple parts: URI Mapping, Media Type Mapping, Response Mapping and Other Additional Mapping Guidelines.</p>
 
-<p><a href="https://tools.ietf.org/html/draft-ietf-core-http-mapping-10#section-5">CoAP URI mapping</a> is needed on cases where <code>coap</code> and <code>coaps</code> are is not supported by default on browsers/network tools. </p>
+<p><a href="https://tools.ietf.org/html/draft-ietf-core-http-mapping-10#section-5">CoAP URI mapping</a> is needed on cases where <code>coap</code> and <code>coaps</code> are is not supported by default on browsers/network tools.</p>
 
 <p>In the <strong>simple form</strong> there are few mapping templates for coap.  The default URI mapping consist on appending one URI after the other (i.e. adding target uri or <code>/{+tu}</code>), for example: <code>http://p.example.com/hc/coap://s.example.com/light</code>. Other mapping might be discovered on <code>./well-known/core</code>, on those cases the HC should use resource type: <code>core.hc</code> and attribute type <code>hct</code>. All the possible mappings are:</p>
 
@@ -576,7 +576,7 @@ pre.line-numbers > code {
 
 <p>In the <strong>enhanced form</strong> more sophisticated mappings can be expressed. And certain template variables have been created for it:</p>
 
-<div><pre class="line-numbers"><code class="language-javascript">s  = &quot;coap&quot; / &quot;coaps&quot; 
+<div><pre class="line-numbers"><code class="language-javascript">s  = &quot;coap&quot; / &quot;coaps&quot;
 hp = host [&quot;:&quot; port]  
 p  = path-abempty     
 q  = query           
@@ -584,13 +584,13 @@ qq = [ &quot;?&quot; query ]      </code></pre></div>
 
 <p>The ABNF forms make use of RFC5234, RFC7252 and RFC6690. So you can do things like queries or specific paths to the sensor. For example you can specify you use secure coap and query for lights that are <em>on</em>.</p>
 
-<p><code>http://p.example.com/hc?s=coaps&amp;hp=s.example.com&amp;p=/light&amp;q=on</code></p>
+<div><pre class="line-numbers"><code class="language-none">http://p.example.com/hc?s=coaps&amp;hp=s.example.com&amp;p=/light&amp;q=on</code></pre></div>
 
 <p>There is a <strong>discovery</strong>  process for the HC functionality both on the HTTP and the CoAP side. A sample discovery on the HTTP would look like this:</p>
 
 <div><pre class="line-numbers"><code class="language-javascript">Req:  GET /.well-known/core?rt=core.hc HTTP/1.1
       Host: p.example.com
-      
+
 
 Res:  HTTP/1.1 200 OK
       Content-Type: application/link-format
@@ -614,7 +614,7 @@ When dealing with an unrecognised CoAP <q>cf</q> the HC proxy can use the <code>
 
 <p>CoAP content formats are more limited or tightly coupled to applications than Internet ones. Thus, it is not possible to have fine-grained subclasses and optional parameters, instead you get a simple integer value. To solve that the draft optionally proposes looser coupling for specific types like XML, JSON or others.</p>
 
-<p>Although possible, <strong>content transcoding</strong> is generally not advisable as it would tamper with the payload and might cause loss of information. </p>
+<p>Although possible, <strong>content transcoding</strong> is generally not advisable as it would tamper with the payload and might cause loss of information.</p>
 
 <hr>
 
@@ -633,7 +633,7 @@ Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnik
 
 <h3 id="toc_7">Review and Consensus</h3>
 
-<p>The document has gone through multiple expert reviews over the years and was last presented on IETF95. </p>
+<p>The document has gone through multiple expert reviews over the years and was last presented on IETF95.</p>
 
 <p>There are several implementations available:</p>
 
@@ -653,7 +653,7 @@ Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnik
 
 <p>Appendix-A should be removed before publication. <a href="https://tools.ietf.org/html/draft-ietf-core-http-mapping-12#appendix-A">https://tools.ietf.org/html/draft-ietf-core-http-mapping-12#appendix-A</a></p>
 
-<p>On the IANA section, the part that describes <code>Interoperability considerations: <br>
+<p>On the IANA section, the part that describes <code>Interoperability considerations:<br>
 Published specification: (this I-D - TBD)</code> should be updated with the <code>RFCXXXX</code> reference.</p>
 
 <p>Few changes since the shepherds review, see: <a href="https://tools.ietf.org//rfcdiff?url1=https://tools.ietf.org/id/draft-ietf-core-http-mapping-10.txt&amp;url2=https://tools.ietf.org/id/draft-ietf-core-http-mapping-13.txt">https://tools.ietf.org//rfcdiff?url1=https://tools.ietf.org/id/draft-ietf-core-http-mapping-10.txt&amp;url2=https://tools.ietf.org/id/draft-ietf-core-http-mapping-13.txt</a></p>
@@ -675,14 +675,14 @@ Published specification: (this I-D - TBD)</code> should be updated with the <cod
 </li>
 </ul>
 
-<div><pre class="line-numbers"><code class="language-none">Yes, some edits have been done, see https://tools.ietf.org//rfcdiff?url1=https://tools.ietf.org/id/draft-ietf-core-http-mapping-10.txt&amp;url2=https://tools.ietf.org/id/draft-ietf-core-http-mapping-13.txt </code></pre></div>
+<div><pre class="line-numbers"><code class="language-none">Yes, some edits have been done, see https://tools.ietf.org//rfcdiff?url1=https://tools.ietf.org/id/draft-ietf-core-http-mapping-10.txt&amp;url2=https://tools.ietf.org/id/draft-ietf-core-http-mapping-13.txt</code></pre></div>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? 
+<li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests?
 </li>
 </ul>
 
-<div><pre class="line-numbers"><code class="language-none">No errors, but some warnings are shown about existing ABNF. 
+<div><pre class="line-numbers"><code class="language-none">No errors, but some warnings are shown about existing ABNF.
 I aggregated all CoAP ABNF refs here: http://jaimejim.github.io/temp/coap-abnf</code></pre></div>
 
 <ul>
@@ -694,13 +694,13 @@ I aggregated all CoAP ABNF refs here: http://jaimejim.github.io/temp/coap-abnf</
 </li>
 </ul>
 
-<div><pre class="line-numbers"><code class="language-none">Clear state, but non-Standard reference 
+<div><pre class="line-numbers"><code class="language-none">Clear state, but non-Standard reference
 [I-D.ietf-core-block]</code></pre></div>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked> If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction? <code>Does not apply</code> 
+<li class="task-list-item"><input type="checkbox" checked> If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction? <code>Does not apply</code>
 </li>
-<li class="task-list-item"><p><input type="checkbox" checked> If this is a <q>bis</q> document, have all of the errata been considered? <code>Does not apply</code> </p>
+<li class="task-list-item"><p><input type="checkbox" checked> If this is a <q>bis</q> document, have all of the errata been considered? <code>Does not apply</code></p>
 </li>
 <li><p>IANA Considerations:</p>
 
@@ -716,12 +716,12 @@ I aggregated all CoAP ABNF refs here: http://jaimejim.github.io/temp/coap-abnf</
 <li class="task-list-item"><input type="checkbox" checked> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
 </li>
 <li class="task-list-item"><input type="checkbox" checked> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?
-<code>No registries are created.</code> 
+<code>No registries are created.</code>
 </li>
 </ul>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified? <code>No registries are created.</code> 
+<li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified? <code>No registries are created.</code>
 </li>
 </ul></li>
 </ul>

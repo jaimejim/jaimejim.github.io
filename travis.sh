@@ -5,4 +5,4 @@ gem install jekyll html-proofer
 
 bundle install
 bundle exec jekyll build
-bundle exec htmlproofer ./_site --file-ignore ./_site/drafts/*.html --only-4xx
+bundle exec htmlproofer ./_site --file-ignore ./_site/drafts/*.html --disable-external
