@@ -2,7 +2,7 @@
 title: "Semantic Interoperability Workshop I"
 layout: post
 date: 2016-02-01 09:00
-image: http://www.ericsson.com/research-blog/wp-content/uploads/2016/02/Jamie´s-picture-to-blog-1.jpeg
+image: https://www.ericsson.com/research-blog/wp-content/uploads/2016/02/Jamie´s-picture-to-blog-1.jpeg
 tag:
 - iotsi
 - semantic interoperability
