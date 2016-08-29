@@ -32,7 +32,7 @@ During my studies I did performance analysis and development of applications tha
 ### Programming
 
 * C, JS.
-* Web tools, HTML, Jekyll, Travis.
+* Web tools, Github, HTML, Jekyll, Travis.
 * Git, SVN.
 * Markdown, Latex...
 
