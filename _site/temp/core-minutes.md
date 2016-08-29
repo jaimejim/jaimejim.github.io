@@ -1,4 +1,0 @@
-# On Tuesday:
-
-
-# On Thursday:
