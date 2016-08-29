@@ -516,17 +516,79 @@ pre.line-numbers > code {
 <li>Which is the implementation status of the draft?</li>
 <li>From IETF96, ...</li>
 <li>A formal review is required for new registries, resource types, etc. Has this been initiated? (RD Parameter Registry, new resource types, IPv6 ND option, Link Extensions)</li>
+<li>Others have pointed out on the mailing list that the <q>function set</q> should be RESTful services.</li>
+<li>make sure we can register any format that is a list of Web links and provide special lookup (e.g., for OCF and WoT stuff)</li>
+<li><p>Also for For hypermedia-driven services (links and forms in the entry points)</p></li>
+<li><p>Somewhere it should be said what a <em>directory server</em> is, Section 4 - Finding a Directory Server or the terminology section for example. I assume it is a server that implements the RD <q>entity</q> and associated REST interfaces. </p></li>
+<li><p>You could consider adding a ref to <a href="https://tools.ietf.org/html/rfc7650">RFC7650</a> on <a href="https://tools.ietf.org/html/draft-ietf-core-resource-directory-08#section-4">section 4</a>:</p>
+
+<ul>
+<li> <em>A Directory Server can also be found via a DHT lookup (RFC7650).</em></li>
+</ul></li>
+<li><p>On section 4.1. you should write a line about <a href="https://tools.ietf.org/html/rfc3971">Secure Neighbour Discovery (SEND)</a>, for those who can use security certified</p></li>
+<li><p>In a local network, I would assume people don&#39;t need to talk to network administrators for setting up a Resource Directory. Why isn&#39;t there some fixed IPv6 multicast address for it as one of the options on 4.</p></li>
 </ul>
 
 <h3 id="toc_3">Editorial</h3>
+
+<ul>
+<li>On the terminology section, shouldn&#39;t the Endpoint definition be that of <a href="https://tools.ietf.org/html/rfc7252#page-6">RFC7252</a>?</li>
+<li>The following example seems a bit random now, I would simply remove it, since RD is intended pretty much for ANY EP type:</li>
+</ul>
+
+<blockquote>
+<p>(for example EPs installed on vehicles enabling tracking of<br>
+   their position for fleet management purposes and monitoring<br>
+   environment parameters)</p>
+</blockquote>
+
+<ul>
+<li><q>using IPv6 neighbor Discovery (ND)</q> capital N.</li>
+</ul>
 
 <hr>
 
 <p><span id="summary"></span></p>
 
-<h3 id="toc_4">Summary core-resource-directory-08</h3>
+<h3 id="toc_4">Summary of core-resource-directory-08</h3>
 
 <p><a href="https://tools.ietf.org/html/draft-ietf-core-resource-directory-08">CoRE Resource Directory</a></p>
+
+<p>The Resource Directory is an entity that hosts descriptions of resources held on other servers, allowing lookups to be performed for those resources via REST interfaces. </p>
+
+<p>The general architecture specifies the interfaces towards the EPs that register resources and towards clients that perform queries. Of course, constrained devices will often act in either role.</p>
+
+<div><pre class="line-numbers"><code class="language-none">                Registration     Lookup, Group
+                 Interface        Interfaces
+     +----+          |                 |
+     | EP |----      |                 |
+     +----+    ----  |                 |
+                   --|-    +------+    |
+     +----+          | ----|      |    |     +--------+
+     | EP | ---------|-----|  RD  |----|-----| Client |
+     +----+          | ----|      |    |     +--------+
+                   --|-    +------+    |
+     +----+    ----  |                 |
+     | EP |----      |                 |
+     +----+</code></pre></div>
+
+<p>The <strong>Use cases</strong> vary, as the RD is an entity posed to be whenever CoAP is used. Often RD is co-located with bootstrapping nodes and used during bootstrapping to discover and register other devices. Another common case is that of data brokers, since applications do not have knowledge about who is the data consumer they can use the RD lookup to find links to relevant Endpoint data sources.</p>
+
+<p>A server that implements the RD <a href="https://tools.ietf.org/html/draft-ietf-core-resource-directory-08#section-4">can be found</a> by using IPv6 neighbour discovery, static configurations, DHCPv6 options... or even a well-known multicast address in some cases.</p>
+
+<p>If IPv6 Neighbour Discovery (ND) is used, there is a new option: <em>Resource Directory Address Option (RDAO)</em> that includes the IPv6 address of the RD in the payload.</p>
+
+<p>Discovery </p>
+
+<p>Registration</p>
+
+<p>RD Function Set</p>
+
+<p>Group Function Set</p>
+
+<p>DNS-SD mapping</p>
+
+<p>Examples</p>
 
 <hr>
 
