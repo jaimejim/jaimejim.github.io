@@ -123,8 +123,8 @@ Sizewise the results are:
 
 ###Summary
 
-Document Shepherd: [Jaime Jiménez](jaime.jimenez@ericsson.com)
-Area Director: [Alexey Melnikov](aamelnikov@fastmail.fm)
+Document Shepherd: Jaime Jiménez, <jaime.jimenez@ericsson.com>
+Area Director: Alexey Melnikov, <aamelnikov@fastmail.fm>
 
 JavaScript Object Notation, JSON (RFC7159) is a text-based data format which is popular for Web based data exchange.  Concise Binary Object Representation, CBOR (RFC7049) is a binary data format which has been optimized for data exchange for the Internet of Things (IoT). For many IoT scenarios, CBOR formats will be preferred since it can help decrease transmission payload sizes as well as implementation code sizes compared to other data formats.
 

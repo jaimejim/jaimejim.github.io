@@ -37,11 +37,11 @@ Describes how to do HTTP-to-CoAP Mapping to allow HTTP clients to access a CoAP 
 
 It introduces [four possible entities](https://tools.ietf.org/html/draft-ietf-core-http-mapping-10#section-2), the HC Proxy, a Forward Proxy, a Reverse Proxy and an Interception Proxy.
 
-They define basic [use cases](https://tools.ietf.org/html/draft-ietf-core-http-mapping-10#section-4): legacy building control apps, making sensor data available to 3rd parties and smartphone for using home sensors. 
+They define basic [use cases](https://tools.ietf.org/html/draft-ietf-core-http-mapping-10#section-4): legacy building control apps, making sensor data available to 3rd parties and smartphone for using home sensors.
 
-The mapping has multiple parts: URI Mapping, Media Type Mapping, Response Mapping and Other Additional Mapping Guidelines. 
+The mapping has multiple parts: URI Mapping, Media Type Mapping, Response Mapping and Other Additional Mapping Guidelines.
 
-[CoAP URI mapping](https://tools.ietf.org/html/draft-ietf-core-http-mapping-10#section-5) is needed on cases where `coap` and `coaps` are is not supported by default on browsers/network tools. 
+[CoAP URI mapping](https://tools.ietf.org/html/draft-ietf-core-http-mapping-10#section-5) is needed on cases where `coap` and `coaps` are is not supported by default on browsers/network tools.
 
 In the **simple form** there are few mapping templates for coap.  The default URI mapping consist on appending one URI after the other (i.e. adding target uri or `/{+tu}`), for example: `http://p.example.com/hc/coap://s.example.com/light`. Other mapping might be discovered on `./well-known/core`, on those cases the HC should use resource type: `core.hc` and attribute type `hct`. All the possible mappings are:
 
@@ -60,7 +60,7 @@ In the **simple form** there are few mapping templates for coap.  The default UR
 In the **enhanced form** more sophisticated mappings can be expressed. And certain template variables have been created for it:
 
 ```js
-s  = "coap" / "coaps" 
+s  = "coap" / "coaps"
 hp = host [":" port]  
 p  = path-abempty     
 q  = query           
@@ -75,7 +75,7 @@ There is a **discovery**  process for the HC functionality both on the HTTP and 
 ```js
 Req:  GET /.well-known/core?rt=core.hc HTTP/1.1
       Host: p.example.com
-      
+
 
 Res:  HTTP/1.1 200 OK
       Content-Type: application/link-format
@@ -102,7 +102,7 @@ When dealing with an unrecognised CoAP "cf" the HC proxy can use the `applicatio
 
 CoAP content formats are more limited or tightly coupled to applications than Internet ones. Thus, it is not possible to have fine-grained subclasses and optional parameters, instead you get a simple integer value. To solve that the draft optionally proposes looser coupling for specific types like XML, JSON or others.
 
-Although possible, **content transcoding** is generally not advisable as it would tamper with the payload and might cause loss of information. 
+Although possible, **content transcoding** is generally not advisable as it would tamper with the payload and might cause loss of information.
 
 ----
 
@@ -111,16 +111,16 @@ Although possible, **content transcoding** is generally not advisable as it woul
 
 ###Summary
 
-Document Shepherd: [Jaime Jiménez](jaime.jimenez@ericsson.com)
-Area Director: [Alexey Melnikov](aamelnikov@fastmail.fm)
+Document Shepherd: Jaime Jiménez, <jaime.jimenez@ericsson.com>
+Area Director: Alexey Melnikov, <aamelnikov@fastmail.fm>
 
 This document provides reference information for implementing a cross-protocol network proxy that performs translation from the HTTP protocol to the CoAP protocol.  This will enable a HTTP client to access resources on a CoAP server through the proxy.  This document describes how a HTTP request is mapped to a CoAP request, and then how a CoAP response is mapped back to a HTTP response.  This includes guidelines for URI mapping, media type mapping and additional proxy implementation issues.  This document covers the Reverse, Forward and Interception cross-protocol proxy cases.
-   
+
 The document is intended as an Informational RFC.
 
 ###Review and Consensus
 
-The document has gone through multiple expert reviews over the years and was last presented on IETF95. 
+The document has gone through multiple expert reviews over the years and was last presented on IETF95.
 
 There are several implementations available:
 
@@ -138,7 +138,7 @@ Each author has stated that they do not have direct, personal knowledge of any I
 
 Appendix-A should be removed before publication. <https://tools.ietf.org/html/draft-ietf-core-http-mapping-12#appendix-A>
 
-On the IANA section, the part that describes `Interoperability considerations: 
+On the IANA section, the part that describes `Interoperability considerations:
 Published specification: (this I-D - TBD)` should be updated with the `RFCXXXX` reference.
 
 Few changes since the shepherds review, see: <https://tools.ietf.org//rfcdiff?url1=https://tools.ietf.org/id/draft-ietf-core-http-mapping-10.txt&url2=https://tools.ietf.org/id/draft-ietf-core-http-mapping-13.txt>
@@ -153,14 +153,14 @@ The working group has very good consensus on this document as it is. HTTP mappin
 * [x] Is the intent of the document accurately and adequately explained in the introduction?
 * [x] Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed?
 
-``` 
-Yes, some edits have been done, see https://tools.ietf.org//rfcdiff?url1=https://tools.ietf.org/id/draft-ietf-core-http-mapping-10.txt&url2=https://tools.ietf.org/id/draft-ietf-core-http-mapping-13.txt 
-``` 
+```
+Yes, some edits have been done, see https://tools.ietf.org//rfcdiff?url1=https://tools.ietf.org/id/draft-ietf-core-http-mapping-10.txt&url2=https://tools.ietf.org/id/draft-ietf-core-http-mapping-13.txt
+```
 
-* [x] Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests? 
+* [x] Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests?
 
-``` 
-No errors, but some warnings are shown about existing ABNF. 
+```
+No errors, but some warnings are shown about existing ABNF.
 I aggregated all CoAP ABNF refs here: http://jaimejim.github.io/temp/coap-abnf
 ```
 
@@ -170,11 +170,11 @@ I aggregated all CoAP ABNF refs here: http://jaimejim.github.io/temp/coap-abnf
 * [x] Are all normative references made to documents that are ready for advancement and are otherwise in a clear state?
 
 ```
-Clear state, but non-Standard reference 
+Clear state, but non-Standard reference
 [I-D.ietf-core-block]
-``` 
-* [x] If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction? ```Does not apply``` 
-* [x] If this is a "bis" document, have all of the errata been considered? ```Does not apply``` 
+```
+* [x] If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction? ```Does not apply```
+* [x] If this is a "bis" document, have all of the errata been considered? ```Does not apply```
 
 * IANA Considerations:
 	* [x] Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what's being requested, so they can perform the required actions.
@@ -183,6 +183,6 @@ Clear state, but non-Standard reference
 	* [x] Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
 	* [x] For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
 	* [x] For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?
-```No registries are created. ``` 
+```No registries are created. ```
 
-	* [x]  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified? ```No registries are created.``` 
+	* [x]  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified? ```No registries are created.```

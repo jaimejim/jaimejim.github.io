@@ -14,7 +14,7 @@ Author: [Jaime Jiménez](http://jaimejim.github.io/)
 * Others have pointed out on the mailing list that the "function set" should be RESTful services.
 * make sure we can register any format that is a list of Web links and provide special lookup (e.g., for OCF and WoT stuff)
 * Also for For hypermedia-driven services (links and forms in the entry points)
-* Somewhere it should be said what a *directory server* is, Section 4 - Finding a Directory Server or the terminology section for example. I assume it is a server that implements the RD "entity" and associated REST interfaces. 
+* Somewhere it should be said what a *directory server* is, Section 4 - Finding a Directory Server or the terminology section for example. I assume it is a server that implements the RD "entity" and associated REST interfaces.
 * You could consider adding a ref to [RFC7650](https://tools.ietf.org/html/rfc7650) on [section 4](https://tools.ietf.org/html/draft-ietf-core-resource-directory-08#section-4):
 	*  *A Directory Server can also be found via a DHT lookup (RFC7650).*
 * On section 4.1. you probably should write a line about [Secure Neighbour Discovery (SEND)](https://tools.ietf.org/html/rfc3971), for those who can use security certified
@@ -29,7 +29,7 @@ Author: [Jaime Jiménez](http://jaimejim.github.io/)
 > (for example EPs installed on vehicles enabling tracking of
    their position for fleet management purposes and monitoring
    environment parameters)
-   
+
 * "using IPv6 neighbor Discovery (ND)" capital N.
 
 
@@ -42,7 +42,7 @@ adsasd
 
 [CoRE Resource Directory](https://tools.ietf.org/html/draft-ietf-core-resource-directory-08)
 
-The Resource Directory is an entity that hosts descriptions of resources held on other servers, allowing lookups to be performed for those resources via REST interfaces. 
+The Resource Directory is an entity that hosts descriptions of resources held on other servers, allowing lookups to be performed for those resources via REST interfaces.
 
 The general architecture specifies the interfaces towards the EPs that register resources and towards clients that perform queries. Of course, constrained devices will often act in either role.
 
@@ -61,7 +61,7 @@ The general architecture specifies the interfaces towards the EPs that register 
      | EP |----      |                 |
      +----+
 ```
-                     
+
 
 The **Use cases** vary, as the RD is an entity posed to be whenever CoAP is used. Often RD is co-located with bootstrapping nodes and used during bootstrapping to discover and register other devices. Another common case is that of data brokers, since applications do not have knowledge about who is the data consumer they can use the RD lookup to find links to relevant Endpoint data sources.
 
@@ -69,7 +69,7 @@ A server that implements the RD [can be found](https://tools.ietf.org/html/draft
 
 If IPv6 Neighbour Discovery (ND) is used, there is a new option: *Resource Directory Address Option (RDAO)* that includes the IPv6 address of the RD in the payload.
 
-Discovery 
+Discovery
 
 Registration
 
@@ -88,8 +88,8 @@ Examples
 
 ###Summary
 
-Document Shepherd: [Jaime Jiménez](jaime.jimenez@ericsson.com)
-Area Director: [Alexey Melnikov](aamelnikov@fastmail.fm)
+Document Shepherd: Jaime Jiménez, <jaime.jimenez@ericsson.com>
+Area Director: Alexey Melnikov, <aamelnikov@fastmail.fm>
 
 In many M2M applications, direct discovery of resources is not practical due to sleeping nodes, disperse networks, or networks where multicast traffic is inefficient.  These problems can be solved by employing an entity called a Resource Directory (RD), which hosts descriptions of resources held on other servers, allowing lookups to be performed for those resources.  This document specifies the web interfaces that a Resource Directory supports in order for web servers to discover the RD and to register, maintain, lookup and remove resources descriptions.  Furthermore, new link attributes useful in conjunction with an RD are defined.
 

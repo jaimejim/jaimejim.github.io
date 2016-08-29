@@ -145,8 +145,8 @@ There is a whole set of [possible errors and how can they be handled](https://to
 
 ###Summary
 
-Document Shepherd: [Jaime Jiménez](jaime.jimenez@ericsson.com)
-Area Director: [Alexey Melnikov](aamelnikov@fastmail.fm)
+Document Shepherd: Jaime Jiménez, <jaime.jimenez@ericsson.com>
+Area Director: Alexey Melnikov, <aamelnikov@fastmail.fm>
 
 The existing Constrained Application Protocol (CoAP) methods only allow access to a complete resource.  This does not permit applications to access parts of a resource.  In case of resources with larger or complex data, or in situations where a resource continuity is required, replacing or requesting the whole resource is undesirable.  Several applications using CoAP will need to perform partial resource accesses.
 
