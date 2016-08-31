@@ -524,6 +524,7 @@ pre.line-numbers > code {
 <ul>
 <li> <em>A Directory Server can also be found via a DHT lookup (RFC7650).</em></li>
 </ul></li>
+<li>On section 4, the possibility of using some <q>anycast addresses</q> method is mentioned, but it is never explained anywhere (AFAIK) in the document. This is important because on Section 6.2 it goes back again to the topic of how to discover the RD function set using multicast or anycast.</li>
 <li>On section 4.1. you probably should write a line about <a href="https://tools.ietf.org/html/rfc3971">Secure Neighbour Discovery (SEND)</a>, for those who can use security certified</li>
 <li>In a local network, I would assume people don&#39;t need to talk to network administrators for setting up a Resource Directory. <strong>Why isn&#39;t there some fixed IPv6 multicast address for the RD?</strong> It should be one of the options on 4.</li>
 <li>Sadly we do not have a bit of markdown colouring on the RFC templates and we did remove the sequence diagrams to avoid clutter. This is why, the example on <a href="https://tools.ietf.org/html/draft-ietf-core-resource-directory-08#page-11">Section 5.1</a> does not look too clear. I couldn&#39;t find any specific representation form but I&#39;d suggest using tabulation and spacing a bit more consistently and maybe introduce longer explanations.</li>
@@ -562,6 +563,11 @@ Res: 2.05 Content
 <p>or by using the .well-known/core resource</p>
 </blockquote>
 
+<ul>
+<li>Why does the beginning of section 2 go back again to a topic of section 4? Is finding a directory server (which requires definition) different that discovering the resource directory function set on a server? Why aren&#39;t those sections the same. </li>
+<li>The examples are overly simple IMO. </li>
+</ul>
+
 <h3 id="toc_3">Editorial</h3>
 
 <ul>
@@ -576,7 +582,8 @@ Res: 2.05 Content
 </blockquote>
 
 <ul>
-<li><q>using IPv6 neighbor Discovery (ND)</q> capital N.</li>
+<li><q>using IPv6 <strong>N</strong>eighbor Discovery (ND)</q> capital N.</li>
+<li>Resource Directory Function Set should probably be consistently capitalised throughout the doc. </li>
 </ul>
 
 <hr>
