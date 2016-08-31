@@ -502,7 +502,7 @@ pre.line-numbers > code {
 <h3 id="toc_1">Tentative Timeline</h3>
 
 <ul>
-<li class="task-list-item"><input type="checkbox"> <a href="#summary">draft summary</a>
+<li class="task-list-item"><input type="checkbox"> <a href="#summary">draft summary</a> currently @section 7
 </li>
 <li class="task-list-item"><input type="checkbox"> <a href="#shepherd-writeup">Shepherd Writeup</a> @Jaime <code>in progress,  @due(16-09-05 15:28)</code>
 </li>
@@ -514,7 +514,6 @@ pre.line-numbers > code {
 
 <ul>
 <li>Which is the implementation status of the draft?</li>
-<li>From IETF96, ...</li>
 <li>A formal review is required for new registries, resource types, etc. Has this been initiated? (RD Parameter Registry, new resource types, IPv6 ND option, Link Extensions)</li>
 <li>Others have pointed out on the mailing list that the <q>function set</q> should be RESTful services.</li>
 <li>make sure we can register any format that is a list of Web links and provide special lookup (e.g., for OCF and WoT stuff)</li>
@@ -548,9 +547,20 @@ Res: 2.05 Content
      payload: &lt;/sen/temp&gt;</code></pre></div>
 
 <ul>
-<li>Section 6.1 is not a REST interface, thus I would simply move it as a paragraph on the main Section 6.</li>
-<li>Section 6.2 messaging seems to have a different formatting than 5.1, we should agree on one. </li>
+<li>Section 6.1 is not a REST interface, thus I would simply move it as part of the main introduction on Section 6.</li>
+<li>Section 6.2 messaging seems to have a different formatting than 5.1, the authors should be consistent on one throughout the document. </li>
+<li>Section 6.2</li>
 </ul>
+
+<blockquote>
+<p>or by discovering the RD using the CoRE Link Format (see also Section 4). </p>
+</blockquote>
+
+<p>Is this the .well-known/core resource or are there other uses for that type of formatting? wouldn&#39;t it be better to say then:</p>
+
+<blockquote>
+<p>or by using the .well-known/core resource</p>
+</blockquote>
 
 <h3 id="toc_3">Editorial</h3>
 
