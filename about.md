@@ -7,7 +7,7 @@ layout: page
 
 I am a senior researcher working on the area of Internet of Things. I have been doing a bit of everything related to IoT for almost a decade already, from scientific publications, standardization, project management, architecture and design as well as prototyping and inventions/IPR. [For more details, please see my full CV](/temp/jaime_cv.pdf).
 
-As the standards I contribute to show below, my current research focus is REST-type of communications, Device Management and Data models.
+As you can see below, I contribute to various standards. Currently I focus more on IoT REST-type of communications, Device Management and Data models.
 
 ### IoT Standardization
 
