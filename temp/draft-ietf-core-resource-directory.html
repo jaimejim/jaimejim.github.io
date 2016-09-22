@@ -510,7 +510,7 @@ pre.line-numbers > code {
 </li>
 </ul>
 
-<h3 id="toc_2">Comments on v06</h3>
+<h3 id="toc_2">Comments on v08</h3>
 
 <ul>
 <li>Which is the implementation status of the draft?</li>
@@ -564,8 +564,10 @@ Res: 2.05 Content
 </blockquote>
 
 <ul>
-<li>Why does the beginning of section 2 go back again to a topic of section 4? Is finding a directory server (which requires definition) different that discovering the resource directory function set on a server? Why aren&#39;t those sections the same. </li>
-<li>The examples are overly simple IMO. </li>
+<li>Why does the beginning of section 6.2 go back again to a topic of section 4? Is finding a directory server (which requires definition) different that discovering the resource directory function set on a server? Why aren&#39;t those sections the same. </li>
+<li>The examples are overly simple and repetitive IMO. </li>
+<li>The <code>/rd/location</code> during registration seems a missing form the spec. If it is left to the implementation, then it should be said so. Otherwise I think we should give more info. Can two different endpoints get the same location by mistake? I would assume several implementations silly append the EP name, what would be the response code for that?</li>
+<li>IMO making the examples on section 6 based on HTTP only adds to the confusion. Why not just CoAP + Link Format for now? </li>
 </ul>
 
 <h3 id="toc_3">Editorial</h3>
@@ -637,6 +639,8 @@ Res: 2.05 Content
      payload: &lt;/sen/temp&gt;</code></pre></div>
 
 <p>For other devices that are more powerful, they can use the <strong>Resource Directory Function Set</strong>, which is basically a set of REST interfaces towards the RD: discovery, registration, update, lookup, and removal interfaces.</p>
+
+<p>The <strong>Discovery</strong> of the function set is based on the well-known resource but admit</p>
 
 <p>Registration</p>
 
