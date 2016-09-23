@@ -3,7 +3,6 @@ node_modules
 _site
 .sass-cache
 .npm-debug.log
-*.xml
 drafts/Makefile
 temp/*.md
 *.key
