@@ -156,7 +156,7 @@ Jaime: Reference https://tools.ietf.org/html/rfc6020#section-7.3.3.
 </t>
 
 <!--
-Jaime: I assume it will be confusing for the reader that Appendix B is example 1, Appendix C is Example 2.. etc. Let's just call them by the module name instead or similar?
+Jaime: I think it will be confusing for the reader that Appendix B is example 1, Appendix C is Example 2.. etc. Let's just call them by the module name instead or similar?
 -->
 
 <figure>
@@ -224,6 +224,11 @@ Jaime: I assume it will be confusing for the reader that Appendix B is example 1
   <t>
     The invocation URI of a LWM2M resource looks like:
   </t><t>
+
+  <!--
+  Jaime: Why type and not object? Is it the same? Why HTTP? LWM2M uses coap+lwm2m://
+  -->
+
   http://example.com/type/instance/resource
 </t><t>
 In this section it is assumed that the YANG mapping of <xref target="Yname"/> is used.
@@ -233,6 +238,9 @@ When YANG is used, the LWM2M resource invocation can follow the RESTCONF convent
 When using RESTCONF the invocation will look like:
 </t><t>
 http://example.com/type/instance=0/resource
+<!--
+Jaime: Is this URI correct?
+-->
 </t><t>
 In the case of CoMI the type/resource name is converted to a numeric identifier to reduce the payload size. The instance is specified in a query parameter.
 Consequently, the LWM2M resource on a host containing a YANG specification is accessed with:
@@ -243,6 +251,10 @@ Assuming that IPSO-humidity/Sensor_Value converts to 5700, the URI for the CoMI 
 </t><t>
 coap://example.com/5700?keys=0
 </t><t>
+<!--
+Jaime: Is this URI correct? shouldn't it be: coap://example.com/3304/5700?keys=0
+-->
+
 For LWM2M types with only one instance, the keys=0 can be omitted.
 
 </t>
