@@ -97,7 +97,7 @@ Table of Contents
    classes with attributes and operations that can be instantiated to
    objects.  An example is the OMA LWM2M (see [OMNA]) Object model, that
    standardizes eight numbered object types for device management.  IPSO
-   (see [IPSO]) expands those objects for application information.  This
+   (see [IPSO]) expands those objects to handle applications.  This
    document describes rules to translate xml specifications of the
    LWM2M/IPSO organizations to YANG [RFC6020].
 
@@ -170,27 +170,28 @@ van der Stok & Jimenez   Expires March 27, 2017                 [Page 3]
 Internet-Draft                 LWM2M-YANG                 September 2016
 
 
-   http://example.com/type/instance/resource, where resource, instance
-   and type are numbers, specified by the LWM2M specification.
+   http://example.com/object/instance/resource, where resource, instance
+   and object are numbers, specified by the LWM2M specification.
 
-   When using YANG, the type identifiers, followed by the resource
+   When using YANG, the object identifiers, followed by the resource
    identifier, are YANG strings instead of numbers.
 
-   For an automatic translation from the xml LWM2M specification to a
+   For an automatic translation from the XML LWM2M specification to a
    YANG specification, the following rules apply for access, optional,
    units, and range specifications:
 
    o  The optional/mandatory aspect of the LWM2M resource is covered by
-      the mandatory "false/true" statement of YANG.
+      the leaf's mandatory "false/true" statement of YANG.
 
    o  The R,W access aspects of a data item are translated using config
-      parameter.  Config "false" means R access, config "true" means RW
+      statement.  Config "false" means R access, config "true" means RW
       access.
 
-   o  When the YANG rpc is specified the E access is meant.  When input
-      parameters are added, ER access is meant; when output parameters
-      are added, WR access is meant and with both input and output
-      parameters ERW access is meant.
+   o  When the YANG RPC is specified the E access is meant.  In
+      [RFC6020] RPCs are modelled for NETCONF using YANG input and
+      output parameters.  When input parameters are added, ER access is
+      meant; when output parameters are added, WR access is meant and
+      with both input and output parameters ERW access is meant.
 
    o  To specify the range of a data resource the YANG range statement
       is used.
@@ -215,7 +216,6 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
    o  In Appendix A, illegal YANG identifiers are represented as
       integers.  This approach cannot be compiled by YANG compilers.
-
 
 
 
