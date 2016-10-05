@@ -1,5 +1,5 @@
 ---
-title: "On dropping the language part of the URL"
+title: "On dropping the language part of URLs"
 layout: post
 date: 2016-10-05 16:00
 tag:
