@@ -14,7 +14,7 @@ I am having some issues with websites languages and I am noticing that there doe
 
 On the one hand it seems that web design is taking more into account the local cultures and languages and therefore most companies translate their websites to almost any language. On the other hand there are lot of assumptions as to **which language the reader speaks** and a lot of interest to know the preferences of the reader.
 
-As a spaniard in Finland but using a Swedish proxy server I usually have to do some action to get the website I am visiting the way I want. I like Spanish websites in spanish, Finnish ones in english (there is no spanish option and I haven't learned the language), German ones in german (to practice reading) and Swedish ones in swedish ~~blocked, because reads swedish anyways, am I right?!? ~~. These are the usual methods:
+As a spaniard in Finland but using a Swedish proxy server I usually have to do some action to get the website I am visiting the way I want. I like Spanish websites in spanish, Finnish ones in english (there is no spanish option and I haven't learned the language), German ones in german (to practice reading) and Swedish ones ~~blocked~~ in swedish. These are the usual methods:
 
 1. Prepending the language part on the URL from `http://website.com` to `http://en.website.com`, appending `?hl=en` or similar tricks. I don't know how this works from the SEO perspective as it does seem a bit inconsistent, but it is very convenient for me as an user.
 
