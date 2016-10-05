@@ -22,7 +22,7 @@ As a spaniard in Finland but using a Swedish proxy server I usually have to do s
 
 3. Use some tracking mechanism like cookies. This would be fine if I trusted every website I visit to keep my information private, however that is not always the case.
 
-The latest trend I am seeing is that options 1 and 2 are slowly disapearing. For example I was just checking the Google Store (because of the new phone they announced) and I was surprised that I couldn't change the language anywhere. There is no URL path for me to edit and there is no user interface either. It assumes that the [natural language field is FI](https://www.w3.org/TR/WCAG10-TECHS/#tech-identify-lang) I have to register with Google so that they can have my preferences.
+The latest trend I am seeing is that options 1 and 2 are slowly disapearing. For example I was just checking the [Google Store](https://store.google.com/product/pixel_phone) (because of the new phone they announced) and I was surprised that I couldn't change the language anywhere. There is no URL path for me to edit and there is no user interface either. It assumes that the [natural language field is FI](https://www.w3.org/TR/WCAG10-TECHS/#tech-identify-lang) I have to register with Google so that they can have my preferences.
 
 ![Google Store assumes I speak finnish](/assets/images/google_store.jpg)
 
