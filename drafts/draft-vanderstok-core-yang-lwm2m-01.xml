@@ -38,12 +38,8 @@
 
     <date />
 
-<!--
-Jaime: Is this going to be submitted to ROLL or CORE?
--->
-
   <area>Routing</area>
-  <workgroup>roll</workgroup>
+  <workgroup>core</workgroup>
   <abstract>
     <t>
       This document defines a set of rules to convert a LWM2M xml-based device specification to a YANG MODULE. The invocation of the server executing the converted YANG code makes use of CoMI. The mapping from the original LWM2M uri to the corresponding CoMI URI is presented.
@@ -117,27 +113,14 @@ Jaime: Is this going to be submitted to ROLL or CORE?
       <list style="symbols">
         <t>The optional/mandatory aspect of the LWM2M resource is covered by the leaf's mandatory "false/true" statement of YANG.</t>
 
-<!--
-Jaime: Reference https://tools.ietf.org/html/rfc6020#page-60
--->
 
         <t>The R,W access aspects of a data item are translated using config statement. Config "false" means R access, config "true" means RW access.</t>
-<!--
-Jaime: An Object can have both Read and Write access, can we represent that with the config statement? Somehow I think we are maybe missusing this, it is intended to represent configuration or state data.
-https://tools.ietf.org/html/rfc6020#page-105
--->
+
         <t>When the YANG RPC is specified the E access is meant. In <xref target="RFC6020"/> RPCs are modelled for NETCONF using YANG input and output parameters. When input parameters are added, ER access is meant; when output parameters are added, WR access is meant and with both input and output parameters ERW access is meant.</t>
-<!--
-Jaime: Reference to YANG RPC needed. https://tools.ietf.org/html/rfc6020#page-23  Explain a bit about input and output.
--->
+
         <t>To specify the range of a data resource the YANG range statement is used.</t>
-<!--
-Jaime: Reference https://tools.ietf.org/html/rfc6020#section-9.2.4.
--->
+
         <t>The YANG units statement is used to express the units.</t>
-<!--
-Jaime: Reference https://tools.ietf.org/html/rfc6020#section-7.3.3.
--->
 
         <t>In the YANG specification the LWM2M resources are specified as leafs of a YANG list. The YANG list is preceded by leaf called instance_number which contains the LWM2M instance identifier. The instance_number is declared key in the YANG list.</t>
 
@@ -154,10 +137,6 @@ Jaime: Reference https://tools.ietf.org/html/rfc6020#section-7.3.3.
   </list>
   Below the tree diagrams (see <xref target="tree-diagrams"/> for an explanation) of the three valid YANG modules are shown.
 </t>
-
-<!--
-Jaime: I think it will be confusing for the reader that Appendix B is example 1, Appendix C is Example 2.. etc. Let's just call them by the module name instead or similar?
--->
 
 <figure>
   <artwork align="left"><![CDATA[
@@ -238,9 +217,7 @@ When YANG is used, the LWM2M resource invocation can follow the RESTCONF convent
 When using RESTCONF the invocation will look like:
 </t><t>
 http://example.com/type/instance=0/resource
-<!--
-Jaime: Is this URI correct?
--->
+
 </t><t>
 In the case of CoMI the type/resource name is converted to a numeric identifier to reduce the payload size. The instance is specified in a query parameter.
 Consequently, the LWM2M resource on a host containing a YANG specification is accessed with:
@@ -252,13 +229,13 @@ Assuming that IPSO-humidity/Sensor_Value converts to 5700, the URI for the CoMI 
 coap://example.com/5700?keys=0
 </t><t>
 <!--
-Jaime: Is this URI correct? shouldn't it be: coap://example.com/3304/5700?keys=0
+Jaime: Is this URI correct? shouldn't it be: coap://example.com/3304/5700?k=0
 -->
 
 For LWM2M types with only one instance, the keys=0 can be omitted.
 
 </t>
-</section> <!-- URI convention  -->
+</section> <!-- URI convention -->
 
 <section anchor="notification" title="observation and notification">
   <t>
