@@ -7,3 +7,5 @@ drafts/Makefile
 temp/*.md
 *.key
 *.ppt
+
+temp/life.todo
