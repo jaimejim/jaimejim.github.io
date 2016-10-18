@@ -13,7 +13,8 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
  ✔ [TCP] Talk to AD or RFC Editor about number of authors. @done(2016-09-05 11:24) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
  ✔ [TCP] READ last version before IETF96 https://core-wg.github.io/coap-tcp-tls/ @due(16-07-16 16:07) @carsten @jaime @critical @done(2016-07-22 08:20) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
  ☐ [TCP] IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
- ☐ [TCP] Authors to finish observation part.
+ ☐ [TCP] @WGLC issued.
+ ✔ [TCP] Authors to finish observation part. @done(2016-10-18 12:40) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
  ✔ [TCP] [IETF96] Update Github Issues with comments from the meeting. @done(2016-09-05 11:24) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
  ☐ [TCP] Read http://www.ietf.org/mail-archive/web/hybi/current/msg09540.html https://tools.ietf.org/html/rfc6520 to understand how other documents handle signalling @due(16-07-16 16:07)
 
@@ -82,7 +83,6 @@ COMI-COOL CBOR draft-ietf-core-yang-cbor:
  ☐ [COCOL] Plan ad-hoc meeting on device management during IETF96. @Carsten, to send invite for tuesday morning on IETF. @critical
  ☐ [COCOL] IESG Submission of draft-ietf-core-yang-cbor @due(17-01-10 21:01)
  ☐ [COCOL] [IETF96] draft-veillette-core-cool–02 6 people read it. Agreed to split document.
- ☐ [COCOL] [IETF96] agree to move draft-somaraju-core-sid–01 forward. Confirm on mailing list @jaime
  ☐ [COCOL] [IETF96] fix draft-veillette-core-cool for YANG choices.
 
  COMI Draft:
@@ -91,9 +91,10 @@ COMI-COOL CBOR draft-ietf-core-yang-cbor:
 
  PubSub draft-ietf-koster-pubsub:
   ✔ [PBSB] Carsten to read the draft @high @done(2016-09-05 11:37) @project(PubSub draft-ietf-koster-pubsub)
-  ☐ [PBSB] [IETF96] Confirm WGA on mailing list. Review by Jeng Wei, Hannes, Jim, Bill, Peter, ?? @jaime
+  ✔ [PBSB] [IETF96] Confirm @WGA on mailing list. Review by Jeng Wei, Hannes, Jim, Bill, Peter, ?? @jaime @done(2016-10-18 12:16) @project(PubSub draft-ietf-koster-pubsub)
   ✔ [PBSB] WG Item on IETF96? Check if it is in the charter @due(16-07-21 16:55) @done(2016-07-22 10:12) @project(COMI Draft / PubSub draft-ietf-koster-pubsub)
   ✔ [PBSB] Restart work after W3C in Beijing @due(16-08-06 21:03) @done(2016-07-22 10:12) @project(COMI Draft / PubSub draft-ietf-koster-pubsub)
+  ☐ [PBSB] Resubmit new version.
 
 Interfaces draft-ietf-core-interfaces:
  ☐ [INTF] Restart work after W3C in Beijing @due(16-08-06 21:03)
@@ -102,15 +103,18 @@ Interfaces draft-ietf-core-interfaces:
 
 DynLink draft-groves-core-dynlink:
  ✔ [DLNK] Check in Berlin if this should be WG item. @done(2016-07-22 08:56) @project(DynLink draft-groves-core-dynlink)
- ☐ [DLNK] [IETF96] 3 people have read this. Confirm WGA to the mailing list. @jaime
+ ✔ [DLNK] [IETF96] 3 people have read this. Confirm @WGA to the mailing list. @jaime @done(2016-10-18 10:33) @project(DynLink draft-groves-core-dynlink)
 
 CoRE Object Security CoAP draft-selander-ace-object-security:
   ☐ [OSCOAP] End of the year WGLC.
-  ☐ [OSCOAP] Confirm WGA on mailing list. @jaime
+  ✔ [OSCOAP] Confirm @WGA on mailing list. @jaime @done(2016-10-18 12:16) @project(CoRE Object Security CoAP draft-selander-ace-object-security)
   ☐ [OSCOAP] [IETF96] 12 people read it. Reviews promised by Jim, Sandeep Kumar and Thomas Watteyne.
 
 Congestion Control draft-bormann-core-cocoa:
-  ☐ [CCA] [IETF96] Show of hands showed positive. Confirm WGA on mailing list. @jaime
+  ✔ [CCA] [IETF96] Show of hands showed positive. Confirm @WGA on mailing list. @jaime @done(2016-10-18 12:16) @project(Congestion Control draft-bormann-core-cocoa)
+
+SID identifiers draft-somaraju-core-sid:
+  ✔ [COCOL] [IETF96] agree to move draft-somaraju-core-sid–01 forward. Confirm on mailing list @WGA @jaime @done(2016-10-18 12:40) @project(SID identifiers draft-somaraju-core-sid)
 
 Freezer
 ---------
@@ -135,7 +139,7 @@ Block draft-ietf-core-block -> RFC7959
 
 
 NEXT WEEK:
- ☐ Prepare slides for IETF @due(16-07-01 15:20) @high https://tools.ietf.org/wg/core/agenda
+ ✔ Prepare slides for IETF @due(16-07-01 15:20) @high https://tools.ietf.org/wg/core/agenda @done(2016-10-18 12:38) @project(NEXT WEEK)
 
 Milestones:
 To be added to datatracker: https://datatracker.ietf.org/wg/core/milestones/
@@ -155,8 +159,8 @@ To be added to datatracker: https://datatracker.ietf.org/wg/core/milestones/
    ☐ IESG Submission of draft-ietf-core-interfaces @due(17-03-01 21:03)
 
 Important Dates:
-  ☐ Internet Draft Cut-off @due(16-07-08 09:31)
-  ☐ CoAP Implementation Workshop @due(16-09-12 12:32)
+  ✔ Internet Draft Cut-off @due(16-07-08 09:31) @done(2016-10-18 12:38) @project(Important Dates)
+  ✔ CoAP Implementation Workshop @due(16-09-12 12:32) @done(2016-10-18 12:38) @project(Important Dates)
   ☐ IETF 96 CORE Sessions
   Tuesday, Afternoon Session I 1400-1600. Room Name: Charlottenburg II/III size: 175
   Thursday, Afternoon Session II 1620-1820. Room Name: Tiergarten size: 110
