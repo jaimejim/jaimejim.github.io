@@ -5,7 +5,7 @@ layout: page
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 ---
 
-I am a senior researcher working on the area of Internet of Things. I have been doing a bit of everything related to IoT for almost a decade already, from scientific publications, standardization, project management, architecture and design as well as prototyping and inventions/IPR. [For more details, please see my full CV](/temp/jaime_cv.pdf).
+I am a senior researcher working on the area of Internet of Things. I have been doing a bit of everything related to IoT for almost a decade already, from scientific publications, standardization, project management, architecture and design as well as prototyping and inventions/IPR. [For more details, please see my full CV](/assets/files/jaime_cv.pdf).
 
 As you can see below, I contribute to various standards. Currently I focus more on IoT REST-type of communications, Device Management and Data models.
 
@@ -27,7 +27,7 @@ I also follow as much as I can the [Thing-to-Thing Research Group](https://githu
 
 ### Studies
 
-During my studies I did performance analysis and development of applications that can use both [P2P and Session Initiation Protocol (SIP)](/temp/thesis_reload.pdf) and later on [adapting DHTs to benefit M2M environments](/temp/thesis_dht_m2m.pdf).
+During my studies I did performance analysis and development of applications that can use both [P2P and Session Initiation Protocol (SIP)](/assets/files/thesis_reload.pdf) and later on [adapting DHTs to benefit M2M environments](/assets/files/thesis_dht_m2m.pdf).
 
 ### Programming
 
@@ -38,4 +38,4 @@ During my studies I did performance analysis and development of applications tha
 
 ### IPR
 
-As a researcher I often stumble upon good ideas in our projects. Companies tend to do patents for those ideas that their products are based on. Thus I have done several [patents](http://goo.gl/GU132Y) over the years.
+As a researcher I often stumble upon good ideas in our projects. Companies tend to do patents for those ideas that their products are based on. Thus I have done several [patents](http://patents.justia.com/inventor/jaime-jimenez) over the years.
