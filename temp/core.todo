@@ -3,7 +3,7 @@ IETF - CoRE Working Group
 
 CoRE WG General:
  ☐ [GEN] Preliminary agenda TBD
- ☐ [GEN] Compile requests we got for session and set up http://jaimejim.github.io/temp/ietf97slots @jaime
+ ✔ [GEN] Compile requests we got for session and set up http://jaimejim.github.io/temp/ietf97slots @jaime @done(2016-10-21 17:58) @project(CoRE WG General)
  ☐ [GEN] Adjust milestones https://datatracker.ietf.org/wg/core/milestones/
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
@@ -28,7 +28,7 @@ HTTP draft-ietf-core-http-mapping:
   Notes:
     Summary available http://jaimejim.github.io/temp/draft-ietf-core-http-mapping
     Ballots: https://datatracker.ietf.org/doc/draft-ietf-core-http-mapping/ballot/
- ☐ [HTTP] Check with Thomas Fossatti the status of the doc. Answer ballot comments. Informational status preferred. Try to finnish this before ID deadline OCTOBER 31st @jaime @critical
+ ✔ [HTTP] Check with Thomas Fossatti the status of the doc. Answer ballot comments. Informational status preferred. Try to finnish this before ID deadline OCTOBER 31st @jaime @critical @done(2016-10-21 18:14) @project(HTTP draft-ietf-core-http-mapping)
  ☐ [HTTP] IETFLC  @due(16-08-28 11:08) @iesg
  ☐ [HTTP] AD go ahead if IETFLC OK. @iesg
  ☐ [HTTP] IESG Ballot (ADs read it). @iesg
