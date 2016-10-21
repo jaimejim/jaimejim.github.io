@@ -7,6 +7,7 @@ drafts/Makefile
 temp/*.md
 *.key
 *.ppt
+*.pptx
 
 temp/life.todo
 temp/workdiary.md
