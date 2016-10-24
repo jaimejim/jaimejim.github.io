@@ -80,6 +80,7 @@ SID identifiers draft-somaraju-core-sid:
 
 PubSub draft-ietf-koster-pubsub:
  ✔ [PBSB] [IETF96] Confirm @WGA on mailing list. Review by Jeng Wei, Hannes, Jim, Bill, Peter, ?? @jaime @done(2016-10-20 17:36) @project(PubSub draft-ietf-koster-pubsub)
+ ✔ PubSub draft in Markdown. @cabo  @done(2016-10-24 15:34) @project(PubSub draft-ietf-koster-pubsub)
  ☐ [PBSB] Resubmit new version. Check Klaus' document too. @jaime
 
 DynLink draft-groves-core-dynlink:
