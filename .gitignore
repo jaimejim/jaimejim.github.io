@@ -4,6 +4,7 @@ _site
 .sass-cache
 .npm-debug.log
 drafts/Makefile
+drafts/.refcache
 temp/*.md
 *.key
 *.ppt
