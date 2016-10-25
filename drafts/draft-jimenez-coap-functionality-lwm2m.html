@@ -377,9 +377,9 @@
 <link href="#rfc.section.1" rel="Chapter" title="1 Introduction"/>
 <link href="#rfc.section.2" rel="Chapter" title="2 Terminology"/>
 <link href="#rfc.section.3" rel="Chapter" title="3 Interaction Model"/>
-<link href="#rfc.section.3.1" rel="Chapter" title="3.1 1. Manager and Client Endpoint configuration."/>
-<link href="#rfc.section.3.2" rel="Chapter" title="3.2 2. Device to Device configuration."/>
-<link href="#rfc.section.3.3" rel="Chapter" title="3.3 3. Device to Application configuration."/>
+<link href="#rfc.section.3.1" rel="Chapter" title="3.1 Manager and Client Endpoint configuration."/>
+<link href="#rfc.section.3.2" rel="Chapter" title="3.2 Device to Device configuration."/>
+<link href="#rfc.section.3.3" rel="Chapter" title="3.3 Device to Application configuration."/>
 <link href="#rfc.section.4" rel="Chapter" title="4 Data Model"/>
 <link href="#rfc.section.5" rel="Chapter" title="5 Web Linking"/>
 <link href="#rfc.section.6" rel="Chapter" title="6 Collaboration"/>
@@ -452,9 +452,9 @@
   	<li>1.   <a href="#rfc.section.1">Introduction</a></li>
 <li>2.   <a href="#rfc.section.2">Terminology</a></li>
 <li>3.   <a href="#rfc.section.3">Interaction Model</a></li>
-<li>3.1.   <a href="#rfc.section.3.1">1. Manager and Client Endpoint configuration.</a></li>
-<li>3.2.   <a href="#rfc.section.3.2">2. Device to Device configuration.</a></li>
-<li>3.3.   <a href="#rfc.section.3.3">3. Device to Application configuration.</a></li>
+<li>3.1.   <a href="#rfc.section.3.1">Manager and Client Endpoint configuration.</a></li>
+<li>3.2.   <a href="#rfc.section.3.2">Device to Device configuration.</a></li>
+<li>3.3.   <a href="#rfc.section.3.3">Device to Application configuration.</a></li>
 <li>4.   <a href="#rfc.section.4">Data Model</a></li>
 <li>5.   <a href="#rfc.section.5">Web Linking</a></li>
 <li>6.   <a href="#rfc.section.6">Collaboration</a></li>
@@ -497,16 +497,16 @@
       |                 |  | &lt;-------------&gt; | User / Application      |
       +-----------------+  + S             C +-------------------------+
 </pre>
-<h1 id="rfc.section.3.1"><a href="#rfc.section.3.1">3.1.</a> <a href="#manager-and-client-endpoint-configuration" id="manager-and-client-endpoint-configuration">1. Manager and Client Endpoint configuration.</a></h1>
+<h1 id="rfc.section.3.1"><a href="#rfc.section.3.1">3.1.</a> <a href="#manager-and-client-endpoint-configuration" id="manager-and-client-endpoint-configuration">Manager and Client Endpoint configuration.</a></h1>
 <p id="rfc.section.3.1.p.1">This is the common LWM2M compliant implementation we have today. However there are upcoming RFCs and drafts that greatly enhance LWM2M with more CoAP features.</p>
 <p id="rfc.section.3.1.p.2">For example TCP support is soon going to be added to CoAP. The draft <a href="#I-D.ietf-core-coap-tcp-tls">[I-D.ietf-core-coap-tcp-tls]</a> outlines the changes required to use CoAP over TCP, TLS, and WebSockets transports.</p>
 <p id="rfc.section.3.1.p.3">Support for features like PATCH/FETCH <a href="#I-D.ietf-core-etch">[I-D.ietf-core-etch]</a> could be greatly beneficial for things like firmware upgrade or observing <em>relatively</em> large sets of resources.</p>
-<h1 id="rfc.section.3.2"><a href="#rfc.section.3.2">3.2.</a> <a href="#device-to-device-configuration" id="device-to-device-configuration">2. Device to Device configuration.</a></h1>
+<h1 id="rfc.section.3.2"><a href="#rfc.section.3.2">3.2.</a> <a href="#device-to-device-configuration" id="device-to-device-configuration">Device to Device configuration.</a></h1>
 <p id="rfc.section.3.2.p.1">This configuration contemplates that devices will sometimes talk to each other. Specially in cases when all devices are under the same subnet, this could be pretty common. For example devices could be more resilient if they did not have to contact their manager constantly, in case of lack of internet connectivity the local IoT network would still function. Managers could just set policies on the devices and they would operate more autonomously.</p>
 <p id="rfc.section.3.2.p.2">For this setup to take place, LWM2M would be used more the way CoAP is intended to be used. A Resource Directory implementation <a href="#I-D.ietf-core-resource-directory">[I-D.ietf-core-resource-directory]</a> would be needed, either on the LWM2M server in addition to the registration interface or standalone. Devices should be able to perform lookup on that RD and get the series of links to resources elsewhere. They should be able to find new functionality through /.well-known/core. If not, at least they should be able to use IP multicast as expressed on <a href="#RFC7390">[RFC7390]</a></p>
 <p id="rfc.section.3.2.p.3">Needless to say, it is assumed that devices would be running a CoAP Server on them and would support CoAP Observe <a href="#RFC7641">[RFC7641]</a>, so that devices can subscribe to updates form one another, thus becoming more autonomous.</p>
 <p id="rfc.section.3.2.p.4">The current LWM2M Data Model is not expressive enough when it comes to data types, that should be changed too. More on that in <a href="#semantics">Section 4</a>. Also Web Linking will be dealt at <a href="#weblinking">Section 5</a>.</p>
-<h1 id="rfc.section.3.3"><a href="#rfc.section.3.3">3.3.</a> <a href="#device-to-application-configuration" id="device-to-application-configuration">3. Device to Application configuration.</a></h1>
+<h1 id="rfc.section.3.3"><a href="#rfc.section.3.3">3.3.</a> <a href="#device-to-application-configuration" id="device-to-application-configuration">Device to Application configuration.</a></h1>
 <p id="rfc.section.3.3.p.1">In some other cases you might have applications running on the phone connecting locally to sensors and/or control actuators. A smartphone can access directly a CoAP home sensor using a mutually authenticated &#8216;https&#8217; request, provided its home router runs a HC proxy and is configured with the appropriate certificate. For this scenario to happen, the GW should implement a HTTP-COAP proxy. It is highly recommended then that they make use of <a href="#I-D.ietf-core-http-mapping">[I-D.ietf-core-http-mapping]</a> to properly do the URI mapping and specific ABNF queries.</p>
 <p id="rfc.section.3.3.p.2">Just like other devices, smartphone applications should be able to discover devices using standard methods.</p>
 <h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> <a href="#semantics" id="semantics">Data Model</a></h1>

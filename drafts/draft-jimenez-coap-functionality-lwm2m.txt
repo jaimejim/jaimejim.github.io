@@ -69,9 +69,9 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   2
    3.  Interaction Model . . . . . . . . . . . . . . . . . . . . . .   2
-     3.1.  1. Manager and Client Endpoint configuration. . . . . . .   3
-     3.2.  2. Device to Device configuration.  . . . . . . . . . . .   3
-     3.3.  3. Device to Application configuration. . . . . . . . . .   4
+     3.1.  Manager and Client Endpoint configuration.  . . . . . . .   3
+     3.2.  Device to Device configuration. . . . . . . . . . . . . .   3
+     3.3.  Device to Application configuration.  . . . . . . . . . .   4
    4.  Data Model  . . . . . . . . . . . . . . . . . . . . . . . . .   4
    5.  Web Linking . . . . . . . . . . . . . . . . . . . . . . . . .   5
    6.  Collaboration . . . . . . . . . . . . . . . . . . . . . . . .   6
@@ -140,7 +140,7 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
       |                 |  | <-------------> | User / Application      |
       +-----------------+  + S             C +-------------------------+
 
-3.1.  1.  Manager and Client Endpoint configuration.
+3.1.  Manager and Client Endpoint configuration.
 
    This is the common LWM2M compliant implementation we have today.
    However there are upcoming RFCs and drafts that greatly enhance LWM2M
@@ -154,7 +154,7 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
    greatly beneficial for things like firmware upgrade or observing
    _relatively_ large sets of resources.
 
-3.2.  2.  Device to Device configuration.
+3.2.  Device to Device configuration.
 
    This configuration contemplates that devices will sometimes talk to
    each other.  Specially in cases when all devices are under the same
@@ -191,7 +191,7 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
    to data types, that should be changed too.  More on that in
    Section 4.  Also Web Linking will be dealt at Section 5.
 
-3.3.  3.  Device to Application configuration.
+3.3.  Device to Application configuration.
 
    In some other cases you might have applications running on the phone
    connecting locally to sensors and/or control actuators.  A smartphone

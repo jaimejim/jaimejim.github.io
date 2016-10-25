@@ -104,7 +104,7 @@ Below we have common configurations that make use of LWM2M.
       +-----------------+  + S             C +-------------------------+
 ~~~~~~~~~~~
 
-##1. Manager and Client Endpoint configuration.
+## Manager and Client Endpoint configuration.
 
 This is the common LWM2M compliant implementation we have today. However there are upcoming RFCs and drafts that greatly enhance LWM2M with more CoAP features.
 
@@ -112,7 +112,7 @@ For example TCP support is soon going to be added to CoAP. The draft {{I-D.ietf-
 
 Support for features like PATCH/FETCH {{I-D.ietf-core-etch}} could be greatly beneficial for things like firmware upgrade or observing *relatively* large sets of resources.
 
-##2. Device to Device configuration.
+## Device to Device configuration.
 
 This configuration contemplates that devices will sometimes talk to each other. Specially in cases when all devices are under the same subnet, this could be pretty common. For example devices could be more resilient if they did not have to contact their manager constantly, in case of lack of internet connectivity the local IoT network would still function. Managers could just set policies on the devices and they would operate more autonomously.
 
@@ -122,7 +122,7 @@ Needless to say, it is assumed that devices would be running a CoAP Server on th
 
 The current LWM2M Data Model is not expressive enough when it comes to data types, that should be changed too. More on that in {{semantics}}. Also Web Linking will be dealt at {{weblinking}}.
 
-##3. Device to Application configuration.
+## Device to Application configuration.
 
 In some other cases you might have applications running on the phone connecting locally to sensors and/or control actuators. A smartphone can access directly a CoAP home sensor using a mutually authenticated 'https' request, provided its home router runs a HC proxy and is configured with the appropriate certificate. For this scenario to happen, the GW should implement a HTTP-COAP proxy. It is highly recommended then that they make use of {{I-D.ietf-core-http-mapping}} to properly do the URI mapping and specific ABNF queries.
 
