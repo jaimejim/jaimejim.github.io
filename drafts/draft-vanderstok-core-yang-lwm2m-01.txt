@@ -2,11 +2,11 @@
 
 
 
-roll                                                P. van der Stok, Ed.
+core                                                P. van der Stok, Ed.
 Internet-Draft                                                consultant
 Intended status: Standards Track                              J. Jimenez
-Expires: March 27, 2017                                         Ericsson
-                                                      September 23, 2016
+Expires: April 28, 2017                                         Ericsson
+                                                        October 25, 2016
 
 
               Mapping from LWM2M model to CoMI YANG model
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 27, 2017.
+   This Internet-Draft will expire on April 28, 2017.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                 [Page 1]
+van der Stok & Jimenez   Expires April 28, 2017                 [Page 1]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
    publication of this document.  Please review these documents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                 [Page 2]
+van der Stok & Jimenez   Expires April 28, 2017                 [Page 2]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
    The following terms are defined in [RFC6241] and are not redefined
@@ -165,9 +165,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                 [Page 3]
+van der Stok & Jimenez   Expires April 28, 2017                 [Page 3]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
    http://example.com/object/instance/resource, where resource, instance
@@ -221,9 +221,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                 [Page 4]
+van der Stok & Jimenez   Expires April 28, 2017                 [Page 4]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
    o  In Appendix B, Yang Identifiers are modelled as strings that start
@@ -277,9 +277,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                 [Page 5]
+van der Stok & Jimenez   Expires April 28, 2017                 [Page 5]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
        +--ro Units
@@ -333,9 +333,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                 [Page 6]
+van der Stok & Jimenez   Expires April 28, 2017                 [Page 6]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
    coap:// example.com/type/resource?keys=0
@@ -389,9 +389,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                 [Page 7]
+van der Stok & Jimenez   Expires April 28, 2017                 [Page 7]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
 9.2.  Informative References
@@ -445,9 +445,9 @@ Appendix A.  YANG identifiers as numbers
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                 [Page 8]
+van der Stok & Jimenez   Expires April 28, 2017                 [Page 8]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
       authors of the code.  All rights reserved.
@@ -501,9 +501,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                 [Page 9]
+van der Stok & Jimenez   Expires April 28, 2017                 [Page 9]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
       "Units: Measurement unit definition e.g. 'Cel' for temperature in Celsius";
@@ -557,9 +557,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                [Page 10]
+van der Stok & Jimenez   Expires April 28, 2017                [Page 10]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
 Appendix B.  YANG identifiers as IDnumbers
@@ -613,9 +613,9 @@ Appendix B.  YANG identifiers as IDnumbers
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                [Page 11]
+van der Stok & Jimenez   Expires April 28, 2017                [Page 11]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
         This version of this YANG module is part of RFC XXXX; see
@@ -669,9 +669,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                [Page 12]
+van der Stok & Jimenez   Expires April 28, 2017                [Page 12]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
         leaf ID5602 {
@@ -725,9 +725,9 @@ Appendix C.  YANG identifiers as resource names
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                [Page 13]
+van der Stok & Jimenez   Expires April 28, 2017                [Page 13]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
             yang-version 1.1;  // needed for action
@@ -781,9 +781,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                [Page 14]
+van der Stok & Jimenez   Expires April 28, 2017                [Page 14]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
             list IPSO-humidity {
@@ -837,9 +837,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                [Page 15]
+van der Stok & Jimenez   Expires April 28, 2017                [Page 15]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
             }
@@ -893,9 +893,9 @@ Appendix D.  YANG identifiers as additional leaf
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                [Page 16]
+van der Stok & Jimenez   Expires April 28, 2017                [Page 16]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
                 "urn:ietf:params:xml:ns:yang:ietf-humidityLF";
@@ -949,9 +949,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                [Page 17]
+van der Stok & Jimenez   Expires April 28, 2017                [Page 17]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
                 "Device separated in identifier and list";
@@ -1005,9 +1005,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                [Page 18]
+van der Stok & Jimenez   Expires April 28, 2017                [Page 18]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
                 description
@@ -1061,9 +1061,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                [Page 19]
+van der Stok & Jimenez   Expires April 28, 2017                [Page 19]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
                 }  // container
@@ -1117,9 +1117,9 @@ Internet-Draft                 LWM2M-YANG                 September 2016
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                [Page 20]
+van der Stok & Jimenez   Expires April 28, 2017                [Page 20]
 
-Internet-Draft                 LWM2M-YANG                 September 2016
+Internet-Draft                 LWM2M-YANG                   October 2016
 
 
                 action reset{ // E access: this is an RPC without input and output parameters
@@ -1173,4 +1173,4 @@ Authors' Addresses
 
 
 
-van der Stok & Jimenez   Expires March 27, 2017                [Page 21]
+van der Stok & Jimenez   Expires April 28, 2017                [Page 21]
