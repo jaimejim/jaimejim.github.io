@@ -1,0 +1,448 @@
+
+
+
+
+Network Working Group                                         J. Jimenez
+Internet-Draft                                                  Ericsson
+Intended status: Informational                          October 25, 2016
+Expires: April 28, 2017
+
+
+             CoAP functionality expected in an LWM2M system
+                 draft-jimenez-coap-functionality-lwm2m
+
+Abstract
+
+   This document provides a strawman summary of found problems and
+   possible recommendations for the LWM2M specification [LWM2M].  LWM2M
+   is based on CoAP, on top of which it describes certain management
+   interfaces and data models that go beyond the CoAP specifications
+   itself.  However LWM2M does not properly describe all behavior that
+   should be expected from implementations of the CoAP specifications.
+   This document attempts to clarify what should be present in a LWM2M
+   system beyond what is specified in the LWM2M documents.
+   Additionally, this document also adds information about IPSO Objects
+   [IPSO] and their usage with LWM2M as application protocol.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at http://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on April 28, 2017.
+
+Copyright Notice
+
+   Copyright (c) 2016 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (http://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document.  Please review these documents
+
+
+
+Jimenez                  Expires April 28, 2017                 [Page 1]
+
+Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
+
+
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+Table of Contents
+
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
+   2.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   2
+   3.  Interaction Model . . . . . . . . . . . . . . . . . . . . . .   2
+     3.1.  1. Manager and Client Endpoint configuration. . . . . . .   3
+     3.2.  2. Device to Device configuration.  . . . . . . . . . . .   3
+     3.3.  3. Device to Application configuration. . . . . . . . . .   4
+   4.  Data Model  . . . . . . . . . . . . . . . . . . . . . . . . .   4
+   5.  Web Linking . . . . . . . . . . . . . . . . . . . . . . . . .   5
+   6.  Collaboration . . . . . . . . . . . . . . . . . . . . . . . .   6
+   7.  Informative References  . . . . . . . . . . . . . . . . . . .   6
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   8
+
+1.  Introduction
+
+   The current LWM2M protocol is probably the main Device Management
+   protocol
+
+2.  Terminology
+
+   The LWM2M Specification tends to use its own terminology for client,
+   server, etc.  When possible it would be better to _use the existing
+   terminology on to avoid confusion_[RFC7252].
+
+   For example the use of LWM2M "Client" and "Server" and the roles they
+   play has confused developers that are initiating on the protocol.
+
+   Similarly, the reference to existing drafts of RFCs often can mislead
+   the reader to believe that the full RFC has been implemented. _If
+   there is only partial support to a CoRE WG document, then it would be
+   better to state it so_.
+
+   For example the Registration interface in LWM2M can mislead readers
+   to believe that CoAP Resource Directory is implemented, while in
+   reality it is not.
+
+3.  Interaction Model
+
+   LWM2M has been created with a strong focus on centralizing control
+   and management.  Devices set associations with their manager and all
+   traffic is directed to the cloud.  All this is fine but in the
+
+
+
+Jimenez                  Expires April 28, 2017                 [Page 2]
+
+Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
+
+
+   process some functionalities that could be used locally device to
+   device and device to application have been ignored.
+
+   Below we have common configurations that make use of LWM2M.
+
+   o  (1) Manager and Client Endpoint configuration.
+
+   o  (2) Device to Device configuration.
+
+   o  (3) Device to Application configuration.
+
+      Device               +
+      +--------+--------+  |      (1)        +----------+--------------+
+      |        |        |  | S/C   LWM2M   S |          | LWM2M Server |
+      | LWM2M  | IPSO   |  | <-------------> |  Manager +--------------+
+      +--------+--------+  |                 |          | BS Server    |
+      |                 |  |                 +----------+--------------+
+      |      CoAP       |  |      (2)
+      +--------+--------+  | C  CoAP+IPSO  S +----------+
+      |        |        |  | <-------------> | Device   |
+      | UDP    |  TCP   |  | S             C +----------+
+      +-----------------+  |      (3)
+      |      IPv6       |  |   CoAP+IPSO     +-------------------------+
+      |                 |  | <-------------> | User / Application      |
+      +-----------------+  + S             C +-------------------------+
+
+3.1.  1.  Manager and Client Endpoint configuration.
+
+   This is the common LWM2M compliant implementation we have today.
+   However there are upcoming RFCs and drafts that greatly enhance LWM2M
+   with more CoAP features.
+
+   For example TCP support is soon going to be added to CoAP.  The draft
+   [I-D.ietf-core-coap-tcp-tls] outlines the changes required to use
+   CoAP over TCP, TLS, and WebSockets transports.
+
+   Support for features like PATCH/FETCH [I-D.ietf-core-etch] could be
+   greatly beneficial for things like firmware upgrade or observing
+   _relatively_ large sets of resources.
+
+3.2.  2.  Device to Device configuration.
+
+   This configuration contemplates that devices will sometimes talk to
+   each other.  Specially in cases when all devices are under the same
+   subnet, this could be pretty common.  For example devices could be
+   more resilient if they did not have to contact their manager
+   constantly, in case of lack of internet connectivity the local IoT
+
+
+
+
+Jimenez                  Expires April 28, 2017                 [Page 3]
+
+Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
+
+
+   network would still function.  Managers could just set policies on
+   the devices and they would operate more autonomously.
+
+   For this setup to take place, LWM2M would be used more the way CoAP
+   is intended to be used.  A Resource Directory implementation
+   [I-D.ietf-core-resource-directory] would be needed, either on the
+   LWM2M server in addition to the registration interface or standalone.
+   Devices should be able to perform lookup on that RD and get the
+   series of links to resources elsewhere.  They should be able to find
+   new functionality through /.well-known/core.  If not, at least they
+   should be able to use IP multicast as expressed on [RFC7390]
+
+   Needless to say, it is assumed that devices would be running a CoAP
+   Server on them and would support CoAP Observe [RFC7641], so that
+   devices can subscribe to updates form one another, thus becoming more
+   autonomous.
+
+   The current LWM2M Data Model is not expressive enough when it comes
+   to data types, that should be changed too.  More on that in
+   Section 4.  Also Web Linking will be dealt at Section 5.
+
+3.3.  3.  Device to Application configuration.
+
+   In some other cases you might have applications running on the phone
+   connecting locally to sensors and/or control actuators.  A smartphone
+   can access directly a CoAP home sensor using a mutually authenticated
+   'https' request, provided its home router runs a HC proxy and is
+   configured with the appropriate certificate.  For this scenario to
+   happen, the GW should implement a HTTP-COAP proxy.  It is highly
+   recommended then that they make use of [I-D.ietf-core-http-mapping]
+   to properly do the URI mapping and specific ABNF queries.
+
+   Just like other devices, smartphone applications should be able to
+   discover devices using standard methods.
+
+4.  Data Model
+
+   The LWM2M Model is specified in [LWM2M].  Other models that build on
+   it like IPSOs or OneM2M have spawn out of it.  They normally
+   introduce incremental features.  They usually allow for performing
+   any set of operations on a device through a CoAP interface.
+   Resources are exposed as Objects using the same data model used for
+   management.
+
+   For example, in the case of a temperature sensor we can access and
+   subscribe to the readings of the device (using [IPSO]).
+
+
+
+
+
+Jimenez                  Expires April 28, 2017                 [Page 4]
+
+Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
+
+
+   Req: GET /3303/0/5700 Observe_Option=1
+   Res: 2.05 Content (25 C)
+   Res (Notify): 2.05 Content (26 C)
+
+   There has also been much work on different serialization and
+   compression mechanisms that LWM2M could consider adopting.  A
+   serialized JSON file like the one below could be greatly compressed
+   (about 46% max, depending on the case) using CBOR notation
+   [I-D.ietf-core-links-json] instead.
+
+   {      "e": [{
+           bn: "/3303/0",
+           e: [{
+               "n": "5700",
+               "v": 20.0 }, {
+               "n": "5701",
+               "v": "c" }, {
+               "n": "5603",
+               "v": 10 }, {
+               "n": "5604",
+               "v": 40
+           }],    }, {
+           bn: "/3302/0",
+           e: [{
+               "n": "5500",
+               "v": true }, {
+               "n": "5501",
+               "v": 23
+   }       ]}]}
+
+   LWM2M ResourceIDs do not mean anything semantically.  This is
+   frustrating for those who preferred IDs that are uniquely identified,
+   just like the Objects are.  Adding a similar registry for IDs would
+   be useful.  Specially to those using it for their applications based
+   in IPSO Objects.
+
+5.  Web Linking
+
+   One thing that pretty much _everyone_ is expecting is some form of
+   Web Link resource type.  ObjectLinks are not sufficient.  There has
+   been much work on web linking on [RFC6690] that has not been used in
+   the LWM2M spec.  At the very least a new Data Type named "Web Link"
+   should be added.  Instead of the simple ObjectID:InstanceID that is
+   expressed now, a proper WebLink would be used.  That would take full
+   advantage of other features like [I-D.ietf-core-links-json] or even
+   newer Object Models.
+
+
+
+
+
+Jimenez                  Expires April 28, 2017                 [Page 5]
+
+Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
+
+
+   Other use cases contemplate some form of Object Redirection to help
+   decouple management and applications.  LWM2M expects that the
+   management servers will observe resources and collect telemetry on
+   the management server itself.  If LWM2M is to be used as application
+   protocol as well as management, it should provide a way for
+   applications or CoAP Clients to observe resources on the devices,
+   together with their required credentials.  Such credentials should be
+   stored on the device in some way, maybe a new Object.
+
+6.  Collaboration
+
+   It would also be advisable to further collaboration between
+   organizations developing CoAP-based standard implementations.  At the
+   moment there is little inter group communication nor discussion.
+   That should change.
+
+   The IETF CoRE WG has quite some people also interested on device
+   management.  Communication would be mutually beneficial.  Example of
+   that work is on COMI [I-D.ietf-core-yang-cbor] or data model
+   translation.
+
+   OMA LWM2M could also benefit from workshops that gather most of the
+   industry, such as [IOTSI] and [IOTSU].
+
+7.  Informative References
+
+   [I-D.ietf-core-coap-tcp-tls]
+              Bormann, C., Lemay, S., Tschofenig, H., Hartke, K.,
+              Silverajan, B., and B. Raymor, "CoAP (Constrained
+              Application Protocol) over TCP, TLS, and WebSockets",
+              draft-ietf-core-coap-tcp-tls-05 (work in progress),
+              October 2016.
+
+   [I-D.ietf-core-etch]
+              Stok, P., Bormann, C., and A. Sehgal, "Patch and Fetch
+              Methods for Constrained Application Protocol (CoAP)",
+              draft-ietf-core-etch-03 (work in progress), October 2016.
+
+   [I-D.ietf-core-http-mapping]
+              Castellani, A., Loreto, S., Rahman, A., Fossati, T., and
+              E. Dijk, "Guidelines for HTTP-to-CoAP Mapping
+              Implementations", draft-ietf-core-http-mapping-15 (work in
+              progress), October 2016.
+
+   [I-D.ietf-core-links-json]
+              Li, K., Rahman, A., and C. Bormann, "Representing CoRE
+              Formats in JSON and CBOR", draft-ietf-core-links-json-06
+              (work in progress), July 2016.
+
+
+
+Jimenez                  Expires April 28, 2017                 [Page 6]
+
+Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
+
+
+   [I-D.ietf-core-resource-directory]
+              Shelby, Z., Koster, M., Bormann, C., and P. Stok, "CoRE
+              Resource Directory", draft-ietf-core-resource-directory-08
+              (work in progress), July 2016.
+
+   [I-D.ietf-core-yang-cbor]
+              Veillette, M., Pelov, A., Somaraju, A., Turner, R., and A.
+              Minaburo, "CBOR Encoding of Data Modeled with YANG",
+              draft-ietf-core-yang-cbor-02 (work in progress), July
+              2016.
+
+   [IOTSI]    IAB, "IoT Workshop for Semantic Interoperability (IOTSI)",
+              2016, <https://www.iab.org/activities/workshops/iotsi/>.
+
+   [IOTSU]    IAB, "Internet of Things Software Update Workshop
+              (IoTSU)", 2016, <https://www.iab.org/activities/workshops/
+              iotsu/>.
+
+   [IPSO]     IPSO, "IPSO Object Model", n.d.,
+              <http://ipso-alliance.github.io/pub/>.
+
+   [LWM2M]    OMA, "LWM2M specification", n.d.,
+              <http://technical.openmobilealliance.org/Technical/
+              technical-information/release-program/current-releases/
+              oma-lightweightm2m-v1-0>.
+
+   [RFC6690]  Shelby, Z., "Constrained RESTful Environments (CoRE) Link
+              Format", RFC 6690, DOI 10.17487/RFC6690, August 2012,
+              <http://www.rfc-editor.org/info/rfc6690>.
+
+   [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
+              Application Protocol (CoAP)", RFC 7252, DOI 10.17487/
+              RFC7252, June 2014,
+              <http://www.rfc-editor.org/info/rfc7252>.
+
+   [RFC7390]  Rahman, A., Ed. and E. Dijk, Ed., "Group Communication for
+              the Constrained Application Protocol (CoAP)", RFC 7390,
+              DOI 10.17487/RFC7390, October 2014,
+              <http://www.rfc-editor.org/info/rfc7390>.
+
+   [RFC7641]  Hartke, K., "Observing Resources in the Constrained
+              Application Protocol (CoAP)", RFC 7641, DOI 10.17487/
+              RFC7641, September 2015,
+              <http://www.rfc-editor.org/info/rfc7641>.
+
+
+
+
+
+
+
+Jimenez                  Expires April 28, 2017                 [Page 7]
+
+Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
+
+
+Author's Address
+
+   Jaime Jimenez
+   Ericsson
+
+   Email: jaime.jimenez@ericsson.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jimenez                  Expires April 28, 2017                 [Page 8]
