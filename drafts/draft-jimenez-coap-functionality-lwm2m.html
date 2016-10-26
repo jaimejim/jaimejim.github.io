@@ -377,7 +377,7 @@
 <link href="#rfc.section.1" rel="Chapter" title="1 Introduction"/>
 <link href="#rfc.section.2" rel="Chapter" title="2 Terminology"/>
 <link href="#rfc.section.3" rel="Chapter" title="3 Interaction Model"/>
-<link href="#rfc.section.3.1" rel="Chapter" title="3.1 Manager and Client Endpoint configuration."/>
+<link href="#rfc.section.3.1" rel="Chapter" title="3.1 Device and Manager configuration."/>
 <link href="#rfc.section.3.2" rel="Chapter" title="3.2 Device to Device configuration."/>
 <link href="#rfc.section.3.3" rel="Chapter" title="3.3 Device to Application configuration."/>
 <link href="#rfc.section.4" rel="Chapter" title="4 Data Model"/>
@@ -393,8 +393,8 @@
   <meta name="dct.creator" content="Jimenez, J." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-jimenez-coap-functionality-lwm2m" />
   <meta name="dct.issued" scheme="ISO8601" content="2016-10-25" />
-  <meta name="dct.abstract" content="This document provides a strawman summary of found problems and possible recommendations for the LWM2M specification " />
-  <meta name="description" content="This document provides a strawman summary of found problems and possible recommendations for the LWM2M specification " />
+  <meta name="dct.abstract" content="This document provides a strawman summary of information that should be use together with recommendations for the LWM2M specification " />
+  <meta name="description" content="This document provides a strawman summary of information that should be use together with recommendations for the LWM2M specification " />
 
 </head>
 
@@ -430,7 +430,7 @@
   <h1 id="rfc.abstract">
   <a href="#rfc.abstract">Abstract</a>
 </h1>
-<p>This document provides a strawman summary of found problems and possible recommendations for the LWM2M specification <a href="#LWM2M">[LWM2M]</a>. LWM2M is based on CoAP, on top of which it describes certain management interfaces and data models that go beyond the CoAP specifications itself. However LWM2M does not properly describe all behavior that should be expected from implementations of the CoAP specifications. This document attempts to clarify what should be present in a LWM2M system beyond what is specified in the LWM2M documents. Additionally, this document also adds information about IPSO Objects <a href="#IPSO">[IPSO]</a> and their usage with LWM2M as application protocol.</p>
+<p>This document provides a strawman summary of information that should be use together with recommendations for the LWM2M specification <a href="#LWM2M">[LWM2M]</a>. LWM2M is based on CoAP, on top of which it describes certain management interfaces and data models that go beyond the CoAP specifications itself. However LWM2M does not describe all behavior that should be expected from implementations of the CoAP specifications. This document attempts to clarify what should be present in a LWM2M system beyond what is specified in the LWM2M documents. Additionally, this document also adds information about IPSO Objects <a href="#IPSO">[IPSO]</a> and their usage with LWM2M as application protocol.</p>
 <h1 id="rfc.status">
   <a href="#rfc.status">Status of This Memo</a>
 </h1>
@@ -452,7 +452,7 @@
   	<li>1.   <a href="#rfc.section.1">Introduction</a></li>
 <li>2.   <a href="#rfc.section.2">Terminology</a></li>
 <li>3.   <a href="#rfc.section.3">Interaction Model</a></li>
-<li>3.1.   <a href="#rfc.section.3.1">Manager and Client Endpoint configuration.</a></li>
+<li>3.1.   <a href="#rfc.section.3.1">Device and Manager configuration.</a></li>
 <li>3.2.   <a href="#rfc.section.3.2">Device to Device configuration.</a></li>
 <li>3.3.   <a href="#rfc.section.3.3">Device to Application configuration.</a></li>
 <li>4.   <a href="#rfc.section.4">Data Model</a></li>
@@ -465,52 +465,53 @@
   </ul>
 
   <h1 id="rfc.section.1"><a href="#rfc.section.1">1.</a> <a href="#introduction" id="introduction">Introduction</a></h1>
-<p id="rfc.section.1.p.1">The current LWM2M protocol is probably the main Device Management protocol</p>
+<p id="rfc.section.1.p.1">The current LWM2M protocol is probably the main Device Management protocol &#8230; (WIP)</p>
 <h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> <a href="#terminology" id="terminology">Terminology</a></h1>
-<p id="rfc.section.2.p.1">The LWM2M Specification tends to use its own terminology for client, server, etc. When possible it would be better to <em>use the existing terminology on  to avoid confusion</em><a href="#RFC7252">[RFC7252]</a>.</p>
-<p id="rfc.section.2.p.2">For example the use of LWM2M &#8220;Client&#8221; and &#8220;Server&#8221; and the roles they play has confused developers that are initiating on the protocol.</p>
-<p id="rfc.section.2.p.3">Similarly, the reference to existing drafts of RFCs often can mislead the reader to believe that the full RFC has been implemented. <em>If there is only partial support to a CoRE WG document, then it would be better to state it so</em>.</p>
-<p id="rfc.section.2.p.4">For example the Registration interface in LWM2M can mislead readers to believe that CoAP Resource Directory is implemented, while in reality it is not.</p>
+<p id="rfc.section.2.p.1">The LWM2M Specification tends to use its own terminology for client, server, etc. In this document, we <em>use the existing terminology on  to avoid confusion</em><a href="#RFC7252">[RFC7252]</a>.</p>
+<p id="rfc.section.2.p.2">For example the use of LWM2M &#8220;Client&#8221; and &#8220;Server&#8221; and the roles they play has confused developers that are initiating on the protocol, mainly because a CoAP server runs on the device, just like a LWM2M client does. Moreover, most LWM2M devices will often work both as client and server depending on the interfaces used, it would be good to explore the use of terms like &#8220;servients&#8221; for devices that regularly support both.</p>
+<p id="rfc.section.2.p.3">Similarly, the reference to existing drafts of RFCs often can mislead the reader to believe that the full RFC has been implemented. <em>it would be better to state the support to an IETF CoRE WG document when applicable</em>.</p>
+<p id="rfc.section.2.p.4">For example, the Registration interface in LWM2M is based on the CoAP Resource Directory.  However, it is not sufficient to implement just the interface described to obtain the benefits provided by the CoAP Resource Directory.</p>
 <h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#interaction-model" id="interaction-model">Interaction Model</a></h1>
-<p id="rfc.section.3.p.1">LWM2M has been created with a strong focus on centralizing control and management. Devices set associations with their manager and all traffic is directed to the cloud. All this is fine but in the process some functionalities that could be used locally device to device and device to application have been ignored.</p>
+<p id="rfc.section.3.p.1">LWM2M has been created with a strong focus on centralizing control and management. Devices set associations with their manager and all traffic is directed to the cloud. All this is fine but in the process some functionalities that could be used locally device to device and device to application have not been explicitly described.</p>
 <p id="rfc.section.3.p.2">Below we have common configurations that make use of LWM2M.</p>
 <p/>
 
 <ul>
-  <li>(1) Manager and Client Endpoint configuration.</li>
+  <li>(1) Device and Manager configuration.</li>
   <li>(2) Device to Device configuration.</li>
   <li>(3) Device to Application configuration.</li>
 </ul>
 <pre>
-      Device               +
-      +--------+--------+  |      (1)        +----------+--------------+
-      |        |        |  | S/C   LWM2M   S |          | LWM2M Server |
-      | LWM2M  | IPSO   |  | &lt;-------------&gt; |  Manager +--------------+
-      +--------+--------+  |                 |          | BS Server    |
-      |                 |  |                 +----------+--------------+
-      |      CoAP       |  |      (2)
-      +--------+--------+  | C  CoAP+IPSO  S +----------+
-      |        |        |  | &lt;-------------&gt; | Device   |
-      | UDP    |  TCP   |  | S             C +----------+
-      +-----------------+  |      (3)
-      |      IPv6       |  |   CoAP+IPSO     +-------------------------+
-      |                 |  | &lt;-------------&gt; | User / Application      |
-      +-----------------+  + S             C +-------------------------+
+    Device               +
+    +--------+--------+  |     (1)         +----------+--------------+
+    |        |        |  |    LWM2M        |          | LWM2M Server |
+    | LWM2M  | IPSO   |  | &lt;-------------&gt; |  Manager +--------------+
+    +--------+--------+  |                 |          | BS Server    |
+    |                 |  |                 +----------+--------------+
+    |      CoAP       |  |     (2)
+    +--------+--------+  |    CoAP+IPSO    +----------+
+    |        |        |  | &lt;-------------&gt; | Device   |
+    | UDP    |  TCP   |  |                 +----------+
+    +-----------------+  |     (3)
+    |      IPv6       |  |    CoAP+IPSO    +-------------------------+
+    |                 |  | &lt;-------------&gt; | User / Application      |
+    +-----------------+  |                 +-------------------------+
+                         +    
 </pre>
-<h1 id="rfc.section.3.1"><a href="#rfc.section.3.1">3.1.</a> <a href="#manager-and-client-endpoint-configuration" id="manager-and-client-endpoint-configuration">Manager and Client Endpoint configuration.</a></h1>
-<p id="rfc.section.3.1.p.1">This is the common LWM2M compliant implementation we have today. However there are upcoming RFCs and drafts that greatly enhance LWM2M with more CoAP features.</p>
+<h1 id="rfc.section.3.1"><a href="#rfc.section.3.1">3.1.</a> <a href="#device-and-manager-configuration" id="device-and-manager-configuration">Device and Manager configuration.</a></h1>
+<p id="rfc.section.3.1.p.1">This is covered by common LWM2M compliant implementations we have today. However there are upcoming RFCs and drafts that greatly enhance LWM2M with more CoAP features.</p>
 <p id="rfc.section.3.1.p.2">For example TCP support is soon going to be added to CoAP. The draft <a href="#I-D.ietf-core-coap-tcp-tls">[I-D.ietf-core-coap-tcp-tls]</a> outlines the changes required to use CoAP over TCP, TLS, and WebSockets transports.</p>
 <p id="rfc.section.3.1.p.3">Support for features like PATCH/FETCH <a href="#I-D.ietf-core-etch">[I-D.ietf-core-etch]</a> could be greatly beneficial for things like firmware upgrade or observing <em>relatively</em> large sets of resources.</p>
 <h1 id="rfc.section.3.2"><a href="#rfc.section.3.2">3.2.</a> <a href="#device-to-device-configuration" id="device-to-device-configuration">Device to Device configuration.</a></h1>
-<p id="rfc.section.3.2.p.1">This configuration contemplates that devices will sometimes talk to each other. Specially in cases when all devices are under the same subnet, this could be pretty common. For example devices could be more resilient if they did not have to contact their manager constantly, in case of lack of internet connectivity the local IoT network would still function. Managers could just set policies on the devices and they would operate more autonomously.</p>
-<p id="rfc.section.3.2.p.2">For this setup to take place, LWM2M would be used more the way CoAP is intended to be used. A Resource Directory implementation <a href="#I-D.ietf-core-resource-directory">[I-D.ietf-core-resource-directory]</a> would be needed, either on the LWM2M server in addition to the registration interface or standalone. Devices should be able to perform lookup on that RD and get the series of links to resources elsewhere. They should be able to find new functionality through /.well-known/core. If not, at least they should be able to use IP multicast as expressed on <a href="#RFC7390">[RFC7390]</a></p>
-<p id="rfc.section.3.2.p.3">Needless to say, it is assumed that devices would be running a CoAP Server on them and would support CoAP Observe <a href="#RFC7641">[RFC7641]</a>, so that devices can subscribe to updates form one another, thus becoming more autonomous.</p>
-<p id="rfc.section.3.2.p.4">The current LWM2M Data Model is not expressive enough when it comes to data types, that should be changed too. More on that in <a href="#semantics">Section 4</a>. Also Web Linking will be dealt at <a href="#weblinking">Section 5</a>.</p>
+<p id="rfc.section.3.2.p.1">Beyond what is described in the LWM2M documentation, devices will often talk to each other. Specially in cases when all devices are under the same subnet, this could be pretty common. For example devices could be more resilient if they did not have to contact their manager constantly; in case of lack of internet connectivity the local IoT network would still function. Managers could just set policies on the devices and they would operate more autonomously.</p>
+<p id="rfc.section.3.2.p.2">For this setup to take place, LWM2M would use more of the device-to-device functionality of CoAP. A more complete Resource Directory implementation <a href="#I-D.ietf-core-resource-directory">[I-D.ietf-core-resource-directory]</a> would be needed, either on the LWM2M server in addition to the registration interface or standalone. Devices should be able to perform lookup on that RD and get the series of links to resources elsewhere. They should be able to find new functionality through /.well-known/core. If not, they should be able to use IP multicast as expressed on <a href="#RFC7390">[RFC7390]</a>.</p>
+<p id="rfc.section.3.2.p.3">Needless to say, it is assumed that devices would be running a CoAP Server on them and would support CoAP Observe <a href="#RFC7641">[RFC7641]</a>, so that devices can subscribe to updates from one another, thus becoming more autonomous.</p>
+<p id="rfc.section.3.2.p.4">The current LWM2M Data Model needs more expressiveness when it comes to data types; More on that in <a href="#semantics">Section 4</a>. Also Web Linking will be dealt at <a href="#weblinking">Section 5</a>.</p>
 <h1 id="rfc.section.3.3"><a href="#rfc.section.3.3">3.3.</a> <a href="#device-to-application-configuration" id="device-to-application-configuration">Device to Application configuration.</a></h1>
-<p id="rfc.section.3.3.p.1">In some other cases you might have applications running on the phone connecting locally to sensors and/or control actuators. A smartphone can access directly a CoAP home sensor using a mutually authenticated &#8216;https&#8217; request, provided its home router runs a HC proxy and is configured with the appropriate certificate. For this scenario to happen, the GW should implement a HTTP-COAP proxy. It is highly recommended then that they make use of <a href="#I-D.ietf-core-http-mapping">[I-D.ietf-core-http-mapping]</a> to properly do the URI mapping and specific ABNF queries.</p>
-<p id="rfc.section.3.3.p.2">Just like other devices, smartphone applications should be able to discover devices using standard methods.</p>
+<p id="rfc.section.3.3.p.1">In some other cases you applications would be running on the phone connecting locally to sensors and/or control actuators. A smartphone can access directly a CoAP home sensor using a mutually authenticated &#8216;https&#8217; request, provided its home router runs a HTTP to CoAP (HC) proxy and is configured with the appropriate certificate. For this scenario to happen, the GW should implement a HC proxy. It is highly recommended then that they make use of <a href="#I-D.ietf-core-http-mapping">[I-D.ietf-core-http-mapping]</a> to properly do the URI mapping and specific ABNF queries.</p>
+<p id="rfc.section.3.3.p.2">Just like other devices, smartphone applications should be able to discover devices using standard methods, thus they would need access to the RD as well.</p>
 <h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> <a href="#semantics" id="semantics">Data Model</a></h1>
-<p id="rfc.section.4.p.1">The LWM2M Model is specified in <a href="#LWM2M">[LWM2M]</a>. Other models that build on it like IPSOs or OneM2M have spawn out of it. They normally introduce incremental features. They usually allow for performing any set of operations on a device through a CoAP interface. Resources are exposed as Objects using the same data model used for management.</p>
+<p id="rfc.section.4.p.1">The LWM2M Model is specified in <a href="#LWM2M">[LWM2M]</a>. Other models that build on it like IPSOs or OneM2M have spawned out of it. They normally introduce incremental features. They usually allow for performing any set of operations on a device through a CoAP interface. Resources are exposed as Objects using the same data model used for management.</p>
 <p id="rfc.section.4.p.2">For example, in the case of a temperature sensor we can access and subscribe to the readings of the device (using <a href="#IPSO">[IPSO]</a>).</p>
 <pre>
 Req: GET /3303/0/5700 Observe_Option=1
@@ -539,14 +540,14 @@ Res (Notify): 2.05 Content (26 C)
             "v": 23
 }       ]}]}
 </pre>
-<p id="rfc.section.4.p.4">LWM2M ResourceIDs do not mean anything semantically. This is frustrating for those who preferred IDs that are uniquely identified, just like the Objects are. Adding a similar registry for IDs would be useful. Specially to those using it for their applications based in IPSO Objects.</p>
+<p id="rfc.section.4.p.4">LWM2M ResourceIDs at the moment have no specific semantic meaning like ObjectIDs do. Adding a similar registry for ResourceIDs would be useful. Specially to those using LWM2M for their applications.</p>
 <h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> <a href="#weblinking" id="weblinking">Web Linking</a></h1>
 <p id="rfc.section.5.p.1">One thing that pretty much <em>everyone</em> is expecting is some form of Web Link resource type. ObjectLinks are not sufficient. There has been much work on web linking on <a href="#RFC6690">[RFC6690]</a> that has not been used in the LWM2M spec. At the very least a new Data Type named &#8220;Web Link&#8221; should be added. Instead of the simple ObjectID:InstanceID that is expressed now, a proper WebLink would be used. That would take full advantage of other features like <a href="#I-D.ietf-core-links-json">[I-D.ietf-core-links-json]</a> or even newer Object Models.</p>
 <p id="rfc.section.5.p.2">Other use cases contemplate some form of Object Redirection to help decouple management and applications. LWM2M expects that the management servers will observe resources and collect telemetry on the management server itself. If LWM2M is to be used as application protocol as well as management, it should provide a way for applications or CoAP Clients to observe resources on the devices, together with their required credentials. Such credentials should be stored on the device in some way, maybe a new Object.</p>
 <h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> <a href="#collaboration" id="collaboration">Collaboration</a></h1>
-<p id="rfc.section.6.p.1">It would also be advisable to further collaboration between organizations developing CoAP-based standard implementations. At the moment there is little inter group communication nor discussion. That should change.</p>
+<p id="rfc.section.6.p.1">To further develop the relationship between the LWM2M specification and other specifications based on CoAP, it would also be advisable to further collaboration between organizations developing CoAP-based standard implementations. At the moment there is no forum for inter group communication nor discussion. That should change.</p>
 <p id="rfc.section.6.p.2">The IETF CoRE WG has quite some people also interested on device management. Communication would be mutually beneficial. Example of that work is on COMI <a href="#I-D.ietf-core-yang-cbor">[I-D.ietf-core-yang-cbor]</a> or data model translation.</p>
-<p id="rfc.section.6.p.3">OMA LWM2M could also benefit from workshops that gather most of the industry, such as <a href="#IOTSI">[IOTSI]</a> and <a href="#IOTSU">[IOTSU]</a>.</p>
+<p id="rfc.section.6.p.3">OMA LWM2M already has benefited from workshops that gather most of the industry, such as <a href="#IOTSI">[IOTSI]</a> and <a href="#IOTSU">[IOTSU]</a>. Similarly, specifications can be developed in the IETF with a view to be directly usable in LWM2M.</p>
 <h1 id="rfc.references"><a href="#rfc.references">7.</a> Informative References</h1>
 <table>
   <tbody>
@@ -566,7 +567,7 @@ Res (Notify): 2.05 Content (26 C)
       <td class="reference">
         <b id="I-D.ietf-core-http-mapping">[I-D.ietf-core-http-mapping]</b>
       </td>
-      <td class="top"><a>Castellani, A.</a>, <a>Loreto, S.</a>, <a>Rahman, A.</a>, <a>Fossati, T.</a> and <a>E. Dijk</a>, "<a href="http://tools.ietf.org/html/draft-ietf-core-http-mapping-15">Guidelines for HTTP-to-CoAP Mapping Implementations</a>", Internet-Draft draft-ietf-core-http-mapping-15, October 2016.</td>
+      <td class="top"><a>Castellani, A.</a>, <a>Loreto, S.</a>, <a>Rahman, A.</a>, <a>Fossati, T.</a> and <a>E. Dijk</a>, "<a href="http://tools.ietf.org/html/draft-ietf-core-http-mapping-16">Guidelines for HTTP-to-CoAP Mapping Implementations</a>", Internet-Draft draft-ietf-core-http-mapping-16, October 2016.</td>
     </tr>
     <tr>
       <td class="reference">
