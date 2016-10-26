@@ -72,8 +72,8 @@ Table of Contents
      3.1.  Device and Manager configuration. . . . . . . . . . . . .   3
      3.2.  Device to Device configuration. . . . . . . . . . . . . .   4
      3.3.  Device to Application configuration.  . . . . . . . . . .   4
-   4.  Data Model  . . . . . . . . . . . . . . . . . . . . . . . . .   4
-   5.  Web Linking . . . . . . . . . . . . . . . . . . . . . . . . .   5
+   4.  Data Model  . . . . . . . . . . . . . . . . . . . . . . . . .   5
+   5.  Web Linking . . . . . . . . . . . . . . . . . . . . . . . . .   6
    6.  Collaboration . . . . . . . . . . . . . . . . . . . . . . . .   6
    7.  Informative References  . . . . . . . . . . . . . . . . . . .   6
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   8
@@ -160,8 +160,8 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
    greatly beneficial for things like firmware upgrade or observing
    _relatively_ large sets of resources.
 
-
-
+   For systems in which endpoints work behind a gateway or use LWM2M for
+   managing the gateways, it might be good to implement other types of
 
 
 
@@ -169,6 +169,10 @@ Jimenez                  Expires April 29, 2017                 [Page 3]
 
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
+
+   cryptographic protection than DTLS.  For example some of the setups
+   using OSCoAP [I-D.ietf-core-object-security] allow for "smarter"
+   gateways.
 
 3.2.  Device to Device configuration.
 
@@ -213,11 +217,7 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
    discover devices using standard methods, thus they would need access
    to the RD as well.
 
-4.  Data Model
 
-   The LWM2M Model is specified in [LWM2M].  Other models that build on
-   it like IPSOs or OneM2M have spawned out of it.  They normally
-   introduce incremental features.  They usually allow for performing
 
 
 
@@ -226,6 +226,11 @@ Jimenez                  Expires April 29, 2017                 [Page 4]
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
 
+4.  Data Model
+
+   The LWM2M Model is specified in [LWM2M].  Other models that build on
+   it like IPSOs or OneM2M have spawned out of it.  They normally
+   introduce incremental features.  They usually allow for performing
    any set of operations on a device through a CoAP interface.
    Resources are exposed as Objects using the same data model used for
    management.
@@ -269,11 +274,6 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
    For example IPSO uses such ResourceIDs to register resources
    univocally, so that the string _5701_ consistently represents units.
 
-5.  Web Linking
-
-   One thing that that could be very useful in the future is some form
-   of Web Link resource type.  ObjectLinks are not sufficient to
-   represent links between devices or applications.  There has been much
 
 
 
@@ -282,6 +282,11 @@ Jimenez                  Expires April 29, 2017                 [Page 5]
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
 
+5.  Web Linking
+
+   One thing that that could be very useful in the future is some form
+   of Web Link resource type.  ObjectLinks are not sufficient to
+   represent links between devices or applications.  There has been much
    work on web linking on [RFC6690] that could be used in the LWM2M
    spec.  For example a new Data Type named "Web Link" could be a
    simple, yet useful addition.  Instead of the current
@@ -325,11 +330,6 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
               draft-ietf-core-coap-tcp-tls-05 (work in progress),
               October 2016.
 
-   [I-D.ietf-core-etch]
-              Stok, P., Bormann, C., and A. Sehgal, "Patch and Fetch
-              Methods for Constrained Application Protocol (CoAP)",
-              draft-ietf-core-etch-03 (work in progress), October 2016.
-
 
 
 
@@ -337,6 +337,11 @@ Jimenez                  Expires April 29, 2017                 [Page 6]
 
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
+
+   [I-D.ietf-core-etch]
+              Stok, P., Bormann, C., and A. Sehgal, "Patch and Fetch
+              Methods for Constrained Application Protocol (CoAP)",
+              draft-ietf-core-etch-03 (work in progress), October 2016.
 
    [I-D.ietf-core-http-mapping]
               Castellani, A., Loreto, S., Rahman, A., Fossati, T., and
@@ -348,6 +353,11 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
               Li, K., Rahman, A., and C. Bormann, "Representing CoRE
               Formats in JSON and CBOR", draft-ietf-core-links-json-06
               (work in progress), July 2016.
+
+   [I-D.ietf-core-object-security]
+              Selander, G., Mattsson, J., Palombini, F., and L. Seitz,
+              "Object Security of CoAP (OSCOAP)", draft-ietf-core-
+              object-security-00 (work in progress), October 2016.
 
    [I-D.ietf-core-resource-directory]
               Shelby, Z., Koster, M., Bormann, C., and P. Stok, "CoRE
@@ -375,16 +385,6 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
               technical-information/release-program/current-releases/
               oma-lightweightm2m-v1-0>.
 
-   [RFC6690]  Shelby, Z., "Constrained RESTful Environments (CoRE) Link
-              Format", RFC 6690, DOI 10.17487/RFC6690, August 2012,
-              <http://www.rfc-editor.org/info/rfc6690>.
-
-   [RFC7049]  Bormann, C. and P. Hoffman, "Concise Binary Object
-              Representation (CBOR)", RFC 7049, DOI 10.17487/RFC7049,
-              October 2013, <http://www.rfc-editor.org/info/rfc7049>.
-
-
-
 
 
 
@@ -393,6 +393,14 @@ Jimenez                  Expires April 29, 2017                 [Page 7]
 
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
+
+   [RFC6690]  Shelby, Z., "Constrained RESTful Environments (CoRE) Link
+              Format", RFC 6690, DOI 10.17487/RFC6690, August 2012,
+              <http://www.rfc-editor.org/info/rfc6690>.
+
+   [RFC7049]  Bormann, C. and P. Hoffman, "Concise Binary Object
+              Representation (CBOR)", RFC 7049, DOI 10.17487/RFC7049,
+              October 2013, <http://www.rfc-editor.org/info/rfc7049>.
 
    [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
               Application Protocol (CoAP)", RFC 7252, DOI 10.17487/
@@ -416,14 +424,6 @@ Author's Address
 
    Phone: +358-442-992-827
    Email: jaime.jimenez@ericsson.com
-
-
-
-
-
-
-
-
 
 
 
