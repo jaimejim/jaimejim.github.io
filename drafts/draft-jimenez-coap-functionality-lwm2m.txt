@@ -86,8 +86,8 @@ Table of Contents
 2.  Terminology
 
    The LWM2M Specification tends to use its own terminology for client,
-   server, etc.  In this document, we _use the existing terminology on
-   to avoid confusion_[RFC7252].
+   server, etc.  In this document, we use the existing terminology from
+   [RFC7252].
 
    For example the use of LWM2M "Client" and "Server" and the roles they
    play has confused developers that are initiating on the protocol,
@@ -98,9 +98,9 @@ Table of Contents
    regularly support both.
 
    Similarly, the reference to existing drafts of RFCs often can mislead
-   the reader to believe that the full RFC has been implemented. _It
+   the reader to believe that the full RFC has been implemented.  It
    would be better to state the support to an IETF CoRE WG document when
-   applicable_.
+   applicable.
 
    For example, the Registration interface in LWM2M is based on the CoAP
    Resource Directory.  However, it is not sufficient to implement just
@@ -243,9 +243,9 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
    (about 46% max, depending on the case) using CBOR representation
    format [RFC7049] instead.
 
-   {      "e": [{
-           bn: "/3303/0",
-           e: [{
+   {       "e": [{
+           "bn": "/3303/0",
+           "e": [{
                "n": "5700",
                "v": 20.0 }, {
                "n": "5701",
@@ -255,8 +255,8 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
                "n": "5604",
                "v": 40
            }],    }, {
-           bn: "/3302/0",
-           e: [{
+           "bn": "/3302/0",
+           "e": [{
                "n": "5500",
                "v": true }, {
                "n": "5501",
@@ -266,7 +266,7 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
    LWM2M ResourceIDs at the moment have no specific semantic meaning
    like ObjectIDs do.  Adding a similar registry for ResourceIDs could
    be useful.  Specially to those using LWM2M for their applications.
-   For example ISPO uses such ResourceIDs to register resources
+   For example IPSO uses such ResourceIDs to register resources
    univocally, so that the string _5701_ consistently represents units.
 
 5.  Web Linking
