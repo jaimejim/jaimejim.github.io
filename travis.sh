@@ -5,4 +5,4 @@ set -e # halt script on error
 
 bundle install
 bundle exec jekyll build
-bundle exec htmlproofer ./_site --file-ignore ./_site/drafts/*.html --disable-external
+bundle exec htmlproofer ./_site --file-ignore /_site/drafts/ --disable-external
