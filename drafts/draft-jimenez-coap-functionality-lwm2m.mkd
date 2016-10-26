@@ -35,12 +35,13 @@ informative:
   RFC7390:
   RFC7641:
   RFC6690:
+  RFC7049:
   I-D.ietf-core-resource-directory:
   I-D.ietf-core-http-mapping:
   I-D.ietf-core-coap-tcp-tls:
   I-D.ietf-core-etch:
-  I-D.ietf-core-links-json:
   I-D.ietf-core-yang-cbor:
+  I-D.ietf-core-links-json:
   LWM2M:
     title: LWM2M specification
     author:
@@ -82,7 +83,7 @@ The LWM2M Specification tends to use its own terminology for client, server, etc
 
 For example the use of LWM2M "Client" and "Server" and the roles they play has confused developers that are initiating on the protocol, mainly because a CoAP server runs on the device, just like a LWM2M client does. Moreover, most LWM2M devices will often work both as client and server depending on the interfaces used, it would be good to explore the use of terms like "servients" for devices that regularly support both.
 
-Similarly, the reference to existing drafts of RFCs often can mislead the reader to believe that the full RFC has been implemented. *it would be better to state the support to an IETF CoRE WG document when applicable*.
+Similarly, the reference to existing drafts of RFCs often can mislead the reader to believe that the full RFC has been implemented. *It would be better to state the support to an IETF CoRE WG document when applicable*.
 
 For example, the Registration interface in LWM2M is based on the CoAP Resource Directory.  However, it is not sufficient to implement just the interface described to obtain the benefits provided by the CoAP Resource Directory.
 
@@ -153,7 +154,7 @@ Res: 2.05 Content (25 C)
 Res (Notify): 2.05 Content (26 C)
 ~~~~~~~~~~~
 
-There has also been much work on different serialization and compression mechanisms that LWM2M could consider adopting. A serialized JSON file like the one below could be greatly compressed (about 46% max, depending on the case) using CBOR notation {{I-D.ietf-core-links-json}} instead.
+There has also been much work on different serialization and compression mechanisms that LWM2M could consider adopting. A serialized JSON file like the one below could be greatly compressed (about 46% max, depending on the case) using CBOR representation format {{RFC7049}} instead.
 
 ~~~~~~~~~~~
 {      "e": [{
@@ -177,12 +178,13 @@ There has also been much work on different serialization and compression mechani
 }       ]}]}
 ~~~~~~~~~~~
 
-LWM2M ResourceIDs at the moment have no specific semantic meaning like ObjectIDs do. Adding a similar registry for ResourceIDs would be useful. Specially to those using LWM2M for their applications.
+LWM2M ResourceIDs at the moment have no specific semantic meaning like ObjectIDs do. Adding a similar registry for ResourceIDs could be useful. Specially to those using LWM2M for their applications. For example ISPO uses such ResourceIDs to register resources univocally, so that the string *5701* consistently represents units.
+
 
 Web Linking {#weblinking}
 =================
 
-One thing that pretty much *everyone* is expecting is some form of Web Link resource type. ObjectLinks are not sufficient. There has been much work on web linking on {{RFC6690}} that has not been used in the LWM2M spec. At the very least a new Data Type named "Web Link" should be added. Instead of the simple ObjectID:InstanceID that is expressed now, a proper WebLink would be used. That would take full advantage of other features like {{I-D.ietf-core-links-json}} or even newer Object Models.
+One thing that that could be very useful in the future is some form of Web Link resource type. ObjectLinks are not sufficient to represent links between devices or applications. There has been much work on web linking on {{RFC6690}} that could be used in the LWM2M spec. For example a new Data Type named "Web Link" could be a simple, yet useful addition. Instead of the current *ObjectID:InstanceID* expressed now, a full WebLink would be used. That would take advantage of other features like {{I-D.ietf-core-links-json}} or even newer Object Models.
 
 Other use cases contemplate some form of Object Redirection to help decouple management and applications. LWM2M expects that the management servers will observe resources and collect telemetry on the management server itself. If LWM2M is to be used as application protocol as well as management, it should provide a way for applications or CoAP Clients to observe resources on the devices, together with their required credentials. Such credentials should be stored on the device in some way, maybe a new Object.
 
@@ -192,6 +194,6 @@ Collaboration
 To further develop the relationship between the LWM2M specification
 and other specifications based on CoAP, it would also be advisable to further collaboration between organizations developing CoAP-based standard implementations. At the moment there is no forum for inter group communication nor discussion. That should change.
 
-The IETF CoRE WG has quite some people also interested on device management. Communication would be mutually beneficial. Example of that work is on COMI {{I-D.ietf-core-yang-cbor}} or data model translation.
+The IETF CoRE WG has quite some people also interested in device management. Communication would be mutually beneficial. Example of that work is on COMI {{I-D.ietf-core-yang-cbor}} or data model translation.
 
 OMA LWM2M already has benefited from workshops that gather most of the industry, such as {{IOTSI}} and {{IOTSU}}. Similarly, specifications can be developed in the IETF with a view to be directly usable in LWM2M.
