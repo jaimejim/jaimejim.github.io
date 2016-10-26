@@ -42,6 +42,7 @@ informative:
   I-D.ietf-core-etch:
   I-D.ietf-core-yang-cbor:
   I-D.ietf-core-links-json:
+  I-D.ietf-core-object-security:
   LWM2M:
     title: LWM2M specification
     author:
@@ -124,6 +125,8 @@ This is covered by common LWM2M compliant implementations we have today. However
 For example TCP support is soon going to be added to CoAP. The draft {{I-D.ietf-core-coap-tcp-tls}} outlines the changes required to use CoAP over TCP, TLS, and WebSockets transports.
 
 Support for features like PATCH/FETCH {{I-D.ietf-core-etch}} could be greatly beneficial for things like firmware upgrade or observing *relatively* large sets of resources.
+
+For systems in which endpoints work behind a gateway or use LWM2M for managing the gateways, it might be good to implement other types of cryptographic protection than DTLS. For example some of the setups using OSCoAP {{I-D.ietf-core-object-security}} allow for “smarter” gateways.
 
 ## Device to Device configuration.
 
