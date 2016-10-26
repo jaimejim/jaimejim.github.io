@@ -392,9 +392,9 @@
 
   <meta name="dct.creator" content="Jimenez, J." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-jimenez-coap-functionality-lwm2m" />
-  <meta name="dct.issued" scheme="ISO8601" content="2016-10-25" />
-  <meta name="dct.abstract" content="This document provides a strawman summary of information that should be use together with recommendations for the LWM2M specification " />
-  <meta name="description" content="This document provides a strawman summary of information that should be use together with recommendations for the LWM2M specification " />
+  <meta name="dct.issued" scheme="ISO8601" content="2016-10-26" />
+  <meta name="dct.abstract" content="This document provides a strawman summary of information that should be used for the LWM2M specification " />
+  <meta name="description" content="This document provides a strawman summary of information that should be used for the LWM2M specification " />
 
 </head>
 
@@ -413,10 +413,10 @@
 </tr>
 <tr>
   <td class="left">Intended status: Informational</td>
-  <td class="right">October 25, 2016</td>
+  <td class="right">October 26, 2016</td>
 </tr>
 <tr>
-  <td class="left">Expires: April 28, 2017</td>
+  <td class="left">Expires: April 29, 2017</td>
   <td class="right"></td>
 </tr>
 
@@ -430,14 +430,14 @@
   <h1 id="rfc.abstract">
   <a href="#rfc.abstract">Abstract</a>
 </h1>
-<p>This document provides a strawman summary of information that should be use together with recommendations for the LWM2M specification <a href="#LWM2M">[LWM2M]</a>. LWM2M is based on CoAP, on top of which it describes certain management interfaces and data models that go beyond the CoAP specifications itself. However LWM2M does not describe all behavior that should be expected from implementations of the CoAP specifications. This document attempts to clarify what should be present in a LWM2M system beyond what is specified in the LWM2M documents. Additionally, this document also adds information about IPSO Objects <a href="#IPSO">[IPSO]</a> and their usage with LWM2M as application protocol.</p>
+<p>This document provides a strawman summary of information that should be used for the LWM2M specification <a href="#LWM2M">[LWM2M]</a>. LWM2M is based on CoAP, on top of which it describes certain management interfaces and data models that go beyond the CoAP specifications itself. However LWM2M does not describe all behavior that should be expected from implementations of the CoAP specifications. This document attempts to clarify what should be present in a LWM2M system beyond what is specified in the LWM2M documents. Additionally, this document also adds information about IPSO Objects <a href="#IPSO">[IPSO]</a> and their usage with LWM2M as application protocol.</p>
 <h1 id="rfc.status">
   <a href="#rfc.status">Status of This Memo</a>
 </h1>
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on April 28, 2017.</p>
+<p>This Internet-Draft will expire on April 29, 2017.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -469,7 +469,7 @@
 <h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> <a href="#terminology" id="terminology">Terminology</a></h1>
 <p id="rfc.section.2.p.1">The LWM2M Specification tends to use its own terminology for client, server, etc. In this document, we <em>use the existing terminology on  to avoid confusion</em><a href="#RFC7252">[RFC7252]</a>.</p>
 <p id="rfc.section.2.p.2">For example the use of LWM2M &#8220;Client&#8221; and &#8220;Server&#8221; and the roles they play has confused developers that are initiating on the protocol, mainly because a CoAP server runs on the device, just like a LWM2M client does. Moreover, most LWM2M devices will often work both as client and server depending on the interfaces used, it would be good to explore the use of terms like &#8220;servients&#8221; for devices that regularly support both.</p>
-<p id="rfc.section.2.p.3">Similarly, the reference to existing drafts of RFCs often can mislead the reader to believe that the full RFC has been implemented. <em>it would be better to state the support to an IETF CoRE WG document when applicable</em>.</p>
+<p id="rfc.section.2.p.3">Similarly, the reference to existing drafts of RFCs often can mislead the reader to believe that the full RFC has been implemented. <em>It would be better to state the support to an IETF CoRE WG document when applicable</em>.</p>
 <p id="rfc.section.2.p.4">For example, the Registration interface in LWM2M is based on the CoAP Resource Directory.  However, it is not sufficient to implement just the interface described to obtain the benefits provided by the CoAP Resource Directory.</p>
 <h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#interaction-model" id="interaction-model">Interaction Model</a></h1>
 <p id="rfc.section.3.p.1">LWM2M has been created with a strong focus on centralizing control and management. Devices set associations with their manager and all traffic is directed to the cloud. All this is fine but in the process some functionalities that could be used locally device to device and device to application have not been explicitly described.</p>
@@ -518,7 +518,7 @@ Req: GET /3303/0/5700 Observe_Option=1
 Res: 2.05 Content (25 C)
 Res (Notify): 2.05 Content (26 C)
 </pre>
-<p id="rfc.section.4.p.3">There has also been much work on different serialization and compression mechanisms that LWM2M could consider adopting. A serialized JSON file like the one below could be greatly compressed (about 46% max, depending on the case) using CBOR notation <a href="#I-D.ietf-core-links-json">[I-D.ietf-core-links-json]</a> instead.</p>
+<p id="rfc.section.4.p.3">There has also been much work on different serialization and compression mechanisms that LWM2M could consider adopting. A serialized JSON file like the one below could be greatly compressed (about 46% max, depending on the case) using CBOR representation format <a href="#RFC7049">[RFC7049]</a> instead.</p>
 <pre>
 {      "e": [{
         bn: "/3303/0",
@@ -540,13 +540,13 @@ Res (Notify): 2.05 Content (26 C)
             "v": 23
 }       ]}]}
 </pre>
-<p id="rfc.section.4.p.4">LWM2M ResourceIDs at the moment have no specific semantic meaning like ObjectIDs do. Adding a similar registry for ResourceIDs would be useful. Specially to those using LWM2M for their applications.</p>
+<p id="rfc.section.4.p.4">LWM2M ResourceIDs at the moment have no specific semantic meaning like ObjectIDs do. Adding a similar registry for ResourceIDs could be useful. Specially to those using LWM2M for their applications. For example ISPO uses such ResourceIDs to register resources univocally, so that the string <em>5701</em> consistently represents units.</p>
 <h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> <a href="#weblinking" id="weblinking">Web Linking</a></h1>
-<p id="rfc.section.5.p.1">One thing that pretty much <em>everyone</em> is expecting is some form of Web Link resource type. ObjectLinks are not sufficient. There has been much work on web linking on <a href="#RFC6690">[RFC6690]</a> that has not been used in the LWM2M spec. At the very least a new Data Type named &#8220;Web Link&#8221; should be added. Instead of the simple ObjectID:InstanceID that is expressed now, a proper WebLink would be used. That would take full advantage of other features like <a href="#I-D.ietf-core-links-json">[I-D.ietf-core-links-json]</a> or even newer Object Models.</p>
+<p id="rfc.section.5.p.1">One thing that that could be very useful in the future is some form of Web Link resource type. ObjectLinks are not sufficient to represent links between devices or applications. There has been much work on web linking on <a href="#RFC6690">[RFC6690]</a> that could be used in the LWM2M spec. For example a new Data Type named &#8220;Web Link&#8221; could be a simple, yet useful addition. Instead of the current <em>ObjectID:InstanceID</em> expressed now, a full WebLink would be used. That would take advantage of other features like <a href="#I-D.ietf-core-links-json">[I-D.ietf-core-links-json]</a> or even newer Object Models.</p>
 <p id="rfc.section.5.p.2">Other use cases contemplate some form of Object Redirection to help decouple management and applications. LWM2M expects that the management servers will observe resources and collect telemetry on the management server itself. If LWM2M is to be used as application protocol as well as management, it should provide a way for applications or CoAP Clients to observe resources on the devices, together with their required credentials. Such credentials should be stored on the device in some way, maybe a new Object.</p>
 <h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> <a href="#collaboration" id="collaboration">Collaboration</a></h1>
 <p id="rfc.section.6.p.1">To further develop the relationship between the LWM2M specification and other specifications based on CoAP, it would also be advisable to further collaboration between organizations developing CoAP-based standard implementations. At the moment there is no forum for inter group communication nor discussion. That should change.</p>
-<p id="rfc.section.6.p.2">The IETF CoRE WG has quite some people also interested on device management. Communication would be mutually beneficial. Example of that work is on COMI <a href="#I-D.ietf-core-yang-cbor">[I-D.ietf-core-yang-cbor]</a> or data model translation.</p>
+<p id="rfc.section.6.p.2">The IETF CoRE WG has quite some people also interested in device management. Communication would be mutually beneficial. Example of that work is on COMI <a href="#I-D.ietf-core-yang-cbor">[I-D.ietf-core-yang-cbor]</a> or data model translation.</p>
 <p id="rfc.section.6.p.3">OMA LWM2M already has benefited from workshops that gather most of the industry, such as <a href="#IOTSI">[IOTSI]</a> and <a href="#IOTSU">[IOTSU]</a>. Similarly, specifications can be developed in the IETF with a view to be directly usable in LWM2M.</p>
 <h1 id="rfc.references"><a href="#rfc.references">7.</a> Informative References</h1>
 <table>
@@ -616,6 +616,12 @@ Res (Notify): 2.05 Content (26 C)
         <b id="RFC6690">[RFC6690]</b>
       </td>
       <td class="top"><a>Shelby, Z.</a>, "<a href="http://tools.ietf.org/html/rfc6690">Constrained RESTful Environments (CoRE) Link Format</a>", RFC 6690, DOI 10.17487/RFC6690, August 2012.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC7049">[RFC7049]</b>
+      </td>
+      <td class="top"><a>Bormann, C.</a> and <a>P. Hoffman</a>, "<a href="http://tools.ietf.org/html/rfc7049">Concise Binary Object Representation (CBOR)</a>", RFC 7049, DOI 10.17487/RFC7049, October 2013.</td>
     </tr>
     <tr>
       <td class="reference">

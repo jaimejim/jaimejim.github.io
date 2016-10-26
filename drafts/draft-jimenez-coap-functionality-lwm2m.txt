@@ -4,8 +4,8 @@
 
 Network Working Group                                         J. Jimenez
 Internet-Draft                                                  Ericsson
-Intended status: Informational                          October 25, 2016
-Expires: April 28, 2017
+Intended status: Informational                          October 26, 2016
+Expires: April 29, 2017
 
 
              CoAP functionality expected in an LWM2M system
@@ -14,16 +14,15 @@ Expires: April 28, 2017
 Abstract
 
    This document provides a strawman summary of information that should
-   be use together with recommendations for the LWM2M specification
-   [LWM2M].  LWM2M is based on CoAP, on top of which it describes
-   certain management interfaces and data models that go beyond the CoAP
-   specifications itself.  However LWM2M does not describe all behavior
-   that should be expected from implementations of the CoAP
-   specifications.  This document attempts to clarify what should be
-   present in a LWM2M system beyond what is specified in the LWM2M
-   documents.  Additionally, this document also adds information about
-   IPSO Objects [IPSO] and their usage with LWM2M as application
-   protocol.
+   be used for the LWM2M specification [LWM2M].  LWM2M is based on CoAP,
+   on top of which it describes certain management interfaces and data
+   models that go beyond the CoAP specifications itself.  However LWM2M
+   does not describe all behavior that should be expected from
+   implementations of the CoAP specifications.  This document attempts
+   to clarify what should be present in a LWM2M system beyond what is
+   specified in the LWM2M documents.  Additionally, this document also
+   adds information about IPSO Objects [IPSO] and their usage with LWM2M
+   as application protocol.
 
 Status of This Memo
 
@@ -40,7 +39,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 28, 2017.
+   This Internet-Draft will expire on April 29, 2017.
 
 Copyright Notice
 
@@ -50,15 +49,15 @@ Copyright Notice
    This document is subject to BCP 78 and the IETF Trust's Legal
    Provisions Relating to IETF Documents
    (http://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document.  Please review these documents
 
 
 
-Jimenez                  Expires April 28, 2017                 [Page 1]
+Jimenez                  Expires April 29, 2017                 [Page 1]
 
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
 
-   publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
@@ -99,23 +98,21 @@ Table of Contents
    regularly support both.
 
    Similarly, the reference to existing drafts of RFCs often can mislead
-   the reader to believe that the full RFC has been implemented. _it
+   the reader to believe that the full RFC has been implemented. _It
    would be better to state the support to an IETF CoRE WG document when
    applicable_.
 
    For example, the Registration interface in LWM2M is based on the CoAP
    Resource Directory.  However, it is not sufficient to implement just
+   the interface described to obtain the benefits provided by the CoAP
+   Resource Directory.
 
 
 
-
-Jimenez                  Expires April 28, 2017                 [Page 2]
+Jimenez                  Expires April 29, 2017                 [Page 2]
 
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
-
-   the interface described to obtain the benefits provided by the CoAP
-   Resource Directory.
 
 3.  Interaction Model
 
@@ -165,7 +162,10 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
 
 
-Jimenez                  Expires April 28, 2017                 [Page 3]
+
+
+
+Jimenez                  Expires April 29, 2017                 [Page 3]
 
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
@@ -221,7 +221,7 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
 
 
-Jimenez                  Expires April 28, 2017                 [Page 4]
+Jimenez                  Expires April 29, 2017                 [Page 4]
 
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
@@ -240,8 +240,8 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
    There has also been much work on different serialization and
    compression mechanisms that LWM2M could consider adopting.  A
    serialized JSON file like the one below could be greatly compressed
-   (about 46% max, depending on the case) using CBOR notation
-   [I-D.ietf-core-links-json] instead.
+   (about 46% max, depending on the case) using CBOR representation
+   format [RFC7049] instead.
 
    {      "e": [{
            bn: "/3303/0",
@@ -264,27 +264,30 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
    }       ]}]}
 
    LWM2M ResourceIDs at the moment have no specific semantic meaning
-   like ObjectIDs do.  Adding a similar registry for ResourceIDs would
+   like ObjectIDs do.  Adding a similar registry for ResourceIDs could
    be useful.  Specially to those using LWM2M for their applications.
+   For example ISPO uses such ResourceIDs to register resources
+   univocally, so that the string _5701_ consistently represents units.
 
 5.  Web Linking
 
-   One thing that pretty much _everyone_ is expecting is some form of
-   Web Link resource type.  ObjectLinks are not sufficient.  There has
-   been much work on web linking on [RFC6690] that has not been used in
-   the LWM2M spec.  At the very least a new Data Type named "Web Link"
-   should be added.  Instead of the simple ObjectID:InstanceID that is
+   One thing that that could be very useful in the future is some form
+   of Web Link resource type.  ObjectLinks are not sufficient to
+   represent links between devices or applications.  There has been much
 
 
 
-Jimenez                  Expires April 28, 2017                 [Page 5]
+Jimenez                  Expires April 29, 2017                 [Page 5]
 
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
 
-   expressed now, a proper WebLink would be used.  That would take full
-   advantage of other features like [I-D.ietf-core-links-json] or even
-   newer Object Models.
+   work on web linking on [RFC6690] that could be used in the LWM2M
+   spec.  For example a new Data Type named "Web Link" could be a
+   simple, yet useful addition.  Instead of the current
+   _ObjectID:InstanceID_ expressed now, a full WebLink would be used.
+   That would take advantage of other features like
+   [I-D.ietf-core-links-json] or even newer Object Models.
 
    Other use cases contemplate some form of Object Redirection to help
    decouple management and applications.  LWM2M expects that the
@@ -303,7 +306,7 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
    standard implementations.  At the moment there is no forum for inter
    group communication nor discussion.  That should change.
 
-   The IETF CoRE WG has quite some people also interested on device
+   The IETF CoRE WG has quite some people also interested in device
    management.  Communication would be mutually beneficial.  Example of
    that work is on COMI [I-D.ietf-core-yang-cbor] or data model
    translation.
@@ -330,10 +333,7 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
 
 
-
-
-
-Jimenez                  Expires April 28, 2017                 [Page 6]
+Jimenez                  Expires April 29, 2017                 [Page 6]
 
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
@@ -379,20 +379,25 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
               Format", RFC 6690, DOI 10.17487/RFC6690, August 2012,
               <http://www.rfc-editor.org/info/rfc6690>.
 
+   [RFC7049]  Bormann, C. and P. Hoffman, "Concise Binary Object
+              Representation (CBOR)", RFC 7049, DOI 10.17487/RFC7049,
+              October 2013, <http://www.rfc-editor.org/info/rfc7049>.
+
+
+
+
+
+
+
+Jimenez                  Expires April 29, 2017                 [Page 7]
+
+Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
+
+
    [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
               Application Protocol (CoAP)", RFC 7252, DOI 10.17487/
               RFC7252, June 2014,
               <http://www.rfc-editor.org/info/rfc7252>.
-
-
-
-
-
-
-Jimenez                  Expires April 28, 2017                 [Page 7]
-
-Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
-
 
    [RFC7390]  Rahman, A., Ed. and E. Dijk, Ed., "Group Communication for
               the Constrained Application Protocol (CoAP)", RFC 7390,
@@ -440,9 +445,4 @@ Author's Address
 
 
 
-
-
-
-
-
-Jimenez                  Expires April 28, 2017                 [Page 8]
+Jimenez                  Expires April 29, 2017                 [Page 8]
