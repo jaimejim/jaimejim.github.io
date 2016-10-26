@@ -66,7 +66,7 @@ informative:
 
 
 --- abstract
-This document provides a strawman summary of information that should be use together with recommendations for the LWM2M specification {{LWM2M}}. LWM2M is based on CoAP, on top of which it describes certain management interfaces and data models that go beyond the CoAP specifications itself. However LWM2M does not describe all behavior that should be expected from implementations of the CoAP specifications. This document attempts to clarify what should be present in a LWM2M system beyond what is specified in the LWM2M documents. Additionally, this document also adds information about IPSO Objects {{IPSO}} and their usage with LWM2M as application protocol.
+This document provides a strawman summary of information that should be used for the LWM2M specification {{LWM2M}}. LWM2M is based on CoAP, on top of which it describes certain management interfaces and data models that go beyond the CoAP specifications itself. However LWM2M does not describe all behavior that should be expected from implementations of the CoAP specifications. This document attempts to clarify what should be present in a LWM2M system beyond what is specified in the LWM2M documents. Additionally, this document also adds information about IPSO Objects {{IPSO}} and their usage with LWM2M as application protocol.
 
 --- middle
 
