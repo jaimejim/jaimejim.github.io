@@ -8,7 +8,7 @@ Intended status: Informational                          October 26, 2016
 Expires: April 29, 2017
 
 
-             CoAP functionality expected in an LWM2M system
+             CoAP functionality expected in a LWM2M system
                  draft-jimenez-coap-functionality-lwm2m
 
 Abstract
@@ -81,7 +81,9 @@ Table of Contents
 1.  Introduction
 
    The current LWM2M protocol is probably the main Device Management
-   protocol ... (WIP)
+   protocol based on CoAP today.  It defines the application layer
+   communication protocol between a LWM2M Server and a LWM2M Client,
+   which is located in a LWM2M Device.
 
 2.  Terminology
 
@@ -104,8 +106,6 @@ Table of Contents
 
    For example, the Registration interface in LWM2M is based on the CoAP
    Resource Directory.  However, it is not sufficient to implement just
-   the interface described to obtain the benefits provided by the CoAP
-   Resource Directory.
 
 
 
@@ -113,6 +113,9 @@ Jimenez                  Expires April 29, 2017                 [Page 2]
 
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
+
+   the interface described to obtain the benefits provided by the CoAP
+   Resource Directory.
 
 3.  Interaction Model
 
@@ -160,9 +163,6 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
    greatly beneficial for things like firmware upgrade or observing
    _relatively_ large sets of resources.
 
-   For systems in which endpoints work behind a gateway or use LWM2M for
-   managing the gateways, it might be good to implement other types of
-
 
 
 Jimenez                  Expires April 29, 2017                 [Page 3]
@@ -170,6 +170,8 @@ Jimenez                  Expires April 29, 2017                 [Page 3]
 Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
 
+   For systems in which endpoints work behind a gateway or use LWM2M for
+   managing the gateways, it might be good to implement other types of
    cryptographic protection than DTLS.  For example some of the setups
    using OSCoAP [I-D.ietf-core-object-security] allow for "smarter"
    gateways.
@@ -216,8 +218,6 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
    Just like other devices, smartphone applications should be able to
    discover devices using standard methods, thus they would need access
    to the RD as well.
-
-
 
 
 

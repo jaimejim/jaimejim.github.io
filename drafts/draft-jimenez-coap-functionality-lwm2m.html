@@ -5,7 +5,7 @@
 <head profile="http://www.w3.org/2006/03/hcard http://dublincore.org/documents/2008/08/04/dc-html/">
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
 
-  <title>CoAP functionality expected in an LWM2M system</title>
+  <title>CoAP functionality expected in a LWM2M system</title>
 
   <style type="text/css" title="Xml2Rfc (sans serif)">
   /*<![CDATA[*/
@@ -424,7 +424,7 @@
     </tbody>
   </table>
 
-  <p class="title">CoAP functionality expected in an LWM2M system<br />
+  <p class="title">CoAP functionality expected in a LWM2M system<br />
   <span class="filename">draft-jimenez-coap-functionality-lwm2m</span></p>
   
   <h1 id="rfc.abstract">
@@ -465,7 +465,7 @@
   </ul>
 
   <h1 id="rfc.section.1"><a href="#rfc.section.1">1.</a> <a href="#introduction" id="introduction">Introduction</a></h1>
-<p id="rfc.section.1.p.1">The current LWM2M protocol is probably the main Device Management protocol &#8230; (WIP)</p>
+<p id="rfc.section.1.p.1">The current LWM2M protocol is probably the main Device Management protocol based on CoAP today. It defines the application layer communication protocol between a LWM2M Server and a LWM2M Client, which is located in a LWM2M Device.</p>
 <h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> <a href="#terminology" id="terminology">Terminology</a></h1>
 <p id="rfc.section.2.p.1">The LWM2M Specification tends to use its own terminology for client, server, etc. In this document, we use the existing terminology from <a href="#RFC7252">[RFC7252]</a>.</p>
 <p id="rfc.section.2.p.2">For example the use of LWM2M &#8220;Client&#8221; and &#8220;Server&#8221; and the roles they play has confused developers that are initiating on the protocol, mainly because a CoAP server runs on the device, just like a LWM2M client does. Moreover, most LWM2M devices will often work both as client and server depending on the interfaces used, it would be good to explore the use of terms like &#8220;servients&#8221; for devices that regularly support both.</p>
@@ -502,6 +502,7 @@
 <p id="rfc.section.3.1.p.1">This is covered by common LWM2M compliant implementations we have today. However there are upcoming RFCs and drafts that greatly enhance LWM2M with more CoAP features.</p>
 <p id="rfc.section.3.1.p.2">For example TCP support is soon going to be added to CoAP. The draft <a href="#I-D.ietf-core-coap-tcp-tls">[I-D.ietf-core-coap-tcp-tls]</a> outlines the changes required to use CoAP over TCP, TLS, and WebSockets transports.</p>
 <p id="rfc.section.3.1.p.3">Support for features like PATCH/FETCH <a href="#I-D.ietf-core-etch">[I-D.ietf-core-etch]</a> could be greatly beneficial for things like firmware upgrade or observing <em>relatively</em> large sets of resources.</p>
+<p id="rfc.section.3.1.p.4">For systems in which endpoints work behind a gateway or use LWM2M for managing the gateways, it might be good to implement other types of cryptographic protection than DTLS. For example some of the setups using OSCoAP <a href="#I-D.ietf-core-object-security">[I-D.ietf-core-object-security]</a> allow for &#8220;smarter&#8221; gateways.</p>
 <h1 id="rfc.section.3.2"><a href="#rfc.section.3.2">3.2.</a> <a href="#device-to-device-configuration" id="device-to-device-configuration">Device to Device configuration.</a></h1>
 <p id="rfc.section.3.2.p.1">Beyond what is described in the LWM2M documentation, devices will often talk to each other. Specially in cases when all devices are under the same subnet, this could be pretty common. For example devices could be more resilient if they did not have to contact their manager constantly; in case of lack of internet connectivity the local IoT network would still function. Managers could just set policies on the devices and they would operate more autonomously.</p>
 <p id="rfc.section.3.2.p.2">For this setup to take place, LWM2M would use more of the device-to-device functionality of CoAP. A more complete Resource Directory implementation <a href="#I-D.ietf-core-resource-directory">[I-D.ietf-core-resource-directory]</a> would be needed, either on the LWM2M server in addition to the registration interface or standalone. Devices should be able to perform lookup on that RD and get the series of links to resources elsewhere. They should be able to find new functionality through /.well-known/core. If not, they should be able to use IP multicast as expressed on <a href="#RFC7390">[RFC7390]</a>.</p>
@@ -574,6 +575,12 @@ Res (Notify): 2.05 Content (26 C)
         <b id="I-D.ietf-core-links-json">[I-D.ietf-core-links-json]</b>
       </td>
       <td class="top"><a>Li, K.</a>, <a>Rahman, A.</a> and <a>C. Bormann</a>, "<a href="http://tools.ietf.org/html/draft-ietf-core-links-json-06">Representing CoRE Formats in JSON and CBOR</a>", Internet-Draft draft-ietf-core-links-json-06, July 2016.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="I-D.ietf-core-object-security">[I-D.ietf-core-object-security]</b>
+      </td>
+      <td class="top"><a>Selander, G.</a>, <a>Mattsson, J.</a>, <a>Palombini, F.</a> and <a>L. Seitz</a>, "<a href="http://tools.ietf.org/html/draft-ietf-core-object-security-00">Object Security of CoAP (OSCOAP)</a>", Internet-Draft draft-ietf-core-object-security-00, October 2016.</td>
     </tr>
     <tr>
       <td class="reference">
