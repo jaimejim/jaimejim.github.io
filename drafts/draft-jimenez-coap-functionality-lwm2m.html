@@ -507,7 +507,8 @@
 <p id="rfc.section.3.2.p.1">Beyond what is described in the LWM2M documentation, devices will often talk to each other. Specially in cases when all devices are under the same subnet, this could be pretty common. For example devices could be more resilient if they did not have to contact their manager constantly; in case of lack of internet connectivity the local IoT network would still function. Managers could just set policies on the devices and they would operate more autonomously.</p>
 <p id="rfc.section.3.2.p.2">For this setup to take place, LWM2M would use more of the device-to-device functionality of CoAP. A more complete Resource Directory implementation <a href="#I-D.ietf-core-resource-directory">[I-D.ietf-core-resource-directory]</a> would be needed, either on the LWM2M server in addition to the registration interface or standalone. Devices should be able to perform lookup on that RD and get the series of links to resources elsewhere. They should be able to find new functionality through /.well-known/core. If not, they should be able to use IP multicast as expressed on <a href="#RFC7390">[RFC7390]</a>.</p>
 <p id="rfc.section.3.2.p.3">Needless to say, it is assumed that devices would be running a CoAP Server on them and would support CoAP Observe <a href="#RFC7641">[RFC7641]</a>, so that devices can subscribe to updates from one another, thus becoming more autonomous.</p>
-<p id="rfc.section.3.2.p.4">The current LWM2M Data Model needs more expressiveness when it comes to data types; More on that in <a href="#semantics">Section 4</a>. Also Web Linking will be dealt at <a href="#weblinking">Section 5</a>.</p>
+<p id="rfc.section.3.2.p.4">There are also updates on ACE security framework, that allow for securing the communication between two devices via an Authorization Server <a href="#I-D.ietf-ace-oauth-authz">[I-D.ietf-ace-oauth-authz]</a>.</p>
+<p id="rfc.section.3.2.p.5">The current LWM2M Data Model needs more expressiveness when it comes to data types; More on that in <a href="#semantics">Section 4</a>. Also Web Linking will be dealt at <a href="#weblinking">Section 5</a>.</p>
 <h1 id="rfc.section.3.3"><a href="#rfc.section.3.3">3.3.</a> <a href="#device-to-application-configuration" id="device-to-application-configuration">Device to Application configuration.</a></h1>
 <p id="rfc.section.3.3.p.1">In some other cases you applications would be running on the phone connecting locally to sensors and/or control actuators. A smartphone can access directly a CoAP home sensor using a mutually authenticated &#8216;https&#8217; request, provided its home router runs a HTTP to CoAP (HC) proxy and is configured with the appropriate certificate. For this scenario to happen, the GW should implement a HC proxy. It is highly recommended then that they make use of <a href="#I-D.ietf-core-http-mapping">[I-D.ietf-core-http-mapping]</a> to properly do the URI mapping and specific ABNF queries.</p>
 <p id="rfc.section.3.3.p.2">Just like other devices, smartphone applications should be able to discover devices using standard methods, thus they would need access to the RD as well.</p>
@@ -552,6 +553,12 @@ Res (Notify): 2.05 Content (26 C)
 <h1 id="rfc.references"><a href="#rfc.references">7.</a> Informative References</h1>
 <table>
   <tbody>
+    <tr>
+      <td class="reference">
+        <b id="I-D.ietf-ace-oauth-authz">[I-D.ietf-ace-oauth-authz]</b>
+      </td>
+      <td class="top"><a>Seitz, L.</a>, <a>Selander, G.</a>, <a>Wahlstroem, E.</a>, <a>Erdtman, S.</a> and <a>H. Tschofenig</a>, "<a href="http://tools.ietf.org/html/draft-ietf-ace-oauth-authz-03">Authentication and Authorization for Constrained Environments (ACE)</a>", Internet-Draft draft-ietf-ace-oauth-authz-03, October 2016.</td>
+    </tr>
     <tr>
       <td class="reference">
         <b id="I-D.ietf-core-coap-tcp-tls">[I-D.ietf-core-coap-tcp-tls]</b>

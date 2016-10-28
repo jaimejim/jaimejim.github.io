@@ -43,6 +43,7 @@ informative:
   I-D.ietf-core-yang-cbor:
   I-D.ietf-core-links-json:
   I-D.ietf-core-object-security:
+  I-D.ietf-ace-oauth-authz:
   LWM2M:
     title: LWM2M specification
     author:
@@ -136,6 +137,8 @@ Beyond what is described in the LWM2M documentation, devices will often talk to 
 For this setup to take place, LWM2M would use more of the device-to-device functionality of CoAP. A more complete Resource Directory implementation {{I-D.ietf-core-resource-directory}} would be needed, either on the LWM2M server in addition to the registration interface or standalone. Devices should be able to perform lookup on that RD and get the series of links to resources elsewhere. They should be able to find new functionality through /.well-known/core. If not, they should be able to use IP multicast as expressed on {{RFC7390}}.
 
 Needless to say, it is assumed that devices would be running a CoAP Server on them and would support CoAP Observe {{RFC7641}}, so that devices can subscribe to updates from one another, thus becoming more autonomous.
+
+There are also updates on ACE security framework, that allow for securing the communication between two devices via an Authorization Server {{I-D.ietf-ace-oauth-authz}}.
 
 The current LWM2M Data Model needs more expressiveness when it comes to data types; More on that in {{semantics}}. Also Web Linking will be dealt at {{weblinking}}.
 
