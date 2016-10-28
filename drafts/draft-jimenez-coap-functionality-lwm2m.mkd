@@ -2,7 +2,7 @@
 title: CoAP functionality expected in a LWM2M system
 abbrev: draft-jimenez-coap-functionality-lwm2m
 docname: draft-jimenez-coap-functionality-lwm2m
-date: 2016-10-26
+date: 2016-10-25
 category: info
 
 ipr: trust200902
