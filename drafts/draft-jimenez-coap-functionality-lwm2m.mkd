@@ -126,7 +126,7 @@ This is covered by common LWM2M compliant implementations we have today. However
 
 For example TCP support is soon going to be added to CoAP. The draft {{I-D.ietf-core-coap-tcp-tls}} outlines the changes required to use CoAP over TCP, TLS, and WebSockets transports.
 
-Support for features like PATCH/FETCH {{I-D.ietf-core-etch}} could be greatly beneficial for things like firmware upgrade or observing *relatively* large sets of resources.
+Support for features like PATCH/FETCH {{I-D.ietf-core-etch}} could be greatly beneficial for things like firmware upgrade or observing relatively large sets of resources.
 
 For systems in which endpoints work behind a gateway or use LWM2M for managing the gateways, it might be good to implement other types of cryptographic protection than DTLS. For example some of the setups using OSCoAP {{I-D.ietf-core-object-security}} allow for “smarter” gateways.
 
@@ -144,14 +144,14 @@ The current LWM2M Data Model needs more expressiveness when it comes to data typ
 
 ## Device to Application configuration.
 
-In some other cases you applications would be running on the phone connecting locally to sensors and/or control actuators. A smartphone can access directly a CoAP home sensor using a mutually authenticated 'https' request, provided its home router runs a HTTP to CoAP (HC) proxy and is configured with the appropriate certificate. For this scenario to happen, the GW should implement a HC proxy. It is highly recommended then that they make use of {{I-D.ietf-core-http-mapping}} to properly do the URI mapping and specific ABNF queries.
+In some other cases applications would be running on the phone connecting locally to sensors and/or control actuators. A smartphone can access directly a CoAP home sensor using a mutually authenticated 'https' request, provided its home router runs a HTTP to CoAP (HC) proxy and is configured with the appropriate certificate. For this scenario to happen, the GW should implement a HC proxy. It is highly recommended then that they make use of {{I-D.ietf-core-http-mapping}} to properly do the URI mapping and specific ABNF queries.
 
 Just like other devices, smartphone applications should be able to discover devices using standard methods, thus they would need access to the RD as well.
 
 Data Model {#semantics}
 =================
 
-The LWM2M Model is specified in {{LWM2M}}. Other models that build on it like IPSOs or OneM2M have spawned out of it. They normally introduce incremental features. They usually allow for performing any set of operations on a device through a CoAP interface. Resources are exposed as Objects using the same data model used for management.
+The LWM2M Object Model is specified in {{LWM2M}}. Other models that build on it like IPSOs or OneM2M have spawned out of it. They normally introduce incremental features. They usually allow for performing any set of operations on a device through a CoAP interface. Resources are exposed as Objects using the same data model used for management.
 
 For example, in the case of a temperature sensor we can access and subscribe to the readings of the device (using {{IPSO}}).
 
@@ -199,7 +199,7 @@ Collaboration
 =================
 
 To further develop the relationship between the LWM2M specification
-and other specifications based on CoAP, it would also be advisable to further collaboration between organizations developing CoAP-based standard implementations. At the moment there is no forum for inter group communication nor discussion. That should change.
+and other specifications based on CoAP, it would also be advisable to foster collaboration between organizations developing CoAP-based standard implementations. At the moment there is no forum for inter group communication nor discussion. That should change.
 
 The IETF CoRE WG has quite some people also interested in device management. Communication would be mutually beneficial. Example of that work is on COMI {{I-D.ietf-core-yang-cbor}} or data model translation.
 

@@ -161,7 +161,7 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
    Support for features like PATCH/FETCH [I-D.ietf-core-etch] could be
    greatly beneficial for things like firmware upgrade or observing
-   _relatively_ large sets of resources.
+   relatively large sets of resources.
 
 
 
@@ -210,7 +210,7 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
 3.3.  Device to Application configuration.
 
-   In some other cases you applications would be running on the phone
+   In some other cases applications would be running on the phone
    connecting locally to sensors and/or control actuators.  A smartphone
    can access directly a CoAP home sensor using a mutually authenticated
    'https' request, provided its home router runs a HTTP to CoAP (HC)
@@ -232,12 +232,12 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
 4.  Data Model
 
-   The LWM2M Model is specified in [LWM2M].  Other models that build on
-   it like IPSOs or OneM2M have spawned out of it.  They normally
-   introduce incremental features.  They usually allow for performing
-   any set of operations on a device through a CoAP interface.
-   Resources are exposed as Objects using the same data model used for
-   management.
+   The LWM2M Object Model is specified in [LWM2M].  Other models that
+   build on it like IPSOs or OneM2M have spawned out of it.  They
+   normally introduce incremental features.  They usually allow for
+   performing any set of operations on a device through a CoAP
+   interface.  Resources are exposed as Objects using the same data
+   model used for management.
 
    For example, in the case of a temperature sensor we can access and
    subscribe to the readings of the device (using [IPSO]).
@@ -311,7 +311,7 @@ Internet-Draft   draft-jimenez-coap-functionality-lwm2m     October 2016
 
    To further develop the relationship between the LWM2M specification
    and other specifications based on CoAP, it would also be advisable to
-   further collaboration between organizations developing CoAP-based
+   foster collaboration between organizations developing CoAP-based
    standard implementations.  At the moment there is no forum for inter
    group communication nor discussion.  That should change.
 
