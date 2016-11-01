@@ -1,8 +1,8 @@
 ---
 title: CoAP functionality expected in a LWM2M system
 abbrev: draft-jimenez-t2trg-coap-functionality-lwm2m
-docname: draft-jimenez-t2trg-coap-functionality-lwm2m
-date: 2016-10-25
+docname: draft-jimenez-t2trg-coap-functionality-lwm2m-00
+date: 2016-10-31
 category: info
 
 ipr: trust200902
