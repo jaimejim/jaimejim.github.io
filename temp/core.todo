@@ -11,6 +11,7 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
     Summary available http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls.html
  ✔ [TCP] Request PORT for CoAP TCP @due(16-07-22 08:20) @done(2016-10-20 17:36) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
  ✔ [TCP] @WGLC issued. @done(2016-10-20 17:02) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
+ ☐ [TCP]
  ☐ [TCP] IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
  ☐ [TCP] Send warning about WGLC next @due(16-10-22 20:54) @jaime
 
@@ -44,6 +45,7 @@ CoRE-Links draft-ietf-core-links-json:
  ☐ [LNKS] Check Klaus' draft on Bulletin board.
 
 RD draft-ietf-core-resource-directory:
+ ☐ [RD] Prepare slides for the session @jaime.
  ☐ [RD] Start preparing the RD Writeup for the IESG @Oscar @Jaime, publish on Oscar/Jaime github or on CoRE's misc github @due(16-07-04 14:42) @low
  ☐ [RD] [EITF96] New reviews by Hannes T, Klaus H, Darshak, Bill S, Christian G, Sebastian (?), Matthias K.
  ☐ [RD] WGLC @due(16-08-01 15:28), depending on W3C-TD dependency
@@ -91,11 +93,13 @@ CoRE Object Security CoAP draft-selander-ace-object-security:
  ☐ [OSCOAP] End of the year WGLC.
  ✔ [OSCOAP] Confirm @WGA on mailing list. @jaime @done(2016-10-20 17:36) @project(CoRE Object Security CoAP draft-selander-ace-object-security)
  ☐ [OSCOAP] Get to a level of maturity so that it can be used for implementation.
+ ☐ [OSCOAP] Interop target in December.
  ☐ [OSCOAP] Ask for the reviewers: Reviews promised by Jim, Sandeep Kumar and Thomas Watteyne.
 
 Congestion Control draft-bormann-core-cocoa:
  ✔ [CCA] [IETF96] Show of hands showed positive. Confirm @WGA on mailing list. @jaime @done(2016-10-20 17:36) @project(Congestion Control draft-bormann-core-cocoa)
- ☐ [CCA] @Carsten to resubmit.
+ ✔ [CCA] @Carsten to resubmit. @done(2016-11-07 15:33) @project(Congestion Control draft-bormann-core-cocoa)
+ ☐ [CCA] pretty much Ready. What to do with the appendix, separate document so that we can progress the rest.
 
 COMI Draft:
  ☐ [COMI] draft-vanderstok-core-comi @due(16-08-27 15:01)
