@@ -23,7 +23,7 @@ I am also a key contributor and chair of the [IPSO Semantic Group](http://www.ip
 
 [OMA-LWM2M](http://openmobilealliance.org) is another group to which I regularly contribute. LWM2M is a protocol built on top of CoAP, adding a set of interfaces for managing devices.
 
-I also follow as much as I can the [Thing-to-Thing Research Group](https://github.com/t2trg), W3C's [WoT Interest Group](https://github.com/w3c/wot/) and the [Open Connectivity Foundationn](https://openconnectivity.org).
+I also follow as much as I can the [Thing-to-Thing Research Group](https://github.com/t2trg), W3C's [WoT Interest Group](https://github.com/w3c/wot/) and the [Open Connectivity Foundation](https://openconnectivity.org).
 
 ### Studies
 
