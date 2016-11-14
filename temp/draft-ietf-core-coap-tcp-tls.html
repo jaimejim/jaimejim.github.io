@@ -4,6 +4,7 @@
 <head>
 
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>draft-ietf-core-coap-tcp-tls</title>
 
 
@@ -307,189 +308,6 @@ sup {
 }
 </style>
 
-<style type="text/css">
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: black;
-	background: none;
-	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-@media print {
-	code[class*="language-"],
-	pre[class*="language-"] {
-		text-shadow: none;
-	}
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #f5f2f0;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: slategray;
-}
-
-.token.punctuation {
-	color: #999;
-}
-
-.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #905;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #690;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-	color: #a67f59;
-	background: hsla(0, 0%, 100%, .5);
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-	color: #07a;
-}
-
-.token.function {
-	color: #DD4A68;
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-	color: #e90;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
-}
-</style>
-
-<style type="text/css">
-pre.line-numbers {
-	position: relative;
-	padding-left: 3.8em;
-	counter-reset: linenumber;
-}
-
-pre.line-numbers > code {
-	position: relative;
-}
-
-.line-numbers .line-numbers-rows {
-	position: absolute;
-	pointer-events: none;
-	top: 0;
-	font-size: 100%;
-	left: -3.8em;
-	width: 3em; /* works for line-numbers below 1000 lines */
-	letter-spacing: -1px;
-	border-right: 1px solid #999;
-
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-
-}
-
-	.line-numbers-rows > span {
-		pointer-events: none;
-		display: block;
-		counter-increment: linenumber;
-	}
-
-		.line-numbers-rows > span:before {
-			content: counter(linenumber);
-			color: #999;
-			display: block;
-			padding-right: 0.8em;
-			text-align: right;
-		}
-</style>
-
 
 </head>
 
@@ -499,390 +317,145 @@ pre.line-numbers > code {
 
 <p>Author: <a href="http://jaimejim.github.io/">Jaime Jiménez</a></p>
 
-<h3 id="toc_1">Timeline</h3>
-
-<ol>
-<li class="task-list-item"><input type="checkbox" checked> Announce Brian as editor.
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Announce Carsten as author for this doc, no chair hat.
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Announce the new Github repo.
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Move issues (10) to Github, copy-paste (Brian to confirm to Jaime) and then close on the tracker. Add Travis validation.
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Hannes and Carsten to work on one signaling document...
+<h3 id="toc_1">Tentative Timeline</h3>
 
 <ul>
-<li>... <del>as part of draft-ietf-core-coap-tcp-tls-03?</del></li>
-<li class="task-list-item"><input type="checkbox" checked> ... as draft-bormann-core-coap-sig-00, then merge afterwards with tcp-tls-xx . Make draft available on separate Github repo.
+<li class="task-list-item"><input type="checkbox" checked> <a href="#summary">draft summary</a>
 </li>
-</ul>
+<li class="task-list-item"><input type="checkbox"> <a href="#shepherd-writeup">Shepherd Writeup</a> @Jaime <code>in progress</code> <code>@due(16-11-15 15:28)</code>.
 </li>
-<li class="task-list-item"><input type="checkbox" checked> When ready add core-coap-websockets-XX. Get help from Klaus. Ready for merging now. Brian to start merging.
-</li>
-<li class="task-list-item"><input type="checkbox" checked> WG Call for consensus of draft-bormann-core-block-bert-01 as we need to add that to tcp-tls-xx too.
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Keep working on <a href="https://github.com/core-wg/coap-tcp-tls">https://github.com/core-wg/coap-tcp-tls</a>
-</li>
-</ol>
-
-<hr>
-
-<h4 id="toc_2">Summary draft-ietf-core-coap-tcp-tls-02</h4>
-
-<p>A TCP and TLS Transport for the Constrained Application Protocol (CoAP)](https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls-02)</p>
-
-<p>This is a draft that simply describes a shim header that conveys length information about each CoAP message for use over TCP. CoAP header is changed from:</p>
-
-<div><pre class="line-numbers"><code class="language-none"> 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|Ver| T |  TKL  |      Code     |      Message ID   ...
-| Token                             ...</code></pre></div>
-
-<p>to</p>
-
-<div><pre class="line-numbers"><code class="language-none"> 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|Len=13 |  TKL  | Length (8-bit)|      Code     | TKL bytes ...</code></pre></div>
-
-<p>Although message size limitations do not apply, <a href="https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls-02#ref-I-D.ietf-core-block">core-block</a> should still be used for large payloads (&gt;1k), the main reason (IMO) is to prevent head-of-line blocking and allow for other operations on the device.</p>
-
-<p>Two new URI schemes are defined: <code>coap+tcp</code> (port 5683) or <code>coaps+tcp</code> (port 443, and using <a href="https://tools.ietf.org/html/rfc7301">RFC7301</a>, APLN Extension for CoAP)</p>
-
-<p><strong>Comments</strong></p>
+<li><p>Q/A</p>
 
 <ul>
-<li>Add link to <a href="http://conferences.sigcomm.org/imc/2010/papers/p260.pdf">http://conferences.sigcomm.org/imc/2010/papers/p260.pdf</a>. Isn&#39;t the author Seppo Hätönen?</li>
-<li>Which is the status of ref-I-D.bormann-core-cocoa?</li>
-<li>Is the APLN Extension for CoAP defined? Section 8.3 the only part neded?</li>
-<li><strong>Very nice</strong> comparison between <code>coap+udp</code> and <code>coap+tcp</code> headers, would be nice to have it in the other docs.</li>
+<li class="task-list-item"><input type="checkbox"> Are there implementations of the draft?
+</li>
+<li class="task-list-item"><input type="checkbox"> IPR declaration.
+</li>
+</ul></li>
+<li class="task-list-item"><p><input type="checkbox"> IESG submission <code>@due(16-XX-XX)</code>.</p>
+</li>
 </ul>
 
 <hr>
 
-<h4 id="toc_3">Summary Hannes&#39; draft-ietf-core-coap-tcp-tls-02</h4>
+<h4 id="toc_2">Summary before merger draft-ietf-core-coap-tcp-tls-02</h4>
 
-<p>[I need a link here]</p>
+<p>There is already <a href="https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls-02">a detailed previous draft summary, issues and comments before Brian Raymor&#39;s merger</a>. </p>
 
-<p>It adds a new section, Shim Layer Protocol that is used for signaling and a framing section. It also presents some possible client/server exchange.</p>
+<hr>
 
-<p>The handshake has a serve name indication, a version indication, connection closure and keep-alive exchanges.</p>
-
-<p><strong>Comments</strong></p>
+<h3 id="toc_3">Comments on v05</h3>
 
 <ul>
-<li>The introduction that explains the use cases on TCP-02-03 could use some more work to make it more similar to draft-savolainen-core-coap-websockets-06.<br></li>
-<li>The new parts as they are do not seem as implementable/complete as the other documents.</li>
-<li>Are the keep-alive exchanges exactly the same as ping-pong messages on signalling&amp;websockets docs cause it looks like that to me.</li>
-<li>Carsten should read. Carsten&amp;Hannes should sync.</li>
+<li>&gt;<q>Fsdsd</q>.
+
+<ul>
+<li>sor.
+<code>I assume per request/transaction</code></li>
+</ul></li>
 </ul>
 
 <hr>
 
-<h4 id="toc_4">Summary draft-bormann-core-coap-sig-00</h4>
+<p><span id="summary"></span></p>
 
-<p><a href="https://tools.ietf.org/html/draft-bormann-core-coap-sig-00">CoAP Signaling Messages</a></p>
+<h3 id="toc_4">Summary draft-ietf-core-coap-tcp-tls-05</h3>
 
-<p>Signaling goes as any other CoAP message. Options, which can be elective or critical, have a different number space as the rest of the options. The draft defines 5 types of signaling messages.</p>
+<p><a href="https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls-05">CoAP (Constrained Application Protocol) over TCP, TLS, and WebSockets.</a></p>
 
-<ol>
-<li>Capability Messages</li>
-<li>Settings Messages</li>
-<li>Ping and Pong Messages</li>
-<li>Release Messages</li>
-<li>Abort Messages</li>
-</ol>
-
-<p><strong>Comments</strong></p>
-
-<ul>
-<li>Early version. Hannes should read. Carsten&amp;Hannes should sync.</li>
-<li>Capability and Settings should probably be separated.</li>
-<li>Diagrams, etc.</li>
-</ul>
+<p>This document...</p>
 
 <hr>
 
-<h4 id="toc_5">Summary draft-bormann-core-block-bert-01</h4>
+<p><span id="shepherd-writeup"></span></p>
 
-<p><a href="https://tools.ietf.org/html/draft-bormann-core-block-bert-01">Block-wise transfers in CoAP</a></p>
+<h2 id="toc_5">Shepherd Writeup</h2>
 
-<p>It connects back to the draft-ietf-core-coap-tcp-tls-02 document and how to use block for large payloads.</p>
+<h3 id="toc_6">Summary</h3>
 
-<p><strong>Comments</strong></p>
+<p>Document Shepherd: Jaime Jiménez, <a href="mailto:jaime.jimenez@ericsson.com">jaime.jimenez@ericsson.com</a><br>
+Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnikov@fastmail.fm</a></p>
 
-<ul>
-<li>References on TCP/TLS doc needed.</li>
-<li>The document could have been writen in more simple terms, it is quite hard to read.<br></li>
-<li>Which of the 3 roles of block option is intended here?</li>
-<li>Value 7 for SZX would indicate a block size of 2048 and was reserved. the usage in this document would indicate that it isn&#39;t reserved anymore?</li>
-<li>Add something like the following to explain the diagrams: <code>Block Option:NUM/M/BlockSize</code></li>
-<li>Sequence diagrams don&#39;t work well as visual representations for blocks.</li>
-</ul>
+<p>The Constrained Application Protocol (CoAP), although inspired by<br>
+   HTTP, was designed to use UDP instead of TCP.  The message layer of<br>
+   the CoAP over UDP protocol includes support for reliable delivery,<br>
+   simple congestion control, and flow control.</p>
 
-<hr>
+<p>Some environments benefit from the availability of CoAP carried over<br>
+   reliable transports such as TCP or TLS.  This document outlines the<br>
+   changes required to use CoAP over TCP, TLS, and WebSockets<br>
+   transports.</p>
 
-<h4 id="toc_6">Summary draft-savolainen-core-coap-websockets-06</h4>
+<p>The document is intended as an Standards Track RFC.</p>
 
-<p><a href="https://tools.ietf.org/html/draft-savolainen-core-coap-websockets-06">CoAP over WebSockets</a></p>
+<h3 id="toc_7">Review and Consensus</h3>
 
-<p>This document specifies how to retrieve and update CoAP resources using CoAP requests and responses over the WebSocket Protocol.</p>
+<p>The document has gone through multiple expert reviews and has been discussed on multiple IETF meetings. Before the last IETF the WGLC was completed.</p>
 
-<p>It introduces few senarios where this would be needed and the rationale for its usage: btw WS endpoints, with a CoAP Forwarding Proxy, and a CoAP Server inside a Web Browser (!?).</p>
+<p>There are no known implementations available.</p>
 
-<p><code>coap+ws</code> uses port 80 as default. The WebSocket client includes <code>coap.v1</code> in the list of protocols to identify this one.</p>
+<h3 id="toc_8">Intellectual Property</h3>
 
-<p><strong>Comments</strong></p>
+<p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG.</p>
 
-<ul>
-<li>What is the different between websockets and a plain tcp socket?</li>
-<li><strong>Shouldn&#39;t we have one document for <q>stream-based transports</q>?</strong></li>
-<li>The introduction and overview are <strong>very good</strong> and useful, I would have like to have this already on draft-ietf-core-coap-tcp-tls-02.</li>
-<li><strong>Shouldn&#39;t we have some template structure for all these documents?</strong></li>
-<li>CoAP Server inside a Web Browser (!?). This sounds like something from <q>Inception</q>.</li>
-<li>The way it is presented, as a Delta over <a href="https://tools.ietf.org/html/rfc7252">RFC7252</a> makes it <strong>very readable</strong>.</li>
-<li>Presents a similar problematic as the signalling document, shouldn&#39;t these be merged?</li>
-</ul>
+<h3 id="toc_9">Other Points</h3>
 
-<hr>
+<blockquote>
+<p>There is a downref to RFC 2616: This is in there because the security considerations of RFC 7252 reference (the now obsoleted) RFC 2616. The authors are not aware of someone having done the work to collect the relevant security considerations from the splinters of RFC 2616 (RFC 7230 and following).</p>
+</blockquote>
 
-<h1 id="toc_7">CoAP-TCP-TLS Webex calls</h1>
-
-<h3 id="toc_8">10th June 2016</h3>
-
-<h3 id="toc_9">Attendees</h3>
+<h3 id="toc_10">Checklist</h3>
 
 <ul>
-<li>Brian Raymor</li>
-<li>Hannes Tschofenig</li>
-<li>Carsten Bormann</li>
-<li>Simon Levy</li>
-<li>Klaus Hartke</li>
-<li>Matthias Kovatsch</li>
-<li>Jaime Jiménez</li>
-</ul>
-
-<h3 id="toc_10">Discussion</h3>
-
-<p><em>Hannes</em>: Procedures, multiple drafts... merging with the CoAP over Websockets document. Some feel CoAP TCP draft is progressing a bit slow.<br>
-<a href="https://tools.ietf.org/html/draft-tschofenig-core-coap-tcp-tls-05">CoAP-TCP-TLS</a></p>
-
-<p><em>Carsten</em>: Let&#39;s do the Issue tracker later. Target is to move completely to github.  Technically the document is stable. There are some items:</p>
-
-<p><strong>Open Issues</strong></p>
-
-<ul>
-<li>387   Should ALPN always be required?
-Yes, this is important.</li>
-<li>390   Connection close reason coap-tcp-tls            protocol enhancement.
-Yes, this should be a feature of the signalling.</li>
-<li>394   Ping/pong
-There is a need to keep the NAT binding alive.</li>
-<li>395   Session resumption.
-No, makes it too complex for the server.</li>
-<li>400   Give better guidance on message sizes for CoAP over TCP/TLS.
-Warning that this won&#39;t easilly interface with UDP ones.</li>
-<li>Shim layer issues?</li>
-</ul>
-
-<p><em>Hannes</em>: I feel that there are still several issues open.</p>
-
-<p><em>Carsten</em>: Well we agree on the problem maybe on the solution.</p>
-
-<p><em>Hannes</em>: I proposed a solution and there can be very issues. However, it seems that there is no <q>bert document</q>(?!) is about reinterpreting the message length differently.</p>
-
-<p><em>Carsten</em>: Today we had a discussion about the bert approach and was useful, we need to maintain the architectural integrity.</p>
-
-<p><em>Hannes</em>: My hope was to get something out soon, get feedback, spin the document again, etc. Discussions need to happen on the mailing list. We need to involve them.</p>
-
-<p><em>Carsten</em>: Agreed we got some formal contributions and we need to discuss them.</p>
-
-<p><em>Brian</em>: It feels a bit discouraging to have to wait for your approval on the direction. We should have iterative discussions. The draft is not stable now at 0.2.</p>
-
-<p><em>Hannes</em>: It takes too long to move this forward.</p>
-
-<p><em>Brian</em>: I agree with Hannes. We can work on the ping-pong issues.</p>
-
-<p><em>Carsten</em>: Some of the changes are big architectural changes. The pingpong issue is rather small. That&#39;s why this is done in separate drafts. Right now the TCP draft is implementable, if we start adding half-baked stuff it is no longer implementable.</p>
-
-<p><em>Brian</em>: It is fine to have some period of unstability. I am concern that the chair is also the editor.</p>
-
-<p><em>Carsten</em>: I am not the chair on this one, Jaime is...</p>
-
-<p><em>Jaime</em>: Have to read it through and understand it better to provide meaningful feedback.</p>
-
-<p>... audio choppy ...</p>
-
-<p><em>Hannes</em>: Is the expectation that each version is implementable standalone? Other issues? Many folks on OMA are interested.</p>
-
-<p><em>Matthias</em>: We don&#39;t care about the speed that much. We need more ...</p>
-
-<hr>
-
-<p>(choppy audio change to phone call)</p>
-
-<hr>
-
-<p><em>Discussion</em>: With Websockets people believe you don&#39;t get firewall, ...issues with proxies, firewalls, etc... it is all funky stuff.</p>
-
-<p><em>Hannes</em>: I would like more information on this, cause it could be interesting.</p>
-
-<p><em>Carsten</em>: Websockets integration is editorial work. A single document for applications, websockets text should be on the tcp/tls document. It is easier to integrate the two documents.</p>
-
-<p><em>Hannes</em>: What about timeline for the integration.</p>
-
-<p><em>Brian</em>: Are we going to use it as is? MQTT uses it. Why would we change the framing.</p>
-
-<p><em>Carsten</em>: Which changes?</p>
-
-<p><em>Brian</em>: The websocket draft calls out a number of cases where there is information removed. The TCP draft would remove the same.</p>
-
-<p><em>Carsten</em>: It is more about ... (couldn&#39;t get that) ...</p>
-
-<p><em>Hannes</em>: The use cases have been described are not the same. The websockets document, the initial handshacking happens over TCP.</p>
-
-<p><em>Klaus</em>: It is more or less the same.</p>
-
-<p><em>Hannes</em>: Simon was suggesting to focus on the handshake mechanism.</p>
-
-<p><em>Klaus</em>: Websockets and TLS is not the same as TLS and TCP.</p>
-
-<p><em>Hannes</em>: Simon, do you still think the idea of using TLS is a good idea?</p>
-
-<p><em>Simon</em>:I think it is something we should entertain, the direction that QUIK took is good.</p>
-
-<p><em>Hannes</em>: Some of the LoWPAN think that link layer security is sufficient. It is just a question about which cypher.</p>
-
-<p><em>Matthias</em>: Do we get the lenght information, signaling, etc, that we need?</p>
-
-<p><em>Hannes</em>: Length yes... rest somewhat.</p>
-
-<p><em>Carsten</em>: There is no way to use the TLS framing as the CoAP framing. We can simply use the websockets framing. We have CoAP over UDP and was good. CoAP over TCP does not add complexity.</p>
-
-<p><em>Hannes</em>: Why was it a good decission?</p>
-
-<p><em>Carsten</em>: CoAP would not exist if we have said that it only works over DTLS.</p>
-
-<p><em>Matthias</em>: The length information we can get it with all three transports, even if there is redundant information. For the signalling, people wanna have some keepalive for their applicaitons, I am not sure this works with TLS.</p>
-
-<p><em>Hannes</em>: I tried to capture all this options in the issue tracker.</p>
-
-<p><em>Matthias</em>: We have a nice assumption that TCP/TLS and Websockets would work, what I see is missing is the signalling.</p>
-
-<p><em>Hannes</em>: I provided a write-up for how to do that. We have two write-ups on the signalling exchange, we have a websockets document, how do we make everyone happy.</p>
-
-<p><em>Klaus</em>: Make divisions for the draft...</p>
-
-<p><em>Matthias</em>: Websockets draft has a technical description is a bit outdated but there is useful text that we could move over. We have to be careful with</p>
-
-<p><em>Hannes</em>: Have Carsten edited the document We have two incomplete versions and we need to ... Brian was confused about which draft to integrate.</p>
-
-<p><em>Klaus</em>: Websockets should be made later. First the signalling document.</p>
+<li class="task-list-item"><input type="checkbox" checked> Does the shepherd stand behind the document and think the document is ready for publication?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Is the correct RFC type indicated in the title page header?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Is the abstract both brief and sufficient, and does it stand alone as a brief summary?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Is the intent of the document accurately and adequately explained in the introduction?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests?
+<code>There is no ABNF in this draft</code>
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified?
+<code>There is a normative reference to [I-D.ietf-core-block] but that shouldn&#39;t be a problem as it is in late stages</code>
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Are all normative references made to documents that are ready for advancement and are otherwise in a clear state?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction? <code>Does not apply</code>
+</li>
+<li class="task-list-item"><p><input type="checkbox" checked> If this is a <q>bis</q> document, have all of the errata been considered? <code>Does not apply</code></p>
+</li>
+<li><p><strong>IANA</strong> Considerations:</p>
 
 <ul>
-<li>Stable 0.2 Document.</li>
-<li>Bert part can be put back.</li>
-<li>Signalling part needs discussion. Best way to do it would be to extract Hannes work and put it on the right place.</li>
-<li>Issues are on the document sent by Hannes/Brian.</li>
-</ul>
-
-<p><em>Matthias/Carsten/Hannes</em>:<br>
-ClientHello/ServerHello solves issues raised in the issue tracker.</p>
-
-<p>ETC ETC</p>
-
-<hr>
-
-<h3 id="toc_11">16th June 2016</h3>
-
-<h3 id="toc_12">Attendees</h3>
-
-<ul>
-<li>Brian Raymor</li>
-<li>Hannes Tschofenig</li>
-<li>Carsten Bormann</li>
-<li>Simon Levy</li>
-<li>Klaus Hartke</li>
-<li>Jaime Jiménez</li>
-</ul>
-
-<h3 id="toc_13">Discussion</h3>
-
-<p><strong>387</strong> Should ALPN always be required?</p>
-
-<ul>
-<li>Yes. To be closed.</li>
-</ul>
-
-<p><strong>400</strong> Give better guidance on message sizes for CoAP over TCP/TLS</p>
-
-<ul>
-<li>Length information sufficient?</li>
-<li>Is Max-Message-Size option sufficient?</li>
-</ul>
-
-<p><strong>409</strong> CoAP over TCP: Supporting block-wise for larger block sizes (BERT)</p>
-
-<ul>
-<li>Wait for 22nd on BERT. Move to repo</li>
-</ul>
-
-<p><strong>388</strong> Multiple versions over the same connection</p>
-
-<ul>
-<li>No multiple version over same connection.</li>
-<li>On earlier doc was possible, now after changes it no longer applies.</li>
-<li>How do we indicate the version now? (independent issue)</li>
-</ul>
-
-<p><strong>390</strong> Connection close reason</p>
-
-<ul>
-<li>Scenario is a server reboot, tell clients you are not going to be available or that there is a failover server.</li>
-<li>Retry after alternative service</li>
-</ul>
-
-<p><strong>391</strong> Server name indication</p>
-
-<ul>
-<li>Move issue to Github signalling draft.</li>
-</ul>
-
-<p><strong>392</strong> Converting URIs to options and back</p>
-
-<ul>
-<li>Closed.</li>
-</ul>
-
-<p><strong>393</strong> Observing resource over reliable transports</p>
-
-<ul>
-<li>Move to Github.</li>
-<li>Take it on mailing list.</li>
-</ul>
-
-<p><strong>394</strong> Ping/pong</p>
-
-<ul>
-<li>PinPong using resource does not allow for custody option. Also it is too verbose messagewise.</li>
-<li><a href="http://www.ietf.org/mail-archive/web/hybi/current/msg09540.html">Hybi discussion as reference</a>. Focuses more on liveness than keepalives, just sends Ping. <a href="https://groups.google.com/forum/#!searchin/spdy-dev/ping/spdy-dev/xgyPztsAKls/HdQUvRdmMZMJ">Firefox discussion</a></li>
-<li><a href="https://tools.ietf.org/html/rfc7540#section-6.7">HTTP/2 RFC</a></li>
-<li><a href="https://tools.ietf.org/html/rfc6520">Heartbeat extension in TLS</a> as reference.</li>
-<li>Discussion on mailing list.</li>
-<li>Move to the Signalling Github.</li>
+<li class="task-list-item"><input type="checkbox" checked> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions.
+<code>I wonder if adding a link to the CoRE Parameters registry could help, but it looks OK to me.</code>
+<code>http://www.iana.org/assignments/core-parameters/core-parameters.xhtml#method-codes</code>
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)?
+<code>The two new entries to the content format registry (51 and 52) require expert review and a request has been SENT to that list.</code>
+</li>
+<li class="task-list-item"><input type="checkbox" checked> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
+</li>
+<li class="task-list-item"><input type="checkbox" checked> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?
+<code>no new registries</code>
+</li>
+<li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified?
+</li>
+</ul></li>
 </ul>
 
 
-
-<script type="text/javascript">
-var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
-</script>
-
-<script type="text/javascript">
-!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
-</script>
 
 
 </body>
