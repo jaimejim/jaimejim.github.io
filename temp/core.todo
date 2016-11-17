@@ -1,5 +1,6 @@
 IETF - CoRE Working Group
 -------------------------
+"Let's finish RD and CoAP over reliable transports."
 
 Status:
 https://tools.ietf.org/wg/core/
@@ -18,6 +19,7 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
  ✔ [TCP] @WGLC issued. @done(2016-10-20 17:02) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
  ☐ [TCP] IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
  ✔ [TCP] Send warning about WGLC next @due(16-10-22 20:54) @jaime @done(2016-11-14 17:23) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
+ ☐ [TCP] OSCoAP as informative. Authors to work on the wording. Prepare email for Alexey to be sent. @due(16-11-17 20:54)
 
 ETCH draft-ietf-core-etch:
 Notes:
