@@ -315,7 +315,7 @@ sup {
 
 <h1 id="toc_0">CoRE WG  - Summary IETF97</h1>
 
-<p>Slides: <a href="https://www.ietf.org/proceedings/97/slides/slides-97-core-consolidated-slides-03.pdf">https://www.ietf.org/proceedings/97/slides/slides-97-core-consolidated-slides-03.pdf</a><br>
+<p>Slides: <a href="https://www.ietf.org/proceedings/97/slides/slides-97-core-consolidated-slides-06.pdf">https://www.ietf.org/proceedings/97/slides/slides-97-core-consolidated-slides-06.pdf</a><br>
 Minutes: <a href="http://etherpad.tools.ietf.org:9000/p/notes-ietf-97-core">http://etherpad.tools.ietf.org:9000/p/notes-ietf-97-core</a> </p>
 
 <h1 id="toc_1">Wednesday 2016-11-16</h1>
@@ -339,12 +339,26 @@ Minutes: <a href="http://etherpad.tools.ietf.org:9000/p/notes-ietf-97-core">http
 <li><p>CoAP in ANIMA (BRSKI, EST-coap) (Draft numbers?) document defines how to use EST over CoAP and DTLS. Perhaps better fit for ACE WG.</p></li>
 <li><p>draft-tiloca-core-multicast-oscoap Solves RFC7390 issue with securing multicast but independet of use case. </p></li>
 <li><p>draft-cao-core-delegated-observe enables delivery of observe responses to different addresses than where the request came from. Request for feedback. Similar issues faced by others over the years. Security (spoofing) is an issue. Documentation of the problem can be done as draft-ietf-lwig-coap addition or T2TRG topic.</p></li>
-<li><p>draft-groves-coap-webrtcdc (couldn&#39;t find draft on core datatracker ??) Document presents WebRTC use for multimedia CoAP systems.</p></li>
+<li><p>draft-groves-coap-webrtcdc Document presents WebRTC use for multimedia CoAP systems.</p></li>
 <li><p>draft-ietf-core-coap-tcp-tls Think about how to solve ping-pong issue and respond on mailing list. CSM was made mandatory in IETF96, SDOs should be aware of that.</p></li>
-<li><p>scheme names. Still a bikeshed.</p></li>
+<li><p>Scheme names. Still a bikeshed.</p></li>
 </ul>
 
 <h1 id="toc_3">Friday 2016-11-18</h1>
+
+<ul>
+<li><p>draft-tcs-coap-no-response-option ➔ RFC7967 , need to show on coal.tech page.</p></li>
+<li><p>draft-nottingham-rfc5988bis-01 revision is coming. CoRE should be aware of new changes, now is the chance to affect them.</p></li>
+<li><p>draft-groves-core-dynlink about 3 people have read the draft, the group should read it and provide feedback.</p></li>
+<li><p>draft‐ietf‐core‐interfaces it&#39;s decided to remove the function set since people do not consistently use it. There should be allignment with SDOs in the space, like OCF.</p></li>
+<li><p>draft‐groves‐core‐senml‐bto about 3 people have read the draft. The general problem is that there are only few people who know how EXI works in W3C. Discussion on BTO support and how to announce it to clients. Extensions to be left out of the main SenML draft.</p></li>
+<li><p>draft-ietf-core-senml new discussion on fragmenting, copy-pasting SenML features (little support) and metadata labelling (strong support). </p></li>
+<li><p>draft-ietf-core-yang-cbor to be tagged as an implementation draft, next steps are to submit final version by January, interop in February and in IETF98.</p></li>
+<li><p>draft-ietf-core-sid the point of the draft is to use global identifiers assigned to YANG items for different functionalities.There was interest by DTN folks to use this work too. There was discussion on flat vs hierarchical namespaces. Open issues are the reservation of SIDs in the namespace. Target is IETF99. WGLC March 2017.</p></li>
+<li><p>draft-vanderstok-core-comi from v09, adds usage of SID, iPATCH/FETCH support, YANG to CBOR, Content format (WIP) and new query parameters. About 10 people have read and wanted to adopt this document. To be taken to the mailing list for discussion.</p></li>
+<li><p>draft-thaler-core-redirect intention is to redirect from non-secure server to secure one. Main problem is that it <q>misleads</q> the client. Better way would be to spend more time on hypermedia formats to get this right. Problem is general, several contributors volunteered to work on this.</p></li>
+<li><p>draft-groves-core-rfc6690up-latest issues with RFC6690 IANA registration procedures for (rt) and (if). On the one hand it is a bad idea create different namespaces as it does not help interoperability. On the other you don&#39;t want to squash innovation, SDOs like OCF need to register their resource types. For now a good way forward is to help with more expert review recommendations and  with a high threshold prefix registration.</p></li>
+</ul>
 
 
 
