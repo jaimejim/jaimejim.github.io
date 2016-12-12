@@ -25,6 +25,10 @@ I am also a key contributor and chair of the [IPSO Semantic Group](http://www.ip
 
 I also follow as much as I can the [Thing-to-Thing Research Group](https://github.com/t2trg), W3C's [WoT Interest Group](https://github.com/w3c/wot/) and the [Open Connectivity Foundation](https://openconnectivity.org).
 
+
+**Industrial Internet Consortium (IIC)**
+I am one of the four authors of the [Industrial Internet Consortium (IIC)](http://www.iiconsortium.org/index.htm) Connectivity Framework specification. 
+
 ### Studies
 
 During my studies I did performance analysis and development of applications that can use both [P2P and Session Initiation Protocol (SIP)](/assets/files/thesis_reload.pdf) and later on [adapting DHTs to benefit M2M environments](/assets/files/thesis_dht_m2m.pdf).
