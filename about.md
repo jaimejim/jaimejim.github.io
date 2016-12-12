@@ -27,7 +27,8 @@ I also follow as much as I can the [Thing-to-Thing Research Group](https://githu
 
 
 **Industrial Internet Consortium (IIC)**
-I am one of the four authors of the [Industrial Internet Consortium (IIC)](http://www.iiconsortium.org/index.htm) Connectivity Framework specification. 
+
+I am one of the four authors of the [Industrial Internet Consortium (IIC)](http://www.iiconsortium.org/index.htm) Connectivity Framework specification.
 
 ### Studies
 
