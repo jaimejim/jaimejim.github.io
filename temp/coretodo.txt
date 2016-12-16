@@ -1,19 +1,20 @@
 IETF - CoRE Working Group
 -------------------------
 
+Status:
+https://tools.ietf.org/wg/core/
+Milestones:
+https://datatracker.ietf.org/wg/core/milestones/
+
 CoRE WG General:
- ☐ [GEN] Preliminary agenda TBD
- ✔ [GEN] Compile requests we got for session and set up http://jaimejim.github.io/temp/ietf97slots @jaime @done(2016-10-21 17:58) @project(CoRE WG General)
+ ☐ Send ietf97summary @due(2016-11-18 21:12) http://jaimejim.github.io/temp/ietf97summary.html
  ☐ [GEN] Adjust milestones https://datatracker.ietf.org/wg/core/milestones/
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
   Notes:
     Summary available http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls.html
- ✔ [TCP] Request PORT for CoAP TCP @due(16-07-22 08:20) @done(2016-10-20 17:36) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
- ✔ [TCP] @WGLC issued. @done(2016-10-20 17:02) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
- ☐ [TCP]
  ☐ [TCP] IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
- ☐ [TCP] Send warning about WGLC next @due(16-10-22 20:54) @jaime
+ ☐ [TCP] OSCoAP as informative. Authors to work on the wording. Prepare email for Alexey to be sent. @due(16-11-17 20:54)
 
 ETCH draft-ietf-core-etch:
 Notes:
@@ -29,7 +30,6 @@ HTTP draft-ietf-core-http-mapping:
   Notes:
     Summary available http://jaimejim.github.io/temp/draft-ietf-core-http-mapping
     Ballots: https://datatracker.ietf.org/doc/draft-ietf-core-http-mapping/ballot/
- ✔ [HTTP] Check with Thomas Fossatti the status of the doc. Answer ballot comments. Informational status preferred. Try to finnish this before ID deadline OCTOBER 31st @jaime @critical @done(2016-10-21 18:14) @project(HTTP draft-ietf-core-http-mapping)
  ☐ [HTTP] IETFLC  @due(16-08-28 11:08) @iesg
  ☐ [HTTP] AD go ahead if IETFLC OK. @iesg
  ☐ [HTTP] IESG Ballot (ADs read it). @iesg
@@ -45,7 +45,10 @@ CoRE-Links draft-ietf-core-links-json:
  ☐ [LNKS] Check Klaus' draft on Bulletin board.
 
 RD draft-ietf-core-resource-directory:
- ☐ [RD] Prepare slides for the session @jaime.
+  Notes:
+    Summary available
+    http://jaimejim.github.io/temp/draft-ietf-core-links-json
+ ☐ [RD] Prepare slides for the session.
  ☐ [RD] Start preparing the RD Writeup for the IESG @Oscar @Jaime, publish on Oscar/Jaime github or on CoRE's misc github @due(16-07-04 14:42) @low
  ☐ [RD] [EITF96] New reviews by Hannes T, Klaus H, Darshak, Bill S, Christian G, Sebastian (?), Matthias K.
  ☐ [RD] WGLC @due(16-08-01 15:28), depending on W3C-TD dependency
@@ -77,28 +80,21 @@ COMI-COOL CBOR draft-ietf-core-yang-cbor:
  ☐ [COCOL] @carsten to check status with Benoir.
 
 SID identifiers draft-somaraju-core-sid:
- ✔ [COCOL-SID] [IETF96] agree to move draft-somaraju-core-sid–01 forward. Confirm on mailing list @WGA @jaime @done(2016-10-20 17:36) @project(SID identifiers draft-somaraju-core-sid)
  ☐ [COCOL-SID] Finnish discussion about YID and how to move forward with this.  @due(16-11-12 15:01)
 
 PubSub draft-ietf-koster-pubsub:
- ✔ [PBSB] [IETF96] Confirm @WGA on mailing list. Review by Jeng Wei, Hannes, Jim, Bill, Peter, ?? @jaime @done(2016-10-20 17:36) @project(PubSub draft-ietf-koster-pubsub)
- ✔ PubSub draft in Markdown. @cabo  @done(2016-10-24 15:34) @project(PubSub draft-ietf-koster-pubsub)
  ☐ [PBSB] Resubmit new version. Check Klaus' document too. @jaime
 
 DynLink draft-groves-core-dynlink:
- ✔ [DLNK] [IETF96] 3 people have read this. Confirm @WGA to the mailing list. @jaime @done(2016-10-20 17:36) @project(DynLink draft-groves-core-dynlink)
  ☐ [DNLK] To read.
 
 CoRE Object Security CoAP draft-selander-ace-object-security:
  ☐ [OSCOAP] End of the year WGLC.
- ✔ [OSCOAP] Confirm @WGA on mailing list. @jaime @done(2016-10-20 17:36) @project(CoRE Object Security CoAP draft-selander-ace-object-security)
  ☐ [OSCOAP] Get to a level of maturity so that it can be used for implementation.
  ☐ [OSCOAP] Interop target in December.
  ☐ [OSCOAP] Ask for the reviewers: Reviews promised by Jim, Sandeep Kumar and Thomas Watteyne.
 
 Congestion Control draft-bormann-core-cocoa:
- ✔ [CCA] [IETF96] Show of hands showed positive. Confirm @WGA on mailing list. @jaime @done(2016-10-20 17:36) @project(Congestion Control draft-bormann-core-cocoa)
- ✔ [CCA] @Carsten to resubmit. @done(2016-11-07 15:33) @project(Congestion Control draft-bormann-core-cocoa)
  ☐ [CCA] pretty much Ready. What to do with the appendix, separate document so that we can progress the rest.
 
 COMI Draft:
@@ -109,6 +105,7 @@ Interfaces draft-ietf-core-interfaces:
  ☐ [INTF] Document split confirmed.
  ☐ [INTF] IESG Submission of draft-ietf-core-interfaces @due(17-03-01 21:03)
 
+--------
 Freezer
 ---------
 
@@ -122,33 +119,14 @@ Protocol Negotiation draft-silverajan-core-coap-protocol-negotiation:
  ☐ [PRNE] Present alternatives, obtain WG direction. Connection to TCP/TLS. @due(16-07-21 16:58)
 
 Alternative transports draft-ietf-bill:
- Notes
-   To be picked after TCP draft is done?
-   To be presented in Berlin?
+ ☐ To be picked after TCP draft is done?
 
-Done
--------------
-Block draft-ietf-core-block -> RFC7959
-
-NEXT WEEK:
-
-Milestones:
-To be added to datatracker: https://datatracker.ietf.org/wg/core/milestones/
-
- Issue WGA:
-   ☐ draft-ietf-core-comi (check proper name) @due(16-08-27 15:01)
-
- Submissions to IESG:
-   ☐ IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
-   ☐ IESG Submission of draft-ietf-core-links-json @due(16-08-15 15:28)
-   ☐ IESG Submission of draft-ietf-core-senml  @due(16-08-15 15:28)
-   ☐ IESG Submission of draft-ietf-core-resource-directory @due(16-09-15 15:28)
-   ☐ IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
-   ☐ IESG Submission of draft-ietf-core-yang-cbor @due(16-12-15 21:01)
-   ☐ IESG Submission of draft-ietf-core-comi @due(16-12-15 21:01)
-   ☐ IESG Submission of draft-ietf-core-interfaces @due(17-03-01 21:03)
-
-Important Dates:
-  ☐ IETF 96 CORE Sessions
-  Tuesday, Afternoon Session I 1400-1600. Room Name: Charlottenburg II/III size: 175
-  Thursday, Afternoon Session II 1620-1820. Room Name: Tiergarten size: 110
+Submissions to IESG:
+ ☐ IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25)
+ ☐ IESG Submission of draft-ietf-core-links-json @due(16-08-15 15:28)
+ ☐ IESG Submission of draft-ietf-core-senml  @due(16-08-15 15:28)
+ ☐ IESG Submission of draft-ietf-core-resource-directory @due(16-09-15 15:28)
+ ☐ IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
+ ☐ IESG Submission of draft-ietf-core-yang-cbor @due(16-12-15 21:01)
+ ☐ IESG Submission of draft-ietf-core-comi @due(16-12-15 21:01)
+ ☐ IESG Submission of draft-ietf-core-interfaces @due(17-03-01 21:03)
