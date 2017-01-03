@@ -7,11 +7,13 @@ Milestones:
 https://datatracker.ietf.org/wg/core/milestones/
 
 CoRE WG General:
- ☐ Send ietf97summary @due(2016-11-18 21:12) http://jaimejim.github.io/temp/ietf97summary.html
+ ✔ Send ietf97summary @due(2016-11-18 21:12) http://jaimejim.github.io/temp/ietf97summary.html @done(2017-01-03 15:14) @project(CoRE WG General)
+ ✔ Request slots @done(2017-01-03 15:14) @project(CoRE WG General)
  ☐ [GEN] Adjust milestones https://datatracker.ietf.org/wg/core/milestones/
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
  Summary available http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls.html
+ ✔ Contact authors for WGLC feedback @done(2017-01-03 11:13) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
  ☐ [TCP] IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
  ☐ [TCP] Shepherd Writeup @Jaime @critical WGLC comments and see if they are addressed.
  ☐ [TCP] OSCoAP as informative. Authors to work on the wording. Prepare email for Alexey to be sent. @due(16-11-17 20:54)
@@ -68,6 +70,7 @@ COMI-COOL CBOR draft-ietf-core-yang-cbor:
      draft-turner-cool-problem-latest.md
      draft-veillette-core-cool-latest.md
  ☐ [COCOL] Call for adoption for the merge document. @due(16-09-25 15:28)
+ ✔ [COCOL] Sid added as WG document draft-ietf-core-sid. @done(2017-01-03 15:21) @project(COMI-COOL CBOR draft-ietf-core-yang-cbor)
  ☐ [COCOL] Plan ad-hoc meeting on device management during IETF96. @Carsten, to send invite for tuesday morning on IETF. @critical
  ☐ [COCOL] IESG Submission of draft-ietf-core-yang-cbor @due(17-01-10 21:01)
  ☐ [COCOL] [IETF96] draft-veillette-core-cool–02 6 people read it. Agreed to split document.
