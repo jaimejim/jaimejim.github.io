@@ -1,5 +1,5 @@
 ---
-title: "Default Presentation"
+title: "Tools Workshop"
 layout: presentation
 date: 2017-01-09 09:00
 tag:
@@ -8,13 +8,10 @@ blog: true
 star: true
 ---
 
-
-
 layout: true
 class: center, middle, inverse
 
 ---
-
 
 #Tools Workshop I
 ##Useful tips & tricks for researchers
