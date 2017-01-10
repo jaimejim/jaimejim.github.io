@@ -7,7 +7,7 @@ class: center, middle, inverse
 
 ---
 
-#Tools Workshop I
+#Tools Workshop!
 ##Useful tips & tricks for researchers
 [jaime.jimenez@ericsson.com]
 .footnote[Friday 13th January 2017]
