@@ -2,10 +2,6 @@
 title: "Tools Workshop"
 layout: presentation
 date: 2019-01-09 09:00
-tag:
-- slides
-blog: true
-star: true
 ---
 
 layout: true
