@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tools Workshop</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 200;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+
+layout: true
+class: center, middle, inverse
+
+---
+
+#Tools Workshop I
+##Useful tips & tricks for researchers
+[jaime.jimenez@ericsson.com]
+.footnote[Friday 13th January 2017]
+
+???
+Get comments on these slides.
+
+---
+
+name: agenda
+layout: false
+
+##Agenda .red.bold[*]
+1. [Remark](#slide1) - Jaime
+1. [JQuery UI](#slide1) - Miika
+1. [Trello](#slide1) - Mert
+1. [Asana](#slide2) - Mert
+1. [Atom Tasks](#slide2) - Jaime
+1. [Emacs Orgmode](#slide2) - Gonzalo
+1. [XXX](#slide3) - Tero
+1. [Perf](#slide3) - Krisu
+1. [5G Development on Virtualbox](#slide3) - Jani-Pekka
+1. [Resilio](#slide4) - Jaime
+1. [Visual Studio Code](#slide4) - Ali
+
+.footnote[.red.bold[*] Remember to keep it sweet & short]
+
+---
+
+name: slide1
+
+
+###Remark: Quick and easy slides
+* It allows you to generate slides in HTML from simple markdown. It can be edited on any text editor and visualized on any browser. Not the same as [Reveal.js](https://github.com/hakimel/reveal.js)
+
+* [Remark.js](https://remarkjs.com)
+
+###JQuery UI: Making user interfaces in Javascript
+* jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library.
+* [JQuery UI](https://jqueryui.com)
+
+
+###Trello: Simple task management
+* It allows you to create lists with cards for tracking items that a team has to do.
+* [Trello](https://trello.com)
+
+
+???
+Remark is presented here.
+
+---
+
+name: slide2
+
+###Asana: A bit more complex task management
+* Similar as *Trello* but providing more integration with other tools.
+* [Asana](https://link.com)
+
+###Atom/Sublime Tasks: Get your todo list on your favourite editor
+* It allows you to manage your todo lists, create tasks, set when they are due, monitor, assign priorities, etc.
+* [Atom Taks](https://atom.io/packages/tasks)
+
+
+###Emacs Orgmode: Best project planing tool for Emacs
+* Org mode is for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective plain-text system.
+* [Emacs Org mode](http://orgmode.org)
+
+---
+
+name: slide3
+
+###XXX: something something something
+* something something something something something something something something something something something something something something something.
+*  [Perf](https://www.resilio.com)
+
+###Perf: Linux profiling with performance counters
+*  A tool for using the performance counters subsystem in Linux, and has had various enhancements to add tracing capabilities.
+* [Perf](https://perf.wiki.kernel.org)
+
+### Hub (Remote Server): Development 5G Hub environment.
+* Allows you to offload build-intensive tasks from your local machine. In the demonstration I’m showing one way to integrate MWP2 Windows machine to ITTE/LMF development environment and running a small service in the hub.
+
+---
+
+name: slide4
+
+###Resilio: Distributed file sharing between your devices
+* It allows you to sync and share files files between your devices or your colleagues' using P2P instead of ~~someone elses's server~~ the cloud.
+* [Resilio](https://www.resilio.com)
+
+###Visual Studio Code: The code editor for VS
+* It is a code editing software similar to Atom. It has git intergration support, that can track changes and provide basic git functions through GUI. Debugger support is also available.
+* [VS Code](https://code.visualstudio.com/)
+
+???
+Presentation ends here.
+
+---
+
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
