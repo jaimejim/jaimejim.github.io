@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>IPSO AppIoT</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 200;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+name:inverse
+layout: true
+class: center, middle, inverse
+
+---
+#IP for Smart Objects (IPSO)
+###[jaimejim.github.io]
+
+
+
+---
+layout: false
+##Short Bio
+* ~ 9 years at Ericsson Research.
+
+* Work on many topics and various roles, today those relevant to you (AppIoT folks) are:
+
+* **IETF** co-chair and contributor on CoRE WG (CoAP Protocol) <https://github.com/core-wg>
+
+* **LWM2M** contributor on spec design (sorry), prototyping.
+
+* **IPSO** chair and and IPSO SO author together with Michael Koster. .red.bold[*]
+
+* Also contribute (author specs, edit docs, do prototypes, participate on discussions...) on W3C WoT, Schema.org, IIC, OCF (off-record)...
+**we are very a small community!**
+
+.footnote[.red.bold[*] Disclaimer: not part of my current research.]
+
+---
+
+##Things you might want to know about
+
+* [IPSO Smart Objects](http://jaimejim.github.io/slides/iotshok.pdf). High Level presentation about CoAP, LWM2M, IPSO. (I have not updated the slides for quite a bit ☹️)  ** ~20 minutes**.
+
+* [CoAP usages for Device Management](http://jaimejim.github.io/slides/nmrgsoulfinal.pdf). Specific presentation about CoAP, COMI (WIP on alternative device management for LWM2M), LWM2M limitations, issues or possible enhacements from CoAP. ** ~20 minutes**.
+
+* [Semantic Interoperability for IoT](http://jaimejim.github.io/slides/eriotjaime.pdf).
+General presentation about what is IETF, Semantic "Space", IOT Semantic Interop Workshop takeaways, high-level REST, Hypermedia Driven Applications, W3C-TD  ** ~20 minutes**.
+
+* [EmuLated IoT platform (ELIOT)](http://eliot)
+
+* [IPSO Registry](http://ipso-alliance.github.io/pub/)
+
+* [Sample XML](https://github.com/IPSO-Alliance/pub/blob/master/reg/xml/3303.xml)
+
+---
+
+###Good things about IPSO Objects
+* Reusable Object IDs and Resource IDs.
+* Transport protocol and encoding data format independent.
+* Easy to build your own Objects and add to repo.
+* Easy to get feedback.
+* Sufficient for curent use cases.
+* Trivial to integrate with LWM2M.
+* Tested.
+* URI 3303/0/5700
+
+###Bad things about IPSO Objects
+* No Web Linking! (but easy to add)
+* LWM2M Object Versioning.
+* Not suited for complex hypermedia interactions.
+* Lots of politics in the org with (corporate).
+* Could have a richer language to represent IPSO Objects instead of XML.
+* Missing a lot of IETF CoRE concepts: recource type "rt", "cf", etc.
+* Also URI 3303/0/5700
+
+*What do **you** think?*
+
+---
+
+##Q&A
+
+* How to achieve interoperability with IPSO, especially with some legacy IoT system, which doesn't use IPSO.
+  * If existing [objects and **resources** on the registry](http://ipso-alliance.github.io/pub/) are not sufficient, just build your own and do a pull request to add those (make sure to validate them).
+  * If no IPSO support then data model translation.
+
+* How to create a new M2M communication? Ex: termostat, composed of independent temperature sensor and actuator.
+  * Composition and object linking, just make a new object with two resources that links to the other obejcts. That's how <https://www.eisox.fr> does it.
+  * [Other examples](http://challenge.ipso-alliance.org/challenge2015/meet-the-2015-semi-finalists/intelligent-thermostatic-radiator-valve)
+  * [Fuel Injector Example](file:///Users/jaime/code/IoTEmulator/fuelcontrol.js)
+
+---
+##Q&A
+
+* How is IPSO **competitive** against other alliances like IoTivity?
+  * I think you mean OCF's [OneIoTA](http://oneiota.org/documents?filter%5Bmedia_type%5D=application%2Framl%2Byaml) wich is the part of OCF that does Data Models.
+  * There are actually many more that somewhat are related: Schema.org, IANA, WoT TD, ZigBee CL, YANG models ...
+  * In practice we are about 20-30 people from many companies that somehow get involved in few of those for "business" reasons.
+  * [IOTSI Workshop](https://www.iab.org/activities/workshops/iotsi/)
+  * Main asset is that it is used by LWM2M, so from the technical standpoint you can just use that for now.
+  * Might use something different in the future?
+
+---
+##Q&A
+* How to introduce IPSO in our AppIoT? Currently AppIoT uses its own SDK on the top of leshan MS.
+  * [Leshan supports IPSO](https://github.com/eclipse/leshan/blob/9ff2b9ed23a2b3678c036135c1e6825a7ecfaf0f/leshan-core/src/main/resources/oma-objects-spec.json)
+  * We have used them on LCM and ELIOT, you can use those as examples.
+
+* Can multiple IoT platform like AppIoT co-exist with IPSO? If so how?
+  * Coexist?
+
+* Any *actual* example system/implementation to demonstrate how IPSO plays *so well* for interoperability? These are examples of groups/companies/orgs that use IPSO objects...
+
+  * <http://ipso-alliance.github.io/pub/>
+  * <http://www.eclipse.org/leshan/>
+  * <http://bluetoother.github.io/bipso/#/>
+  * <http://www.yanzinetworks.com/index.jsp>
+  * <http://www.eistec.se>
+  * <http://lwmqn.github.io>
+  * <http://www.versasense.com>
+  * <http://coap.technology/impls.html>
+  * <https://github.com/PeterEB/coap-shepherd>
+  * <https://github.com/contiki-os/contiki/tree/master/apps/ipso-objects>
+
+---
+##Q&A
+
+* How can different service provider coexist? Can a device belong to 2 different service providers?
+  * Define "service provider".
+  * In principle yes, but not very practical.
+  * Depends on the "constrainedness" of the device. Can it run multiple stacks?
+
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
