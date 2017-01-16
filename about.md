@@ -5,7 +5,9 @@ layout: page
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 ---
 
-I am a senior researcher working on the area of Internet of Things. I have been doing a bit of everything related to IoT for almost a decade already, from scientific publications, standardization, project management, architecture and design as well as prototyping and inventions/IPR. [For more details, please see my full CV](/assets/files/jaime_cv.pdf).
+I am originally from Madrid, Spain. I moved to Helsinki, Finland almost ten years ago. I currently live there.
+
+During this time I have been working on M2M and Internet of Things related topics. I have been doing a bit of everything related to IoT for almost a decade already, from scientific publications, standardization, project management, architecture and design as well as prototyping and inventions/IPR. For more details, please see my [full CV](/assets/files/jaime_cv.pdf).
 
 As you can see below, I contribute to various standards. Currently I focus more on IoT REST-type of communications, Device Management and Data models.
 
@@ -14,6 +16,7 @@ As you can see below, I contribute to various standards. Currently I focus more 
 **The Internet Engineering Task Force (IETF)**
 
 I am currently co-chairing the [CoRE Working Group](https://datatracker.ietf.org/wg/core/charter/) which takes care of standardizing the Constrained Application Protocol (CoAP) and CoAP related standards. The point of [CoAP](https://tools.ietf.org/html/rfc7252) is to have a HTTP-like protocol for very resource constrained devices, thus connecting devices and the larger Internet. Before that I have been a contributor of these and other IETF groups and drafts. I am also the main author of [RFC7650](https://tools.ietf.org/html/rfc7650) and other drafts.
+I’m also member of the IETF [Internet-of-Things Directorate](https://trac.ietf.org/trac/int/wiki/IOTDirWiki).
 
 **IP for Smart Objects (IPSO)**
 
@@ -39,3 +42,7 @@ During my studies I did performance analysis and development of applications tha
 ### IPR
 
 As a researcher I often stumble upon good ideas in our projects. Companies tend to do patents for those ideas that their products are based on. Thus I have done several [patents](http://patents.justia.com/inventor/jaime-jimenez) over the years.
+
+### Consulting
+
+Depending on the case I also do consulting work, please just contact me per email or phone.
