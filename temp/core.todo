@@ -9,6 +9,7 @@ https://datatracker.ietf.org/wg/core/milestones/
 CoRE WG General:
  ✔ Send ietf97summary @due(2016-11-18 21:12) http://jaimejim.github.io/temp/ietf97summary.html @done(2017-01-03 15:14) @project(CoRE WG General)
  ✔ Request slots @done(2017-01-03 15:14) @project(CoRE WG General)
+ ☐ [GEN] Find Co-Chair for CoRE-WG session IETF98. @jaime
  ☐ [GEN] Adjust milestones https://datatracker.ietf.org/wg/core/milestones/
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
@@ -16,7 +17,7 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
  ✔ Contact authors for WGLC feedback @done(2017-01-03 11:13) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
  ☐ [TCP] IESG Submission of draft-ietf-core-coap-tcp-tls @due(16-10-10 20:54)
  ☐ [TCP] Shepherd Writeup @Jaime @critical WGLC comments and see if they are addressed.
- ☐ [TCP] OSCoAP as informative. Authors to work on the wording. Prepare email for Alexey to be sent. @due(16-11-17 20:54)
+ ✔ [TCP] OSCoAP as informative. Authors to work on the wording. Prepare email for Alexey to be sent. @due(16-11-17 20:54) @done(2017-01-17 10:26) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
 
 ETCH draft-ietf-core-etch:
  Summary available http://jaimejim.github.io/temp/draft-ietf-core-etch
@@ -25,7 +26,7 @@ ETCH draft-ietf-core-etch:
  ✔ [ETCH] Alexey AD review @iesg @done(2016-12-20 11:03) @project(ETCH draft-ietf-core-etch)
  ✔ [ETCH] IETFLC @iesg @done(2016-12-20 11:03) @project(ETCH draft-ietf-core-etch)
  ☐ [ETCH] AD go ahead if IETF-LC OK. @iesg
- ☐ [ETCH] Address Kthaleen's comments
+ ☐ [ETCH] Address Kthaleen's comments @carsten
  ✔ [ETCH] IESG Ballot (ADs read it). @iesg @done(2016-12-20 11:03) @project(ETCH draft-ietf-core-etch)
 
 HTTP draft-ietf-core-http-mapping:
@@ -34,7 +35,7 @@ HTTP draft-ietf-core-http-mapping:
  ✔ [HTTP] IETFLC  @due(16-08-28 11:08) @iesg @done(2016-12-20 10:58) @project(HTTP draft-ietf-core-http-mapping)
  ✔ [HTTP] AD go ahead if IETFLC OK. @iesg @done(2016-12-20 10:58) @project(HTTP draft-ietf-core-http-mapping)
  ✔ [HTTP] IESG Ballot (ADs read it). @iesg @done(2016-12-20 10:58) @project(HTTP draft-ietf-core-http-mapping)
- ☐ [HTTP] Auth48 process to make sure that RFC Editor questions are answered. Authors, AD and Shepherd @jaime (monitor and address comments).
+ ☐ [HTTP] Auth48 process to make sure that RFC Editor questions are answered. Authors, AD and Shepherd @jaime (monitor and address comments). https://datatracker.ietf.org/doc/draft-ietf-core-http-mapping/
 
 CoRE-Links draft-ietf-core-links-json:
  Summary available http://jaimejim.github.io/temp/draft-ietf-core-links-json
@@ -47,18 +48,21 @@ CoRE-Links draft-ietf-core-links-json:
 
 RD draft-ietf-core-resource-directory:
  Summary available http://jaimejim.github.io/temp/draft-ietf-core-resource-directory
- ☐ [RD] Prepare slides for the session.
+ ✔ [RD] Prepare slides for the session. @done(2017-01-17 10:35) @project(RD draft-ietf-core-resource-directory)
+ ☐ [RD] Check the diff with https://github.com/mjkoster/I-D/tree/master/CoRE%20RD @jaime @medium
  ☐ [RD] [EITF96] New reviews by Hannes T, Klaus H, Darshak, Bill S, Christian G, Sebastian (?), Matthias K.
- ☐ [RD] WGLC @due(16-08-01 15:28), depending on W3C-TD dependency
- ☐ [RD] IESG Submission of draft-ietf-core-resource-directory @due(16-09-01 15:28)
- ☐ [RD] Check Klaus' draft on Bulletin board.
- 
+ ✘ [RD] WGLC @due(16-08-01 15:28), depending on W3C-TD dependency @cancelled(2017-01-17 10:35) @project(RD draft-ietf-core-resource-directory)
+ ☐ [RD] IESG Submission of draft-ietf-core-resource-directory @due(17-03-01 15:28)
+ ☐ [RD] Check Klaus' draft on t2t data hub. @jaime
+ ☐ [RD] Regular call on this add jaime @carsten
+
 SenML draft-ietf-core-senml:
- ☐ [SML] [IETF96] Several items to be taken on mailing list. @due(16-07-22 16:40)
+ ✔ [SML] [IETF96] Several items to be taken on mailing list. @due(16-07-22 16:40) @done(2017-01-17 10:43) @project(SenML draft-ietf-core-senml)
  ☐ [SML] WGLC @due(16-09-01 16:40)
  ✔ [SML] New items after Berlin. It will require some work. @done(2016-12-20 11:04) @project(SenML draft-ietf-core-senml)
  ☐ [SML] New Registry. Check with IANA.
  ☐ [SML] IESG Submission of draft-ietf-core-senml  @due(16-08-01 15:28) delayed to @due(16-09-29 15:28)
+ ☐ [SML] Check travis error. travis.yml missing @due(17-02-01 15:28)
 
 COMI-COOL CBOR draft-ietf-core-yang-cbor:
      Target like https://tools.ietf.org/html/rfc7388
@@ -100,6 +104,8 @@ Congestion Control draft-bormann-core-cocoa:
 
 COMI Draft:
  ☐ [COMI] draft-vanderstok-core-comi @due(16-08-27 15:01)
+ ☐ [COMI] Confirm adoption v11 on mailing list @due(17-01-25 15:01) @jaime
+ ☐ [COMI] Find new editor @due(17-01-30 15:01) @carsten @jaime @medium
 
 Interfaces draft-ietf-core-interfaces:
  ☐ [INTF] Restart work after W3C in Beijing @due(16-08-06 21:03)
