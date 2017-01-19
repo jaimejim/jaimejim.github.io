@@ -34,18 +34,18 @@ Once we have Raspbian ready, we can install Resilio. There is a [good tutorial a
 
 First we need to create a folder for Resilio.
 
-```
-sudo mkdir -p /opt/resilio/bin
-sudo mkdir /opt/resilio/app_files
-cd /opt/resilio/bin
+```sh
+$raspi:~$ sudo mkdir -p /opt/resilio/bin
+$raspi:~$ sudo mkdir /opt/resilio/app_files
+$raspi:~$ cd /opt/resilio/bin
 ```
 
 Download the latest version and unpack.
 
-```
-sudo wget  https://download-cdn.resilio.com/stable/linux-arm/resilio-sync_arm.tar.gz
-sudo tar -xvf resilio-sync_arm.tar.gz
-sudo rm -f resilio-sync_arm.tar.gz
+```sh
+$raspi:~$ sudo wget  https://download-cdn.resilio.com/stable/linux-arm/resilio-sync_arm.tar.gz
+$raspi:~$ sudo tar -xvf resilio-sync_arm.tar.gz
+$raspi:~$ sudo rm -f resilio-sync_arm.tar.gz
 ```
 
 Then we need to create a service for it.
@@ -56,7 +56,7 @@ sudo nano /etc/init.d/resilio
 
 You can copy the following, note that we change rslsync.conf for resilio.conf:
 
-```
+```sh
 #! /bin/sh
 # /etc/init.d/resilio
 #
@@ -81,15 +81,15 @@ exit 0
 
 Set appropriate permissions for the new file and set defaults for service.
 
-```
-sudo chmod 755 /etc/init.d/resilio
-sudo update-rc.d resilio defaults
+```sh
+$raspi:~$ sudo chmod 755 /etc/init.d/resilio
+$raspi:~$ sudo update-rc.d resilio defaults
 ```
 
 Now we need to create the configuration file with its basic information.
 
-```
-sudo nano /opt/resilio/bin/resilio.conf
+```sh
+$raspi:~$ sudo nano /opt/resilio/bin/resilio.conf
 ```
 You can find the config file at the [aforementioned wiki](https://goo.gl/ft8GzF).
 
@@ -99,15 +99,15 @@ After this you can reboot the Raspberry with `sudo reboot now`. After reboot you
 
 Now is it a good time to verify that you have networking, NATing and firewalls properly configured in your network.
 
-```
-netstat -na | grep 8888
+```sh
+$raspi:~$ netstat -na | grep 8888
 
 ```
 
 You can also enable SSH to the Raspberry for remote access.
 
-```
-sudo raspi-config
+```sh
+$raspi:~$ sudo raspi-config
 
 ```
 
@@ -119,15 +119,15 @@ First you'd need to format the drive into the ExFAT format. I chose ExFAT becaus
 
 Then we will need to install the drivers for the filesystem
 
-```
-sudo apt-get install exfat-fuse
+```sh
+$raspi:~$ sudo apt-get install exfat-fuse
 
 ```
 
 We can then reboot and check which are the available drives:
 
-```
-sudo fdisk -l
+```sh
+$raspi:~$ sudo fdisk -l
 ```
 
 You will most likely find the drive in the `/dev/sda2` partition, being `/dev/sda1` used for the partition table as below:
@@ -170,8 +170,8 @@ Another thing you can do is disable the GUI with `sudo raspi-config`. With that 
 
 To be sure of the current temperature run
 
-```
-vcgencmd measure_temp
+```sh
+$raspi:~$ vcgencmd measure_temp
 ```
 
 Once all is ready and running, you have yourself an excellent back up and file sharing system.  Here is the final Set Up with Bad Piggy included.
