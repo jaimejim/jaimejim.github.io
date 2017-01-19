@@ -1,5 +1,5 @@
 ---
-title: "Using Resilio on Raspberry Pi 3"
+title: "Resilio on Raspberry Pi 3"
 layout: post
 date: 2017-01-20 08:00
 tag:
@@ -96,7 +96,7 @@ You can find the config file at the [aforementioned wiki](https://goo.gl/ft8GzF)
 
 After this you can reboot the Raspberry with `sudo reboot now`. After reboot you should be able to access Resilio's GUI at `0.0.0.0:8888` and it'd look like below.
 
-![Resilio Web Gui](/assets/images/resilio_gui.jpg)
+![Resilio Web Gui](/assets/images/resilio_gui.png)
 
 Now is it a good time to verify that you have networking, NATing and firewalls properly configured in your network.
 
@@ -163,13 +163,14 @@ Now every time the Pi starts it knows how to mount your drive.
 
 ### Possible Heating Issues.
 
-The Raspberry will tend to overheat during syncing, and that's normal. However it shouldn't excess 75 °C or performance will suffer. I believe at 85 °C it will shutdown.
+The Raspberry will tend to overheat during syncing, and that's normal. However it shouldn't excess 75°C or performance will suffer. I believe at 85°C the Raspberry will shutdown to prevent damage.
 
 It is then important to have good ventilation on your board and it wouldn't hurt to stick a heat dissipator on top, like the one I show on the first picture.
 
-Another thing you can do is disable the GUI with `sudo raspi-config`, that should drop the temperature by 10 degrees pretty fast.
+Another thing you can do is disable the GUI with `sudo raspi-config`. With that the temperature should drop already by 10 degrees pretty fast.
 
 To be sure of the current temperature run
+
 ```
 vcgencmd measure_temp
 ```
