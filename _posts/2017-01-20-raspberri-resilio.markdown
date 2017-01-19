@@ -15,7 +15,7 @@ star: true
 
 As a pet project of mine, I have been using a spare Raspberry Pi 3 as a back up system for my files. I want to reduce my dependency on *cloud* services like Google Drive, Dropbox, etc and I want to have control over what I share.
 
-After some research I rediscovered [Resilio](https://www.resilio.com) which I remembered as Bittorrent Sync. It basically is a P2P-based file storage software that runs on pretty much any OS. It allows you to back up the files of your computer on any other device you own. You can also [back up your phone pictures](https://itunes.apple.com/us/app/resilio-sync-file-transfer/id1126282325?mt=8) on your computer automatically or share a large folder among friends or colleagues. If you have a NAS, you can also back it up there and sync the files between your computer and NAS.
+After some research I rediscovered [Resilio](https://www.resilio.com) which I remembered as Bittorrent Sync. It basically is a P2P-based file storage software that runs on pretty much any OS. It allows you to back up the files of your computer on any other device you own. You can also [back up your phone pictures](https://itunes.apple.com/us/app/resilio-sync-file-transfer/id1126282325?mt=8) on your computer automatically or share a large folder among friends or colleagues. If you have a NAS, you can also back it up there and sync the files between your computer and NAS. Finally, it also has the option of encrypting the folders that you are sharing, which is handy in the corporate environment.
 
 ![Sexy insides of the Raspberry 3](/assets/images/resilio_raspberry.jpg)
 
