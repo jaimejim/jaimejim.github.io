@@ -22,17 +22,17 @@ After some research I rediscovered [Resilio](https://www.resilio.com) which I re
 
 First step is getting a [Raspberry 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) (I had a spare one at the office) and perhaps an external hard drive, although an SD card might be sufficient for you. Mine came with 16GB and would have been enough.
 
-Raspberry 3 comes with a handy [New Out Of the Box Software (NOOBS)](https://www.raspberrypi.org/downloads/noobs/) which you can use during boot time to install any OS.
+Raspberry 3 comes with a handy New Out Of the Box Software [NOOBS](https://www.raspberrypi.org/downloads/noobs/) which, despite the name, even more experience users use to install Raspberry's OS.
 
-For our purposes I chose [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) as it is the default main distro and thus, usually has more support.
+This time I chose [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) as it is the default distro and possibly has more support.
 
 
 ### Installing Resilio on Raspbian
 
 
-Once we have Raspbian ready, we can install Resilio. There is a [good tutorial at Klavo Wiki](https://goo.gl/ft8GzF) that you can follow to the letter except for few nits, for that reason, I add it below as well.
+Once we have Raspbian ready, we can install Resilio. There is a good tutorial at [Klavo Wiki](https://goo.gl/ft8GzF) that you can follow to the letter except for a few nits, for that reason, I add the full installation below as well.
 
-First we need to create a folder for Resilio.
+We need to create a folder for Resilio.
 
 ```sh
 $raspi:~$ sudo mkdir -p /opt/resilio/bin
@@ -40,7 +40,7 @@ $raspi:~$ sudo mkdir /opt/resilio/app_files
 $raspi:~$ cd /opt/resilio/bin
 ```
 
-Download the latest version and unpack.
+Then we can download the official latest version and unpack it.
 
 ```sh
 $raspi:~$ sudo wget  https://download-cdn.resilio.com/stable/linux-arm/resilio-sync_arm.tar.gz
@@ -50,11 +50,11 @@ $raspi:~$ sudo rm -f resilio-sync_arm.tar.gz
 
 Then we need to create a service for it.
 
-```
-sudo nano /etc/init.d/resilio
+```sh
+$raspi:~$ sudo nano /etc/init.d/resilio
 ```
 
-You can copy the following, note that we change rslsync.conf for resilio.conf:
+You can copy the following config file, note that we change rslsync.conf for resilio.conf:
 
 ```sh
 #! /bin/sh
@@ -79,7 +79,7 @@ exit 0
 
 ```
 
-Set appropriate permissions for the new file and set defaults for service.
+We can then set the appropriate permissions for the new file and set defaults for service.
 
 ```sh
 $raspi:~$ sudo chmod 755 /etc/init.d/resilio
@@ -100,7 +100,8 @@ After this you can reboot the Raspberry with `sudo reboot now`. After reboot you
 Now is it a good time to verify that you have networking, NATing and firewalls properly configured in your network.
 
 ```sh
-$raspi:~$ netstat -na | grep 8888
+pi@raspberrypi:~ $ netstat -na | grep 8888
+tcp        0      0 0.0.0.0:8888            0.0.0.0:*               LISTEN    
 
 ```
 
@@ -172,6 +173,7 @@ To be sure of the current temperature run
 
 ```sh
 $raspi:~$ vcgencmd measure_temp
+temp=54.8C
 ```
 
 Once all is ready and running, you have yourself an excellent back up and file sharing system.  Here is the final Set Up with Bad Piggy included.
