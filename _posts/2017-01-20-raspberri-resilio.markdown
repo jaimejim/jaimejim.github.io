@@ -112,7 +112,7 @@ sudo raspi-config
 
 ```
 
-### Mounting an USB External Hard Drive for Resilio Storage
+### Mounting an External USB Hard Drive for Resilio Storage
 
 This point is optional, since now we already have Resilio properly running on our board. It is only needed if you are planning to back up music or other larger files.
 
