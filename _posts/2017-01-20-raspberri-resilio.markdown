@@ -35,23 +35,23 @@ Once we have Raspbian ready, we can install Resilio. There is a good tutorial at
 We need to create a folder for Resilio.
 
 ```sh
-$raspi:~$ sudo mkdir -p /opt/resilio/bin
-$raspi:~$ sudo mkdir /opt/resilio/app_files
-$raspi:~$ cd /opt/resilio/bin
+raspi:~$  sudo mkdir -p /opt/resilio/bin
+raspi:~$  sudo mkdir /opt/resilio/app_files
+raspi:~$  cd /opt/resilio/bin
 ```
 
 Then we can download the official latest version and unpack it.
 
 ```sh
-$raspi:~$ sudo wget  https://download-cdn.resilio.com/stable/linux-arm/resilio-sync_arm.tar.gz
-$raspi:~$ sudo tar -xvf resilio-sync_arm.tar.gz
-$raspi:~$ sudo rm -f resilio-sync_arm.tar.gz
+raspi:~$  sudo wget  https://download-cdn.resilio.com/stable/linux-arm/resilio-sync_arm.tar.gz
+raspi:~$  sudo tar -xvf resilio-sync_arm.tar.gz
+raspi:~$  sudo rm -f resilio-sync_arm.tar.gz
 ```
 
 Then we need to create a service for it.
 
 ```sh
-$raspi:~$ sudo nano /etc/init.d/resilio
+raspi:~$  sudo nano /etc/init.d/resilio
 ```
 
 You can copy the following config file, note that we change rslsync.conf for resilio.conf:
@@ -82,14 +82,14 @@ exit 0
 We can then set the appropriate permissions for the new file and set defaults for service.
 
 ```sh
-$raspi:~$ sudo chmod 755 /etc/init.d/resilio
-$raspi:~$ sudo update-rc.d resilio defaults
+raspi:~$  sudo chmod 755 /etc/init.d/resilio
+raspi:~$  sudo update-rc.d resilio defaults
 ```
 
 Now we need to create the configuration file with its basic information.
 
 ```sh
-$raspi:~$ sudo nano /opt/resilio/bin/resilio.conf
+raspi:~$  sudo nano /opt/resilio/bin/resilio.conf
 ```
 You can find the config file at the [aforementioned wiki](https://goo.gl/ft8GzF).
 
@@ -100,7 +100,7 @@ After this you can reboot the Raspberry with `sudo reboot now`. After reboot you
 Now is it a good time to verify that you have networking, NATing and firewalls properly configured in your network.
 
 ```sh
-pi@raspberrypi:~ $ netstat -na | grep 8888
+raspi:~$  netstat -na | grep 8888
 tcp        0      0 0.0.0.0:8888            0.0.0.0:*               LISTEN    
 
 ```
@@ -108,7 +108,7 @@ tcp        0      0 0.0.0.0:8888            0.0.0.0:*               LISTEN
 You can also enable SSH to the Raspberry for remote access.
 
 ```sh
-$raspi:~$ sudo raspi-config
+raspi:~$  sudo raspi-config
 
 ```
 
@@ -121,14 +121,14 @@ First you'd need to format the drive into the ExFAT format. I chose ExFAT becaus
 Then we will need to install the drivers for the filesystem
 
 ```sh
-$raspi:~$ sudo apt-get install exfat-fuse
+raspi:~$  sudo apt-get install exfat-fuse
 
 ```
 
 We can then reboot and check which are the available drives:
 
 ```sh
-$raspi:~$ sudo fdisk -l
+raspi:~$  sudo fdisk -l
 ```
 
 You will most likely find the drive in the `/dev/sda2` partition, being `/dev/sda1` used for the partition table as below:
@@ -172,7 +172,7 @@ Another thing you can do is disable the GUI with `sudo raspi-config`. With that 
 To be sure of the current temperature run
 
 ```sh
-$raspi:~$ vcgencmd measure_temp
+raspi:~$  vcgencmd measure_temp
 temp=54.8C
 ```
 
