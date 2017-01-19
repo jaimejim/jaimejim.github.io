@@ -2,6 +2,7 @@
 title: "Resilio on Raspberry Pi 3"
 layout: post
 date: 2017-01-20 08:00
+image: /assets/images/raspberry_setup.jpg
 tag:
 - Resilio
 - Raspberry Pi
