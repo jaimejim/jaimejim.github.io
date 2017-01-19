@@ -5,9 +5,8 @@ date: 2017-01-20 08:00
 tag:
 - Resilio
 - Raspberry Pi
-- Back Up
 - File Synchronization
-- Hard Drive
+- P2P
 - NAS
 blog: true
 star: true
