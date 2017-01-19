@@ -1,7 +1,7 @@
 ---
 title: "CoAP functionality on LWM2M"
 layout: post
-date: 2016-10-05 16:00
+date: 2016-12-13 16:00
 tag:
 - Device Management
 - CoAP
