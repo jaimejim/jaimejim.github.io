@@ -1,5 +1,5 @@
 ---
-title: "Services drop the language fragment on URLs"
+title: "Services drop language fragment from URLs"
 layout: post
 date: 2016-10-05 16:00
 tag:
