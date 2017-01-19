@@ -96,7 +96,7 @@ You can find the config file at the [aforementioned wiki](https://goo.gl/ft8GzF)
 
 After this you can reboot the Raspberry with `sudo reboot now`. After reboot you should be able to access Resilio's GUI at `0.0.0.0:8888` and it'd look like below.
 
-![Resilio Web Gui](/assets/images/resilio_raspberry.jpg)
+![Resilio Web Gui](/assets/images/resilio_gui.jpg)
 
 Now is it a good time to verify that you have networking, NATing and firewalls properly configured in your network.
 
