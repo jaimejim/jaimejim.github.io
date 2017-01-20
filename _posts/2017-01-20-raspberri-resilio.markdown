@@ -102,14 +102,12 @@ Now is it a good time to verify that you have networking, NATing and firewalls p
 ```sh
 raspi:~$  netstat -na | grep 8888
 tcp        0      0 0.0.0.0:8888            0.0.0.0:*               LISTEN    
-
 ```
 
 You can also enable SSH to the Raspberry for remote access.
 
 ```sh
 raspi:~$  sudo raspi-config
-
 ```
 
 ### Mounting an External USB Hard Drive for Resilio Storage
@@ -122,7 +120,6 @@ Then we will need to install the drivers for the filesystem
 
 ```sh
 raspi:~$  sudo apt-get install exfat-fuse
-
 ```
 
 We can then reboot and check which are the available drives:
