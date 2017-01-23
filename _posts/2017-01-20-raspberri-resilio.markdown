@@ -177,7 +177,7 @@ Once all is ready and running, you have yourself an excellent back up and file s
 
 ![Final setup with Bad Piggy watching](/assets/images/raspberry_setup.jpg)
 
-###**Update (23-01-2017):** Connectivity Issues
+**Update (23-01-2017): Connectivity Issues**
 
 I have been noticing intermittent connectivity problems over wifi. I have not managed to debug whether it is a problem with the Raspberry, the router or something else.
 
