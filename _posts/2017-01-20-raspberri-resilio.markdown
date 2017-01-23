@@ -176,3 +176,25 @@ temp=54.8C
 Once all is ready and running, you have yourself an excellent back up and file sharing system.  Here is the final Set Up with Bad Piggy included.
 
 ![Final setup with Bad Piggy watching](/assets/images/raspberry_setup.jpg)
+
+### **Update (23-01-2017):** Connectivity Issues
+
+I have been noticing intermittent connectivity problems over wifi. I have not managed to debug whether it is a problem with the Raspberry, the router or something else.
+
+Using the Ethernet port simultaneously, thus having two different IP addresses on two interfaces, seems to palliate the problem. Resilio will be accessible through the Ethernet interface. There is a relatively larger percentage of dropped packets over wifi. Still have to figure out why.
+
+```
+eth0      Link encap:Ethernet  HWaddr <XXX>  
+          inet addr:<XXX>.221  Bcast:10.0.3.255  Mask:255.255.252.0
+          RX packets:693059 errors:0 dropped:2 overruns:0 frame:0
+          TX packets:349176 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:978393262 (933.0 MiB)  TX bytes:31174959 (29.7 MiB)
+
+wlan0     Link encap:Ethernet  HWaddr b8:27:eb:65:20:61  
+          inet addr:<XXX>.222  Bcast:<XXX>.255  Mask:255.255.252.0
+          RX packets:207383 errors:0 dropped:3062 overruns:0 frame:0
+          TX packets:62074 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:253370999 (241.6 MiB)  TX bytes:8083493 (7.7 MiB)
+```
