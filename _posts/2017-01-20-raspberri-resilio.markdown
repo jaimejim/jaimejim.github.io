@@ -201,31 +201,30 @@ wlan0     Link encap:Ethernet  HWaddr b8:27:eb:65:20:61
 
 Some estimated colleagues helped me out in the process of checking the source of the problem. Thanks to that I learnt some new useful commands, which I write below.
 
-iwlist
+*iwlist*
+Displays detailed information about wireless interfaces
 
 ```sh
-// Displays detailed information about wireless interfaces
 raspi:~$  sudo iwlist wlan0 scanning
 ```
 
-iwevent
+*iwevent*
+Shows events on wireless interfaces
+
 
 ```sh
-// Shows events on wireless interfaces
 pi@raspberrypi:~ $ sudo iwevent
 Waiting for Wireless Events from interfaces...
 ```
 
-iostat
+*iostat*
+Provides CPU statistics and I/O data about devices and partitions
 
 ```sh
-// Provides CPU statistics and I/O data about devices and partitions
 pi@raspberrypi:~ $ iostat
 Linux 4.4.34-v7+ (raspberrypi) 	23/01/17 	_armv7l_	(4 CPU)
-
 avg-cpu:  %user   %nice %system %iowait  %steal   %idle
            7.36    0.00    7.68    5.47    0.00   79.49
-
 Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
 mmcblk0           3.06        35.37       123.84     394890    1382484
 sda              25.63        27.17      2896.17     303364   32332080
