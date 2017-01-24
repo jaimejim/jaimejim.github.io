@@ -9,7 +9,7 @@ https://datatracker.ietf.org/wg/core/milestones/
 CoRE WG General:
  ✔ Send ietf97summary @due(2016-11-18 21:12) http://jaimejim.github.io/temp/ietf97summary.html @done(2017-01-03 15:14) @project(CoRE WG General)
  ✔ Request slots @done(2017-01-03 15:14) @project(CoRE WG General)
- ☐ [GEN] Find Co-Chair for CoRE-WG session IETF98.  @due(17-01-24 20:54) @jaime
+ ☐ [GEN] Find Co-Chair for CoRE-WG session IETF98. @jaime  @timestamp(2017-01-24 18:22)
  ☐ [GEN] Adjust milestones https://datatracker.ietf.org/wg/core/milestones/ @due(17-01-25)
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
@@ -139,20 +139,8 @@ Submissions to IESG:
  ☐ IESG Submission of draft-ietf-core-interfaces @due(17-03-01 21:03)
 
 Important Dates:
-＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-// ⌘+R to see groups of tasks
-// c, tab — @critical;
-// h, tab — @high;
-// l, tab — @low;
-// s, tab — @started
-// ⌘ + enter or ⌘ + i: new task
-// ⌘ + d: toggle task as completed.
-// ⌘ + shift + a will archive the done tasks, by removing them from your list and appending them to the bottom of the file under Archive project
-// ctrl + c: toggle task as cancelled on Mac
-// ⌘+shift+U opens the URL under the cursor www.github.com or skype:nickname
-// ctrl+o opens the file in sublime
-// Convert current document to HTML with ⌘ + shift + p : Types Task View as HTML
-＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+
+
 
 
 Archive:
