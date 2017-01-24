@@ -9,8 +9,8 @@ https://datatracker.ietf.org/wg/core/milestones/
 CoRE WG General:
  ✔ Send ietf97summary @due(2016-11-18 21:12) http://jaimejim.github.io/temp/ietf97summary.html @done(2017-01-03 15:14) @project(CoRE WG General)
  ✔ Request slots @done(2017-01-03 15:14) @project(CoRE WG General)
- ☐ [GEN] Find Co-Chair for CoRE-WG session IETF98. @jaime
- ☐ [GEN] Adjust milestones https://datatracker.ietf.org/wg/core/milestones/
+ ☐ [GEN] Find Co-Chair for CoRE-WG session IETF98. @due(2017-01-24) @jaime
+ ☐ [GEN] Adjust milestones https://datatracker.ietf.org/wg/core/milestones/ @due(2017-01-25)
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
  Summary available http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls.html
