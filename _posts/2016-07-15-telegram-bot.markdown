@@ -113,5 +113,11 @@ data:    [0] KtcN /usr/bin/nodejs belvederebot.js 4987    1019
 $jaime:~$ forever list
 ```
 
+You can also add a crontab task for periodically checking task list updates.
+``` bash
+$jaime:~$ crontab -e
+0  *    * * *  /usr/bin/forever restart /home/user/belvederebot.js
+```
+
 And that's all, this is how the bot looks like once running.
 ![Telegram Bot running]({{ site.url }}/assets/images/telegram_bot.png)
