@@ -29,6 +29,8 @@ This time I chose [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) as
 
 ### Installing Resilio on Raspbian
 
+**Update (24-01-2017)**: From the [Resilio Forum](https://forum.resilio.com/topic/42608-what-is-the-correct-way-to-install-on-raspberry-pi/#comment-119414) it looks like you can install directly Resilio from their official [Debian package repository](https://help.getsync.com/hc/en-us/articles/206178924-Installing-Sync-package-on-Linux). You don't have to follow the instructions below if you do. 
+
 
 Once we have Raspbian ready, we can install Resilio. There is a good tutorial at [Klavo Wiki](https://goo.gl/ft8GzF) that you can follow to the letter except for a few nits, for that reason, I add the full installation below as well.
 
