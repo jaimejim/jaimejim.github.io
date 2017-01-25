@@ -25,7 +25,7 @@ ETCH draft-ietf-core-etch:
  ✔ [ETCH] IESG Submission of draft-ietf-core-etch @due(16-07-25 15:25) delayed to @due(16-08-20  15:25) @done(2016-12-20 11:03) @project(ETCH draft-ietf-core-etch)
  ✔ [ETCH] Alexey AD review @iesg @done(2016-12-20 11:03) @project(ETCH draft-ietf-core-etch)
  ✔ [ETCH] IETFLC @iesg @done(2016-12-20 11:03) @project(ETCH draft-ietf-core-etch)
- ☐ [ETCH] AD go ahead if IETF-LC OK. @iesg
+ ☐ [ETCH] AD go ahead if IETF-LC OK. @iesg  @timestamp(2017-01-25 11:24)
  ☐ [ETCH] Address Kthaleen's comments @carsten
  ✔ [ETCH] IESG Ballot (ADs read it). @iesg @done(2016-12-20 11:03) @project(ETCH draft-ietf-core-etch)
 
