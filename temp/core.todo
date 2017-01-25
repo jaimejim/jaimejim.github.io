@@ -110,9 +110,9 @@ Congestion Control draft-ietf-core-cocoa:
  ✔ [CCA] pretty much Ready. What to do with the appendix, separate document so that we can progress the rest. @done(2017-01-25 12:31) @project(Congestion Control draft-ietf-core-cocoa)
  ✔ Accepted WG  @done(2017-01-25 12:33) @project(Congestion Control draft-ietf-core-cocoa)
 
-COMI draft-vanderstok-core-comi:
- ☐ [COMI] Confirm adoption v11 on mailing list draft-ietf-core-comi @jaime @timestamp(2017-01-25 12:34)
- ☐ [COMI] Find new editor @carsten @jaime @medium @timestamp(2017-01-30 12:34)
+COMI draft-ietf-core-comi:
+ ☐ [COMI] Confirm adoption v11 on mailing list draft-ietf-core-comi @carsten @timestamp(2017-01-25 12:34).
+ ☐ [COMI] Find new editor @carsten @jaime @medium @timestamp(2017-01-29 12:34) Perhaps Michel V.
  ☐ [COMI] Peter to address Ana Minaburo comments on CON messages.
 
 Interfaces draft-ietf-core-interfaces:
@@ -145,9 +145,9 @@ Submissions to IESG:
  ☐ IESG Submission of draft-ietf-core-senml @timestamp(2017-02-25 13:34)
  ☐ IESG Submission of draft-ietf-core-resource-directory @timestamp(2017-03-10 13:34)
  ☐ IESG Submission of draft-ietf-core-coap-tcp-tls @timestamp(2017-03-09 13:40)
- ☐ IESG Submission of draft-ietf-core-yang-cbor  @timestamp(2017-03-09 13:52)
- ☐ IESG Submission of draft-ietf-core-comi @due(16-12-15 21:01)
- ☐ IESG Submission of draft-ietf-core-interfaces @due(17-03-01 21:03)
+ ☐ IESG Submission of draft-ietf-core-yang-cbor @timestamp(2017-03-09 13:52)
+ ☐ IESG Submission of draft-ietf-core-comi @timestamp(2017-03-09 13:56)
+ ☐ IESG Submission of draft-ietf-core-interfaces @timestamp(2017-03-09 13:57)
 
 Important Dates:
  ☐ IETF 98
