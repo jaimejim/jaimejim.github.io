@@ -43,7 +43,7 @@ CoRE-Links draft-ietf-core-links-json:
  ☐ [LNKS] IESG Submission of draft-ietf-core-links-json  @timestamp(2017-01-24 18:30)
  ☐ [LNKS] @Carsten to work on this.
  ☐ [LNKS] Ad Content format values on IANA considerations.
- ☐ [LNKS] Shepherd Writeup @due(16-07-30 10:00) @jaime
+ ☐ [LNKS] Shepherd Writeup @jaime @timestamp(2017-01-30 12:27)
  ☐ [LNKS] Check Klaus' draft on Bulletin board.
 
 RD draft-ietf-core-resource-directory:
@@ -52,7 +52,7 @@ RD draft-ietf-core-resource-directory:
  ☐ [RD] Check the diff with https://github.com/mjkoster/I-D/tree/master/CoRE%20RD @jaime @medium
  ☐ [RD] [EITF96] New reviews by Hannes T, Klaus H, Darshak, Bill S, Christian G, Sebastian (?), Matthias K.
  ✘ [RD] WGLC @due(16-08-01 15:28), depending on W3C-TD dependency @cancelled(2017-01-17 10:35) @project(RD draft-ietf-core-resource-directory)
- ☐ [RD] IESG Submission of draft-ietf-core-resource-directory @due(17-03-01 15:28)
+ ☐ [RD] IESG Submission of draft-ietf-core-resource-directory  @timestamp(2017-02-25 12:28)
  ☐ [RD] Check Klaus' draft on t2t data hub. @jaime
  ☐ [RD] Regular call on this add jaime @carsten
 
@@ -61,8 +61,8 @@ SenML draft-ietf-core-senml:
  ☐ [SML] WGLC @due(16-09-01 16:40)
  ✔ [SML] New items after Berlin. It will require some work. @done(2016-12-20 11:04) @project(SenML draft-ietf-core-senml)
  ☐ [SML] New Registry. Check with IANA.
- ☐ [SML] IESG Submission of draft-ietf-core-senml  @due(16-08-01 15:28) delayed to @due(16-09-29 15:28)
- ☐ [SML] Check travis error. travis.yml missing @due(17-02-01 15:28)
+ ☐ [SML] IESG Submission of draft-ietf-core-senml  @timestamp(2017-03-25 12:28).
+ ✔ [SML] Check travis error. travis.yml missing Cullen to check.  @done(2017-01-25 12:29) @project(SenML draft-ietf-core-senml)
 
 COMI-COOL CBOR draft-ietf-core-yang-cbor:
      Target like https://tools.ietf.org/html/rfc7388
@@ -73,44 +73,49 @@ COMI-COOL CBOR draft-ietf-core-yang-cbor:
      draft-somaraju-core-sid-latest.md
      draft-turner-cool-problem-latest.md
      draft-veillette-core-cool-latest.md
- ☐ [COCOL] Call for adoption for the merge document. @due(16-09-25 15:28)
+ ☐ [COCOL] Call for adoption for the merge document.  @timestamp(2017-01-25 12:29)
  ✔ [COCOL] Sid added as WG document draft-ietf-core-sid. @done(2017-01-03 15:21) @project(COMI-COOL CBOR draft-ietf-core-yang-cbor)
  ☐ [COCOL] Plan ad-hoc meeting on device management during IETF96. @Carsten, to send invite for tuesday morning on IETF. @critical
- ☐ [COCOL] IESG Submission of draft-ietf-core-yang-cbor @due(17-01-10 21:01)
+ ☐ [COCOL] IESG Submission of draft-ietf-core-yang-cbor @timestamp(2017-03-10 12:29)
  ☐ [COCOL] [IETF96] draft-veillette-core-cool–02 6 people read it. Agreed to split document.
  ☐ [COCOL] [IETF96] fix draft-veillette-core-cool for YANG choices.
  ☐ [COCOL] @carsten to check status with Benoir.
 
-SID identifiers draft-somaraju-core-sid:
- ☐ [COCOL-SID] Finnish discussion about YID and how to mo ve forward with this.  @due(16-11-12 15:01)
+SID identifiers draft-ietf-core-sid:
+ ✔ [COCOL-SID] Finnish discussion about YID and how to mo ve forward with this.   @done(2017-01-25 12:29) @project(SID identifiers draft-somaraju-core-sid)
+ ✔ Accepted WG @done(2017-01-25 12:32) @project(SID identifiers draft-ietf-core-sid)
 
 YANG CBOR draft-ietf-core-yang-cbor:
- ☐ [YANG-CBOR] Ask the authors wether comments have been completed. @due(17-01-12 15:01) @Carsten
+ ✔ [YANG-CBOR] Ask the authors wether comments have been completed. @due(17-01-12 15:01) @Carsten @done(2017-01-25 12:30) @project(YANG CBOR draft-ietf-core-yang-cbor)
 
-PubSub draft-ietf-koster-pubsub:
- ☐ [PBSB] Resubmit new version. Check Klaus' document too. @jaime
+PubSub draft-ietf-core-coap-pubsub:
+ ✔ [PBSB] Resubmit new version. Check Klaus' document too. @jaime @done(2017-01-25 12:30) @project(PubSub draft-ietf-koster-pubsub)
+ ✔ Accepted WG @done(2017-01-25 12:33) @project(PubSub draft-ietf-core-coap-pubsub)
 
 DynLink draft-groves-core-dynlink:
  ☐ [DNLK] To read.
 
 CoRE Object Security CoAP draft-ietf-core-object-security:
- ☐ [OSCOAP] End of the year WGLC.
+ ✔ [OSCOAP] End of the year WGLC. @done(2017-01-25 12:30) @project(CoRE Object Security CoAP draft-ietf-core-object-security)
+ ☐ [OSCOAP] Ongoing discussion on inner-blockwise.
  ☐ [OSCOAP] Get to a level of maturity so that it can be used for implementation.
- ☐ [OSCOAP] Interop target in December.
+ ✘ [OSCOAP] Interop target in December. @cancelled(2017-01-25 12:30) @project(CoRE Object Security CoAP draft-ietf-core-object-security)
+ ☐ [OSCOAP] Interop in March
  ☐ [OSCOAP] Ask for the reviewers: Reviews promised by Jim, Sandeep Kumar and Thomas Watteyne.
 
-Congestion Control draft-bormann-core-cocoa:
- ☐ [CCA] pretty much Ready. What to do with the appendix, separate document so that we can progress the rest.
+Congestion Control draft-ietf-core-cocoa:
+ ✔ [CCA] pretty much Ready. What to do with the appendix, separate document so that we can progress the rest. @done(2017-01-25 12:31) @project(Congestion Control draft-ietf-core-cocoa)
+ ✔ Accepted WG  @done(2017-01-25 12:33) @project(Congestion Control draft-ietf-core-cocoa)
 
-COMI Draft:
- ☐ [COMI] draft-vanderstok-core-comi @due(16-08-27 15:01)
- ☐ [COMI] Confirm adoption v11 on mailing list @due(17-01-25 15:01) @jaime
- ☐ [COMI] Find new editor @due(17-01-30 15:01) @carsten @jaime @medium
+COMI draft-vanderstok-core-comi:
+ ☐ [COMI] Confirm adoption v11 on mailing list draft-ietf-core-comi @jaime @timestamp(2017-01-25 12:34)
+ ☐ [COMI] Find new editor @carsten @jaime @medium @timestamp(2017-01-30 12:34)
+ ☐ [COMI] Peter to address Ana Minaburo comments on CON messages.
 
 Interfaces draft-ietf-core-interfaces:
- ☐ [INTF] Restart work after W3C in Beijing @due(16-08-06 21:03)
- ☐ [INTF] Document split confirmed.
- ☐ [INTF] IESG Submission of draft-ietf-core-interfaces @due(17-03-01 21:03)
+ ✔ [INTF] Restart work after W3C in Beijing @timestamp(2017-01-30 12:34) @done(2017-01-25 12:35) @project(Interfaces draft-ietf-core-interfaces)
+ ✔ [INTF] Document split confirmed. @done(2017-01-25 12:34) @project(Interfaces draft-ietf-core-interfaces)
+ ✔ [INTF] IESG Submission of draft-ietf-core-interfaces @due(17-03-01 21:03) @done(2017-01-25 12:34) @project(Interfaces draft-ietf-core-interfaces)
 
 --------
 Freezer

@@ -29,7 +29,7 @@ This time I chose [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) as
 
 ### Installing Resilio on Raspbian
 
-**Update (24-01-2017)**: From the [Resilio Forum](https://forum.resilio.com/topic/42608-what-is-the-correct-way-to-install-on-raspberry-pi/#comment-119414) it looks like you can install directly Resilio from their official [Debian package repository](https://help.getsync.com/hc/en-us/articles/206178924-Installing-Sync-package-on-Linux). You don't have to follow the instructions below if you do. 
+**Update (24-01-2017)**: From the [Resilio Forum](https://forum.resilio.com/topic/42608-what-is-the-correct-way-to-install-on-raspberry-pi/#comment-119414) it looks like you can install directly Resilio from their official [Debian package repository](https://help.getsync.com/hc/en-us/articles/206178924-Installing-Sync-package-on-Linux). You don't have to follow the instructions below if you do.
 
 
 Once we have Raspbian ready, we can install Resilio. There is a good tutorial at [Klavo Wiki](https://goo.gl/ft8GzF) that you can follow to the letter except for a few nits, for that reason, I add the full installation below as well.
@@ -201,7 +201,7 @@ wlan0     Link encap:Ethernet  HWaddr b8:27:eb:65:20:61
           RX bytes:253370999 (241.6 MiB)  TX bytes:8083493 (7.7 MiB)
 ```
 
-Some estimated colleagues helped me out in the process of checking the source of the problem. Thanks to that I learnt some new useful commands, which I write below.
+Some estimated colleagues helped me out in the process of checking the source of the problem. Thanks to that I learnt some new useful commands, which I write below. However, to be perfectly honest it seems to work better without the `wlan0` interface altogether.
 
 *iwlist*
 Displays detailed information about wireless interfaces
