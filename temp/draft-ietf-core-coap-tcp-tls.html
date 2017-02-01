@@ -336,21 +336,23 @@ sup {
 </li>
 </ul>
 
-<hr>
-
-<p>Note: <br>
-There is already a lengthy <a href="http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls-02.html">summary for v-02 before Brian Raymor&#39;s merger</a>.</p>
+<h3 id="toc_2">Action Points</h3>
 
 <hr>
 
-<h3 id="toc_2">Editor&#39;s Copy 2017-02-01</h3>
+<p>Note:<br>
+There is already a lengthy <a href="http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls-02.html">summary for v-02 before Brian&#39;s merger</a>.</p>
+
+<hr>
+
+<h3 id="toc_3">Editor&#39;s Copy 2017-02-01</h3>
 
 <ul>
 <li><p><a href="https://tools.ietf.org/rfcdiff?url1=draft-ietf-core-coap-tcp-tls&amp;url2=https://raw.githubusercontent.com/core-wg/coap-tcp-tls/gh-pages/draft-ietf-core-coap-tcp-tls.txt">Latest diff available</a></p></li>
 <li><p><a href="https://github.com/core-wg/coap-tcp-tls/issues">Github page</a></p></li>
 </ul>
 
-<h4 id="toc_3">Open Issues</h4>
+<h4 id="toc_4">Open Issues</h4>
 
 <p><strong>103: Updates to Signaling Option Numbers:</strong> <a href="https://github.com/core-wg/coap-tcp-tls/issues/103">https://github.com/core-wg/coap-tcp-tls/issues/103</a></p>
 
@@ -362,23 +364,38 @@ There is already a lengthy <a href="http://jaimejim.github.io/temp/draft-ietf-co
 
 <p><strong>82: Use of Server-Name setting in TLS and WebSocket cases:</strong> <a href="https://github.com/core-wg/coap-tcp-tls/issues/82">https://github.com/core-wg/coap-tcp-tls/issues/82</a></p>
 
+<p>Should S-N option be used only over TCP?<br>
+Ambiguity on section 7.1</p>
+
+<p>AFAIK Server-Name is just an URI while Server Name Indication (SNI) has security properties.</p>
+
 <p><strong>81: Clarifying overrides for CSM options:</strong> <a href="https://github.com/core-wg/coap-tcp-tls/issues/81">https://github.com/core-wg/coap-tcp-tls/issues/81</a></p>
+
+<p>After which message size we enable BERT support?</p>
 
 <p><strong>77: Clarify registration criteria for CoAP Signaling Option Numbers Registry:</strong><a href="https://github.com/core-wg/coap-tcp-tls/issues/77">https://github.com/core-wg/coap-tcp-tls/issues/77</a></p>
 
+<p>IANA related. Need to clarify how to register Sig Opt Numbers to avoid confusion with other registries. Use RFC7252 12.2 as reference.<br>
+Related to 103.</p>
+
 <p><strong>69: Ping and Pong Messages: ... a single Pong message MUST be returned?</strong><a href="https://github.com/core-wg/coap-tcp-tls/issues/69">https://github.com/core-wg/coap-tcp-tls/issues/69</a></p>
+
+<p>MUST seems to be OK for Pong, we could clarify with a SHOULD depending on practicability.</p>
 
 <p><strong>66: Incorrect reference to Uri-Host Option:</strong> <a href="https://github.com/core-wg/coap-tcp-tls/issues/66">https://github.com/core-wg/coap-tcp-tls/issues/66</a></p>
 
-<h3 id="toc_4">Comments</h3>
+<p>Editorial, wording should reflect range.<br>
+Related to 103.</p>
+
+<h3 id="toc_5">Other Comments</h3>
 
 <hr>
 
 <p><span id="shepherd-writeup"></span></p>
 
-<h2 id="toc_5">Shepherd Writeup (in progress)</h2>
+<h2 id="toc_6">Shepherd Writeup (in progress)</h2>
 
-<h3 id="toc_6">Summary</h3>
+<h3 id="toc_7">Summary</h3>
 
 <p>Document Shepherd: Jaime Jiménez, <a href="mailto:jaime.jimenez@ericsson.com">jaime.jimenez@ericsson.com</a><br>
 Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnikov@fastmail.fm</a></p>
@@ -389,15 +406,15 @@ Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnik
 
 <p>The document is intended as an Standards Track RFC.</p>
 
-<h3 id="toc_7">Review and Consensus</h3>
+<h3 id="toc_8">Review and Consensus</h3>
 
-<h3 id="toc_8">Intellectual Property</h3>
+<h3 id="toc_9">Intellectual Property</h3>
 
 <p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG.</p>
 
-<h3 id="toc_9">Other Points</h3>
+<h3 id="toc_10">Other Points</h3>
 
-<h3 id="toc_10">Checklist</h3>
+<h3 id="toc_11">Checklist</h3>
 
 <ul>
 <li class="task-list-item"><input type="checkbox" checked> Does the shepherd stand behind the document and think the document is ready for publication?
