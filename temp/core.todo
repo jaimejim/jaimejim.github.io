@@ -47,9 +47,10 @@ RD draft-ietf-core-resource-directory:
  ☐ [RD] Regular call on this add jaime @carsten
 
 SenML draft-ietf-core-senml:
- ☐ [SML] WGLC @due(16-09-01 16:40)
+ ☐ [SML] WGLC @timestamp(2017-03-15 13:36)
+ ☐ [SML] IESG @timestamp(2017-04-15 13:36)
  ☐ [SML] New Registry. Check with IANA.
- ☐ [SML] IESG Submission of draft-ietf-core-senml  @timestamp(2017-03-25 12:28).
+ ☐ [SML] IESG Submission of draft-ietf-core-senml  @timestamp(2017-03-13 12:28).
 
 COMI-COOL :
      Target like https://tools.ietf.org/html/rfc7388
@@ -96,7 +97,8 @@ CoRE Application Descriptions draft-hartke-core-apps:
  ☐ [CAPPS] Read latest version.
 
 Protocol Negotiation draft-silverajan-core-coap-protocol-negotiation:
- ☐ [PRNE] Present alternatives, obtain WG direction. Connection to TCP/TLS. @due(16-07-21 16:58)
+ ✔ [PRNE] Present alternatives, obtain WG direction. Connection to TCP/TLS. @done(2017-02-01 15:58) @project(Protocol Negotiation draft-silverajan-core-coap-protocol-negotiation)
+ ☐ [PRNE] New submission by @timestamp(2017-03-19 13:36)
 
 Alternative transports draft-ietf-bill:
  ☐ To be picked after TCP draft is done?
@@ -106,7 +108,7 @@ CoAP Over SMS draft-becker-core-coap-sms-gprs:
 
 Submissions to IESG:
  ☐ IESG Submission of draft-ietf-core-links-json @timestamp(2017-02-01 13:34)
- ☐ IESG Submission of draft-ietf-core-senml @timestamp(2017-02-25 13:34)
+ ☐ IESG Submission of draft-ietf-core-senml @timestamp(2017-04-15 13:36)
  ☐ IESG Submission of draft-ietf-core-resource-directory @timestamp(2017-03-10 13:34)
  ☐ IESG Submission of draft-ietf-core-coap-tcp-tls @timestamp(2017-03-09 13:40)
  ☐ IESG Submission of draft-ietf-core-yang-cbor @timestamp(2017-03-09 13:52)
