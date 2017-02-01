@@ -320,89 +320,82 @@ sup {
 <h3 id="toc_1">Tentative Timeline</h3>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked> <a href="#summary">draft summary</a>
-</li>
-<li class="task-list-item"><input type="checkbox"> <a href="#shepherd-writeup">Shepherd Writeup</a> @Jaime <code>in progress</code> <code>@due(16-11-15 15:28)</code>.
+<li class="task-list-item"><input type="checkbox"> <a href="#shepherd-writeup">Shepherd Writeup</a>
 </li>
 <li><p>Q/A</p>
 
 <ul>
+<li class="task-list-item"><input type="checkbox"> Open Issues.
+</li>
 <li class="task-list-item"><input type="checkbox"> Are there implementations of the draft?
 </li>
 <li class="task-list-item"><input type="checkbox"> IPR declaration.
 </li>
 </ul></li>
-<li class="task-list-item"><p><input type="checkbox"> IESG submission <code>@due(16-XX-XX)</code>.</p>
+<li class="task-list-item"><p><input type="checkbox"> IESG submission <code>@timestamp(2017-03-09 13:40)</code>.</p>
 </li>
 </ul>
 
 <hr>
 
-<h4 id="toc_2">Summary before merger draft-ietf-core-coap-tcp-tls-02</h4>
-
-<p>There is already <a href="http://jaimejim.github.io/draft-ietf-core-coap-tcp-tls-02">a detailed previous draft summary, issues and comments before Brian Raymor&#39;s merger</a>.</p>
+<p>Note: <br>
+There is already a lengthy <a href="http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls-02.html">summary for v-02 before Brian Raymor&#39;s merger</a>.</p>
 
 <hr>
 
-<h3 id="toc_3">Comments on v05</h3>
+<h3 id="toc_2">Editor&#39;s Copy 2017-02-01</h3>
 
 <ul>
-<li>&gt;<q>Fsdsd</q>.
-
-<ul>
-<li>sor.
-<code>I assume per request/transaction</code></li>
-</ul></li>
+<li><p><a href="https://tools.ietf.org/rfcdiff?url1=draft-ietf-core-coap-tcp-tls&amp;url2=https://raw.githubusercontent.com/core-wg/coap-tcp-tls/gh-pages/draft-ietf-core-coap-tcp-tls.txt">Latest diff available</a></p></li>
+<li><p><a href="https://github.com/core-wg/coap-tcp-tls/issues">Github page</a></p></li>
 </ul>
 
-<hr>
+<h4 id="toc_3">Open Issues</h4>
 
-<p><span id="summary"></span></p>
+<p><strong>103: Updates to Signaling Option Numbers:</strong> <a href="https://github.com/core-wg/coap-tcp-tls/issues/103">https://github.com/core-wg/coap-tcp-tls/issues/103</a></p>
 
-<h3 id="toc_4">Summary draft-ietf-core-coap-tcp-tls-05</h3>
+<p>Review request to Hannes/Carsten.</p>
 
-<p><a href="https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls-05">CoAP (Constrained Application Protocol) over TCP, TLS, and WebSockets.</a></p>
+<p><strong>102: Securing CoAP over WebSockets:</strong> <a href="https://github.com/core-wg/coap-tcp-tls/issues/102">https://github.com/core-wg/coap-tcp-tls/issues/102</a></p>
 
-<p>This document...</p>
+<p>Accept proposed changes on Section 7?</p>
+
+<p><strong>82: Use of Server-Name setting in TLS and WebSocket cases:</strong> <a href="https://github.com/core-wg/coap-tcp-tls/issues/82">https://github.com/core-wg/coap-tcp-tls/issues/82</a></p>
+
+<p><strong>81: Clarifying overrides for CSM options:</strong> <a href="https://github.com/core-wg/coap-tcp-tls/issues/81">https://github.com/core-wg/coap-tcp-tls/issues/81</a></p>
+
+<p><strong>77: Clarify registration criteria for CoAP Signaling Option Numbers Registry:</strong><a href="https://github.com/core-wg/coap-tcp-tls/issues/77">https://github.com/core-wg/coap-tcp-tls/issues/77</a></p>
+
+<p><strong>69: Ping and Pong Messages: ... a single Pong message MUST be returned?</strong><a href="https://github.com/core-wg/coap-tcp-tls/issues/69">https://github.com/core-wg/coap-tcp-tls/issues/69</a></p>
+
+<p><strong>66: Incorrect reference to Uri-Host Option:</strong> <a href="https://github.com/core-wg/coap-tcp-tls/issues/66">https://github.com/core-wg/coap-tcp-tls/issues/66</a></p>
+
+<h3 id="toc_4">Comments</h3>
 
 <hr>
 
 <p><span id="shepherd-writeup"></span></p>
 
-<h2 id="toc_5">Shepherd Writeup</h2>
+<h2 id="toc_5">Shepherd Writeup (in progress)</h2>
 
 <h3 id="toc_6">Summary</h3>
 
 <p>Document Shepherd: Jaime Jiménez, <a href="mailto:jaime.jimenez@ericsson.com">jaime.jimenez@ericsson.com</a><br>
 Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnikov@fastmail.fm</a></p>
 
-<p>The Constrained Application Protocol (CoAP), although inspired by<br>
-   HTTP, was designed to use UDP instead of TCP.  The message layer of<br>
-   the CoAP over UDP protocol includes support for reliable delivery,<br>
-   simple congestion control, and flow control.</p>
+<p>The Constrained Application Protocol (CoAP), although inspired by HTTP, was designed to use UDP instead of TCP. The message layer of the CoAP over UDP protocol includes support for reliable delivery, simple congestion control, and flow control.</p>
 
-<p>Some environments benefit from the availability of CoAP carried over<br>
-   reliable transports such as TCP or TLS.  This document outlines the<br>
-   changes required to use CoAP over TCP, TLS, and WebSockets<br>
-   transports.</p>
+<p>Some environments benefit from the availability of CoAP carried over reliable transports such as TCP or TLS. This document outlines the changes required to use CoAP over TCP, TLS, and WebSockets transports. It also formally updates <a href="https://tools.ietf.org/html/rfc7641">RFC7641</a> for use with these transports.</p>
 
 <p>The document is intended as an Standards Track RFC.</p>
 
 <h3 id="toc_7">Review and Consensus</h3>
-
-<p>The document has gone through multiple expert reviews and has been discussed on multiple IETF meetings. Before the last IETF the WGLC was completed.</p>
-
-<p>There are no known implementations available.</p>
 
 <h3 id="toc_8">Intellectual Property</h3>
 
 <p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG.</p>
 
 <h3 id="toc_9">Other Points</h3>
-
-<blockquote>
-<p>There is a downref to RFC 2616: This is in there because the security considerations of RFC 7252 reference (the now obsoleted) RFC 2616. The authors are not aware of someone having done the work to collect the relevant security considerations from the splinters of RFC 2616 (RFC 7230 and following).</p>
-</blockquote>
 
 <h3 id="toc_10">Checklist</h3>
 
@@ -413,19 +406,18 @@ Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnik
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Is the abstract both brief and sufficient, and does it stand alone as a brief summary?
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Is the intent of the document accurately and adequately explained in the introduction?
+<li class="task-list-item"><input type="checkbox" checked>Is the intent of the document accurately and adequately explained in the introduction?
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed?
+<li class="task-list-item"><input type="checkbox"> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed? <code>TBD</code>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests?
 <code>There is no ABNF in this draft</code>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?
+<li class="task-list-item"><input type="checkbox"> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?<code>TBD</code>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified?
-<code>There is a normative reference to [I-D.ietf-core-block] but that shouldn&#39;t be a problem as it is in late stages</code>
+<li class="task-list-item"><input type="checkbox"> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified?<code>TBD</code>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Are all normative references made to documents that are ready for advancement and are otherwise in a clear state?
+<li class="task-list-item"><input type="checkbox"> Are all normative references made to documents that are ready for advancement and are otherwise in a clear state?<code>TBD</code>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction? <code>Does not apply</code>
 </li>
@@ -434,23 +426,19 @@ Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnik
 <li><p><strong>IANA</strong> Considerations:</p>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions.
-<code>I wonder if adding a link to the CoRE Parameters registry could help, but it looks OK to me.</code>
-<code>http://www.iana.org/assignments/core-parameters/core-parameters.xhtml#method-codes</code>
+<li class="task-list-item"><input type="checkbox"> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions.
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?
+<li class="task-list-item"><input type="checkbox"> Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)?
-<code>The two new entries to the content format registry (51 and 52) require expert review and a request has been SENT to that list.</code>
+<li class="task-list-item"><input type="checkbox"> Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)?
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
+<li class="task-list-item"><input type="checkbox"> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
 </li>
-<li class="task-list-item"><input type="checkbox" checked> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
+<li class="task-list-item"><input type="checkbox"> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
 </li>
-<li class="task-list-item"><input type="checkbox" checked> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?
-<code>no new registries</code>
+<li class="task-list-item"><input type="checkbox"> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?
 </li>
-<li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified?
+<li class="task-list-item"><input type="checkbox">  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified?
 </li>
 </ul></li>
 </ul>
