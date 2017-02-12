@@ -11,7 +11,7 @@ During this time I have been working on M2M and Internet of Things related topic
 
 As you can see below, I contribute to various standards. Currently I focus more on IoT REST-type of communications, Device Management and Data models.
 
-### IoT Standardization
+### IoT Protocol Design and Architecture
 
 **The Internet Engineering Task Force (IETF)**
 
