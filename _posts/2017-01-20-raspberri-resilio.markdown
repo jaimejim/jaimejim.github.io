@@ -150,7 +150,7 @@ raspi:~$  vcgencmd measure_temp
 temp=54.8C
 ```
 
-#### Issue 2: Connectivity**
+#### Issue 2: Connectivity
 
 When I was running Resilio I noticed intermittent connectivity problems over wifi. I have not managed to debug where the problem originated. One candidate was that the Raspberry was running a DHCP client and changing addresses periodically, but after disabling that and setting a static address in the local network domain, the problem persisted. Another issue could have been the large amount of other WiFi Access Points, but I could not affect that. It could also be the fat that the Ethernet port Using the Ethernet port simultaneously, thus having two different IP addresses on two interfaces, showed that there were a relatively larger percentage of dropped packets over wifi. On top of this, there could be some other issues with Resilio itself.
 
