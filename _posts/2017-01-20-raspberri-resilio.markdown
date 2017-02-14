@@ -23,7 +23,7 @@ Both allow you to back up files of your computer on any other device or share a 
 
 ![Sexy insides of the Raspberry 3](/assets/images/resilio_raspberry.jpg)
 
-###1. Installing Raspbian on Raspberry 3
+### 1. Installing Raspbian on Raspberry 3
 
 First step is getting a [Raspberry 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) (I had a spare one at the office) and perhaps an external hard drive, although an SD card might be sufficient for you. Mine came with 16GB and would have been enough.
 
@@ -31,7 +31,7 @@ Raspberry 3 comes with a handy New Out Of the Box Software [NOOBS](https://www.r
 
 This time I chose [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) as it is the default distro and possibly has more support.
 
-###2 Installing Syncthing OR Resilio
+### 2 Installing Syncthing OR Resilio
 
 *Update (15-02-2017): Switching to Syncthing*
 
@@ -39,7 +39,7 @@ After using Resilio for about a month I have found it to be a bit unreliable and
 
 In general, Syncthing strengths are the lower footprint both in CPU and memory, the fact that is Open Source and thus can more easily be debugged and scrutinized, and the fact that it has been consistently stable. In the case of Resilio its biggest strength was the iOS app for synchronizing pictures, but that didn't make up for the fact that it is a proprietary software (thus little better than alternative cloud services) and, even more important, quite unstable and resource hungry on the Raspberry Pi.
 
-####2.1 Installing Syncthing on Raspbian
+#### 2.1 Installing Syncthing on Raspbian
 
 Installation is pretty straightforward from their [apt packages](https://apt.syncthing.net).
 
@@ -63,7 +63,7 @@ After this you should be able to access Syncthing's GUI at `localhost:8888`, it'
 
 ![Syncthing Web Gui](/assets/images/syncthing_gui.jpg)
 
-####2.2 Installing Resilio on Raspbian
+#### 2.2 Installing Resilio on Raspbian
 
 Also Resilio can directly be installed from their official [Debian package repository](https://help.getsync.com/hc/en-us/articles/206178924-Installing-Sync-package-on-Linux).
 
@@ -86,7 +86,7 @@ You can also enable SSH to the Raspberry for remote access.
 raspi:~$  sudo raspi-config
 ```
 
-###3. Mounting an External USB Hard Drive for storage
+### 3. Mounting an External USB Hard Drive for storage
 
 This point is only needed if you are planning to back up larger files.
 
@@ -135,7 +135,7 @@ Now every time the Pi starts it knows how to mount your drive. Now that all is r
 
 ![Final setup with Bad Piggy watching](/assets/images/raspberry_setup.jpg)
 
-####Issue 1: Overheating
+#### Issue 1: Overheating
 
 The Raspberry will tend to overheat during syncing, and that's probably normal under high load (as it is when running a DHT). However it shouldn't excess 75°C or performance will suffer. I believe at 85°C the Raspberry will shutdown to prevent damage.
 
@@ -150,7 +150,7 @@ raspi:~$  vcgencmd measure_temp
 temp=54.8C
 ```
 
-####Issue 2: Connectivity**
+#### Issue 2: Connectivity**
 
 When I was running Resilio I noticed intermittent connectivity problems over wifi. I have not managed to debug where the problem originated. One candidate was that the Raspberry was running a DHCP client and changing addresses periodically, but after disabling that and setting a static address in the local network domain, the problem persisted. Another issue could have been the large amount of other WiFi Access Points, but I could not affect that. It could also be the fat that the Ethernet port Using the Ethernet port simultaneously, thus having two different IP addresses on two interfaces, showed that there were a relatively larger percentage of dropped packets over wifi. On top of this, there could be some other issues with Resilio itself.
 
