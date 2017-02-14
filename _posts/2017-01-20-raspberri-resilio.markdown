@@ -1,8 +1,9 @@
 ---
-title: "Running Resilio on a Raspberry Pi 3"
+title: "Running ~~Resilio~~ Syncthing on a Raspberry Pi 3"
 layout: post
 date: 2017-01-20 08:00
 tag:
+- Syncthing
 - Resilio
 - Raspberry Pi
 - File Synchronization
@@ -14,11 +15,15 @@ star: true
 
 As a pet project of mine, I have been using a spare Raspberry Pi 3 as a back up system for my files. I want to reduce my dependency on *cloud* services like Google Drive, Dropbox, etc and I want to have control over what I share.
 
-After some research I rediscovered [Resilio](https://www.resilio.com) which I remembered as Bittorrent Sync. It basically is a P2P-based file storage software that runs on pretty much any OS. It allows you to back up the files of your computer on any other device you own. You can also [back up your phone pictures](https://itunes.apple.com/us/app/resilio-sync-file-transfer/id1126282325?mt=8) on your computer automatically or share a large folder among friends or colleagues. If you have a NAS, you can also back it up there and sync the files between your computer and NAS. Finally, it also has the option of encrypting the folders that you are sharing, which is handy in the corporate environment.
+I was looking for a P2P-based file storage software that could run over multiple OS. However I didn't want to share my files with everyone but rather I was looking for a DHT overlay of my own devices.
+
+I remembered Bittorrent Sync from few years back and found out two versions of it: [Resilio](https://www.resilio.com) and [Syncthing](https://syncthing.net).
+
+Both allow you to back up files of your computer on any other device or share a large folder among friends or colleagues. If you have a NAS, you can also back it up there and sync the files between your computer and NAS. Finally, they also provide encryption, which is handy in the corporate environment.
 
 ![Sexy insides of the Raspberry 3](/assets/images/resilio_raspberry.jpg)
 
-### Installing Raspbian on Raspberry 3
+###1. Installing Raspbian on Raspberry 3
 
 First step is getting a [Raspberry 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) (I had a spare one at the office) and perhaps an external hard drive, although an SD card might be sufficient for you. Mine came with 16GB and would have been enough.
 
@@ -26,76 +31,45 @@ Raspberry 3 comes with a handy New Out Of the Box Software [NOOBS](https://www.r
 
 This time I chose [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) as it is the default distro and possibly has more support.
 
+###2 Installing Syncthing OR Resilio
 
-### Installing Resilio on Raspbian
+*Update (15-02-2017): Switching to Syncthing*
 
-**Update (24-01-2017)**: From the [Resilio Forum](https://forum.resilio.com/topic/42608-what-is-the-correct-way-to-install-on-raspberry-pi/#comment-119414) it looks like you can install directly Resilio from their official [Debian package repository](https://help.getsync.com/hc/en-us/articles/206178924-Installing-Sync-package-on-Linux). You don't have to follow the instructions below if you do.
+After using Resilio for about a month I have found it to be a bit unreliable and buggy on the Raspberry. For that reason I am currently using **and recommend using [Syncthing](https://syncthing.net) instead**, which is an open-source alternative to Resilio. I will explain below the installation of both since some of you are directed here when looking for Resilio's installation too.
 
+In general, Syncthing strengths are the lower footprint both in CPU and memory, the fact that is Open Source and thus can more easily be debugged and scrutinized, and the fact that it has been consistently stable. In the case of Resilio its biggest strength was the iOS app for synchronizing pictures, but that didn't make up for the fact that it is a proprietary software (thus little better than alternative cloud services) and, even more important, quite unstable and resource hungry on the Raspberry Pi.
 
-Once we have Raspbian ready, we can install Resilio. There is a good tutorial at [Klavo Wiki](https://goo.gl/ft8GzF) that you can follow to the letter except for a few nits, for that reason, I add the full installation below as well.
+####2.1 Installing Syncthing on Raspbian
 
-We need to create a folder for Resilio.
-
-```sh
-raspi:~$  sudo mkdir -p /opt/resilio/bin
-raspi:~$  sudo mkdir /opt/resilio/app_files
-raspi:~$  cd /opt/resilio/bin
-```
-
-Then we can download the official latest version and unpack it.
+Installation is pretty straightforward from their [apt packages](https://apt.syncthing.net).
 
 ```sh
-raspi:~$  sudo wget  https://download-cdn.resilio.com/stable/linux-arm/resilio-sync_arm.tar.gz
-raspi:~$  sudo tar -xvf resilio-sync_arm.tar.gz
-raspi:~$  sudo rm -f resilio-sync_arm.tar.gz
+# Add the release PGP keys:
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+
+# Add the "stable" channel to your APT sources:
+echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Update and install syncthing:
+sudo apt-get update
+sudo apt-get install syncthing
 ```
 
-Then we need to create a service for it.
-
+You will get an error on the Raspberry, asking you to install the `apt-transport-https` package, go ahead and do so:
 ```sh
-raspi:~$  sudo nano /etc/init.d/resilio
+sudo apt-get install apt-transport-https
 ```
+After this you should be able to access Syncthing's GUI at `localhost:8888`, it'd look like below.
 
-You can copy the following config file, note that we change rslsync.conf for resilio.conf:
+![Syncthing Web Gui](/assets/images/syncthing_gui.jpg)
 
-```sh
-#! /bin/sh
-# /etc/init.d/resilio
-#
+####2.2 Installing Resilio on Raspbian
 
-# Carry out specific functions when asked to by the system
-case "$1" in
-start)
-    /opt/resilio/bin/resilio --config /opt/resilio/bin/resilio.conf
-    ;;
-stop)
-    killall resilio
-    ;;
-*)
-    echo "Usage: /etc/init.d/resilio {start|stop}"
-    exit 1
-    ;;
-esac
+Also Resilio can directly be installed from their official [Debian package repository](https://help.getsync.com/hc/en-us/articles/206178924-Installing-Sync-package-on-Linux).
 
-exit 0
+Once installed we need to create the configuration file with its basic information.
 
-```
-
-We can then set the appropriate permissions for the new file and set defaults for service.
-
-```sh
-raspi:~$  sudo chmod 755 /etc/init.d/resilio
-raspi:~$  sudo update-rc.d resilio defaults
-```
-
-Now we need to create the configuration file with its basic information.
-
-```sh
-raspi:~$  sudo nano /opt/resilio/bin/resilio.conf
-```
-You can find the config file at the [aforementioned wiki](https://goo.gl/ft8GzF).
-
-After this you can reboot the Raspberry with `sudo reboot now`. After reboot you should be able to access Resilio's GUI at `0.0.0.0:8888` and it'd look like below.
+After this you can reboot the Raspberry, after reboot you should be able to access Resilio's GUI at `0.0.0.0:8888`, it'd look like below.
 
 ![Resilio Web Gui](/assets/images/resilio_gui.png)
 
@@ -112,9 +86,9 @@ You can also enable SSH to the Raspberry for remote access.
 raspi:~$  sudo raspi-config
 ```
 
-### Mounting an External USB Hard Drive for Resilio Storage
+###3. Mounting an External USB Hard Drive for storage
 
-This point is optional, since now we already have Resilio properly running on our board. It is only needed if you are planning to back up music or other larger files.
+This point is only needed if you are planning to back up larger files.
 
 First you'd need to format the drive into the ExFAT format. I chose ExFAT because I have Windows, Linux, Android and MacOS and ExFAT seems to me like the only native option on all of them (apart from the outdated FAT32).  
 
@@ -145,7 +119,6 @@ Device      Start        End    Sectors   Size Type
 /dev/sda2  411648 1953456127 1953044480 931.3G Microsoft basic data
 ```
 
-
 You could test if it mounts with `mount /dev/sda2 /mnt` and `dmesg` to see the mounting process.
 
 Assuming everything works OK and you can mount your device you probably want to mount it automatically every time it boots. I found a good reference at [miqu blog](https://miqu.me/blog/2015/01/14/tip-exfat-hdd-with-raspberry-pi/) for exactly that purpose. I copy it below for the sake of brevity.
@@ -158,11 +131,13 @@ Now you can use `sudo nano /ect/fstab` to add your partition to automount. Assum
 UUID=MYUUID /mnt/MYHD exfat defaults,auto,umask=000,users,rw 0 0
 ```
 
-Now every time the Pi starts it knows how to mount your drive.
+Now every time the Pi starts it knows how to mount your drive. Now that all is ready and running, you have yourself an excellent back up and file sharing system.  Here is the final Set Up with Bad Piggy included.
 
-### Possible Heating Issues.
+![Final setup with Bad Piggy watching](/assets/images/raspberry_setup.jpg)
 
-The Raspberry will tend to overheat during syncing, and that's normal. However it shouldn't excess 75°C or performance will suffer. I believe at 85°C the Raspberry will shutdown to prevent damage.
+####Issue 1: Overheating
+
+The Raspberry will tend to overheat during syncing, and that's probably normal under high load (as it is when running a DHT). However it shouldn't excess 75°C or performance will suffer. I believe at 85°C the Raspberry will shutdown to prevent damage.
 
 It is then important to have good ventilation on your board and it wouldn't hurt to stick a heat dissipator on top, like the one I show on the first picture.
 
@@ -175,15 +150,9 @@ raspi:~$  vcgencmd measure_temp
 temp=54.8C
 ```
 
-Once all is ready and running, you have yourself an excellent back up and file sharing system.  Here is the final Set Up with Bad Piggy included.
+####Issue 2: Connectivity**
 
-![Final setup with Bad Piggy watching](/assets/images/raspberry_setup.jpg)
-
-**Update (23-01-2017): Connectivity Issues**
-
-I have been noticing intermittent connectivity problems over wifi. I have not managed to debug whether it is a problem with the Raspberry, the router or something else.
-
-Using the Ethernet port simultaneously, thus having two different IP addresses on two interfaces, seems to palliate the problem. Resilio will be accessible through the Ethernet interface. There is a relatively larger percentage of dropped packets over wifi. Still have to figure out why.
+When I was running Resilio I noticed intermittent connectivity problems over wifi. I have not managed to debug where the problem originated. One candidate was that the Raspberry was running a DHCP client and changing addresses periodically, but after disabling that and setting a static address in the local network domain, the problem persisted. Another issue could have been the large amount of other WiFi Access Points, but I could not affect that. It could also be the fat that the Ethernet port Using the Ethernet port simultaneously, thus having two different IP addresses on two interfaces, showed that there were a relatively larger percentage of dropped packets over wifi. On top of this, there could be some other issues with Resilio itself.
 
 ```
 eth0      Link encap:Ethernet  HWaddr <XXX>  
@@ -201,7 +170,7 @@ wlan0     Link encap:Ethernet  HWaddr b8:27:eb:65:20:61
           RX bytes:253370999 (241.6 MiB)  TX bytes:8083493 (7.7 MiB)
 ```
 
-Some estimated colleagues helped me out in the process of checking the source of the problem. Thanks to that I learnt some new useful commands, which I write below. However, to be perfectly honest it seems to work better without the `wlan0` interface altogether.
+I still have to figure out what was the reason since I just ended up disabling the `wlan0` interface. If you want to continue the testing you can use some of the following commands, please let me know the results on the comment section of the blog.
 
 *iwlist*
 Displays detailed information about wireless interfaces
