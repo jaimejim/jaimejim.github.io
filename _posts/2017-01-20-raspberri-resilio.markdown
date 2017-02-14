@@ -1,5 +1,5 @@
 ---
-title: "Running ~~Resilio~~ Syncthing on a Raspberry Pi 3"
+title: "Running Syncthing or Resilio on a Raspberry Pi 3"
 layout: post
 date: 2017-01-20 08:00
 tag:
