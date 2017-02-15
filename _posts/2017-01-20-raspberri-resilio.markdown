@@ -139,6 +139,8 @@ Now every time the Pi starts it knows how to mount your drive. Now that all is r
 
 The Raspberry will tend to overheat during syncing, and that's probably normal under high load (as it is when running a DHT). However it shouldn't excess 75°C or performance will suffer. I believe at 85°C the Raspberry will shutdown to prevent damage.
 
+I have noted Resilio to be more chatty than Syncthing and to consume resource more often. Syncthing behavior is that of going into low-power listening mode after the transaction is completed. Resilio on the other hand keeps processing for quite some time. I don't know the reason for that.
+
 It is then important to have good ventilation on your board and it wouldn't hurt to stick a heat dissipator on top, like the one I show on the first picture.
 
 Another thing you can do is disable the GUI with `sudo raspi-config`. With that the temperature should drop already by 10 degrees pretty fast.
