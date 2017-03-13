@@ -7,9 +7,9 @@ Milestones:
 https://datatracker.ietf.org/wg/core/milestones/
 
 CoRE WG General:
- ☐ [GEN] Find Co-Chair for CoRE-WG session IETF98.  @timestamp(2017-01-29 19:00)
+ ✔ [GEN] Find Co-Chair for CoRE-WG session IETF98.  @timestamp(2017-01-29 19:00) @done(2017-03-13 12:03) @project(CoRE WG General)
  ☐ [GEN] Adjust milestones https://datatracker.ietf.org/wg/core/milestones @timestamp(2017-01-24 19:00)
- ☐ [GEN] ID Submission Deadline before IETF98 @timestamp(2017-03-13 13:39)
+ ✔ [GEN] ID Submission Deadline before IETF98 @timestamp(2017-03-13 13:39) @done(2017-03-13 12:03) @project(CoRE WG General)
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
  Summary available http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls.html
@@ -18,17 +18,14 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
  ☐ [TCP] IANA 9.1-9.4 @jaime
  ☐ [TCP] IESG Submission of draft-ietf-core-coap-tcp-tls @timestamp(2017-03-09 19:00)
  ☐ [TCP] Shepherd Writeup @Jaime @critical WGLC comments and see if they are addressed.
+ ☐ [TCP] @jaime check v06 and v07, if nothing then close call and do publication request.
 
 ETCH draft-ietf-core-etch:
  Summary available http://jaimejim.github.io/temp/draft-ietf-core-etch
  Ballot https://datatracker.ietf.org/doc/draft-ietf-core-etch/ballot/
- ☐ [ETCH] AD go ahead if IETF-LC OK. @iesg  @timestamp(2017-01-25 11:24)
- ☐ [ETCH] Address Kthaleen's comments @carsten
-
-HTTP draft-ietf-core-http-mapping:
- Summary available http://jaimejim.github.io/temp/draft-ietf-core-http-mapping
- Ballots: https://datatracker.ietf.org/doc/draft-ietf-core-http-mapping/ballot/
- ☐ [HTTP] Auth48 process to make sure that RFC Editor questions are answered. Authors, AD and Shepherd @jaime (monitor and address comments). https://datatracker.ietf.org/doc/draft-ietf-core-http-mapping/
+ ✔ [ETCH] AD go ahead if IETF-LC OK. @iesg  @timestamp(2017-01-25 11:24) @done(2017-03-13 11:42) @project(ETCH draft-ietf-core-etch)
+ ☐ [ETCH] waiting AUTH48
+ ✔ [ETCH] Address Kthaleen's comments @carsten @done(2017-03-13 11:42) @project(ETCH draft-ietf-core-etch)
 
 CoRE-Links draft-ietf-core-links-json:
  Summary available http://jaimejim.github.io/temp/draft-ietf-core-links-json
@@ -42,42 +39,47 @@ CoRE-Links draft-ietf-core-links-json:
 RD draft-ietf-core-resource-directory:
  Summary available http://jaimejim.github.io/temp/draft-ietf-core-resource-directory
  ☐ [RD] Check the diff with https://github.com/mjkoster/I-D/tree/master/CoRE%20RD @jaime @medium
- ☐ [RD] [EITF96] New reviews by Hannes T, Klaus H, Darshak, Bill S, Christian G, Sebastian (?), Matthias K.
- ☐ [RD] WGLC 2 weeks (while Carsten away) tentative @timestamp(2017-02-15 13:36), check with Michael.
- ☐ [RD] IESG Submission of draft-ietf-core-resource-directory @timestamp(2017-02-25 12:28)
- ☐ [RD] Check Klaus' draft on t2t data hub. @jaime
- ☐ [RD] Regular call on this add jaime @carsten
+ https://svn.tools.ietf.org/svn/wg/core/draft-ietf-core-resource-directory-xx.txt
+ ☐ [RD] Michael to submit today v10. @jaime check diff https://tools.ietf.org/rfcdiff?url1=draft-ietf-core-resource-directory-09.txt&url2=https://svn.tools.ietf.org/svn/wg/core/draft-ietf-core-resource-directory-xx.txt
+ ☐ [RD] [IETF96] New reviews by Hannes T, Klaus H, Darshak, Bill S, Christian G, Sebastian (?), Matthias K.
+ ✘ [RD] WGLC 2 weeks (while Carsten away) tentative @timestamp(2017-02-15 13:36), check with Michael. @cancelled(2017-03-13 12:00) @project(RD draft-ietf-core-resource-directory)
+ ✘ [RD] IESG Submission of draft-ietf-core-resource-directory @timestamp(2017-02-25 12:28) @cancelled(2017-03-13 12:00) @project(RD draft-ietf-core-resource-directory)
+ ✘ [RD] Check Klaus' draft on t2t data hub. @jaime @cancelled(2017-03-13 12:00) @project(RD draft-ietf-core-resource-directory)
+ ✘ [RD] Regular call on this add jaime @carsten @cancelled(2017-03-13 12:00) @project(RD draft-ietf-core-resource-directory)
 
 SenML draft-ietf-core-senml:
- ☐ [SML] WGLC @timestamp(2017-03-15 13:36)
+ ☐ [SML] WGLC @timestamp(2017-03-15 13:36) @jaime @WGLCNOW
+ ☐ [SML] Submission @timestamp(2017-03-13 13:36)
  ☐ [SML] IESG @timestamp(2017-04-15 13:36)
  ☐ [SML] New Registry. Check with IANA.
  ☐ [SML] IESG Submission of draft-ietf-core-senml @timestamp(2017-03-13 12:28).
 
+CoRE Object Security CoAP draft-ietf-core-object-security:
+ ☐ [OSCOAP] Ongoing discussion on inner-blockwise.
+ ✔ [OSCOAP] Get to a level of maturity so that it can be used for implementation. @done(2017-03-13 11:36) @project(CoRE Object Security CoAP draft-ietf-core-object-security)
+ ✔ [OSCOAP] Interop in March @done(2017-03-13 11:35) @project(CoRE Object Security CoAP draft-ietf-core-object-security)
+ ☐ [OSCOAP] New interop to be done in April.
+ ☐ [OSCOAP] Ask for the reviewers: Reviews promised by Jim, Sandeep Kumar and Thomas Watteyne.
+ ☐ [OSCOAP] Final interop in Prague, WGLC there.
+
 COMI-COOL :
-     Target like https://tools.ietf.org/html/rfc7388
- Related documents:
-     draft-bormann-core-uri-cbor-query-latest.md
-     draft-ietf-core-yang-cbor-latest.md
-     draft-somaraju-core-sid-latest.md
-     draft-turner-cool-problem-latest.md
-     draft-veillette-core-cool-latest.md
+ Target like https://tools.ietf.org/html/rfc7388
+Related documents:
+ draft-bormann-core-uri-cbor-query-latest.md
+ draft-ietf-core-yang-cbor-latest.md
+ draft-somaraju-core-sid-latest.md
+ draft-turner-cool-problem-latest.md
+ draft-veillette-core-cool-latest.md
 
 SID identifiers draft-ietf-core-sid:
 
 YANG CBOR draft-ietf-core-yang-cbor:
- ☐ [YANG-CBOR] Confirm on mailing list once new version submitted -04.
+☐ [YANG-CBOR] Confirm on mailing list once new version submitted -04.
 
 PubSub draft-ietf-core-coap-pubsub:
 
 DynLink draft-groves-core-dynlink:
- ☐ [DNLK] To read.
-
-CoRE Object Security CoAP draft-ietf-core-object-security:
- ☐ [OSCOAP] Ongoing discussion on inner-blockwise.
- ☐ [OSCOAP] Get to a level of maturity so that it can be used for implementation.
- ☐ [OSCOAP] Interop in March
- ☐ [OSCOAP] Ask for the reviewers: Reviews promised by Jim, Sandeep Kumar and Thomas Watteyne.
+☐ [DNLK] To read.
 
 Congestion Control draft-ietf-core-cocoa:
 
@@ -107,6 +109,14 @@ Alternative transports draft-ietf-bill:
 
 CoAP Over SMS draft-becker-core-coap-sms-gprs:
  ☐ Follow up and ask for more interest around.
+
+---------
+RFCs
+---------
+
+https://tools.ietf.org/html/rfc8075
+
+
 
 Submissions to IESG:
  ☐ IESG Submission of draft-ietf-core-links-json @timestamp(2017-02-01 13:34)
