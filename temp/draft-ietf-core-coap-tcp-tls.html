@@ -358,12 +358,11 @@ sup {
 <p>Document Shepherd: Jaime Jiménez, <a href="mailto:jaime.jimenez@ericsson.com">jaime.jimenez@ericsson.com</a><br>
 Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnikov@fastmail.fm</a></p>
 
-<p>The Constrained Application Protocol (CoAP), although inspired by HTTP, was designed to use UDP instead of TCP.  The message layer of<br>
-the CoAP over UDP protocol includes support for reliable delivery, simple congestion control, and flow control.</p>
+<p>The Constrained Application Protocol (CoAP), although inspired by HTTP, was designed to use UDP instead of TCP.  The message layer of the CoAP over UDP protocol includes support for reliable delivery, simple congestion control, and flow control.</p>
 
 <p>Some environments benefit from the availability of CoAP carried over reliable transports such as TCP or TLS.  This document outlines the changes required to use CoAP over TCP, TLS, and WebSockets transports.  It also formally updates <a href="https://tools.ietf.org/html/rfc7641">RFC7641</a>  for use with these transports.</p>
 
-<p>The document is intended as an Standards Track RFC.</p>
+<p>The document is intended as an <strong>Standards Track RFC</strong>.</p>
 
 <h3 id="toc_5">Review and Consensus</h3>
 
@@ -388,20 +387,25 @@ the CoAP over UDP protocol includes support for reliable delivery, simple conges
 </li>
 <li class="task-list-item"><input type="checkbox" checked>Is the intent of the document accurately and adequately explained in the introduction?
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed? <code>TBD</code>
+<li class="task-list-item"><input type="checkbox" checked> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed?
+<code>URI-Scheme needs to be checked, wellknown-uri-review@ietf.org</code>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests?
 <code>There is no ABNF in this draft</code>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?<code>TBD</code>
+<li class="task-list-item"><input type="checkbox" checked> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified?<code>TBD</code>
+<li class="task-list-item"><input type="checkbox" checked> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified?
+<code>RFC7959 has to be changed to normative during AD-review</code>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Are all normative references made to documents that are ready for advancement and are otherwise in a clear state? <code>RFC7959 has to be changed to normative during AD-review</code>
+<li class="task-list-item"><input type="checkbox" checked> Are all normative references made to documents that are ready for advancement and are otherwise in a clear state?
+<code>RFC7959 has to be changed to normative during AD-review</code>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction? <code>Yes RFC7641, seems to be sufficient.</code>
+<li class="task-list-item"><input type="checkbox" checked> If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction?
+<code>Yes RFC7641, seems to be sufficient.</code>
 </li>
-<li class="task-list-item"><p><input type="checkbox" checked> If this is a <q>bis</q> document, have all of the errata been considered? <code>Does not apply</code></p>
+<li class="task-list-item"><p><input type="checkbox" checked> If this is a <q>bis</q> document, have all of the errata been considered?<br>
+<code>Does not apply</code></p>
 </li>
 <li><p><strong>IANA</strong> Considerations:</p>
 
@@ -418,7 +422,8 @@ RFC6335 IESG can do the update.</code></p>
 </li>
 <li class="task-list-item"><p><input type="checkbox"> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?</p>
 </li>
-<li class="task-list-item"><p><input type="checkbox" checked> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call? <code>in progress</code></p>
+<li class="task-list-item"><p><input type="checkbox" checked> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?<br>
+<code>in progress</code></p>
 </li>
 <li class="task-list-item"><p><input type="checkbox" checked> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?<br>
 <code>Section 10.1 &quot;CoAP Signaling Codes&quot;. Same policy as for method codes RFC7252</code></p>
