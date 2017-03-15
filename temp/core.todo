@@ -72,9 +72,10 @@ Related documents:
  draft-veillette-core-cool-latest.md
 
 SID identifiers draft-ietf-core-sid:
+ ☐ [SID] Check status of IANA processes (register SIDs, lookup SIDs)
 
 YANG CBOR draft-ietf-core-yang-cbor:
-☐ [YANG-CBOR] Confirm on mailing list once new version submitted -04.
+ ☐ [YANG-CBOR] Confirm on mailing list once new version submitted -04.
 
 PubSub draft-ietf-core-coap-pubsub:
 
@@ -84,11 +85,12 @@ DynLink draft-groves-core-dynlink:
 Congestion Control draft-ietf-core-cocoa:
 
 COMI draft-ietf-core-comi:
- ☐ [COMI] Confirm adoption v11 on mailing list draft-ietf-core-comi @carsten @timestamp(2017-01-25 12:34).
- ☐ [COMI] Find new editor @carsten @jaime @medium @timestamp(2017-01-29 12:34) Perhaps Michel V.
+ ✔ [COMI] Confirm adoption v11 on mailing list draft-ietf-core-comi @carsten @timestamp(2017-01-25 12:34). @done(2017-03-15 12:01) @project(COMI draft-ietf-core-comi)
+ ✘ [COMI] Find new editor @carsten @jaime @medium @timestamp(2017-01-29 12:34) Perhaps Michel V. @cancelled(2017-03-15 12:01) @project(COMI draft-ietf-core-comi)
  ☐ [COMI] Peter to address Ana Minaburo comments on CON messages.
 
 Interfaces draft-ietf-core-interfaces:
+  ☐ [INTERF] revisit?
 
 --------
 Freezer
