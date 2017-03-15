@@ -355,19 +355,9 @@ sup {
 <ul>
 <li>JSON-LD not on this draft, perhaps on a different one in the future.<br></li>
 </ul></li>
-<li>Have Christian Amsüss <a href="mailto:c.amsuess@energyharvesting.at">c.amsuess@energyharvesting.at</a> comments from the WGLC been addressed? It pertains to the <q>Consider other Work Section</q> (19-07-2016)
-
-<ul>
-<li>TBD.</li>
-</ul></li>
-<li>Have table 1 references been checked at WGLC?
-
-<ul>
-<li>Will double-check.</li>
-</ul></li>
 </ul>
 
-<h3 id="toc_3">Comments on v07</h3>
+<h3 id="toc_3">Remaining Comments on v07</h3>
 
 <ul>
 <li>Have Christian Amsüss <a href="mailto:c.amsuess@energyharvesting.at">c.amsuess@energyharvesting.at</a> comments from the WGLC been addressed? It pertains to the <q>Consider other Work Section</q> (19-07-2016)</li>
@@ -377,31 +367,15 @@ sup {
 <li>@Jaime to send email to media types mailing list, also CC CoAP parameters list (core-parameters@ietf.org)</li>
 </ul></li>
 <li>Have table 1 references been checked at WGLC?</li>
-<li>CDDL in figures 1 and 2 should be validated if it hasn&#39;t.
-
-<ul>
-<li>TBD.</li>
-</ul></li>
-<li>Figures 4 , 5 and 6 should say the format they are in: <q>Link-Format example from RFC6690</q>,  <q>Derived JSON format example from Figure 4</q> and <q>Derived CBOR diagnostic format example from Figure 4</q> or similar for readability.</li>
+<li>CDDL in figures 1 and 2 should be validated if it hasn&#39;t.</li>
 <li>Shouldn&#39;t Table 1 be part of some IANA normative working document/registry in case new link-relations are found in the future or is this document the main reference?</li>
 </ul>
 
 <h3 id="toc_4">Editorial</h3>
 
 <ul>
+<li><p>Figures 4 , 5 and 6 should say the format they are in: <q>Link-Format example from RFC6690</q>,  <q>Derived JSON format example from Figure 4</q> and <q>Derived CBOR diagnostic format example from Figure 4</q> or similar for readability.</p></li>
 <li><p>When converting between a bespoke syntax such as that defined by <strong>CoRE Link Format</strong> [RFC6690]</p></li>
-<li><p>IMO the following excerpt needs rewriting:</p>
-
-<blockquote>
-<p>This specification defines a common approach for translating between the CoRE-specific bespoke formats, JSON and CBOR formats.  Where applicable, mapping from other formats (e.g.  CoRE Link Format) into JSON or CBOR is also described.<br>
-This specification defines a common format for representing CoRE Web Linking in JSON and CBOR.</p>
-</blockquote>
-
-<p>into something like this:</p>
-
-<blockquote>
-<p>This specification defines a common format for representing CoRE Web Linking in JSON and CBOR, as well as translating from CoRE Link Format to both of them.</p>
-</blockquote></li>
 </ul>
 
 <hr>
@@ -455,7 +429,7 @@ label = tstr / &amp;(                              | CBOR
  temp&quot;,&quot;rel&quot;:&quot;describedby&quot;},{&quot;href&quot;:&quot;/t&quot;,&quot;anchor&quot;:&quot;/sensors/
  temp&quot;,&quot;rel&quot;:&quot;alternate&quot;}]&quot;</code></pre></div>
 
-<p>Same response in CBOR diagnostic format, in which there is a substitution of the <a href="https://tools.ietf.org/html/draft-ietf-core-links-json-06#page-6">common attribute names</a>:</p>
+<p>Same response in <strong>CBOR diagnostic format</strong>, in which there is a substitution of the <a href="https://tools.ietf.org/html/draft-ietf-core-links-json-06#page-6">common attribute names</a>:</p>
 
 <div><pre class="line-numbers"><code class="language-c">[{1: &quot;/sensors&quot;, 12: &quot;40&quot;, 7: &quot;Sensor Index&quot;},
  {1: &quot;/sensors/temp&quot;, 9: &quot;temperature-c&quot;, 10: &quot;sensor&quot;},
