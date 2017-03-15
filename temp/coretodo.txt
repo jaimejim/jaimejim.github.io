@@ -116,8 +116,6 @@ RFCs
 
 https://tools.ietf.org/html/rfc8075
 
-
-
 Submissions to IESG:
  ☐ IESG Submission of draft-ietf-core-links-json @timestamp(2017-02-01 13:34)
  ☐ IESG Submission of draft-ietf-core-senml @timestamp(2017-04-15 13:36)
