@@ -1,4 +1,4 @@
-☐ Links JSON, 1 week v07  http://jaimejim.github.io/temp/draft-ietf-core-links-json . WGLC one week.
+✔ Links JSON, 1 week v07  http://jaimejim.github.io/temp/draft-ietf-core-links-json . WGLC one week. @done(2017-03-15 16:23)
 ✔ Hacer los Concur. @done(2017-03-15 14:54)
 ☐ Hotel en Chicago.
 ☐ Skype for Business
@@ -7,3 +7,42 @@
 ✔ Meeting Bojrn @done(2017-03-14 16:36)
 ✔ talk gonzalo @done(2017-03-14 16:36)
 ✔ movie hector @done(2017-03-14 16:36)
+
+
+20K loan,
+Ericsson salary is taxated
+
+20145
+
+Interest in 30/5/2020 0.5%
+
+6.1% of restaurant
+
+
+Capital income: On some public/private investement. Its 30%
+Earned income: On my own salary.  38%
+
+Max tax is 65%
+
+House is a good investment
+
+3000000
+
+1000 30%
+
+Capperi
+
+Jarmo Leppiniemi
+
+
+We are now finishing CoAP over TCP and other reliable transports. There has been a lot of discussions over the past months on anything from the BLOCK option to Confirmable and Non-Confirmable messages to just using websockets to bypass NATs. I have prepared a summary
+http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls
+
+If you happen to be interested you can also see the discussions on the Issue tracker
+https://github.com/core-wg/coap-tcp-tls/issues?q=is%3Aissue+milestone%3Acoap-tcp-tls-06+is%3Aclosed
+
+Another topic is Links-json.
+http://jaimejim.github.io/temp/draft-ietf-core-links-json
+
+OSCoAP in IETF, there was an interop and we had a join meeting T2TRG/OCF in Amsterdam last week. 
+https://github.com/core-wg/oscoap
