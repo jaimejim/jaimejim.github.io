@@ -42,7 +42,7 @@ Link-Format is a series of web links. Each link (or `link-value`) is composed of
 
 **2. Response in JSON**
 
-Same as before but We would do the mapping adding the appropriate JSON tags.
+Same as before but this time we would do a mapping adding the appropriate JSON tags.
 
 ``` c
 "[ {"href":"/sensors","ct":"40","title":"Sensor
@@ -64,7 +64,7 @@ Same as before but We would do the mapping adding the appropriate JSON tags.
 
 **3. Response in CBOR**
 
-CBOR would have two variants, pure CBOR in hexadecimal, which is a priori unintelligible for readers:
+CBOR would have two variants, pure CBOR in hexadecimal, which would a priori be unintelligible for readers:
 
 ``` c
 85a301680c623430076c ...
