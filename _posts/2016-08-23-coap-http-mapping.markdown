@@ -16,7 +16,8 @@ The first of such documents is the [Guidelines for HTTP-to-CoAP Mapping Implemen
 
 The point of the draft (soon RFC) is to describe how to do HTTP-to-CoAP Mapping to allow HTTP clients to access a CoAP Server via a proxy. This works under the assumption that, despite the similarities between CoAP and HTTP, not all browsers will implement support for it and that some legacy devices will need proxying. Another assumption is that users will like to use their smartphones with their home sensors. The set up would look like this:
 
-![HTTP-to_CoAP Mapping Scenario](/assets/images/pic_http_coap.jpg)
+![HTTP-to_CoAP Mapping Scenario](/assets/images/pic_http_coap.jpg)*HTTP-to_CoAP Mapping Scenario with world-class graphics ;)*
+
 
 The mapping is fairly straightforward as CoAP is designed to mirror HTTP. In its **simple form**, you simply append one URI after the other, for example:
 
