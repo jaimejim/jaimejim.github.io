@@ -8,11 +8,11 @@ https://datatracker.ietf.org/wg/core/milestones/
 
 CoRE WG General:
  ✔ [GEN] Find Co-Chair for CoRE-WG session IETF98.  @timestamp(2017-01-29 19:00) @done(2017-03-13 12:03) @project(CoRE WG General)
- ☐ [GEN] Adjust milestones https://datatracker.ietf.org/wg/core/milestones @timestamp(2017-01-24 19:00)
+ ✔ [GEN] Adjust milestones https://datatracker.ietf.org/wg/core/milestones @timestamp(2017-01-24 19:00) @done(2017-03-23 14:26) @project(CoRE WG General)
  ✔ [GEN] ID Submission Deadline before IETF98 @timestamp(2017-03-13 13:39) @done(2017-03-13 12:03) @project(CoRE WG General)
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
- Summary available http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls.html
+ Summary available http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls
  ☐ [TCP] WGLC when new draft is out @timestamp(2017-02-15 13:42) end of WGLC @timestamp(2017-02-22 13:42) then IESG submission.
  ✔ [TCP] IANA URI (S9.5) review @brian @done(2017-02-15 09:31) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
  ☐ [TCP] IANA 9.1-9.4 @jaime
