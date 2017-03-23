@@ -397,9 +397,10 @@ links = [* link]                   |           |
 link = {                           |  JSON     |
   href: tstr    ; resource URI     |           |
   * label =&gt; tstr / true           |           |
-}                                  +           |
+}                                  |           |
+href =1                            +           |
 label = tstr / &amp;(                              | CBOR
-  href: 1,   rel: 2,        anchor: 3,         |
+  rel: 2,        anchor: 3,                    |
   rev: 4,    hreflang: 5,   media: 6,          |
   title: 7,  type: 8,       rt: 9,             |
   if: 10,    sz: 11,        ct: 12,            |
@@ -505,6 +506,8 @@ Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnik
 
 <h3 id="toc_10">Other Points</h3>
 
+<p>IMO the title should probably be: <q>Representing CoRE link-format in JSON and CBOR</q>.</p>
+
 <h3 id="toc_11">Checklist</h3>
 
 <ul>
@@ -522,7 +525,7 @@ Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnik
 <li class="task-list-item"><input type="checkbox"> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests?
 <code>Need information on how to check CDDL</code>
 </li>
-<li class="task-list-item"><input type="checkbox"> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?
+<li class="task-list-item"><input type="checkbox" checked> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?
 <code>TBD once the last version is submitted</code>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified?
