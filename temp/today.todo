@@ -1,9 +1,15 @@
 ✔ Fix passcode email mobile @done(2017-03-21 15:38)
 ✔ Download payslips @done(2017-03-22 16:11)
+☐ Change IETF email to a gmail or similar.
 ✔ blog post @done(2017-03-22 16:11)
 ✔ email mobile @done(2017-03-21 15:38)
+☐ links-json submitted.
+☐ https://bjango.onfastspring.com/istat-menus-5-family-pack
+☐ https://zulip.org
 ☐ frases crawler
-☐ check noe_modules on blog. Why is coap_shepherd there?
+☐ subscribe to netconf
+☐ Henk list of puzzle pieces
+☐ check node_modules on blog. Why is coap_shepherd there?
 ✔ reprint travel claim @done(2017-03-21 15:38)
 ✔ Tax Card @done(2017-03-22 16:11)
 ☐ Check etch process so that they do only editorial work
@@ -18,3 +24,8 @@
 ✔ talk gonzalo @done(2017-03-14 16:36)
 ✔ movie hector @done(2017-03-14 16:36)
 ☐ Figure out what to implement and where. Something small for starters using coap-shepherd.
+
+IPSO into TD
+☐ 1 Example: Device Object + Temperature and Humitdity. Serialization JSON. (DevKit)
+☐ 2 Mapping rules to TD
+☐ 3 Generate IPSO vocabulary to be plugged into a TD.

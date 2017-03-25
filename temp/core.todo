@@ -78,12 +78,15 @@ YANG CBOR draft-ietf-core-yang-cbor:
  ☐ [YANG-CBOR] Confirm on mailing list once new version submitted -04.
 
 PubSub draft-ietf-core-coap-pubsub:
+ ☐ Refer and study https://mail.tools.ietf.org/html/draft-palombini-ace-coap-pubsub-profile-00
 
 DynLink draft-groves-core-dynlink:
  ☐ [DNLK] To read.
 
 Congestion Control draft-ietf-core-cocoa:
  ☐ [COCOA] Check with authors draft status.
+ ☐ [COCOA] Send email to the TCPM chairs that we are about to publish this. Appendix with justification should stay in there or not? It's on the agenda for tuesday.
+ ☐ [COCOA] Shepherd Writeup for Tuesday.
 
 COMI draft-ietf-core-comi:
  ✔ [COMI] Confirm adoption v11 on mailing list draft-ietf-core-comi @carsten @timestamp(2017-01-25 12:34). @done(2017-03-15 12:01) @project(COMI draft-ietf-core-comi)
