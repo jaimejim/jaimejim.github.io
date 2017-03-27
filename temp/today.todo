@@ -1,33 +1,31 @@
-☐ Change IETF email to a gmail or similar.
+IETF:
+☐ Check the DNS guy interested on IoT.
+☐ Check with Carsten if using RD and full DNS makes sense or not.
+☐ Jo kulik. Quic
+☐ Check ACE preso video again.
+☐ Book on security (ask francesca)
+
+
+Other:
+☐ Fastmail+own domain
 ☐ https://bjango.onfastspring.com/istat-menus-5-family-pack
 ☐ https://zulip.org
 ☐ frases crawler
-☐ subscribe to netconf
-☐ Henk list of puzzle pieces
+
 ☐ check node_modules on blog. Why is coap_shepherd there?
 ☐ Check etch process so that they do only editorial work
 ☐ Skype for Business
-☐ Figure out what to implement and where. Something small for starters using coap-shepherd.
+
+
+Takeways:
+
+☐ Registries moving into linear space ala SID. https://tools.ietf.org/html/draft-ietf-core-sid>
+☐ CoAP Pub-Sub Profile for ACE. https://mail.tools.ietf.org/html/draft-palombini-ace-coap-pubsub-profile-00
+
+
+
 
 IPSO into TD
 ☐ 1 Example: Device Object + Temperature and Humitdity. Serialization JSON. (DevKit)
 ☐ 2 Mapping rules to TD
 ☐ 3 Generate IPSO vocabulary to be plugged into a TD.
-
-＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-Archive:
-  ✔ Fix passcode email mobile @done(2017-03-21 15:38)
-  ✔ Download payslips @done(2017-03-22 16:11)
-  ✔ blog post @done(2017-03-22 16:11)
-  ✔ email mobile @done(2017-03-21 15:38)
-  ✔ links-json submitted. @done(2017-03-25 17:56)
-  ✔ reprint travel claim @done(2017-03-21 15:38)
-  ✔ Tax Card @done(2017-03-22 16:11)
-  ✔ Contact authors in agenda see if they come to chicago @done(2017-03-23 14:31)
-  ✔ Links JSON, 1 week v07  http://jaimejim.github.io/temp/draft-ietf-core-links-json . WGLC one week. @done(2017-03-15 16:23)
-  ✔ Hacer los Concur. @done(2017-03-15 14:54)
-  ✔ Hotel en Chicago. @done(2017-03-20 10:59)
-  ✔ Add tasks in OpenAlm (standards + alli) @done(2017-03-14 16:36)
-  ✔ Meeting Bojrn @done(2017-03-14 16:36)
-  ✔ talk gonzalo @done(2017-03-14 16:36)
-  ✔ movie hector @done(2017-03-14 16:36)
