@@ -23,9 +23,5 @@
   "scripts": {
     "build": "bundle exec jekyll build",
     "test": "bundle exec htmlproof ./_site"
-  },
-  "dependencies": {
-    "coap-node": "^0.1.8",
-    "coap-shepherd": "^0.1.12"
   }
 }

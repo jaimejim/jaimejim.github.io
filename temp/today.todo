@@ -1,10 +1,15 @@
+Coding:
+☐ Compiling libcoap/pubsub branch on ios.
+☐ revisit C programming.
+☐ learn Go, tutorial?
+
 IETF:
-☐ Check the DNS guy interested on IoT.
-☐ Check with Carsten if using RD and full DNS makes sense or not.
+✔ Check the DNS guy interested on IoT. @done(2017-03-29 10:20)
+✔ Check with Carsten if using RD and full DNS makes sense or not. @done(2017-03-29 10:20)
 ☐ Jo kulik. Quic
 ☐ Check ACE preso video again.
 ☐ Book on security (ask francesca)
-☐ Talk with Carlos about students.
+✔ Talk with Carlos about students. @done(2017-03-29 10:20)
 ✔ Talk with mathias w and thomas schimt  @done(2017-03-28 17:38)
 ☐ ask carsten the masterplan
 
@@ -13,7 +18,7 @@ Other:
 ☐ https://bjango.onfastspring.com/istat-menus-5-family-pack
 ☐ https://zulip.org
 ☐ frases crawler
-
+☐ frases quijote 
 ☐ check node_modules on blog. Why is coap_shepherd there?
 ☐ Check etch process so that they do only editorial work
 ☐ Skype for Business
