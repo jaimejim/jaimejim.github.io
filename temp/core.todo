@@ -13,6 +13,7 @@ CoRE WG General:
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
  Summary available http://jaimejim.github.io/temp/draft-ietf-core-coap-tcp-tls
+ ☐ [TCP] interop to be organized
  ✔ [TCP] WGLC when new draft is out @timestamp(2017-02-15 13:42) end of WGLC @timestamp(2017-02-22 13:42) then IESG submission. @done(2017-03-23 15:38) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
  ✔ [TCP] IANA URI (S9.5) review @brian @done(2017-02-15 09:31) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
  ✔ [TCP] IANA 9.1-9.4 @jaime @done(2017-03-23 15:38) @project(TCP TLS draft-ietf-core-coap-tcp-tls)
