@@ -468,71 +468,53 @@ pre[class*="language-"] {
 
 <body>
 
-<h1 id="toc_0">CoRE WG  - Summary IETF96</h1>
+<h1 id="toc_0">CoRE WG  - Summary IETF98</h1>
 
-<h1 id="toc_1">Tuesday 2016-07-19</h1>
+<p>Slides: <a href="https://www.ietf.org/proceedings/98/slides/slides-98-core-consolidated-slide-set-02.pdf">https://www.ietf.org/proceedings/98/slides/slides-98-core-consolidated-slide-set-02.pdf</a></p>
+
+<p>Minutes: <a href="http://etherpad.tools.ietf.org:9000/p/notes-ietf-98-core">http://etherpad.tools.ietf.org:9000/p/notes-ietf-98-core</a></p>
+
+<h1 id="toc_1">Tuesday 2017-03-28</h1>
 
 <ul>
-<li><p>draft-ietf-core-block-21.txt is in the RFC editor queue.</p></li>
-<li><p>draft-ietf-core-etch–01: WGLC is completed, issues discussed. To be
-determined: 4.12 vs. 4.09.  When that is settled, updated version to
-be submitted to IESG.</p></li>
-<li><p>draft-ietf-core-links-json–06 is in the middle of WGLC (till
-2016-07-30) and was briefly discussed.  There are some claims in the
-document that it considers a larger world of JSON-LD etc.; the
-intention however is to be a simple RFC 6690 mapping and those
-claims will be cut down.</p></li>
-<li><p>draft-ietf-core-coap-tcp-tls–03: The merge of TCP/TLS, Websockets,
-Signaling, and BERT was completed in this version.  Several issues
-discussed.  In particular, there was in-room consensus to follow the
-lead of RFC 7252 and make the use of TLS mandatory to implement.</p></li>
-<li><p>with the larger number of transport schemes now available,
-draft-silverajan-core-coap-protocol-negotiation-03 was discussed.
-There is good interest in this ongoing work, some of which is also
-related to other ongoing work in T2TRG.</p></li>
-<li><p>draft-ietf-core-resource-directory–08 is nearing WGLC; reviewers
-have been identified.</p></li>
-<li><p>Brief introductions were made for
-draft-gomez-core-tcp-constrained-node-networks–00,
-draft-groves-coap-webrtcdc–00,
-draft-zheng-core-coap-lantency-evaluation–00.</p></li>
-<li><p>For draft-bormann-core-cocoa-04, there was in-room consensus for
-working-group adoption; to be confirmed on the list.</p></li>
+<li><p>RFC8075 published.</p></li>
+<li><p>draft-ietf-core-etch–01: Will become RFC8132, currently in AUTH48.</p></li>
+<li><p>draft-ietf-lpwan-coap-static-context-hc was presented, the authors are looking for feedback about whether the compression works. </p></li>
+<li><p>Multiple Interops are being planned. Virtual format to ocur monthly.</p>
+
+<ul>
+<li>OSCOAP interop event already took place during February.</li>
+<li>Interest for the organization of other interops was expressed:
+
+<ul>
+<li>Organization of interop event for CoAP-TCP/-TLS/-Websockets? </li>
+<li>Organization of interop event for Links-JSON?</li>
+<li>Organization of interop event for Etch?</li>
+<li>Organization of interop event for SenML? </li>
+</ul></li>
+</ul></li>
+<li><p>draft-ietf-core-coap-tcp-tls–07 undergone 3 versions since the first WGLC and submitted to IESG, v-08 to resolve few editorial issues. Still some nits to be worked out on the CSM messages. There is interest to make an interop, need to work out the details before IETF99.</p></li>
+<li><p>draft-ietf-core-links-json-07 2nd WGLC finished. Sent to IESG @timestamp(2017-04-02 10:00) </p></li>
+<li><p>draft-ietf-core-cocoa-01 document ready for WGLC, we will take it to the mailing list. Suggestion is to contact other groups like TCPM and IMRG for comments. </p></li>
+<li><p>draft-ietf-core-resource-directory-10 The discovery of RD itself seems to be problematic in some scenarios as there are multiple ways to find resources and endpoints. To move the document and track the reamining issues the chairs have asked Christian A. to act as document editor of the RD document. There was a proposed split of the RD document to have the DNS-SD part in a separate document. Although there was high consensus on the importance of having normative text on DNS-SD there was oposition to the split. Discussion to be me taken to the mailing list.</p></li>
+<li><p>draft-ietf-core-yang-cbor-10 there was in room consensus on the document being ready for WGLC. Will be taken to the list for confirmation.</p></li>
+<li><p>draft-veillette-core-yang-library there was not enough people in the room who have read the doc to have consensus on WGA.</p></li>
+<li><p>draft-ietf-core-object-security-02 Per packet overhead and memory usage reduction were aded to v02. Two interops have been held in the past months where 2 implementations have been tested. Blockwise transfer still an issue. The addition of a request-tag option to OSCoAP was received positively (draft-amsuess-core-request-tag) but in need of more work. A bit of concern by one of the coauthors about the size of the document. Target is to have a WGLC before Prague. </p></li>
 </ul>
 
-<h1 id="toc_2">Thursday 2016-07-21</h1>
+<h1 id="toc_2">Friday 2016-03-31</h1>
 
 <ul>
-<li><p>draft-ietf-core-http-mapping-13 took some minor fixes and has been
-submitted to IESG on 2016-07-22.</p></li>
-<li><p>For the core-interfaces draft, the split was confirmed into
-draft-ietf-core-interfaces–05 and draft-groves-core-dynlink–00 (plus
-some material that was removed and maybe can be picked up by T2TRG);
-as not enough people had read the split-off draft-groves, we will
-take the otherwise obvious adoption to the list.</p></li>
-<li><p>draft-ietf-core-yang-cbor–02: target is to do some additional
-validation with the NetMod experts and check again by end of
-September. There are a couple of implementations ongoing.</p></li>
-<li><p>draft-somaraju-core-sid–01. One suggestion wsas to use a OID
-subtree. Too few people had read the newest version for room
-consensus on working-group adoption, but noone against; to be taken
-to the list.</p></li>
-<li><p>draft-veillette-core-cool &amp; draft-vanderstok-comi: around 6 people
-read the draft, agreement on splitting out the more advanced
-features so a basic specification can be completed by the end of the
-year. Work ongoing on mapping YANG and LWM2M/IPSO objects. Some
-concerns about the diagnostic value of SIDs in debugging and
-possible problems with YANG <q>choice</q>, work needs to continue.</p></li>
-<li><p>draft-hartke-core-e2e-security-reqs–01: good rewrite; further
-requirements are being identified, discussion to be taken to the
-mailing list.</p></li>
-<li><p>draft-selander-ace-object-security–05: room consensus to adopt as WG
-item, to be confirmed on the mailing list.</p></li>
-<li><p>draft-ietf-core-senml–02: good ongoing discussion that should be
-completed on the mailing list.</p></li>
-<li><p>draft-koster-core-coap-pubsub–05: brokerless pubsub has been added.
-Take adoption to mailing list but clear room consensus already (~10
-people), reviewers identified.</p></li>
+<li><p>draft-vanderstok-core-coap-est was presented. It specifies Enrollment over Secure Transport (EST) over CoAP in ACE WG. The use of 206 as response code would create another code for retry (503 is the current code).</p></li>
+<li><p>draft-becker-core-coap-sms-gprs-06 there is insteres from the remaining authors to continue the work but help is requested. Work will progress with additional authors.  </p></li>
+<li><p>draft-ietf-core-sid–02 discussion with IANA on the range allocations for this document. More work needed to figure out the detail working with IANA. More examples and reflections on the discussions held with the NETMOD group to reach wider adoption should be reflected in the document. Documentation of the automatic SID registration as well as a reference o RFC5226 should also be added. </p></li>
+<li><p>draft-mattsson-core-security-overhead provided good empirical data on the overhead between TLS/DTLS/OSCOAP. OSCOAP overhead significantly lower than (D)TLS with compression.</p></li>
+<li><p>draft-ietf-core-object-security-02 (added above)</p></li>
+<li><p>draft-tiloca-core-multicast-oscoap informally discussed in IETF95 the draft defines the use of OSCoAP for Group Communication. Looking for reviewers.</p></li>
+<li><p>draft-hartke-core-e2e-security-reqs useful informative document. Need more volunteers to review the draft.</p></li>
+<li><p>draft-ietf-core-senml small update over the last version. Discussion on adding specific information on RSSI ended up with a decission on not adding anything extra. The use of +exi suffixes needs discussion. AD ok with sponsoring this document. </p></li>
+<li><p>draft-ietf-core-coap-pubsub looking for reviewers. Brokerless case could use an extended OSCoAP Profile for pubsub. Some new issues with QoS and missed publications, edits on the URI template and mandatory operations for the broker.</p></li>
+<li><p>Mališa Vučinić  Document, Slides? </p></li>
 </ul>
 
 
