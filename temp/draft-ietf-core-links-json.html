@@ -289,6 +289,21 @@ sup {
     vertical-align: super;
     line-height: 0;
 }
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
 * {
 	-webkit-print-color-adjust: exact;
 }
@@ -320,21 +335,15 @@ sup {
 <h3 id="toc_1">Tentative Timeline</h3>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked> <a href="#summary">draft summary</a>
-</li>
-<li class="task-list-item"><input type="checkbox" checked> <a href="#shepherd-writeup">Shepherd Writeup</a>
+<li>[x] <a href="#summary">draft summary</a></li>
+<li>[x] <a href="#shepherd-writeup">Shepherd Writeup</a>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked> Implementation Status other than Appendix A.
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Open comments on 07 addressed.
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Check Media Types @Jaime
-</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked> IESG Submission <code>@due(27-03-17 15:28)</code>
-</li>
+<li>[x] Implementation Status other than Appendix A.</li>
+<li>[x] Open comments on 07 addressed.</li>
+<li>[x] Check Media Types @Jaime</li>
+</ul></li>
+<li>[x] IESG Submission <code>@due(27-03-17 15:28)</code></li>
 </ul>
 
 <h3 id="toc_2">Comments on v06</h3>
@@ -360,7 +369,7 @@ sup {
 <h3 id="toc_3">Remaining Comments on v07</h3>
 
 <ul>
-<li>Have Christian Amsüss <a href="mailto:c.amsuess@energyharvesting.at">c.amsuess@energyharvesting.at</a> comments from the WGLC been addressed? It pertains to the <q>Consider other Work Section</q> (19-07-2016)
+<li>Have Christian Amsüss <a href="mailto:c.amsuess@energyharvesting.at">c.amsuess@energyharvesting.at</a> comments from the WGLC been addressed? It pertains to the &quot;Consider other Work Section&quot; (19-07-2016)
 
 <ul>
 <li>Done</li>
@@ -390,7 +399,7 @@ sup {
 <h3 id="toc_4">Editorial</h3>
 
 <ul>
-<li><p>Figures 4 , 5 and 6 should say the format they are in: <q>Link-Format example from RFC6690</q>,  <q>Derived JSON format example from Figure 4</q> and <q>Derived CBOR diagnostic format example from Figure 4</q> or similar for readability.</p></li>
+<li><p>Figures 4 , 5 and 6 should say the format they are in: &quot;Link-Format example from RFC6690&quot;,  &quot;Derived JSON format example from Figure 4&quot; and &quot;Derived CBOR diagnostic format example from Figure 4&quot; or similar for readability.</p></li>
 <li><p>When converting between a bespoke syntax such as that defined by <strong>CoRE Link Format</strong> [RFC6690]</p></li>
 </ul>
 
@@ -408,7 +417,7 @@ sup {
 
 <p>A link-format document is a collection of web links <code>link-value</code>, each of which is a collection of attributes <code>link-param</code> applied to a <code>URI-Reference</code>. The <a href="https://tools.ietf.org/html/draft-ietf-core-links-json-06#section-2.2">Information Model mapping</a> is straightforward for the collection of links and attributes, requiring CBOR an extra mapping to the encoded values, its CDDL being:</p>
 
-<div><pre class="line-numbers"><code class="language-c">                                   +           +
+<div><pre><code class="language-c">                                   +           +
 links = [* link]                   |           |
 link = {                           |  JSON     |
   href: tstr    ; resource URI     |           |
@@ -425,11 +434,11 @@ label = tstr / &amp;(                              | CBOR
 
 <p>There is one example of mapping, answer to the following request to the CoAP Server:</p>
 
-<div><pre class="line-numbers"><code class="language-c">REQ: GET /.well-known/core?anchor=/sensors/temp</code></pre></div>
+<div><pre><code class="language-c">REQ: GET /.well-known/core?anchor=/sensors/temp</code></pre></div>
 
 <p>Response form in <strong>CoRE Link Format</strong>:</p>
 
-<div><pre class="line-numbers"><code class="language-c">&lt;/sensors&gt;;ct=40;title=&quot;Sensor Index&quot;,
+<div><pre><code class="language-c">&lt;/sensors&gt;;ct=40;title=&quot;Sensor Index&quot;,
 &lt;/sensors/temp&gt;;rt=&quot;temperature-c&quot;;if=&quot;sensor&quot;,
 &lt;/sensors/light&gt;;rt=&quot;light-lux&quot;;if=&quot;sensor&quot;,
 &lt;http://www.example.com/sensors/t123&gt;;anchor=&quot;/sensors/temp&quot;
@@ -438,7 +447,7 @@ label = tstr / &amp;(                              | CBOR
 
 <p>Same response in <strong>JSON</strong>:</p>
 
-<div><pre class="line-numbers"><code class="language-c">&quot;[{&quot;href&quot;:&quot;/sensors&quot;,&quot;ct&quot;:&quot;40&quot;,&quot;title&quot;:&quot;Sensor
+<div><pre><code class="language-c">&quot;[{&quot;href&quot;:&quot;/sensors&quot;,&quot;ct&quot;:&quot;40&quot;,&quot;title&quot;:&quot;Sensor
  Index&quot;},{&quot;href&quot;:&quot;/sensors/temp&quot;,&quot;rt&quot;:&quot;temperature-
  c&quot;,&quot;if&quot;:&quot;sensor&quot;},{&quot;href&quot;:&quot;/sensors/light&quot;,&quot;rt&quot;:&quot;light-
  lux&quot;,&quot;if&quot;:&quot;sensor&quot;},{&quot;href&quot;:&quot;http://www.example.com/sensors/
@@ -448,7 +457,7 @@ label = tstr / &amp;(                              | CBOR
 
 <p>Same response in <strong>CBOR diagnostic format</strong>, in which there is a substitution of the <a href="https://tools.ietf.org/html/draft-ietf-core-links-json-06#page-6">common attribute names</a>:</p>
 
-<div><pre class="line-numbers"><code class="language-c">[{1: &quot;/sensors&quot;, 12: &quot;40&quot;, 7: &quot;Sensor Index&quot;},
+<div><pre><code class="language-c">[{1: &quot;/sensors&quot;, 12: &quot;40&quot;, 7: &quot;Sensor Index&quot;},
  {1: &quot;/sensors/temp&quot;, 9: &quot;temperature-c&quot;, 10: &quot;sensor&quot;},
  {1: &quot;/sensors/light&quot;, 9: &quot;light-lux&quot;, 10: &quot;sensor&quot;},
  {1: &quot;http://www.example.com/sensors/t123&quot;, 3: &quot;/sensors/temp&quot;,
@@ -499,7 +508,7 @@ label = tstr / &amp;(                              | CBOR
 
 <h3 id="toc_7">Summary</h3>
 
-<p>Document Shepherd: Jaime Jiménez, <a href="mailto:jaime.jimenez@ericsson.com">jaime.jimenez@ericsson.com</a><br>
+<p>Document Shepherd: Jaime Jiménez, <a href="mailto:jaime.jimenez@ericsson.com">jaime.jimenez@ericsson.com</a>
 Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnikov@fastmail.fm</a></p>
 
 <p>JavaScript Object Notation, JSON (RFC7159) is a text-based data format which is popular for Web based data exchange.  Concise Binary Object Representation, CBOR (RFC7049) is a binary data format which has been optimized for data exchange for the Internet of Things (IoT). For many IoT scenarios, CBOR formats will be preferred since it can help decrease transmission payload sizes as well as implementation code sizes compared to other data formats.</p>
@@ -512,70 +521,48 @@ Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnik
 
 <p>The document has gone through multiple expert reviews and has been discussed on multiple IETF meetings. Before the last IETF the WGLC was completed.</p>
 
-<p><code>Address comments section (on v 06-07) above please</code></p>
-
 <h3 id="toc_9">Intellectual Property</h3>
 
 <p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG.</p>
 
-<p><code>Ask authors, TBD</code></p>
-
 <h3 id="toc_10">Other Points</h3>
 
-<p>IMO the title should probably be: <q>Representing CoRE link-format in JSON and CBOR</q>.</p>
+<p>IMO the title should probably be: &quot;Representing CoRE link-format in JSON and CBOR&quot;.</p>
 
 <h3 id="toc_11">Checklist</h3>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked> Does the shepherd stand behind the document and think the document is ready for publication?
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Is the correct RFC type indicated in the title page header?
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Is the abstract both brief and sufficient, and does it stand alone as a brief summary?
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Is the intent of the document accurately and adequately explained in the introduction?
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed?
-<code>Mail sent to media-types@iana.org, waiting for anwer. New media type entries (link-format+json and link-format+cbor) need verification by media-types@iana.org. The CDDL should be verified.</code>
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests?
+<li>[x] Does the shepherd stand behind the document and think the document is ready for publication?</li>
+<li>[x] Is the correct RFC type indicated in the title page header?</li>
+<li>[x] Is the abstract both brief and sufficient, and does it stand alone as a brief summary?</li>
+<li>[x] Is the intent of the document accurately and adequately explained in the introduction?</li>
+<li>[x] Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed?
+<code>Mail sent to media-types@iana.org, waiting for anwer. New media type entries (link-format+json and link-format+cbor) need verification by media-types@iana.org. The CDDL should be verified.</code></li>
+<li>[x] Has the shepherd performed automated checks -- idnits (see http://www.ietf.org/tools/idnits/ and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on -- and determined that the document passes the tests?
 <code>[RFCthis] ref seems out of place
-draft-greevenbosch-appsawg-cbor-cddl-09 ref should be updated</code>
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?
-<code>TBD once the last version is submitted</code>
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified?
-<code>Both seem correct to me</code>
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Are all normative references made to documents that are ready for advancement and are otherwise in a clear state?
-</li>
-<li class="task-list-item"><input type="checkbox" checked> If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction?
-<code>Does not apply</code>
-</li>
-<li class="task-list-item"><p><input type="checkbox" checked> If this is a <q>bis</q> document, have all of the errata been considered?<br>
-<code>Does not apply</code></p>
-</li>
+draft-greevenbosch-appsawg-cbor-cddl-09 ref should be updated</code></li>
+<li>[x] Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?
+<code>TBD once the last version is submitted</code></li>
+<li>[x] Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified?
+<code>Both seem correct to me</code></li>
+<li>[x] Are all normative references made to documents that are ready for advancement and are otherwise in a clear state?</li>
+<li>[x] If publication of this document changes the status of any existing RFCs, are those RFCs listed on the title page header, and are the changes listed in the abstract and discussed (explained, not just mentioned) in the introduction?
+<code>Does not apply</code></li>
+<li><p>[x] If this is a &quot;bis&quot; document, have all of the errata been considered?
+<code>Does not apply</code></p></li>
 <li><p><strong>IANA</strong> Considerations:</p>
 
 <ul>
-<li class="task-list-item"><input type="checkbox" checked> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions.
-<code>Are the new media type IDs assigned sequentially or do we request something concrete to IANA? URL to check http://www.iana.org/assignments/core-parameters/core-parameters.xhtml</code>
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)?
-<code>The new two media types require expert review.</code>
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?
-</li>
-<li class="task-list-item"><input type="checkbox" checked> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
-</li>
-<li class="task-list-item"><input type="checkbox" checked> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?
-<code>no new registries</code>
-</li>
-<li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified?
-</li>
+<li>[x] Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&#39;s being requested, so they can perform the required actions.
+<code>Are the new media type IDs assigned sequentially or do we request something concrete to IANA? URL to check http://www.iana.org/assignments/core-parameters/core-parameters.xhtml</code></li>
+<li>[x] Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?</li>
+<li>[x] Are all IANA registries referred to by their exact names (check them in http://www.iana.org/protocols/ to be sure)?
+<code>The new two media types require expert review.</code></li>
+<li>[x] Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?</li>
+<li>[x] For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?</li>
+<li>[x] For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?
+<code>no new registries</code></li>
+<li>[x]  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified?</li>
 </ul></li>
 </ul>
 

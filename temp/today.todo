@@ -2,6 +2,7 @@ Coding:
 ☐ Compiling libcoap/pubsub branch on ios.
 ☐ revisit C programming.
 ☐ learn Go, tutorial?
+☐ contribute to draft-becker-core-coap-sms-gprs-06 with Thomas
 
 IETF:
 ✔ Check the DNS guy interested on IoT. @done(2017-03-29 10:20)
@@ -18,7 +19,7 @@ Other:
 ☐ https://bjango.onfastspring.com/istat-menus-5-family-pack
 ☐ https://zulip.org
 ☐ frases crawler
-☐ frases quijote 
+☐ frases quijote
 ☐ check node_modules on blog. Why is coap_shepherd there?
 ☐ Check etch process so that they do only editorial work
 ☐ Skype for Business
@@ -29,6 +30,8 @@ Takeways:
 ☐ Read and understand https://tools.ietf.org/html/draft-ietf-ace-oauth-authz-06
 ☐ Discovery, process and steps. Find Daves Thaler audio form T2TRG. http://etherpad.tools.ietf.org:9000/p/notes-ietf-98-t2trg?useMonospaceFont=true
 ☐ Use of DNS-SD in RD, follow up on the new doc. https://github.com/core-wg/rd-dns-sd  read https://tools.ietf.org/html/rfc6763#page-30 too
+☐ VRF Only the holder of the private VRF key can compute the hash, but anyone with corresponding public key can verify the correctness of the hash. https://tools.ietf.org/html/draft-goldbe-vrf-00  https://github.com/fcelda/nsec5-crypto
+☐ SIDs are 64bits.
 
 
 IPSO into TD
