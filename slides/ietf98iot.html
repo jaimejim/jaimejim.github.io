@@ -127,8 +127,8 @@ class: center, middle, inverse
 ---
 #IETF98 and IoT
 ### Jaime Jiménez, Ericsson Research
-###*jaimejim.github.io*
-.footnote[Tuesday 2nd April 2017]
+###[jaimejim.github.io]
+.footnote[Tuesday 4th April 2017]
 
 ---
 layout: false
@@ -148,18 +148,18 @@ layout: false
 
 ---
 
-* YANG seems to quietly be progressing too. In particular for SigFox-based networks. They have figured out a way to do compression so that they can fit a CoAP message in less than 20 bytes (!). They use CBOR and IANA-based identifiers. No linking, no proper security nor message fragmentation yet. <https://tools.ietf.org/html/draft-ietf-core-yang-cbor>
+* YANG seems to quietly be progressing too. In particular for SigFox-based networks. They have figured out a way to do compression so that they can fit a CoAP message in less than 20 bytes (!). They use CBOR and IANA-based identifiers. AFAIK no linking, nor proper security or message fragmentation yet. <https://tools.ietf.org/html/draft-ietf-core-yang-cbor>
 <https://tools.ietf.org/html/draft-ietf-core-sid>
 
 * CoRE Links to JSON to CBOR is also finished. In addition to that, there seems to be some allingment around the use of CBOR as serialization in the constrained space and in other WGs, in fact there is a newly formed CBOR WG. Implementation available if we eant to use CoRE-Link format <https://tools.ietf.org/html/draft-ietf-core-links-json>
 
-* OSCoAP is becoming quite popular as an alternative to TLS/DTLS. Other usages popping up in other working groups. Usage for PubSub specified. Main guys are from ER (Göran Selander and Francesca Palombini).<https://tools.ietf.org/html/draft-ietf-core-object-security>
+* OSCoAP is becoming quite popular as an alternative to TLS/DTLS. Other usages popping up in other working groups. Usage for PubSub specified. Main guys are from Ericsson (Göran Selander and Francesca Palombini).<https://tools.ietf.org/html/draft-ietf-core-object-security>
 
 * As far as authorization mechanisms go, we all should increase our competence on OAuthz <https://tools.ietf.org/html/draft-ietf-ace-oauth-authz-06>
 
 ---
 
-* The draft on **CoAP over TCP** is continuing towards RFC (done at WG level). LWM2M and OCF will use it and update their specifications accordingly. <https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls>
+* The draft on **CoAP over TCP** is continuing towards RFC (done at WG level), few nits found. LWM2M and OCF will use it and update their specifications accordingly. <https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls>
 
 * <https://tools.ietf.org/html/draft-hartke-core-e2e-security-reqs> under the radar to some, it's an excellent document narrating use cases and security requirements for working with CoAP in proxied networks.
 
@@ -169,8 +169,9 @@ layout: false
 
     </textarea>
     <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
+    </script>
+    <script
     src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
-
     </script>
     <script>
       var slideshow = remark.create();
