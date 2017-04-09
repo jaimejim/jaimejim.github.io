@@ -13,7 +13,7 @@ blog: true
 star: true
 ---
 
-Another day and another summary series about a ~~coming~~ current standard, [PATCH and FETCH Methods for the Constrained Application Protocol (CoAP)](https://tools.ietf.org/html/rfc8132). Which just today to became RFC8132.
+Another day and another summary series about a ~~coming~~ current standard, [PATCH and FETCH Methods for the Constrained Application Protocol (CoAP)](https://tools.ietf.org/html/rfc8132). Which just today became RFC8132.
 
 The document adds three new methods to CoAP that enable partial resource modifications and partial resource retrieval from a CoAP Server: FETCH, to perform the equivalent of a GET with a request body; and the twin methods PATCH and iPATCH, to perform partial modifications of an existing CoAP resource (similar to HTTP PATCH).
 
@@ -28,9 +28,8 @@ https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,N
 &key=YOUR_API_KEY
 ```
 
-While a _normal_ GET returns a representation of a resource identified by the URI. In FETCH the server returns a representation as specified by the request parameters. This also means, that the resource representation returned cannot be a complete but a partial resource representation.
-
-In **FETCH**, requests can be expressed as form relations on [CoRE Application Descriptions](https://tools.ietf.org/html/draft-hartke-core-apps-07). FETCH operations don't alter the state of the targeted resource, thus are safe and idempotent, their responses are cacheable. CoAP Observe can also be used on a FETCH request.
+While a _normal_ GET returns a representation of a resource identified by the URI. In FETCH the server returns a representation as specified by the request parameters. This also means that the resource representation returned cannot be a complete but a partial resource representation.
+FETCH operations, like GET, do not alter the state of the targeted resource, thus are safe and idempotent. Also CoAP Observe can be used on a FETCH request, so you can subscribe to a specific resource.
 
 As explained in [Section 3.1](https://tools.ietf.org/html/rfc8132#section-3.1), being this a resource in JSON format, and assuming your application uses that resource called "object", and hosted in a constrained device:
 
@@ -96,4 +95,4 @@ The JSON document final state will be expressed as below:
 
 There is a whole set of [possible errors and how can they be handled](https://tools.ietf.org/html/draft-ietf-core-etch-04#page-13), but in general this is what PATCH and FETCH are about.
 
-What is outside of the scope of this document is the description of the possible content formats and operations that can be applied on a resource, [JSON PATCH](https://tools.ietf.org/html/rfc6902), [JSON Merge PATCH](https://tools.ietf.org/html/rfc7396) are two examples but there is a lengthy [list of content-formats available at IANA core-parameters](https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats).
+What is outside of the scope of this document is the description of the possible content formats and operations that can be applied on a resource, [JSON PATCH](https://tools.ietf.org/html/rfc6902), [JSON Merge PATCH](https://tools.ietf.org/html/rfc7396) are two examples but there is a lengthy [list of content-formats available at IANA core-parameters](https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats). In FETCH, requests can be expressed as form relations on [CoRE Application Descriptions](https://tools.ietf.org/html/draft-hartke-core-apps-07).
