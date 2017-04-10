@@ -58,8 +58,7 @@ When you see the payload of the GW you can see they are very similar, the resour
 <Name>Sensor Units</Name>
 ```
 
-
-I have not yet had time to debug everything as I just bought my own lights yesterday. But I hope that other people looking into what the Trådfri GW can send and parse find it useful. Kudos to IKEA for their work. I hope that next iteration has CoAP all the way to the endpoints. There are so many more things you can use with this technology!
+I have not yet had time to debug everything as I just bought my own lights yesterday. But I hope that other people looking into what the Trådfri GW can send and parse find it useful. **Kudos to IKEA for their work**. I hope that next iteration has CoAP all the way to the endpoints. There many more things you can do with CoAP and that you can [expand LWM2M with](/coap-functionality-lwm2m/).
 
 If you want to register your devices by sharing the XML of their Objects, so that others can interoperate with them, you can do so at [IPSO's Github Repository](https://github.com/IPSO-Alliance/pub/).
 
@@ -67,4 +66,6 @@ If you want to know more, please ask. [Michael Koster](http://iot-datamodels.blo
 
 If you want to know more about the wealth of data models out there you can check the [IoTSI Workshop](https://www.iab.org/activities/workshops/iotsi/) as a reference.
 
-**In fact data semantics seem to be a big problem for interoperability at this point, having companies like IKEA that have large deployments and interoperability in mind, rather than data mining is always good news for consumers.**
+In fact data semantics seem to be a big problem for interoperability at this point, having companies like IKEA that have large deployments and interoperability in mind, rather than data mining is always good news for consumers.
+
+PS: I plan to update this post as I find out more things about the IKEA TRÅDFRI.
