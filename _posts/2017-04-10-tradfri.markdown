@@ -21,7 +21,7 @@ The articles are interesting for those of us who have spent quite some time buil
 
 - <http://press.ikea.se/ikea_smart_belysning/>
 
-One interesting pointer by [bitsex](https://bitsex.net/software/2017/coap-endpoints-on-ikea-tradfri/) is that the gateway uses [CoAP](http://coap.technology) over UDP, and implements DTLS. For those who don't know about [CoAP](https://tools.ietf.org/html/rfc7252), it is a REST protocol much like HTTP but for very constrained devices. This would make it one of the first (I might be wrong, please let me know if so) general-user products out there with CoAP on it. Being CoAP deployed more in industrial settings where being savy makes a big difference.
+One interesting pointer by [bitsex](https://bitsex.net/software/2017/coap-endpoints-on-ikea-tradfri/) is that the gateway uses [CoAP](http://coap.technology) over UDP, and implements DTLS. For those who don't know about [CoAP](https://tools.ietf.org/html/rfc7252), it is a REST protocol much like HTTP but for very constrained devices. This would make it one of the first (I might be wrong, please let me know if so) general-user products out there with CoAP on it. Being CoAP deployed more in industrial settings where being savvy makes a big difference.
 
 *Another interesting not-yet-revealed bit of information, is that it looks like the payload itself seems to use IPSO/LWM2M Objects as data model.*
 
