@@ -38,24 +38,24 @@ When you see the payload of the GW you can see they are very similar, the resour
 
 ```c
 //Edited for readability
-		<Name>Light Control</Name>
-		<Description1>Description: This Object is used to control a light source, such as a LED or other light.  It allows a light to be turned on or off and its dimmer setting to be control as a % between 0 and 100. An optional colour setting enables a string to be used to indicate the desired colour.</Description1>
-		<ObjectID>3311</ObjectID>
-		<Resources>
-			<Item ID="5850">
-				<Name>On/Off</Name>
-			<Item ID="5851">
-				<Name>Dimmer</Name>
-			<Item ID="5852">
-				<Name>On Time</Name>
-			<Item ID="5805">
-				<Name>Cumulative active power</Name>
-			<Item ID="5820">
-				<Name>Power Factor</Name>
-			<Item ID="5706">
-				<Name>Colour</Name>
-			<Item ID="5701">
-				<Name>Sensor Units</Name>
+<Name>Light Control</Name>
+<Description1>Description: This Object is used to control a light source, such as a LED or other light.  It allows a light to be turned on or off and its dimmer setting to be control as a % between 0 and 100. An optional colour setting enables a string to be used to indicate the desired colour.</Description1>
+<ObjectID>3311</ObjectID>
+<Resources>
+<Item ID="5850">
+<Name>On/Off</Name>
+<Item ID="5851">
+<Name>Dimmer</Name>
+<Item ID="5852">
+<Name>On Time</Name>
+<Item ID="5805">
+<Name>Cumulative active power</Name>
+<Item ID="5820">
+<Name>Power Factor</Name>
+<Item ID="5706">
+<Name>Colour</Name>
+<Item ID="5701">
+<Name>Sensor Units</Name>
 ```
 
 
