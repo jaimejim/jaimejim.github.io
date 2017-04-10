@@ -181,10 +181,10 @@ General presentation about what is IETF, Semantic "Space", IOT Semantic Interop 
 * No Web Linking! (but easy to add)
 * LWM2M Object Versioning.
 * Not suited for complex hypermedia interactions.
-* Lots of politics in the org with (corporate).
+* Politics!
 * Could have a richer language to represent IPSO Objects instead of XML.
-* Missing a lot of IETF CoRE concepts: recource type "rt", "cf", etc.
-* Also URI 3303/0/5700
+* Missing a lot of IETF CoRE-Link concepts: recource type "rt", "cf", etc.
+* Also URI 3303/0/5700 (no decoupling)
 
 *What do **you** think?*
 
@@ -207,9 +207,9 @@ General presentation about what is IETF, Semantic "Space", IOT Semantic Interop 
 * How is IPSO **competitive** against other alliances like IoTivity?
   * I think you mean OCF's [OneIoTA](http://oneiota.org/documents?filter%5Bmedia_type%5D=application%2Framl%2Byaml) wich is the part of OCF that does Data Models.
   * There are actually many more that somewhat are related: Schema.org, IANA, WoT TD, ZigBee CL, YANG models ...
-  * In practice we are about 20-30 people from many companies that somehow get involved in few of those for "business" reasons.
+  * In practice we are about 20-30 people from many companies that somehow get involved in few of those for *business* reasons.
   * [IOTSI Workshop](https://www.iab.org/activities/workshops/iotsi/)
-  * Main asset is that it is used by LWM2M, so from the technical standpoint you can just use that for now.
+  * Main asset is that it is used by LWM2M, so from the technical standpoint you can just use that right now.
   * Might use something different in the future?
 
 ---
@@ -219,18 +219,21 @@ General presentation about what is IETF, Semantic "Space", IOT Semantic Interop 
   * We have used them on LCM and [ELIOT](https://github.com/Alliasd/ELIOT), you can use those as examples.
 
 * Can multiple IoT platform like AppIoT co-exist with IPSO? If so how?
-  * Coexist?
+  * Define *platform*, define *co-exist* and ... what?
 
 * How can different service provider coexist? Can a device belong to 2 different service providers?
   * Define "service provider".
-  * In principle yes, but not very practical.
-  * Depends on the "constrainedness" of the device. Can it run multiple stacks?
+  * If you mean multiprotocol stack, you could, but not very practical. If you mean multiple *clouds*, sure. If you mean multiple ISPs,, sure.
+  * It all depends on the "constrainedness" of the device. Can it run multiple stacks?
 
 
 ---
 ##Q&A
 
-* Any *actual* example system/implementation to demonstrate how IPSO plays *so well* for interoperability? These are examples of groups/companies/orgs that use IPSO objects...
+* Any *actual* example system/implementation to demonstrate how IPSO plays *so well* for interoperability?
+
+  * Hey, did I notice some form of sarcasm there? :D
+  * These are examples of groups/companies/orgs that use IPSO objects...
 
   * <http://ipso-alliance.github.io/pub/>
   * <http://www.eclipse.org/leshan/>
@@ -241,6 +244,7 @@ General presentation about what is IETF, Semantic "Space", IOT Semantic Interop 
   * <http://www.versasense.com>
   * <http://coap.technology/impls.html>
   * <https://github.com/PeterEB/coap-shepherd>
+  * <ikea lighst (private repo)>
   * <https://github.com/contiki-os/contiki/tree/master/apps/ipso-objects>
 
     </textarea>
