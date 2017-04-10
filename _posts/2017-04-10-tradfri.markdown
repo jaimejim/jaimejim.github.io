@@ -14,16 +14,16 @@ star: true
 
 There have been some press releases on the *IKEA lights*. I actually went yesterday to buy some of them to play around.
 
-![I love IKEA instructions](/assets/images/ikea.jpg)*I love how they used the same format for their instructions*
+![I love IKEA instructions](/assets/images/ikea.jpg)*I love how they used the same instruction design as they use for the furniture*
 
 The articles are interesting for those of us who have spent quite some time building IoT protocols, as it transpires which technologies IKEA chose in order to build their lightning system.
  - [http://newsroom.inter.ikea.com](http://newsroom.inter.ikea.com/news/ikea-launches-its-first-digital-home-furnishing-product---an-app-to-adjust-lighting/s/b1fef4a2-e152-4ee3-9431-e188d26dfc92)
 
 - <http://press.ikea.se/ikea_smart_belysning/>
 
-One interesting pointer by [bitsex](https://bitsex.net/software/2017/coap-endpoints-on-ikea-tradfri/) is that the gateway uses (CoAP)[http://coap.technology] over UDP, and implements DTLS. For those who don't know about [CoAP](https://tools.ietf.org/html/rfc7252), it is a REST protocol much like HTTP but for very constrained devices. This would make it one of the first (I might be wrong, please let me know if so) general-user products out there with CoAP on it. Being CoAP deployed more in industrial settings where being savy makes a big difference.
+One interesting pointer by [bitsex](https://bitsex.net/software/2017/coap-endpoints-on-ikea-tradfri/) is that the gateway uses [CoAP](http://coap.technology) over UDP, and implements DTLS. For those who don't know about [CoAP](https://tools.ietf.org/html/rfc7252), it is a REST protocol much like HTTP but for very constrained devices. This would make it one of the first (I might be wrong, please let me know if so) general-user products out there with CoAP on it. Being CoAP deployed more in industrial settings where being savy makes a big difference.
 
-Another interesting *not-yet-revealed* bit of information, is that it looks like the payload itself seems to use IPSO/LWM2M Objects as data model.
+*Another interesting not-yet-revealed bit of information, is that it looks like the payload itself seems to use IPSO/LWM2M Objects as data model.*
 
 For those who don't know, LWM2M is a protocol built around CoAP and use for managing devices. So things like firmware upgrades, error reports, etc. Apart form the management interfaces, LWM2M also adds a very simple Object Model for managing those devices. IPSO expands that set of Objects so that you can have application information too (e.g. sensor readings, commands, etc).
 
