@@ -30,7 +30,7 @@ For those who don't know, LWM2M is a protocol built around CoAP and use for mana
 IPSO defines objects and resources that map to device properties. If we got to the [IPSO repository](https://github.com/IPSO-Alliance/pub) and look in particular at the
 [Light Control](https://github.com/IPSO-Alliance/pub/blob/master/reg/xml/3311.xml) we can see that it allows a light to be turned on or off and its dimmer setting to be controlled as a % between 0 and 100.
 
-When you see the payload of the GW you can see they are very similar, the resources that change are 5707:Fractional Time and few others. I have not yet figured out if the rest are part of [OMA's or other registry](http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html) but I'm sure it'll be fun to find out.
+When you see the payload of the GW you can see they are very similar, the resources that change are `5707:Fractional Time` and few others. I have not yet figured out if the rest are part of [OMA's or other registry](http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html) or proprietary ones but I'm sure it'll be fun to find out and I encourage IKEA to register them somewhere.
 
 ```c
 {"5850":1,"5851":127,"5707":0,"5708":0,"5709":24930,"5710":24694,"9003":0,"5711":250,"5706":"f5faf6"}
