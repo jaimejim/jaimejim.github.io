@@ -23,14 +23,14 @@ The articles are interesting for those of us who have spent quite some time buil
 
 One interesting pointer by [bitsex](https://bitsex.net/software/2017/coap-endpoints-on-ikea-tradfri/) is that the gateway uses [CoAP](http://coap.technology) over UDP, and implements DTLS. For those who don't know about [CoAP](https://tools.ietf.org/html/rfc7252), it is a REST protocol much like HTTP but for very constrained devices. This would make it one of the first (I might be wrong, please let me know if so) general-user products out there with CoAP on it. Being CoAP deployed more in industrial settings where being savvy makes a big difference.
 
-*Another interesting not-yet-revealed bit of information, is that it looks like the payload itself seems to use IPSO/LWM2M Objects as data model.*
+*Another interesting bit of information, is that it looks like the payload itself seems to use IPSO-like Objects as data model.*
 
 For those who don't know, LWM2M is a protocol built around CoAP and use for managing devices. So things like firmware upgrades, error reports, etc. Apart form the management interfaces, LWM2M also adds a very simple Object Model for managing those devices. IPSO expands that set of Objects so that you can have application information too (e.g. sensor readings, commands, etc).
 
 IPSO defines objects and resources that map to device properties. If we got to the [IPSO repository](https://github.com/IPSO-Alliance/pub) and look in particular at the
 [Light Control](https://github.com/IPSO-Alliance/pub/blob/master/reg/xml/3311.xml) we can see that it allows a light to be turned on or off and its dimmer setting to be controlled as a % between 0 and 100.
 
-When you see the payload of the GW you can see they are very similar, the resources that change are `5707:Fractional Time` and few others. I have not yet figured out if the rest are part of [OMA's or other registry](http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html) or proprietary ones but I'm sure it'll be fun to find out and I encourage IKEA to register them somewhere.
+When you see the payload of the GW you can see they are very similar, the resources that change are `5707:Fractional Time` and few others. I have not yet figured out if the rest are part of [OMA's or other registry](http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html) or proprietary ones, [someone posted the IDs online](http://sprunge.us/CCQF) but they provide little info at this point.
 
 ```c
 {"5850":1,"5851":127,"5707":0,"5708":0,"5709":24930,"5710":24694,"9003":0,"5711":250,"5706":"f5faf6"}
