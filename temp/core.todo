@@ -25,6 +25,7 @@ CoAP Over SMS draft-becker-core-coap-sms-gprs:
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
  ☐ [TCP] Organization of interop event for CoAP-TCP/-TLS/-Websockets?
+ ☐ [TCP] Pull request for WS bug and other bugs during AD review, then to RFC editor.
  ☐ [TCP] Waiting for AUTH48.
 
 ETCH draft-ietf-core-etch:
@@ -66,8 +67,12 @@ DynLink draft-groves-core-dynlink:
 
 Congestion Control draft-ietf-core-cocoa:
  ☐ [COCOA] Check with authors draft status.
- ☐ [COCOA] Send email to the TCPM chairs that we are about to publish this. Appendix with justification should stay in there or not? It's on the agenda for tuesday.
- ☐ [COCOA] Shepherd Writeup @jaime @timestamp(2017-04-02 20:42)
+ ☐ [COCOA] Send email to the TCPM chairs that we are about to publish this. Appendix with justification should stay in there or not? It's on the agenda for tuesday. (note: no response yet).
+ ☐ example
+ ☐ [COCOA] WGLC @jaime @timestamp(2017-04-14 20:42)
+ ✔ [COCOA] Follow up with Michael Welz @done(2017-04-12 15:34) @project(Congestion Control draft-ietf-core-cocoa)
+ ✔ [COCOA] WGLC https://www.ietf.org/proceedings/92/iccrg.html @done(2017-04-12 15:34) @project(Congestion Control draft-ietf-core-cocoa)
+ ✔ [COCOA] Short email about the fact that we will do WGLC and also about Appendix A and B. Add core@ietf.org in REPLY TO iccrg@ietf.org , tcpm@ietf.org @done(2017-04-12 15:34) @project(Congestion Control draft-ietf-core-cocoa)
 
 COMI draft-ietf-core-comi:
  ✔ [COMI] Peter to address Ana Minaburo comments on CON messages. @done(2017-04-02 20:55) @project(COMI draft-ietf-core-comi)
@@ -98,7 +103,7 @@ RFCs
 https://tools.ietf.org/html/rfc8075
 
 Submissions to IESG:
- ☐ IESG Submission of draft-ietf-core-links-json @timestamp(2017-02-01 13:34)
+ ✔ IESG Submission of draft-ietf-core-links-json @timestamp(2017-02-01 13:34) @done(2017-04-12 11:13) @project(Submissions to IESG)
  ☐ IESG Submission of draft-ietf-core-senml @timestamp(2017-04-15 13:36)
  ☐ IESG Submission of draft-ietf-core-resource-directory @timestamp(2017-03-10 13:34)
  ☐ IESG Submission of draft-ietf-core-yang-cbor @timestamp(2017-03-09 13:52)
