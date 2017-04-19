@@ -8,6 +8,7 @@ https://datatracker.ietf.org/wg/core/milestones/
 
 CoRE WG General:
  ☐ Interops to be arranged.
+ ☐ IRI and URI issue https://tools.ietf.org/html/rfc3987#page-10
 
 RD draft-ietf-core-resource-directory:
  ✔ [RD] Check the diff with https://github.com/mjkoster/I-D/tree/master/CoRE%20RD @jaime @medium @done(2017-04-02 20:37) @project(RD draft-ietf-core-resource-directory)
@@ -31,7 +32,6 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
 ETCH draft-ietf-core-etch:
  ✔ [ETCH] waiting AUTH48, soon to be RFC8132 @done(2017-04-02 20:40) @project(ETCH draft-ietf-core-etch)
  ☐ [ETCH] Organization of interop event for Etch?
- ☐ [LNKS] CoRE-Links draft-ietf-core-links-json:Sent to IESG @timestamp(2017-04-02 10:00)
  ✔ [LNKS] IPR declaration in progress @done(2017-04-02 20:41) @project(ETCH draft-ietf-core-etch)
  ✔ [LNKS] Ad Content format values on IANA considerations. @done(2017-04-02 20:41) @project(ETCH draft-ietf-core-etch)
  ✔ [LNKS] IESG Submission of draft-ietf-core-links-json @timestamp(2017-04-15 18:30) @done(2017-04-02 20:41) @project(ETCH draft-ietf-core-etch)
