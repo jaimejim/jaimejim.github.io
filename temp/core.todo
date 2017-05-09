@@ -11,17 +11,12 @@ CoRE WG General:
  ☐ IRI and URI issue https://tools.ietf.org/html/rfc3987#page-10
 
 RD draft-ietf-core-resource-directory:
- ✔ [RD] Check the diff with https://github.com/mjkoster/I-D/tree/master/CoRE%20RD @jaime @medium @done(2017-04-02 20:37) @project(RD draft-ietf-core-resource-directory)
  ☐ [RD] DNS-SD discussion on mailing list. What have the authors decided? Group OK with the decission?
  ☐ [RD] Check with Christian progress.
  ☐ [RD] (@jaime) Should we add text on RD discovery?
- ✔ [RD] DNS-SD split. Discuss options in Chicago (appendix, new doc?) @done(2017-04-02 20:43) @project(RD draft-ietf-core-resource-directory)
- ✔ [RD] Meet with authors during IETF98 @done(2017-04-02 20:43) @project(RD draft-ietf-core-resource-directory)
- ✔ [RD] Need Editor. @done(2017-04-02 20:43) @project(RD draft-ietf-core-resource-directory)
  ☐ [RD] Remind volunteers about: [IETF96] New reviews by Hannes T, Klaus H, Darshak, Bill S, Christian G, Sebastian (?), Matthias K.
 
 CoAP Over SMS draft-becker-core-coap-sms-gprs:
- ✔ Follow up and ask for more interest around. @done(2017-04-02 20:56) @project(CoAP Over SMS draft-becker-core-coap-sms-gprs)
  ☐ [SMS] interest has been shown. Need to put in shape for WGA.
 
 TCP TLS draft-ietf-core-coap-tcp-tls:
@@ -30,16 +25,10 @@ TCP TLS draft-ietf-core-coap-tcp-tls:
  ☐ [TCP] Waiting for AUTH48.
 
 ETCH draft-ietf-core-etch:
- ✔ [ETCH] waiting AUTH48, soon to be RFC8132 @done(2017-04-02 20:40) @project(ETCH draft-ietf-core-etch)
  ☐ [ETCH] Organization of interop event for Etch?
- ✔ [LNKS] IPR declaration in progress @done(2017-04-02 20:41) @project(ETCH draft-ietf-core-etch)
- ✔ [LNKS] Ad Content format values on IANA considerations. @done(2017-04-02 20:41) @project(ETCH draft-ietf-core-etch)
- ✔ [LNKS] IESG Submission of draft-ietf-core-links-json @timestamp(2017-04-15 18:30) @done(2017-04-02 20:41) @project(ETCH draft-ietf-core-etch)
 
 SenML draft-ietf-core-senml:
- ✘ [SML] WGLC two-week WGLC, starting after the IETF98. @cancelled(2017-04-02 20:54) @project(SenML draft-ietf-core-senml)
  ☐ [SML] Organization of interop event for SenML?
- ✔ [SML] New Registry. Check with IANA. @done(2017-04-02 20:54) @project(SenML draft-ietf-core-senml)
  ☐ [SML] IESG Submission of draft-ietf-core-senml @timestamp(2017-04-15 13:36).
 
 CoRE Object Security CoAP draft-ietf-core-object-security:
@@ -51,11 +40,9 @@ CoRE Object Security CoAP draft-ietf-core-object-security:
  ☐ [OSCOAP] Many open issues focus on quality.
 
 SID identifiers draft-ietf-core-sid:
- ✔ [SID] Check status of IANA processes (register SIDs, lookup SIDs) @done(2017-04-02 20:50) @project(SID identifiers draft-ietf-core-sid)
  ☐ [SID] Edits from RFC5226. Examples and reflections from NETMOD group.
 
 YANG CBOR draft-ietf-core-yang-cbor:
- ✔ [YANG-CBOR] Confirm on mailing list once new version submitted -04. @done(2017-04-02 20:45) @project(YANG CBOR draft-ietf-core-yang-cbor)
  ☐ [YANG-CBOR] there was in room consensus on the document being ready for WGLC. Will be taken to the list for confirmation. @timestamp(2017-04-04 20:47) 2 weeks call @timestamp(2017-04-28 20:47)
 
 PubSub draft-ietf-core-coap-pubsub:
@@ -70,12 +57,8 @@ Congestion Control draft-ietf-core-cocoa:
  ☐ [COCOA] Send email to the TCPM chairs that we are about to publish this. Appendix with justification should stay in there or not? It's on the agenda for tuesday. (note: no response yet).
  ☐ example
  ☐ [COCOA] WGLC @jaime @timestamp(2017-04-14 20:42)
- ✔ [COCOA] Follow up with Michael Welz @done(2017-04-12 15:34) @project(Congestion Control draft-ietf-core-cocoa)
- ✔ [COCOA] WGLC https://www.ietf.org/proceedings/92/iccrg.html @done(2017-04-12 15:34) @project(Congestion Control draft-ietf-core-cocoa)
- ✔ [COCOA] Short email about the fact that we will do WGLC and also about Appendix A and B. Add core@ietf.org in REPLY TO iccrg@ietf.org , tcpm@ietf.org @done(2017-04-12 15:34) @project(Congestion Control draft-ietf-core-cocoa)
 
 COMI draft-ietf-core-comi:
- ✔ [COMI] Peter to address Ana Minaburo comments on CON messages. @done(2017-04-02 20:55) @project(COMI draft-ietf-core-comi)
 
 Interfaces draft-ietf-core-interfaces:
   ☐ [INTERF] revisit?
@@ -103,7 +86,6 @@ RFCs
 https://tools.ietf.org/html/rfc8075
 
 Submissions to IESG:
- ✔ IESG Submission of draft-ietf-core-links-json @timestamp(2017-02-01 13:34) @done(2017-04-12 11:13) @project(Submissions to IESG)
  ☐ IESG Submission of draft-ietf-core-senml @timestamp(2017-04-15 13:36)
  ☐ IESG Submission of draft-ietf-core-resource-directory @timestamp(2017-03-10 13:34)
  ☐ IESG Submission of draft-ietf-core-yang-cbor @timestamp(2017-03-09 13:52)
@@ -112,6 +94,24 @@ Submissions to IESG:
 
 
 Archive:
+  ✔ [RD] Check the diff with https://github.com/mjkoster/I-D/tree/master/CoRE%20RD @jaime @medium @done(2017-04-02 20:37) @project(RD draft-ietf-core-resource-directory)
+  ✔ [RD] DNS-SD split. Discuss options in Chicago (appendix, new doc?) @done(2017-04-02 20:43) @project(RD draft-ietf-core-resource-directory)
+  ✔ [RD] Meet with authors during IETF98 @done(2017-04-02 20:43) @project(RD draft-ietf-core-resource-directory)
+  ✔ [RD] Need Editor. @done(2017-04-02 20:43) @project(RD draft-ietf-core-resource-directory)
+  ✔ Follow up and ask for more interest around. @done(2017-04-02 20:56) @project(CoAP Over SMS draft-becker-core-coap-sms-gprs)
+  ✔ [ETCH] waiting AUTH48, soon to be RFC8132 @done(2017-04-02 20:40) @project(ETCH draft-ietf-core-etch)
+  ✔ [LNKS] IPR declaration in progress @done(2017-04-02 20:41) @project(ETCH draft-ietf-core-etch)
+  ✔ [LNKS] Ad Content format values on IANA considerations. @done(2017-04-02 20:41) @project(ETCH draft-ietf-core-etch)
+  ✔ [LNKS] IESG Submission of draft-ietf-core-links-json @timestamp(2017-04-15 18:30) @done(2017-04-02 20:41) @project(ETCH draft-ietf-core-etch)
+  ✘ [SML] WGLC two-week WGLC, starting after the IETF98. @cancelled(2017-04-02 20:54) @project(SenML draft-ietf-core-senml)
+  ✔ [SML] New Registry. Check with IANA. @done(2017-04-02 20:54) @project(SenML draft-ietf-core-senml)
+  ✔ [SID] Check status of IANA processes (register SIDs, lookup SIDs) @done(2017-04-02 20:50) @project(SID identifiers draft-ietf-core-sid)
+  ✔ [YANG-CBOR] Confirm on mailing list once new version submitted -04. @done(2017-04-02 20:45) @project(YANG CBOR draft-ietf-core-yang-cbor)
+  ✔ [COCOA] Follow up with Michael Welz @done(2017-04-12 15:34) @project(Congestion Control draft-ietf-core-cocoa)
+  ✔ [COCOA] WGLC https://www.ietf.org/proceedings/92/iccrg.html @done(2017-04-12 15:34) @project(Congestion Control draft-ietf-core-cocoa)
+  ✔ [COCOA] Short email about the fact that we will do WGLC and also about Appendix A and B. Add core@ietf.org in REPLY TO iccrg@ietf.org , tcpm@ietf.org @done(2017-04-12 15:34) @project(Congestion Control draft-ietf-core-cocoa)
+  ✔ [COMI] Peter to address Ana Minaburo comments on CON messages. @done(2017-04-02 20:55) @project(COMI draft-ietf-core-comi)
+  ✔ IESG Submission of draft-ietf-core-links-json @timestamp(2017-02-01 13:34) @done(2017-04-12 11:13) @project(Submissions to IESG)
   ✔ [GEN] Find Co-Chair for CoRE-WG session IETF98.  @timestamp(2017-04-02 20:34) @done(2017-04-02 20:34) @project(CoRE WG General)
   ✔ [GEN] Adjust milestones https://datatracker.ietf.org/wg/core/milestones @timestamp(2017-01-24 19:00) @done(2017-03-23 14:26) @project(CoRE WG General)
   ✔ [GEN] ID Submission Deadline before IETF98 @timestamp(2017-03-13 13:39) @done(2017-03-13 12:03) @project(CoRE WG General)
