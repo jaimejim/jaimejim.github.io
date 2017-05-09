@@ -39,5 +39,5 @@ These are some of the problems I happened to think about, thinking about some po
 - News-sites could try to build a knowledge base on formal logic, like [Cyc](https://en.wikipedia.org/wiki/Cyc) but for general knowledge. I believe there are similar systems built for the pharma, to discover incompatible medicines.
 - Education on debate and logical thinking. Learning not to forward unverified articles for example.
 - Terminate online advertising companies in order to terminate the wrong incentive system. This one would be really great :)
-- Accept that truth will forever be relative, read [Popper](https://www.youtube.com/watch?v=AsFdH0Q7RSs) and go for a walk with a loved one.
-- Above all... **spend less time online!!**.
+- Do not, under any circumstance read [Popper's](https://www.youtube.com/watch?v=AsFdH0Q7RSs) book [Logic of Scientific Discovery](https://en.wikipedia.org/wiki/The_Logic_of_Scientific_Discovery), instead go for a walk with a loved one.
+- And above all... **spend less time online!!**.
