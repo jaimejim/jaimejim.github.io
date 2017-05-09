@@ -18,7 +18,7 @@ As much as the title  of the Roundtable points to [Huxley's frightening dystopia
 The advertising industry creates incentives for clickbait articles and centralizes much of the Internet's on few giants. Many websites increased their viewer share by using scandalous headings. News agencies copied the model to increase the number of viewers. Advertising is distorting the value of online services, from news, social networks to games or marketing.
 
 **Decadence of journalism.**
-As it happens, many newspapers these days, even reputable ones, don’t do investigative journalism anymore but rather copy-paste and translate from Thomson Reuter or from social media. Some news sources change title and content, or even delete their articles without publishing errata.
+As it happens, many newspapers these days, even reputable ones, don’t do investigative journalism anymore but rather copy-paste and translate from Thomson Reuter or from social media. Some news sources change title and content, or even delete their articles without publishing errata. If there is only a handful of sources of information, what's the point of having journalism?
 
 **Lack of scientific rigour on the news.**
 Few news agencies use a scientific publication format, citing the original author or quoting them properly. I believe some don’t even link them in order not to lose future revenue from ad traffic. This presumably creates a bias on search engines (well, I mean Google again) and penalises the original source. Moreover, appealing to authority by citing a scientific paper sadly does not make the fact true.
@@ -34,9 +34,10 @@ In general people seem to spend just too many hours of the day online (myself in
 
 These are some of the problems I happened to think about, thinking about some possible paliative measures I believe they are mostly non-technical.
 
-- Deny tampering of published information without showing a ["diff”](https://en.wikipedia.org/wiki/Diff_utility). Some developer could build a very successful browser addon on this, showing a website and, if modified, showing a diff to multiple caches like archive.org, google cache, a public ledger. This way the reader could get some implicit of basic origin validation. However the problem would be how do you trust the validators? I guess it will boil down to reputation in some way.
-- Enable logical debate, regardless of ideologies and without any form of curation. This is easier said than done, trolls would have a field day every day. News aggregators fail to do that as they link to the same potentially flawed sources. Some news-sites could try to build a knowledge base on formal logic, like [Cyc](https://en.wikipedia.org/wiki/Cyc) but for general knowledge. I believe there are similar systems built for the pharma, to discover incompatible medicines.
-- Education on debate and logical thinking. Learning not to forward unverified articles.
+- Deny tampering of published information without showing a ["diff”](https://en.wikipedia.org/wiki/Diff_utility). Some developer could build a very successful browser addon on this, showing a website and, if modified, showing a diff to multiple caches like archive.org, google cache, a public ledger. This way the reader could get some implicit knowledge for origin source validation. However the problem would be how do you trust the validators? I guess it will boil down to reputation in some way or another.
+- Enable logical debate, regardless of ideologies and without any form of curation. This is easier said than done as the culture of debate is non-existent on the Internet. News aggregators fail to do that as they link to the same potentially flawed sources.
+- News-sites could try to build a knowledge base on formal logic, like [Cyc](https://en.wikipedia.org/wiki/Cyc) but for general knowledge. I believe there are similar systems built for the pharma, to discover incompatible medicines.
+- Education on debate and logical thinking. Learning not to forward unverified articles for example.
 - Terminate online advertising companies in order to terminate the wrong incentive system. This one would be really great :)
 - Accept that truth will forever be relative, read [Popper](https://en.wikipedia.org/wiki/Karl_Popper#Philosophy_of_science) and go for a walk with a loved one.
-- Above all... **spend less time online**.
+- Above all... **spend less time online!!**.
