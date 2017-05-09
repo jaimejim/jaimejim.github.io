@@ -2,7 +2,7 @@
 title: How does the Internet Affect Societies
 layout: post
 date: '2017-05-09'
-image: /assets/images/berndston.jpg
+image: /assets/images/berndtson.jpg
 tag:
   - Internet
   - Information
