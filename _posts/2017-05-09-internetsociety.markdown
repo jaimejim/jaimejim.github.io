@@ -11,8 +11,11 @@ blog: true
 star: true
 ---
 
-Other than technology, I've always liked reading philosophy. Normally I wouldn't write on this topic but it is pretty relevant as on May 11th there will be [the Internet Society (ISOC)](https://en.wikipedia.org/wiki/Internet_Society) Roundtable on the topic: ["A Brave New World: How does the Internet Affect Societies?"](https://www.internetsociety.org/25th/roundtable-may11).
-As much as the title  of the Roundtable points to [Huxley's frightening dystopian novel](https://en.wikipedia.org/wiki/Brave_New_World) and as much as [we are slowly getting there](https://en.wikipedia.org/wiki/Dystopia#Typical_dystopian_claims). I think the title is quite misleading. The Internet is working just fine, as *it was built to enable communication*. What is not working is the incentives around it, since *the Internet was not built to filter or curate the content* in any fashion. For that you have the services on top. Hence the problem often lies on which information is factually true and which one is not. My opinion is that some of the problems lie on the following:
+Other than technology, I've always liked reading philosophy. Normally I wouldn't write on this topic but it is pretty relevant as on May 11th there will be [the Internet Society (ISOC)](https://en.wikipedia.org/wiki/Internet_Society) roundtable on the topic: ["A Brave New World: How does the Internet Affect Societies?"](https://www.internetsociety.org/25th/roundtable-may11).
+
+As much as the title  of the Roundtable points to Huxley's frightening dystopian novel and as much as [we are slowly getting there](https://en.wikipedia.org/wiki/Dystopia#Typical_dystopian_claims). I think the title is quite misleading.
+
+The Internet is working just fine, as *it was built to enable communication*. What is not working is the incentives around it, since *the Internet was not built to filter or curate the content* in any fashion. For that you have the services on top. Hence the problem often lies on which information is factually true and which one is not. My opinion is that some of the problems lie on the following:
 
 **Wrong incentives.**
 The advertising industry creates incentives for clickbait articles and centralizes much of the Internet's on few giants. Many websites increased their viewer share by using scandalous headings. News agencies copied the model to increase the number of viewers. Advertising is distorting the value of online services, from news, social networks to games or marketing.
@@ -39,5 +42,5 @@ These are some of the problems I happened to think about, thinking about some po
 - News-sites could try to build a knowledge base on formal logic, like [Cyc](https://en.wikipedia.org/wiki/Cyc) but for general knowledge. I believe there are similar systems built for the pharma, to discover incompatible medicines.
 - Education on debate and logical thinking. Learning not to forward unverified articles for example.
 - Terminate online advertising companies in order to terminate the wrong incentive system. This one would be really great :)
-- Do not, under any circumstance read [Popper's](https://www.youtube.com/watch?v=AsFdH0Q7RSs) book [Logic of Scientific Discovery](https://en.wikipedia.org/wiki/The_Logic_of_Scientific_Discovery), instead go for a walk with a loved one.
-- And above all... **spend less time online!!**.
+- Do not, under any circumstances read [Popper's](https://www.youtube.com/watch?v=AsFdH0Q7RSs) book [Logic of Scientific Discovery](https://en.wikipedia.org/wiki/The_Logic_of_Scientific_Discovery), instead get out and go for a walk with a loved one or chat with a neighbor.
+- Above all... **spend less time online!!**.
