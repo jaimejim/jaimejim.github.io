@@ -17,7 +17,7 @@ As much as the title  of the Roundtable points to Huxley's frightening dystopian
 
 The Internet is working just fine, as *it was built to enable communication*. What is not working is the incentives around it, since *the Internet was not built to filter or curate the content* in any fashion. For that you have the services on top. Hence the problem often lies on which information is factually true and which one is not. My opinion is that some of the problems lie on the following:
 
-**Wrong incentives.**
+###Wrong incentives
 The advertising industry creates incentives for clickbait articles and centralizes much of the Internet's on few giants. Many websites increased their viewer share by using scandalous headings. News agencies copied the model to increase the number of viewers. Advertising is distorting the value of online services, from news, social networks to games or marketing.
 
 **Decadence of journalism.**
