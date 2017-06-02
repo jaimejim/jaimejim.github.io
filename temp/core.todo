@@ -14,10 +14,10 @@ CoRE WG General:
 
 RD draft-ietf-core-resource-directory:
  ☐ [RD] DNS-SD discussion on mailing list. What have the authors decided? Group OK with the decission?
- ☐ [RD] @jaime to catch up on this.
- ☐ [RD] Check with Christian progress.
+ ✔ [RD] @jaime to catch up on this. @done(2017-05-31 13:31) @project(RD draft-ietf-core-resource-directory)
+ ✔ [RD] Check with Christian progress. @done(2017-05-31 13:31) @project(RD draft-ietf-core-resource-directory)
  ☐ [RD] (@jaime) Should we add text on RD discovery?
- ☐ [RD] Remind volunteers about: [IETF96] New reviews by Hannes T, Klaus H, Darshak, Bill S, Christian G, Sebastian (?), Matthias K.
+ ✔ [RD] Remind volunteers about: [IETF96] New reviews by Hannes T, Klaus H, Darshak, Bill S, Christian G, Sebastian (?), Matthias K. @done(2017-05-31 13:31) @project(RD draft-ietf-core-resource-directory)
 
 CoAP Over SMS draft-becker-core-coap-sms-gprs:
  ☐ [SMS] interest has been shown. Need to put in shape for WGA.
