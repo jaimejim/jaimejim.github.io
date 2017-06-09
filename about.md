@@ -16,7 +16,7 @@ As you can see below, I contribute to various standards. Currently I focus more 
 **The Internet Engineering Task Force (IETF)**
 
 I am currently co-chairing the [CoRE Working Group](https://datatracker.ietf.org/wg/core/charter/) which takes care of standardizing the Constrained Application Protocol (CoAP) and CoAP related standards. The point of [CoAP](https://tools.ietf.org/html/rfc7252) is to have a HTTP-like protocol for very resource constrained devices, thus connecting devices and the larger Internet. Before that I have been a contributor of these and other IETF groups and drafts. I am also the main author of [RFC7650](https://tools.ietf.org/html/rfc7650) and other drafts.
-I’m also member of the IETF [Internet-of-Things Directorate](https://trac.ietf.org/trac/int/wiki/IOTDirWiki).
+I’m also member of the IETF [Internet-of-Things Directorate](https://trac.ietf.org/trac/int/wiki/IOTDirWiki). Here is a video of [me sponsoring IETF](https://www.youtube.com/watch?v=uhnEG7_fCEs&feature=youtu.be) in case you are curious.
 
 **IP for Smart Objects (IPSO)**
 

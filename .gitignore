@@ -10,6 +10,9 @@ temp/*.md
 *.ppt
 *.pptx
 
-temp/*.todo
+temp/*/*.todo
 temp/workdiary.md
 temp/workdiary.html
+temp/personal/
+
+temp/work/work.todo
