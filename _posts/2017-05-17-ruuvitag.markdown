@@ -1,0 +1,47 @@
+---
+title: Testing the Ruuvitag
+layout: post
+date: '2017-05-15'
+tag:
+  - Physical Web
+  - Internet
+  - Device
+blog: true
+star: true
+---
+
+The concept of ["The Physical Web"](https://google.github.io/physical-web/) is an IoT related concept. One realization of it is that things will basically broadcast information using the same beacons used as device identifiers.
+
+I have the great oportunity to try the beacon from Ruuvi (Ruuvitag)
+
+I am not an expert on Bluetooth Low Energy radio, but I think that  Universally Unique Identifier (UUID),this UUID is used to trigger events specific to that beacon. In the case of Apple's iBeacon the UUID will be recognized by an app on the user device that will trigger an event. This event is fully customizable by the app developer but in the case of advertising the event might be a push notification with an ad. However, with a UID based system the users device must connect to an online server which is capable of understanding the beacons UUID. Once the UUID is sent to the server the appropriate message action is sent to a users device.
+
+Other methods of advertising are also possible with beacons, URIBeacon and Google's Eddystone and allow for a URI transmission mode that unlike iBeacons UID doesn't require an outside server for recognition. The URI beacons transmit a URI which could be a link to a webpage and the user will see that URI directly on their phone.[16]
+
+https://en.wikipedia.org/wiki/Bluetooth_low_energy_beacon
+
+https://f.ruuvi.com/c/examples
+
+https://ruu.vi/setup/#getting-started
+
+I believe I saw the first bluetooth beacons already in 2011, over time they have polished and new applications have been slowly found.  
+
+
+RuuviTag sensor beacon broadcasts an encoded URL address in an Eddystone-URL frame: http://ruu.vi#AjAYAMLs. Once user visits the link, ruu.vi website decodes the value AjAYAMLs and shows the data in a human-readable format. Please note that ruu.vi website rounds the data. The website implemetation is online at it's own github repository.
+
+
+https://github.com/google/eddystone/tree/master/eddystone-url
+
+
+Problem is that each URL is independent, thus you only read once. You can't reload the page and get a new reading, cause the URL is also the Resource.
+
+
+Bluetooth and location (so that they get the info on the tag I suppose)
+
+
+I must say that, when compared to other IoT gadgets, this is as simple as it gets and that is very pleasant.
+
+
+Traditional beacons are limited to broadcast their static address information. Our Tags are fully user-programmable and they can run proprietary protocols (e.g. Wirepas Connectivity) to form robust mesh networks of thousands of nodes.RuuviTag is also compatible with Bluetooth 5.
+
+http://www.espruino.com
