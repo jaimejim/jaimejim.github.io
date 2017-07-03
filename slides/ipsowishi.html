@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>IPSO AppIoT</title>
+    <title>IPSO WISHI</title>
     <style>
       @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
       @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
@@ -28,7 +28,7 @@
       .red { color: #fa0000; }
       .large { font-size: 2em; }
       a, a > code {
-        color: rgb(38, 97, 249);
+        color: rgb(129, 202, 244);
         text-decoration: none;
       }
       code {
@@ -127,109 +127,148 @@ class: center, middle, inverse
 ---
 
 #IP for Smart Objects (IPSO)
-###[jaimejim.github.io]
+### Jaime Jiménez
 
+.footnote[Slides available here [jaimejim.github.io](http://jaimejim.github.io/slides/ipsowishi.html), paper available here [IPSO Paper](https://github.com/IPSO-Alliance/pub/raw/master/ipso-paper.pdf)]
 ---
 layout: false
-
-##Short Bio
-* ~ 9 years at Ericsson Research.
-
-* Work on many topics and various roles, today those relevant to you (AppIoT folks) are:
-
-* **IETF** co-chair and contributor on CoRE WG (CoAP Protocol) <https://github.com/core-wg> , current [CoRE WG active Documents](http://jaimejim.github.io/temp/coretodo.txt).
-
-* **LWM2M** contributor on spec (sorry), prototyping.
-
-* **IPSO** chair and and IPSO SO author together with Michael Koster. .red.bold[*]
-
-* Also contribute (author specs, edit docs, do prototypes, participate on discussions...) on W3C WoT, Schema.org, IIC, OCF...
-**we are very a small community!**
-
-.footnote[.red.bold[*] Disclaimer: not part of current research.]
-
----
-
 ##IPSO Architecture
 
-* Create a set of objects and resources that represent fundamental concepts (i.e. current Value, Min/Max Value)
+* Create a set of objects and resources that represent:
+  * Fundamental concepts (i.e. temperature, on/off switch)
+  * Single points of those concepts (i.e.  Min/Max Value, Current Value)
 * Make those atomic pieces reusable accross domains.
-* Build up models of complex things by first aggregating those resources and then using composition.
+* Make complex things by first aggregating those resources and then using composition.
 
-* https://github.com/bwssytems/ha-bridge/issues/570
 
----
+```
+          +----------------------+
+          | Application Software |  Application
+          +----------------------+
+          +----------------------+
+          |     IPSO Objects     |  Data Model
+          +----------------------+
+          +----------------------+  \
+          |  Requests/Responses  |  |
+          |----------------------|  | CoAP/HTTP/XXX
+          |       Messages       |  |
+          +----------------------+  /
 
-##Data Model (mostly same as LWM2M)
+```
 
-1. Object Representation
-2. Data Types
-3. Operations
-4. Content Formats
 
----
-
-.right[![Right-aligned image](http://jaimejim.github.io/assets/images/ipso1.png)]
-
-###Object Representation
-
-- Follows OMA LWM2M object model
-- Objects and resources are structured into URI path components: Object Type ID/ Object Instance ID/ Resource Type ID.
-
-###Data Types
-
-- Same as OMA
-
-###Operations
-
-- Same as OMA
-
-###Data Formats
-
-- Plaintext, TLV, CoRE Link, JSON and CBOR.
+???
+You would be using a number of objects to build more complex things (like a motor).
 
 ---
 
-###Good things about IPSO Objects
-* Reusable Object IDs and Resource IDs.
-* Transport protocol and encoding data format independent.
-* Easy to build your own Objects and add to repo.
-* Easy to get feedback.
-* Sufficient for curent use cases.
-* Trivial to integrate with LWM2M.
-* Tested.
-* URI 3303/0/5700
+##Data Model
 
-###Bad things about IPSO Objects
-* No Web Linking! (but easy to add)
-* LWM2M Object Versioning.
-* Not suited for complex hypermedia interactions.
-* Politics!
-* Could have a richer language to represent IPSO Objects instead of XML.
-* Missing a lot of IETF CoRE-Link concepts: recource type "rt", "cf", etc.
-* Also URI 3303/0/5700 (no decoupling)
+### Object Representation
+  * Simple URI template:
 
-*What do **you** think?*
+  `Object ID/ Object Instance ID/ Resource ID.`
+
+   ```
+   3300  -> Temperature Sensor
+   0     -> instance 0 of a Temperature Sensor
+   5700  -> resource having the current value or a most recent reading`
+   ```
+  * All objects are registered with [OMNA](http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html) where the LWM2M Management Objects also are. We also use the [IPSO Repository](https://github.com/IPSO-Alliance/pub/tree/master/reg). More on that later.
+
+### Data Types
+  * Reuse those used by [OMA LWM2M](http://www.openmobilealliance.org/release/LightweightM2M/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf).
+      * String, Integer, Float, Boolean, Object Link, Time, Opaque.
+
+???
+Simple URI template defines the object, there is an ID for the Object ID which has a semantic meaning (3303 is temperature), and Resource IDs (attribute, 5700 current value). Together, "3303/0/5700" refers to the current value of temperature sensor instance 0.
+
+All objects are registered in OMNA, which is where the management objects are. So you have both management and applicaiton objects under the same registry.
+
+At the moment we also have some new registrations on the public IPSO repository, I'll talk about that later.
 
 ---
 
+##Data Model
+
+### Operations
+  * Same as [OMA LWM2M](http://www.openmobilealliance.org/release/LightweightM2M/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf).
+      * R/W/X over resources, C/D over Instances, ...
+
+### Content Formats
+  * Specified by the [OMA LW TS 1,0](http://www.openmobilealliance.org/release/LightweightM2M/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf), JSON, [CBOR](http://cbor.io) and [SenML](https://tools.ietf.org/html/draft-ietf-core-senml-05):
+      * Resources: text/plain, tlv. Objects: text/senml+json, application/cbor...
+
+---
+
+## Sample Temperature Object
+
+<img src="/Users/jaime/Desktop/ipso1.png" width="600">
+
+---
+
+## Composite Objects
+
+* As devices increase in complexity we can construct more complex objects by using Object Links instead of adding resources. That offers more granularity than a large nested object would (by observing the linked objects instead of the main one).
+
+<img src="/Users/jaime/Desktop/ipso2.png" width="450">
+
+???
+
+As devices increase in complexity (e.g., from a sensor to an appliance, from a switch to a complex fuel control actuator) the need to link resources to create more complex objects or ”Composite Objects” arises.
+
+* A composite object can be constructed using Object Links. That offers more granularity than a large nested object would (by observing the linked objects instead of the main one).
+
+---
+
+## Reusability
+
+* If the existing set of Objects is not sufficient for your needs, you can create your own by reusing existing resources.
+* Current set of objects and resources can be found at <https://github.com/IPSO-Alliance/pub/tree/master/reg>
+
+???
+
+---
+## Sample Implementations
+
+* IPSO is supported by default by LWM2M, for example in [Leshan](http://www.eclipse.org/leshan/).
+
+* Sample [C package](https://github.com/contiki-os/contiki/tree/master/apps/ipso-objects) for use of IPSO Objects in [Contiki](http://www.contiki-os.org).
+
+* JS code templates of IPSO-defined devices [code templates](https://github.com/PeterEB/smartobject/blob/master/docs/templates.md). Each template gives a code snippet of how to initialize an _Object Instance_ with its `oid` and `iid`, and lists every _Resource_ the _Object Instance_ **may** have.
+
+* Sample [Smart Objects](https://npm.taobao.org/package/smartobject) Class that can be used to create IPSO Smart Objects in your JavaScript applications.
+
+* [BIPSO](https://bluetoother.github.io/bipso/#/characteristic) is born to solve this problem of consistency and compatibility for BLE applications.
+
+---
+## Repository
+
+### <https://github.com/IPSO-Alliance/pub>
+  * [Issue tracker](https://github.com/IPSO-Alliance/pub/issues)
+  * [travis-ci](https://travis-ci.org/IPSO-Alliance/pub)
+  * [XML-defined Objects](https://github.com/IPSO-Alliance/pub/tree/master/reg/xml)
+
+---
 ##Q&A
 
-* How to achieve interoperability with IPSO, especially with some legacy IoT system, which doesn't use IPSO.
-  * If existing [objects and **resources** on the registry](http://ipso-alliance.github.io/pub/) are not sufficient, just build your own and do a pull request to add those (make sure to validate them).
-  * If no IPSO support then data model translation.
+## What do you work on?
+* IPSO Objects are generic in nature, both for the home or industrial domains.
+* No code generation, though third parties like [BIPSO](https://bluetoother.github.io/bipso/#/characteristic) have automatic C code generation for the objects.
+* I do basic validation on travis [travis-ci](https://travis-ci.org/IPSO-Alliance/pub)
 
-* How to create a new M2M communication? Ex: termostat, composed of independent temperature sensor and actuator.
-  * Composition and object linking, just make a new object with two resources that links to the other obejcts. That's how <https://www.eisox.fr> does it.
-  * [Other examples](http://challenge.ipso-alliance.org/challenge2015/meet-the-2015-semi-finalists/intelligent-thermostatic-radiator-valve)
-
-  * [Radiator Example](https://github.com/Alliasd/ELIOT/blob/master/radiator.js)
-
-  * [Fuel injector](https://github.com/Alliasd/ELIOT/blob/master/fuelinjector.js).
+---
+##Q&A
+## How far did you get?
+* Traditionally IPSO, LWM2M, etc have worked via a committee. IMO that is necessary only when defining the basic semantics and particularities of a model. Once that's achieved, it's been mostly a collaborative and open approach through the public repository.
+* Doing changes to the mode, updates and enhancements is complicated, as you have multiple versions.
+* Adding new objects is trivial via a PR.
+* AFAIK, some public products already use it (though not sponsor it) as it is part of the device's stack.
 
 ---
 ##Q&A
 
+## How do you work?
 * How is IPSO **competitive** against other alliances like IoTivity?
   * I think you mean OCF's [OneIoTA](http://oneiota.org/documents?filter%5Bmedia_type%5D=application%2Framl%2Byaml) wich is the part of OCF that does Data Models.
   * There are actually many more that somewhat are related: Schema.org, IANA, WoT TD, ZigBee CL, YANG models ...
@@ -240,6 +279,8 @@ layout: false
 
 ---
 ##Q&A
+
+## How far did you get?
 * How to introduce IPSO in our AppIoT? Currently AppIoT uses its own SDK on the top of leshan MS.
   * [Leshan supports IPSO](https://github.com/eclipse/leshan/blob/9ff2b9ed23a2b3678c036135c1e6825a7ecfaf0f/leshan-core/src/main/resources/oma-objects-spec.json)
   * We have used them on LCM and [ELIOT](https://github.com/Alliasd/ELIOT), you can use those as examples.
@@ -265,15 +306,18 @@ layout: false
   * <http://www.eclipse.org/leshan/>
   * <http://bluetoother.github.io/bipso/#/>
   * <http://www.yanzinetworks.com/index.jsp>
+  * <https://www.eisox.fr>
   * <http://www.eistec.se>
   * <http://lwmqn.github.io>
   * <http://www.cypress.com/internet-things-iot>
-  * <http://www.ikea.com/se/sv/catalog/categories/departments/living_room/36812/>
+  * <https://home-assistant.io/blog/2017/04/17/ikea-tradfri-internet-of-things-done-right/>
   * <http://www.versasense.com>
   * <http://coap.technology/impls.html>
   * <https://github.com/PeterEB/coap-shepherd>
-  * <ikea lighst (private repo)>
+  * <Ikea Tradfi (private repo)>
   * <https://github.com/contiki-os/contiki/tree/master/apps/ipso-objects>
+
+---
 
     </textarea>
     <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
