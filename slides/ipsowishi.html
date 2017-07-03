@@ -129,17 +129,17 @@ class: center, middle, inverse
 #IP for Smart Objects (IPSO)
 ### Jaime Jiménez
 
-.footnote[Slides available here [jaimejim.github.io](http://jaimejim.github.io/slides/ipsowishi.html), paper available here [IPSO Paper](https://github.com/IPSO-Alliance/pub/raw/master/ipso-paper.pdf)]
+.footnote[These slides are available at [jaimejim.github.io](http://jaimejim.github.io/slides/ipsowishi.html)]
 ---
 layout: false
 ##IPSO Architecture
 
-* Create a set of objects and resources that represent:
+* The specifications aims to create a set of objects and resources that represent:
   * Fundamental concepts (i.e. temperature, on/off switch)
   * Single points of those concepts (i.e.  Min/Max Value, Current Value)
 * Make those atomic pieces reusable accross domains.
 * Make complex things by first aggregating those resources and then using composition.
-
+* Intended for URIs, REST protocols. [Model in XSD](http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd), [Objects in XML](https://github.com/IPSO-Alliance/pub/tree/master/reg/xml), serialized in JSON/CBOR/TLV/SENML...
 
 ```
           +----------------------+
@@ -155,7 +155,6 @@ layout: false
           +----------------------+  /
 
 ```
-
 
 ???
 You would be using a number of objects to build more complex things (like a motor).
@@ -203,7 +202,7 @@ At the moment we also have some new registrations on the public IPSO repository,
 
 ## Sample Temperature Object
 
-<img src="/Users/jaime/Desktop/ipso1.png" width="600">
+<img src="http://jaimejim.github.io/assets/images/ipso1.png" width="600">
 
 ---
 
@@ -211,7 +210,7 @@ At the moment we also have some new registrations on the public IPSO repository,
 
 * As devices increase in complexity we can construct more complex objects by using Object Links instead of adding resources. That offers more granularity than a large nested object would (by observing the linked objects instead of the main one).
 
-<img src="/Users/jaime/Desktop/ipso2.png" width="450">
+<img src="http://jaimejim.github.io/assets/images/ipso2.png" width="450">
 
 ???
 
@@ -224,7 +223,8 @@ As devices increase in complexity (e.g., from a sensor to an appliance, from a s
 ## Reusability
 
 * If the existing set of Objects is not sufficient for your needs, you can create your own by reusing existing resources.
-* Current set of objects and resources can be found at <https://github.com/IPSO-Alliance/pub/tree/master/reg>
+* Current set of objects and resources can be found at:
+    <https://github.com/IPSO-Alliance/pub/tree/master/reg>
 
 ???
 
@@ -253,69 +253,51 @@ As devices increase in complexity (e.g., from a sensor to an appliance, from a s
 ##Q&A
 
 ## What do you work on?
-* IPSO Objects are generic in nature, both for the home or industrial domains.
-* No code generation, though third parties like [BIPSO](https://bluetoother.github.io/bipso/#/characteristic) have automatic C code generation for the objects.
-* I do basic validation on travis [travis-ci](https://travis-ci.org/IPSO-Alliance/pub)
-
----
-##Q&A
-## How far did you get?
-* Traditionally IPSO, LWM2M, etc have worked via a committee. IMO that is necessary only when defining the basic semantics and particularities of a model. Once that's achieved, it's been mostly a collaborative and open approach through the public repository.
-* Doing changes to the mode, updates and enhancements is complicated, as you have multiple versions.
-* Adding new objects is trivial via a PR.
-* AFAIK, some public products already use it (though not sponsor it) as it is part of the device's stack.
+* Domain: IPSO Objects are generic in nature, both for the home or industrial domains.
+* Coverage: Provide data model and basic semantics. No code generation, though third parties like [BIPSO](https://bluetoother.github.io/bipso/#/characteristic) have automatic C code generation for the objects. I do basic validation on travis [travis-ci](https://travis-ci.org/IPSO-Alliance/pub)
 
 ---
 ##Q&A
 
 ## How do you work?
-* How is IPSO **competitive** against other alliances like IoTivity?
-  * I think you mean OCF's [OneIoTA](http://oneiota.org/documents?filter%5Bmedia_type%5D=application%2Framl%2Byaml) wich is the part of OCF that does Data Models.
-  * There are actually many more that somewhat are related: Schema.org, IANA, WoT TD, ZigBee CL, YANG models ...
-  * In practice we are about 20-30 people from many companies that somehow get involved in few of those for *business* reasons.
-  * [IOTSI Workshop](https://www.iab.org/activities/workshops/iotsi/)
-  * Main asset is that it is used by LWM2M, so from the technical standpoint you can just use that right now.
-  * Might use something different in the future?
+* We did not have many contributors for v1. I believe vendors are now simply taking what's available on device distros (i.e. contiki, mbed, riot). IPSO repository is very open right now, easy to build upon.
+
+* Traditionally both in IPSO and LWM2M work has been made through a committee. IMO that is necessary only when defining the basic semantics and particularities of a model. Once that's achieved, it's been mostly a collaborative and open approach through the public repository.
+
+* Doing changes to the model, updates and enhancements is complicated cause it requires consensus and you end up with multiple versions.
+
+* Adding new objects is trivial via a PR, we could add multiple validation/verification processes, comment oportunities, etc.
 
 ---
 ##Q&A
 
 ## How far did you get?
-* How to introduce IPSO in our AppIoT? Currently AppIoT uses its own SDK on the top of leshan MS.
-  * [Leshan supports IPSO](https://github.com/eclipse/leshan/blob/9ff2b9ed23a2b3678c036135c1e6825a7ecfaf0f/leshan-core/src/main/resources/oma-objects-spec.json)
-  * We have used them on LCM and [ELIOT](https://github.com/Alliasd/ELIOT), you can use those as examples.
-
-* Can multiple IoT platform like AppIoT co-exist with IPSO? If so how?
-  * Define *platform*, define *co-exist* and ... what?
-
-* How can different service provider coexist? Can a device belong to 2 different service providers?
-  * Define "service provider".
-  * If you mean multiprotocol stack, you could, but not very practical. If you mean multiple *clouds*, sure. If you mean multiple ISPs,, sure.
-  * It all depends on the "constrainedness" of the device. Can it run multiple stacks?
-
+* V1 is on <http://ipso-alliance.github.io/pub/>, there I am tracking issues, doing small edits, modifications and answering bugs.
+* I'd like to have a collaborative approach, with more developer commitment, automatic validation and less overhead.
 
 ---
 ##Q&A
 
-* Any *actual* example system/implementation to demonstrate how IPSO plays *so well* for interoperability?
+## How is your work prepared to be part of a larger picture?
+* As far as the repository, it's Open Source at the moment and I think it is not a bad model as far as usage/processes are concerned.
+* Lightweight coordination processes and more input from device manufacturer would be needed. For example, it was convenient to get feedback from the IKEA lights developer, Eclipse folks, etc.
 
-  * Hey, did I notice some form of sarcasm there? :D
-  * These are examples of groups/companies/orgs that use IPSO objects...
+---
+##Q&A
 
-  * <http://ipso-alliance.github.io/pub/>
-  * <http://www.eclipse.org/leshan/>
-  * <http://bluetoother.github.io/bipso/#/>
-  * <http://www.yanzinetworks.com/index.jsp>
-  * <https://www.eisox.fr>
-  * <http://www.eistec.se>
-  * <http://lwmqn.github.io>
-  * <http://www.cypress.com/internet-things-iot>
-  * <https://home-assistant.io/blog/2017/04/17/ikea-tradfri-internet-of-things-done-right/>
-  * <http://www.versasense.com>
-  * <http://coap.technology/impls.html>
-  * <https://github.com/PeterEB/coap-shepherd>
-  * <Ikea Tradfi (private repo)>
-  * <https://github.com/contiki-os/contiki/tree/master/apps/ipso-objects>
+## Opportunities for Collaboration
+* Process is normal Open Source development.
+* [License is MIT](https://github.com/IPSO-Alliance/pub/blob/master/LICENSE)
+* Issue tracker.
+* We'd obviously need more coordination.
+
+---
+##Q&A
+
+## How can Research contribute to the success of your work?
+* Gaps in the technologies: takes time to add new features (i.e. data types), backwards compatibility will be problematic. At the moment it seems a bit underspecified.
+* Properties that need to be shown: simplicity seems to be the key.
+* What's needed to integrate with some other effort?: IDK, seems more political than technical.
 
 ---
 
