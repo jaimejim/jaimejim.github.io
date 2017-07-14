@@ -12,7 +12,7 @@
             size: 1210px 681px;
             margin: 0;
         }
-        
+
         @media print {
             .remark-slide-scaler {
                 width: 100% !important;
@@ -22,12 +22,12 @@
                 left: 0 !important;
             }
         }
-        
+
         body {
             font-family: 'Roboto';
             font-weight: 200;
         }
-        
+
         h1,
         h2,
         h3 {
@@ -35,109 +35,109 @@
             font-weight: 200;
             margin-bottom: 0;
         }
-        
+
         .remark-slide-content h1 {
             font-size: 3em;
         }
-        
+
         .remark-slide-content h2 {
             font-size: 2em;
             font-weight: 400;
         }
-        
+
         .remark-slide-content h3 {
             font-size: 1.6em;
         }
-        
+
         .footnote {
             position: absolute;
             bottom: 3em;
         }
-        
+
         li p {
             line-height: 1.25em;
         }
-        
+
         .red {
             color: #fa0000;
         }
-        
+
         .large {
             font-size: 2em;
         }
-        
+
         a,
         a>code {
             color: rgb(129, 202, 244);
             text-decoration: none;
         }
-        
+
         code {
             background: #e7e8e2;
             border-radius: 5px;
         }
-        
+
         .remark-code,
         .remark-inline-code {
             font-family: 'Roboto Mono';
         }
-        
+
         .remark-code-line-highlighted {
             background-color: #373832;
         }
-        
+
         .pull-left {
             float: left;
             width: 47%;
         }
-        
+
         .pull-right {
             float: right;
             width: 47%;
         }
-        
+
         .pull-right~p {
             clear: both;
         }
-        
+
         #slideshow .slide .content code {
             font-size: 0.8em;
         }
-        
+
         #slideshow .slide .content pre code {
             font-size: 0.9em;
             padding: 15px;
         }
-        
+
         .inverse {
             background: #272822;
             color: #777872;
             text-shadow: 0 0 20px #333;
         }
-        
+
         .inverse h1,
         .inverse h2 {
             color: #f3f3f3;
             line-height: 0.8em;
         }
         /* Slide-specific styling */
-        
+
         #slide-inverse .footnote {
             bottom: 12px;
             left: 20px;
         }
-        
+
         #slide-how .slides {
             font-size: 0.9em;
             position: absolute;
             top: 151px;
             right: 140px;
         }
-        
+
         #slide-how .slides h3 {
             margin-top: 0.2em;
         }
-        
+
         #slide-how .slides .first,
         #slide-how .slides .second {
             padding: 1px 20px;
@@ -147,7 +147,7 @@
             -webkit-box-shadow: 0 0 10px #777;
             box-shadow: 0 0 10px #777;
         }
-        
+
         #slide-how .slides .first {
             background: #fff;
             position: absolute;
@@ -155,26 +155,26 @@
             left: 20%;
             z-index: 1;
         }
-        
+
         #slide-how .slides .second {
             position: relative;
             background: #fff;
             z-index: 0;
         }
         /* Two-column layout */
-        
+
         .left-column {
             color: #777;
             width: 20%;
             height: 92%;
             float: left;
         }
-        
+
         .left-column h2:last-of-type,
         .left-column h3:last-child {
             color: #000;
         }
-        
+
         .right-column {
             width: 75%;
             float: right;
@@ -206,6 +206,7 @@ layout: false
 * Make those atomic pieces reusable accross domains.
 * Make complex things by first aggregating those resources and then using composition.
 * Intended for URIs, REST protocols. [Model in XSD](http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd), [Objects in XML](https://github.com/IPSO-Alliance/pub/tree/master/reg/xml), serialized in JSON/CBOR/TLV/Senml...
+* Others have used LWM2M/IPSO over MQTT ([LWMQN](https://github.com/lwmqn/mqtt-shepherd))
 
 ```
           +----------------------+
@@ -216,14 +217,14 @@ layout: false
           +----------------------+
           +----------------------+  \
           |  Requests/Responses  |  |
-          |----------------------|  | CoAP/HTTP/XXX
+          |----------------------|  | CoAP/HTTP/Other
           |       Messages       |  |
           +----------------------+  /
-
 ```
 
 ???
 You would be using a number of objects to build more complex things (like a motor).
+TODO: Check exact definition of XSD
 
 ---
 
@@ -258,7 +259,7 @@ At the moment we also have some new registrations on the public IPSO repository,
 ##Data Model
 
 ### Operations
-  * Same as [OMA LWM2M](http://www.openmobilealliance.org/release/LightweightM2M/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf).
+  * Extends [OMA LWM2M](http://www.openmobilealliance.org/release/LightweightM2M/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf).
       * R/W/X over resources, C/D over Instances, ...
 
 ### Content Formats
@@ -320,7 +321,9 @@ As devices increase in complexity (e.g., from a sensor to an appliance, from a s
 
   * [Issue tracker](https://github.com/IPSO-Alliance/pub/issues)
 
-  * [travis-ci](https://travis-ci.org/IPSO-Alliance/pub)
+  * [MIT License](https://github.com/IPSO-Alliance/pub/blob/master/LICENSE)
+
+  * [Object Verification](https://travis-ci.org/IPSO-Alliance/pub)
 
   * [XML-defined Objects](https://github.com/IPSO-Alliance/pub/tree/master/reg/xml)
 
@@ -328,7 +331,7 @@ As devices increase in complexity (e.g., from a sensor to an appliance, from a s
 ##Q&A
 
 ## What do you work on?
-* Domain: IPSO Objects are generic in nature, both for the home or industrial domains.
+* Domain: IPSO Objects are generic, both for the home or industrial domains.
 
 * Coverage: Provide data model and basic semantics. No code generation, though third parties like [BIPSO](https://bluetoother.github.io/bipso/#/characteristic) have automatic C code generation for the objects. I do basic validation on travis [travis-ci](https://travis-ci.org/IPSO-Alliance/pub)
 
@@ -338,7 +341,7 @@ As devices increase in complexity (e.g., from a sensor to an appliance, from a s
 ## How do you work?
 * We did not have many contributors for v1. I believe vendors are using what's available on device distros (i.e. contiki, mbed, riot). IPSO repository is very open right now, easy to build upon.
 
-* Traditionally both in IPSO and LWM2M work has been made through a committee. IMO that is necessary only when defining the basic semantics and particularities of a model. Once that's achieved, it's been mostly a collaborative and open approach through the public repository.
+* Traditionally both in IPSO and LWM2M work has been made through a committee. IMHO that is necessary only when defining the basic semantics and particularities of a model. Once that's achieved, it's been mostly a collaborative and open approach through the public repository.
 
 * Doing changes to the model, updates and enhancements is complicated cause it requires consensus and you end up with multiple versions.
 
@@ -355,15 +358,14 @@ As devices increase in complexity (e.g., from a sensor to an appliance, from a s
 ##Q&A
 
 ## How is your work prepared to be part of a larger picture?
-* As far as the repository, it's Open Source at the moment and I think it is not a bad model as far as usage/processes are concerned.
+* As far as the repository, it's Open Source at the moment. It seems the right model as far as usage/processes are concerned.
 * Lightweight coordination processes and more input from device manufacturer would be needed. For example, it was convenient to get feedback from the IKEA lights developer, Eclipse folks, etc.
 
 ---
 ##Q&A
 
 ## Opportunities for Collaboration
-* Process is normal Open Source development.
-* [License is MIT](https://github.com/IPSO-Alliance/pub/blob/master/LICENSE)
+* Looking for device manufacturers/vendors input.
 * Translation? Already work on translation LWM2M to YANG.
 * Collaboration with smaller players preferable.
 
@@ -372,8 +374,7 @@ As devices increase in complexity (e.g., from a sensor to an appliance, from a s
 
 ## How can Research contribute to the success of your work?
 * Gaps in the technologies: takes time to add new features (i.e. data types), backwards compatibility will be problematic. At the moment it seems overspecified
-* Simplicity and openness has seemed to be the key towards adoption.
-* What's needed to integrate with some other effort?: IDK, seems more political than technical.
+* Simplicity and openness appears to be the key towards adoption.
 
 
     </textarea>
