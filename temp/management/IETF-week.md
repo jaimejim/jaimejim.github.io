@@ -1,5 +1,8 @@
 #Planned meetings
 
+Wednesday lunch: draft-selander-ace-cose-ecdhe-06
+?? : Cena Españoles
+?? : Hablra con gente de sigfox, telefonica, et al.
 
 #IETF
 
@@ -10,9 +13,8 @@
 - Attendance: <https://www.ietf.org/registration/ietf99/attendance.py>
 
 ##CoRE
-
-Tuesday 1300
-Friday 1150
+9:30-12:00	Wednesday Morning session I
+11:50-13:20	Friday Afternoon session II
 
 - Slides: https://datatracker.ietf.org/meeting/99/session/core
 - Status Pages: <https://tools.ietf.org/wg/core/>
