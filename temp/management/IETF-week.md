@@ -2,6 +2,8 @@
 
 Wednesday lunch: draft-selander-ace-cose-ecdhe-06
 Sunday dinner: Sunday Night Fellows Dinner.
+Monday Morning: Breakfast telefonica
+Monday Lunch: CB
 ?? : Cena Españoles
 ?? : Hablar con gente de sigfox, telefonica, arm, et al.
 ?? : Career paths? University/Research/ProductManagement?/
