@@ -97,6 +97,7 @@ User wants to read a measurement, execute a command, delete a resource, etc. it 
 
 **Firmware Upgrades**
 
+
 User sets firmware upgrade feature, changes URL. As it is an operation over a resource, it does not change anything. Scalability might be an issue, need to check.
 3 Resources, one of them is the URL where the firmware package is fetch from. Two state-machine variables.
 
