@@ -468,7 +468,7 @@ pre[class*="language-"] {
 
 <body>
 
-<h2 id="toc_0">LWM2M - Queue Mode - Theory</h2>
+<h2 id="toc_0">LWM2M - Queue Mode</h2>
 
 <h3 id="toc_1">Synopsis</h3>
 
@@ -502,7 +502,7 @@ pre[class*="language-"] {
 <li><code>MAX_TRANSMIT_WAIT</code> is the maximum time from the first transmission of a Confirmable message to the time when the sender gives up on receiving an acknowledgement or reset. By default 93 seconds.</li>
 </ul>
 
-<p><img src="http://jaimejim.github.io/projects/appiot/acktimeout.svg"></p>
+<p><img src="http://jaimejim.github.io/projects/appiot/pics/acktimeout.svg"></p>
 
 <p>A typical Queue Mode sequence follows the following steps:</p>
 
@@ -513,7 +513,7 @@ pre[class*="language-"] {
 <li><p>When the LwM2M Server receives a message from the Client, it determines whether any messages need to be sent to the LwM2M Client, as instructed by the application server.</p></li>
 </ol>
 
-<p><img src="http://jaimejim.github.io/projects/appiot/queuemode.svg"></p>
+<p><img src="http://jaimejim.github.io/projects/appiot/pics/queuemode.svg"></p>
 
 <h3 id="toc_3">Q&amp;A</h3>
 
@@ -525,9 +525,13 @@ pre[class*="language-"] {
 
 <p>Queue mode probably does not make sense if the device sends notifications every few seconds or if it always connected. It boils down to whether the system is push (LS to LC) or pull (LC to LS). If the system is based on LC notifications and LC is mostly asleep, then queuing makes sense.</p>
 
-<p><strong>Q:  How does LS know when the device is going to be offline?</strong></p>
+<p><strong>Q: Implications of using U or UQ?</strong></p>
 
-<p>As to the spec&hellip; it doesn&rsquo;t. Only when LC has previously registered with UQ and only for <code>MAX_TRANSMIT_WAIT</code> is Queued Mode triggered on the LC. LS should have another timeout.
+<p>A priori there is no difference, we should queue always.</p>
+
+<p><strong>Q:  How does LS know when the device is going to be unreachable?</strong></p>
+
+<p>As to the spec&hellip; it doesn&rsquo;t. Only when LC has previously registered with UQ and only for <code>MAX_TRANSMIT_WAIT</code> is Queued Mode triggered on the LC. LS should have another timeout (if LS doesn&rsquo;t get a response after X seconds, assume sleep).
 Alternatively, we could set a resource with the sleeping schedule, an observe it. It could also just be preconfigured.</p>
 
 <p><strong>Q: How does the LC inform the LS that it&rsquo;s going to sleep?</strong></p>
@@ -545,7 +549,11 @@ Alternatively, we could set a resource with the sleeping schedule, an observe it
 <p><strong>Q: How do you distinguish between sleepy device and offline?</strong></p>
 
 <p>Lifetime expires would mean offline vs <code>ACK_TIMEOUT</code> that would mean sleep.
-online &ndash; <em><code>ACK_TIMEOUT</code> expires</em> &ndash; offline &ndash; <em>lifetime expires</em></p>
+online &ndash; <em><code>ACK_TIMEOUT</code> expires</em> &ndash; offline &ndash; <em>lifetime expires</em>.</p>
+
+<p><strong>Q: Confirm which of the timeouts is the right one</strong></p>
+
+<p>MAX<u>TRANSMIT</u>WAIT or ACK_TIMEOUT</p>
 
 <h3 id="toc_4">Firewalls and NATs</h3>
 
@@ -556,8 +564,6 @@ In cases where firewalls do not allow that, there has been work to support Webso
 
 <h3 id="toc_5">Application use cases</h3>
 
-<p>(UX person needed here)</p>
-
 <p>In general, queuing is agnostic of the application, it just caches and forwards messages. An enhancement could be a filter that aggregates commands and filters those that are redundant or irrelevant with the goals of saving battery and bandwidth as well as simplifying operations.</p>
 
 <p><strong>Multiple operations over the same Object/Resource</strong></p>
@@ -566,7 +572,11 @@ In cases where firewalls do not allow that, there has been work to support Webso
 
 <p><strong>Firmware Upgrades</strong></p>
 
-<p>User sets firmware upgrade feature, changes URL. As it is an operation over a resource, it does not change anything. Scalability might be an issue, need to check.</p>
+<p>User sets firmware upgrade feature, changes URL. As it is an operation over a resource, it does not change anything. Scalability might be an issue, need to check.
+3 Resources, one of them is the URL where the firmware package is fetch from. Two state-machine variables.</p>
+
+<p>Q: URI means CoAP URI (or HTTP?).
+A: HTTP for now.</p>
 
 <p><strong>LS changes</strong></p>
 
@@ -580,18 +590,15 @@ In cases where firewalls do not allow that, there has been work to support Webso
 
 <p>GET/PUT after a DELETE. If one operation on the queue deletes an Object, the associated resources are also deleted and operations on those are not possible.</p>
 
-<h3 id="toc_6">Random comments</h3>
+<h3 id="toc_6">Scenarios</h3>
 
-<ul>
-<li>Leshan currently does not support queue mode.</li>
-<li>The spec says <code>ACK_TIMEOUT</code> but I think it means <code>MAX_TRANSMIT_WAIT</code></li>
-<li>Need more information about costs and variables to be minimized (e.g. battery, VM processing, VM messaging, &hellip;)</li>
-</ul>
+<p><strong>Device is Registered but offline</strong></p>
 
-<div><pre><code class="language-none">LC battery: critical.
-LC-LS messaging: no problem.
-LS-AP messaging: depends on Azure cost.
-LS memory: depends on Q size (estimates is that Q is small).```</code></pre></div>
+<p><img src="http://jaimejim.github.io/projects/appiot/pics/scenario1.svg"></p>
+
+<p><strong>Device is Unregistered</strong></p>
+
+<p><img src="http://jaimejim.github.io/projects/appiot/pics/scenario2.svg"></p>
 
 
 
