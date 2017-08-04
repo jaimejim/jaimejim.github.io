@@ -1,0 +1,18 @@
+
+hscale="1.4",
+wordwraparcs=true;
+
+LC, LS, AP;
+
+--- : LS retransmits after LC timeout;
+LC <- LS : "GET (T=CON, Code=0.01, MID=0x7d37, Token: 0x42) URI: /3303/0/5400";
+LC -x LS : "ACK (Code=2.05,etc) Content: 22.03 C";
+LS -> LS : "If ACK_TIMEOUT, LS retransmits";
+LC <- LS : "GET (T=CON, Code=0.01, MID=0x7d37, Token: 0x42) URI: /3303/0/5400";
+LC -> LS : "ACK (CoAP header) Content: 22.03 C";
+
+--- : LC acknowledges on a separate confirmable message;
+LC <- LS : "GET (T=CON, Code=0.01, MID=0x7d37, Token: 0x42) URI: /3303/0/5400";
+LC -> LS : "ACK (Code=0.00,etc)";
+LC -> LS : "ACK (Code=2.05,etc) Content: 22.03 C";
+LC <- LS : "ACK (Code=0.00,etc)";

@@ -1,0 +1,21 @@
+hscale="1.4",
+wordwraparcs=true;
+
+LC, LS, AP;
+
+LC >> LS : POST /rd?ep=epname&b=UQ;
+LC << LS : ACK 2.01 /rd/5a3f;
+LC => LC : "If MAX_TRANSMIT_WAIT, Client goes offline";
+AP rbox AP : Administrator clicks read multiple times on the interface.;
+LS => LS : Start Queuing;
+AP >> LS : GET /3303/0/5400;
+AP >> LS : GET /3303/0/5400;
+AP >> LS : GET /3303/0/5400;
+LC rbox LC : Registration Update: Either because lifetime about to expire or because previous observation triggers it;
+LC >> LS : POST /rd/5a3f;
+LC << LS : ACK 2.04 /rd/5a3f;
+LS rbox LS : "LS forwards queued messages, it can also filter also filter out repeated commands, or use some other mechanism/logic";
+LC << LS : GET /3303/0/5400;
+LC >> LS : ACK 2.05 Content: 43;
+LC => LC : "if MAX_TRANSMIT_WAIT, go offline";
+...;

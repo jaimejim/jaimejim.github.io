@@ -1,0 +1,33 @@
+
+hscale="1.4",
+wordwraparcs=true;
+
+LC, LS, AP;
+
+
+AP rbox AP[label""];
+LC <- AP : "GET (Obs:1) URI:/5/0";
+LC <- AP : "WRITE ("coap://132.92.2.3:5683/binary.bin") URI:/5/0/1";
+LC <- AP : "EXECUTE URI: /5/0/2";
+
+
+
+
+/*
+
+When do we trigger Firmware Upgrades, which is the priority?
+Should GW Queue messages if device not registered?
+Who implements the filter?
+If GW receives messages not reg or timeout then queue.
+GW is just cashing regardless of AppIoT.
+Intelligent Queue should be on AppIoT as they know the state of the devices.
+
+QUEUE = Queue messages (cash).
+FILTER = Intelligence.
+
+AppIoT
+
+Note:
+(3GB memory on VM)
+
+*/
