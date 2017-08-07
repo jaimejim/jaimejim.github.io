@@ -1,47 +1,51 @@
 hscale="1.4",
 wordwraparcs=true;
 
-LC, LS, AP;
+LC, LS, SDK, WebInterface;
 
-AP note AP : AppIoT is already provisioned with Endpoint IDs before registration;
+SDK note SDK : AppIoT is already provisioned with Endpoint IDs before registration;
 
 LC >> LS : POST /rd?ep=epname&b=UQ;
 LC << LS : ACK 2.01 /rd/5a3f;
 LC => LC : "If MAX_TRANSMIT_WAIT, Client goes offline";
 
 
-AP note AP : Administrator clicks read/write multiple times on the interface.;
+WebInterface note WebInterface : Administrator clicks read/write multiple times on the interface.;
+WebInterface >> SDK : Message;
 
-AP >> LS : GET /3303/0/5400;
+SDK >> LS : GET /3303/0/5400;
 
 LS >> LC : GET /3303/0/5400;
 LC -x LS :;
 
 LS => LS: Timeout;
 
-LS => AP : Notify Client is offline;
+LS => SDK : Notify Client is offline;
 
-AP => AP : Start Queuing;
-AP box AP : "Queue = [GET PUT POST PUT]";
-
+SDK => SDK : Start Queuing;
+WebInterface >> SDK : Message;
+WebInterface >> SDK : Message;
+WebInterface >> SDK : Message;
+WebInterface >> SDK : Message;
+SDK box SDK : "Queue = [GET PUT POST PUT]";
 
 LC Note LC : Registration Update: Either because lifetime about to expire or because previous observation triggers it;
 
 LC >> LS : POST /rd/5a3f;
 LC << LS : ACK 2.04 /rd/5a3f;
 
-LS => AP : Notify Client is online;
+LS => SDK : Notify Client is online;
 
-AP note AP : "Flush Queue";
+SDK note SDK : "Flush Queue";
 
-AP >> LS : GET /3303/0/5400;
+SDK >> LS : GET /3303/0/5400;
 
 LS >> LC : GET /3303/0/5400;
 
 LC >> LS : ACK 2.05 Content: 43;
 
 
-LS >> AP : ACK 2.05 Content: 43;
+LS >> SDK : ACK 2.05 Content: 43;
 
 
 LC => LC : "if MAX_TRANSMIT_WAIT, go offline";
