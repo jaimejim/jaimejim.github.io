@@ -118,16 +118,16 @@ GET/PUT after a DELETE. If one operation on the queue deletes an Object, the ass
 
 ### Scenarios
 
-**Device is Registered but offline - Spec based**
+**1. Device is Registered but offline - Spec based**
 
 <img src="http://jaimejim.github.io/projects/appiot/pics/scenario1.svg">
 
 
-**Device is Unregistered - Spec based**
+**2. Device is Unregistered - Spec based**
 
 <img src="http://jaimejim.github.io/projects/appiot/pics/scenario2.svg">
 
 
-**Device is Registered - LC status based**
+**3. Device is Registered - LC status based**
 
 <img src="http://jaimejim.github.io/projects/appiot/pics/scenario3.svg">
