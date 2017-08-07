@@ -1,0 +1,50 @@
+hscale="1.4",
+wordwraparcs=true;
+
+LC, LS, AP;
+
+AP note AP : AppIoT is already provisioned with Endpoint IDs before registration;
+
+LC >> LS : POST /rd?ep=epname&b=UQ;
+LC << LS : ACK 2.01 /rd/5a3f;
+LC => LC : "If MAX_TRANSMIT_WAIT, Client goes offline";
+
+
+AP note AP : Administrator clicks read/write multiple times on the interface.;
+
+AP >> LS : GET /3303/0/5400;
+
+LS >> LC : GET /3303/0/5400;
+LC -x LS :;
+
+LS => LS: Timeout;
+
+LS => AP : Notify Client is offline;
+
+AP => AP : Start Queuing;
+AP box AP : "Queue = [GET PUT POST PUT]";
+
+
+LC Note LC : Registration Update: Either because lifetime about to expire or because previous observation triggers it;
+
+LC >> LS : POST /rd/5a3f;
+LC << LS : ACK 2.04 /rd/5a3f;
+
+LS => AP : Notify Client is online;
+
+AP note AP : "Flush Queue";
+
+AP >> LS : GET /3303/0/5400;
+
+LS >> LC : GET /3303/0/5400;
+
+LC >> LS : ACK 2.05 Content: 43;
+
+
+LS >> AP : ACK 2.05 Content: 43;
+
+
+LC => LC : "if MAX_TRANSMIT_WAIT, go offline";
+
+
+...;
