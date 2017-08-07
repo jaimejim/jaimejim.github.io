@@ -21,11 +21,13 @@ LS box LS : "Queue = [GET PUT POST PUT]";
 
 LC Note LC : Device registers;
 
-LS note LS : "Flush Queue";
-
 
 LC >> LS : POST /rd?ep=epname&b=UQ;
 LC << LS : ACK 2.01 /rd/5a3f;
+
+LS note LS : "Flush Queue";
+
+
 
 LC << LS : GET /3303/0/5400;
 LC >> LS : ACK 2.05 Content: 43;

@@ -25,10 +25,10 @@ LS box LS : "Queue = [GET PUT POST PUT]";
 
 LC Note LC : Registration Update: Either because lifetime about to expire or because previous observation triggers it;
 
-LS note LS : "Flush Queue";
-
 LC >> LS : POST /rd/5a3f;
 LC << LS : ACK 2.04 /rd/5a3f;
+
+LS note LS : "Flush Queue";
 
 
 LC << LS : GET /3303/0/5400;

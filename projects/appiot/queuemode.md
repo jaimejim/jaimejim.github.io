@@ -1,7 +1,7 @@
 ## LWM2M - Queue Mode
 
 ### Synopsis
-Queue Mode offers functionality for a LwM2M Client to inform the LwM2M Server that it may be disconnected for an extended period of time and when it becomes reachable again. Queue Mode is useful when the LwM2M Device is not reachable by the LwM2M Server at all the times and it could help the LwM2M Client sleep longer. All servers should support it.
+Queue Mode offers functionality for a LwM2M Client (LC) to inform the LwM2M Server (LS) that it may be disconnected for an extended period of time and when it becomes reachable again. Queue Mode is useful when the LwM2M Device is not reachable by the LwM2M Server at all the times and it could help the LwM2M Client sleep longer. All servers should support it.
 
 ### Basic Operation
 
@@ -118,11 +118,16 @@ GET/PUT after a DELETE. If one operation on the queue deletes an Object, the ass
 
 ### Scenarios
 
-**Device is Registered but offline**
+**Device is Registered but offline - Spec based**
 
 <img src="http://jaimejim.github.io/projects/appiot/pics/scenario1.svg">
 
 
-**Device is Unregistered**
+**Device is Unregistered - Spec based**
 
 <img src="http://jaimejim.github.io/projects/appiot/pics/scenario2.svg">
+
+
+**Device is Registered - LC status based**
+
+<img src="http://jaimejim.github.io/projects/appiot/pics/scenario3.svg">
