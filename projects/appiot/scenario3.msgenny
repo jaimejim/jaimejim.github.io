@@ -43,6 +43,7 @@ LS/SDK note LS/SDK : "Flush Queue";
 LC << LS/SDK : GET /3303/0/5400;
 LC >> LS/SDK : ACK 2.05 Content: 43;
 
+LS/SDK >> AppIoT : ACK 2.05 Content: 43;
 
 AppIoT note AppIoT : "Flush Queue";
 
