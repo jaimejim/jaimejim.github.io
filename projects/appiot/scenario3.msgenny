@@ -18,33 +18,43 @@ AppIoT >> LS/SDK : GET /3303/0/5400;
 LS/SDK >> LC : GET /3303/0/5400;
 LC -x LS/SDK :;
 
+
+
 LS/SDK => LS/SDK: Timeout;
+LS/SDK box LS/SDK : Cached [GET /3303/0/5400];
+
+
 
 LS/SDK => AppIoT : Notify Client is offline;
 
 AppIoT => AppIoT : Start Queuing;
-AppIoT >> AppIoT : Messages;
+AppIoT box AppIoT : Cached [GET /3303/0/5401 GET /3303/0/5402];
 
 LC Note LC : Registration Update: Either because lifetime about to expire or because previous observation triggers it;
 
 LC >> LS/SDK : POST /rd/5a3f;
 LC << LS/SDK : ACK 2.04 /rd/5a3f;
 
+
 LS/SDK => AppIoT : Notify Client is online;
+
+LS/SDK note LS/SDK : "Flush Queue";
+
+LC << LS/SDK : GET /3303/0/5400;
+LC >> LS/SDK : ACK 2.05 Content: 43;
+
 
 AppIoT note AppIoT : "Flush Queue";
 
-AppIoT >> LS/SDK : GET /3303/0/5400;
+AppIoT >> LS/SDK : GET /3303/0/5401;
 
-LS/SDK >> LC : GET /3303/0/5400;
+LS/SDK >> LC : GET /3303/0/5401;
 
 LC >> LS/SDK : ACK 2.05 Content: 43;
 
 
 LS/SDK >> AppIoT : ACK 2.05 Content: 43;
 
+...;
 
 LC => LC : "if MAX_TRANSMIT_WAIT, go offline";
-
-
-...;
