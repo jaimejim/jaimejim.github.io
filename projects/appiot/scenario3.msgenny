@@ -1,51 +1,47 @@
 hscale="1.4",
 wordwraparcs=true;
 
-LC, LS, SDK, WebInterface;
+LC, LS/SDK, AppIoT;
 
-SDK note SDK : AppIoT is already provisioned with Endpoint IDs before registration;
+AppIoT note AppIoT : AppIoT is already provisioned with Endpoint IDs before registration;
 
-LC >> LS : POST /rd?ep=epname&b=UQ;
-LC << LS : ACK 2.01 /rd/5a3f;
+LC >> LS/SDK : POST /rd?ep=epname&b=UQ;
+LC << LS/SDK : ACK 2.01 /rd/5a3f;
 LC => LC : "If MAX_TRANSMIT_WAIT, Client goes offline";
 
 
-WebInterface note WebInterface : Administrator clicks read/write multiple times on the interface.;
-WebInterface >> SDK : Message;
+AppIoT note AppIoT : Administrator clicks read/write multiple times on the interface.;
+AppIoT >> AppIoT : Messages;
 
-SDK >> LS : GET /3303/0/5400;
+AppIoT >> LS/SDK : GET /3303/0/5400;
 
-LS >> LC : GET /3303/0/5400;
-LC -x LS :;
+LS/SDK >> LC : GET /3303/0/5400;
+LC -x LS/SDK :;
 
-LS => LS: Timeout;
+LS/SDK => LS/SDK: Timeout;
 
-LS => SDK : Notify Client is offline;
+LS/SDK => AppIoT : Notify Client is offline;
 
-SDK => SDK : Start Queuing;
-WebInterface >> SDK : Message;
-WebInterface >> SDK : Message;
-WebInterface >> SDK : Message;
-WebInterface >> SDK : Message;
-SDK box SDK : "Queue = [GET PUT POST PUT]";
+AppIoT => AppIoT : Start Queuing;
+AppIoT >> AppIoT : Messages;
 
 LC Note LC : Registration Update: Either because lifetime about to expire or because previous observation triggers it;
 
-LC >> LS : POST /rd/5a3f;
-LC << LS : ACK 2.04 /rd/5a3f;
+LC >> LS/SDK : POST /rd/5a3f;
+LC << LS/SDK : ACK 2.04 /rd/5a3f;
 
-LS => SDK : Notify Client is online;
+LS/SDK => AppIoT : Notify Client is online;
 
-SDK note SDK : "Flush Queue";
+AppIoT note AppIoT : "Flush Queue";
 
-SDK >> LS : GET /3303/0/5400;
+AppIoT >> LS/SDK : GET /3303/0/5400;
 
-LS >> LC : GET /3303/0/5400;
+LS/SDK >> LC : GET /3303/0/5400;
 
-LC >> LS : ACK 2.05 Content: 43;
+LC >> LS/SDK : ACK 2.05 Content: 43;
 
 
-LS >> SDK : ACK 2.05 Content: 43;
+LS/SDK >> AppIoT : ACK 2.05 Content: 43;
 
 
 LC => LC : "if MAX_TRANSMIT_WAIT, go offline";
