@@ -151,19 +151,17 @@ layout: false
 
 **CoRE WG**
 
-* Interops were arranged for Object Security over CoAP.
+* Interops were arranged for [Object Security over CoAP](https://tools.ietf.org/html/draft-ietf-core-object-security).
   * Code available <https://core-wg.github.io/oscoap/>.
   * Interop results <https://ericssonresearch.github.io/OSCOAP/>
+  * OSCoAP seems to be becoming quite popular as an alternative to TLS/DTLS but there is currently debate at IETF over its use. .
+  * New [multicast](https://tools.ietf.org/html/draft-tiloca-core-multicast-oscoap-02) usage added.
 
-
-* DNS-SD in Resource Directory. Not used in LWM2M but could be a useful addition. The whole issue of **finding the RD** on the first place and normalizing discovery was brought up multiple times.<https://tools.ietf.org/html/draft-ietf-core-resource-directory>
-
+* DNS-SD split in Resource Directory inprogress. The whole issue of **finding the RD** on the first place and normalizing discovery was brought up multiple times.<https://tools.ietf.org/html/draft-ietf-core-resource-directory>
   * LWM2M has a harcoded RD URI (LWM2M Server).
   * Multicast and reusing DHCP response is also possible.
   * DNS-SD part defines few attributes to describe resources in an RD to allow for internetworking with DNS service. No open implementation AFAIK.
   * OCF is looking into RD discovery over Wifi.
-
-* <https://tools.ietf.org/html/core-coap-sms-gprs> should have more people from the operator side interested. Surprising (to me) the little participation, knowing that it is suposed to be used on LWM2M.
 
 ---
 
@@ -171,10 +169,9 @@ layout: false
 <https://tools.ietf.org/html/draft-ietf-core-yang-cbor>
 <https://tools.ietf.org/html/draft-ietf-core-sid>
 
-* OSCoAP seems to be becoming quite popular as an alternative to TLS/DTLS. Other usages popping up in other WGs. Main guys are from Ericsson (Göran Selander and Francesca Palombini).<https://tools.ietf.org/html/draft-ietf-core-object-security>. However, application layer security does get some push back by the traditional security folks.
-  * New [multicast](https://tools.ietf.org/html/draft-tiloca-core-multicast-oscoap-02) usage added.
-
 * <https://tools.ietf.org/html/draft-hartke-core-e2e-security-reqs> still under the radar to some and still an excellent document narrating use cases and security requirements for working with CoAP in proxied networks.
+
+* <https://tools.ietf.org/html/core-coap-sms-gprs> should have more people from the operator side interested. Surprising (to me) the little participation, knowing that it is suposed to be used on LWM2M.
 
 ---
 
