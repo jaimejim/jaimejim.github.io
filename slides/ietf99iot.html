@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>IETF98 and IoT</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 200;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+name:inverse
+layout: true
+class: center, middle, inverse
+
+---
+#IETF99 and IoT
+### Jaime Jiménez, Ericsson Research
+###[jaimejim.github.io]
+.footnote[Friday 11th August 2017]
+
+---
+layout: false
+
+* WISHI Workshop
+  * <https://github.com/t2trg/2017-07-wishi/tree/master/slides>
+  * In general similar presentations as [IoTSI](https://www.iab.org/activities/workshops/iotsi/), some progress done during the year.
+  * Novel presentation about [iot.schema.org](https://github.com/t2trg/2017-07-wishi/blob/master/slides/04-iotschema-wishi-15072017.pdf), we have been involved in the drafting.
+  * Interesting presentation about [WoT](https://github.com/t2trg/2017-07-wishi/blob/master/slides/05-WoT-wishi-2017.pdf), tries to be the "glue in-between" aplication and platform silos.
+  * Cool practical example [HyCoWare](https://github.com/t2trg/2017-07-wishi/blob/master/slides/21-Challenges-for-Semantic-LWM2M-Interoperability-in-Complex-IoT-Systems_WI....pdf)
+  * Other SDOs (OCF, Fairhair, OMA, IPSO ...) also represented.
+
+* Hard to take away something very concrete. Most SDOs are cryptic about their deployments.
+* [Yang of Things (YoT)](https://github.com/Ixau/yot/blob/master/ietf99/AggregatedSlides-Main.pdf).
+  * Interesting for heavy on YANG companies.
+  * One single registry of SIDs to rule them all.
+    * Pros: Novel, bold and concrete use of YANG for application data.
+    * Cons: Like all other models, it needs broader support to work. Managing the SID registry might be unrealistic. Different angles (YANG people worry about development costs, IoT worry about RAM), technical challenges (version control, )
+
+---
+
+
+* Interops were arranged for Object Security over CoAP.
+  * Code available <https://core-wg.github.io/oscoap/>.
+  * Interop results <https://ericssonresearch.github.io/OSCOAP/>
+
+
+* DNS-SD in Resource Directory. Not used in LWM2M but could be a useful addition. The whole issue of **finding the RD** on the first place and normalizing discovery was brought up multiple times.<https://tools.ietf.org/html/draft-ietf-core-resource-directory>
+
+  * LWM2M has a harcoded RD URI (LWM2M Server).
+  * Multicast and reusing DHCP response is also possible.
+  * DNS-SD part defines few attributes to describe resources in an RD to allow for internetworking with DNS service. No open implementation AFAIK.
+  * OCF is looking into RD discovery over Wifi.
+
+* <https://tools.ietf.org/html/core-coap-sms-gprs> should have more people from the operator side interested. Surprising (to me) the little participation, knowing that it is suposed to be used on LWM2M.
+
+---
+
+* YANG seems to quietly be progressing too. In particular I find it could be useful for SigFox-based networks. They already have figured out a way to do compression so that they can fit a CoAP message in less than 20 bytes (!). I think they'll use CBOR and IANA-based identifiers. AFAIK no linking, nor proper security or message fragmentation yet. Good research. <https://tools.ietf.org/html/draft-ietf-core-yang-cbor>
+<https://tools.ietf.org/html/draft-ietf-core-sid>
+
+* CoRE Links to JSON to CBOR is also finished. In addition to that, there seems to be some allingment around the use of CBOR as serialization in the constrained space and in other WGs, in fact there is a newly formed CBOR WG. Implementation available if we eant to use CoRE-Link format <https://tools.ietf.org/html/draft-ietf-core-links-json>
+
+* OSCoAP seems to be becoming quite popular as an alternative to TLS/DTLS. Other usages popping up in other WGs. Usage for PubSub specified. Main guys are from Ericsson (Göran Selander and Francesca Palombini).<https://tools.ietf.org/html/draft-ietf-core-object-security>
+
+* As far as authorization mechanisms go, we all should increase our competence on OAuthz <https://tools.ietf.org/html/draft-ietf-ace-oauth-authz-06>
+
+---
+
+* The draft on **CoAP over TCP** is continuing towards RFC (done at WG level), few nits found. LWM2M and OCF will use it and update their specifications accordingly. <https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls>
+
+* <https://tools.ietf.org/html/draft-hartke-core-e2e-security-reqs> under the radar to some, it's an excellent document narrating use cases and security requirements for working with CoAP in proxied networks.
+
+* Similarly <https://tools.ietf.org/html/draft-irtf-t2trg-iot-seccons-02> provides a great background on device lifecycle challenges and the state of the art in IoT ([Section 5](https://tools.ietf.org/html/draft-irtf-t2trg-iot-seccons-02#page-14)).
+
+* We have updated <https://tools.ietf.org/html/draft-ietf-core-coap-pubsub> still not ready for production, early implementation on *pubsub* branch of libcoap.
+
+---
+
+### Personal Takeaways
+
+* Registries moving into linear space ala SID. <https://tools.ietf.org/html/draft-ietf-core-sid>
+* CoAP Pub-Sub Profile for ACE. <https://mail.tools.ietf.org/html/draft-palombini-ace-coap-pubsub-profile-00>
+* Read and understand <https://tools.ietf.org/html/draft-ietf-ace-oauth-authz-06>
+* Discovery, process and steps. Find Daves Thaler audio from T2TRG. <http://etherpad.tools.ietf.org:9000/p/notes-ietf-98-t2trg?useMonospaceFont=true>
+* Use of DNS-SD in RD, follow up on the new doc. <https://github.com/core-wg/rd-dns-sd>  read <https://tools.ietf.org/html/rfc6763#page-30> too
+* VRF Only the holder of the private VRF key can compute the hash, but anyone with corresponding public key can verify the correctness of the hash. <https://tools.ietf.org/html/draft-goldbe-vrf-00> <https://github.com/fcelda/nsec5-crypto>
+
+    </textarea>
+    <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
+    </script>
+    <script
+    src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
