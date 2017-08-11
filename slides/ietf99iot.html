@@ -171,11 +171,9 @@ layout: false
 
 ---
 
-* As seen with YoT, it seems to quietly be progressing too. In particular it could be useful for SigFox-based networks. They already have figured out a way to do compression so that they can fit a CoAP message in less than 20 bytes (!).
+* As seen with YoT, it seems to quietly be progressing too but the outcome is uncertain. In particular it could be useful for really constrained environents like LoRA, NB-IoT or SigFox. They already have figured out a way to do compression so that they can fit a CoAP message in less than 20 bytes (!).
 <https://tools.ietf.org/html/draft-ietf-core-yang-cbor>
 <https://tools.ietf.org/html/draft-ietf-core-sid>
-
-* CoRE Links to JSON to CBOR is also finished. In addition to that, there seems to be some allingment around the use of CBOR as serialization in the constrained space and in other WGs, in fact there is a newly formed CBOR WG. Implementation available if we eant to use CoRE-Link format <https://tools.ietf.org/html/draft-ietf-core-links-json>
 
 * OSCoAP seems to be becoming quite popular as an alternative to TLS/DTLS. Other usages popping up in other WGs. Usage for PubSub specified. Main guys are from Ericsson (Göran Selander and Francesca Palombini).<https://tools.ietf.org/html/draft-ietf-core-object-security>
 
@@ -183,16 +181,12 @@ layout: false
 
 ---
 
-* Relatively big issue found with **CoAP over TCP** and specially with URIs in CoAP. LWM2M and OCF will use it and update their specifications accordingly but we will have to revert back to version -07 <https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls>
+* Relatively big issue found with **CoAP over TCP** and specially with URIs in CoAP. LWM2M and OCF will use CoAP over TCP and update their specifications accordingly but we will have to revert back to version since the current solution is unworkable with the mapping of coap to multiple transports (coap+tcp, coaps+tcp, coap+ws, coaps+ws). Discussion an alternatives are available at draft-thaler-appsawg-multi-transport-uris-01 . New "all transports" **coap+at://** URI scheme has been added and details are being worked on. Target is to have one URI scheme that maps to multiple transports.
 
-<img src="http://jaimejim.github.io/projects/appiot/pics/coaptcpghi.png">
+<img src="http://jaimejim.github.io/assets/images/coaptcpghi.png">
 
 
 * <https://tools.ietf.org/html/draft-hartke-core-e2e-security-reqs> under the radar to some, it's an excellent document narrating use cases and security requirements for working with CoAP in proxied networks.
-
-* Similarly <https://tools.ietf.org/html/draft-irtf-t2trg-iot-seccons-02> provides a great background on device lifecycle challenges and the state of the art in IoT ([Section 5](https://tools.ietf.org/html/draft-irtf-t2trg-iot-seccons-02#page-14)).
-
-* We have updated <https://tools.ietf.org/html/draft-ietf-core-coap-pubsub> still not ready for production, early implementation on *pubsub* branch of libcoap.
 
 ---
 
