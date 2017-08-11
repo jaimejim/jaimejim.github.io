@@ -141,19 +141,15 @@ layout: false
   * Cool practical example [HyCoWare](https://github.com/t2trg/2017-07-wishi/blob/master/slides/21-Challenges-for-Semantic-LWM2M-Interoperability-in-Complex-IoT-Systems_WI....pdf)
   * Other SDOs (OCF, Fairhair, OMA, IPSO ...) also represented.
 
-*Hard to take away something very concrete. Most SDOs are cryptic about their deployments.*
-
 * [Yang of Things (YoT)](https://github.com/Ixau/yot/blob/master/ietf99/AggregatedSlides-Main.pdf).
   * Interesting for heavy on YANG companies.
   * One single registry of SIDs to rule them all.
-
     * ☺ Novel, bold and concrete use of YANG for application data.
-
     * ☹ Like all other models, it needs broader support to work. Managing the SID registry might be unrealistic. Different angles (YANG people worry about development costs, IoT worry about RAM), technical challenges (version control, )
 
 ---
 
-* **CoRE WG**
+**CoRE WG**
 
 * Interops were arranged for Object Security over CoAP.
   * Code available <https://core-wg.github.io/oscoap/>.
@@ -171,11 +167,11 @@ layout: false
 
 ---
 
-* As seen with YoT, it seems to quietly be progressing too but the outcome is uncertain. In particular it could be useful for really constrained environents like LoRA, NB-IoT or SigFox. They already have figured out a way to do compression so that they can fit a CoAP message in less than 20 bytes (!).
+* As seen with YoT, YANG seems to be progressing, but outcome seems unclear. In particular it could be useful for really constrained environents like LoRA, NB-IoT or SigFox. They already have figured out a way to do compression so that they can fit a CoAP message in less than 20 bytes (!).
 <https://tools.ietf.org/html/draft-ietf-core-yang-cbor>
 <https://tools.ietf.org/html/draft-ietf-core-sid>
 
-* OSCoAP seems to be becoming quite popular as an alternative to TLS/DTLS. Other usages popping up in other WGs. Usage for PubSub specified. Main guys are from Ericsson (Göran Selander and Francesca Palombini).<https://tools.ietf.org/html/draft-ietf-core-object-security>
+* OSCoAP seems to be becoming quite popular as an alternative to TLS/DTLS. Other usages popping up in other WGs. Main guys are from Ericsson (Göran Selander and Francesca Palombini).<https://tools.ietf.org/html/draft-ietf-core-object-security>. However, application layer security does get some push back by the traditional security folks.
   * New [multicast](https://tools.ietf.org/html/draft-tiloca-core-multicast-oscoap-02) usage added.
 
 * <https://tools.ietf.org/html/draft-hartke-core-e2e-security-reqs> still under the radar to some and still an excellent document narrating use cases and security requirements for working with CoAP in proxied networks.
@@ -183,23 +179,22 @@ layout: false
 ---
 
 * Relatively big issue found with **CoAP over TCP** and specially with URIs in CoAP.
-  * LWM2M and OCF will use CoAP over TCP and update their specifications accordingly but we will have to revert back to version since the current solution is unworkable with the mapping of coap to multiple transports (coap+tcp, coaps+tcp, coap+ws, coaps+ws).
+  * LWM2M and OCF will use CoAP over TCP and update their specifications accordingly but we will have to revert back to version since the current solution is unworkable with the mapping of coap to multiple transports (coap+tcp, coaps+tcp, coap+ws, coaps+ws, ...).
   * OCF solves that with ocf:// URI mapping at aplication.
   * Discussion an alternatives are available at [draft-thaler-appsawg-multi-transport-uris-01](https://tools.ietf.org/html/draft-thaler-appsawg-multi-transport-uris-01) . New "all transports" **coap+at://** URI scheme has been added and details are being worked on. Target is to have one URI scheme that maps to multiple transports.
 
 <img width="700" align="middle" src="http://jaimejim.github.io/assets/images/coaptcpghi.png">
 
-
-
 * draft-amsuess-core-repeat-request-tag-00:  A CoAP server receiving a request may not be able to verify when the
    request was sent by the CoAP client. The draft presents a solution to both the lack freshness problem - by providing the "repeat" option as challenge - and the weak body correlation (when using block option) - by providing a way for a CoAP server to ask the client to re-transmit the request.
-
 
 ---
 
 ### Personal Takeaways
 
-* We had a meeting with the chairs of the HTTP WG. No conflict due to extension of HTTP to the constrained space. Interest on CoAP over QUIC.
+* Interesting to see experiences with LWM2M and CoAP from elsewhere. Similar issues reported.
+* RIOT-OS community is currently [saturated with PRs](https://github.com/RIOT-OS/RIOT/pulls).
+* We had a meeting with the chairs of the HTTP WG. No conflict due to extension of HTTP to the *constrained* space. Interest on CoAP over QUIC.
 * The data model research space is getting very researchy at times. Actual deployments will make the difference rather than the best technical solution.
 * Conflict between OSCoAP and DTLS we are not to take any more drafts that use OSCoAP for a while.
 
