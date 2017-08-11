@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>IETF98 and IoT</title>
+    <title>IETF99 and IoT</title>
     <style>
       @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
       @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
@@ -133,7 +133,7 @@ class: center, middle, inverse
 ---
 layout: false
 
-* WISHI Workshop
+* **WISHI Workshop**
   * <https://github.com/t2trg/2017-07-wishi/tree/master/slides>
   * In general similar presentations as [IoTSI](https://www.iab.org/activities/workshops/iotsi/), some progress done during the year.
   * Novel presentation about [iot.schema.org](https://github.com/t2trg/2017-07-wishi/blob/master/slides/04-iotschema-wishi-15072017.pdf), we have been involved in the drafting.
@@ -141,15 +141,19 @@ layout: false
   * Cool practical example [HyCoWare](https://github.com/t2trg/2017-07-wishi/blob/master/slides/21-Challenges-for-Semantic-LWM2M-Interoperability-in-Complex-IoT-Systems_WI....pdf)
   * Other SDOs (OCF, Fairhair, OMA, IPSO ...) also represented.
 
-* Hard to take away something very concrete. Most SDOs are cryptic about their deployments.
+*Hard to take away something very concrete. Most SDOs are cryptic about their deployments.*
+
 * [Yang of Things (YoT)](https://github.com/Ixau/yot/blob/master/ietf99/AggregatedSlides-Main.pdf).
   * Interesting for heavy on YANG companies.
   * One single registry of SIDs to rule them all.
-    * Pros: Novel, bold and concrete use of YANG for application data.
-    * Cons: Like all other models, it needs broader support to work. Managing the SID registry might be unrealistic. Different angles (YANG people worry about development costs, IoT worry about RAM), technical challenges (version control, )
+
+    * ☺ Novel, bold and concrete use of YANG for application data.
+
+    * ☹ Like all other models, it needs broader support to work. Managing the SID registry might be unrealistic. Different angles (YANG people worry about development costs, IoT worry about RAM), technical challenges (version control, )
 
 ---
 
+* **CoRE WG**
 
 * Interops were arranged for Object Security over CoAP.
   * Code available <https://core-wg.github.io/oscoap/>.
@@ -167,7 +171,8 @@ layout: false
 
 ---
 
-* YANG seems to quietly be progressing too. In particular I find it could be useful for SigFox-based networks. They already have figured out a way to do compression so that they can fit a CoAP message in less than 20 bytes (!). I think they'll use CBOR and IANA-based identifiers. AFAIK no linking, nor proper security or message fragmentation yet. Good research. <https://tools.ietf.org/html/draft-ietf-core-yang-cbor>
+* As seen with YoT, it seems to quietly be progressing too. In particular it could be useful for SigFox-based networks. They already have figured out a way to do compression so that they can fit a CoAP message in less than 20 bytes (!).
+<https://tools.ietf.org/html/draft-ietf-core-yang-cbor>
 <https://tools.ietf.org/html/draft-ietf-core-sid>
 
 * CoRE Links to JSON to CBOR is also finished. In addition to that, there seems to be some allingment around the use of CBOR as serialization in the constrained space and in other WGs, in fact there is a newly formed CBOR WG. Implementation available if we eant to use CoRE-Link format <https://tools.ietf.org/html/draft-ietf-core-links-json>
@@ -178,7 +183,10 @@ layout: false
 
 ---
 
-* The draft on **CoAP over TCP** is continuing towards RFC (done at WG level), few nits found. LWM2M and OCF will use it and update their specifications accordingly. <https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls>
+* Relatively big issue found with **CoAP over TCP** and specially with URIs in CoAP. LWM2M and OCF will use it and update their specifications accordingly but we will have to revert back to version -07 <https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls>
+
+<img src="http://jaimejim.github.io/projects/appiot/pics/coaptcpghi.png">
+
 
 * <https://tools.ietf.org/html/draft-hartke-core-e2e-security-reqs> under the radar to some, it's an excellent document narrating use cases and security requirements for working with CoAP in proxied networks.
 
