@@ -138,8 +138,8 @@ layout: false
   * <https://github.com/t2trg/2017-07-wishi/tree/master/slides>
   * Similar presentations as [IoTSI](https://www.iab.org/activities/workshops/iotsi/), some progress done during the year.
   * Novel presentation about [iot.schema.org](https://github.com/schemaorg/schemaorg/issues/1272), we have been involved in the drafting.
-  * Interesting presentation about [WoT](https://github.com/t2trg/2017-07-wishi/blob/master/slides/05-WoT-wishi-2017.pdf), tries to be the "glue in-between" aplication and platform silos.
-  * Interesting practical example [HyCoWare](https://github.com/t2trg/2017-07-wishi/blob/master/slides/21-Challenges-for-Semantic-LWM2M-Interoperability-in-Complex-IoT-Systems_WI....pdf)
+  * Interesting presentation about [WoT](http://jaimejim.github.io/slides/WISHI/05-WoT-wishi-2017.pdf), tries to be the "glue in-between" aplication and platform silos.
+  * Interesting practical example [HyCoWare](http://jaimejim.github.io/slides/WISHI/21-Challenges-for-Semantic-LWM2M-Interoperability-in-Complex-IoT-Systems_WI....pdf)
   * Other SDOs (OCF, Fairhair, OMA, IPSO ...) also represented.
 
 * [Yang of Things (YoT)](https://github.com/Ixau/yot/blob/master/ietf99/AggregatedSlides-Main.pdf).
@@ -156,7 +156,7 @@ layout: false
 * Interops were arranged for [Object Security over CoAP](https://tools.ietf.org/html/draft-ietf-core-object-security).
   * Code available <https://core-wg.github.io/oscoap/>.
   * Interop results <https://ericssonresearch.github.io/OSCOAP/>
-  * OSCoAP seems to be becoming quite popular as an alternative to TLS/DTLS but there is currently debate at IETF over its use. .
+  * OSCoAP as an alternative to TLS/DTLS role is currently under debate at IETF.
   * New [multicast](https://tools.ietf.org/html/draft-tiloca-core-multicast-oscoap-02) usage added.
 
 * DNS-SD split in Resource Directory inprogress. The whole issue of **finding the RD** on the first place and normalizing discovery was brought up multiple times.<https://tools.ietf.org/html/draft-ietf-core-resource-directory>
@@ -181,10 +181,11 @@ layout: false
   * LWM2M and OCF will use CoAP over TCP and update their specifications accordingly but we will have to revert back to version since the current solution is unworkable with the mapping of coap to multiple transports (coap+tcp, coaps+tcp, coap+ws, coaps+ws, ...).
   * OCF solves that with ocf:// URI mapping at aplication.
   * Discussion an alternatives are available at [draft-thaler-appsawg-multi-transport-uris-01](https://tools.ietf.org/html/draft-thaler-appsawg-multi-transport-uris-01) . New "all transports" **coap+at://** URI scheme has been added and details are being worked on. Target is to have one URI scheme that maps to multiple transports.
+  * Interop to be arranged soon (ARM, Sierra W, us?).
 
 <img width="700" align="middle" src="http://jaimejim.github.io/assets/images/coaptcpghi.png">
 
-* draft-amsuess-core-repeat-request-tag-00:  A CoAP server receiving a request may not be able to verify when the
+* [draft-amsuess-core-repeat-request-tag-00](https://tools.ietf.org/html/draft-amsuess-core-repeat-request-tag-00):  A CoAP server receiving a request may not be able to verify when the
    request was sent by the CoAP client. The draft presents a solution to both the lack freshness problem - by providing the "repeat" option as challenge - and the weak body correlation (when using block option) - by providing a way for a CoAP server to ask the client to re-transmit the request.
 
 ---
@@ -193,8 +194,8 @@ layout: false
 
 * Interesting to see experiences with LWM2M and CoAP from elsewhere. Similar issues reported.
 * RIOT-OS community is currently [saturated with PRs](https://github.com/RIOT-OS/RIOT/pulls).
-* We had a meeting with the chairs of the HTTP WG. No conflict due to extension of HTTP to the *constrained* space. Interest on CoAP over QUIC.
-* The data model research space is getting very researchy at times. Actual deployments will make the difference rather than the best technical solution.
+* We had a meeting with the chairs of the [HTTP WG](http://httpwg.org/). No conflict due to extension of HTTP to the *constrained* space. Interest on CoAP over QUIC.
+* The data model research space is getting very researchy at times. IMO Actual deployments will make the difference rather than the overarching best data model.
 * Conflict between OSCoAP and DTLS we are not to take any more drafts that use OSCoAP for a while.
 
     </textarea>
