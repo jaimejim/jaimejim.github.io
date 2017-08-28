@@ -479,38 +479,38 @@
   </ul>
 
   <h1 id="rfc.section.1"><a href="#rfc.section.1">1.</a> <a href="#section-1" id="section-1">Introduction</a></h1>
-<p id="rfc.section.1.p.1">The Internet Architecture Board (IAB) holds occasional workshops designed to consider long-term issues and strategies for the Internet, and to suggest future directions for the Internet architecture.  The investigated topics often require coordinated efforts of many organizations and industry bodies to improve an identified problem.  One of the targets of the workshops is to establish communication between relevant organizations, specially when the topics are out of the scope for the Internet Engineering Task Force (IETF).  This long-term planning function of the IAB is complementary to the ongoing engineering efforts performed by working groups of the IETF.</p>
-<p id="rfc.section.1.p.2">Increasing interoperability in the area of Internet of Things (IoT) has been a top priority for many standards organizations and pariticularly the lower layers of the Internet protocol stack have received a lot of attention.  Also at the application layer, such as with CoAP and HTTP, there is a trend in reusing RESTful design patterns.  However, data exchanged on top of these application layer protocols there is still a lot of fragmentation and the same degree of increase in interoperability has not been observed.</p>
-<p id="rfc.section.1.p.3">Thus, the IAB decided to organize a workshop to reach out to relevant stakeholders to explore the state-of-the-art and to identify communality and gaps <a href="#IOTSIAG">[IOTSIAG]</a>, <a href="#IOTSIWS">[IOTSIWS]</a>.</p>
+<p id="rfc.section.1.p.1">The Internet Architecture Board (IAB) holds occasional workshops designed to consider long-term issues and strategies for the Internet, and to suggest future directions for the Internet architecture.  The investigated topics often require coordinated efforts of many organizations and industry bodies to improve an identified problem.  One of the targets of the workshops is to establish communication between relevant organizations, especially when the topics are out of the scope for the Internet Engineering Task Force (IETF).  This long-term planning function of the IAB is complementary to the ongoing engineering efforts performed by working groups of the IETF.</p>
+<p id="rfc.section.1.p.2">Increasing interoperability in the area of Internet of Things (IoT) has been a top priority for many standards organizations and particularly the lower layers of the Internet protocol stack have received a lot of attention.  Also at the application layer, such as with CoAP and HTTP, there is a trend in reusing RESTful design patterns.  However, there are still many companies and organizations defining specifications that describe the same type of data. This leads to interoperability problems.</p>
+<p id="rfc.section.1.p.3">Thus, the IAB decided to organize a workshop to reach out to relevant stakeholders to explore the state-of-the-art and to identify communality and gaps <a href="#IOTSIAG">[IOTSIAG]</a>, <a href="#IOTSIWS">[IOTSIWS]</a>. In particular, the IAB was interested to learn about the following aspects:</p>
 <p/>
 
 <ul>
   <li>The different perceived state of the art on data and information models.</li>
   <li>The lack of an encoding-independent standardization of the information, the so-called information model.</li>
-  <li>The strong relationship with the underlying communication pattern, such as remote procedure calls (RPC), publish/subscribe or RESTful designs.</li>
-  <li>Identifying which similar concepts groups have develop in parallel, specially those that would require only slight modifications to solve interoperability.</li>
+  <li>The influence of the communication pattern, such as remote procedure calls (RPC), publish/subscribe or RESTful designs, on the deisgn of data and information models.</li>
+  <li>Identifying which similar concepts groups have develop in parallel, especially those that would require only slight modifications to solve interoperability.</li>
   <li>Identifying how existing data models can be mapped against each other to offer inter working.</li>
   <li>Identifying common use cases for cooperation and harmonization.</li>
 </ul>
 <h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> <a href="#section-2" id="section-2">Terminology</a></h1>
-<p id="rfc.section.2.p.1">The first roadblock to semantic interoperability is the lack of a common vocabulary to start the discussion.  There is a need to align between participating organizations on a common set of basic terms.  <a href="#RFC3444">[RFC3444]</a> does a start by separating conceptual models for designers or Information Models (IMs) and concrete detailed definitions for implementors or Data Models (DMs).  There are concepts that are undefined in that RFC and elsewhere, such as the interaction with the resources of an endpoint or Interaction Model.  Therefore the three &#8220;main&#8221; common models that could be identified were:</p>
+<p id="rfc.section.2.p.1">The first roadblock to semantic interoperability is the lack of a common vocabulary to start the discussion.  <a href="#RFC3444">[RFC3444]</a> does a start by separating conceptual models for designers or Information Models (IMs) and concrete detailed definitions for implementers or Data Models (DMs).  There are concepts that are undefined in that RFC and elsewhere, such as the interaction with the resources of an endpoint or Interaction Model.  Therefore the three &#8220;main&#8221; common models that could be identified were:</p>
 <p/>
 
 <dl>
   <dt>Information Model (IM)</dt>
-  <dd style="margin-left: 3"><br/> it defines an environment at the highest level of abstraction, they express the desired functionality.  They can be defined informally (e.g. in plain English) or more formally (e.g.  UML, Entity-Relationship Diagrams, etc.).  Implementation details are hidden.</dd>
+  <dd style="margin-left: 3"><br/> It defines an environment at the highest level of abstraction, they express the desired functionality.  They can be defined informally (e.g. in plain English) or more formally (e.g.  UML, Entity-Relationship Diagrams, etc.).  Implementation details are hidden.</dd>
 </dl>
 <p/>
 
 <dl>
   <dt>Data Model (DM)</dt>
-  <dd style="margin-left: 3"><br/> it defines concrete data representations at a lower level of abstraction, including implementation and protocol-specific details.  Some examples are: SNMP Management Information Base (MIBs), W3C Thing Description (TD) Things, YANG models, LWM2M Schemas, OCF Schemas and so on.</dd>
+  <dd style="margin-left: 3"><br/> It defines concrete data representations at a lower level of abstraction, including implementation and protocol-specific details.  Some examples are: SNMP Management Information Base (MIBs), W3C Thing Description (TD) Things, YANG models, LWM2M Schemas, OCF Schemas and so on.</dd>
 </dl>
 <p/>
 
 <dl>
   <dt>Interaction Model (IN)</dt>
-  <dd style="margin-left: 3"><br/> it defines how data is accessed and retrieved from the endpoints, being therefore tied to the specific communication pattern that the system has (e.g.  REST methods, Publish/Subscribe operations or RPC-calls).</dd>
+  <dd style="margin-left: 3"><br/> It defines how data is accessed and retrieved from the endpoints, being therefore tied to the specific communication pattern that the system has (e.g.  REST methods, Publish/Subscribe operations or RPC-calls).</dd>
 </dl>
 <p id="rfc.section.2.p.5">Another identified terminology issue is the semantic meaning overload that some terms have.  Meaning will vary depending on the context the term is used.  Some examples of such terms are: semantics, models, encoding, serialization format, media types or encoding types.  Due to time constraints no concrete terminology was agreed upon, however work will continue within each organization to create various terminology documents, see <a href="#IOTSIGIT">[IOTSIGIT]</a>.</p>
 <h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#section-3" id="section-3">Architecture</a></h1>
@@ -519,7 +519,7 @@
 
 <dl>
   <dt>Thing-hub-cloud</dt>
-  <dd style="margin-left: 3"><br/> things talk to a hub, which talks back to them and to the cloud.  There is a spectrum of emphasis on the hub vs. the cloud.  For some the hub is simply an access point; for others it is a critical place for control loops and ALGs.</dd>
+  <dd style="margin-left: 3"><br/> things talk to a hub, which talks back to them and to the cloud.  There is a spectrum of emphasis on the hub vs. the cloud.  For some the hub is simply an IP router that connects different link layer technologies, but for others it is a critical place for maintaining local control.</dd>
 </dl>
 <p/>
 
@@ -534,27 +534,27 @@
   <dd style="margin-left: 3"><br/> some things may be geospatially related even if they are not on the same network or within the same administrative domain.</dd>
 </dl>
 <p id="rfc.section.3.p.5">Current data models and definitions for &#8220;things&#8221; often focus on defining actual physical devices and representing their state.  That focus should perhaps be shifted into a more holistic or user-oriented perspective, defining abstract concepts as well.  On the other a lot of focus is placed on human interaction with physical devices while IoT will be more oriented to interaction between &#8220;things&#8221; instead.</p>
-<p id="rfc.section.3.p.6">Those things should be designed to be multiple-purpose, keeping in mind that solutions should be open-ended to facilitate new usages and new future domains of operation. this pattern has already happened, devices that were intended for one purpose end up being used for a different one given the right context ((e.g. smart phone led light turned out to be a heartrate monitor).  IoT domain is currently missing insights into what user actually expect.</p>
+<p id="rfc.section.3.p.6">Those things should be designed to be multiple-purpose, keeping in mind that solutions should be open-ended to facilitate new usages and new future domains of operation. This pattern has already happened, devices that were intended for one purpose end up being used for a different one given the right context ((e.g. smart phone led light turned out to be a heartrate monitor).  IoT domain is currently missing insights into what user actually expect.</p>
 <h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> <a href="#section-4" id="section-4">What Problems to Solve</a></h1>
-<p id="rfc.section.4.p.1">Although the workshop focused on a specific problem it became obvious from the position papers that various organizations, industry groups and individuals attempted to solve different problems.  At least the following goals have been described:</p>
+<p id="rfc.section.4.p.1">The position papers submitted by various organizations, industry groups and individuals made clear that there is not a single aspect to be solved but rather a range. At least the following goals have been described:</p>
 <p/>
 
 <ul>
   <li>Formal Languages for Documentation Purposes</li>
 </ul>
-<p id="rfc.section.4.p.3">Standardization organizations are in the need for a more formal description of their information and data models in order to simplify review, and publication.  For example, the Open Mobile Alliance (OMA) used an XML schema <a href="#LWM2M-Schema">[LWM2M-Schema]</a> to describe their object definitions (i.e., data model) as XML instance documents.  These XML documents offer an alternative way of describing objects compared to the tabular representation found in the specification itself.  The XML files of standardized objects are available for download at <a href="#OMNA">[OMNA]</a>.  Furthermore, a tool is offered to define new objects and resources.  The online editor tool can be found at <a href="#OMA-Editor">[OMA-Editor]</a>.</p>
+<p id="rfc.section.4.p.3">Standardization organizations are in the need for a more formal description of their information and data models in order to simplify review, and publication.  For example, the Open Mobile Alliance (OMA) used an XML schema <a href="#LWM2M-Schema">[LWM2M-Schema]</a> to describe their object definitions (i.e., data model) and the actual object definitions are available for download as XML instance documents.  These XML documents offer an alternative way of describing objects compared to the tabular representation found in the specification itself.  The XML files of standardized objects are available for download at <a href="#OMNA">[OMNA]</a>.  Furthermore, a tool is offered to define new objects and resources.  The online editor tool can be found at <a href="#OMA-Editor">[OMA-Editor]</a>.</p>
 <p/>
 
 <ul>
   <li>Formal Languages for Code Generation</li>
 </ul>
-<p id="rfc.section.4.p.5">Formal data and information modelling languages for use by developers to enable code generation.  For example, the Allseen Visual Studio Plugin <a href="#Allseen-Plugin">[Allseen-Plugin]</a> offers a wizzard to generate code based on the formal description of the data model.  Another example of a data modelling language that can be used for code generation is YANG.  A popular tool to help with code generation of YANG modules is pyang <a href="#PYANG">[PYANG]</a>.</p>
+<p id="rfc.section.4.p.5">Formal data and information modelling languages for use by developers to enable code generation.  For example, the Allseen Visual Studio Plugin <a href="#Allseen-Plugin">[Allseen-Plugin]</a> offers a wizard to generate code based on the formal description of the data model.  Another example of a data modelling language that can be used for code generation is YANG.  A popular tool to help with code generation of YANG modules is pyang <a href="#PYANG">[PYANG]</a>.</p>
 <p/>
 
 <ul>
   <li>Debugging Support</li>
 </ul>
-<p id="rfc.section.4.p.7">Ability to allow debugging tools to implement generic object browsers by utilizing the standardized information and data model.  Example: NRF Bluetooth Smart sniffer from Nordic Semiconductor <a href="#nRF-Sniffer">[nRF-Sniffer]</a>.</p>
+<p id="rfc.section.4.p.7">Ability to allow debugging tools to implement generic object browsers by utilizing the standardized information and data model.  Example: NRF Bluetooth Smart sniffer from Nordic Semiconductor <a href="#nRF-Sniffer">[nRF-Sniffer]</a> can be used to display services and characteristics defined by the Bluetooth SIG.</p>
 <p/>
 
 <ul>
@@ -568,11 +568,11 @@
 </ul>
 <p id="rfc.section.4.p.11">Allow IoT devices to exchange information, potentially along with the data exchange, to discover meta-data about the data and, potentially, even a self-describing interaction model.  An example of such an approach has been shown with HATEOAS <a href="#HATEOAS">[HATEOAS]</a>.</p>
 <h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> <a href="#section-5" id="section-5">Translation</a></h1>
-<p id="rfc.section.5.p.1">One of the targets of interoperability is to create translators between the data models.  There are analogies with gateways back in the eighties when they were used to translate between network protocols, eventually IP took over providing interoperability, however we lost some of the features provided by those other protocols.  The creation of equivalent &#8220;hub/s&#8221; that offer translation between the different data models or data semantics seems one of the ways forward.  Some loss of expressiveness due to the translation between models seems also unavoidable.</p>
-<p id="rfc.section.5.p.2">When it comes to translation two different distinctions appear: translating data between data models and translating data models.  The first one implies doing the translation at runtime while the second performs one translation between the data models one time, like translating a YANG model to a RAML/JSON one.  Indeed, for every IM multiple DMs could be translated.</p>
-<p id="rfc.section.5.p.3">In a sense these distinctions affect as to when the translation is performed.  It can be done at &#8220;design time&#8221; when the information model is done, it can be done at runtime for a concrete data model and it can be done depending n the actual serialization.</p>
-<p id="rfc.section.5.p.4">Yet another distinction will appear depending on the requirements from the application protocols, RPC-style ones might require a slightly different DM than REST ones for similar operations, for example SNMP-traps could be similar to CoAP-Observations but not quite the same.  It is easier to translate between systems that follow the same architecture/design pattern than across architectures, full translation might not even be possible (e.g.  stateless vs stateful systems).</p>
-<p id="rfc.section.5.p.5">Translation of models script to translate XML to YANG Translation of serialized data, on a hub in order to normalize it to other data model.</p>
+<p id="rfc.section.5.p.1">In an ideal world where organizations and companies cooperate and agree on a single standard there is no need for gateways that translate from one data model to the other one. However, this is far from reality today since there are lots of proprietary data models in addition to the already standardized ones. There are analogies with gateways back in the eighties when they were used to translate between network layer protocols.  Eventually IP took over providing the necessary end-to-end interoperability at the network layer. Unfortunately, the introduction of translation gateways that lead to the loss of expressiveness due to the translation between models seems unavoidable.</p>
+<p id="rfc.section.5.p.2">Translation can happen in two flavours, namely:</p>
+<p id="rfc.section.5.p.3">a)  Translating data models: performs one translation between the data models once during design time, like translating a YANG model to a RAML/JSON model. A single IM can be mapped to a number of different DMs.  b)  Translating data between data models implies doing the translation at runtime.</p>
+<p id="rfc.section.5.p.4">In a sense these distinctions affect as to when the translation is performed.  It can be done at &#8220;design time&#8221; when the information model is done, it can be done at runtime for a concrete data model and it can be done depending n the actual serialization.</p>
+<p id="rfc.section.5.p.5">Yet another distinction will appear depending on the requirements from the application protocols, RPC-style ones might require a slightly different DM than REST ones for similar operations, for example SNMP-traps could be similar to CoAP-Observations but not quite the same.  It is easier to translate between systems that follow the same architecture/design pattern than across architectures, full translation might not even be possible (e.g.  stateless vs stateful systems).</p>
 <h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> <a href="#section-6" id="section-6">Dealing with change</a></h1>
 <p id="rfc.section.6.p.1">A large part of the workshop was dedicated to the evolution of devices and server side applications.  Multiple of the participating groups have defined data formats for data representation, however interactions between devices and services and how their relationship evolves over time is more related to the interaction model.</p>
 <p id="rfc.section.6.p.2">There are various approaches to it.  In the most primitive case, a developer will use a description of an API and implement whichever are the protocol steps.  In some cases the information model itself can be used to generate some of the code stubs.  Changes of an API imply changes on the clients to upgrade to the new version, which requires some development of new code to satisfy the needs of the new API.</p>

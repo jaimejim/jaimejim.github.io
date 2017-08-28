@@ -91,7 +91,7 @@ Table of Contents
    architecture.  The investigated topics often require coordinated
    efforts of many organizations and industry bodies to improve an
    identified problem.  One of the targets of the workshops is to
-   establish communication between relevant organizations, specially
+   establish communication between relevant organizations, especially
    when the topics are out of the scope for the Internet Engineering
    Task Force (IETF).  This long-term planning function of the IAB is
    complementary to the ongoing engineering efforts performed by working
@@ -99,12 +99,12 @@ Table of Contents
 
    Increasing interoperability in the area of Internet of Things (IoT)
    has been a top priority for many standards organizations and
-   pariticularly the lower layers of the Internet protocol stack have
+   particularly the lower layers of the Internet protocol stack have
    received a lot of attention.  Also at the application layer, such as
    with CoAP and HTTP, there is a trend in reusing RESTful design
-   patterns.  However, data exchanged on top of these application layer
-   protocols there is still a lot of fragmentation and the same degree
-   of increase in interoperability has not been observed.
+   patterns.  However, there are still many companies and organizations
+   defining specifications that describe the same type of data.  This
+   leads to interoperability problems.
 
 
 
@@ -116,7 +116,8 @@ Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
    Thus, the IAB decided to organize a workshop to reach out to relevant
    stakeholders to explore the state-of-the-art and to identify
-   communality and gaps [IOTSIAG], [IOTSIWS].
+   communality and gaps [IOTSIAG], [IOTSIWS].  In particular, the IAB
+   was interested to learn about the following aspects:
 
    o  The different perceived state of the art on data and information
       models.
@@ -124,12 +125,12 @@ Internet-Draft          draft-iab-iotsi-workshop             August 2017
    o  The lack of an encoding-independent standardization of the
       information, the so-called information model.
 
-   o  The strong relationship with the underlying communication pattern,
-      such as remote procedure calls (RPC), publish/subscribe or RESTful
-      designs.
+   o  The influence of the communication pattern, such as remote
+      procedure calls (RPC), publish/subscribe or RESTful designs, on
+      the deisgn of data and information models.
 
    o  Identifying which similar concepts groups have develop in
-      parallel, specially those that would require only slight
+      parallel, especially those that would require only slight
       modifications to solve interoperability.
 
    o  Identifying how existing data models can be mapped against each
@@ -140,24 +141,23 @@ Internet-Draft          draft-iab-iotsi-workshop             August 2017
 2.  Terminology
 
    The first roadblock to semantic interoperability is the lack of a
-   common vocabulary to start the discussion.  There is a need to align
-   between participating organizations on a common set of basic terms.
-   [RFC3444] does a start by separating conceptual models for designers
-   or Information Models (IMs) and concrete detailed definitions for
-   implementors or Data Models (DMs).  There are concepts that are
-   undefined in that RFC and elsewhere, such as the interaction with the
-   resources of an endpoint or Interaction Model.  Therefore the three
-   "main" common models that could be identified were:
+   common vocabulary to start the discussion.  [RFC3444] does a start by
+   separating conceptual models for designers or Information Models
+   (IMs) and concrete detailed definitions for implementers or Data
+   Models (DMs).  There are concepts that are undefined in that RFC and
+   elsewhere, such as the interaction with the resources of an endpoint
+   or Interaction Model.  Therefore the three "main" common models that
+   could be identified were:
 
    Information Model (IM)
-      it defines an environment at the highest level of abstraction,
+      It defines an environment at the highest level of abstraction,
       they express the desired functionality.  They can be defined
       informally (e.g. in plain English) or more formally (e.g.  UML,
       Entity-Relationship Diagrams, etc.).  Implementation details are
       hidden.
 
    Data Model (DM)
-      it defines concrete data representations at a lower level of
+      It defines concrete data representations at a lower level of
       abstraction, including implementation and protocol-specific
       details.  Some examples are: SNMP Management Information Base
       (MIBs), W3C Thing Description (TD) Things, YANG models, LWM2M
@@ -171,7 +171,7 @@ Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
    Interaction Model (IN)
-      it defines how data is accessed and retrieved from the endpoints,
+      It defines how data is accessed and retrieved from the endpoints,
       being therefore tied to the specific communication pattern that
       the system has (e.g.  REST methods, Publish/Subscribe operations
       or RPC-calls).
@@ -198,8 +198,9 @@ Internet-Draft          draft-iab-iotsi-workshop             August 2017
    Thing-hub-cloud
       things talk to a hub, which talks back to them and to the cloud.
       There is a spectrum of emphasis on the hub vs. the cloud.  For
-      some the hub is simply an access point; for others it is a
-      critical place for control loops and ALGs.
+      some the hub is simply an IP router that connects different link
+      layer technologies, but for others it is a critical place for
+      maintaining local control.
 
    Meta Thing
       some things are actually virtual, like an alarm composed of clock,
@@ -216,8 +217,7 @@ Internet-Draft          draft-iab-iotsi-workshop             August 2017
    of focus is placed on human interaction with physical devices while
    IoT will be more oriented to interaction between "things" instead.
 
-   Those things should be designed to be multiple-purpose, keeping in
-   mind that solutions should be open-ended to facilitate new usages and
+
 
 
 
@@ -226,7 +226,9 @@ Jimenez, et al.           Expires March 1, 2018                 [Page 4]
 Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
-   new future domains of operation. this pattern has already happened,
+   Those things should be designed to be multiple-purpose, keeping in
+   mind that solutions should be open-ended to facilitate new usages and
+   new future domains of operation.  This pattern has already happened,
    devices that were intended for one purpose end up being used for a
    different one given the right context ((e.g. smart phone led light
    turned out to be a heartrate monitor).  IoT domain is currently
@@ -234,10 +236,10 @@ Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 4.  What Problems to Solve
 
-   Although the workshop focused on a specific problem it became obvious
-   from the position papers that various organizations, industry groups
-   and individuals attempted to solve different problems.  At least the
-   following goals have been described:
+   The position papers submitted by various organizations, industry
+   groups and individuals made clear that there is not a single aspect
+   to be solved but rather a range.  At least the following goals have
+   been described:
 
    o  Formal Languages for Documentation Purposes
 
@@ -245,7 +247,8 @@ Internet-Draft          draft-iab-iotsi-workshop             August 2017
    description of their information and data models in order to simplify
    review, and publication.  For example, the Open Mobile Alliance (OMA)
    used an XML schema [LWM2M-Schema] to describe their object
-   definitions (i.e., data model) as XML instance documents.  These XML
+   definitions (i.e., data model) and the actual object definitions are
+   available for download as XML instance documents.  These XML
    documents offer an alternative way of describing objects compared to
    the tabular representation found in the specification itself.  The
    XML files of standardized objects are available for download at
@@ -256,8 +259,8 @@ Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
    Formal data and information modelling languages for use by developers
    to enable code generation.  For example, the Allseen Visual Studio
-   Plugin [Allseen-Plugin] offers a wizzard to generate code based on
-   the formal description of the data model.  Another example of a data
+   Plugin [Allseen-Plugin] offers a wizard to generate code based on the
+   formal description of the data model.  Another example of a data
    modelling language that can be used for code generation is YANG.  A
    popular tool to help with code generation of YANG modules is pyang
    [PYANG].
@@ -266,14 +269,11 @@ Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
    Ability to allow debugging tools to implement generic object browsers
    by utilizing the standardized information and data model.  Example:
-   NRF Bluetooth Smart sniffer from Nordic Semiconductor [nRF-Sniffer].
+   NRF Bluetooth Smart sniffer from Nordic Semiconductor [nRF-Sniffer]
+   can be used to display services and characteristics defined by the
+   Bluetooth SIG.
 
    o  Translation
-
-   The ability for gateways and other similar devices to dynamically
-   translate (or map) one data model to another one.  An example of this
-   idea can be found in [UDI].
-
 
 
 
@@ -281,6 +281,10 @@ Jimenez, et al.           Expires March 1, 2018                 [Page 5]
 
 Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
+
+   The ability for gateways and other similar devices to dynamically
+   translate (or map) one data model to another one.  An example of this
+   idea can be found in [UDI].
 
    o  Runtime Discovery
 
@@ -291,22 +295,25 @@ Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 5.  Translation
 
-   One of the targets of interoperability is to create translators
-   between the data models.  There are analogies with gateways back in
-   the eighties when they were used to translate between network
-   protocols, eventually IP took over providing interoperability,
-   however we lost some of the features provided by those other
-   protocols.  The creation of equivalent "hub/s" that offer translation
-   between the different data models or data semantics seems one of the
-   ways forward.  Some loss of expressiveness due to the translation
-   between models seems also unavoidable.
+   In an ideal world where organizations and companies cooperate and
+   agree on a single standard there is no need for gateways that
+   translate from one data model to the other one.  However, this is far
+   from reality today since there are lots of proprietary data models in
+   addition to the already standardized ones.  There are analogies with
+   gateways back in the eighties when they were used to translate
+   between network layer protocols.  Eventually IP took over providing
+   the necessary end-to-end interoperability at the network layer.
+   Unfortunately, the introduction of translation gateways that lead to
+   the loss of expressiveness due to the translation between models
+   seems unavoidable.
 
-   When it comes to translation two different distinctions appear:
-   translating data between data models and translating data models.
-   The first one implies doing the translation at runtime while the
-   second performs one translation between the data models one time,
-   like translating a YANG model to a RAML/JSON one.  Indeed, for every
-   IM multiple DMs could be translated.
+   Translation can happen in two flavours, namely:
+
+   a) Translating data models: performs one translation between the data
+   models once during design time, like translating a YANG model to a
+   RAML/JSON model.  A single IM can be mapped to a number of different
+   DMs.  b) Translating data between data models implies doing the
+   translation at runtime.
 
    In a sense these distinctions affect as to when the translation is
    performed.  It can be done at "design time" when the information
@@ -321,13 +328,6 @@ Internet-Draft          draft-iab-iotsi-workshop             August 2017
    follow the same architecture/design pattern than across
    architectures, full translation might not even be possible (e.g.
    stateless vs stateful systems).
-
-   Translation of models script to translate XML to YANG Translation of
-   serialized data, on a hub in order to normalize it to other data
-   model.
-
-
-
 
 
 
