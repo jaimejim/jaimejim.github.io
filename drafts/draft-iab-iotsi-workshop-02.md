@@ -14,7 +14,7 @@ pi:
 title: Report from the Internet of Things (IoT) Semantic Interoperability (IOTSI)
   Workshop 2016
 abbrev: draft-iab-iotsi-workshop
-date: 2016-11-14
+date: 2017-08-28
 author:
 - ins: J. Jimenez
   name: Jaime Jimenez

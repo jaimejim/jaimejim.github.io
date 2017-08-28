@@ -5,10 +5,10 @@
 Network Working Group                                         J. Jimenez
 Internet-Draft                                                  Ericsson
 Intended status: Informational                             H. Tschofenig
-Expires: May 18, 2017                                                ARM
+Expires: March 1, 2018                                               ARM
                                                                D. Thaler
                                                                Microsoft
-                                                       November 14, 2016
+                                                         August 28, 2017
 
 
    Report from the Internet of Things (IoT) Semantic Interoperability
@@ -43,19 +43,19 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 18, 2017.
+   This Internet-Draft will expire on March 1, 2018.
 
 Copyright Notice
 
-   Copyright (c) 2016 IETF Trust and the persons identified as the
+   Copyright (c) 2017 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
 
 
 
-Jimenez, et al.           Expires May 18, 2017                  [Page 1]
+Jimenez, et al.           Expires March 1, 2018                 [Page 1]
 
-Internet-Draft          draft-iab-iotsi-workshop           November 2016
+Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Jimenez, et al.           Expires May 18, 2017                  [Page 2]
+Jimenez, et al.           Expires March 1, 2018                 [Page 2]
 
-Internet-Draft          draft-iab-iotsi-workshop           November 2016
+Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
    Thus, the IAB decided to organize a workshop to reach out to relevant
@@ -165,9 +165,9 @@ Internet-Draft          draft-iab-iotsi-workshop           November 2016
 
 
 
-Jimenez, et al.           Expires May 18, 2017                  [Page 3]
+Jimenez, et al.           Expires March 1, 2018                 [Page 3]
 
-Internet-Draft          draft-iab-iotsi-workshop           November 2016
+Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
    Interaction Model (IN)
@@ -221,9 +221,9 @@ Internet-Draft          draft-iab-iotsi-workshop           November 2016
 
 
 
-Jimenez, et al.           Expires May 18, 2017                  [Page 4]
+Jimenez, et al.           Expires March 1, 2018                 [Page 4]
 
-Internet-Draft          draft-iab-iotsi-workshop           November 2016
+Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
    new future domains of operation. this pattern has already happened,
@@ -277,9 +277,9 @@ Internet-Draft          draft-iab-iotsi-workshop           November 2016
 
 
 
-Jimenez, et al.           Expires May 18, 2017                  [Page 5]
+Jimenez, et al.           Expires March 1, 2018                 [Page 5]
 
-Internet-Draft          draft-iab-iotsi-workshop           November 2016
+Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
    o  Runtime Discovery
@@ -333,9 +333,9 @@ Internet-Draft          draft-iab-iotsi-workshop           November 2016
 
 
 
-Jimenez, et al.           Expires May 18, 2017                  [Page 6]
+Jimenez, et al.           Expires March 1, 2018                 [Page 6]
 
-Internet-Draft          draft-iab-iotsi-workshop           November 2016
+Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
 6.  Dealing with change
@@ -389,9 +389,9 @@ Internet-Draft          draft-iab-iotsi-workshop           November 2016
 
 
 
-Jimenez, et al.           Expires May 18, 2017                  [Page 7]
+Jimenez, et al.           Expires March 1, 2018                 [Page 7]
 
-Internet-Draft          draft-iab-iotsi-workshop           November 2016
+Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
 8.  Appendix A: Program Committee
@@ -445,9 +445,9 @@ Internet-Draft          draft-iab-iotsi-workshop           November 2016
 
 
 
-Jimenez, et al.           Expires May 18, 2017                  [Page 8]
+Jimenez, et al.           Expires March 1, 2018                 [Page 8]
 
-Internet-Draft          draft-iab-iotsi-workshop           November 2016
+Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
    o  Achilleas Kemos, "Alliance for Internet of Things Innovation
@@ -501,9 +501,9 @@ Internet-Draft          draft-iab-iotsi-workshop           November 2016
 
 
 
-Jimenez, et al.           Expires May 18, 2017                  [Page 9]
+Jimenez, et al.           Expires March 1, 2018                 [Page 9]
 
-Internet-Draft          draft-iab-iotsi-workshop           November 2016
+Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
    o  Max Senges, "Submission for IAB IoT Sematic Interoperability
@@ -557,9 +557,9 @@ Internet-Draft          draft-iab-iotsi-workshop           November 2016
 
 
 
-Jimenez, et al.           Expires May 18, 2017                 [Page 10]
+Jimenez, et al.           Expires March 1, 2018                [Page 10]
 
-Internet-Draft          draft-iab-iotsi-workshop           November 2016
+Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
    o  Alissa Cooper, Cisco
@@ -613,9 +613,9 @@ Internet-Draft          draft-iab-iotsi-workshop           November 2016
 
 
 
-Jimenez, et al.           Expires May 18, 2017                 [Page 11]
+Jimenez, et al.           Expires March 1, 2018                [Page 11]
 
-Internet-Draft          draft-iab-iotsi-workshop           November 2016
+Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
    o  Max Senges, Google
@@ -669,9 +669,9 @@ Internet-Draft          draft-iab-iotsi-workshop           November 2016
 
 
 
-Jimenez, et al.           Expires May 18, 2017                 [Page 12]
+Jimenez, et al.           Expires March 1, 2018                [Page 12]
 
-Internet-Draft          draft-iab-iotsi-workshop           November 2016
+Internet-Draft          draft-iab-iotsi-workshop             August 2017
 
 
    [OMA-Editor]
@@ -725,4 +725,4 @@ Authors' Addresses
 
 
 
-Jimenez, et al.           Expires May 18, 2017                 [Page 13]
+Jimenez, et al.           Expires March 1, 2018                [Page 13]
