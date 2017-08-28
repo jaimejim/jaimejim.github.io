@@ -32,7 +32,7 @@
 	<date day="14" month="November" year="2016"/>
 	<abstract><t>
    This document provides a summary of the 'Workshop on Internet of
-   Things (IoT) Semantic Interoperability (IOTSI)' <xref target="IOTSIAG"/>, <xref target="IOTSIWS"/>,
+   Things (IoT) Semantic Interoperability (IOTSI)'
    which took place in Santa Clara, CA, on March 17-18, 2016.  The main
    goal of the workshop was to foster a discussion on the different
    approaches used by companies and standards developing organizations
@@ -51,7 +51,7 @@
    The Internet Architecture Board (IAB) holds occasional workshops
    designed to consider long-term issues and strategies for the
    Internet, and to suggest future directions for the Internet
-   architecture.  The investigated topics often require coordinated
+   architecture.  The investigated topics often require of the coordinated
    efforts of many organizations and industry bodies to improve an
    identified problem.  One of the targets of the workshops is to
    establish communication between relevant organizations, specially
@@ -72,8 +72,8 @@
 
 	<t>
    Thus, the IAB decided to organize a workshop to reach out to relevant
-   stakeholders to explore the state-of-the-art and to identify
-   communality and gaps.</t>
+   stakeholders to explore the state-of-the-art on 'IoT Semantic Interoperability' and to identify
+   communality and gaps <xref target="IOTSIAG"/>, <xref target="IOTSIWS"/>. </t>
 
 	<t><list style="symbols"><t>The different perceived state of the art on data and information
       models.</t>
@@ -83,7 +83,7 @@
 
 	<t>The strong relationship with the underlying communication pattern,
       such as remote procedure calls (RPC), publish/subscribe or RESTful
-      designs.</t>
+      dessigns.</t>
 
 	<t>Identifying which similar concepts groups have develop in
       parallel, specially those that would require only slight
