@@ -311,13 +311,13 @@ approach has been shown with HATEOAS {{HATEOAS}}.
 # Translation {#section-5}
 
 One of the targets of interoperability is to create translators
-between the data models.  There are analogies with gateways back in
-1985 when they were used to translate between network protocols,
+between the data models.  There are analogies with gateways back in the eighties
+when they were used to translate between network protocols,
 eventually IP took over providing interoperability, however we lost
 some of the features provided by those other protocols.  The creation
-of an equivalent "hub/s" that offer translation between the different
+of equivalent "hub/s" that offer translation between the different
 data models or data semantics seems one of the ways forward.  Some
-lose of expressiveness due to the translation between models seems
+loss of expressiveness due to the translation between models seems
 also unavoidable.
 
 When it comes to translation two different distinctions appear:
@@ -361,19 +361,19 @@ imply changes on the clients to upgrade to the new version, which
 requires some development of new code to satisfy the needs of the new
 API.
 
-New, approaches imply that the whole interaction could be machine-
-understandable on the first place with changes happening at runtime.
-In it, a machine client can discover the possible interactions with a
+These interactions could be made machine-understandable on the first place,
+enabling for changes to happen at runtime.
+In that scenario, a machine client can discover the possible interactions with a
 service, adapting to changes as they occur without specific code
 being developed to adapt to them.
 
 The challenge seems to be to define the human-readable parts as
-machine-readable.  Machine-readable require a shared vocabulary to
+machine-readable.  Machine-readable languages require a shared vocabulary to
 give meaning to the tags.
 
-These type of interactions are based on the The REST architectural
-style. the principle is that the device or the endpoint, just needs a
-single entry point, the server would provide descriptions of the API
+These type of interactions are based on the the REST architectural
+style. Its principle is that a device or endpoint only needs a
+single entry point with a host providing descriptions of the API
 inband by means of web links and forms.
 
 By defining IoT specific relation types, it is possible to drive
@@ -393,7 +393,7 @@ apologize to those that could not attend the workshop.
 # Appendix A: Program Committee {#section-8}
 
 This workshop was organized by the following individuals: Jari Arkko,
-Ralph Droms, Jaime Jimenez, Michael Koster, Dave Thaler, and Hannes
+Ralph Droms, Jaime Jiménez, Michael Koster, Dave Thaler, and Hannes
 Tschofenig.
 
 # Appendix B: Accepted Position Papers {#section-9}
