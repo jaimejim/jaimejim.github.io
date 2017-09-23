@@ -141,7 +141,16 @@ layout: false
 
   * There is not one single solution to the problem.
 
-  * Why not try the naive approach by actively configuring NATs in the path?  (͡๏_๏)
+  * TCP NAT binding timeouts is 386 minutes while UDP is **160 seconds**.
+
+  * Why not try the naive approach by actively configuring NATs in the path to have a longer UDP binding?  (͡๏_๏)
+
+???
+The problematic of NATs and Firewalls is persistant in the Internet, despite the time since CoAP was standardized. There are multiple solutions and proposals with different success rates.
+
+In fact one of the reasons to standardized CoAP over TCP has been the problems that managed devices have had to connetc to/from the manager. The mean between TCP and UDP NAT binding timeouts is 386 minutes (TCP) and 160 seconds (UDP).
+
+Then the naive question would be, why not trying to communicate with NATs through standardized protocols? Perhaps they can be configured simply?
 
 ---
 
@@ -149,6 +158,13 @@ layout: false
 
 <img src="http://jaimejim.github.io/assets/images/pcp1.png" width="800">
 
+???
+
+In the context of managed endpoints, LWM2M is a good case to illustrate the problems with NATs and firewalls.
+
+Built on top of CoP it provides a series of interfaces used for management of CoAP endpoints, as well as a data model to express the information hosted in those endpoints.
+
+Every LWM2M Client is also a CoAP server and a CoAP client, same thing goes for the LWm2M Server.
 
 ---
 
@@ -156,6 +172,13 @@ layout: false
 
 <img src="http://jaimejim.github.io/assets/images/pcp2.png" width="800">
 
+???
+
+Common deployments and interactions contemplate a series of devices under a router or gateway of sorts. Connected over short range (802.15.14, 802.11, etc) to a management endpoint that host a LWM2M server elsewhere.
+
+Additional features like Resource Directory Authorization Server, Bootstrapping and others can also be present.
+
+NATs and firewalls are usually configured on routers in between the devices and the manager as well as between the devices themselves.
 
 ---
 
@@ -163,17 +186,30 @@ layout: false
 
 <img src="http://jaimejim.github.io/assets/images/pcp3.png"  width="800">
 
+???
+
+Read the solutions.
+
 ---
 
 ##Common Solutions
 
 <img src="http://jaimejim.github.io/assets/images/pcp4.png"  width="800">
 
+
+???
+
+Read the solutions.
+
 ---
 
 ##Basic Idea
 
 <img src="http://jaimejim.github.io/assets/images/pcp5.png"  width="800">
+
+???
+
+The basic idea consists o using the Port Control Protocol to signal potential NATs to keep a longer UDP binding. It has pros and cons...
 
 ---
 
@@ -194,22 +230,64 @@ layout: false
 **F5**
 * <https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/cgn-implementations-11-5-0.html>
 
+???
+
+A review on the existing specifications for conventional routers shows that PCP should be supported, albeit in some cases it requires specific router configurations to be present. I do not know of the current state of the art when it comes to home routers, however Apple was one of the main contributors to PCP.
+
+---
+
+##PCP Request Message
+
+```
+0                   1                   2                   3
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ |  Version = 2  |0|   MAP       |         Reserved              |
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ |                 Requested Lifetime (32 bits)                  |
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ |                                                               |
+ |               CoAP EP IP Address>Port (128 bits)              |
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+```
+
+* The MAP value is:
+
+    `CoAP EP Address + 5683 + External Address + NAT Port.`
+
+* CoAP Address is set by the DHCP server. External address, lifetime and external port are sent by the manager.
+
+* No Operation Code nor PCP Options are used for now.
+
+???
+
+This slide shows the parameters needed to define a PCP Request.
+
 ---
 
 ##General Operation
 
 Assuming a managed device we apply [RFC6887](https://tools.ietf.org/html/rfc6887#page-20):
 
-1. CoAP Endpoint registers on Management Server that hosts an [RD](https://tools.ietf.org/html/draft-ietf-core-resource-directory-11).
-2. If binding is UDP the Manager can enable PCP.
-3. Manager sets the expected lifetime values.
-4. CoAP Endpoint sends a PCP request to the default gateway (the one that provided the DHCP resolution) on port `5351` and awaits a response.
+1. CoAP Endpoint registers on Management Server that hosts an [RD](https://tools.ietf.org/html/draft-ietf-core-resource-directory-11). During the process the manager can provide the external NAT mappings to the device (IP+port).
+2. If the device is using UDP bindings the Manager can enable PCP.
+3. Manager sets the expected lifetime values and External MAP.
+4. CoAP Endpoint sends a PCP request to the default gateway with the MAP configuration (its own IP address is provided by the DHCP resolution) on port `5351` and awaits a response.
 5. If no response is received the Client then tries the default Anycast address `2001:1::1/128` and awaits a response.
 6. If no response is received after few retransmissions, the device should signal the manager to confirm that PCP is not enabled. If a response is received the device should confirm that PCP has been enabled and the address of the router should be sent.
 7. The manager can apply the same configuration to other devices behind that NAT.
 
+
+
+???
+
+Read the general operation ( I think it follows the PCP spec but I am no expert in the subject )
+
 ---
+
 ##Next Steps
+
+* Verify that this is how PCP is supposed to work with PCP experts.
 
 * Study degree deployment on home gateways.
 
@@ -222,7 +300,10 @@ Assuming a managed device we apply [RFC6887](https://tools.ietf.org/html/rfc6887
 * If it works out, go beyond basic cases:
   * How to forward configuration to NATs in between.
   * How to delegate top other endpoints.
-  * Use of other PCP features like MAP and PEER Opcodes.
+
+???
+I am looking for contributors (maybe better outside Ericsson to get wider)
+
 
     </textarea>
     <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
