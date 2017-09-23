@@ -65,7 +65,7 @@
       }
       .inverse h1, .inverse h2 {
         color: #f3f3f3;
-        line-height: 0.8em;
+        line-height: 1.2em;
       }
 
       /* Slide-specific styling */
@@ -129,9 +129,8 @@ class: center, middle, inverse
 
 ---
 #Use of PCP (RFC6887) on CoAP Endpoints
-### Jaime Jiménez, Ericsson Research
-###[jaime.jimenez@ericsson.com]
-.footnote[Friday 22nd September 2017]
+###Jaime Jiménez - [jaime.jimenez@ericsson.com]
+.footnote[22nd September 2017]
 
 ---
 layout: false
@@ -139,72 +138,90 @@ layout: false
 ##Problem Statement
 
   * NATs and Firewalls have been a long-term issue for constrained devices.
+
   * There is not one single solution to the problem.
+
   * Why not try the naive approach by actively configuring NATs in the path?  (͡๏_๏)
-	    
+
 ---
 
 ##LWM2M Managed Devices
 
-<img src="http://jaimejim.github.io/assets/images/pcp1.png" high="400">
+<img src="http://jaimejim.github.io/assets/images/pcp1.png" width="800">
 
 ---
 
 ##Interactions among CoAP and LWM2M Endpoints
 
-<img src="http://jaimejim.github.io/assets/images/pcp2.png" high="400">
+<img src="http://jaimejim.github.io/assets/images/pcp2.png" width="800">
 
 ---
 
 ##Common Solutions
 
-<img src="http://jaimejim.github.io/assets/images/pcp3.png"  high="400">
+<img src="http://jaimejim.github.io/assets/images/pcp3.png"  width="800">
 
 ---
 
 ##Common Solutions
 
-<img src="http://jaimejim.github.io/assets/images/pcp4.png"  high="400">
+<img src="http://jaimejim.github.io/assets/images/pcp4.png"  width="800">
 
 ---
 
 ##Basic Idea
 
-<img src="http://jaimejim.github.io/assets/images/pcp5.png"  high="400">
+<img src="http://jaimejim.github.io/assets/images/pcp5.png"  width="800">
 
 ---
 
 ##Deployment
 
 **Cisco**
-<https://www.cisco.com/c/en/us/td/docs/routers/crs/software/crs_r4-3/cg_nat/configuration/guide/cgnat_cg43crs/cgc43cgn.html#39351>
-Requires	Cisco	running	IOS-XR.
+* <https://www.cisco.com/c/en/us/td/docs/routers/crs/software/crs_r4-3/cg_nat/configuration/guide/cgnat_cg43crs/cgc43cgn.html#39351>
+* Requires	Cisco	running	IOS-XR.
 
 **Juniper**
-<https://www.juniper.net/documentation/en_US/junos/topics/example/nat-pcp-napt44.html>
-Requires	Juniper	MX	with	MS-DPC.
-		
+* <https://www.juniper.net/documentation/en_US/junos/topics/example/nat-pcp-napt44.html>
+* Requires	Juniper	MX	with	MS-DPC.
+
 **A10**
-<https://nettools.net.berkeley.edu/tools/docs/a10/thunder/ACOS_4_1_0/html/v6_guide-Responsive%20HTML5/v6_guide/v6_pcp/v6_pcp.htm>
-An	unorthodox	link	as	it’s	not	directly	from	A10,	but	their	manuals	are	not	public.
+* <https://nettools.net.berkeley.edu/tools/docs/a10/thunder/ACOS_4_1_0/html/v6_guide-Responsive%20HTML5/v6_guide/v6_pcp/v6_pcp.htm>
+* An	unorthodox	link	as	it’s	not	directly	from	A10,	but	their	manuals	are	not	public.
 
 **F5**
-<https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/cgn-implementations-11-5-0.html>
-<https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/cgn-implementations-11-5-0/5.html#conceptid>
+* <https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/cgn-implementations-11-5-0.html>
 
 ---
 
-##To be done
+##General Operation
+
+Assuming a managed device we apply [RFC6887](https://tools.ietf.org/html/rfc6887#page-20):
+
+1. CoAP Endpoint registers on Management Server that hosts an [RD](https://tools.ietf.org/html/draft-ietf-core-resource-directory-11).
+2. If binding is UDP the Manager can enable PCP.
+3. Manager sets the expected lifetime values.
+4. CoAP Endpoint sends a PCP request to the default gateway (the one that provided the DHCP resolution) on port `5351` and awaits a response.
+5. If no response is received the Client then tries the default Anycast address `2001:1::1/128` and awaits a response.
+6. If no response is received after few retransmissions, the device should signal the manager to confirm that PCP is not enabled. If a response is received the device should confirm that PCP has been enabled and the address of the router should be sent.
+7. The manager can apply the same configuration to other devices behind that NAT.
+
+---
+##Next Steps
 
 * Study degree deployment on home gateways.
+
 * Study degree of complexity in the constrained space.
+
 * Test for example with <https://github.com/libpcp/pcp/tree/master/scapy>.
+
 * Work out a first draft, LWIG, CoRE?
+
 * If it works out, go beyond basic cases:
   * How to forward configuration to NATs in between.
   * How to delegate top other endpoints.
   * Use of other PCP features like MAP and PEER Opcodes.
-  
+
     </textarea>
     <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
     </script>
