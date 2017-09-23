@@ -141,9 +141,12 @@ layout: false
 
   * There is not one single solution to the problem.
 
-  * TCP NAT binding timeouts is 386 minutes while UDP is **160 seconds**.
+  * TCP NAT binding timeouts is 386 minutes while [UDP is only 160 seconds](http://conferences.sigcomm.org/imc/2010/papers/p260.pdf).
 
-  * Why not try the naive approach by actively configuring NATs in the path to have a longer UDP binding?  (͡๏_๏)
+  * Why not try the naive approach and actively configure NATs in the path to have a longer UDP binding?    (͡๏_๏)
+
+
+
 
 ???
 The problematic of NATs and Firewalls is persistant in the Internet, despite the time since CoAP was standardized. There are multiple solutions and proposals with different success rates.
