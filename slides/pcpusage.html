@@ -278,14 +278,16 @@ Assuming a managed device we apply [RFC6887](https://tools.ietf.org/html/rfc6887
 4. CoAP Endpoint sends a PCP request to the default gateway with the MAP configuration (its own IP address is provided by the DHCP resolution) on port `5351` and awaits a response.
 5. If no response is received the Client then tries the default Anycast address `2001:1::1/128` and awaits a response.
 6. If no response is received after few retransmissions, the device should signal the manager to confirm that PCP is not enabled. If a response is received the device should confirm that PCP has been enabled and the address of the router should be sent.
-7. The manager can apply the same configuration to other devices behind that NAT.
+7. The manager can apply the same successful configuration to other devices behind that NAT.
 
 
 
 ???
-
+The process assumes that at some point there is connectivity between coap endpoint and manager.
 Read the general operation ( I think it follows the PCP spec but I am no expert in the subject )
+I think each device has to do PCP individually, but the manager now knows which configuration works, so it can configure other registered devices in the same way.
 
+(note that at the moment this is all guesswork based on specs)
 ---
 
 ##Next Steps
