@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>PCP Usage</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 200;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+name:inverse
+layout: true
+class: center, middle, inverse
+
+---
+#Using PCP (RFC6887) on CoAP Endpoints
+### Jaime Jiménez, Ericsson Research
+###[jaime.jimenez@ericsson.com]
+.footnote[Friday 22nd September 2017]
+
+---
+layout: false
+
+##Problem Statement
+
+  * NATs and Firewalls have been a long-term issue for constrained devices.
+  * There is not one single solution to the problem.
+  * Why not try the naive approach by configuring NATs in the path?  **(͡๏_๏)**
+---
+
+##LWM2M Managed Devices
+
+<img src="http://jaimejim.github.io/assets/images/pcp1.png" width="600">
+
+---
+
+##Interactions among CoAP and LWM2M Endpoints
+
+<img src="http://jaimejim.github.io/assets/images/pcp2.png" width="600">
+
+---
+
+##Common Solutions
+
+<img src="http://jaimejim.github.io/assets/images/pcp3.png" width="600">
+
+---
+
+##Common Solutions
+
+<img src="http://jaimejim.github.io/assets/images/pcp4.png" width="600">
+
+---
+
+##Basic Idea
+
+<img src="http://jaimejim.github.io/assets/images/pcp5.png" width="600">
+
+---
+
+##Deployment
+
+**Cisco**
+<https://www.cisco.com/c/en/us/td/docs/routers/crs/software/crs_r4-3/cg_nat/configuration/guide/cgnat_cg43crs/cgc43cgn.html#39351>
+Requires	Cisco	running	IOS-XR.
+
+**Juniper**
+<https://www.juniper.net/documentation/en_US/junos/topics/example/nat-pcp-napt44.html>
+Requires	Juniper	MX	with	MS-DPC.
+		
+**A10**
+<https://nettools.net.berkeley.edu/tools/docs/a10/thunder/ACOS_4_1_0/html/v6_guide-Responsive%20HTML5/v6_guide/v6_pcp/v6_pcp.htm>
+An	unorthodox	link	as	it’s	not	directly	from	A10,	but	their	manuals	are	not	public.
+
+**F5**
+<https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/cgn-implementations-11-5-0.html>
+<https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/cgn-implementations-11-5-0/5.html#conceptid>
+
+---
+
+##To be done
+
+* Study degree deployment on home gateways.
+* Study degree of complexity in the constrained space.
+* Test for example with <https://github.com/libpcp/pcp/tree/master/scapy>.
+* Work out a first draft, LWIG, CoRE?
+* If it works out, go beyond basic cases:
+  * How to forward configuration to NATs in between.
+  * How to delegate top other endpoints.
+  * Use of other PCP features like MAP and PEER Opcodes.
+  
+    </textarea>
+    <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
+    </script>
+    <script
+    src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
