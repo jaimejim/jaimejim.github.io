@@ -250,7 +250,7 @@ A review on the existing specifications for conventional routers shows that PCP 
  |                 Requested Lifetime (32 bits)                  |
  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
  |                                                               |
- |               CoAP EP IP Address>Port (128 bits)              |
+ |               CoAP EP IP Address:Port (128 bits)              |
  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 ```
 
@@ -272,14 +272,13 @@ This slide shows the parameters needed to define a PCP Request.
 
 Assuming a managed device we apply [RFC6887](https://tools.ietf.org/html/rfc6887#page-20):
 
-1. CoAP Endpoint registers on Management Server that hosts an [RD](https://tools.ietf.org/html/draft-ietf-core-resource-directory-11). During the process the manager can provide the external NAT mappings to the device (IP+port).
+1. CoAP Endpoint registers on a Management Server that hosts an [RD](https://tools.ietf.org/html/draft-ietf-core-resource-directory-11). During the process the manager can provide the external NAT mappings to the device (IP+port).
 2. If the device is using UDP bindings the Manager can enable PCP.
-3. Manager sets the expected lifetime values and External MAP.
-4. CoAP Endpoint sends a PCP request to the default gateway with the MAP configuration (its own IP address is provided by the DHCP resolution) on port `5351` and awaits a response.
-5. If no response is received the Client then tries the default Anycast address `2001:1::1/128` and awaits a response.
-6. If no response is received after few retransmissions, the device should signal the manager to confirm that PCP is not enabled. If a response is received the device should confirm that PCP has been enabled and the address of the router should be sent.
-7. The manager can apply the same successful configuration to other devices behind that NAT.
-
+3. The manager sets the expected *lifetime* values and *external map* (IP:Port).
+4. The CoAP Endpoint sends a PCP request to the default gateway with the MAP configuration (its own IP address is provided by the DHCP resolution) on port `5351` and awaits a response.
+5. If no response is received, the Client then tries the default Anycast address `2001:1::1/128` and awaits a response.
+6. If after few retransmissions no response is received, the device should signal the manager to confirm that PCP is not enabled. If a response is received the device should confirm that PCP has been enabled and the address of the router should be sent.
+7. The manager can then apply the same successful configuration to other devices behind that NAT.
 
 
 ???
