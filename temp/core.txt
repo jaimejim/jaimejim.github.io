@@ -50,9 +50,9 @@ SenML draft-ietf-core-senml:
 
 CoRE Object Security CoAP draft-ietf-core-object-security:
  ☐ [OSCOAP] Ongoing discussion on inner-blockwise.
- ☐ [OSCOAP] Mapping to HTTP TBD, special focus on security (later on work with HTTP WG.
- ☐ [OSCOAP] Ask for the reviewers: Reviews promised by Jim, Sandeep Kumar and Thomas Watteyne.
- ☐ [OSCOAP] Ask Fran for timeline @jaime
+ ☐ [OSCOAP] Mapping to HTTP TBD, special focus on security (later on work with HTTP WG).
+ ✔ [OSCOAP] Ask for the reviewers: Reviews promised by Jim, Sandeep Kumar and Thomas Watteyne.
+ ✔ [OSCOAP] Ask Fran for timeline @jaime
  ✔ [OSCOAP] Final interop in Prague, WGLC there. @done(2017-08-15 12:47) @project(CoRE Object Security CoAP draft-ietf-core-object-security)
  ✔ [OSCOAP] Many open issues focus on quality. @done(2017-08-15 12:47) @project(CoRE Object Security CoAP draft-ietf-core-object-security)
 
