@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>ietf100-summary</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">CoRE WG - Summary IETF100</h1>
+
+<ul>
+<li><p><a href="https://youtu.be/wd_kXam1lIw?t=0m55s">Video Recording</a></p></li>
+<li><p><a href="https://datatracker.ietf.org/meeting/100/materials/slides-100-core-consolidated-slides/">Slides</a></p></li>
+<li><p><a href="http://etherpad.tools.ietf.org:9000/p/notes-ietf-100-core">Raw minutes</a></p></li>
+</ul>
+
+<h2 id="toc_1">Monday, Nov 13, 2017</h2>
+
+<h3 id="toc_2">WG ITEMS</h3>
+
+<ul>
+<li><p><a href="https://tools.ietf.org/html/draft-ietf-core-links-json-09">draft-ietf-core-links-json</a> was not discussed at the meeting.  It is in
+IESG processing, with a few DISCUSSes.  Resolving these was delayed
+as technical questions needed to be addressed, including the fact
+that with RFC 8288 replacing RFC 5988, the ground on which RFC 6690
+was built is shifting a bit (and this draft essentially complements
+RFC 6690).  Some good input was provided by OCF at the 2017-11-10
+OCF/T2TRG meeting, which will now enable these changes to be made.
+Another WGLC should then follow.</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-ietf-core-coap-tcp-tls/">draft-ietf-core-coap-tcp-tls</a> is in IESG processing, waiting for Mirja&rsquo;s
+DISCUSS to clear [it is now clear that this will be in December
+after her vacation].  The first interop on Saturday had 2.5
+implementations (libcoap, augustcellars and coap.me), with a CoAP GET
+performed on /.well-known/core (which exercises a lot of the machinery
+already).  Editorial input from the interop should lead to a -11 soon.</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-ietf-core-cocoa/">draft-ietf-core-cocoa</a> WGLC has been started on the mailing list
+the authors also request feedback from ICCRG and TCPM.
+Dec 14 is the extended deadline.</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-ietf-core-resource-directory/">draft-ietf-core-resource-directory</a> has seen quite a lot of progress in
+the last few months. Developers should start updating their implementations
+as interop would be call on Q1 2018. Work over multiple transports and new
+schemes still to be done. The increased work needs to transfer to
+sister document draft-ietf-core-rd-dns-sd now. We expect to pass WGLC by
+IETF101.</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-ietf-core-yang-cbor/">draft-ietf-core-yang-cbor</a> is stable, but hadn&rsquo;t had enough interop testing
+to enable a WGLC. Initial testing happened during the IETF100 hackathon now.<br>
+Interop is intended for IETF 101, after which WGLC will be issued.</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-ietf-core-comi/">draft-ietf-core-comi</a> and draft-ietf-core-sid need some more
+finishing touches, also probably with fixes coming from the interops
+(bi-weekly meetings to be continued).  There was some discussion
+about cutting the plethora of request types in basic COMI down to
+just FETCH and PATCH (possbly with GET added), to be continued on
+the list.  Completion expected quite soon. Tools to visualize SIDs
+would be necessary.</p></li>
+</ul>
+
+<h3 id="toc_3">NON-WG ITEMS</h3>
+
+<ul>
+<li><p><a href="https://tools.ietf.org/html/draft-birkholz-yang-push-coap-problemstatement-00">draft-birkholz-yang-push-coap-problemstatement</a> was presented; the WG
+now needs to have a look into how YANG Push and telemetry
+requirements are going to relate to COMI and CoAP Observe.</p></li>
+<li><p><a href="https://tools.ietf.org/html/draft-hope-bailie-http-payments-00">draft-hope-bailie-http-payments</a> was presented as a heads-up; several
+participants stressed the relationship of the subject matter to ACE
+work.</p></li>
+</ul>
+
+<h2 id="toc_4">Tuesday, 14th Nov, 2017</h2>
+
+<h3 id="toc_5">WG ITEMS</h3>
+
+<ul>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-ietf-core-senml/">draft-ietf-core-senml</a> finished WGLC and needs some remaining minor
+updates, to be submitted to IESG in November.</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-ietf-core-object-security/">draft-ietf-core-object-security</a> will be ready for WGLC with some
+impending minor fixes in the next version.</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-ietf-core-coap-pubsub/">draft-ietf-core-coap-pubsub</a> is sailing along and could get ready for
+WGLC with the next version.  Implementation status to be collected.
+Early adoption of the new 4.29 response code (as requested by
+implementers of the OCF specification) was non-controversial;
+discussion centered around the best way to add response codes (a
+short draft for 4.29 could also include some other new response
+codes, if they are as non-controversial).</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-ietf-core-dynlink/">draft-ietf-core-dynlink and draft-ietf-core-interfaces</a> had been in
+limbo for a while.  With a new editor, the remaining editorial
+issues can be fixed.  The documents are best kept separate.</p></li>
+</ul>
+
+<h3 id="toc_6">NON-WG ITEMS</h3>
+
+<ul>
+<li><p><a href="https://tools.ietf.org/html/draft-vanderstok-ace-coap-est-01">draft-vanderstok-ace-coap-est</a> poses a problem that
+<a href="https://tools.ietf.org/html/draft-hartke-core-pending-00">draft-hartke-core-pending</a> solves by proposing a new response code.
+Discussion centered around ways that a combination of existing
+response codes could be used instead (5.03 and 2.02), possibly with
+defining semantics for the Retry-After option for the access to a
+Location - provided with a 2.02 - this would avoid adding another
+<q>success</q> response code.</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-tiloca-core-multicast-oscoap/">draft-tiloca-core-multicast-oscoap</a> had in-room consensus for
+adoption as a WG document in Prague already; this was newly
+confirmed; validation of the adoption decision will be sent to the mailing list.</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-liu-core-coap-delay-attacks/">draft-liu-core-coap-delay-attacks</a> proposes a time-based approach to
+the freshness problem solved with a nonce in
+<a href="https://tools.ietf.org/html/draft-ietf-core-echo-request-tag-00">draft-ietf-core-echo-request-tag</a>; there was some good discussion
+that the authors were encouraged to use for a next version.  More
+information about use cases that benefit from time-based freshness
+would be good.</p></li>
+<li><p><a href="https://tools.ietf.org/html/draft-becker-core-coap-sms-gprs-06">draft-becker-core-coap-sms-gprs</a> hadn&rsquo;t reached the threshold for WG adoption earlier; there is some renewed interest. Coordination with LWM2M work will be needed.</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-arkko-core-dev-urn/">draft-arkko-core-dev-urn</a> had in-room consensus for WG adption, to be confirmed on the mailing list.</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-wang-core-opcua-transmission/">draft-wang-core-opcua-transmission</a> was presented as a way to map
+OPC/UA on CoAP.  Discussion touched the issue whether OPC should be
+doing this or the IETF.  In any case, the authors were encouraged to
+continue the work, talk to OPC as well and keep IETF involved.</p></li>
+<li><p><a href="https://datatracker.ietf.org/doc/draft-toutain-core-time-scale/">draft-toutain-core-time-scale</a> was presented, with some discussion on
+whether this should be per-request information or whether there
+could be some state.  Hannes has a slide deck on how LWM2M handles
+sleeping nodes, which pose similar problems.  Laurent promised to
+continue the work.</p></li>
+</ul>
+
+<h1 id="toc_7">Detailed minutes</h1>
+
+<p>Thank you to the note takers!</p>
+
+<div><pre><code class="language-text/plain">---------------------
+╔═╗┌─┐╦═╗╔═╗  ╦ ╦╔═╗
+║  │ │╠╦╝║╣   ║║║║ ╦
+╚═╝└─┘╩╚═╚═╝  ╚╩╝╚═╝
+---------------------
+
+Core@IETF100
+
+Constrained RESTful Environments WG
+Chairs (core-chairs@ietf.org):
+Jaime Jiménez
+Carsten Bormann
+
+Note Takers
+Mathias
+Marco
+Alexander
+Jaime
+Ari Keränen
+Solomon Kembo
+
+MONDAY Nov 13 2017
+1330-15:30 Congress H I
+------------------------
+
+Intro (10)
+Post WGLC TCP (15)
+
+    https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls-10
+
+
+Status update, finishing WGLC.
+All but one IESG DISCUSS cleared
+Impl in libcoap (from Hackathon) - 2,5 implementations; libcoap, augustcellars, coap.me
+Open issues collected (e.g., missing hyphen in Option name, talk about release mechanism)
+Will be addressed in -11, but mainly done
+
+Tim Carey: Timeframe? Editor&#39;s queue this year?
+Carsten: Yes. &quot;CES in Las Vegas is the ultimade deadline&quot;.
+
+Up for WGLC CoCoA (10)
+
+    https://tools.ietf.org/html/draft-ietf-core-cocoa-02
+
+
+Carles presenting
+
+Now at -02 (last) - addressing comments received from ICCRG, TCPM, CoRE (from WGLC)
+Presenting the updates from -01 to -02
+
+Now adjustable weights for strong and weak estimators
+Most work on -02 was editorial
+Explaining area of application and the wide spectrum of RTTs
+Added references to RFC 7252 and security considerations
+Changes in most of the sections that provide more context on the reasons why a work is done + readability.
+Revised appendices: focus on pseudo-code, examples, analysis
+
+Hannes: Open from review: main motiviation is to go beyond stop-and-wait?
+Carsten: CC does not take away stop-and-wait behaviour.
+CG: Document does not modify NSTART (number of parallel outstanding requests). RTO is computed on the basis of RTT samples.
+Hannes: ? For what should I go to have multiple outstanding requests, also considering complexity? CoCoA, TCP?
+Carsten: Need to look into this to provide text.
+Hannes: A text was there, but mayber it got stripped out?
+Carsten: The use of TCP depends on the end-device and the application.
+Hannes: The overlap between LWIG TCP doc, CoCoA is not clear (e.g. using tuned TCP may approach complexity of CoAP with CoCoA).
+
+Carsten: Do not have numbers on complexity -- only subset of concrete implementations.
+Carsten: Advice: if you have space to store a couple of variables + process power for a couple of formulas per peer, you should go with CoCoA.
+Carsten: WGLC to be done soon and keeping tcpm in the loop. AD processing after WGLC.
+Alexey: Mirja to be the responsible AD, document was expired, will pick it up again.
+Carsten: check the points raised by Hannes and go with WGLC.
+
+Resource-directory + dns-sd (40)
+
+    https://tools.ietf.org/html/draft-ietf-core-resource-directory-12
+
+
+
+Remotely presented by Christian Amsuess
+
+Now define what the RD should do.
+DNS-SD is not in the scope of the considerations presented here.
+
+Links have proper anchor and rel attributes with some default values (rel=&quot;hosts&quot;, anchor=&quot;&quot;). When link is in RD, anchor must equal hosting endpoint [Post-presentation comment from Christian: I hope I didn&#39;t say it that way, because that&#39;s only true for links that don&#39;t originally have a non-empty anchor attribute.]
+There are other entities in RD: endpoints and groups. Endpoints provide the entities that are managed, and groups are groups of endpoints.
+Added information model that underlies the link management, querying, and link results.
+Next steps: add &quot;up&quot; and &quot;down&quot; links
+Need to register an all-rds multicast address
+Think through group members registered at other RDs
+Interface versioning
+
+Want to go for WGLC soon -- need more reviews!
+
+Carsten: Now is the good time to implement RD. LWM2M uses RD but only a subset (for the moment)
+Hannes: On the changes - there is a removed all methods that modify links in an exsiting registration - if I do a re-registration, would that work ?
+Christian: re-registration is semantically equivallent to re-sending the links. If I want to remove a link what happens?
+CA: yes you would have to remove everything
+Hannes: need to look into this. In LWM2M we do not want to resend everything, in particular when lifetime expires
+CA: on life-time expiry you don&#39;t need to resend the links. You can do an empty POST on that Resource.
+Carsten: Right now there is no media type to PATCH registrations.
+Michael (chat only): We need a select-merge patch. It needs to select a link or links to apply the merge document to. this keeps both link query semantics and merge patch semantics. an empty merge part results in the selected links being removed; i can make this proposal.
+Hannes: At the time RD was initially defined, there was no PATCH. The hope was that when we have PATCH we will go back and add this to RD&#39;s Registration Interface.
+Carsten: The decision was to define media types on a different document, we had a discussion in OCF on how to do that.
+Jim: Worried about about how to interact with new URL schemes (refereing to the changes in the url shceme on multiple transports). If something is registered with several schemes, how do you distinguish them?
+CA: Registering with multiple transports leads to a single registration. Can resolve link to preferred transport. Related to protocol negotiation draft.
+Jim: Means a lot of changes to impl?
+CA: Should be minor changes.
+Dave: What is the current situation with protocol negotiation? The point is: if this is ready for WGLC, is the other one also? (summary: Protocol negotiation affects links registrations, when doing updates with PATCH, it&#39;s not clear how would that work over various transports).
+Carsten: Needs discussion, as this is a blocking point. There are roughly equivalent transports that are easy to deal with.
+Carsten: there are other cases, some that are more or less equivalent (like UDP, TCP) and others that are not equivallent (such as CoAP over UDP and SMS) - not sure this one is equivalent.
+Carsten: How many implementations of RD? 2 OCF/LWM2M (ARM, ERICSSON, Eclipse Leshan, others), 1 old (Cf), 1 current (CA)
+
+DNS-SD: https://tools.ietf.org/html/draft-ietf-core-rd-dns-sd-00
+
+Porting links to DNS-SD requires some support from the origin server.
+All data is provided (from RD and /.well-known/core)
+Description of the DNS-SD record.
+If name not DNS-based, it needs to be derived from other info, e.g., from RD.
+Dave: question on the SDO part: the example given has an rt=sdo.temp - with only one dot. Is there a problem if there are multiple dots in the rt attribute?
+CA: no problems, dots are part of DNS naming and this fits well in the way DNS-SD mapping works
+Carsten: sounds brittle
+CA: personally doesn&#39;t like very much, but it works, so..
+
+Dave: rt values can contain multiple dots. How to decide at which dot to split?
+CA: open issue about that. Exporter needs to be aware of how to handle individual rt types
+??: The exp and ins attributes where to be generic, so that the node exporting them does not need to know about dns or other lookup schemes.
+Open issues:
+    - unregistered/unknown rt
+    - Interface versioning
+
+Tim: if we expect a server to know the instance names - then have a way to derive the service name, why not expect the server to know the service name? Exporters might not know about SDO-based resources rt=&quot;sdo.temp&quot;
+CA: It is a possibility.
+Tim: rt seem to get hierarchical (?).
+Carsten (as author): Little progress only at meetings however looking at the github now, there has been a significant progress. Now, the goal is to wrap it up.
+Timeline - not before end of year, probably by IETF 101.
+
+
+Comi: yang-cbor, comi, sids (30)
+
+    https://tools.ietf.org/html/draft-ietf-core-yang-cbor-05
+
+    https://tools.ietf.org/html/draft-ietf-core-comi-01
+
+
+Alex presenting
+
+yang-to-cbor draft has not moved since IETF97, waiting for others
+sid stable since IETF98
+
+Existing implementations: 2 proprietary, 2 partial also proprietary
+Interop at Hackathon 100 did only work out partially (implementors could not come): 2 implementations tested remotely
+Issue with FETCHing three values and YANG-CBOR container
+Lessons learned:
+    - ietf-system not a good test set --&gt; need basic YANG modules (NETMOD does not have those)
+    - Debugging hard due to complexity --&gt; possibility to disable delta encodings for testing
+Carsten: Can do, but don&#39;t tell, because it will appear in production systems. Better to fix tools.
+Alex: Don&#39;T see long-term problem
+Carsten: Long-term problem is that this would appear in production systems, and it will affect interopereability. You need to have tools that allow to see SIDs.
+Peter: Increasing complexity to reduce complexity is not a good idea.
+    - No minimal set that covers all CoMI functionality --&gt; define minimal and extended set?
+
+Started open source impl at Hackathon. Chosen YANG libs turned out bad for CBOR encoding. Now using YDK.
+Again at Hackathon 101, London
+
+Next steps:
+    - Bi-weekl meetings
+    - Interop at Hackathon 101
+    - CBOR Option 39 not to be added.  
+    - Improve CoMI docuemnt
+
+Carsten: current document shows how to use YANG-CBOR with COMI. It adds a lot of complexity and it is not solving a sepcific problem. It might make sense to add GET (?) as a new method. We wouldn&#39;t have two sets.
+Alex: In GET you have a uri. getting one item with one SID there is no problem, bot on a list.
+Carsten: For &quot;complicated&quot; cases (list) use FETCH. GET is only for simple cases.
+Alex: it is complicated in some cases.
+Carsten: Let&#39;s go through examples to evaluate use case for GET. No need to support full REST just because it&#39;s there.
+
+    https://tools.ietf.org/html/draft-ietf-core-sid-02
+
+
+SID: Number, file format, policies
+File lifecycle still open. Should not block whole document.
+Set up SID registry during Hackathon (as not yet at IANA) at http://sidreg.acklio.com:5000/ (should be up publicly soon)
+
+Carsten: Normal thing to do to provide initial population.
+Michael (via Jaime): Something select proposal (?)
+
+WGLC on SID draft?
+
+Carsten: Last IETF we said it&#39;s ready, but want to see interop. Continue with virtual interop for a couple more days and send report to mailing list.
+Carsten: Send yang-cbor first to WGLC.
+Alex: We use YANG schema to define file format.
+Michael: Can we use CoMI to allocate SID ranges?
+Alex: Sounds cool, need to look into it.
+
+
+YANG Push (over XMPP) related
+
+    https://tools.ietf.org/html/draft-birkholz-yang-push-coap-problemstatement-00
+
+
+Henk: YANG PUSH design team.
+Telemetry - the datastore contains a state. This state can change over time; In the past, you would be using SNMP. Now is the time to bring this to YANG.
+Sometimes we may want to have a subset of a module (e.g. instead of having 1000 leaves, have only 2-3).
+In the end - have data in motion - which is self-described.
+This will enable a lot more scalability on devices.
+
+Call Home: The datastore may want to find a suitable client.
+CoMI is not yet visible in the NETMOD world - we are doing this now.
+
+Hannes: XPath is _the_ XPath?
+Henk: Subtree concept based on SID.
+Eric: Intentionally did not limit XPath becasue hard to choose what is useful.
+Hannes: Interoperability issue due to power. this would probably need to be worked out. XPath is like a scripting language.
+Eric: If not supported a pointer to what is supported is returned.
+Henk: Targeting less volume on wire and constrained devics. This is not only for IoT - you can have powerful routers that have no problems to run full XPath.
+Eric: YANG Push allows for filters. These filters can be applied to &quot;transport&quot; protocol (e.g., NETCONF). You can then limit the type of subscriptions you will be using depending on the transport.
+Tim: Normal nodes have exising mechanisms. In IoT world we have Observe. PUSH seems rather heavy for something constrained. What does this mean for a constrained device that only needs Observe.
+Henk: this also touches the topic of call-home. At some point you want to send .. data. This approach allows slimed-down semantically interoperable way to do it.
+I.e. you do not have to deploy the heavy bulk that constitutes all the layers of push, event streams, subscribed notifications &amp; notification messages &amp; bundles. You can have very concise (means NOT HEAVY) purpose-specific code
+that emits (un-)solicited notification messages with only a few lines of code - retaining the full semantics of YANG notification messages that are the data in motion.
+Eric: DDS works on IoT devices - so YANG PUSH will also work.
+Carsten: Underlying question: &quot;is YANG good for you?&quot; Not yes for all. &quot;Can we make it scalable?&quot; Can we make this work for devices (not necessarily a sensor or light switch, but slightly stronger). I am optimistic.
+Henk: We have all the building blocks there and we might be able to build something useful from them.
+Hannes: What about Tim&#39;s question on Observe vs PUSH Framework? There are already filters on Observe.
+Henk: This proposal uses CoAP Observe. The problem statement already contains several proposals. There are examples out there.
+Matthias: Asking to understand how the whole thing fits in the YANG PUSH / Telemetry / XMPP observe schema presented in the beginning.
+Henk: Ignore the XMPP part of the Hackathon slide - that is unrelated to the propblem statement and only a pointer to the increasing visibility and appilication of YANG Push as a reference.
+Henk: there are quite a lot of modules out there (2000). It is a waste not to use it. The goal is to embed the efficiency provided by CoMI to the global YANG ecosystem.
+
+
+Payment over CoAP
+
+Presented by Adrian Hopa-Bailie
+
+
+[1] https://datatracker.ietf.org/doc/draft-hope-bailie-http-payments/
+[2] https://www.w3.org/TR/payment-request/
+[3] https://www.w3.org/TR/payment-method-id/
+
+W3C work: Web Payments WG
+Defined standard for requesting a payment with a browser API.
+Headers in 402 Payment Required and payd Request/Response messages.
+This will continue in the W3C for a while (re-charter in 2018), but might also be interesting for CoAP.
+
+Carsten: Also related to ACE work.
+Adrian: Data model can work with static responses, so can fit constrained environments.
+It can produce the payment request message (probably in a token) and forward it to a different system.
+
+Hannes: It sounds related to ACE, but does not use it.
+Adrian: It is possible. Open to use ACE if people come and help doing it ?
+Ekr: What is the assumption? What set of actions are required between client and server? the case is different if the client is a browser or a constrained device.
+Adrian: Depends on the payment method. Could be tokens or whatever. It is decoupled.
+
+Pubsub – status, vs. yang-push (15)
+
+    https://tools.ietf.org/html/draft-ietf-core-coap-pubsub-02
+
+
+Postponed to Tuesday
+
+
+MONDAY Tue 14th Nov
+13:30-15:30 Bras Basah
+------------------------
+
+Note Takers:
+Solomon Kembo
+
+    intro (5)
+
+
+    Finishing senml (15)
+
+    https://tools.ietf.org/html/draft-ietf-core-senml-11
+
+
+13:30
+Ari presented updates since -10.
+Lots of editorial changes. Changed registry policy fo expert only. Clarified use of version field with resolved records and why both Celcius and Kelvin are OK as units.
+Things to be done: Move security considerations from media type registrations to the security considerations.
+And publish as RFC (AD gave thumbs up).
+
+
+    Pending (for EST over CoAP) (10)
+
+    https://tools.ietf.org/html/draft-vanderstok-ace-coap-est-02
+
+    https://tools.ietf.org/html/draft-hartke-core-pending-01
+
+
+13:35: Pending for EST (PV)
+Goes with BRSKI
+Plans to do same with CoAP-EST in ACE
+Request to wait for a result
+
+In BRSKI you may want to have a second voucher, so you may need to do operations that take time. In the server, you can have several servers that come and go (waiting for their respective answers).
+
+
+Carsten: like &quot;Created&quot; but don&#39;t want to be looked up immediately but later. Wondering if retry-after together with &quot;Created&quot; would solve this?
+Peter:There are several notes to the server. The client can ask the server what was the (response)
+
+
+Carsten: when doing enrollment get location. Creation of resource was successful but can&#39;t access yet? Response code 3.03(?) try after. Would solve problem without new response code?
+Peter: happy to follow that line.
+Dave: Normally a resource is created after a POST. This is a GET. It should not create a resource.
+
+Peter: client usually expects voucher back. Get back location where can ask again.
+Dave: get back and answer. The response payload should have a new location, or the data itself (the voucher or URI where to go). Solve the problem in the body of the application (applicaiton level); confuses to have both
+
+Peter: follows HTTP rules
+Carsten: This is about the Get resquest?. I think we have a few ideas to solve and we will need to discuss this further on the list.
+
+
+
+    Object security (30)
+
+    https://tools.ietf.org/html/draft-ietf-core-object-security-06
+
+
+Franceca presenting OSCORE.
+OSCORE - new name (used to be OSCOAP)
+
+FP: I will provide the status of the draft, a high-level discussion
+Hannes: if want to be totally correct, not object security. It&#39;s CoAP message signing.
+Dave: OS in same sense as COSE and JOSE
+Alexey (AD): Rat-hole!
+Hannes: Is not Object security is Object signing.
+Göran: There are no signatures.
+
+Francesca: We now protect CoAP which is now encrypted. Simplified the oserve process based on Christian&#39;s update. Partial ID does not to be sent in but major. We had Christian and JIm at the Hackathon. Have updated test spec which will be available soon. One issue outstanding is about observation renewal. Plan on fixing minor isses by end of this week.
+
+Dave: Summary of the OCF discussion. We had a joint meeting between t2trg and ocf. Would OSCORE suffice for OCF, outcome is positive. Editorial suggestion to be added. As far as anyone knows, draft meets OCF needs. Table with header fields with what is encrypted and what isn&#39;t would be nice for readability.
+Please complete the worka and publish. IETF to consider how to protect the headers confidentiality-wise. Like ID of final destination. What&#39;s the IETF recommended way to &quot;tunnel OCF/OSCORE&quot; to achieve this. Document to describe how to do this would be nice.
+Carsten: Where are we with regards to security reviews?
+Francesca: last couple of meetings asked for more CoAP expert reviews. Was maybe missing. Can be done in WGLC.
+Carsten: Who has actually reviewed this document from July or later  - 3 hands, Christian in remote.
+Alexey: do you need crypto review?
+Francesca: OSCORE uses COSE. So that part would be covered there.
+Jim: Nothing really major (as covered in COSE).
+
+Carsten: The thing that considered was that you fiddled with the nonce
+Francesca: I didnt have any problem with that.
+Carsten: During IETF and WGLC we will look for people but it&#39;d be good to have more people have a look.
+Jim: Fiddling with the nonce is not a security problem, it guarantees that, as we approach a group document, we have complete separation of the nonce space.
+Göran: the change in nonce construction is an improvement and its now more clear,
+Francesca: will submit new version and then ready for WGLC. New version end of this week time frame.
+
+13:56
+
+    Multicast OSCOAP (2)
+
+    https://tools.ietf.org/html/draft-tiloca-core-multicast-oscoap-02
+
+Carsten: In Prague had in-room consensus for adopting this but since then got security related discussion.
+Marco: Details now available in Appendices and improved the readability in Version 04
+Carsten: How many people would be willing to do a review of this? (5 hands)
+Hannes: IPR notice on ACE document. Wondering about IPR on this.
+Marco: not aware of any.
+Göran: Not aware of any IPR either.
+Hannes: Would be worthwhile to check.
+Göran: Setting is that in this room working on communication part. In ACE key distribution.
+Hannes: in ACE my doc did both.
+Carsten: Does the work have sufficient clarity on this document?
+Alexey: Hannes, missed ACE, can tell more about the IPR? Who is patent holder?
+Göran: Ericsson has declared IPR on a draft that does key distribution for ACE.
+Hannes: is this document solution for symmetric or asymmetric?
+Göran: This draft provides a solution for multicast security which is based on adding a signature for COSE objects. In principle you could set it to zero and use it also for symetric only.
+Hannes: So in ensence this would be the solution to the problem I have in ACE.
+Carsten: What I think is we have a consensus in the room and can verify that on the list.
+
+Dave: current status of the multicast draft?
+Carsten: WG document to be validated on the list. Existing inroom consensus.
+
+14:04 Pub/sub
+Pubsub – status (15)
+
+    https://tools.ietf.org/html/draft-ietf-core-coap-pubsub-02
+
+
+Michael: How do we do the sharing of the slides? The status is basically is as it was when we presented in Prague. When are not adding anything to the protocol. We do not have the next update at this time. We will do version 3 addressing comments from Jim from the last meeting and we basically incorporating these changes. We still targeting what we have revised and we looking at still trying to come up with something by London IETF and I havent spoken with the other authors.
+
+Carsten: implementation status?
+Michael: two or three, but need to collect those again. One implementation quite some time ago. GE health care was asking questions around implementation. Some issues on how to find a server etc, but don&#39;t see fundamental changes needed for pub/sub. What need to do with implementations?
+
+Carsten: just good idea to know what are out there. So, want to do -03, then good idea to round up those implementations and maybe have even an interop. Then could go to LC. That&#39;s the sequence of event here.
+
+Michael: That sounds good
+
+Early registration of 4.29 (too many requests)?
+Carsten: should agree that this is stable. Will continue to look like this. Modeled after well-established HTTP code. Maybe CoRE specific considerations to address before registration?
+
+Dave: don&#39;t know if registration request came from OCF or specific company. But set of users want to use this code outside of RD (meaning Pubsub). What&#39;s the right way to specify? Split to different doc that coul dgo
+
+Michael: Intention is to have it registered as a parallel thing to HTTP.
+Dave: Reviewing the rest of RD would take time. Response code for 4.29 requires IESG approval.
+Alexey: Have it on a document, it&#39;s better. Split document preferred.
+Michael: Agrees.
+Ari: Agrees too. And this is actually in the pub/sub doc not in RD
+Dave R: 308 message seems to be also missing. Suggestion to have 308 and 429 in other document.
+Carsten: 429 is in no way controversial.
+Ari: Volunteers for that.
+Carsten: seems non-controversial and we could combine with other non-controversial response codes
+Ari: sure, but if those others end up being non-non-controversial, we should prepare to take those out so that they don&#39;t delay the pub/sub broker. Often end up being more complicated than you think.
+Alexey (off-mic): agree
+Peter: Good idea to combine drafts.
+
+
+Echo/request tag (15)
+
+    https://tools.ietf.org/html/draft-ietf-core-echo-request-tag-00
+
+    https://tools.ietf.org/html/draft-liu-core-coap-delay-attacks-01
+
+
+Christian presenting echo-request tag draft.
+
+Carsten: more details on how to restructure echo part?
+John M: clear requirements on -- making the echo part so that client is not looking at that.
+Julian: who is authorised to set the threshold for the echo?
+Christian: the application is the one deciding. Could be split in time; &quot;can&#39;t accept older than 2 seconds&quot;. Underlying library to act on that.
+Carsten: The document should be specific as to how the application is supposed to interact with that mechanism.
+Göran: WGLC after restructuring and editorial changes. (volunteers fo review ari, francesca, jim, julien, Carsten..)
+
+Mitigating Attacks
+
+    https://tools.ietf.org/html/draft-liu-core-coap-delay-attacks-01
+
+With draft-mattson, with too small threshold normal requests may be discarded. Two round trips increase delay. Propose another mechanism. Client sets time window for message, contains time duration. If message is received before the time window it should be responded until the time window is met, if therequest is received during the time window it may be acked immediately. Otherwise discarded. Cases like AGV, multiple messages passed but can work on one request. Has to process requests 1 by 1 in sequence.
+
+Göran: Thanks for this contribution. The problem statement you are looking at is different from the echo draft. There is not so much coverage in the use cases, you could expand to see which different cases you have. Also, it&#39;d be important to know how much should be added in core and how much is part of the application.
+
+Dave T: Do you require time sychronisation?
+Jintao Zhu (Julian): That is a comment that Göran has already addressed.
+Christian: Do the sequence relate to single resource or multiple resources.
+Julian: single resource
+Christian: did you evalute use of if-match for this?
+Julian: will look at this after the sesssion
+Carsten: good feedback, it&#39;s not clear which the use cases are. The application needs to control the freshnes and with the echo option we find a place for a common behaviour in multiple applications that can be factored out to a common option. Would like to see can we arrive in common behavior that multiple applications can use? Currently a shopping list rather than consise list.
+
+Göran: what are next steps for echo request tag? After restructing should have few reviews and go for WGLC.
+
+
+    Sms (5)
+
+    https://tools.ietf.org/html/draft-becker-core-coap-sms-gprs-06
+
+Carsten: We have drafts that have been around but that we need to move such as SMS, there is an undespecified banch of the spec.
+
+Tim: LwM2M in the spec has gone ahead and done that piece. CoAP push mechanism for SMS. LwM2M already progressed. Just if want to do something else we should incorporate those changes. They utilize for SMS WAP push 3GPP mechanism. Progressed and solved the problem.
+
+Jaime: a couple of weeks ago in OMA meeting was interesting demo from AVSystems. They committed to contribute to SMS IETF draft. Some of the features that LwM2M could be adopted to this draf or vice versa.
+Tim: no matter what we do, we have to align, but LwM2M spec wise they don&#39;t care. They have in the spec what they are doing for SMS.
+Jaime: maybe want to align in this space. Can also discuss in detail in the OMA group.
+                 Carsten: SMS is being used in LWM2M.
+
+    Dynlink + interfaces (10)
+
+    https://tools.ietf.org/html/draft-ietf-core-dynlink-04
+
+    https://tools.ietf.org/html/draft-ietf-core-interfaces-10
+
+
+Bill: Its been in limbo for a while. In general both drafts are in good shape. There are editorial issues that need to be fixed. Examples need to be made much clearer. There are 4 issues outstanding: 1 on error handling, 2 on absorbing work done on draft-groves-core-obsattr and draft-groves-core-bas, 1 on adding a new link relation.
+
+Carsten: who has read a recent version of this document? (4 hands).
+Carsten: Volunteers to review (hannes, alex, tim, peter, ari, christian a)
+Bill: Good idea to keep interfaces and dynlink separate.
+
+    Dev-urn (10)
+
+
+    https://tools.ietf.org/html/draft-arkko-core-dev-urn-05
+
+
+Jari Presenting dev-urn.
+
+Changed the syntax for component part delimeter from &quot; ; &quot; to &quot; _ &quot; to accommodate for SenML. Got feedback that &quot;/&quot; could also be used.
+New organizational code part. Considered also FQDNs but org code seemed better. Soliciting feedback for delimeter change and device IDs. Got feedback from Nokia guys (Tim) about BBF, OneM2M and L2M2M use of IDs. Could be useful to add?
+
+Dave: delimeter part; said that humidity part of device. Is this device ID, resource ID, or what? Part of device doesn&#39;t make sense.
+Jari: part of device can be device.
+Dave: maybe need different term
+Jari: origanally went for device IDs, but then people wanted to point to parts of device
+Dave: part of device or resource? Understand use case for those two, but don&#39;t get for the component part.
+Jari: one physical box with two separate circuits
+Tim: saw some of this in OneM2M. Not sure if same case. Blood pressure monitor, each need to be identified. Question: BBD USP protocol already in their own name space. Org for name space; used PEN, very clear what is the format; private EN or what. They used PEN and OUID.
+Jaime (hat off): at the moment URIs for IMEIs etc. But not dev URNs other than for TR69. AFAIK.
+Jari: using subtypes of what?
+Jaime: not sure, UUIDs preferred.
+Jari: another spec. Are they building something on this?
+Tim: use number of namespaces, from dev they use only &quot;dev.ops&quot;.
+Jari: OK, something from dev space. That&#39;s fine. Need to ack in some fashion and allocate those.
+Dave: got the use case for device ID, but ambiguous; what different orgs call device varies. For some orgs the physical thing. For some orgs a specific role it runs. In OCF platform the physical thing with multiple devices. Device as term ambiguous. But probably talking as device as OCF device as part of platform. For normal developer not device ID. Need to be clear what is the use case. Or something that varies per use case and ecosystem. OCF have their own name space. LwM2M specific urn scheme or general -- either one OK but need to know which one. Just want answer before draft adoption.
+Jari: I am not sure I can answer the LwM2M question.
+Tim: In LwM2M it is an endpoint identifier. Sometimes OUID.
+Jari: The goal of the work is to identify hardware addresses and different organisations use different terms for the same thing. Only discussion now is the terminology and question of delimeters came from the SenML work actually.
+Dave: HW identifier doe snot imply one HW identifier per device, you cna have multiple addresses or identifiers.
+Ari: One use of urn componet part have seen in the senml context.
+Dave: Clarifying on deployments. Of the different ariation
+Jaime: I believe that in LWM2M the most common is UUID. URNs are used when using IMEI, ESN or others, most commonly for TR69 devices.
+Hannes: depends on what kind of devices you have; for those in cellular space say as Tim said. We use UUIDs for WiFi devices and such.
+Jari: other organizations already allocating things in the dev scheme. We should get this done soon.
+Carsten: have already consensus to work on this; need to pull different parts together so that we know what&#39;s out there
+
+    Flextime (20)
+
+    https://tools.ietf.org/html/draft-wang-core-opcua-transmission-02
+
+
+Junrui Wu: Our motivation is clear that OPC UA - Data exchange standard for interoperability in industrial settings.
+OPC UA - data exchange standard abd platform-independent industrial communication.
+Foundation - transport mechanisms and data modeling.
+HTTP-CoAP Proxy for OPC UA.
+
+Dave: familiar with CoAP and OPC UA. Find this interesting. Can give feedback offline. But don&#39;t know off-hand what is the use case. Given there is already OPC over UDP and TCP, what&#39;s the use case for CoAP? Tentatively in favour if reason to do this. Willing to review etc one there is use case. Techical point on slide 130; secure layer on top of TLS. If there is lower layer security OPC security not used in OPC architecture. But can follow up on these later.
+
+Tim: why isn&#39;t this being done in OPC?
+
+Dave: good question; if OPC want to do this with CoAP? Regardless which org you are in, I&#39;m in both, can review in either. But good question where this belongs. Good argument for OPC.
+
+Tim: nuances to protocol where to have the experts involved.
+Dave: do in OPC and have IETF review.
+Dave R: BACnet plans to do BACnet over CoAP. Will come to IETF to get reviewed.
+Dave: did that with OCF. Thank you for coming here. Please go also for OPC if not there yet
+
+Jianqiang Hou: Also interested in this and use cases
+
+    https://tools.ietf.org/html/draft-toutain-core-time-scale-00
+
+
+Laurent Toutain
+Slow reactive devices - slotted devices, or devices that are working on duty cycle.
+Example: devices that need to send a message in order to allow a response to be sent.
+
+Have a way to indicate to the server - how long to keep the message_id (or other related CoAP parameter) valid in the server.
+
+Mohit: it doesn&#39;t increase the number of messages, but this would still increase the memory usage because you need to keep it. Have some information about the device you are talking with.
+Laurent: need to have things like message ID anyway. Just few bytes more.
+
+Hannes: option indicates when device is expected to send messages?
+Laurent: no, how long have to keep request in memory for reply
+Hannes: how relates to Q mode and sleeping proxy? Not sure how it does. Is the granularity of single CoAP message useful? In LwM2M indicate with Q mode that you are in a network that behaves like this. Not sending with each CoAP message but only once. Have you looked at that? Can send a slide deck.
+
+Christian: (time scale option slide) careful to consider proxies here. What this is proposing is message level, terminated at proxies. Agree with Hannes that should be per device/link and not per request.
+Laurent: more complex to memorize per device/link than repeating for each request
+
+Laurent: next steps; working on the doc
+
+Carsten: and we can finish one minute early!
+</code></pre></div>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+
+</body>
+
+</html>
