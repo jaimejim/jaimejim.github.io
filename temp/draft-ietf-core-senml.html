@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
+<title>draft-ietf-core-senml</title>
 
 
 <style type="text/css">
@@ -489,20 +489,21 @@ pre[class*="language-"] {
 <li>A formal review is required for new registries. Has this been initiated?</li>
 <li>A formal review is required for new media types on section 12.3. Have you checked that with <a href="mailto:media-types@iana.org">media-types@iana.org</a>?</li>
 <li>Have you initiated the process for the Units and Labels registry?</li>
-<li>Have you validated the CDDL in Section11? How ( :D )?</li>
+<li>Have you validated the CDDL in Section11? (How? tell me please :D)</li>
 </ul>
 
 <h3 id="toc_3">Editorial</h3>
 
 <ul>
 <li><q>There are many types of more complex measurements and measurements that this media type would not be suitable for.</q></li>
+<li><q>a concept of a</q></li>
 </ul>
 
-<h2 id="toc_4">* <q>a concept of a</q></h2>
+<hr>
 
 <p><span id="summary"></span></p>
 
-<h3 id="toc_5">Summary draft-ietf-core-senml-11</h3>
+<h3 id="toc_4">Summary draft-ietf-core-senml-11</h3>
 
 <p><a href="https://tools.ietf.org/html/draft-ietf-core-senml-11">Media Types for Sensor Markup Language (SenML)</a></p>
 
@@ -519,30 +520,28 @@ pre[class*="language-"] {
 
 <p>Base values help compress the information not to repeat fields. Multiple measurements are taken in an incremental fashion adding to the base value. Similarly JSON, XML and CBOR labels help compress a bit more.It allows for representing measurements with individual and multiple datapoints, as well as various data types and collections.</p>
 
-<p>Single datapoint:
-<code>
-[
+<p>Single datapoint:</p>
+
+<div><pre><code class="language-none">[
     {&quot;n&quot;:&quot;urn:dev:ow:10e2073a01080063&quot;,&quot;u&quot;:&quot;Cel&quot;,&quot;v&quot;:23.1}
-]
-</code>
-Multiple:
-<code>
-[
+]</code></pre></div>
+
+<p>Multiple:</p>
+
+<div><pre><code class="language-none">[
   {&quot;bn&quot;:&quot;urn:dev:ow:10e2073a01080063:&quot;,&quot;n&quot;:&quot;voltage&quot;,&quot;u&quot;:&quot;V&quot;,&quot;v&quot;:120.1},
   {&quot;n&quot;:&quot;current&quot;,&quot;u&quot;:&quot;A&quot;,&quot;v&quot;:1.2}
-]
-</code></p>
+]</code></pre></div>
 
-<p>Collections:
-<code>
-[
+<p>Collections:</p>
+
+<div><pre><code class="language-none">[
     {&quot;bn&quot;:&quot;2001:db8::2/&quot;,&quot;bt&quot;:1.320078429e+09,
      &quot;n&quot;:&quot;temperature&quot;,&quot;u&quot;:&quot;Cel&quot;,&quot;v&quot;:25.2},
     {&quot;n&quot;:&quot;humidity&quot;,&quot;u&quot;:&quot;%RH&quot;,&quot;v&quot;:30},
     {&quot;bn&quot;:&quot;2001:db8::1/&quot;,&quot;n&quot;:&quot;temperature&quot;,&quot;u&quot;:&quot;Cel&quot;,&quot;v&quot;:12.3},
     {&quot;n&quot;:&quot;humidity&quot;,&quot;u&quot;:&quot;%RH&quot;,&quot;v&quot;:67}
-]
-</code></p>
+]</code></pre></div>
 
 <p>It also allows for fragment record identifiers to select portions of a senml resource representation. For example the 3rd and 5th record can be selected with:</p>
 
@@ -554,9 +553,9 @@ Multiple:
 
 <p><span id="shepherd-writeup"></span></p>
 
-<h2 id="toc_6">Shepherd Writeup</h2>
+<h2 id="toc_5">Shepherd Writeup</h2>
 
-<h3 id="toc_7">Summary</h3>
+<h3 id="toc_6">Summary</h3>
 
 <p>Document Shepherd: Jaime Jiménez, <a href="mailto:jaime.jimenez@ericsson.com">jaime.jimenez@ericsson.com</a>
 Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnikov@fastmail.fm</a></p>
@@ -573,21 +572,21 @@ configured.</p>
 
 <p>The document is intended for Standards Track.</p>
 
-<h3 id="toc_8">Review and Consensus</h3>
+<h3 id="toc_7">Review and Consensus</h3>
 
 <p>The document has gone through multiple expert reviews and has been discussed on multiple IETF meetings. Before the last IETF the WGLC was completed.</p>
 
 <p><code>TBD</code></p>
 
-<h3 id="toc_9">Intellectual Property</h3>
+<h3 id="toc_8">Intellectual Property</h3>
 
 <p>Each author has stated that they do not have direct, personal knowledge of any IPR related to this document. I am not aware of any IPR discussion about this document on the CoRE WG.</p>
 
-<h3 id="toc_10">Other Points</h3>
+<h3 id="toc_9">Other Points</h3>
 
 <p>There are RFC Editor comments that need to be edited out. The document creates two new registries, a content type and various media types.</p>
 
-<h3 id="toc_11">Checklist</h3>
+<h3 id="toc_10">Checklist</h3>
 
 <ul>
 <li class="task-list-item"><input type="checkbox" checked> Does the shepherd stand behind the document and think the document is ready for publication?
