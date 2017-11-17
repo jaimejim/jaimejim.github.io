@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>IETF 100 CoRE</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+      @page {
+          size: 1210px 681px;
+          margin: 0;
+      }
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 200;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 1.2em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+name:inverse
+layout: true
+class: center, middle, inverse
+
+---
+#IETF 100 - Constrained Restful Environments (CoRE) WG
+###Jaime Jiménez - [jaime.jimenez@ericsson.com]
+.footnote[17th November 2017]
+
+---
+layout: false
+
+##Overview
+
+  * IETF 100 was held in Singapore.
+
+  * Telco world is shrinking rapidly and [wireless and wireline networks are becoming like    airlines](https://datatracker.ietf.org/meeting/100/materials/slides-100-ietf-sessa-the-internet-at-ietf-200-henning-schulzrinne/).
+
+  <img src="http://jaimejim.github.io/assets/images/ietf100_2.png" width="800">
+
+
+
+???
+---
+
+## CoRE Overview
+
+ * Progressing, 4 RFCs on the pipeline!!
+
+ * CoAP + TCP interop was held at Hackathon.
+
+ * [Video Recording](https://youtu.be/wd_kXam1lIw?t=0m55s) is available.
+
+ * [Slides](https://datatracker.ietf.org/meeting/100/materials/slides-100-core-consolidated-slides/) and [Raw minutes](http://etherpad.tools.ietf.org:9000/p/notes-ietf-100-core) are also available.
+
+???
+
+
+---
+
+## WG Documents
+
+ * [draft-ietf-core-links-json](https://tools.ietf.org/html/draft-ietf-core-links-json-09) was not discussed at the  meeting.  It is in
+ IESG processing, with a few DISCUSSes.  Some good input was provided by OCF at the 2017-11-10
+ OCF/T2TRG meeting, which will now enable these changes to be made. Soon to IESG (and then RFC).
+
+ * [draft-ietf-core-coap-tcp-tls](https://datatracker.ietf.org/doc/draft-ietf-core-coap-tcp-tls/) is in IESG processing, we are waiting for AD's DISCUSS to clear [it is now clear that this will be in December after her vacation].  The first interop on Saturday had 2.5 implementations (libcoap, augustcellars and coap.me).
+
+ * [draft-ietf-core-cocoa](https://datatracker.ietf.org/doc/draft-ietf-core-cocoa/) WGLC has been started on the mailing list the authors also request feedback from ICCRG and TCPM. Dec 14 is the extended deadline. Then IESG.
+
+???
+
+---
+## WG Documents
+
+* [draft-ietf-core-resource-directory](https://datatracker.ietf.org/doc/draft-ietf-core-resource-directory/) has seen quite a lot of progress in the last few months. Developers should start updating their implementations as interop would be call on Q1 2018. Work over multiple transports and new schemes still to be done. The increased work needs to transfer to sister document draft-ietf-core-rd-dns-sd now. We expect to pass WGLC by IETF101.
+
+* [draft-ietf-core-yang-cbor](https://datatracker.ietf.org/doc/draft-ietf-core-yang-cbor/) is stable, but hadn't had enough interop testing to enable a WGLC. Initial testing happened during the IETF100 hackathon now. Interop is intended for IETF 101, after which WGLC will be issued.
+
+* [draft-ietf-core-comi](https://datatracker.ietf.org/doc/draft-ietf-core-comi/) and draft-ietf-core-sid need some  more finishing touches, also probably with fixes coming from the interops (bi-weekly meetings to be continued).  There was some discussion about cutting the plethora of request types in basic COMI down to just FETCH and PATCH (possibly with GET added), to be continued on the list. Tools to visualize SIDs
+would be necessary.
+
+???
+---
+## WG Documents
+
+* [draft-ietf-core-senml](https://datatracker.ietf.org/doc/draft-ietf-core-senml/) finished WGLC and needs some remaining minor updates, to be submitted to IESG in November.
+
+* [draft-ietf-core-object-security](https://datatracker.ietf.org/doc/draft-ietf-core-object-security/) will be ready for WGLC with some impending minor fixes in the next version.
+
+* [draft-ietf-core-coap-pubsub](https://datatracker.ietf.org/doc/draft-ietf-core-coap-pubsub/) is delayed.
+
+* [draft-ietf-core-dynlink and draft-ietf-core-interfaces](https://datatracker.ietf.org/doc/draft-ietf-core-dynlink/) had been in
+limbo for a while.  With a new editor, the remaining editorial issues can be fixed.  The documents are best kept separate.
+
+---
+
+## New Documents.
+
+* [draft-birkholz-yang-push-coap-problemstatement](https://tools.ietf.org/html/draft-birkholz-yang-push-coap-problemstatement-00) was presented; the WG now needs to have a look into how YANG Push and telemetry requirements are going to relate to COMI and CoAP Observe.
+
+* [draft-hope-bailie-http-payments](https://tools.ietf.org/html/draft-hope-bailie-http-payments-00) was presented as a heads-up; several participants stressed the relationship of the subject matter to ACE work.
+
+* [draft-tiloca-core-multicast-oscoap](https://datatracker.ietf.org/doc/draft-tiloca-core-multicast-oscoap/) had in-room consensus for adoption as a WG document in Prague already; this was newly
+confirmed; validation of the adoption decision will be sent to the mailing list.
+
+
+???
+
+---
+
+## New Documents.
+
+* [draft-becker-core-coap-sms-gprs](https://tools.ietf.org/html/draft-becker-core-coap-sms-gprs-06) hadn't reached the threshold for WG adoption earlier; there is some renewed interest. Coordination with LWM2M work will be needed.
+
+* [draft-arkko-core-dev-urn](https://datatracker.ietf.org/doc/draft-arkko-core-dev-urn/) had in-room consensus for WG adption, to be confirmed on the mailing list.
+
+* [draft-wang-core-opcua-transmission](https://datatracker.ietf.org/doc/draft-wang-core-opcua-transmission/) was presented as a way to map OPC/UA on CoAP.  Discussion touched the issue whether OPC should be doing this or the IETF.  In any case, the authors were encouraged to continue the work, talk to OPC as well and keep IETF involved.
+
+
+???
+
+---
+
+## Thoughts
+
+* CoAP + SMS will be revived. Onboard OMA folks, onboard AppIoT.
+
+* OSCORE will be an RFC. Ericsson should have products ready. Competitive advantage through security.
+
+* OMA F2F in Lisbon, oportunity to interop. Start of CoAP + SMS.
+
+* Resource Directory implementation needs to be updated. oportunity for Ericsson to shine within Leshan community. EASY to onboard other OMA folks (Wojek, David, Hannes, Mohammed, ...) on this.
+
+* OCF-T2TRG meeting right before IETF.
+    * CoAP protocol negotiation. Increased complexity but possible benefits.
+    * CoAP link format additions.
+
+* What's happening in OPC-UA and BACNET?
+
+* Possible engagements with Osram and Siemens. Invitation for Q1 2018.
+
+    </textarea>
+    <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
+    </script>
+    <script
+    src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
