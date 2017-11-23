@@ -484,12 +484,36 @@ pre[class*="language-"] {
 <h3 id="toc_2">Comments to authors on v11</h3>
 
 <ul>
-<li>When defining the name field it would have been good to add an normative reference to RFC2141, RFC4122, RFC8141 or an informative one to section 4.3. Similarly the units could refer to section 12.1 and time to unix time. I am assuming this is intentional.</li>
-<li>Which is the implementation status of the draft?</li>
-<li>A formal review is required for new registries. Has this been initiated?</li>
-<li>A formal review is required for new media types on section 12.3. Have you checked that with <a href="mailto:media-types@iana.org">media-types@iana.org</a>?</li>
-<li>Have you initiated the process for the Units and Labels registry?</li>
-<li>Have you validated the CDDL in Section11? (How? tell me please :D)</li>
+<li>When defining the name field it would have been good to add an normative reference to RFC2141, RFC4122, RFC8141 or an informative one to section 4.3. Similarly the units could refer to section 12.1 and time to unix time. I am assuming this is intentional.
+
+<ul>
+<li>We have informative references for 4122 and 8141 but since those formats are not normative (just examples for generating unique name) I think informative reference is the right level. And 2141 was obsoleted by 8141.</li>
+</ul></li>
+<li>Which is the implementation status of the draft?
+
+<ul>
+<li>RIOT OS, CISCO.<br></li>
+</ul></li>
+<li>A formal review is required for new registries. Has this been initiated?
+
+<ul>
+<li>For the IANA registries, the IANA review is done normally when publication is requested; Assumption is that there is no need for author actions here.</li>
+</ul></li>
+<li>A formal review is required for new media types on section 12.3. Have you checked that with <a href="mailto:media-types@iana.org">media-types@iana.org</a>?
+
+<ul>
+<li>Yes. </li>
+</ul></li>
+<li>Have you initiated the process for the Units and Labels registry?
+
+<ul>
+<li>Again, for the IANA registries, the IANA review is done normally when publication is requested; Assumption is that there is no need for author actions here.</li>
+</ul></li>
+<li>Have you validated the CDDL in Section11?
+
+<ul>
+<li>The examples in the draft are checked automatically with the CDDL and RelaxNG when draft is built</li>
+</ul></li>
 </ul>
 
 <h3 id="toc_3">Editorial</h3>
@@ -557,8 +581,10 @@ pre[class*="language-"] {
 
 <h3 id="toc_6">Summary</h3>
 
-<p>Document Shepherd: Jaime Jiménez, <a href="mailto:jaime.jimenez@ericsson.com">jaime.jimenez@ericsson.com</a>
-Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnikov@fastmail.fm</a></p>
+<ul>
+<li>Document Shepherd: Jaime Jiménez, <a href="mailto:jaime.jimenez@ericsson.com">jaime.jimenez@ericsson.com</a></li>
+<li>Area Director: Alexey Melnikov, <a href="mailto:aamelnikov@fastmail.fm">aamelnikov@fastmail.fm</a></li>
+</ul>
 
 <p>This specification defines media types for representing simple sensor
 measurements and device parameters in the Sensor Measurement Lists
@@ -575,8 +601,6 @@ configured.</p>
 <h3 id="toc_7">Review and Consensus</h3>
 
 <p>The document has gone through multiple expert reviews and has been discussed on multiple IETF meetings. Before the last IETF the WGLC was completed.</p>
-
-<p><code>TBD</code></p>
 
 <h3 id="toc_8">Intellectual Property</h3>
 
@@ -597,11 +621,9 @@ configured.</p>
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Is the intent of the document accurately and adequately explained in the introduction?
 </li>
-<li class="task-list-item"><input type="checkbox"> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed? <code>TBD</code>
+<li class="task-list-item"><input type="checkbox" checked> Have all required formal reviews (MIB Doctor, Media Type, URI, etc.) been requested and/or completed? <code>TBD</code>
 </li>
-<li class="task-list-item"><input type="checkbox"> Has the shepherd performed automated checks &ndash; idnits (see <a href="http://www.ietf.org/tools/idnits/">http://www.ietf.org/tools/idnits/</a> and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on &ndash; and determined that the document passes the tests? <code>Need information on how to check CDDL</code>
-</li>
-<li class="task-list-item"><input type="checkbox" checked> Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?
+<li class="task-list-item"><input type="checkbox" checked> Has the shepherd performed automated checks &ndash; idnits (see <a href="http://www.ietf.org/tools/idnits/">http://www.ietf.org/tools/idnits/</a> and the Internet-Drafts Checklist), checks of BNF rules, XML code and schemas, MIB definitions, and so on &ndash; and determined that the document passes the tests? * [x] Has each author stated that their direct, personal knowledge of any IPR related to this document has already been disclosed, in conformance with BCPs 78 and 79?
 </li>
 <li class="task-list-item"><input type="checkbox" checked> Have all references within this document been identified as either normative or informative, and does the shepherd agree with how they have been classified?
 </li>
@@ -614,19 +636,19 @@ configured.</p>
 <li><p><strong>IANA</strong> Considerations:</p>
 
 <ul>
-<li class="task-list-item"><input type="checkbox"> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&rsquo;s being requested, so they can perform the required actions. <code>Are the new media type IDs assigned sequentially or do we request something concrete to IANA? URL to check http://www.iana.org/assignments/core-parameters/core-parameters.xhtml</code>
+<li class="task-list-item"><p><input type="checkbox"> Are the IANA Considerations clear and complete? Remember that IANA have to understand unambiguously what&rsquo;s being requested, so they can perform the required actions. 
+<code>Q: Are the new media type IDs assigned sequentially or do we request something concrete to IANA? URL to check http://www.iana.org/assignments/core-parameters/core-parameters.xhtml</code>
+<code>A: I think a sequence of 8 values starting from a round number (for easy mnemonic) would make sense. But could check with the experts what&#39;s the policy here</code></p>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?
+<li class="task-list-item"><p><input type="checkbox" checked> Are all protocol extensions that the document makes associated with the appropriate reservations in IANA registries?</p>
 </li>
-<li class="task-list-item"><input type="checkbox"> Are all IANA registries referred to by their exact names (check them in <a href="http://www.iana.org/protocols/">http://www.iana.org/protocols/</a> to be sure)? <code>The new media types require expert review.</code>
+<li class="task-list-item"><p><input type="checkbox" checked> Are all IANA registries referred to by their exact names (check them in <a href="http://www.iana.org/protocols/">http://www.iana.org/protocols/</a> to be sure)?</p>
 </li>
-<li class="task-list-item"><input type="checkbox"> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?<code>I believe so, double check with Carsten on the new registries.</code>
+<li class="task-list-item"><p><input type="checkbox"> Have you checked that any registrations made by this document correctly follow the policies and procedures for the appropriate registries?<code>I believe so, double check with Carsten on the new registries.</code></p>
 </li>
-<li class="task-list-item"><input type="checkbox" checked> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?
+<li class="task-list-item"><p><input type="checkbox" checked> For registrations that require expert review (policies of Expert Review or Specification Required), have you or the working group had any early review done, to make sure the requests are ready for last call?</p>
 </li>
-<li class="task-list-item"><input type="checkbox"> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives? <code>There was some discussion on IETF99 but maybe not enough?</code>
-</li>
-<li class="task-list-item"><input type="checkbox" checked>  Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified?
+<li class="task-list-item"><p><input type="checkbox" checked> For any new registries that this document creates, has the working group actively chosen the allocation procedures and policies and discussed the alternatives?   * [x] Have reasonable registry names been chosen (that will not be confused with those of other registries), and have the initial contents and valid value ranges been clearly specified? <code>There&#39;s one update coming for this regarding Jim Schaad review comment</code></p>
 </li>
 </ul></li>
 </ul>
