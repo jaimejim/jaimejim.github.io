@@ -1,0 +1,43 @@
+---
+title: ELIoT: Design of an Emulated IoT Platform
+layout: post
+date: '2017-10-30 11:00'
+image: /assets/images/eliot.jpg
+tag:
+  - Emulation
+  - Docker
+  - Scalability
+  - LWM2M
+  - CoAP
+blog: true
+star: true
+---
+
+Deploying a testbed of thousands of devices in a real environment just for prototyping purposes is time-consuming and expensive when compared to emulation.
+
+Over the year, those working with "IoT" or "M2M" have the pleasure of working with dozens of different hardware platforms. The one constant among all of them is that they get outdated and that they require *some* maintenance.
+
+The positive side is that is getting easier and easier to build and deploy IoT devices; using Jerryscript, Espruino, etc has really helped a lot. The negative point is that for those who want to test the cloud side and that need an easily configurable IoT testbed on the post, they'd have to deploy first few thousand nodes.
+
+![Hardware gallore!](/assets/images/devices.jpg)*There is many more devices coming out every second day*
+
+That's why we have built an [Emulated IoT Platform (ELIOT)](https://github.com/Alliasd/ELIoT) for those interested mostly in the software and server side of things and that just want to have endpoints that are addressable and can be interacted with.
+
+ELIoT has its own docker image - **alliasd/eliot4** - to store device applications, and configuration files needed to run the emulated devices.  You can launch any number of containers, each with its own network interface and with a simple logic that simulates that of an IoT device. We also have taken metrics from the European Telecommunications Standards Institute (ETSI) to build a set of use cases for public lighting scenario. Based on their requirements, ELIoT reproduces an IoT use case referred as public lighting scenario. We can emulate lighting points and a control cabinet, as well as evaluate LWM2M’s functionality in accordance to the COAP and LWM2M specifications.
+
+ELIoT is built on top of [Leshan](https://github.com/eclipse/leshan) for the server side, and [coap-node](https://github.com/PeterEB/coap-node), which is a nodejs implementation of LWM2M for the client side.
+
+![ELIOT Stack](/assets/images/eliotstack.jpg)*Emulating CoAP, LwM2M and a basic device logic*
+
+We used ELIOT to test the scalability of the LWM2M Server. In the first scalability test, we used the bridge mode as network setup, and scheduled the launch of fifty weather observer devices every ten seconds (the ten seconds delay was necessary to avoid HTTP timeout errors from the Leshan Web Interface). As expected, as a result of the use of docker in bridge mode we could only run *1023 containers* (1 server, 1022 devices).
+
+We tried various scheduling mechanisms of launched devices per unit of time in order to overcome system loads limitations. However, the main target was to increase the number of emulated devices within docker.
+To overcome the network limitation we used docker in host-network setup and increased the amount of memory and processing power.
+
+We got 50 VMs in Azure cloud (Azure DSv2-series featuring a 1-core 2.4 GHz Intel Xeon E5-2673 v3, 3.5 GiB of memory and 7 GiB local SSD). One VM was dedicated only for the Leshan server, while others were running clients, simple presence detector devices.
+
+With this setup, we were able to run **7123 devices** in total. This was achieved by having 150 containers per VM. It took 109 seconds to register all the clients to the LWM2M Server. In terms of memory the VMs should have been able to handle around 250 containers in theory.
+
+So basically, we launched a simple IoT testbed of seven thousand devices in about two and a half minutes. Which, in order to test scalability on the server side, was enough for our purposes.
+
+Everything is currently published on Alli Mäkinen's Github (kudos to her!): <https://github.com/Alliasd/ELIoT> , for  those interested on more details, we also presented the work on IEEE's [PIMRC 2017](https://github.com/Alliasd/ELIoT/blob/master/eliotpimrc20017.pdf).
