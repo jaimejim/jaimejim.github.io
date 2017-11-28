@@ -1,12 +1,11 @@
 ---
-title: ELIoT: Design of an Emulated IoT Platform
+title: Emulating sensors with ELIOT
 layout: post
-date: '2017-11-28 11:00'
+date: '2017-11-28 14:00'
 image: /assets/images/eliot.jpg
 tag:
   - Emulation
   - Docker
-  - Scalability
   - LWM2M
   - CoAP
 blog: true
