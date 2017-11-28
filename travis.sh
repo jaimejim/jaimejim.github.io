@@ -6,4 +6,4 @@ set -e # halt script on error
 bundle install
 bundle update pygments.rb
 bundle exec jekyll build
-bundle exec htmlproofer ./_site --file-ignore /_site/drafts/ /_site/slides/ /_site/projects/appiot/--disable-external
+bundle exec htmlproofer ./_site --file-ignore /_site/drafts/ /_site/slides/ /_site/projects/appiot/ --disable-external
