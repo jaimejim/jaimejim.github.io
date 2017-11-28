@@ -11,7 +11,6 @@ tag:
   - CoAP
 blog: true
 star: true
-
 ---
 
 Deploying a testbed of thousands of devices in a real environment just for prototyping purposes is time-consuming and expensive when compared to emulation.
