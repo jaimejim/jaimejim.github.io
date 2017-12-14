@@ -128,23 +128,25 @@ layout: true
 class: center, middle, inverse
 
 ---
-#OMADM - LWM2M Status
+#OMA DM - LWM2M
+#Warsaw F2F meeting
 ###Jaime Jiménez - [ jaime.jimenez@ericsson.com ]
-.footnote[30th November 2017]
+.footnote[14th December 2017]
 
 ---
 layout: false
 
 ##Overview
 
-  * IPSO merged into the OMA organization - More on that here <http://jaimejim.github.io/slides/omawarsaw.pdf>
+  * IPSO merged into the OMA organization - More on that: <http://jaimejim.github.io/slides/omawarsaw.pdf>
+
   * Lwm2m 1.1 updates
     * LwM2M 1.1 requirements document was finalized
     * The TS will be developed in Github: <https://github.com/OpenMobileAlliance/LwM2M-v1_1>
     * Split between Core and Transport to independently evolve these specifications. In future, additional transports such as MQTT can be used instead of only CoAP.
 
   * Testfest with 10 client and 10 server implementations. 28 Engineers attended.
-    * Feedback at <https://github.com/OpenMobileAlliance/OMA_LwM2M_for_Developers/issues>.
+    * [Several Issues raised](https://github.com/OpenMobileAlliance/OMA_LwM2M_for_Developers/issues).
 ???
 
 ---
@@ -168,95 +170,74 @@ Several other change requests were introduced.
 
 * Secure Storage Support (Gemalto)
 * APN link in LwM2M Server object (Qualcomm)
-* *Fetch (U-Blox, Ericsson)*
-* *E2E Security (Ericsson)*
+* Fetch (U-Blox, Ericsson)
+* E2E Security (Ericsson)
 * New SMS Trigger Mode (Qualcomm)
 * Server Initiated Bootstrap (Gemalto)
-* *UUID Format Update (Ericsson)*
+* UUID Format Update (Ericsson)
 * DTLS Cleanup (ARM)
-* *Data Formats (Ericsson)*
-
-???
-
----
-
-* AVSystems IoT Platform
-  – AVSystems implemented [Anjay](https://github.com/AVSystem/Anjay), an Open Source client for LwM2M. Currently, Wakaama is the most popular open source client.
-  – Anjay supports multiple security modes including X.509, PSK and No Security
-  – Anjay also supports SMS bearer based on CoAP over SMS (only available in commercial version)
-  – The AVSystems IoT Platform provides a consolidated platform to manage multiple protocols including TR-069, OMA-DM and LwM2M
+* Data Formats (Ericsson)
+* Introducing CoAP over TCP/TLS. (ARM and Ericsson)
 
 
 ???
 
 ---
 
-##PCP Request Message
+##Other Items
 
+* AVSystem IoT Platform
+
+  * AVSystem implemented [Anjay](https://github.com/AVSystem/Anjay), an Open Source client for LwM2M.
+  * Anjay supports multiple security modes including X.509, PSK and No Security
+  * Anjay also supports SMS bearer based on CoAP over SMS (only available in commercial version)
+  * The AVSystem IoT Platform provides a consolidated platform to manage multiple protocols including TR-069, OMA-DM and LwM2M.
+
+* Switch to github
+  - The organization is trying to swtich to Github WoW and markdown. Cumbersome process for some.
+
+???
+
+---
+
+## Conclusions
+
+* Work is progressing with regular interops between the partners.
+
+* New features driven from CoRE.
+
+* Target to add more requirements coming from AppIoT.
+
+* Upcoming engagements: DDI or AppIoT?
+
+???
+
+---
+
+## ELIOT! - An Emulated IoT Platform
+
+Want to create a testbed of few hundred LwM2M devices in seconds? Read more at <http://jaimejim.github.io/eliot/>
+
+Looking for volunteers to expand the work by adding more features, for example devices:
+<https://github.com/Alliasd/ELIoT/blob/master/devices/light_control.js>
+
+If you want to test it quickly you can simply run:
+
+``` c
+> git clone https://github.com/Alliasd/ELIoT.git
+
+> cd eliot
+
+> docker-compose up
 ```
-  0                   1                   2                   3
-  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
- +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- |  Version = 2  |0|   MAP       |         Reserved              |
- +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- |                 Requested Lifetime (32 bits)                  |
- +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- |                                                               |
- |               CoAP EP IP Address:Port (128 bits)              |
- +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+With that you’ll get a Leshan Bootstrap Server, a LWM2M Server and 4 devices.
+
+To scale up run:
+
+``` c
+> docker-compose scale weather=10 presence=10 radiator=10 light=10
 ```
-
-* The MAP value is:
-
-    `CoAP EP Address + 5683 + External Address + NAT Port.`
-
-* CoAP Address is set by the DHCP server. External address, lifetime and external port are sent by the manager.
-
-* No Operation Code nor PCP Options are used for now.
-
-???
-
-This slide shows the parameters needed to define a PCP Request.
-
----
-
-##Operation on a managed CoAP endpoint
-
-Assuming a managed device we apply [RFC6887](https://tools.ietf.org/html/rfc6887#page-20):
-
-1. CoAP Endpoint registers on a Management Server that hosts an [RD](https://tools.ietf.org/html/draft-ietf-core-resource-directory-11). During the process the manager can provide the external NAT mappings to the device (IP+port).
-2. If the device is using UDP bindings the Manager can enable PCP.
-3. The manager sets the expected *lifetime* values and *external map* (IP:Port).
-4. The CoAP Endpoint sends a PCP request to the default gateway with the MAP configuration (its own IP address is provided by the DHCP resolution) on port `5351` and awaits a response.
-5. If no response is received, the Client then tries the default Anycast address `2001:1::1/128` and awaits a response.
-6. If after few retransmissions no response is received, the device should signal the manager to confirm that PCP is not enabled. If a response is received the device should confirm that PCP has been enabled and the address of the router should be sent.
-7. The manager can then apply the same successful configuration to other devices behind that NAT.
-
-
-???
-The process assumes that at some point there is connectivity between coap endpoint and manager.
-Read the general operation ( I think it follows the PCP spec but I am no expert in the subject )
-I think each device has to do PCP individually, but the manager now knows which configuration works, so it can configure other registered devices in the same way.
-
-(note that at the moment this is all guesswork based on specs)
----
-
-##Next Steps
-
-* Verify that this is how PCP is supposed to work with PCP experts.
-
-* Study degree deployment on home gateways.
-
-* Study degree of complexity in the constrained space.
-
-* Test for example with <https://github.com/libpcp/pcp/tree/master/scapy>.
-
-* Work out a first draft, LWIG, CoRE?
-
-* If it works out, go beyond basic cases:
-  * How to forward configuration to NATs in between.
-  * How to delegate top other endpoints.
-
 
 
     </textarea>
