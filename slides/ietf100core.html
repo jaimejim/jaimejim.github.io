@@ -130,14 +130,14 @@ class: center, middle, inverse
 ---
 #IETF 1100**100** - Constrained Restful Environments (CoRE) WG
 ###Jaime Jiménez - [ jaime.jimenez@ericsson.com ]
-.footnote[30th November 2017]
+.footnote[14th December 2017]
 
 ---
 layout: false
 
 ## Business Environment
 
-* Telco world is rapidly schrinking and [wireless and wireline networks are becoming like    airlines](https://datatracker.ietf.org/meeting/100/materials/slides-100-ietf-sessa-the-internet-at-ietf-200-henning-schulzrinne/).
+* "*Telco world is rapidly schrinking and [wireless and wireline networks are becoming like airlines](https://datatracker.ietf.org/meeting/100/materials/slides-100-ietf-sessa-the-internet-at-ietf-200-henning-schulzrinne/).*" - Henning Schulzrinne
 
 <img src="http://jaimejim.github.io/assets/images/ietf100_1.png" width="700">
 
@@ -146,7 +146,7 @@ layout: false
 
 ## CoRE Overview
 
-* Progressing, 5 new RFCs on the pipeline.
+* Strong progress, 5 new RFCs on the pipeline.
 * CoAP + TCP interop was held at Hackathon.
 * [Video Recording](https://youtu.be/wd_kXam1lIw?t=0m55s), [Slides](https://datatracker.ietf.org/meeting/100/materials/slides-100-core-consolidated-slides/) and [Raw minutes](http://etherpad.tools.ietf.org:9000/p/notes-ietf-100-core) are also available.
 * Potential new WG on Software Updates ([SUIT](http://etherpad.tools.ietf.org/p/notes-ietf-100-suit)).
@@ -165,73 +165,107 @@ layout: false
 
 ## WG Items
 
-* 🔔 **Representing CoRE Link Format in JSON and CBOR**
+🔔 **Representing CoRE Link Format in JSON and CBOR**
 
- [draft-ietf-core-links-json](https://tools.ietf.org/html/draft-ietf-core-links-json-09) was not discussed at the  meeting. Some good input was provided by OCF at the 2017-11-10 [OCF/T2TRG](https://github.com/t2trg/2017-11-ocf) meeting, which will now enable these changes to be made. Soon to be RFC.
+[draft-ietf-core-links-json](https://tools.ietf.org/html/draft-ietf-core-links-json-09) was not discussed at the  meeting. Some good input was provided by OCF at the 2017-11-10 [OCF/T2TRG](https://github.com/t2trg/2017-11-ocf) meeting, which will now enable these changes to be made. Soon to be RFC.
 
-* 🔔 **CoAP over TCP**
+🔔 **CoAP over TCP**
 
- [draft-ietf-core-coap-tcp-tls](https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls/) is soon to be RFC, we are waiting for AD's DISCUSS to clear.  The first interop on Saturday had 2.5 implementations (libcoap, augustcellars and coap.me).
+[draft-ietf-core-coap-tcp-tls](https://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls/) is soon to be RFC, we are waiting for AD's DISCUSS to clear.  The first interop on Saturday had 2.5 implementations (libcoap, augustcellars and coap.me). Interop on Tue 12th Dec.
 
-* 🔔 **Congestion Control for CoAP**
-
- [draft-ietf-core-cocoa](https://tools.ietf.org/html/draft-ietf-core-cocoa/) WGLC has been started on the mailing list the authors also request feedback from ICCRG and TCPM. Dec 14 is the extended deadline. Then IESG.
+```
+      +--------------------------------+
+      |          Application           |
+      +--------------------------------+
+      +--------------------------------+
+      |  Requests/Responses/Signaling  |  CoAP (RFC 7252) / This Document
+      |--------------------------------|
+      |        Message Framing         |  This Document
+      +--------------------------------+
+      |      Reliable Transport        |
+      +--------------------------------+
+```
 
 ???
 
 ---
+
 ## WG Items
 
-* **Resource Directory**
+🔔 **Congestion Control for CoAP**
 
- [draft-ietf-core-resource-directory](https://tools.ietf.org/html/draft-ietf-core-resource-directory/) has seen quite a lot of progress in the last few months. Developers should start updating their implementations as interop would be call on Q1 2018. Work over multiple transports and new schemes still to be done. The increased work needs to transfer to sister document draft-ietf-core-rd-dns-sd now. We expect to pass WGLC by IETF101.
+[draft-ietf-core-cocoa](https://tools.ietf.org/html/draft-ietf-core-cocoa/) . Improves CoAP Congestion Control and provides guidelines for retransmission timeouts and non-confirmable messages. It also provides a new RTO estimation mechanism based on RFC6298. WGLC ends 14th Dec.
 
-* **CBOR Encoding of Data Modeled with YANG**
+**Resource Directory**
 
- [draft-ietf-core-yang-cbor](https://tools.ietf.org/html/draft-ietf-core-yang-cbor/) is stable, but hadn't had enough interop testing to enable a WGLC. Initial testing happened during the IETF100 hackathon now. Interop is intended for IETF 101, after which WGLC will be issued.
+[draft-ietf-core-resource-directory](https://tools.ietf.org/html/draft-ietf-core-resource-directory/) quite a lot of progress in the last few months. Developers should start updating their implementations as interop would be call on Q1-Q2 2018. Work over multiple transports and new schemes still to be done. The increased work needs to transfer to sister document draft-ietf-core-rd-dns-sd now. WGLC by IETF101.
 
-* **CoAP Management Interface**
+```c
+    Req: GET coap://[ff02::1]/.well-known/core?rt=core.rd*
+    Res: 2.05 Content
+    </rd>;rt="core.rd";ct=40,
+    </rd-lookup/ep>;rt="core.rd-lookup-ep";ct=40,
+    </rd-lookup/res>;rt="core.rd-lookup-res";ct=40,
+    </rd-lookup/gp>;rt="core.rd-lookup-gp";ct=40,
+    </rd-group>;rt="core.rd-group";ct=40
+```
 
- [draft-ietf-core-comi](https://tools.ietf.org/html/draft-ietf-core-comi/) There was some discussion about cutting the plethora of request types in basic COMI down to just FETCH and PATCH (possibly with GET added), to be continued on the list. Tools to visualize SIDs
+???
+The following example shows an endpoint discovering an RD using this
+interface, thus learning that the directory resource is, in this
+example, at /rd, and that the content-format delivered by the server
+hosting the resource is application/link-format (ct=40).  Note that
+it is up to the RD to choose its RD resource paths.
+---
+
+## WG Items
+**CBOR Encoding of Data Modeled with YANG**
+
+[draft-ietf-core-yang-cbor](https://tools.ietf.org/html/draft-ietf-core-yang-cbor/) stable, but not enough interop testing to enable a WGLC. Initial testing happened during the IETF100 hackathon. Interop is intended for IETF 101, after which WGLC will be issued.
+
+**CoAP Management Interface**
+
+[draft-ietf-core-comi](https://tools.ietf.org/html/draft-ietf-core-comi/) There was some discussion about cutting the plethora of request types in basic COMI down to just FETCH and PATCH (possibly with GET added), to be continued on the list. Tools to visualize SIDs
 would be necessary. The proposed SID registry is now online for the initial reviewers Available at <https://comi.space/>
 
+🔔 **Media Types for Sensor Measurement Lists (SenML)**
+
+[draft-ietf-core-senml](https://tools.ietf.org/html/draft-ietf-core-senml/) finished WGLC and needs some remaining minor updates, to be submitted to IESG in December.
+
 ???
 ---
+
 ## WG Items
 
-* 🔔 **Media Types for Sensor Measurement Lists (SenML)**
 
- [draft-ietf-core-senml](https://tools.ietf.org/html/draft-ietf-core-senml/) finished WGLC and needs some remaining minor updates, to be submitted to IESG in November.
+🔔 **Object Security for Constrained RESTful Environments (OSCORE)**
 
-* 🔔 **Object Security for Constrained RESTful Environments (OSCORE)**
+[draft-ietf-core-object-security](https://tools.ietf.org/html/draft-ietf-core-object-security/) enables application-layer protection of CoAP messages. Provides end-to-end encryption, integrity and replay protection, as well as a secure message binding.  Can be used wherever CoAP can be used, and also with HTTP. Technical cooperation agreement in place with RISE in order to add OSCORE to Wakaama and Leshan. WGLC ends in December.
 
- [draft-ietf-core-object-security](https://tools.ietf.org/html/draft-ietf-core-object-security/) will be ready for WGLC with some impending minor fixes in the next version.
+**Publish-Subscribe Broker for CoAP**
 
-* **Publish-Subscribe Broker for CoAP**
+[draft-ietf-core-coap-pubsub](https://tools.ietf.org/html/draft-ietf-core-coap-pubsub/) is a bit behind schedule. Good recent feedback from ARM.
 
- [draft-ietf-core-coap-pubsub](https://tools.ietf.org/html/draft-ietf-core-coap-pubsub/) is delayed.
+**Dynamic Resource Linking for Constrained RESTful Environments**
 
-* **Dynamic Resource Linking for Constrained RESTful Environments**
-
- [draft-ietf-core-dynlink](https://tools.ietf.org/html/draft-ietf-core-dynlink/)  and draft-ietf-core-interfaces have been in
-limbo for a while.  With a new editor, the remaining editorial issues can be fixed.  The documents are best kept separate.
+[draft-ietf-core-dynlink](https://tools.ietf.org/html/draft-ietf-core-dynlink/)  and draft-ietf-core-interfaces have been in
+limbo for a while.  With a new editor, the remaining editorial issues can be fixed.
 
 ---
 
 ## New Items
 
-* **Secure group communication for CoAP** - Adopted!
+**Secure group communication for CoAP** - Adopted!
 
- [draft-tiloca-core-multicast-oscoap](https://tools.ietf.org/html/draft-tiloca-core-multicast-oscoap/) had in-room consensus for adoption as a WG document in Prague already; this was newly
-confirmed; validation of the adoption decision will be sent to the mailing list.
+[draft-tiloca-core-multicast-oscoap](https://tools.ietf.org/html/draft-tiloca-core-multicast-oscoap/) explains how to do OSCORE for group communication. It is very useful in environments that support multicast.
 
-* **YANG Push Operations for CoMI**
+**YANG Push Operations for CoMI**
 
- [draft-birkholz-yang-push-coap-problemstatement](https://tools.ietf.org/html/draft-birkholz-yang-push-coap-problemstatement-00) was presented; the WG now needs to have a look into how YANG Push and telemetry requirements are going to relate to COMI and CoAP Observe.
+[draft-birkholz-yang-push-coap-problemstatement](https://tools.ietf.org/html/draft-birkholz-yang-push-coap-problemstatement-00) deals with how YANG Push can be used with CoAP. Future work on how this relates to COMI and CoAP Observe.
 
-* **HTTP-Payments**
+**HTTP-Payments**
 
- [draft-hope-bailie-http-payments](https://tools.ietf.org/html/draft-hope-bailie-http-payments-00) was presented as a heads-up; several participants stressed the relationship of the subject matter to ACE work.
+[draft-hope-bailie-http-payments](https://tools.ietf.org/html/draft-hope-bailie-http-payments-00) was presented as a heads-up; several participants stressed the relationship of the subject matter to ACE work.
 
 
 ???
@@ -240,35 +274,34 @@ confirmed; validation of the adoption decision will be sent to the mailing list.
 
 ## Other Items
 
-* **CoAP over SMS**
+**CoAP over SMS**
 
- [draft-becker-core-coap-sms-gprs](https://tools.ietf.org/html/draft-becker-core-coap-sms-gprs-06) hadn't reached the threshold for WG adoption earlier; there is some renewed interest. Coordination with LWM2M work will be needed.
+[draft-becker-core-coap-sms-gprs](https://tools.ietf.org/html/draft-becker-core-coap-sms-gprs-06) hadn't reached the threshold for WG adoption earlier; there is some renewed interest. Coordination with LWM2M work will be needed.
 
-*  **Uniform Resource Names for Device Identifiers** - Adopted!
+**Uniform Resource Names for Device Identifiers** - Adopted!
 
-  [draft-arkko-core-dev-urn](https://tools.ietf.org/html/draft-arkko-core-dev-urn/) had in-room consensus for WG adption, to be confirmed on the mailing list.
+[draft-arkko-core-dev-urn](https://tools.ietf.org/html/draft-arkko-core-dev-urn/) presents a new URN namespace for HW device identifiers (i.e. `urn:dev:mac:0024befffe804ff1`)
 
-* **OPC UA Message Transmission Method over CoAP**
+**OPC UA Message Transmission Method over CoAP**
 
- [draft-wang-core-opcua-transmission](https://tools.ietf.org/html/draft-wang-core-opcua-transmission/) was presented as a way to map OPC/UA on CoAP.  Discussion touched the issue whether OPC should be doing this or the IETF.  In any case, the authors were encouraged to continue the work, talk to OPC as well and keep IETF involved.
+[draft-wang-core-opcua-transmission](https://tools.ietf.org/html/draft-wang-core-opcua-transmission/) was presented as a way to map OPC/UA on CoAP.  Discussion touched the issue whether OPC should be doing this or the IETF.  In any case, the authors were encouraged to continue the work, talk to OPC as well and keep IETF involved.
 
 
 ???
 
 ---
 
-## Thoughts
+## Conclusions
 
-* CoAP + SMS will be revived. Onboard OMA folks, onboard AppIoT.
-
-* OSCORE will be an RFC. Ericsson should have products ready. Competitive advantage through security and group security.
-  * Already under development at RISE.
-
-* Resource Directory implementation needs to be updated, opportunity for Ericsson to shine within Leshan community. EASY to onboard other OMA folks (Wojek, David, Hannes, Mohammed, ...) on this.
+* Depending on their backlog onboard AppIoT on:
+  * OSCORE: Target to add OSCORE to master branch of Leshan and Wakaama in collaboration with RISE. Competitive advantage through security and group security.
+  * CoAP+SMS: Work in progress to onboard AppIoT, we have to be careful with the prioritization as they are overloaded.
+  * Resource Directory: Existing implementations will have to be updated, opportunity for Ericsson to shine within Leshan community. Possible to onboard other OMA folks (Wojek, David, Hannes, Mohammed, ...) on this.
+  * Resource Directory implementation needs to be updated.
 
 * OCF-T2TRG meeting right before IETF.
-    * CoAP protocol negotiation. Increased complexity but possible benefits.
-    * CoAP link format additions.
+  * CoAP protocol negotiation. Increased complexity but possible benefits.
+  * CoAP link format additions.
 
     </textarea>
     <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
