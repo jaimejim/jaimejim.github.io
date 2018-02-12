@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>OMA DM F2F - Braga</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+      @page {
+          size: 1210px 681px;
+          margin: 0;
+      }
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 200;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 1.2em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+name:inverse
+layout: true
+class: center, middle, inverse
+
+---
+#OMA DM WG - Lightweight M2M (LWM2M)
+###Jaime Jiménez - [ jaime.jimenez@ericsson.com ]
+.footnote[12th February 2018]
+---
+layout: false
+
+## F2F Overview
+
+* The DM working group met in Braga (POR). Representatives from Ericsson, STMicro, Qualcomm, ARM, Gemalto, Sierra Wireless, TTA, Telit, Huawei, IoTerop, Orange, U-Blox, Vodafone and Nokia attended.
+
+## Relevant links
+
+* [LwM2M v1.1 Technical Specification](http://github.com/OpenMobileAlliance/LwM2M-v1_1/)
+* [LWM2M v1.1 Issues](https://github.com/OpenMobileAlliance/LwM2M-v1_1/issues)
+* [LWM2M v1.1 Closed PRs](https://github.com/OpenMobileAlliance/LwM2M-v1_1/pulls?q=is%3Apr+         is%3Aclosed)
+* [Minutes](http://member.openmobilealliance.org/ftp/DM/ID/18/OMA-DM-2018-0008R03-AGENDA_06Feb2018Agenda_Minutes.zip)
+* [Requirements doc](http://member.openmobilealliance.org/ftp/Public_documents/DM/LightweightM2M/2018/OMA-DM-LightweightM2M-2018-0015R01-INP_RD_v1.1_check.zip)
+* [OMNA Registry](http://openmobilealliance.org/wp/registries.html)
+
+The target of the meeting was to finalize and agree on the pull requests (PR) for the version 1.1.
+
+???
+---
+layout: false
+## Organizational Changes
+
+- Merger of IPSO and OMA DM has concluded, work on bringing in the IPSO work has started.
+- New formatting (markdown, html, pdf) for the specification and new ways of working (collaborative git-based commits) have been used.
+- Split of the spec in [CORE](http://104.237.129.77/docs/bfeaf14/TS_Core/OMA-TS-LightweightM2M_Core-V1_1_full.html) and [TRANSPORT](http://104.237.129.77/docs/bfeaf14/TS_Transport/OMA-TS-LightweightM2M_Transport-V1_1_full.html).
+- New [liason with GSMA](hhttps://www.gsma.com/newsroom/all-documents/ts-41-iot-standard-diagnostic-logging/) on a standard Diagnostic Logging format (IoT-SDL) for IoT modems (LTE-M1, NB1.)
+- Microsoft has confirmed leaving OMA.
+
+???
+---
+class: center, middle, inverse
+
+# What's new on v1.1?
+
+
+???
+---
+layout: false
+### "Transports"
+
+**Goal**: Define transport bindings that allow to traverse all network topologies.
+
+**Additions**: Added support for CoAP over TCP - soon to be *RFC8323*. Added suport for CoAP over LoRAWAN, CON messages in particular.
+
+```
+                [CoAP + UDP]                   [CoAP + TCP]
+       CoAP Client       CoAP Server  CoAP Client       CoAP Server
+           |                    |         |                    |
+           |   CON [0xbc90]     |         | (-------) [------] |
+           | GET /temperature   |         | GET /temperature   |
+           |   (Token 0x71)     |         |   (Token 0x71)     |
+           +------------------->|         +------------------->|
+           |                    |         |                    |
+           |   ACK [0xbc90]     |         | (-------) [------] |
+           |   2.05 Content     |         |   2.05 Content     |
+           |   (Token 0x71)     |         |   (Token 0x71)     |
+           |     "22.5 C"       |         |     "22.5 C"       |
+           |< ------------------+         |< ------------------+
+           |                    |         |                    |
+```
+
+**Future Work**: We will probably start studying how to support for HTTP and MQTT application protocols, with the same interfaces and object model.
+
+
+???
+Conceptually, CoAP over TCP replaces most of the message layer of CoAP over UDP with a framing mechanism on top of the byte-stream provided by TCP/TLS, conveying the length information for each message that on datagram transports is provided by the UDP/DTLSdatagram layer.
+
+The message layer of CoAP over TCP is not required to support acknowledgements or to detect duplicate messages.  As a result, both the Type and Message ID fields are no longer required and are removed from the CoAP over TCP message format.
+
+---
+
+### Encoding and data models
+**Goal**: Support for compact data format, efficient standard encoding.
+
+**Additions**:
+Added support for [CBOR](https://tools.ietf.org/html/rfc7049).
+Added support to [CoRE Link](https://tools.ietf.org/html/rfc6690) data type.
+Added support for [SenML](https://tools.ietf.org/html/draft-ietf-core-senml).
+There is some hesitation to add non-RFC references.
+
+```c
+REQ: DISCOVER /3/0/7
+RES: 2.05 Content
+<http://www.device.url/3/0/7>;anchor="/3/0/7";lt=42.2,</3/0/7/1>
+```
+
+**Future Work**: The group will look into deprecation of some of the formats, although is resistance to deprecate TLV.
+
+### Bootstrap and Registration
+
+**Goal**: The BS needs a way to retrieve the full knowledge of existing Access Control Rights in the client; trigger client-initiated bootstrap; a fallback mechanism when errors occur and error recovery should be configurable on the client; ordering of LWM2M servers if multiple; designate a secific APN or the client to use.
+
+**Additions**: Done in various parts of the specification, no specific external source. Most of the future work will focus on security, access control and the use of certificates (revocation, update, time sync...).
+
+???
+---
+
+### Maintenance and Upgrade
+
+**Goal**: Support saving firmware, reverting to old firmware, recovery settings; support of sequential registrations.
+
+**Additions**: Most of the required updates where no fundamental, thus they have been postponed.
+
+### Observation and Reporting Mode
+
+**Goal**: Support for evaluation parameters during observation (other than "gt, "lt", "sz"); support of multiple observe conditions for the same resource; observe multiple resources with one message; report of "unsolicited data" and its configuration.
+
+**Additions**: Added partial support for [RFC8132](https://tools.ietf.org/html/rfc8132) (PATCH/FETCH),
+
+**Future Work**: Unsolicited notifications" need to be reworked (Sierra Wireless last minute contribution), in theory already supported by CoAP; addding new link parameters if the company's use cases require them.
+
+
+???
+---
+
+### Gateway Functionality
+
+**Goal**: Support for legacy devices, group communication, firmware upgrades for devices behind gateways.
+
+**Additions**: All additions were postponed for due to lack of time.
+
+### LP-WAN
+
+**Goal**: 3GPP CIoT and emergence of LPWAN technologies to be supported by LwM2M releases (NB-IoT and LTE CAT-M).
+
+**Additions**: Partially covered some of the requirements.
+
+
+???
+
+---
+
+### Security
+
+**Goal**: Extended PKI support; offer guidance or the use of TLS/DTLS, handling of error situations;  Add secure component support ; E2E Security between LWM2M Client and Server and for other components (GWs, Intermediaries, Auth server, Application Server, SCEF...).
+
+**Additions**: A new method for checking certificates, handling device time and early support for CAs were added. Also a new object with resources for TLS error codes. We added application layer security based on [OSCORE](https://tools.ietf.org/html/draft-ietf-core-object-security) (soon to be RFC) with pre-shared secrets.  Information on ciphersuites, key agreement (ECDH), DNS usage, X.509 certificates and more. The secure component support was postponed.
+
+```
+| ID | Name                 | Instances | Mandatory | Type   |
+|----|----------------------|-----------|-----------|--------|
+| 0  | OSCORE Master Secret |   Single  | Mandatory | String |
+| 1  | OSCORE Sender ID     |     "     |     "     |    "   |
+| 2  | OSCORE Recipient ID  |     "     |     "     |    "   |
+| 3  | OSCORE AEAD algorithm|     "     | Optional  | Integer|
+| 4  | OSCORE HMAC algorithm|     "     |     "     |    "   |
+| 5  | OSCORE Master Salt   |     "     |     "     |    "   |
+
+OMA-SUP-XML_LWM2M_OSCORE-V1.1.xml
+```
+
+    </textarea>
+    <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
+    </script>
+    <script
+    src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
