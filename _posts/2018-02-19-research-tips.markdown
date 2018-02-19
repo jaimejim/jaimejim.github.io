@@ -61,7 +61,8 @@ s3-2.txt
 312-However, use of HTTP conveniently allows Things acting as
 --
 465-transport security, object security, or both.
-466:If multiple transport protocols are used, such as a combination of HTTP/TLS and CoAP/DTLS, bridging those protocols
+466:If multiple transport protocols are used, such as a combination of
+HTTP/TLS and CoAP/DTLS, bridging those protocols
 467-may create another compromise possibility. A mechanism
 ```
 
@@ -84,12 +85,14 @@ For example if I wanted I could read every abstract pretty quickly by doing the 
 7-
 8:Abstract—The aim of this paper is to propose a simple
 9-and efficient algorithm to generate white samples for the
-10-envelope of the α-η-κ-µ fading model. To this end, capitalizing on results available in the literature, the random
+10-envelope of the α-η-κ-µ fading model. To this end, capitalizing
+on results available in the literature, the random
 
 1570372054.txt
 9-CNRS 6074 IRISA GRANIT UR1 Lannion, France, Email: firstname.lastname@irisa.fr
 10-
-11:Abstract—The linear closed-loop MIMO precoding technique employs the channel state information (CSI) at both
+11:Abstract—The linear closed-loop MIMO precoding technique employs the
+channel state information (CSI) at both
 12-sides of the link to optimize various criteria such as the
 13-capacity, the mean square error, the signal to noise ratio
 
