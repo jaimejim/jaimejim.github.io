@@ -32,7 +32,7 @@ What I normally do is convert all of them to text using `pdftotext` which you ca
 ...
 ```
 
-Now that the documents are searchable we can use grep or similar tools to search them. If there are a large number of files involved you might want to check [ripgrep](https://github.com/BurntSushi/ripgrep) which is orders of magnitude faster when searching. In fact, with ripgrep you can also search binary files (PDF) with the option `-a/--text`.
+Now that the documents are searchable we can use grep or similar tools to search them. If there are a large number of files involved you might want to check [ripgrep](https://github.com/BurntSushi/ripgrep) which is orders of magnitude faster when searching. In fact, with ripgrep you can also search binary files (PDF) with the option `-a/--text` _but we'll ignore that cause we already did the conversion_.
 
 For example, I'd like to do `rg` recursively on papers that talk about CoAP; that are in text format, without minding the capital letters. I'd like to show 1 line of context before and after the term is found. Below is the result.
 
