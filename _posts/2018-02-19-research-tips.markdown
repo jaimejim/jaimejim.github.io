@@ -1,5 +1,5 @@
 ---
-title: "Finding that paper you are looking for"
+title: "Finding that publication you are looking for."
 layout: post
 date: 2018-02-19 18:14
 tag:
@@ -10,18 +10,16 @@ blog: true
 star: true
 ---
 
+We all are living very busy lives, with little time to be spend on things that some years ago we didn't mind spending time on. One of those things are scientific publications.
 
-We all are living very busy lives, with little time to be spend on things that, maybe some years ago, was OK to spend time with, One of those things are scientific publications.
+Every year there are more publications available on a larger number of topics. The fact that universities and even whole countries have metrics based on number of published articles ([1](https://link.springer.com/article/10.1007/s11192-017-2504-x),
+[2](https://www.snowballmetrics.com/wp-content/uploads/assessing-europe-university-based-research_en.pdf), [3](http://www.keepeek.com/Digital-Asset-Management/oecd/science-and-technology/oecd-science-technology-and-innovation-outlook-2016_sti_in_outlook-2016-en#page149)) does not help.
 
-Every year there are more publications available on a larger number of topics. The fact that univerisities and even whole countries have metrics based on number of published articles ([1](https://link.springer.com/article/10.1007/s11192-017-2504-x),
-[2](https://www.snowballmetrics.com/wp-content/uploads/assessing-europe-university-based-research_en.pdf),[3](http://www.keepeek.com/Digital-Asset-Management/oecd/science-and-technology/oecd-science-technology-and-innovation-outlook-2016_sti_in_outlook-2016-en#page149)) does not help.
+Yet, scientific knowledge needs to be spread and people need to find out quickly the articles they are interested in. Of course there are well-known tools like [sci-hub](https://sci-hub.hk) or google scholar, but often we also have a repository of published papers that we want to look into. For example the [IEEE PIMRC17](http://pimrc2017.ieee-pimrc.org) conference had 549 papers; *are we supposed to read all of them?* Of course not.
 
-Yet, scientific knowledge needs to be spread and people need to find out quickly the articles they are interested in. Of course there are well-known tools like sci-hub or google scholar, but often we also have a repository of published papers that we want to look into. For example the [IEEE PIMRC17](http://pimrc2017.ieee-pimrc.org) conference had 549 papers; are we supposed to go through each of them? Of course not, and yet, they publish those papers in PDF, making it harder to do
-searchers on the documents.
+What I normally do is convert all of them to text using `pdftotext` which you can install using the [poppler-utils](https://poppler.freedesktop.org) package under various Linux distributions.  
 
-What I normally do is convert all of them to text using ´pdftotext´ which you can install using the [poppler-utils](https://poppler.freedesktop.org) package under various Linux distributions.  
-
-```
+``` bash
 ~/Desktop/Papers/ » find . -name \*.pdf -exec pdftotext "{}" \;
 ~/Desktop/Papers/ » ls
 1570347974.txt 1570368376.txt 1570368959.txt 1570373144.txt 1570388857.txt
@@ -30,19 +28,14 @@ What I normally do is convert all of them to text using ´pdftotext´ which you 
 1570351906.txt 1570368392.txt 1570368974.txt 1570373155.txt 1570388948.txt
 1570356083.txt 1570368393.txt 1570368975.txt 1570373157.txt 1570388983.txt
 1570359771.txt 1570368414.txt 1570368976.txt 1570373168.txt 1570388989.txt
-1570360123.txt 1570368426.txt 1570368978.txt 1570373169.txt 1570389029.txt
-1570360781.txt 1570368445.txt 1570368982.txt 1570373170.txt 1570389050.txt
-1570362275.txt 1570368456.txt 1570368984.txt 1570373171.txt 1570389051.txt
-1570362636.txt 1570368460.txt 1570368987.txt 1570373176.txt 1570389119.txt
-1570363485.txt 1570368461.txt 1570368989.txt 1570373177.txt 1570389163.txt
 ...
 ```
 
-Now that the documents are searchable we can use grep or similar tools to search them. If there are a large number of files involved you might want to check [ripgrep](https://github.com/BurntSushi/ripgrep) which is orders of magnitude faster when searching. In fact, with ripgrep you can also search binary files (PDF) with the option "-a/--text".
+Now that the documents are searchable we can use grep or similar tools to search them. If there are a large number of files involved you might want to check [ripgrep](https://github.com/BurntSushi/ripgrep) which is orders of magnitude faster when searching. In fact, with ripgrep you can also search binary files (PDF) with the option `-a/--text`.
 
-For example, I like to search recursively for papers that talk about CoAP, in text format, without minding the capital letters and showing 1 line of context before and after the term is found. Below is the result.
+For example, I'd like to do `rg` recursively on papers that talk about CoAP; that are in text format, without minding the capital letters. I'd like to show 1 line of context before and after the term is found. Below is the result.
 
-```
+``` bash
 ~/Desktop/Papers/ » rg -i "CoAP" -g "*.txt" -C 1
 s1-1.txt
 16-protocols will co-exist, including the Constrained Application
@@ -75,7 +68,7 @@ This way I can immediately spot the papers that talk about something I might be 
 
 For example if I wanted I could read every abstract pretty quickly by doing the following command:
 
-```
+``` bash
 ~/Desktop/Papers/ » rg -i "Abstract" -g "*.txt" -C 2
 
 1570368018.txt
