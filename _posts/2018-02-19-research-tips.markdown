@@ -1,5 +1,5 @@
 ---
-title: "Finding that publication you are looking for."
+title: "Finding that paper you are looking for."
 layout: post
 date: 2018-02-19 18:14
 tag:
