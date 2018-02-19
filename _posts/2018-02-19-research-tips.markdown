@@ -2,7 +2,7 @@
 title: "Skimming through hundreds of papers"
 layout: post
 date: 2018-02-19 18:14
-image: /assets/images/papers.jpg
+image: /assets/images/papers.png
 tag:
 - CoAP
 - Research
