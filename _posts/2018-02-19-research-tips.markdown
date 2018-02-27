@@ -25,8 +25,6 @@ What I normally do is convert all of them to text using `pdftotext` which you ca
 ~/Desktop/Papers/ » ls
 1570347974.txt 1570368376.txt 1570368959.txt 1570373144.txt 1570388857.txt
 1570350772.txt 1570368379.txt 1570368961.txt 1570373147.txt 1570388907.txt
-1570351129.txt 1570368391.txt 1570368967.txt 1570373149.txt 1570388920.txt
-1570351906.txt 1570368392.txt 1570368974.txt 1570373155.txt 1570388948.txt
 1570356083.txt 1570368393.txt 1570368975.txt 1570373157.txt 1570388983.txt
 1570359771.txt 1570368414.txt 1570368976.txt 1570373168.txt 1570388989.txt
 ...
@@ -34,7 +32,7 @@ What I normally do is convert all of them to text using `pdftotext` which you ca
 
 Now that the documents are searchable we can use grep or similar tools to search them. If there are a large number of files involved you might want to check [ripgrep](https://github.com/BurntSushi/ripgrep) which is orders of magnitude faster when searching. In fact, with ripgrep you can also search binary files (PDF) with the option `-a/--text` _but we'll ignore that cause we already did the conversion_.
 
-For example, I'd like to search recursively for papers that talk about CoAP, that are in text format and without minding the capital letters. I'd like to show 1 line of context before and after the term is found. Below are the result.
+For example, I'd like to search recursively for papers that talk about CoAP, that are in text format and without minding the capital letters. I'd like to show 1 line of context before and after the term is found. Below are the results.
 
 ``` bash
 ~/Desktop/Papers/ » rg -i "CoAP" -g "*.txt" -C 1
@@ -51,22 +49,10 @@ s1-1.txt
 152:support the CoAP protocol.
 153-B. Decentralised security
 
-s3-2.txt
-239-can be used to instantiate a TD for a particular IoT protocol
-240:binding, such as OCF, HTTP(S), COAP etc.
-241-A WoT Servient can also host a WoT Runtime and a
---
-310-the Web of Things concept [13], the current WoT draft
-311:supports other choices as well, such as CoAP and MQTT.
-312-However, use of HTTP conveniently allows Things acting as
---
-465-transport security, object security, or both.
-466:If multiple transport protocols are used, such as a combination of
-HTTP/TLS and CoAP/DTLS, bridging those protocols
-467-may create another compromise possibility. A mechanism
+...
 ```
 
-This way I can immediately spot the papers that talk about something I might be working on too, without browsing hundreds of them. I can even adjust the search to show me only the abstract of those papers, conclusions, etc.
+Now I can immediately spot papers that talk about something I am interested in; without browsing hundreds of them. I can even adjust the search to show me only the abstract of those papers, conclusions, etc.
 
 For example if I wanted I could read every abstract pretty quickly by doing the following command:
 
