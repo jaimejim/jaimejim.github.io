@@ -64,7 +64,7 @@ For example if I wanted I could read every abstract pretty quickly by doing the 
 4-Inria Lille Nord – Europe, France - {farouk.mezghani, nathalie.mitton}@inria.fr
 5:Abstract—Opportunistic communications present a
 6-promising solution as a disaster network recovery in
-7-emergency situations such as hurricanes, earthquakes and
+8-emergency situations such as hurricanes, earthquakes and
 
 1570368756.txt
 6-Email: vanessamendes@get.inatel.br
