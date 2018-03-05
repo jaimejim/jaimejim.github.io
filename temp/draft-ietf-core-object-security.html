@@ -501,8 +501,9 @@ accessing and manipulating any part of the message payload and metadata. </p>
 |          UDP / TCP / ...          |
 +-----------------------------------+  </code></pre></div>
 
-<p>OSCORE is a method for application layer protection for CoAP.
-It defines a security option that indicates that the CoAP message uses OSCORE.</p>
+<p>OSCORE requires that client and server establish a shared security context used to process the <strong>COSE</strong> objects. OSCORE uses COSE with an Authenticated Encryption with Additional Data (AEAD) algorithm for protecting message data between a client and a server.  </p>
+
+<p>OSCoRE also defines a security option that indicates that the CoAP message uses OSCORE.</p>
 
 <div><pre><code class="language-none">+-----+---+---+---+---+-----------------+--------+--------+---------+
 | No. | C | U | N | R | Name            | Format | Length | Default |
@@ -510,7 +511,11 @@ It defines a security option that indicates that the CoAP message uses OSCORE.</
 | TBD | x |   |   |   | Object-Security |  (*)   | 0-255  | (none)  |
 +-----+---+---+---+---+-----------------+--------+--------+---------+</code></pre></div>
 
-<p>OSCORE encrypts some of the CoAP header fields, some of them are required to be read by proxies, thus cannot be protected end-to-end between endpoints.</p>
+<p>The <strong>CoAP Payload</strong> is always encrypted in a COSE object. </p>
+
+<!-- Except when Jan objects, that should be verified. -->
+
+<p>As mentioned before, OSCORE encrypts some of the CoAP header fields. However some of them are required to be read by proxies, thus cannot be protected end-to-end between endpoints and are send in the clear.</p>
 
 <div><pre><code class="language-none">+------------------+---+---+
 | Field            | E | U |
