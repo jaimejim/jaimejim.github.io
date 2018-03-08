@@ -41,7 +41,7 @@ During my studies I did performance analysis and development of applications tha
 
 ### IPR
 
-As a researcher I often stumble upon good ideas in our projects. Companies tend to do patents for those ideas that their products are based on. Thus I have done several [patents](https://patents.google.com/?inventor=Jaime+Jim%C3%A9nez&clustered=false&sort=new) over the years.
+As a researcher I often stumble upon good ideas in our projects. Companies tend to do patents for those ideas that their products are based on. Thus I have done several [patents](https://patents.google.com/?inventor=Jaime+Jiménez&assignee=Ericsson&num=50&sort=new) over the years.
 
 ### Consulting
 
