@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>IETF 101 CoRE</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+      @page {
+          size: 1210px 681px;
+          margin: 0;
+      }
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 200;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 1.2em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+name:inverse
+layout: true
+class: center, middle, inverse
+
+---
+#**IETF 101** - Constrained Restful Environments (CoRE) WG
+###Jaime Jiménez - [ jaime.jimenez@ericsson.com ]
+.footnote[26th March 2018]
+
+---
+layout: false
+
+## IETF 101
+
+* Attendance:
+  - 1189 people on site.
+  - 218 were 1st timers.
+  - 59 different countries (US 35%, UK 13%, CN 9%).
+
+* [Hackathon](https://trac.ietf.org/trac/ietf/meeting/wiki/101hackathon)
+  - 35 projects.
+  - 220 people on site and 20 remote. Next on July 14th-15th.
+
+* [Budgetting issues](https://iaoc.ietf.org/documents/2018BudgetNarrative.pdf) due to lack of predictability will increase meeitng fees by 10%.
+
+* The IETF Plenary focused on the Future of Internet Access; Jonathan Brewer gave a talk on [coming satellite communications](https://youtu.be/zRF6Trtk290?t=1h41m3s) that is worth watching (5min).
+
+* [ICANN CTO presentation](https://www.youtube.com/watch?v=vyrJF9e6WqM) on the [vulnerabilities of the DNS system](https://www.icann.org/news/blog/why-the-dns-is-broken-in-plain-language) and how to fix them with [DNSSEC](https://tools.ietf.org/html/rfc8145).
+.footnote["I am suprised everyday when I wake up and it still works" - David Conrad, CTO of ICANN on the Internet]
+
+
+???
+---
+## Assorted topics
+
+*  Software Updates for Internet of Things ([SUIT](https://datatracker.ietf.org/wg/suit/about/) hackathon was arranged on Saint Patrick's day. Target was to modify a device bootloader to verify a SUIT manifest file, which is firmware metada. Wrote a [SUIT tutorial](https://gist.github.com/jaimejim/3aa9c6e85e82a353c9fa90794c856d89) for the Freescale FRDM-K64F board. Likely to be added to LWM2M (> 1.1)
+
+* Trusted Execution Environment Provisioning ([TEEP](https://datatracker.ietf.org/wg/teep/about/)) met for the first time, they try to standardize the provisioning of applications into secure areas of certain computer processors
+
+* Work on Semantic Interop continues. I am writing the new IPSO charter within OMA, focus will be on alligning both and on onboarding the new members (KDDI, etc). [WISHI participants](https://github.com/t2trg/wishi/wiki/IETF-101-Hackathon) met also during IETF101.
+
+* [TLS 1.3](https://tools.ietf.org/html/draft-ietf-tls-tls13-28) will soon be an RFC, more info [here](http://www.theregister.co.uk/2018/03/23/tls_1_3_approved_ietf/).
+
+
+???
+---
+
+## CoRE Overview
+
+
+- Slides: <https://datatracker.ietf.org/meeting/101/session/core>
+
+- Status Pages: <https://tools.ietf.org/wg/core/>
+
+- Etherpad: <http://etherpad.tools.ietf.org/p/notes-ietf-101-core?useMonospaceFont=true>
+
+- Datatracker: <https://datatracker.ietf.org/wg/core/documents/>
+
+- Summary and Minutes: <https://www.ietf.org/proceedings/101/minutes/minutes-101-core-00>
+
+- Comments and feedback on **<https://github.com/core-wg> and <core@ietf.org>**
+
+???
+---
+
+## CoRE Overview II
+
+
+* Progressing, draft-ietf-coap-tcp-tls has been published as [RFC8323](https://tools.ietf.org/html/rfc8323), 4 more drafts to follow: [cocoa](https://tools.ietf.org/html/draft-ietf-core-cocoa), [links-json](https://tools.ietf.org/html/draft-ietf-core-links-json), [oscore](https://tools.ietf.org/html/draft-ietf-core-object-security), [senml](https://tools.ietf.org/html/draft-ietf-core-senml/).
+
+* CoAP body of work currently composed of the following RFCs:
+  * [RFC 6690](https://datatracker.ietf.org/doc/rfc6690/) Constrained RESTful Environments (CoRE) Link Format.
+  * [RFC 7252](https://datatracker.ietf.org/doc/rfc7252/) The Constrained Application Protocol (CoAP).
+  * [RFC 7390](https://datatracker.ietf.org/doc/rfc7390/) Group Communication for the Constrained Application Protocol (CoAP).
+  * [RFC 7641](https://datatracker.ietf.org/doc/rfc7641/) Observing Resources in the Constrained Application Protocol (CoAP).
+  * [RFC 7959](https://datatracker.ietf.org/doc/rfc7959/) Block-Wise Transfers in the Constrained Application Protocol (CoAP).
+  * [RFC 8075](https://datatracker.ietf.org/doc/rfc8075/) Guidelines for Mapping Implementations: HTTP to the Constrained Application Protocol (CoAP).
+  * [RFC 8132](https://datatracker.ietf.org/doc/rfc8132/) PATCH and FETCH Methods for the Constrained Application Protocol (CoAP).
+  * [RFC 8323](https://tools.ietf.org/html/rfc8323) CoAP over TCP, TLS, and WebSockets.
+
+???
+---
+
+## WG Items
+
+**Representing CoRE Link Format in JSON and CBOR**
+
+[draft-ietf-core-links-json](https://tools.ietf.org/html/draft-ietf-core-links-json-10) still a few DISCUSSes left. RFC 8288 is replacing RFC 5988, that affects RFC 6690 but it is decided to keep using it.
+
+**Object Security for Constrained RESTful Environments (OSCORE)**
+
+[draft-ietf-core-object-security](https://tools.ietf.org/html/draft-ietf-core-object-security-11), suggested to work on a new informational document with usage examples. The request redirect issue affects coap-http proxies in general, httbis chairs suggested to provide support for redirect and core agreed. Minor update v12 fixing DISCUSS in a couple of days. Implementation on Californium ongoing. Multicast OSCORE has been adopted by Fairhair Alliance (yay!).
+
+???
+---
+
+## WG Items
+
+**Congestion Control for CoAP**
+
+[draft-ietf-core-cocoa](https://tools.ietf.org/html/draft-ietf-core-cocoa/) . Improves CoAP Congestion Control and provides guidelines for retransmission timeouts and non-confirmable messages. It also provides a new RTO estimation mechanism based on RFC6298. Few comments need to be addressed by OPSDIR, SECDIR and GEN-ART. [Markku Kojo](https://www.cs.helsinki.fi/u/kojo/) presented experimental results with default CoAP, CoAP over TCP and various versions of the CoCoA draft. The presentation shows cases of congestion collapse depending of number of nodes. While not applicable to many of the current deployments (single-hop vs multi-hop) it suggest actions to be taken on RFC7252 default RTO and COCOA, as well as LPWAN providers.
+
+**Media Types for Sensor Measurement Lists (SenML)**
+
+[draft-ietf-core-senml](https://tools.ietf.org/html/draft-ietf-core-senml/) finished WGLC and needs some remaining minor updates, to be submitted to IESG in December.
+
+???
+---
+
+## WG Items
+
+**Resource Directory**
+
+[draft-ietf-core-resource-directory](https://tools.ietf.org/html/draft-ietf-core-resource-directory/) quite a lot of progress in the last few months. 102 closed comments since editor onboard, [available on the rd repo](https://github.com/core-wg/resource-directory/). Remote interop to be set, interested parties should contact [Christian](christian@amsuess.com). Some core members to provide reviews. Other SDOs to provide feedback and commit to interop.
+
+```c
+    Req: GET coap://[ff02::1]/.well-known/core?rt=core.rd
+    Res: 2.05 Content
+    </rd>;rt="core.rd";ct=40,
+    </rd-lookup/ep>;rt="core.rd-lookup-ep";ct=40,
+    </rd-lookup/res>;rt="core.rd-lookup-res";ct=40,
+    </rd-lookup/gp>;rt="core.rd-lookup-gp";ct=40,
+    </rd-group>;rt="core.rd-group";ct=40
+```
+
+???
+The following example shows an endpoint discovering an RD using this
+interface, thus learning that the directory resource is, in this
+example, at /rd, and that the content-format delivered by the server
+hosting the resource is application/link-format (ct=40).  Note that
+it is up to the RD to choose its RD resource paths.
+---
+
+## WG Items
+
+**CBOR Encoding of Data Modeled with YANG**
+
+[draft-ietf-core-yang-cbor](https://tools.ietf.org/html/draft-ietf-core-yang-cbor/) stable, reviews of YANG to CBOR are needed, otherwise document ready for LC from authors pov.
+
+**CoAP Management Interface**
+
+[draft-ietf-core-comi](https://tools.ietf.org/html/draft-ietf-core-comi/) F-interop public platform to test CoMI implementations available. The proposed SID registry is now online for the initial reviewers Available at <https://comi.space/>
+
+**Publish-Subscribe Broker for CoAP**
+
+[draft-ietf-core-coap-pubsub](https://tools.ietf.org/html/draft-ietf-core-coap-pubsub/) is a bit behind schedule. Good recent feedback from ARM.
+
+
+???
+---
+
+## WG Items
+
+**Dynamic Resource Linking for Constrained RESTful Environments**
+
+[draft-ietf-core-dynlink](https://tools.ietf.org/html/draft-ietf-core-dynlink/)  and draft-ietf-core-interfaces have been in
+limbo for a while.  With a new editor, the remaining editorial issues can be fixed.
+
+**Secure group communication for CoAP**
+
+[draft-ietf-core-oscore-groupcomm](https://tools.ietf.org/html/draft-ietf-core-oscore-groupcomm-01) has undergone several updates. There are currently several implementations one of the open source. Several people in the group volunteer to read the latest version. Adopted by Fairhair.
+
+---
+
+## Other Items
+
+** Pending 202**
+
+[draft-hartke-core-pending](https://tools.ietf.org/html/draft-hartke-core-pending-02)
+needs a response code to map http 202, which can be used in other cases. This draft specifies a new content format, which creates the question of having application-specific state machines to CoAP. Potential use of a new response code with similar semantics at 202.
+
+**Too many requests 4.29**
+
+[draft-keranen-core-too-many-reqs](https://tools.ietf.org/html/draft-keranen-core-too-many-reqs-00) error code 4.29 defined, adoption call done on the list.
+
+???
+---
+
+## Other Items
+
+**Uniform Resource Names for Device Identifiers**
+
+[draft-arkko-core-dev-urn](https://tools.ietf.org/html/draft-arkko-core-dev-urn/) presents a new URN namespace for HW device identifiers (i.e. `urn:dev:mac:0024befffe804ff1`)
+
+**OPC UA Message Transmission Method over CoAP**
+
+[draft-wang-core-opcua-transmission](https://tools.ietf.org/html/draft-wang-core-opcua-transmission/) was presented as a way to map OPC/UA on CoAP.  Discussion touched the issue whether OPC should be doing this or the IETF.  In any case, the authors were encouraged to continue the work, talk to OPC as well and keep IETF involved.
+
+---
+
+## Conclusions
+
+* 4 RFCs on the pipeline. RFC8323 will soon be requested by customers.
+
+* OSCORE: Keep supporting RISE for the OSCORE implementation. Competitive advantage through security and group security.
+
+* Resource Directory: Existing implementations will have to be updated, opportunity for Ericsson to shine within Leshan community. Easy to onboard other OMA folks (Wojek, David, Hannes, Mohammed, ...) on this. Resource Directory implementation needs to be updated.
+
+* Watchout on CoAP protocol negotiation, Mert is coauthor, so he could help.
+
+* CoAP link format additions, there are many and not well understood. Also added to LWM2M v1.2
+
+* Keep track of the work in SUIT, it will impact LWM2M.
+
+<!--
+
+## Personal takeways
+
+* Connections:
+  - Three universities: UDP (chile), UBA (argentina), UC3M (spain). All starting MSc in IoT.
+  - Telco commission from Jordan and Indian Emergency Response team, PoC?
+  - RFC8323 calls for celebration!
+
+-->
+
+    </textarea>
+    <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
+    </script>
+    <script
+    src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
