@@ -229,7 +229,7 @@ layout: false
   * Single points of those concepts (i.e.  Min/Max Value, Current Value)
 * Make those atomic pieces reusable accross domains.
 * Make complex things by first aggregating those resources and then using composition.
-* Intended for URIs, REST protocols. [Model in 
+* Intended for URIs, REST protocols. [Model in
 
 ---
 
@@ -309,7 +309,7 @@ As devices increase in complexity (e.g., from a sensor to an appliance, from a s
 ---
 ## Sample Implementations
 
-* IPSO is supported by default by LWM2M, for example in Contiki, 
+* IPSO is supported by default by LWM2M, for example in Contiki,
 [Leshan](http://www.eclipse.org/leshan/).
 
 * Sample [C package](https://github.com/contiki-os/contiki/tree/master/apps/ipso-objects) for use of IPSO Objects in [Contiki](http://www.contiki-os.org).
@@ -382,13 +382,11 @@ http://jaimejim.github.io/slides/ipsowishi.html#1
 ##Q&A
 
 ## How do you work?
-* We did not have many contributors for v1. I believe vendors are using what's available on device distros (i.e. contiki, mbed, riot). IPSO repository is very open right now, easy to build upon. We have also pushed IPSO in the various OS implementations. 
+* Vendors seem to be using what is available on device distros (i.e. Contiki, Mbed, RIOT). IPSO repository is very open right now, easy to build upon. We have also pushed IPSO in the various OS implementations.
 
 * Traditionally both in IPSO and LWM2M work has been made through a committee. That is necessary only when defining the basic semantics and particularities of a model to achieve some consensus. Once that's achieved the work is more of a collaborative approach through the public repository.
 
- * It will be necessary to have a staging repo and a production repo, the first one to do the changes in the group and the second towards the outside, where users can report issues.
-
-* Doing changes to the model, updates and enhancements is complicated cause it requires consensus and you end up with multiple versions. Version control is needed.
+* It might be necessary to have a staging repo and a production repo, the first one to do the changes in the group and the second towards the outside, where users can report issues.
 
 * Adding new objects is trivial via a PR, we could add multiple validation/verification processes, comment oportunities, etc.
 
@@ -397,8 +395,8 @@ http://jaimejim.github.io/slides/ipsowishi.html#1
 
 ## How far did you get?
 * V1 is on <http://ipso-alliance.github.io/pub/>, supports issue tracking, validation, etc.
-* We do have only a simple data model, we don't have any of the W3C TD features like actions, properties, events. 
-* We also don't use the full features of RFCC6690 with more attributes and link relations. 
+* We do have only a simple data model, we don't have any of the W3C TD features like actions, properties, events.
+* We also don't use the full features of RFCC6690 with more attributes and link relations.
 
 ---
 ##Q&A
