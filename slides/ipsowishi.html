@@ -326,6 +326,8 @@ As devices increase in complexity (e.g., from a sensor to an appliance, from a s
  * **Low-hanging fruit:** Allign IPSO and LWM2M models, add versioning, same     data types, etc. Educate OMA folks in the fact that now we are responsible  for applications too, which are likely to use the same protocol and data    model.
 
  * **More ambicious:** Look into what other SDOs have been doing (i.e. W3C TD    and OCF) and try to converge, support a full featured RFC6690, use media    types for FETCH/PATCH...
+ 
+ 
 ???
 17.03To All:
 http://jaimejim.github.io/slides/ipsowishi.html#1
@@ -419,6 +421,19 @@ http://jaimejim.github.io/slides/ipsowishi.html#1
 * Gaps in the technologies: takes time to add new features (i.e. data types), backwards compatibility will be problematic. At the moment it seems overspecified
 * Simplicity and openness appears to be the key towards adoption.
 * Research work on [Semantic Annotation](https://github.com/t2trg/wishi/blob/master/slides/semantic-patterns.pdf) will be usefull in future iterations of the IPSO Objects.
+
+---
+##Main Takeways
+
+* LWM2M 1.1  = IP + CoAP + Data Model + other (sec, linking, LPWAN...).
+    * If you use IPSO and CoAP you are 90% there.
+
+* Data Model = LWM2M Objects (spec) + IPSO (spec) + Others (non-spec)
+    * Let's develop them as a single body of work.
+
+* OMA is now responsible for management and *applications*.
+    * Please get involved in the appication side too.
+
 
     </textarea>
     <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
