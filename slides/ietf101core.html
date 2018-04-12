@@ -21,8 +21,8 @@
         margin-bottom: 0;
       }
       .remark-slide-content h1 { font-size: 3em; }
-      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
-      .remark-slide-content h3 { font-size: 1.6em; }
+      .remark-slide-content h2 { font-size: 1.5em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.4em; }
       .footnote {
         position: absolute;
         bottom: 3em;
@@ -36,7 +36,7 @@
       }
       code {
         background: #e7e8e2;
-        border-radius: 5px;
+        border-radius: 4px;
       }
       .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; }
       .remark-code-line-highlighted     { background-color: #373832; }
@@ -128,9 +128,7 @@ layout: true
 class: center, middle, inverse
 
 ---
-#**CoRE WG at IETF 101**
-
-##Jaime Jiménez, CoRE WG chair
+#CoRE & SUIT @IETF 101
 
 ###[jaime.jimenez@ericsson.com]
 .footnote[26th March 2018]
@@ -154,27 +152,83 @@ layout: false
 * The IETF Plenary focused on the Future of Internet Access; Jonathan Brewer gave a talk on [coming satellite communications](https://youtu.be/zRF6Trtk290?t=1h41m3s) that is worth watching (5min).
 
 * [ICANN CTO presentation](https://www.youtube.com/watch?v=vyrJF9e6WqM) on the [vulnerabilities of the DNS system](https://www.icann.org/news/blog/why-the-dns-is-broken-in-plain-language) and how to fix them with [DNSSEC](https://tools.ietf.org/html/rfc8145).
-.footnote["I am suprised everyday when I wake up and it still works" - David Conrad, CTO of ICANN on the Internet]
+.footnote[*"I am suprised everyday when I wake up and it still works"* - David Conrad, CTO of ICANN on the Internet & DNS]
 
 
 ???
 ---
 ## Assorted topics
 
-*  Software Updates for Internet of Things ([SUIT](https://datatracker.ietf.org/wg/suit/about/) hackathon was arranged on Saint Patrick's day. Target was to modify a device bootloader to verify a SUIT manifest file, which is firmware metada. Wrote a [SUIT tutorial](https://gist.github.com/jaimejim/3aa9c6e85e82a353c9fa90794c856d89) for the Freescale FRDM-K64F board. Likely to be added to LWM2M (> 1.1)
+* Trusted Execution Environment Provisioning ([TEEP](https://datatracker.ietf.org/wg/teep/about/)) met for the first time, they try to standardize the provisioning of applications into secure areas of certain computer processors.
 
-* Trusted Execution Environment Provisioning ([TEEP](https://datatracker.ietf.org/wg/teep/about/)) met for the first time, they try to standardize the provisioning of applications into secure areas of certain computer processors
+* Work on Semantic Interop continues. Preparing the new [IPSO charter](https://github.com/omadm/so/blob/master/charter.md) within OMA, focus will be on alligning both and on onboarding new members like KDDI. [WISHI participants](https://github.com/t2trg/wishi/wiki/IETF-101-Hackathon) met also during IETF101 and later on with OCF.
 
-* Work on Semantic Interop continues. I am writing the new IPSO charter within OMA, focus will be on alligning both and on onboarding the new members (KDDI, etc). [WISHI participants](https://github.com/t2trg/wishi/wiki/IETF-101-Hackathon) met also during IETF101.
+* OMA is finishing the [v1.1 of the LWM2M Specification](http://104.237.129.77/#/). We have had about 215 pull requests since September and we are currently finishing the consistency review.
 
-* [TLS 1.3](https://tools.ietf.org/html/draft-ietf-tls-tls13-28) will soon be an RFC, more info [here](http://www.theregister.co.uk/2018/03/23/tls_1_3_approved_ietf/).
+* [TLS 1.3](https://tools.ietf.org/html/draft-ietf-tls-tls13-28) is in the RFC Editor Queue, more news about it [here](http://www.theregister.co.uk/2018/03/23/tls_1_3_approved_ietf/).
+
+???
+---
+template: inverse
+
+# Software Updates for Internet of Things (suit)
+
+???
+---
+layout: false
+
+##  SUIT WG
+
+- Context
+  - In June 2016 a workshop on [Internet of Things (IoT) Software Update (IOTSU)](https://tools.ietf.org/html/8240) was organized. As an outcome it was established that, although many proprietary firmware update mechanisms are used today, no modern interoperable protocol allows for secure updates to firmware in IoT devices. SUIT was create to fix that.
+
+  - The SUIT WG will provide a firmware update architecture document, one or more manifest format specifications and their implementations.
+
+  - Tight work with silicon vendors and OEMs that develop IoT operating systems.
+
+- Slides: <https://datatracker.ietf.org/meeting/101/session/suit>
+
+- Status Pages: <https://tools.ietf.org/wg/suit/>
+
+- Datatracker: <https://datatracker.ietf.org/wg/suit/documents/>
+
+- Comments and feedback on **<suit@ietf.org>**
+
+???
+---
+layout: false
+
+##  SUIT Hackathon
+
+*  The [hackathon](https://datatracker.ietf.org/meeting/101/materials/slides-101-suit-ietf-101-suit-hackathon-report-01)  was arranged on 🍀 🍺 Saint Patrick's 🍺 🍀.
+* Target was to modify a device bootloader to verify a SUIT manifest file, which is firmware metada.
+
+  1. Create signed manifest. ✔
+  2. Encode it in CBOR. ✔
+  3. COSE signed with ECDSA. ✔
+  4. Manifest & firmware transport to IoT board via UART. ✔
+  5. Bootloader verifies received manifest and installs new firmware. ✘
+
+* We wrote a [SUIT tutorial](https://gist.github.com/jaimejim/3aa9c6e85e82a353c9fa90794c856d89) for the Freescale FRDM-K64F board.
+* The SUIT work is likely to be added to later versions of LWM2M.
 
 
 ???
 ---
+template: inverse
 
-## CoRE Overview
+# Constrained RESTful Environments (core)
 
+???
+---
+layout: false
+
+## CoRE WG
+
+- Context
+  - CoRE provides a framework for resource-oriented applications intended to run on constrained IP networks.
+  - Their main output is the Constrained Application Protocol (CoAP) and its extensions.
+  - CoAP is the Application Protocol used in LWM2M and other SDOs.
 
 - Slides: <https://datatracker.ietf.org/meeting/101/session/core>
 
@@ -194,7 +248,7 @@ layout: false
 ## CoRE Overview II
 
 
-* Progressing, draft-ietf-coap-tcp-tls has been published as [RFC8323](https://tools.ietf.org/html/rfc8323), 4 more drafts to follow: [cocoa](https://tools.ietf.org/html/draft-ietf-core-cocoa), [links-json](https://tools.ietf.org/html/draft-ietf-core-links-json), [oscore](https://tools.ietf.org/html/draft-ietf-core-object-security), [senml](https://tools.ietf.org/html/draft-ietf-core-senml/).
+* Progressing, draft-ietf-coap-tcp-tls has been published as [RFC8323](https://tools.ietf.org/html/rfc8323), 4 more drafts to follow: [cocoa](https://tools.ietf.org/html/draft-ietf-core-cocoa), [links-json](https://tools.ietf.org/html/draft-ietf-core-links-json), [oscore](https://tools.ietf.org/html/draft-ietf-core-object-security) ///, [senml](https://tools.ietf.org/html/draft-ietf-core-senml/) ///.
 
 * CoAP body of work currently composed of the following RFCs:
   * [RFC 6690](https://datatracker.ietf.org/doc/rfc6690/) Constrained RESTful Environments (CoRE) Link Format.
@@ -209,7 +263,7 @@ layout: false
 ???
 ---
 
-## WG Items
+## CoRE WG
 
 **Representing CoRE Link Format in JSON and CBOR**
 
@@ -217,16 +271,21 @@ layout: false
 
 **Object Security for Constrained RESTful Environments (OSCORE)**
 
-[draft-ietf-core-object-security](https://tools.ietf.org/html/draft-ietf-core-object-security-11), suggested to work on a new informational document with usage examples. The request redirect issue affects coap-http proxies in general, httbis chairs suggested to provide support for redirect and core agreed. Minor update v12 fixing DISCUSS in a couple of days. Implementation on Californium ongoing. Multicast OSCORE has been adopted by Fairhair Alliance (yay!).
+[draft-ietf-core-object-security](https://tools.ietf.org/html/draft-ietf-core-object-security-11), suggested to work on a new informational document with usage examples. The request redirect issue affects coap-http proxies in general, httbis chairs suggested to provide support for redirect and core agreed.
+  - Minor update v12 fixing DISCUSS in a couple of days.
+  - Implementation on Californium ongoing.
+  - Multicast OSCORE has been adopted by Fairhair Alliance (yay!).
 
 ???
 ---
 
-## WG Items
+## CoRE WG
 
 **Congestion Control for CoAP**
 
-[draft-ietf-core-cocoa](https://tools.ietf.org/html/draft-ietf-core-cocoa/) . Improves CoAP Congestion Control and provides guidelines for retransmission timeouts and non-confirmable messages. It also provides a new RTO estimation mechanism based on RFC6298. Few comments need to be addressed by OPSDIR, SECDIR and GEN-ART. [Markku Kojo](https://www.cs.helsinki.fi/u/kojo/) presented experimental results with default CoAP, CoAP over TCP and various versions of the CoCoA draft. The presentation shows cases of congestion collapse depending of number of nodes. While not applicable to many of the current deployments (single-hop vs multi-hop) it suggest actions to be taken on RFC7252 default RTO and COCOA, as well as LPWAN providers.
+[draft-ietf-core-cocoa](https://tools.ietf.org/html/draft-ietf-core-cocoa/) . Improves CoAP Congestion Control and provides guidelines for retransmission timeouts and non-confirmable messages. It also provides a new RTO estimation mechanism based on RFC6298. Few comments need to be addressed by OPSDIR, SECDIR and GEN-ART.
+  - [Markku Kojo](https://www.cs.helsinki.fi/u/kojo/) presented experimental results with default CoAP, CoAP over TCP and various versions of the CoCoA draft. The presentation shows cases of congestion collapse depending of number of nodes.
+  - Not applicable to many of the current deployments (single-hop vs multi-hop) it suggest actions to be taken on RFC7252 default RTO and COCOA, as well as LPWAN providers.
 
 **Media Types for Sensor Measurement Lists (SenML)**
 
@@ -235,31 +294,20 @@ layout: false
 ???
 ---
 
-## WG Items
+## CoRE WG
 
 **Resource Directory**
 
-[draft-ietf-core-resource-directory](https://tools.ietf.org/html/draft-ietf-core-resource-directory/) quite a lot of progress in the last few months. 102 closed comments since editor onboard, [available on the rd repo](https://github.com/core-wg/resource-directory/). Remote interop to be set, interested parties should contact [Christian](christian@amsuess.com). Some core members to provide reviews. Other SDOs to provide feedback and commit to interop.
+* [draft-ietf-core-resource-directory](https://tools.ietf.org/html/draft-ietf-core-resource-directory-13) 102 closed comments since editor onboard, available on the [rd repo](https://github.com/core-wg/resource-directory/).
+  - Remote interop to be set next week, interested parties should contact [Christian](christian@amsuess.com).
+  - Other SDOs to provide feedback and commit to interop.
 
-```c
-    Req: GET coap://[ff02::1]/.well-known/core?rt=core.rd
-    Res: 2.05 Content
-    </rd>;rt="core.rd";ct=40,
-    </rd-lookup/ep>;rt="core.rd-lookup-ep";ct=40,
-    </rd-lookup/res>;rt="core.rd-lookup-res";ct=40,
-    </rd-lookup/gp>;rt="core.rd-lookup-gp";ct=40,
-    </rd-group>;rt="core.rd-group";ct=40
-```
+* [draft-ietf-core-rd-dns-sd](https://tools.ietf.org/html/draft-ietf-core-rd-dns-sd-01) not so much progress since the last meeting. Draft is to be discussed in the DNSSD WG.
 
 ???
-The following example shows an endpoint discovering an RD using this
-interface, thus learning that the directory resource is, in this
-example, at /rd, and that the content-format delivered by the server
-hosting the resource is application/link-format (ct=40).  Note that
-it is up to the RD to choose its RD resource paths.
 ---
 
-## WG Items
+## CoRE WG
 
 **CBOR Encoding of Data Modeled with YANG**
 
@@ -269,77 +317,49 @@ it is up to the RD to choose its RD resource paths.
 
 [draft-ietf-core-comi](https://tools.ietf.org/html/draft-ietf-core-comi/) F-interop public platform to test CoMI implementations available. The proposed SID registry is now online for the initial reviewers Available at <https://comi.space/>
 
-**Publish-Subscribe Broker for CoAP**
+**Publish-Subscribe Broker for CoAP ///**
 
 [draft-ietf-core-coap-pubsub](https://tools.ietf.org/html/draft-ietf-core-coap-pubsub/) is a bit behind schedule. Good recent feedback from ARM.
-
 
 ???
 ---
 
-## WG Items
+## CoRE WG
 
 **Dynamic Resource Linking for Constrained RESTful Environments**
 
-[draft-ietf-core-dynlink](https://tools.ietf.org/html/draft-ietf-core-dynlink/)  and draft-ietf-core-interfaces have been in
-limbo for a while.  With a new editor, the remaining editorial issues can be fixed.
+[draft-ietf-core-dynlink](https://tools.ietf.org/html/draft-ietf-core-dynlink/)  and draft-ietf-core-interfaces have been in limbo for a while.  With a new editor, the remaining editorial issues can be fixed.
 
-**Secure group communication for CoAP**
+**Secure group communication for CoAP ///**
 
 [draft-ietf-core-oscore-groupcomm](https://tools.ietf.org/html/draft-ietf-core-oscore-groupcomm-01) has undergone several updates. There are currently several implementations one of the open source. Several people in the group volunteer to read the latest version. Adopted by Fairhair.
 
 ---
 
-## Other Items
+## CoRE WG
 
-** Pending 202**
+** Pending 202 ///?**
 
 [draft-hartke-core-pending](https://tools.ietf.org/html/draft-hartke-core-pending-02)
 needs a response code to map http 202, which can be used in other cases. This draft specifies a new content format, which creates the question of having application-specific state machines to CoAP. Potential use of a new response code with similar semantics at 202.
 
-**Too many requests 4.29**
+**Too many requests 4.29 ///**
 
 [draft-keranen-core-too-many-reqs](https://tools.ietf.org/html/draft-keranen-core-too-many-reqs-00) error code 4.29 defined, adoption call done on the list.
 
 ???
 ---
 
-## Other Items
+## CoRE WG
 
-**Uniform Resource Names for Device Identifiers**
+**Uniform Resource Names for Device Identifiers ///**
 
-[draft-arkko-core-dev-urn](https://tools.ietf.org/html/draft-arkko-core-dev-urn/) presents a new URN namespace for HW device identifiers (i.e. `urn:dev:mac:0024befffe804ff1`)
+[draft-ietf-core-dev-urn](https://tools.ietf.org/html/draft-ietf-core-dev-urn-01) feedback needed on the current version, the author will verify offline the implications of this draft on other SDOs.
 
 **OPC UA Message Transmission Method over CoAP**
 
 [draft-wang-core-opcua-transmission](https://tools.ietf.org/html/draft-wang-core-opcua-transmission/) was presented as a way to map OPC/UA on CoAP.  Discussion touched the issue whether OPC should be doing this or the IETF.  In any case, the authors were encouraged to continue the work, talk to OPC as well and keep IETF involved.
 
-
-<!---
-## Conclusions
-
-* 4 RFCs on the pipeline. RFC8323 will soon be requested by customers.
-
-* OSCORE: Keep supporting RISE for the OSCORE implementation. Competitive advantage through security and group security.
-
-* Resource Directory: Existing implementations will have to be updated, opportunity for Ericsson to shine within Leshan community. Easy to onboard other OMA folks (Wojek, David, Hannes, Mohammed, ...) on this. Resource Directory implementation needs to be updated.
-
-* Watchout on CoAP protocol negotiation, Mert is coauthor, so he could help.
-
-* CoAP link format additions, there are many and not well understood. Also added to LWM2M v1.2
-
-* Keep track of the work in SUIT, it will impact LWM2M.
-
-
-## Personal takeways
-
-* RFC8323 calls for celebration!
-* Connections:
-  - UC3M (Spain) is starting a MSc in IoT. The professor sent me their planned coursers for feedback. Potential to get good students and collaborations, just like the one we have ongoing in 5G.
-  - UDP (Chile) would be interested in doing some PoC with Ericsson. They have lots of copper mines and something like the [Smart Rock Bolt](https://www.3dincites.com/2016/05/ipso-challenge-update-the-smart-rock-bolt-success-story/) would be useful for them.
-  - UBA (Argentina) is starting their IoT master too. They’d be interested on invited lecturers and tutorials.
-  - Telco commission from Jordan and Indian Emergency Response team, PoC?
---->
     </textarea>
     <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
     </script>
