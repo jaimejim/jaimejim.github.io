@@ -203,7 +203,7 @@ layout: false
 *  The [hackathon](https://datatracker.ietf.org/meeting/101/materials/slides-101-suit-ietf-101-suit-hackathon-report-01)  was arranged on 🍀 🍺 Saint Patrick's 🍺 🍀.
 * Target was to modify a device bootloader to verify a SUIT manifest file, which is firmware metada.
 
-  1. Create signed manifest. ✔
+  1. [Create signed manifest](https://github.com/ARMmbed/suit-manifest-generator). ✔
   2. Encode it in CBOR. ✔
   3. COSE signed with ECDSA. ✔
   4. Manifest & firmware transport to IoT board via UART. ✔
@@ -284,8 +284,8 @@ layout: false
 **Congestion Control for CoAP**
 
 [draft-ietf-core-cocoa](https://tools.ietf.org/html/draft-ietf-core-cocoa/) . Improves CoAP Congestion Control and provides guidelines for retransmission timeouts and non-confirmable messages. It also provides a new RTO estimation mechanism based on RFC6298. Few comments need to be addressed by OPSDIR, SECDIR and GEN-ART.
-  - [Markku Kojo](https://www.cs.helsinki.fi/u/kojo/) presented experimental results with default CoAP, CoAP over TCP and various versions of the CoCoA draft. The presentation shows cases of congestion collapse depending of number of nodes.
-  - Not applicable to many of the current deployments (single-hop vs multi-hop) it suggest actions to be taken on RFC7252 default RTO and COCOA, as well as LPWAN providers.
+  - [Markku Kojo](https://www.cs.helsinki.fi/u/kojo/) presented experimental results with default CoAP, CoAP over TCP and various versions of the CoCoA draft ([slide 97](https://datatracker.ietf.org/meeting/101/materials/slides-101-core-consolidated-slides-10)). The presentation shows cases of congestion collapse depending of number of nodes.
+  - Not applicable to many of the current deployments (single-hop vs multi-hop) it suggests actions to be taken on RFC7252 and COCOAs RTOs.
 
 **Media Types for Sensor Measurement Lists (SenML)**
 
