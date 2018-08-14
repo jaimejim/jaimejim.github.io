@@ -120,9 +120,7 @@ PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 
 ```
 
-
-
-```bash
+``` vim
 # .vimrc
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -273,9 +271,9 @@ let g:airline#extensions#tabline#enabled = 1
 
 ```
 
-``` bash
+``` sh
 
-ejajimn@EMB-918HFH01:~/Dropbox/Mackup$ brew list
+:~/$ brew list
 autojump	gdbm		hub		lynx		p11-kit		tig
 bash-completion	gettext		icu4c		mackup		python		tree
 cask		ghi		libffi		nettle		python@2	wget
