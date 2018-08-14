@@ -1,5 +1,5 @@
 ---
-title: "Vimrc and Bash Profiles Setup"
+title: "Vim and Bash Profiles Setup"
 layout: post
 date: 2018-08-14 18:14
 image: /assets/images/disaster.jpg
@@ -14,9 +14,8 @@ star: true
 
 A month ago my Mac SSD drive died due to a water spill. Apparently this is a common problem that will manifest itself even if in a [delayed fashion](https://www.ifixit.com/Wiki/MacBook_water_damage_-_The_definitive_guide). That is, if the spill does not automatically destroy your computer, like it did to mine, the corrosion process will occur when you combine electricity, metal, water and oxygen. it might take a week or two, but it does happen.
 
-In my case it immediately killed the SSD drive (which is exposed in Mac) and forced me to replace it. While [Time Machine](https://en.wikipedia.org/wiki/Time_Machine_(macOS) works pretty well, in my case I hadn't set it up properly and *Back up while on battery power was not enabled*, thus losing few months worth of material. Nevertheless this was useful to do a fresh installation and reset of common configuration files like **.vimrc**, **.bash_profiles**. I thought of leaving them here in case someone is curious, together with the "must install" brew formulae.
+In my case it immediately killed the SSD drive (which is exposed in Mac) and forced me to replace it. While [Time Machine](https://en.wikipedia.org/wiki/Time_Machine_(macOS)) works pretty well, in my case I hadn't set it up properly and "*Back up while on battery power was not enabled*", thus losing few months worth of material. Nevertheless this was useful to do a fresh installation and reset of common configuration files like **.vimrc**, **.bash_profiles**. I thought of leaving them here in case someone is curious, together with the brew formulae I find fundamental:
 
-So here they are:
 
 
 ``` bash
