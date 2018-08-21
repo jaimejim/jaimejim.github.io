@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>IoT Semantic Interop Workshop</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 200;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+
+layout: true
+class: center, middle, inverse
+
+---
+
+#Semantic Interop Workshop
+##Current work
+[jaime.jimenez@ericsson.com]
+.footnote[Friday 21th August 2018]
+
+???
+Get comments on these slides.
+
+---
+
+name: agenda
+layout: false
+
+##High Level topics .red.bold[*]
+1. [Research Output](#slide1)
+1. [Standards](#slide2)
+1. [Internal BU](#slide3)
+1. [Uni Collaboration](#slide4)
+
+.footnote[.red.bold[*] I'll keep it sweet & short!!]
+
+---
+
+name: slide1
+
+##Research Output
+
+###Paper - Submitted
+* ["Automated Discovery of CoAP-enabled IoT devices"](https://www.overleaf.com/read/zqhkptcjmmck).
+
+###RIOT Keynote - September 13-14
+* Give the Keynote at the [RIOT Summit](http://summit.riot-os.org/2018/#speakers).
+
+###SUIT tutorial - WIP
+* [Tutorial](https://git.io/fNYC6) for Software Updates for IoT.
+
+???
+
+---
+
+name: slide2
+
+##Standards
+
+###CoRE & SUIT - Target September
+* Prepare current status presentation and summary after both interim meetings. Similar to that of [IETF 101](http://jaimejim.github.io/slides/ietf101core#1)
+* Offered coauthoring of one of the SUIT drafts.
+* Need to contribute to [gordo](https://github.com/thomas-fossati/gordo)...
+
+###OMA
+* [LWM2M v 1.1 finalized](http://www.openmobilealliance.org/release/LightweightM2M/V1_1-20180612-C/OMA-TS-LightweightM2M_Core-V1_1-20180612-C.html).
+* IPSO (slow progress). **Mapping COSEM and IPSO with Itron**. .red.bold[*]
+* BoD. Common marketing effort for LWM2M.
+
+.footnote[.red.bold[*] Semantic Interop related, potential POC but need /// help]
+
+---
+
+name: slide3
+
+##Internal BU
+
+###Helping internal BUs (i.e. answering questions)
+1. **Itron** / ZIV
+1. Capstone
+1. Vaisala
+1. Orange Belgium
+
+---
+
+name: slide4
+
+##Uni Collaboration - next year?
+
+###UC3M has an IoT master
+* Helped crafting the current curriculum.
+* Future work on giving a lecture (or two).
+
+###Similar efforts
+* Uni Chile, contact through IETF.
+* Buenos Aires, contact through IETF.
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
