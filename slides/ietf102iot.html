@@ -198,11 +198,9 @@ layout: false
 * Manifest could use map instead of array for simpler parsing.
 
 
-.footnote[.red.bold[*] Note:
-```
-alias mbed='docker run -ti -v $(pwd):/mbed:cached mbed-cli'
-docker pull jaim/mbed-cli
-```]
+.footnote[.red.bold[*]
+` docker pull jaim/mbed-cli `. Add the alias to the path. ` alias mbed='docker run -ti -v $(pwd):/mbed:cached mbed-cli' `
+]
 
 ---
 
@@ -297,7 +295,7 @@ Interop should be held before WGLC.
 
 * [draft-ietf-core-senml-fetch](https://tools.ietf.org/html/draft-keranen-core-senml-fetch) found a few reviewers.  Interest
   to be confirmed on the mailing list, in the case of success followed
-  by a call for WG adaption.
+  by a call for WGA.
 
   For stateless forward proxies, there was good interest to explore
   the option of introducing an extended token.  The plan is to realize
