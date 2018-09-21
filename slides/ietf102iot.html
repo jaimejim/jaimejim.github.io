@@ -35,7 +35,7 @@
         background: #e7e8e2;
         border-radius: 5px;
       }
-      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; font-size: 0.7em;}
       .remark-code-line-highlighted     { background-color: #373832; }
       .pull-left {
         float: left;
@@ -138,17 +138,37 @@ layout: false
   * [IETF102 Hackathon](https://www.ietf.org/blog/highlights-ietf-102/)
     - 1000 participants accross many IETF groups.
     - Presentations available at <https://github.com/IETF-Hackathon/ietf102-project-presentations>
-    - Popular vote, [DNS](https://github.com/IETF-Hackathon/ietf102-project-presentations/blob/master/dns_hackathon-presentation.pdf) won, [SUIT](https://github.com/IETF-Hackathon/ietf102-project-presentations/blob/master/hackathon_presentation_suit.pdf) second ✌️
+    - Popular vote: [DNS](https://github.com/IETF-Hackathon/ietf102-project-presentations/blob/master/dns_hackathon-presentation.pdf) won, [SUIT](https://github.com/IETF-Hackathon/ietf102-project-presentations/blob/master/hackathon_presentation_suit.pdf) second ✌️
 
-    <img width="400" align="right" src="https://gist.githubusercontent.com/jaimejim/e0cdba60089bbeba9e84a2a8a79d628f/raw/0e30ad22adb8ce7f6965340d5d1f69a84057266b/board.jpeg">
 
   * SUIT Targets
-    1. Generate manifest.
-    1. Encode in CBOR.
-    1. Sign with COSE.
-    1. Verify it on board.
+    - From the architecture document [draft-ietf-suit-architecture](https://tools.ietf.org/html/draft-ietf-suit-architecture-01)
+  ```c
+           Firmware    +----------+       Firmware   +-----------+
+           Manifest    |          +-+     Manifest   |           +-+
+            +--------->+ Firmware | +<---------------+           | |
+            |          | Server   | |                |  Author   | |
+            |          |          | |                |           | |
+            |          +----------+ |                +-----------+ |
+            v            +----------+                  +-----------+
+       +------------+
+       |Communicator|
+       +------------+         Device            +--------+
+       |        |             Management        |        |
+       | Device |<----------------------------->| Status |
+       |        |                               | Tracker|
+       +--------+                               +--------+
+    Network Operator                          Device Operator
+  ```
 
-  * Detailed write up available <https://git.io/fNYC6>
+???
+  Figure 1 shows the communication architecture where a firmware image
+     is created by an author, and uploaded to a firmware server.  The
+     firmware image/manifest is distributed to the device either in a push
+     or pull manner using the communicator residing on the device.  The
+     device operator keeps track of the process using the status tracker.
+     This allows the device operator to know and control what devices have
+     received an update and which of them are still pending an update.
 
 ---
 
@@ -170,6 +190,8 @@ layout: false
 
 ##SUIT Hackathon - What got done
 
+<img width="350" align="right" src="https://gist.githubusercontent.com/jaimejim/e0cdba60089bbeba9e84a2a8a79d628f/raw/0e30ad22adb8ce7f6965340d5d1f69a84057266b/board.jpeg">
+
   1. Set up development environment for use with new board on multiple OSs.
   MBed was used in this case. RIOT has the imeplementation of SUIT [in their roadmap](https://github.com/RIOT-OS/RIOT/wiki/Roadmap). ✓
 
@@ -180,6 +202,8 @@ layout: false
   1. Sign it. ✓
 
   1. Verify on the device. ✗
+
+  1. Detailed write up available <https://git.io/fNYC6>
 
 ---
 
@@ -199,7 +223,10 @@ layout: false
 
 
 .footnote[.red.bold[*]
-` docker pull jaim/mbed-cli `. Add the alias to the path. ` alias mbed='docker run -ti -v $(pwd):/mbed:cached mbed-cli' `
+```sh
+docker pull jaim/mbed-cli
+alias mbed='docker run -ti -v $(pwd):/mbed:cached mbed-cli'
+```
 ]
 
 ---
