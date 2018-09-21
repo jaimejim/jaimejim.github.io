@@ -219,54 +219,55 @@ docker pull jaim/mbed-cli
 ---
 ##CoRE WG
 
-* In WG
-* In IESG
-*
+<img width="450" align="right" src="https://jaimejim.github.io/temp/core.png">
+
+* Several on IESG review [cocoa](https://tools.ietf.org/html/draft-ietf-core-cocoa), [links-json](https://tools.ietf.org/html/draft-ietf-core-links-json), [oscore](https://tools.ietf.org/html/draft-ietf-core-object-security), [too-many-reqs](https://tools.ietf.org/html/draft-ietf-core-too-many-reqs). No major issues on them, DISCUSS pending on OSCORE.
+
+* SENML is now [RFC8428](https://tools.ietf.org/html/rfc8428) 🎊
 
 ---
 ##CoRE WG
 
-* draft-ietf-core-links-json-10 and draft-ietf-core-cocoa-03 are in
-  IESG processing and are awaiting new versions from the authors.
-  Side meetings at this meeting have made progress addressing some of
-  the open issues from AD and IESG input.
-
-* draft-ietf-core-object-security-13 is in IESG processing and is
+* [draft-ietf-core-object-security](https://tools.ietf.org/html/draft-ietf-core-object-security) is in IESG processing and is
   waiting for a review from Eric Rescorla, with a view to Eric
   clearing the remaining DISCUSS held on the document.  Technical
   Changes resulting from IESG and directorate inputs were discussed.
   Responsible AD Alexey triggered a second IETF last call to cover
   those changes.
 
-* draft-ietf-core-oscore-groupcomm-02 is nearing WG last call. The
-  plan is to progress this independently from the related ACE
-  documents as the membership and group key management can be done by
-  other means (e.g., using a simple REST API).  Before the WGLC
-  another interop should be held (implementation draft then to be
-  published based on outcome of the processing of basic OSCORE).
+* [draft-ietf-core-oscore-groupcomm](https://tools.ietf.org/html/draft-ietf-core-oscore-groupcomm) is nearing WG last call.
+Interop should be held before WGLC.
+
+* [draft-ietf-core-echo-request-tag](https://tools.ietf.org/html/draft-ietf-core-echo-request-tag) requires a few more reviews; no
+  formal dependency but it would be good to finish this approximately
+  on the same timeline as OSCORE.
 
 ---
 ##CoRE WG
 
-* draft-ietf-core-echo-request-tag-02 requires a few more reviews; no
-  formal dependency but it would be good to finish this approximately
-  on the same timeline as OSCORE.
-
-* draft-ietf-core-resource-directory-14 was discussed, with some focus
+* [draft-ietf-core-resource-directory](https://tools.ietf.org/html/draft-ietf-core-resource-directory) was discussed, with some focus
   of the semantics of the incoming (registration) and outgoing
   (lookup) links.  With several implementations becoming available An
-  interop would be next; September/early October time frame is
-  envisioned.  Next step then could be WGLC.
+  interop would be next; **September/early October** time frame is
+  envisioned. Next step then could be WGLC. Updates in the next CoRE interim.
 
-* draft-ietf-core-rd-dns-sd-02 was discussed (and later presented in
-  DNSSD WG as well).  Much of the discussion centered about how the
-  rt= target attribute can be turned into a service type on the DNSSD
-  side.  (Later in the DNSSD meeting, the question came up whether
-  that is the right pairing in the first place.)  All DNSSD service types
-  must be registered (15 ldh characters max); CoRE resource types can
+* [draft-ietf-core-rd-dns-sd](https://tools.ietf.org/html/draft-ietf-core-rd-dns-sd) was discussed (and later presented in
+  DNSSD WG as well).
+
+  **Mapping CoRE Link Attributes to DNS-SD Record Fields**
+
+  Much of the discussion centered about how the
+  [rt= target attribute can be turned into a service type](https://tools.ietf.org/html/draft-ietf-core-rd-dns-sd-02#page-7) on the DNSSD
+  side (Later in the DNSSD meeting, the question came up whether
+  that is the right pairing in the first place.)
+
+  All DNSSD service types must be registered (15 characters max); CoRE resource types can
   be registered (63 characters max) or can be URIs.  Further work on
   this is needed, as is on the pairing of ins= and DNSSD instance
   identifiers.
+
+  Important: DNS labels are limited to 63 bytes in length and the entire Service
+   Name may not exceed 255 bytes.
 
 ---
 ##CoRE WG
@@ -277,61 +278,42 @@ docker pull jaim/mbed-cli
   community; a few more from the CoRE side and maybe another interop
   would be good before WGLC of this cluster, envisioned to close
   before IETF103.  draft-veillette-core-yang-library has a little more
-  time.  As a major technical change it was agreed to always start a
-  yang-cbor tree with a SID delta base of 0.  This has slight
-  performance disadvantages, but makes handling the payloads much
-  less error-prone.
+  time.
 
+  Steps towards new WG, **Yang Of Things (YOT)**.
   The CoRE WG is not the place to develop YANG modules that match this
-  functionality.  A group will initiate the steps toward a new WG,
-  tentatively called Yang Of Things (yot).
+  functionality.
 
-* draft-ietf-core-dev-urn-02 was presented, with a focus on the small
+* [draft-ietf-core-dev-urn](https://tools.ietf.org/html/draft-ietf-core-dev-urn) was presented, with a focus on the small
   changes needed for alignment with OMA LWM2M.  There was some support
   for this alignment in the room.  Jari Arkko will coordinate with OMA
   and report back.
 
-* draft-ietf-core-senml-16 is in AUTH48 as of 2018-07-19, RFC-to-be
-  8428.
-
 * A quick heads up from Roman Danyliw pointed to the 2nd WGLC of DOTS
-  signaling draft-ietf-dots-signal-channel-21, which uses CoAP.
+  signaling [draft-ietf-dots-signal-channel](https://tools.ietf.org/html/draft-ietf-dots-signal-channel), which uses CoAP (found out during SUIT hackathon).
   Interested reviewers were found.
 
 ---
 ##CoRE WG
 
-* draft-keranen-core-senml-fetch-01 found a few reviewers.  Interest
+* [draft-ietf-core-senml-fetch](https://tools.ietf.org/html/draft-keranen-core-senml-fetch) found a few reviewers.  Interest
   to be confirmed on the mailing list, in the case of success followed
   by a call for WG adaption.
 
-* A procedural point about IANA registering of SenML fields was
-  discussed.  If a registrant is not interested in EXI, no attempt
-  should be made to register a new XML/EXI schema name.  Authors to
-  check with IANA whether the schema could be stored with the
-  registration.  As the first exercise of the registry went less than
-  perfectly, AUTH48 to be used to add a couple of clarifying sentences.
-
-* For stateless forward proxies, there was good interest to explore
+  For stateless forward proxies, there was good interest to explore
   the option of introducing an extended token.  The plan is to realize
   (WGLC) or dismiss (revert to separate option, now also called
-  Extended Token) before Bangkok.
+  Extended Token) before Bangkok. .red.bold[*]
 
----
-##CoRE WG
-
-* draft-ietf-core-too-many-reqs-02 has passed WGLC.  Authors will fix
-  typos and then publication will be requested (instead of a second
-  WGLC we will use the IETF last call for any emerging WG comments).
-
-* draft-ietf-core-multipart-ct-01 is ready for WGLC.  As thw WG tends
+* [draft-ietf-core-multipart-ct-01](https://tools.ietf.org/html/draft-ietf-core-multipart-ct) is ready for WGLC.  As thw WG tends
   to think this will be successful, early registration of the
   Content-Format codepoint will now be pursued (following the
   procedure for this).
 
-* draft-bormann-core-proactive-ct-00 received good support.  Next step
+* [draft-bormann-core-proactive-ct-00](https://tools.ietf.org/html/draft-bormann-core-proactive-ct) received good support.  Next step
   is WG adoption call on mailing list.
 
+.footnote[.red.bold[*] Note: Separate extended token discussion internally in Ericsson.]
 
     </textarea>
     <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
