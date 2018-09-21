@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>IETF102, CoRE and SUIT</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 200;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+name:inverse
+layout: true
+class: center, middle, inverse
+
+---
+#IETF102, CoRE and SUIT
+### Jaime Jiménez
+###[jaimejim.github.io]
+.footnote[Friday 21th September 2018]
+
+
+---
+layout: false
+
+##SUIT Hackathon
+
+  * [IETF102 Hackathon](https://www.ietf.org/blog/highlights-ietf-102/)
+    - 1000 participants accross many IETF groups.
+    - Presentations available at <https://github.com/IETF-Hackathon/ietf102-project-presentations>
+    - Popular vote, [DNS](https://github.com/IETF-Hackathon/ietf102-project-presentations/blob/master/dns_hackathon-presentation.pdf) won, [SUIT](https://github.com/IETF-Hackathon/ietf102-project-presentations/blob/master/hackathon_presentation_suit.pdf) second ✌️
+
+    <img width="400" align="right" src="https://gist.githubusercontent.com/jaimejim/e0cdba60089bbeba9e84a2a8a79d628f/raw/0e30ad22adb8ce7f6965340d5d1f69a84057266b/board.jpeg">
+
+  * SUIT Targets
+    1. Generate manifest.
+    1. Encode in CBOR.
+    1. Sign with COSE.
+    1. Verify it on board.
+
+  * Detailed write up available <https://git.io/fNYC6>
+
+---
+
+##SUIT Hackathon - Participants .red.bold[*]
+
+<img width="500" align="right" src="https://gist.githubusercontent.com/jaimejim/e0cdba60089bbeba9e84a2a8a79d628f/raw/0e30ad22adb8ce7f6965340d5d1f69a84057266b/suit.jpg">
+  * Hannes Tschofenig
+  * Jaime Jiménez
+  * <span style="color:blue">Felipe Espinoza</span>
+  * <span style="color:blue">Alexandra Ibarra</span>
+  * <span style="color:red">Thomas Fossatti</span>
+  * <span style="color:red">Bill Silverajan</span>
+  * <span style="color:red">David Waltermire</span>
+  * <span style="color:red">Laurence Lundblade</span>
+
+.footnote[.red.bold[*] <span style="color:blue">First IETF</span> and <span style="color:red">First SUIT Hackathon</span> respectively.]
+
+---
+
+##SUIT Hackathon - What got done
+
+  1. Set up development environment for use with new board on multiple OSs.
+  MBed was used in this case. RIOT has the imeplementation of SUIT [in their roadmap](https://github.com/RIOT-OS/RIOT/wiki/Roadmap). ✓
+
+  1. Generate Manifest (JSON). ✓
+
+  1. Encoding. ✓
+
+  1. Sign it. ✓
+
+  1. Verify on the device. ✗
+
+---
+
+##SUIT Hackathon - Lessons learned
+
+* Making setup for 1st time users easier would be good. A preconfigured environment would be good. .red.bold[*]
+
+* We need to use IDEs for debugging (i.e. [keil uvision](http://www2.keil.com/mdk5/uvision/)) example project or software packs
+
+* New development board works but we bricked 3 boards (potential issue on Macs).
+
+* Getting to a small codesize for the bootloader will be difficult with CBOR and COSE.
+
+* Parsing of CBOR encoded manifest is not straightforward.
+
+* Manifest could use map instead of array for simpler parsing.
+
+
+.footnote[.red.bold[*] Note:
+```
+alias mbed='docker run -ti -v $(pwd):/mbed:cached mbed-cli'
+docker pull jaim/mbed-cli
+```]
+
+---
+
+##CoRE WG
+
+* Video Recordings: [Session 1](https://www.youtube.com/watch?v=2i9VAOJq8LU),
+[Session 2](https://www.youtube.com/watch?v=M0XfeVynCAY)
+
+* [Slides](https://datatracker.ietf.org/meeting/102/materials/slides-102-core-consolidated-slides/)
+
+* [Raw minutes](https://etherpad.tools.ietf.org/p/notes-ietf-102-core?useMonospaceFont=true)
+
+---
+##CoRE WG
+
+* In WG
+* In IESG
+*
+
+---
+##CoRE WG
+
+* draft-ietf-core-links-json-10 and draft-ietf-core-cocoa-03 are in
+  IESG processing and are awaiting new versions from the authors.
+  Side meetings at this meeting have made progress addressing some of
+  the open issues from AD and IESG input.
+
+* draft-ietf-core-object-security-13 is in IESG processing and is
+  waiting for a review from Eric Rescorla, with a view to Eric
+  clearing the remaining DISCUSS held on the document.  Technical
+  Changes resulting from IESG and directorate inputs were discussed.
+  Responsible AD Alexey triggered a second IETF last call to cover
+  those changes.
+
+* draft-ietf-core-oscore-groupcomm-02 is nearing WG last call. The
+  plan is to progress this independently from the related ACE
+  documents as the membership and group key management can be done by
+  other means (e.g., using a simple REST API).  Before the WGLC
+  another interop should be held (implementation draft then to be
+  published based on outcome of the processing of basic OSCORE).
+
+---
+##CoRE WG
+
+* draft-ietf-core-echo-request-tag-02 requires a few more reviews; no
+  formal dependency but it would be good to finish this approximately
+  on the same timeline as OSCORE.
+
+* draft-ietf-core-resource-directory-14 was discussed, with some focus
+  of the semantics of the incoming (registration) and outgoing
+  (lookup) links.  With several implementations becoming available An
+  interop would be next; September/early October time frame is
+  envisioned.  Next step then could be WGLC.
+
+* draft-ietf-core-rd-dns-sd-02 was discussed (and later presented in
+  DNSSD WG as well).  Much of the discussion centered about how the
+  rt= target attribute can be turned into a service type on the DNSSD
+  side.  (Later in the DNSSD meeting, the question came up whether
+  that is the right pairing in the first place.)  All DNSSD service types
+  must be registered (15 ldh characters max); CoRE resource types can
+  be registered (63 characters max) or can be URIs.  Further work on
+  this is needed, as is on the pairing of ins= and DNSSD instance
+  identifiers.
+
+---
+##CoRE WG
+
+* The CoRECONF cluster (new old name for yang-cbor
+  draft-ietf-core-yang-cbor-06, comi draft-ietf-core-comi-03, and sid
+  draft-ietf-core-sid-04) has recently received reviews fro the netmod
+  community; a few more from the CoRE side and maybe another interop
+  would be good before WGLC of this cluster, envisioned to close
+  before IETF103.  draft-veillette-core-yang-library has a little more
+  time.  As a major technical change it was agreed to always start a
+  yang-cbor tree with a SID delta base of 0.  This has slight
+  performance disadvantages, but makes handling the payloads much
+  less error-prone.
+
+  The CoRE WG is not the place to develop YANG modules that match this
+  functionality.  A group will initiate the steps toward a new WG,
+  tentatively called Yang Of Things (yot).
+
+* draft-ietf-core-dev-urn-02 was presented, with a focus on the small
+  changes needed for alignment with OMA LWM2M.  There was some support
+  for this alignment in the room.  Jari Arkko will coordinate with OMA
+  and report back.
+
+* draft-ietf-core-senml-16 is in AUTH48 as of 2018-07-19, RFC-to-be
+  8428.
+
+* A quick heads up from Roman Danyliw pointed to the 2nd WGLC of DOTS
+  signaling draft-ietf-dots-signal-channel-21, which uses CoAP.
+  Interested reviewers were found.
+
+---
+##CoRE WG
+
+* draft-keranen-core-senml-fetch-01 found a few reviewers.  Interest
+  to be confirmed on the mailing list, in the case of success followed
+  by a call for WG adaption.
+
+* A procedural point about IANA registering of SenML fields was
+  discussed.  If a registrant is not interested in EXI, no attempt
+  should be made to register a new XML/EXI schema name.  Authors to
+  check with IANA whether the schema could be stored with the
+  registration.  As the first exercise of the registry went less than
+  perfectly, AUTH48 to be used to add a couple of clarifying sentences.
+
+* For stateless forward proxies, there was good interest to explore
+  the option of introducing an extended token.  The plan is to realize
+  (WGLC) or dismiss (revert to separate option, now also called
+  Extended Token) before Bangkok.
+
+---
+##CoRE WG
+
+* draft-ietf-core-too-many-reqs-02 has passed WGLC.  Authors will fix
+  typos and then publication will be requested (instead of a second
+  WGLC we will use the IETF last call for any emerging WG comments).
+
+* draft-ietf-core-multipart-ct-01 is ready for WGLC.  As thw WG tends
+  to think this will be successful, early registration of the
+  Content-Format codepoint will now be pursued (following the
+  procedure for this).
+
+* draft-bormann-core-proactive-ct-00 received good support.  Next step
+  is WG adoption call on mailing list.
+
+
+    </textarea>
+    <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
+    </script>
+    <script
+    src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
