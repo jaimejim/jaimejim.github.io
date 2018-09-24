@@ -186,6 +186,35 @@ layout: false
 
 .footnote[.red.bold[*] <span style="color:blue">First IETF</span> and <span style="color:red">First SUIT Hackathon</span> respectively.]
 
+???
+
+Vulnerabilities in Internet of Things (IoT) devices have raised the need
+for a secure firmware update mechanism that is also suitable for constrained
+devices. Security experts, researchers, and regulators recommend that all IoT
+devices be equipped with such a mechanism. While there are many proprietary
+firmware update mechanisms in use today, there is no modern interoperable
+approach allowing secure updates to firmware in IoT devices. In June of 2016
+the Internet Architecture Board organized a workshop on 'Internet
+of Things (IoT) Software Update (IOTSU)', and RFC 8240 documents various
+requirements and challenges that are specific to IoT devices.
+
+A firmware update solution consists of several components, including:
+* A mechanism to transport firmware images to compatible devices.
+* A manifest that provides meta-data about the firmware image (such as a
+firmware package identifier, the hardware the package needs to run, and
+dependencies on other firmware packages), as well as cryptographic information
+for protecting the firmware image in an end-to-end fashion.
+* The firmware image itself.
+
+The demo shows:
+1. the standard manifest file as specified by IETF SUIT WG.
+2. the environment CLI installation in Mbed (or RIOT).
+3. The encoding of the manifest in CBOR.
+4. The signing in COSE.
+5. The verification of the manifest in the device.
+
+The device's bootloader verifies the firmware and boots with the new verfied image.
+
 ---
 
 ##SUIT Hackathon - What got done
@@ -293,6 +322,7 @@ Interop should be held before WGLC.
   Important: DNS labels are limited to 63 bytes in length and the entire Service
    Name may not exceed 255 bytes.
 
+??? DNS SD used to locate nearby servers (i.e. printers), can be used with multicast. 
 ---
 ##CoRE WG
 
@@ -329,7 +359,7 @@ Interop should be held before WGLC.
   (WGLC) or dismiss (revert to separate option, now also called
   Extended Token) before Bangkok. .red.bold[*]
 
-* [draft-ietf-core-multipart-ct-01](https://tools.ietf.org/html/draft-ietf-core-multipart-ct) is ready for WGLC.  As thw WG tends
+* [draft-ietf-core-multipart-ct-01](https://tools.ietf.org/html/draft-ietf-core-multipart-ct) is ready for WGLC.  As the WG tends
   to think this will be successful, early registration of the
   Content-Format codepoint will now be pursued (following the
   procedure for this).
@@ -338,6 +368,10 @@ Interop should be held before WGLC.
   is WG adoption call on mailing list.
 
 .footnote[.red.bold[*] Note: Separate extended token discussion internally in Ericsson.]
+
+???  When a client registers to observe a resource for which no
+   representation is available yet, the server may send one or more 2.05
+
 
     </textarea>
     <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
