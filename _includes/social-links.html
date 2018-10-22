@@ -53,6 +53,13 @@
         </a>
     {% endif %}
 
+    {% if site.github %}
+        <a class="link" data-title="gitlab.com/{{ site.gitlab }}" href="https://gitlab.com/{{ site.gitlab }}" target="_blank">
+            <svg class="icon icon-gitlab"><use xlink:href="#icon-gitlab"></use></svg>
+        </a>
+    {% endif %}
+
+
     {% if site.medium %}
         <a class="link" data-title="medium.com/@{{ site.medium }}" href="https://medium.com/@{{ site.medium }}" target="_blank">
             <svg class="icon icon-medium"><use xlink:href="#icon-medium"></use></svg>
