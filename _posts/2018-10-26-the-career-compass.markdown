@@ -17,12 +17,11 @@ Until now I had no way to structure how to explain what **usually** happens in m
 
 ### 1. You are not immortal.
 
-It is hard to grasp when you are in your twenties but let's first start by explaining that life is limited. This is the essential, most important and most underestimated fact that people very early on choose to ignore forever. Usually there are reminders every now and then, when we get sick or when someone passes away, but of course it is not nice to be aware of it.
+It is hard to grasp when you are in your twenties but let's first start by explaining that life is limited. This is the essential, most important and most underestimated fact that people very early on choose to ignore forever. Usually there are reminders every now and then, when we get sick or when someone passes away, but of course it is not nice to be aware of it. 
 
 ![Career lifetime](/assets/images/career/3.png)
 
 A normal career often has two clearly separated objectives: first you **gain competence** in a field (from 20 to 30 years of age) and then you try to **exploit that competence** (30 until -open end-). The time frame varies and of course it depends on the person, but once you start making your own family you tend to take less risks and have many more responsabilities. Moreover, becoming really good at something, so much that someone will pay for your skills, takes time. So switching professions is relatively complicated. You will move either horizontally to a similar role in some other place, make your own business or try to grow in the place you are now.
-
 
 In order to know how to move around, you will need a compass. Students normally have an intuitive sense of what they like and somehow they perceive over time what they are good at. I think it could be useful to do the exercise of writing it down.
 
