@@ -1,7 +1,8 @@
 ---
 title: "Discovering your "Career Compass" ©"
 layout: post
-date: 2018-10-26 08:00
+date: 2018-10-26 13:00
+image: /assets/images/compass.png
 tag:
 - Research
 - Time-saving
