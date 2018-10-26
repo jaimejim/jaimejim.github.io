@@ -34,7 +34,7 @@ I assume in other professions it is similar, developers not only code but they d
 
 ![Simplified work box](/assets/images/career/1.png)
 
-### 3. Create your Compass.
+### 3. Draw your Compass.
 
 Once you know what is it that you do (sigh), a good way to map where are you going is to qualify how competent you are at it. You could use a subset of the population to know that, like your immediate peers in/out of your company or those a bit more skilled in the art you want to learn. You should try to find an objective metric of your competence. If it is in scientific publications then the `hindex` is the right one, if it is in code maybe how self-sufficient you are to achieve some project. Innovation is a bit more fuzzy, but you get the point.
 
