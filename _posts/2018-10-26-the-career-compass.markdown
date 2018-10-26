@@ -11,11 +11,13 @@ blog: true
 star: true
 ---
 
-Every now and then we get [fresh meat](https://youtu.be/Jj90khPuWv8) from the University, usually they are very young master thesis students or PhD candidates that are trying to figure out what it is that big companies do before they move on to the next stage. They usually have no idea whatsoever about what they want to do after their studies, they often have slightly complicated geographical situation - parents are in another country, visa issues, girlfriend abroad... - and they often have no preferred specialization. I am pretty sure they look at some old timers and naively think *"That won't happen to me."*.
+Every now and then we get [fresh meat](https://youtu.be/Jj90khPuWv8) from the University, usually they are very young master thesis students or PhD candidates that are trying to figure out what it is that big companies do before they move on to the next stage. They usually have no idea whatsoever about what they want to do after their studies, they often have slightly complicated geographical situation - parents are in another country, visa issues, girlfriend abroad... - and they often have no preferred specialization. I am pretty sure they look at some old timers and naively think: *"Look at that fossil, that won't happen to me."*.
 
-Until now I had no way to structure how to explain what **usually** happens in most career paths but today, while discussing with some colleagues I figured out what I call *the Career Compass*. I'm pretty sure this has to be explained somewhere in a coaching or a career development book but I'd like to write down what it is about.
+Until now I had no way to structure how to explain what **usually** happens in most career paths but today, and that eventually *they would be like that too*. While discussing with some colleagues I figured out what I will coin *the Career Compass*. I'm pretty sure this has to be explained somewhere in a coaching or a career development book but I'd like to write down what it is about before I forget it.
 
-Let's first start by explaining that life is limited. It is hard to grasp when you are in your twenties, but you are not immortal. The time limit in life is the essential, most important and most underestimated fact that people very early on choose to ignore forever. Usually there are reminders every now and then, when we get sick or when someone passes away, but it is not nice to remember it.
+### 1. You are not immortal.
+
+It is hard to grasp when you are in your twenties but let's first start by explaining that life is limited. This is the essential, most important and most underestimated fact that people very early on choose to ignore forever. Usually there are reminders every now and then, when we get sick or when someone passes away, but of course it is not nice to be aware of it.
 
 ![Career lifetime](/assets/images/career/3.png)
 
@@ -24,7 +26,7 @@ A normal career often has two clearly separated objectives: first you **gain com
 
 In order to know how to move around, you will need a compass. Students normally have an intuitive sense of what they like and somehow they perceive over time what they are good at. I think it could be useful to do the exercise of writing it down.
 
-### 1. Find what is it that you do and simplify.
+### 2. Clear up what is it that you do.
 
 If you take *Research* in Computer Science for example, you could look at the job a researcher does. They only need a computer and a lot of time to think and execute on their ideas. Their output is normally code or some written text. Expanding that a bit we have code used in prototypes mostly, scientific publications in more or less prestigious venues, implementation specifications as standards or guidelines and "innovation" in the form of new ideas or patents. There are other things, like input from peers, presentations, blog posts, maybe networking or other skillsets but the core of the work is around this or derivates from it.
 
@@ -32,7 +34,7 @@ I assume in other professions it is similar, developers not only code but they d
 
 ![Simplified work box](/assets/images/career/1.png)
 
-### 2. Create your Compass.
+### 3. Create your Compass.
 
 Once you know what is it that you do (sigh), a good way to map where are you going is to qualify how competent you are at it. You could use a subset of the population to know that, like your immediate peers in/out of your company or those a bit more skilled in the art you want to learn. You should try to find an objective metric of your competence. If it is in scientific publications then the `hindex` is the right one, if it is in code maybe how self-sufficient you are to achieve some project. Innovation is a bit more fuzzy, but you get the point.
 
