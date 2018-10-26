@@ -17,7 +17,7 @@ Until now I had no way to structure how to explain what **usually** happens in m
 
 ### 1. You are not immortal.
 
-It is hard to grasp when you are in your twenties but let's first start by explaining that life is limited. This is the essential, most important and most underestimated fact that people very early on choose to ignore forever. Usually there are reminders every now and then, when we get sick or when someone passes away, but of course it is not nice to be aware of it. 
+It is hard to grasp when you are in your twenties but let's first start by explaining that life is limited. This is the essential, most important and most underestimated fact that people very early on choose to ignore forever. Usually there are reminders every now and then, when we get sick or when someone passes away, but of course it is not nice to be aware of it.
 
 ![Career lifetime](/assets/images/career/3.png)
 
@@ -27,7 +27,7 @@ In order to know how to move around, you will need a compass. Students normally 
 
 ### 2. Clear up what is it that you do.
 
-If you take *Research* in Computer Science for example, you could look at the job a researcher does. They only need a computer and a lot of time to think and execute on their ideas. Their output is normally code or some written text. Expanding that a bit we have code used in prototypes mostly, scientific publications in more or less prestigious venues, implementation specifications as standards or guidelines and "innovation" in the form of new ideas or patents. There are other things, like input from peers, presentations, blog posts, maybe networking or other skillsets but the core of the work is around this or derivates from it.
+If you take *Research* in Computer Science for example, you could look at the job researchers do. They only need a computer and a lot of time to think and execute on their ideas. Their output is normally code or some written text. Expanding that a bit we have code used in prototypes mostly, scientific publications in more or less prestigious venues, implementation specifications as standards or guidelines and "innovation" in the form of new ideas or patents. There are other things, like input from peers, presentations, blog posts, maybe networking or other skillsets but the core of the work is around this or derivates from it.
 
 I assume in other professions it is similar, developers not only code but they do architecture and design, testing, prototyping, tooling, etc. In other jobs your time matters but you need large sums of money to make it happen, which is important when it comes to the input. Often some professions are linear and they only have one career progression or no progression at all if it is exactly the same.
 
