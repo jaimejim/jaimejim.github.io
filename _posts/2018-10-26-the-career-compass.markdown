@@ -45,3 +45,5 @@ Once you connect the dots and colour the space an arrow would appear and show yo
 ![The Career Compass ©](/assets/images/career/2.png)
 
 You might find out that perhaps it is time to complete change scenery. Many people do change professions and, although it takes time, it is entirely possible. It is particularly easy in your *gaining competence* part of your life, changing will be simple and easy, as you carry no baggage and have no responsabilities.
+
+**PS:** Apparently there is something called skill radar that is very similar to this thing. Anyways, the process is probably very similar.
