@@ -17,9 +17,10 @@ Until now I had no way to structure how to explain what **usually** happens in m
 
 Let's first start by explaining that life is limited. It is hard to grasp when you are in your twenties, but you are not immortal. The time limit in life is the essential, most important and most underestimated fact that people very early on choose to ignore forever. Usually there are reminders every now and then, when we get sick or when someone passes away, but it is not nice to remember it.
 
+![Career lifetime](/assets/images/career/3.png)
+
 A normal career often has two clearly separated objectives: first you **gain competence** in a field (from 20 to 30 years of age) and then you try to **exploit that competence** (30 until -open end-). The time frame varies and of course it depends on the person, but once you start making your own family you tend to take less risks and have many more responsabilities. Moreover, becoming really good at something, so much that someone will pay for your skills, takes time. So switching professions is relatively complicated. You will move either horizontally to a similar role in some other place, make your own business or try to grow in the place you are now.
 
-![Career lifetime](/assets/images/career/3.png)
 
 In order to know how to move around, you will need a compass. Students normally have an intuitive sense of what they like and somehow they perceive over time what they are good at. I think it could be useful to do the exercise of writing it down.
 
@@ -39,8 +40,9 @@ Once you grade it `0..10` just place it in a compass whose coordinates are the t
 
 Once you connect the dots and colour the space an arrow would appear and show you the right path for you. This will show what you are competent at and what you can improve. It can be that you feel you already maximized all the skills and lack a clear goal in your current role, then maybe it is time to try something else. It could also show that you are definitely lacking on an important skills which is expected on your current role, then maybe you can start improving on it. Or it might show that you really love to do some thing in particular and that you should move on to a further specialization in that path. It might be that you are a well-round professional in your current role, so you can just periodically repeat the exercise to know how is the ground where you are standing.
 
+![The Career Compass ©](/assets/images/career/2.png)
+
 If you find out it is time to change then just do it. If you are on your *gaining competence* part of your life, changing will be simple and easy, as you carry no baggage and have no responsabilities. However since again, time is limited, realistically you will have fewer shots at making such changes later in time without more complications.
 
-![The Career Compass ©](/assets/images/career/2.png)
 
 At the end of the whole thing you die, so don't get too stressed about it anyways.
