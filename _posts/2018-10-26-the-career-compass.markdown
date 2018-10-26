@@ -1,5 +1,5 @@
 ---
-title: "Discovering your career compass"
+title: "Discovering your "Career Compass" ©"
 layout: post
 date: 2018-10-26 08:00
 tag:
