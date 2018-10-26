@@ -1,7 +1,7 @@
 ---
 title: "Discovering your career compass"
 layout: post
-date: 2017-01-20 08:00
+date: 2018-10-26 08:00
 tag:
 - Research
 - Time-saving
@@ -43,4 +43,4 @@ If you find out it is time to change then just do it. If you are on your *gainin
 
 ![The Career Compass ©](/assets/images/career/2.png)
 
-At the end of the whole thing you die, so don't get too stressed about it anyways. 
+At the end of the whole thing you die, so don't get too stressed about it anyways.
