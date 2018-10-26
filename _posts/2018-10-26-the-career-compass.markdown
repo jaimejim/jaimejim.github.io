@@ -28,9 +28,9 @@ In order to know how to move around, you will need a compass. Students normally 
 
 ### 2. Clear up what is it that you do.
 
-If you take *Research* in Computer Science for example, you could look at the job researchers do. They only need a computer and a lot of time to think and execute on their ideas. Their output is normally code or some written text. Expanding that a bit we have code used in prototypes mostly, scientific publications in more or less prestigious venues, implementation specifications as standards or guidelines and "innovation" in the form of new ideas or patents. There are other things, like input from peers, presentations, blog posts, maybe networking or other skillsets but the core of the work is around this or derivates from it.
+If you take *Research* in Computer Science for example, you could look at the job researchers do. They only need a computer and a lot of time to think and execute on their ideas. Their output is normally code or some written text. Expanding that a bit we have code used mostly in prototypes, scientific publications in more or less prestigious venues, implementation specifications as standards or guidelines and "innovation" in the form of new ideas or patents. There are other things, like input from peers, presentations, blog posts, maybe networking or other skillsets but the core of the work is around this or derivates from it.
 
-I assume in other professions it is similar, developers not only code but they do architecture and design, testing, prototyping, tooling, etc. In other jobs your time matters but you need large sums of money to make it happen, which is important when it comes to the input. Often some professions are linear and they only have one career progression or no progression at all if it is exactly the same.
+I assume in other professions it is similar, developers not only code but they do architecture and design, testing, prototyping, tooling, etc. In other jobs your time matters but you need large sums of money to make it happen, which is important when it comes to the input. Often some professions are linear and they only have one career progression or no progression at all if it is exactly the same always.
 
 ![Simplified work box](/assets/images/career/1.png)
 
@@ -38,13 +38,10 @@ I assume in other professions it is similar, developers not only code but they d
 
 Once you know what is it that you do (sigh), a good way to map where are you going is to qualify how competent you are at it. You could use a subset of the population to know that, like your immediate peers in/out of your company or those a bit more skilled in the art you want to learn. You should try to find an objective metric of your competence. If it is in scientific publications then the `hindex` is the right one, if it is in code maybe how self-sufficient you are to achieve some project. Innovation is a bit more fuzzy, but you get the point.
 
-Once you grade it `0..10` just place it in a compass whose coordinates are the things that are your differentiated output; the one that would lead to different career paths. In the case of research it would be: publications towards an academic career, specs/standards towards an standardisation role, patents and innovation towards *possibly* making your own business, coding towards specialising in development. You could add non-technical paths or other different professions too.
+Once you grade it `0..10` just place it in a compass whose coordinates are the things that are your differentiated output; the one that would lead to different career paths. In the case of research it could be: publications towards an **academic** career, specs/standards towards an **standardisation** role, patents and innovation towards *possibly* making your **own business**, coding towards specialising in **development**. You could add non-technical paths or other different professions too.
 
 Once you connect the dots and colour the space an arrow would appear and show you the right path for you. This will show what you are competent at and what you can improve. It can be that you feel you already maximized all the skills and lack a clear goal in your current role, then maybe it is time to try something else. It could also show that you are definitely lacking on an important skills which is expected on your current role, then maybe you can start improving on it. Or it might show that you really love to do some thing in particular and that you should move on to a further specialization in that path. It might be that you are a well-round professional in your current role, so you can just periodically repeat the exercise to know how is the ground where you are standing.
 
 ![The Career Compass ©](/assets/images/career/2.png)
 
-If you find out it is time to change then just do it. If you are on your *gaining competence* part of your life, changing will be simple and easy, as you carry no baggage and have no responsabilities. However since again, time is limited, realistically you will have fewer shots at making such changes later in time without more complications.
-
-
-At the end of the whole thing you die, so don't get too stressed about it anyways.
+You might find out that perhaps it is time to complete change scenery. Many people do change professions and, although it takes time, it is entirely possible. It is particularly easy in your *gaining competence* part of your life, changing will be simple and easy, as you carry no baggage and have no responsabilities.
