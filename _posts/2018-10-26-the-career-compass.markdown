@@ -47,4 +47,4 @@ Once you connect the dots and colour the space an arrow would appear and show yo
 
 ![The Career Compass ©](/assets/images/career/2.png)
 
-You might find out that perhaps it is time to complete change scenery. Many people do change professions and, although it takes time, it is of course possible. It is also the right thing to do if you feel you are stalled. Many of the happiest and most successful people I have met had an [inflection point](https://en.wikipedia.org/wiki/Inflection_point) in their lives that pushed them to do something new.
+You might find out that perhaps it is time for a complete change of scenery. Many people do change professions and, although it takes time, it is of course possible. It is also the right thing to do if you feel you are stalled. Many of the happiest and most successful people I have met had an [inflection point](https://en.wikipedia.org/wiki/Inflection_point) in their lives that pushed them to do something new.
