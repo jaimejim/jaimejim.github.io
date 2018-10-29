@@ -20,14 +20,13 @@ Of course, do not take this as written in stone, as it varies from person to per
 
 ### 1. Time is limited.
 
-It is hard to grasp when you are in your twenties but this is the essential, most important and most underestimated fact that people very early on choose to ignore forever. Usually there are reminders every now and then, when we get sick or when someone passes away, but of course it is not nice to be aware of it.
+Most people do but please **don't take this point negatively** and don't get depressed by it. It is hard to grasp when you are in your twenties but the essential, most important and most underestimated fact that people very early on choose to ignore forever is that time is limited.
 
 ![Career lifetime](/assets/images/career/3.png)
 
-A normal career often has two clearly separated objectives: first you *gain competence* in a field (mostly in your twenties) and then you try to *exploit that competence* (30 until -open end-). You should always be learning and it is a warning sign if you are not. Becoming really good at something, so much that someone will pay for your skills, takes time. Switching professions can get complicated. That's why many people move either horizontally to a similar role in some other place, make their own business or try to grow in the place they are now. If you change to a radically new field, it can usually take few years to become competent in it. Moreover once you start making your own family you tend to take less risks and acquire more responsabilities. **Don't take this point negatively**, I am just explaining how things develop for many, maybe most people.
+An average career often has two clearly separated parts: first you *gain competence* in a field (mostly in your twenties) and then you try to *exploit that competence* (30 until -open end-). With this I don't mean that you are not learning after 30 but perhaps you do with less intensity. Becoming really good at something, so much that someone will pay for your skills, takes time that's why switching professions (from physicist to pianist) can get complicated. That's why many people move either horizontally to a similar role in some other place, make their own business or try to grow in the place they are now. If you change to a radically new field, it can usually take few years to become competent in it so often people start with it as a hobby. Needless to say, once you start making your own family you tend to take less risks and acquire more responsabilities.
 
 In order to know how to move around, you will need to know how is the ground where you are standing, and how do you compare to the concurrence. Students normally have an intuitive sense of what they like and somehow they perceive over time what they are good at. I think it could be useful to do the exercise of writing it down.
-
 
 ### 2. Clear up what is it that you want to do.
 
