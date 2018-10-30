@@ -20,13 +20,13 @@ Of course, do not take this as written in stone, as it varies from person to per
 
 ### 1. Time is limited.
 
-**Please don't take this point negatively.** Most people who have read this blog post have gotten depressed by this point and explicitly told me so, they may also disagree with the content but I think that for someone who is starting to work this is very important information. The reason is that it is hard to grasp that time is limited when you are in your twenties. I find it an essential, most important and most underestimated fact that people very early on choose to ignore forever.
+**Please don't take this point negatively.** Most people who have read this blog post have gotten depressed by this point and explicitly told me so, they may also disagree with the content but I think that for someone who is starting to work this is very important information. The reason is that it is hard to grasp that time is limited when you are in your twenties. I find this the essential, most important and most underestimated fact that people very early on choose to ignore forever.
 
 ![Career lifetime](/assets/images/career/3.png)
 
 An average career often has two clearly separated parts: first you *gain competence* in a field (mostly in your twenties) and then you try to *exploit that competence* (30 until -open end-). With this I don't mean that you are not learning after 30 but perhaps you do with less dedication cause you also have to produce something in your job.
 
-it takes time to be good at something, specially if you have to be so good that someone will pay for your skills. That's why switching professions - like from particle physicist to pianist - can get complicated. That's why many people either move horizontally to a similar role in some other place, make their own business or try to grow in the place they are now. If you change to a radically new field, it can usually take few years to become competent in it so often people start with it as a hobby. Needless to say, once you start making your own family you tend to take less risks and acquire more responsabilities.
+It takes time to be good at something, specially if you have to be so good that someone will pay for your skills. That's why switching professions - like from particle physicist to pianist - can get complicated. That's why many people either move horizontally to a similar role in some other place, make their own business or try to grow in the place they are now. If you change to a radically new field, it can usually take few years to become competent in it, so often people start with it as a hobby. Needless to say, once you start making your own family you tend to take less risks and acquire more responsabilities making changes more cumbersome.
 
 ### 2. Clear up what is it that you want to do.
 
