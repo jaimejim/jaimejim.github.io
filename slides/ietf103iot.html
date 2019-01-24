@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>IETF103, CoRE and SUIT</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 300;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; font-size: 0.7em;}
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+    </style>
+  </head>
+  <body>
+
+<textarea id="source">
+
+count: false
+class: center, middle
+
+# IETF103: CoRE and SUIT
+### Jaime Jiménez
+.footnote[Friday 25th January 2019]
+
+---
+## Announcements
+
+- New Survery Paper on IETF and IoT: ["An Updated Survey on the IETF protocol suite for the Internet of Things"](http://jaimejim.github.io/drafts/ietf-iot-overview.pdf).
+It gives a concise but comprehensive survey of the IETF efforts in the IoT.
+
+- Submitted to IEEE Communications Magazine (9.27 Impact factor)
+
+---
+
+##IETF103 Hackathon
+
+  * [IETF103 Hackathon highlights](https://www.ietf.org/blog/highlights-ietf-103/)
+    * Goal is to advance IETF standards, produce sample code/reference implementations, tools...
+    * More participants than the last, with 250 on-site and 32 remote participants collaborating on 28 different projects this time.
+  * ✌️ SUIT .black.bold[*] won again the informal IETF Hackathon competition [report is available](https://datatracker.ietf.org/doc/slides-103-suit-hackathon-report/00/)
+
+  <img width="450" align="right" src="https://www.ietf.org/media/images/_MG_8435.original.jpg">
+    * Hannes Tschofenig
+    * Jaime Jiménez
+    * Emmanuel Baccelli
+    * Henk birkholz
+    * Laurence Lundblade
+    * <span style="color:green">Tadahiko Ito</span>
+    * <span style="color:red">Yohei Kaieda</span>
+    * <span style="color:green">Chris Inacio</span>
+    * <span style="color:green">Dan Petrie</span>
+    * <span style="color:red">Yuichi Takita</span>
+
+.footnote[.black.bold[*] <span style="color:red">First IETF</span> and <span style="color:green">First SUIT Hackathon</span> respectively.]
+???
+
+The demo shows:
+1. The standard manifest file as specified by IETF SUIT WG.
+2. The environment CLI installation in Mbed (or RIOT).
+3. The encoding of the manifest in CBOR.
+4. The signing in COSE.
+5. The verification of the manifest in the device.
+
+The device's bootloader verifies the firmware and boots with the new verfied image.
+---
+
+##SUIT Hackathon
+
+- Manifest draft used is <https://tools.ietf.org/html/draft-moran-suit-manifest-03>
+- There is a presentation available at <https://github.com/IETF-Hackathon/ietf103-project-presentations>
+- There is a [detailed poster](http://jaimejim.github.io/docs/suit_poster.pdf) about the current state of the art on SUIT.
+- There is a detailed write-up available too <https://etherpad.tools.ietf.org/p/FUIETF103>
+
+
+**Hackathon process**
+0. Dockerized development environments for Mbed OS & Riot
+1. Create Firmnware and Manifest -> JSON -> CBOR
+2. Transported to the devices (USB, JTAG, CoAP)
+
+**Lessons learned**
+- First day is always painful - power adapter died, missing a serial-to-usb cable.
+- Help is nearby thanks to many people participating, help can be found from others.
+- CDDL tool is hell... COSE tool is hell too... experts are nearby.
+
+---
+##SUIT WG
+- SUIT [draft-ietf-suit-architecture](https://tools.ietf.org/html/draft-ietf-suit-architecture-01) defines the entities involved in the manifest-based software update.
+
+  ```c
+    Firmware (CBOR+    +----------+       Firmware   +-----------+
+    Manifest COSE)     |          +-+     Manifest   |           +-+
+            +--------->+ Firmware | +<---------------+           | |
+            |          | Server   | |                |  Author   | |
+            |          |          | |                |           | |
+            |          +----------+ |                +-----------+ |
+            v            +----------+                  +-----------+
+       +------------+
+       |Communicator|
+       +--------+---+         Device            +--------+
+       |        |             Management        |        |
+       | Device |<----------------------------->| Status |
+       |        |                               | Tracker|
+       +--------+                               +--------+
+    Network Operator                          Device Operator
+  ```
+
+???
+  Figure 1 shows the communication architecture where a firmware image
+     is created by an author, and uploaded to a firmware server.  The
+     firmware image/manifest is distributed to the device either in a push
+     or pull manner using the communicator residing on the device.  The
+     device operator keeps track of the process using the status tracker.
+     This allows the device operator to know and control what devices have
+     received an update and which of them are still pending an update.
+
+---
+
+##SUIT WG
+
+* Discussion encryption of manifest and firmware. Firmware encryption has been optional so far. Regarding the manifest, some prefer transport encryption only, at-rest encryption of the manifest is under consideration.
+
+* Discussion on Manifest serialization formats: two CBOR variations and one custom binary (ASN.1).
+
+* Note that ARM already has SUIT support on their ARM Pelion. Ilhan Gurel has hands on experience on this.
+
+
+---
+
+##CoRE WG
+
+* Video Recordings: [Session 1](https://www.youtube.com/watch?v=fXr6EpE88uc),
+[Session 2](https://www.youtube.com/watch?v=e1LynPQvYgw)
+
+* [Slides](https://datatracker.ietf.org/meeting/103/materials/slides-103-core-consolidated-slides-07)
+
+* [Minutes](https://datatracker.ietf.org/meeting/103/materials/minutes-103-core-00)
+
+* About 39-46 attendees.
+---
+##CoRE WG
+
+<img width="450" align="right" src="https://jaimejim.github.io/temp/core.png">
+
+* On IESG review [oscore](https://tools.ietf.org/html/draft-ietf-core-object-security).
+
+* Back to the WG
+  * [cocoa](https://tools.ietf.org/html/draft-ietf-core-cocoa) due to new work about congestion control on draft-jarvinen-core-fasor.
+  * [links-json](https://tools.ietf.org/html/draft-ietf-core-links-json) because of new work on draft-hartke-t2trg-coral.
+
+* New RFC 8516 [too-many-reqs](https://tools.ietf.org/html/draft-ietf-core-too-many-reqs)  🎊
+
+???
+
+---
+##CoRE WG
+
+* [draft-ietf-core-object-security](https://tools.ietf.org/html/draft-ietf-core-object-security) is in IESG processing and awaiting Eric Rescorla's review. Francesca to give more details.
+
+* [draft-ietf-core-oscore-groupcomm](https://tools.ietf.org/html/draft-ietf-core-oscore-groupcomm). Interop should be held before Summer 2019.
+
+  * [draft-tiloca-core-oscore-discovery](https://tools.ietf.org/html/draft-tiloca-core-oscore-discovery) Takes CoAP multicast + OSCORE + OSCORE Groups to specify how to create and discover OSCORE Groups on the RD and how a Group Manager (GM) handles them.
+
+* [draft-ietf-core-echo-request-tag](https://tools.ietf.org/html/draft-ietf-core-echo-request-tag) reviewed and on WGLC.
+
+* [draft-ietf-core-hop-limit](https://tools.ietf.org/html/draft-ietf-core-hop-limit) prevents infinite loops on proxies that use CoAP. It is almost ready for working-group last call.
+
+???
+
+---
+##CoRE WG
+
+* [draft-ietf-core-resource-directory](https://tools.ietf.org/html/draft-ietf-core-resource-directory) the special concept of groups (different from oscore groups) will be removed, as it does not seem current designs need all the functionality; Instead of trying to redefine RFC 6690, the specification will now simply define what subset of RFC 6690 can be safely used. To be validated on the mailing list.
+
+* [draft-ietf-core-dev-urn](https://tools.ietf.org/html/draft-ietf-core-dev-urn) had no major changes, except that %-encoding was disallowed again. Remaining questions focused on the best way to align with existing usage in LWM2M.
+
+* [draft-ietf-core-rd-dns-sd](https://tools.ietf.org/html/draft-ietf-core-rd-dns-sd) new version clarifies the mapping between resource discovery and service discovery. Looking for an editor.
+
+???
+
+---
+##CoRE WG
+
+
+* [draft-bormann-core-corr-clar](https://tools.ietf.org/html/draft-bormann-core-corr-clar) is a proposal to maintain a running document with corrections and clarifications to the WG RFCs. Intended to run for a few years and to move the content into updates of other RFCs. On WGA.
+
+* [draft-bhattacharyya-core-a-realist](https://tools.ietf.org/html/draft-bhattacharyya-core-a-realist) shows a video streaming system using CoAP. CoAP turned out to be useful to manage video quality in the presence of impairments. The way CoAP is being used here merits some further discussion in the WG.
+
+* [draft-jarvinen-core-fasor](https://tools.ietf.org/html/draft-jarvinen-core-fasor) presents a new advanced congestion control algorithm for CoAP based on state transitions between a fast, a fast-slow, and a slow state. [3 IPR declarations from Huawei](https://datatracker.ietf.org/ipr/search/?submit=draft&id=draft-jarvinen-core-fasor).
+
+* Not at CoRE but at *Measurement and Analysis for Protocols (MAPRG)* I had the chance to present ["Evaluating the Performance of CoAP, MQTT, and HTTP
+in Vehicular Scenarios"](https://datatracker.ietf.org/meeting/103/materials/slides-103-maprg-evaluating-the-performance-of-coap-mqtt-and-http-in-vehicular-scenarios-jaime-jimenez-00.pdf) which was Previously published in IEEE Conference on Standards for Communications and Networking (IEEE CSCN 2018). Feedback was positive, with open potential collaborations with TUT and Hamburg Uni. We were invited to present on the next MAPRG.
+
+???
+
+A-REaLiST
+
+Context based switching between the reliable and best-effort semantics can be executed from the end-application level. This way an optimum balance between reliability delay-performance can be maintained to improve the overall Quality of Experience (QoE).
+
+It can be conjectured, tallying the above with previous section, that CoAP inherently imbibes the functional features from HTTP-on-TCP (reliable delivery) and RTP-on-UDP (best-effort delivery). Further CoAP allows the switching between these two seamlessly just by maneuvering the header options.
+
+
+
+    </textarea>
+    <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
+    </script>
+    <script
+    src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
