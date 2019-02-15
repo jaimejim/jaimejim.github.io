@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Example Slideset</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+      @page {
+          size: 1210px 681px;
+          margin: 0;
+      }
+
+      @media print {
+          .remark-slide-scaler {
+              width: 100% !important;
+              height: 100% !important;
+              transform: scale(1) !important;
+              top: 0 !important;
+              left: 0 !important;
+          }
+      }
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 300;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; font-size: 0.7em;}
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+      text {
+        font-family: 'trebuchet ms', verdana, arial;
+        font-size: 14px;
+      }
+      div.mermaidTooltip {
+        position: absolute;
+        text-align: center;
+        max-width: 200px;
+        padding: 2px;
+        font-family: 'trebuchet ms', verdana, arial;
+        font-size: 12px;
+        background: #ffffde;
+        border: 1px solid #aaaa33;
+        border-radius: 2px;
+        pointer-events: none;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+</head>
+
+<body>
+
+
+<textarea id="source">
+
+count: false
+class: center, middle
+
+# Example Presentation
+### Jaime Jiménez
+.footnote[Friday 25th January 2019]
+
+---
+## How to
+
+1. Create an HTML file to contain your slideshow (see boilerplate below)
+
+2. Open the HTML file in a decent browser
+
+3. Edit the Markdown and/or CSS styles as needed, save and refresh!
+
+4. Press `C` to clone a display; then press `P` to switch to presenter mode
+
+---
+## Markdown Syntax
+
+* Headers use `#` or `##`
+* Bullets are done using `*`or `-`
+* Link text are between `[]` and the URL is between `()`, like this `[here](www.he.re)`
+* Code is written between these `backtick symbol`
+* Slide dividers between `---`
+* Presentation comments start at the end of each slide after `???`
+* Add emoji ✌️
+* add footnotes .black.bold[*]
+* Change the colors!
+    * <span style="color:green">Tadahiko Ito</span>
+    * <span style="color:red">Yohei Kaieda</span>
+    * <span style="color:green">Chris Inacio</span>
+    * <span style="color:green">Dan Petrie</span>
+    * <span style="color:red">Yuichi Takita</span>
+
+.footnote[.black.bold[*] <span style="color:red">Also here</span> and <span style="color:green">here</span> .]
+
+???
+comments!
+
+---
+## Diagrams
+
+You can have diagrams with [mermaidjs](https://mermaidjs.github.io/)
+
+Here is an example code block to add a sequence diagram:
+
+.pull-left[
+```js
+  <div class="mermaid">
+    sequenceDiagram
+loop Daily query
+    Alice->>Bob: Hello Bob, how are you?
+    alt is sick
+        Bob->>Alice: Not so good :(
+    else is well
+        Bob->>Alice: Feeling fresh like a daisy
+    end
+
+    opt Extra response
+        Bob->>Alice: Thanks for asking
+    end
+end
+
+  </div>
+```
+]
+
+.pull-right[
+<div class="mermaid">
+  sequenceDiagram
+    loop Daily query
+        Alice->>Bob: Hello Bob, how are you?
+        alt is sick
+            Bob->>Alice: Not so good :(
+        else is well
+            Bob->>Alice: Feeling fresh like a daisy
+        end
+
+        opt Extra response
+            Bob->>Alice: Thanks for asking
+        end
+    end
+
+</div>
+]
+???
+
+
+---
+## Diagrams
+
+You can also make it more complicated!
+
+
+```js
+<div class="mermaid">
+  sequenceDiagram
+      Alice ->> Bob: Hello Bob, how are you?
+      Bob-->>John: How about you John?
+      Bob--x Alice: I am good thanks!
+      Bob-x John: I am good thanks!
+      Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+
+      Bob-->Alice: Checking with John...
+      Alice->John: Yes... John, how are you?
+
+</div>
+```
+
+---
+## Diagrams
+
+You can also make it more complicated!
+
+
+
+<div class="mermaid">
+  sequenceDiagram
+      Alice ->> Bob: Hello Bob, how are you?
+      Bob-->>John: How about you John?
+      Bob--x Alice: I am good thanks!
+      Bob-x John: I am good thanks!
+      Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+
+      Bob-->Alice: Checking with John...
+      Alice->John: Yes... John, how are you?
+</div>
+
+???
+
+---
+
+## Diagrams
+
+Also flowcharts
+
+.pull-left[
+```js
+<div class="mermaid">
+  graph TD;
+  graph LR
+      A[Square Rect] -- Link text --> B((Circle))
+      A --> C(Round Rect)
+      B --> D{Rhombus}
+      C --> D
+
+</div>
+```
+]
+
+.pull-right[
+<div class="mermaid">
+  graph LR
+      A[Square Rect] -- Link text --> B((Circle))
+      A --> C(Round Rect)
+      B --> D{Rhombus}
+      C --> D
+
+</div>
+]
+???
+
+---
+## Diagrams
+
+Also flowcharts
+
+.pull-left[
+```js
+<div class="mermaid">
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+</div>
+```
+]
+
+.pull-right[
+<div class="mermaid">
+    graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+</div>
+]
+???
+
+---
+## Diagrams
+
+.center[
+  <div class="mermaid">
+    gantt
+            dateFormat  DD-MM-YYYY
+            title Stuff to do
+            section A section
+            Completed task            :done,    des1, 2019-01-06,2019-01-08
+            Active task               :active,  des2, 2019-01-09, 3d
+            Future task               :         des3, after des2, 5d
+            Future task2               :         des4, after des3, 5d
+            section Critical tasks
+            Ccritical line :crit, done, 2019-01-06,24h
+            Implement parser and jison          :crit, done, after des1, 2d
+            Create tests for parser             :crit, active, 3d
+            Future task in critical line        :crit, 5d
+            Create tests for renderer           :2d
+            Add to mermaid                      :1d
+  </div>
+]
+
+
+    </textarea>
+    <script src="/Users/jaime/code/jaimejim.github.io/assets/remark-latest.min.js"></script>
+    <script src="/Users/jaime/code/jaimejim.github.io/assets/mermaid.js"></script>
+    <script src="https://mermaidjs.github.io/scripts/mermaid.min.js"></script>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+    <script>
+
+      window.onload = function(){
+        var slideshow = remark.create();
+        // don't let mermaid automatically load on start
+        var mermaidconfig = {
+          startOnLoad: false,
+          cloneCssStyles: false,
+          theme: 'neutral'
+        };
+        mermaid.initialize(mermaidconfig);
+
+        function initMermaidInSlide(slide){
+          document.querySelectorAll(".remark-slides-area .remark-slide")[slide.getSlideIndex()]
+                  .querySelectorAll(".mermaid")
+                  .forEach(function(graph){
+                    mermaid.init(undefined, graph);
+                  });
+        }
+        slideshow.on('afterShowSlide', initMermaidInSlide);
+        initMermaidInSlide(slideshow.getSlides()[slideshow.getCurrentSlideIndex()]);
+      };
+
+    </script>
+  </body>
+</html>
