@@ -1,5 +1,6 @@
 CoRE TODO
 =========
+☐ Update datatracker with info.
 
 ## Security 
 
@@ -14,6 +15,7 @@ draft-ietf-core-oscore-groupcomm-04:
 	
 draft-ietf-core-echo-request-tag-03:
 	✔ is in WGLC, needs chairs review. @done(19-04-01 14:19)
+  ☐ Carsten to do announcement @cb
 	☐ It is pending a new version due to a submit glitch and few editorial comments, the WGLC ends at 2019-04-17. @cb
 
 draft-ietf-core-stateless-01:
@@ -73,6 +75,8 @@ draft-ietf-core-resource-directory-20:
 	
 draft-ietf-core-rd-dns-sd-04: 
 	☐ Check in july for updated version. 
+
+## Non WG drafts
 
 CoRAL Cluster:
 	* draft-hartke-t2trg-ciri
