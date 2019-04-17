@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>IETF103, CoRE and SUIT</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+      @page {
+          size: 1210px 681px;
+          margin: 0;
+      }
+
+      @media print {
+          .remark-slide-scaler {
+              width: 100% !important;
+              height: 100% !important;
+              transform: scale(1) !important;
+              top: 0 !important;
+              left: 0 !important;
+          }
+      }
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 300;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; font-size: 0.7em;}
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+    </style>
+  </head>
+  <body>
+
+<textarea id="source">
+
+count: false
+class: center, middle
+
+# IETF104: CoRE
+### Jaime Jiménez
+.footnote[Thursday 16th April 2019]
+
+---
+
+##IETF104 Hackathon
+
+  - [IETF104 Hackathon highlights](https://www.ietf.org/blog/highlights-ietf-104/)
+    - Goal is to advance IETF standards, produce sample code/reference implementations, tools...
+    - Biggest Hackathon ever made at IETF.
+  - Participating in the RD casual interop, with **some** progress on `gordo` a Resource Directory Implementation in Go.
+    - Thomas Fossati (remote)
+    - Christian Amssuess
+    - Jaime Jiménez
+  - Learned something on go programming (Ivaylo) and on the RIOT implementation (Leandro and Jose). 
+    - Potential continuation during IoThon (3-5 may) but unclear /// goals. 
+    - <https://hackmd.io/B4crd9XuRpycYGOdpVKmJQ>
+
+---
+
+##TEEP WG
+
+Two Documents at the moment:
+  - The Open Trust Protocol: An interoperable protocol for managing TAs running in different TEEs of various devices. Decoupling the "normal" execution environment from the TEE.
+  - The TEEP Architecture: Provide a design guidance for such an interoperable protocol. 
+
+Why relevant? In TEEP, there is an explicit relationship and dependence between the client app in the REE and one or more TAs in the TE. Software installed on any device will be dependant on that on the TEE. Not just key material but (trusted) firmware management, (trusted) inter-process communication, software attestation, device administration, ownership and identity, etc. Zero participation from operators nor network vendors. Providers of these services are expected to be the device manufacturers.
+
+Driven by ARM, Symantec, Intel and Microsoft people. 
+
+???
+
+---
+##CoRE WG
+
+- Good progress overall. 
+   - Several documents on IESG and last stages of IESG process.
+   - Several on WGLC.
+   - Adoption of CoRAL. 
+   - Good interop at Hackathon.
+
+- Need to decide /// position on core-fasor.
+  - We might want to block it due to IPR (consider implications)
+
+- Expand the use of Github on the WG.
+
+???
+
+---
+##CoRE WG - WG Documents
+
+- **draft-ietf-core-object-security-16** was approved and is now in the Editor Queue (👍). This is the result of years of work and fighting, so congratulate Göran, John and Francesca when you see them.
+
+- draft-ietf-core-multipart-ct-03, simple draft that defines an application-independent media-type to combine representations of other media types.
+  - WGLC, IESG will discuss it on the telechat (2019-05-02)
+
+- draft-ietf-core-senml-etch how to do partial operations on SENML PATCH and FETCH
+  - WGLC closed, pending the shepherd's writeup [JJ?].
+
+- draft-ietf-core-echo-request-tag-03 
+  - WGLC ending soon, already received a chair's review [JJ?/CB?]. 
+
+- draft-ietf-core-stateless-01 
+  - pending the chairs' review [CB].
+
+- draft-ietf-core-dev-urn-04 done 
+  - Chairs review sent [JJ].
+  - Awaiting shepherd work [CB].
+
+???
+
+---
+##CoRE WG - WG Security
+
+- draft-ietf-core-oscore-groupcomm-04 had a new revision based on Jim's comments. There are now several implementations which the authors will test at next IETF.
+
+- draft-tiloca-core-oscore-discovery-02 the draft has incorporated the latest RD-group usage pattern and clarified some of the text with examples. The registration of oscore-gid and app-gp are still open points, the use of link format would need to be revised. Concepts from CoRAL Reef could be brought here. More reviews are needed in order to decide for WGA.
+
+- draft-dijk-core-groupcomm-bis-00 the document updates RFC 7390 considering changes brought by blockwise transfer and observe. The section on REST interface usage for group management will be removed. The target is to finalize the draft by next meeting.
+
+- There was a pubsub security hallway meeting where three challenges where identified: multicast use, ComSec and potential DoS. The AD has to discuss with the SEC ADs where this new work would fit. 
+
+???
+
+---
+##CoRE WG - Data Formats
+
+- draft-keranen-core-senml-data-ct-01 proposes a new SenML field for indicating the Content-Format of the data. It would need more reviews. Brought up the issue of fragmentation of senml documents, and whether it is the time to do it in CoRE.
+
+- draft-ietf-core-senml-etch-03 mentioned already.
+
+- draft-bormann-senml-more-units-00 this draft proposes the creation of a registry for units. Bluetooth has its own unit registry and IPSO uses UCUM, the idea would be to reuse the SenML Units registry that will contain the units.
+
+???
+
+---
+##CoRE WG - CoRECONF
+
+- Note that this is **being adopted** in TSCH.
+
+- draft-ietf-core-yang-cbor-07 a latest version was presented with few changes. The group is looking for reviewers. From the discussion, the intention is to get the NETCONF people involved by doing WGLC on the core-yang-cbor document soon, also since YANG is evolving and every change implies a new revision.
+
+- draft-ietf-core-comi-04 no changes since last IETF an interp was arranged during it. No real changes since last IETf, interop at last IETF.
+
+- draft-ietf-core-sid-05 the authors have been working out the details for the SID registry with IANA. There are a lot of little modifications that require finetuning.
+
+- draft-veillette-core-yang-library-04 the document is rather stable at the moment but requires more reviews before adoption.
+
+???
+
+---
+##CoRE WG - CoRECONF
+
+- Note that this is being adopted in TSCH.
+
+- draft-ietf-core-yang-cbor-07 a latest version was presented with few changes. The group is looking for reviewers. From the discussion, the intention is to get the NETCONF people involved by doing WGLC on the core-yang-cbor document soon, also since YANG is evolving and every change implies a new revision.
+
+- draft-ietf-core-comi-04 no changes since last IETF an interp was arranged during it. No real changes since last IETf, interop at last IETF.
+
+- draft-ietf-core-sid-05 the authors have been working out the details for the SID registry with IANA. There are a lot of little modifications that require finetuning.
+
+- draft-veillette-core-yang-library-04 the document is rather stable at the moment but requires more reviews before adoption.
+
+???
+
+---
+##CoRE WG - Applications and extensions
+
+- draft-ietf-core-coap-pubsub-08 part of the discussion was on the handling of empty topics and the lifetime of data and topics. Maybe it si time to think about whether extending the architecture to support long-polling is a good idea.
+
+- draft-ietf-core-dynlink-08 is close to WGLC, we are pending a chair's review and contacting OMA to see their opinion on the conditional observation attributes and the binding table.
+
+- draft-ietf-core-interfaces-14 has had little literal adoption but the text might have been overtaken by other work inspired on it. Thus some of the text will be moved to other documents and to be continued on the Research Group.
+
+- draft-ietf-core-resource-directory-20 is mature and under WGLC at the moment. Few errors and clarifications to be added during this time.
+
+- draft-ietf-core-rd-dns-sd-04 was not presented but it is progressing. It has been simplified by introducing explicit service types rather than doing any automatic conversion. A new revision will come by july.
+
+???
+
+---
+##CoRE WG - New Work
+
+- draft-bormann-core-media-content-type-format-00 the document tries to clear the confusion between media-types, content-types, content-coding, content-format, and related terminology. It was found very useful by the group, the WGA call will be confirmed on the list.
+
+- draft-birkholz-core-coid-01 was discussed at SECDISPATCH, the document represents "claim sets" as CBOR Web Tokens to support secure device identification.
+
+- draft-amsuess-core-resource-directory-extensions-00 brings some extensions to the Resource Directory. The bulk of the work is reverse-proxying. While there was limited interest by the group, some of the extensionscould be used by other SDOs.
+
+- draft-jarvinen-core-fasor-00 has IPR licensed as FRAND. The authors were concerned about interest and energy in the group even if the document is adopted. The WGA call will be taken to the list.
+
+- draft-selander-ace-cose-ecdhe-13 proposes an Ephemeral Diffie-Hellman Over COSE (EDHOC) lightweight authenticated Diffie-Hellman key exchange with ephemeral keys. The document could be done in its own WG, the group is invited to join secdispatch.
+
+- draft-amsuess-core-rd-replication-02 is an exploratory work on how to scale up resource directories. It might fit better at the T2TRG. It is expected to come back to core eventually.
+
+???
+
+---
+##CoRE WG - New Work
+
+- CoRAL has been worked at the T2TRG and has reached a level of maturity making it ready for CoRE. It is composed of several documents:
+  - draft-hartke-t2trg-ciri
+  - draft-hartke-t2trg-coral
+  - draft-hartke-t2trg-coral-reef
+CIRIs and CoRAL are now stable, with RIOT adding its support during this hakathon. The working group has decided on the WGA of the first two drafts, which will be reported on the mailing list.
+
+- draft-zcao-core-speedy-blocktran-00 specifies a method to speed up block-wise transfer in CoAP. It creates a new option that specifies the window size.
+
+???
+
+
+    </textarea>
+    <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
+    </script>
+    <script
+    src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
