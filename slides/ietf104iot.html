@@ -311,14 +311,34 @@ CIRIs and CoRAL are now stable, with RIOT adding its support during this hakatho
 ???
 
 
-    </textarea>
-    <script src="/Users/jaime/code/jaimejim.github.io/tasks/remark-latest.min.js">
-    </script>
-    <script
-    src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
-    </script>
-    <script>
-      var slideshow = remark.create();
-    </script>
-  </body>
+</textarea>
+<script src="/Users/jaime/code/jaimejim.github.io/assets/remark-latest.min.js"></script>
+<script src="/Users/jaime/code/jaimejim.github.io/assets/mermaid.js"></script>
+<script src="https://jaimejim.github.io/assets/mermaid.js"></script>
+<script src="https://jaimejim.github.io/assets/remark-latest.min.js"></script>
+<script>
+
+  window.onload = function(){
+    var slideshow = remark.create();
+    // don't let mermaid automatically load on start
+    var mermaidconfig = {
+      startOnLoad: false,
+      cloneCssStyles: false,
+      theme: 'neutral'
+    };
+    mermaid.initialize(mermaidconfig);
+
+    function initMermaidInSlide(slide){
+      document.querySelectorAll(".remark-slides-area .remark-slide")[slide.getSlideIndex()]
+              .querySelectorAll(".mermaid")
+              .forEach(function(graph){
+                mermaid.init(undefined, graph);
+              });
+    }
+    slideshow.on('afterShowSlide', initMermaidInSlide);
+    initMermaidInSlide(slideshow.getSlides()[slideshow.getCurrentSlideIndex()]);
+  };
+
+</script>
+</body>
 </html>
