@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: jaime.win 
+Token: 01f64ab6d1ad6be47b1c39b160df4ab2ddeaba307c13aa9efd85c9514818b909
