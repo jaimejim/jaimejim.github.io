@@ -9,7 +9,7 @@ I am originally from Madrid, Spain. I moved to Helsinki, Finland about eleven ye
 
 During this time I have been working on M2M and Internet of Things related topics. I have been doing a bit of everything related to IoT for almost a decade already, from prototyping to scientific publications, standardization, architecture and design as well as project management and inventions/IPR. For more details, please see my [full CV](/assets/files/jaime_cv.pdf).
 
-As you can see below, I contribute to various standards. Currently I focus more on Device Management, IoT REST-type of communications and Data models.
+As you can see below, I contribute to various standards. Currently I focus IoT REST-type of communications, Device Management and Data models.
 
 ### IoT Protocol Design and Architecture
 
