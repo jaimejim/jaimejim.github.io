@@ -3,9 +3,9 @@ title: About
 layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
----
+--
 
-I am originally from Madrid, Spain. I moved to Helsinki, Finland about ten years ago. I currently live there.
+I am originally from Madrid, Spain. I moved to Helsinki, Finland about eleven years ago. I currently live there.
 
 During this time I have been working on M2M and Internet of Things related topics. I have been doing a bit of everything related to IoT for almost a decade already, from prototyping to scientific publications, standardization, architecture and design as well as project management and inventions/IPR. For more details, please see my [full CV](/assets/files/jaime_cv.pdf).
 
