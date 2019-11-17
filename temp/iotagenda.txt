@@ -123,3 +123,39 @@ Orchard       SEC *** rats    Remote ATtestation ProcedureS WG
 Hullet        ART *** core    Constrained RESTful Environments WG
 Sophia        IRTF    panrg   Path Aware Networking RG
 Olivia        SEC     acme    Automated Certificate Management Environment WG
+
+====================================================================
+
+Upcoming IETF Meetings and Hosts ==                                                                                                                                                                          
+                                                                                                                                                                                                                
+IETF 107 Vancouver (Huawei)                                                                                                                                                                                     
+Hyatt Regency                                                                                                                                                                                                   
+21-27 March 2020                                                                                                                                                                                                
+                                                                                                                                                                                                                
+IETF 108 Madrid (Ericsson)                                                                                                                                                                                      
+Melia Castilla                                                                                                                                                                                                  
+25-31 July 2020                                                                                                                                                                                                 
+                                                                                                                                                                                                                
+IETF 109 Bangkok (Cisco)                                                                                                                                                                                        
+Marriott Marquis Queen’s Park                                                                                                                                                                                   
+14-20 November 2020                                                                                                                                                                                             
+                                                                                                                                                                                                                
+IETF 110 Prague (Host TBD)                                                                                                                                                                                      
+Hilton Prague                                                                                                                                                                                                   
+6-12 March 2021                                                                                                                                                                                                 
+                                                                                                                                                                                                                
+IETF 111 San Francisco (Juniper)                                                                                                                                                                                
+Hilton Union Square                                                                                                                                                                                             
+24-30 July 2021                                                                                                                                                                                                 
+                                                                                                                                                                                                                
+IETF 112 Europe (Host TBD)                                                                                                                                                                                      
+TBD                                                                                                                                                                                                             
+6-12 November 2021                                                                                                                                                                                              
+                                                                                                                                                                                                                
+IETF 113 Asia (Host TBD)                                                                                                                                                                                        
+TBD                                                                                                                                                                                                             
+19-25 March 2022                                                                                                                                                                                                
+                                                                                                                                                                                                                
+IETF 114 Philadelphia (Comcast/NBCUniversal)                                                                                                                                                                    
+Philadelphia 201 Hotel                                                                                                                                                                                          
+23-29 July 2022 
