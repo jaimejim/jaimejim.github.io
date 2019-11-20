@@ -1,126 +1,61 @@
 ## IETF - CoRE Working Group
 
 ### Status
-https://tools.ietf.org/wg/core/
+https://datatracker.ietf.org/wg/core/documents/
 
 ### Milestones
 https://datatracker.ietf.org/wg/core/milestones/
 
+## IETF Process
+
 ## RFC Editor Queue
 
-*draft-ietf-core-object-security-16*
+* object-security-16: Now RFC8613
 
 ## IESG Processing
 
-In IETF Last Call (ends 2019-04-08):
-*draft-ietf-core-multipart-ct-03*
+* multipart-ct-03: Benjamin Kaduk DISCUSS open.
+* senml-etch-04: Alexey OK, other IESG members need to reply.
+* resource-directory-23: In AD review.
+* hop-limit-04: Submitted to IESG, addressing feeback.
+
+## In/after WGLC
+
+* echo-request-tag-06: new version just submitted, should we do WGLC?
+* stateless-01: pretty much done, needs WGLC and chair's review.
+
+## Almost at WG last-call
+
+* dev-urn-03: expired and need resubmission to go to WGLC.
+
+## Adoption Call
+
+* draft-hartke-t2trg-coral-08: to be confirmed on the list. Author needs to resubmit.
+* draft-bormann-core-corr-clar: to close WGA and revisit.
+* draft-bormann-senml-more-units-00: WGA until 4th sept.
+* draft-veillette-core-yang-library-03: thin response but sense to adopt.
+* draft-jarvinen-core-fasor-03: to be issued after IPR feedback.
+* draft-keranen-core-senml-data-ct-02: jaime closed call, authors need to resubmit.
 
 ## Active
 
-*draft-ietf-core-echo-request-tag-03*
-WG to check github -04 version
-After posting, WGLC! until 2019-04-17
+* rd-dns-sd-04: WIP.
+* coap-pubsub-08: WIP.
+* dynlink-08: WIP
+* interfaces-14: [CB] Needs to be moved to T2TRG, but we have to send an email to the group and ask for their opinion.
+* oscore-groupcomm-04: WIP.
+* hop-limit-04: needs a revised I-D.
+* yang-cbor-07: WIP.
+* sid-05: Authors have get misunderstandings with IANA out of the way.
+* comi-04: WIP. Nag the authors.
 
-*draft-ietf-core-coap-pubsub-08*
-New github version to be posted by Monday!
-Michael Koster -> IETF104 Friday meeting)
-*draft-ietf-core-dynlink-08*
-Close to WGLC, needs more reviews
-*draft-ietf-core-interfaces-14*
-Update the draft to be closer to OCF? 
-Collections better discussed in T2TRG?
-* [x] Last call for burying, until 2019-03-28
+## Non-WG
 
-*draft-ietf-core-dev-urn-03*
-WGLC? (Check with Jari)
-
-*draft-ietf-core-oscore-groupcomm-04*
-what needs to be integrity-protected?
-*draft-tiloca-core-oscore-discovery-02*
-Points raised by Jim: slot to be led by Marco Tiloca
-
-*draft-dijk-core-groupcomm-bis-00*
-RFC7390 update (EXP!), Discuss objectives
-Nobody is using the REST interface for managing groups?
-
-*draft-ietf-core-resource-directory-20*
-[JJ] issue WGLC!
-WGLC til April 17th!
-Two interops done, meet again at IETF104 hackathon
-
-*draft-ietf-core-rd-dns-sd-04*
-Peter van der Stok; Stuart working with us; how to get DNS context into RD
-
-*draft-amsuess-core-rd-replication-02*
-Will be discussed in T2TRG meeting
-
-*draft-amsuess-core-resource-directory-extensions-00*
-target: informational
-
-*draft-ietf-core-hop-limit-03*
-[??]: issue WGLC!
-
-*draft-ietf-core-stateless-01*
-[CB]: Chairs' review? WGLC!
-
-*draft-ietf-core-senml-etch-03*
-Close 24:00 CET on Monday, March 25, 2019.  Please review.
-[JJ]: do shepherd writeup.
-
-*draft-keranen-core-senml-data-ct-01*
-[??]: issue WGA
-
-*draft-bormann-senml-more-units-00*
-[JJ]: WGA?
-
-*draft-bormann-core-corr-clar*
-[JJ]: issue WGA
-
-*draft-ietf-core-yang-cbor-07*
-*draft-ietf-core-sid-05*
-Get misunderstandings with IANA out of the way.
-*draft-ietf-core-comi-04*
-*draft-veillette-core-yang-library-03*
-Status?
-
-## Related:
-*draft-bormann-core-media-content-type-format-00*
-Worthwhile?
-
-*draft-birkholz-core-coid-01*
-In secdispatch on Mon 1350-1550
-
-*draft-zcao-core-speedy-blocktran-00*
-5-10 min? Jim: "worries me"; from a lockstep to a "kind of lockstep"
-
-## Expired
-
-protocol negotiation
-core+at:// as well
-
-## Hallway discussions
-
-on pubsub security:
-(Might fit better in CoRE than in ACE.)
-group oscore vs. the construction of pubsub
-Francesca: summarize hallway meeting if there is a result, 10 minutes
-
-observation and pubsub
-Christian...
-
-CoRAL side meeting results
-Klaus: summarize in 10 minutes
-
-## IETF103:
-	draft-bhattacharyya-core-a-realist-02			2019-02-05
-	draft-bormann-core-corr-clar-00			2018-10-23
-	draft-hartke-core-apps-08			2018-10-22
-	draft-jarvinen-core-fasor-01	ipr		2018-10-22
-	draft-jhjung-core-sensor-streaming-00			2018-10-22
-	draft-mattsson-core-coap-actuators-06			2018-09-17
-
-## Unrelated:
-	draft-yangcan-core-web-software-built-in-cloud-00			2018-10-23
-	draft-urien-core-blockchain-transaction-protocol-02			2019-03-04
-	draft-urien-core-identity-module-coap-05			2018-12-27
-	draft-urien-core-racs-12			2018-12-12
+* draft-tiloca-core-oscore-discovery-02: More reviews are needed in order to decide for WGA.
+* draft-dijk-core-groupcomm-bis-00: WIP. Question on who's using this.
+* draft-amsuess-core-rd-replication-02: at T2TRG atm.
+* draft-amsuess-core-resource-directory-extensions-00
+* draft-bormann-core-media-content-type-format-00
+* draft-birkholz-core-coid-01
+* draft-zcao-core-speedy-blocktran-00
+* draft-tschofenig-core-senml-lbn-00
