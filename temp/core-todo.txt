@@ -59,7 +59,7 @@ https://etherpad.ietf.org/p/notes-ietf-106-core
 ## Non-WG
 
 * draft-tiloca-core-oscore-discovery-02: More reviews are needed in order to decide for WGA.
-* draft-dijk-core-groupcomm-bis-00: WIP. Question on who's using this.
+* draft-dijk-core-groupcomm-bis-00: WGA to be taken to the list. 
 * draft-amsuess-core-rd-replication-02: at T2TRG atm.
 * draft-amsuess-core-resource-directory-extensions-00
 * draft-bormann-core-media-content-type-format-00
