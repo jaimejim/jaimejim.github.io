@@ -1,4 +1,5 @@
 ## IETF - CoRE Working Group
+**last edit 21-11-2019**
 
 ### Status
 https://datatracker.ietf.org/wg/core/documents/
@@ -6,48 +7,54 @@ https://datatracker.ietf.org/wg/core/documents/
 ### Milestones
 https://datatracker.ietf.org/wg/core/milestones/
 
+### Minutes 
+https://etherpad.ietf.org/p/notes-ietf-106-core
+
+## Chairs Sync
+
+* Have to prepare a long-term strategy for CoRE.
+* Start using ietf tracking tools better?
+* how do we remove old drafts that have been updated? (draft-selander-ace-object-security-06)
+
 ## IETF Process
 
 ## RFC Editor Queue
 
-* object-security-16: Now RFC8613
+* multipart-ct-04
 
 ## IESG Processing
 
-* multipart-ct-03: Benjamin Kaduk DISCUSS open.
-* senml-etch-04: Alexey OK, other IESG members need to reply.
-* resource-directory-23: In AD review.
-* hop-limit-04: Submitted to IESG, addressing feeback.
+* resource-directory-23: In AD review. Revised I-D needed. @jaime
+* hop-limit-07: Writeup needed. Alexey asked why no mapping to http. @jaime
+* echo-request-tag-08: needs to end call and shepherd writeup @cabo
+* stateless-03: needs to end call and shepherd writeup @cabo
+* senml-etch-05: IESG's Roman and Adam DISCUSS. Authors to implement changes. @cabo 
+* senml-more-units-03: Waiting for auhors to provide update. 2nd registry conclusion @jaime
 
 ## In/after WGLC
 
-* echo-request-tag-06: new version just submitted, should we do WGLC?
-* stateless-01: pretty much done, needs WGLC and chair's review.
 
 ## Almost at WG last-call
 
-* dev-urn-03: expired and need resubmission to go to WGLC.
+* dev-urn-03: jari working on update. ABNF issue. Needs to resubmit. Then WGLC. We need to decide on shepherd.
 
 ## Adoption Call
 
-* draft-hartke-t2trg-coral-08: to be confirmed on the list. Author needs to resubmit.
-* draft-bormann-core-corr-clar: to close WGA and revisit.
-* draft-bormann-senml-more-units-00: WGA until 4th sept.
-* draft-veillette-core-yang-library-03: thin response but sense to adopt.
-* draft-jarvinen-core-fasor-03: to be issued after IPR feedback.
-* draft-keranen-core-senml-data-ct-02: jaime closed call, authors need to resubmit.
+* draft-jarvinen-core-fasor-02: on WGA issued 29-11 @carsten
+* draft-bormann-core-corr-clar: was there feedback on WGA?
 
 ## Active
 
-* rd-dns-sd-04: WIP.
-* coap-pubsub-08: WIP.
-* dynlink-08: WIP
-* interfaces-14: [CB] Needs to be moved to T2TRG, but we have to send an email to the group and ask for their opinion.
-* oscore-groupcomm-04: WIP.
-* hop-limit-04: needs a revised I-D.
-* yang-cbor-07: WIP.
-* sid-05: Authors have get misunderstandings with IANA out of the way.
-* comi-04: WIP. Nag the authors.
+* href-01: moving forward.
+* coral-01: moving forward.
+* rd-dns-sd-05: Stalled for a long time and normative to RD.
+* coap-pubsub-08: Authors have to process input from Klaus.
+* dynlink-10: Decission was to take it out of core.
+* oscore-groupcomm-06: Authors see it as mature. Few reviews and few commenters.
+* yang-library-00: No changes, authors find it ready for WGLC too.
+* yang-cbor-11: Authors find it ready for WGLC.
+* comi-08: refer to OSCORE as security mechanism. Authors finding it ready for WGLC (add NETMOD and NETCONF). only 4 people care for YANG.
+* sid-07: Rob Wilson gave feedback on the 64b id Authors need to address it.
 
 ## Non-WG
 
@@ -57,5 +64,9 @@ https://datatracker.ietf.org/wg/core/milestones/
 * draft-amsuess-core-resource-directory-extensions-00
 * draft-bormann-core-media-content-type-format-00
 * draft-birkholz-core-coid-01
+* draft-keranen-core-senml-base-prefix-00
+* draft-fossati-core-coap-problem-00
 * draft-zcao-core-speedy-blocktran-00
 * draft-tschofenig-core-senml-lbn-00
+* draft-urien-core-racs-13
+* 
