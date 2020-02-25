@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
+gem update --system
+gem install 
 #gem install jekyll html-proofer
 
 bundle install
