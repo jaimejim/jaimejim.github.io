@@ -4,6 +4,7 @@ set -e # halt script on error
 gem update --system
 gem install 
 #gem install jekyll html-proofer
+gem install jekyll -v 2.5
 
 bundle install
 bundle update pygments.rb
