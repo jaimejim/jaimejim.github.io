@@ -3,7 +3,8 @@ set -e # halt script on error
 
 gem update --system
 gem install 
-#gem install jekyll html-proofer
+gem install mercenary -v 0.3.6
+gem install jekyll html-proofer
 gem install jekyll -v 2.5
 
 bundle install
