@@ -7,7 +7,7 @@ gem install mercenary -v 0.3.6
 
 echo 'Testing travis...'
 bundle exec jekyll build
-bundle exec htmlproofer ./_site --file-ignore /_site/drafts/ /_site/slides/ /_site/projects/appiot/ --empty-alt_ignore --external_only
+bundle exec htmlproofer ./_site --only-4xx --file-ignore /_site/drafts/ /_site/slides/ /_site/projects/appiot/ --empty-alt_ignore --external_only
 
 
 #gem update --system
