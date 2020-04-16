@@ -14,7 +14,7 @@ star: true
 
 A month ago my Mac SSD drive died due to a water spill. Apparently this is a common problem that will manifest itself even if in a [delayed fashion](https://www.ifixit.com/Wiki/MacBook_water_damage_-_The_definitive_guide). That is, if the spill does not automatically destroy your computer, like it did to mine, the corrosion process will occur when you combine electricity, metal, water and oxygen. It might take a week or two, but it happens eventually.
 
-In my case it immediately killed the SSD drive, which is likely to happen as [the SSD is exposed in Mac](https://www.amazon.com/Transcend-480GB-JetDrive-Solid-TS480GJDM820/dp/B075HBJPYF/), thus forcing me to buy a replacement one. While [Time Machine](https://en.wikipedia.org/wiki/Time_Machine_(macOS)) works pretty well, I hadn't set it up properly and "*Back up while on battery power*" was not enabled, so I lost few months worth of material.
+In my case it immediately killed the SSD drive, which is likely to happen as the SSD is exposed in Mac, thus requiring me to buy a replacement one (a Transcend 480GB JetDrive Solid TS480GJDM820). While [Time Machine](https://en.wikipedia.org/wiki/Time_Machine_(macOS)) works pretty well, I hadn't set it up properly and "*Back up while on battery power*" was not enabled, so I lost few months worth of material.
 
 Nevertheless it was useful to do a fresh installation and reset common configuration files like **.vimrc** or **.bash_profiles**. I thought of leaving them here in case someone is curious, together with the brew formulae I find fundamental to have:
 

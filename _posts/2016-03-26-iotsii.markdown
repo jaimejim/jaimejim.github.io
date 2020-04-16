@@ -12,7 +12,7 @@ star: true
 
 As we mentioned on the [previous article](/making-things-interoperate/), IoT Standards for constrained devices are rapidly consolidating.
 
-![IOTSI Folks](https://www.ietf.org/blog/wp-content/uploads/2016/03/group_pic_smaller.jpg)*Attendees from various consortia*
+![IOTSI Folks](https://www.ietf.org/media/images/group_pic_smaller.original.jpg)*Attendees from various consortia*
 
 ## Interaction model
 

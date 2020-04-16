@@ -16,7 +16,7 @@ We all are living very busy lives, with little time to be spend on things that s
 Every year there are more publications available on a larger number of topics. The fact that universities and even whole countries have metrics based on number of published articles ([1](https://link.springer.com/article/10.1007/s11192-017-2504-x),
 [2](https://www.snowballmetrics.com/wp-content/uploads/assessing-europe-university-based-research_en.pdf), [3](http://www.keepeek.com/Digital-Asset-Management/oecd/science-and-technology/oecd-science-technology-and-innovation-outlook-2016_sti_in_outlook-2016-en#page149)) does not help.
 
-Yet, scientific knowledge needs to be spread and people need to find out quickly the articles they are interested in. Of course there are well-known tools like [sci-hub](https://sci-hub.hk) or google scholar, but often we also have a repository of published papers that we want to look into. For example the [IEEE PIMRC17](http://pimrc2017.ieee-pimrc.org) conference had 549 papers; *are we supposed to read all of them?* Of course not.
+Yet, scientific knowledge needs to be spread and people need to find out quickly the articles they are interested in. Of course there are well-known tools like sci-hub(link keeps changing) or google scholar, but often we also have a repository of published papers that we want to look into. For example the [IEEE PIMRC17](http://pimrc2017.ieee-pimrc.org) conference had 549 papers; *are we supposed to read all of them?* Of course not.
 
 What I normally do is convert all of them to text using `pdftotext` which you can install using the [poppler-utils](https://poppler.freedesktop.org) package under various Linux distributions.  
 

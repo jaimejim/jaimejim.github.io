@@ -38,7 +38,7 @@ We will publish a draft on this eventually, but for the time being we did the fo
 
 - In the YANG specification the LWM2M resources are specified as leafs of a YANG list. The instance_number is declared key in the YANG list.
 
-With this in mind **@peter** did the first stab a translation that has been validated and that works for YANG. It models the [IPSO Humidity Object (3304)](https://github.com/IPSO-Alliance/pub/blob/master/reg/xml/3304.xml). If you thought that the XML looks *unappealing* then welcome to YANG:
+With this in mind **@peter** did the first stab a translation that has been validated and that works for YANG. It models the IPSO Humidity Object (3304). If you thought that the XML looks *unappealing* then welcome to YANG:
 
 
 ``` c
