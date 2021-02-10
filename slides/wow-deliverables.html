@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+      @page {
+          size: 1210px 681px;
+          margin: 0;
+      }
+
+      @media print {
+          .remark-slide-scaler {
+              width: 100% !important;
+              height: 100% !important;
+              transform: scale(1) !important;
+              top: 0 !important;
+              left: 0 !important;
+          }
+      }
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 300;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; font-size: 0.7em;}
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 0px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+    </style>
+  </head>
+  <body>
+
+<textarea id="source">
+
+count: false
+class: center, middle
+
+# Markdown-based Project Workflow 
+### Jaime Jiménez, Per Persson (Yggdrasil/Mimer)
+.footnote[3rd February 2021]
+
+---
+
+## Overview
+
+- The de-facto deliverable format in Ericsson is a templify-based word document, sometimes a pdf.
+
+- It is now possible to **work on markdown (!!)** .red.bold[*] instead and automatically generate a word document for delivery. 
+
+- It is possible to generate it locally or have the CI/CD on Gitlab to do it for you.
+
+- Examples:
+
+	- [Document Report](https://gitlab.seld.rnd.ericsson.se/iottech/iot-scalability)
+	- [IvD document](https://gitlab.seld.rnd.ericsson.se/ejajimn/ivd-template)
+
+.footnote[.red.bold[*] Note: (!!) is a common symbol for evaluating the merits of a chess move and it means a "brilliant move"]
+
+---
+
+## Example
+
+- Show [DOTS ivd example](https://gitlab.seld.rnd.ericsson.se/ejajimn/i-light-dots)
+  - Folder structure.
+  - Plant UML images.
+  - Markdown Structure.
+  - Compile
+
+---
+
+## Using the CI/CD
+
+- CI/CD on the [scalability report](https://gitlab.seld.rnd.ericsson.se/iottech/iot-scalability) example.
+- Simple build script.
+- Depends on Gitlab for it to run, so it sometimes does not work if there are gitlab account limits like docker hub pull rate limit.
+
+---
+
+## Team workflow 
+**Inspired by Yggdrasil team**
+
+- All documentation **shall** be hosted by our internal [GitLab server][1]. Final deliverables can be shared with Sharepoint.
+- Use the [todo][2] to assign tasks (even to yourself), it minimizes the reporting work for all of us.
+- Different features should be isolated. So for major edits, please do a `pull request` on a **dedicated branch**.
+- Minor changes, specially those which are editorial can be done on `master` directly.
+- If you write ivd's on some part of the solution, please add a reference with the P-number to the report.
+- Images should be in png/svg format. Sequence diagrams should be in plantuml within the markdown.
+- CI/CD generates the `docx` word document. It can be downloaded it on `/pipelines/<job-name>/`
+- If your commit breaks the CI/CD for some reason, please [revert](https://git-scm.com/docs/git-revert) to previous.
+
+[1]: https://gitlab.seld.rnd.ericsson.se/iottech/iot-scalability
+[2]: https://gitlab.seld.rnd.ericsson.se/iottech/iot-scalability/-/blob/master/todo.md
+
+
+---
+
+## Takeaways
+
+- Positive things 
+
+  - Simplifies the workflow using git.
+  - All aesthetic design is on the `templify-template.docx`,  edit once and reuse!
+  - All content is on the markdown files, very lightweight to edit, allows to focus on content.
+
+- Negative things
+
+  - Lots of time spend initially on the Word template variables.
+  - Commenting/discussions become more complicated than in Word, specially for very large groups. Works fine for smaller groups (3 people or so). 
+  - Not everyone familiar with git, markdown, etc.
+  - Adds tools maintenance when using CI/CD.
+  - Things break. 
+
+</textarea>
+<script src="/Users/ejajimn/code/JAIME/jaime.win/assets/remark-latest.min.js"></script>
+<script src="/Users/ejajimn/code/JAIME/jaime.win/assets/mermaid.js"></script>
+<script src="https://jaimejim.github.io/assets/mermaid.js"></script>
+<script src="https://jaimejim.github.io/assets/remark-latest.min.js"></script>
+<script>
+
+  window.onload = function(){
+    var slideshow = remark.create();
+    // don't let mermaid automatically load on start
+    var mermaidconfig = {
+      startOnLoad: false,
+      cloneCssStyles: false,
+      theme: 'neutral'
+    };
+    mermaid.initialize(mermaidconfig);
+
+    function initMermaidInSlide(slide){
+      document.querySelectorAll(".remark-slides-area .remark-slide")[slide.getSlideIndex()]
+              .querySelectorAll(".mermaid")
+              .forEach(function(graph){
+                mermaid.init(undefined, graph);
+              });
+    }
+    slideshow.on('afterShowSlide', initMermaidInSlide);
+    initMermaidInSlide(slideshow.getSlides()[slideshow.getCurrentSlideIndex()]);
+  };
+
+</script>
+</body>
+</html>

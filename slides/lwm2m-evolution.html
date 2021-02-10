@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!-- author: jaime.jimenez@ericsson.com & remarkjs -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:200,300,400);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+      @page {
+          size: 1210px 681px;
+          margin: 0;
+      }
+
+      @media print {
+          .remark-slide-scaler {
+              width: 100% !important;
+              height: 100% !important;
+              transform: scale(1) !important;
+              top: 0 !important;
+              left: 0 !important;
+          }
+      }
+      body {
+        font-family: 'Roboto';
+        font-weight: 200;
+      }
+      h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 300;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; font-weight: 400;}
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(38, 97, 249);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Roboto Mono'; font-size: 0.7em;}
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 0px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+    </style>
+  </head>
+  <body>
+
+<textarea id="source">
+
+count: false
+class: center, middle
+
+# LwM2M / IPSO Data Model Evolution 
+## 0% Presentation 
+### Jaime, Ari, Petri, Klaus. 
+.footnote[5th February 2021]
+
+---
+
+## Context
+
+- LwM2M is the preferred device management protocol by Ericsson, used by IoT Accelerator. It is done at the Open Mobile Alliance (OMA). It also defines a data model called IPSO. 
+  	
+- Ericsson believes ecosystem interoperability is key to increase the value of its products, therefore ER has also a mandate to drive interoperability among the many organizations that conform it (Zigbee, Bluetooth, IPSO, OneDM, OPC, IIC, OCF). 
+  	
+- At IETF there is the ASDF WG which is provides a definition format named Semantic Definition Format (SDF) represented in JSON. They also provide a JSON schema syntax definition and syntax validation.
+
+---
+
+## Overview of Q-goal
+
+- Objective: plan how to align IPSO to better interoperate with other ecosystems. 
+  
+  1. **Find requirements missing in IPSO** when compared with alternatives (P/A/E, serializations, schema languages...).
+  
+  2. We should **provide a strategy document** on which new features and changes we should have in IPSO, as well as a roadmap on how to introduce them in the WG.
+	
+  3. Make sure that the SDF draft *draft-ietf-asdf-sdf-01* (soon to-be-RFC) fulfills the requirements from Ericsson and IPSO pov. **If needed introduce change proposals to it**. 
+
+- Not included
+  
+	- While we may provide specific schema definitions or examples, they are not required for this deliverable.
+  
+	- Driving adoption of any standard takes time, target is eof 2020 and 2021 for that.
+
+---
+	
+## Status
+
+- We have met two times.
+
+- Tested the waters in the IPSO group with positive feedback.  
+	
+- Started with the background work:
+	- [SDF draft](https://tools.ietf.org/html/draft-ietf-asdf-sdf-01).
+	- [Ericsson Translation tools](https://github.com/EricssonResearch/ipso-odm).
+	- We have a contact list of relevant experts.
+
+- Minutes can be found on the OneNote minutes folder.
+
+- WoW through Gitlab.
+
+---
+
+## Relevant Dates
+
+
+- [Very Soon]: WGLC draft-ietf-asdf-sdf-01
+
+- [31-march]: Q1-Goal target deadline
+
+- [Unclear]: LwM2M v1.X new requirements expected when companies implement v1.1 and v1.2
+
+
+---
+
+## Discussion
+
+1) extensions to the current data model schema to enable better use with automated tools (e.g., handling enumerated values)
+
+2) new schema that enables structure for property types and actuation input
+
+3) new schema language (e.g., JSON format based on SDF) that works better with modern tools and processes
+
+4) supporting more capable and complex devices than what has traditionally been focus of LwM2M/IPSO, e.g., for critical IoT use cases
+
+5) evolution of the serialization format (SenML based on JSON/CBOR) to support the evolved model and use cases
+
+6) evolution of the model and serialization formats for increased support for AI use cases
+
+7) IPSO Strategy
+
+---
+
+## SDF example
+
+- Switch with Properties and Actions.
+
+```json
+{"info": {
+      "title": "Example file for OneDM Semantic Definition Format",
+      "version": "2019-04-24",
+      "copyright": "Copyright 2019 Example Corp. All rights reserved.",
+      "license": "https://example.com/license"},
+  "namespace": {
+      "cap": "https://example.com/capability/cap"},
+  "defaultNamespace": "cap",
+  "sdfObject": {
+      "Switch": {
+          "sdfProperty": {
+              "value": {
+                  "description": "The state of the switch; false for off and true for on."
+                  "type": "boolean"} },
+          "sdfAction": {
+              "on": {
+                  "description": "Turn the switch on."},
+              "off": {
+                  "description": "Turn the switch off."},
+              "toggle": {
+                  "description": "Toggle the switch."}
+        }
+      }
+    }
+  }
+```
+
+</textarea>
+<script src="/Users/ejajimn/code/JAIME/jaime.win/assets/remark-latest.min.js"></script>
+<script src="/Users/ejajimn/code/JAIME/jaime.win/assets/mermaid.js"></script>
+<script src="https://jaimejim.github.io/assets/mermaid.js"></script>
+<script src="https://jaimejim.github.io/assets/remark-latest.min.js"></script>
+<script>
+
+  window.onload = function(){
+    var slideshow = remark.create();
+    // don't let mermaid automatically load on start
+    var mermaidconfig = {
+      startOnLoad: false,
+      cloneCssStyles: false,
+      theme: 'neutral'
+    };
+    mermaid.initialize(mermaidconfig);
+
+    function initMermaidInSlide(slide){
+      document.querySelectorAll(".remark-slides-area .remark-slide")[slide.getSlideIndex()]
+              .querySelectorAll(".mermaid")
+              .forEach(function(graph){
+                mermaid.init(undefined, graph);
+              });
+    }
+    slideshow.on('afterShowSlide', initMermaidInSlide);
+    initMermaidInSlide(slideshow.getSlides()[slideshow.getCurrentSlideIndex()]);
+  };
+
+</script>
+</body>
+</html>
