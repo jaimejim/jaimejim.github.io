@@ -78,14 +78,14 @@ Now we want to install the configuration files that we took time to polish. For 
 On M1 run `mackup backup` to backup your dotfiles. You will see your home folder now has symlinks to the backup, in my case I use Dropbox but there are other options.
 
 ```sh
- 0 drwxr-xr-x   3 ejajimn  staff     96 Feb  9 21:53 .tmux/
- 0 lrwxr-xr-x   1 ejajimn  staff     40 Feb  9 12:15 .tmux.conf@ -> /Users/ejajimn/Dropbox/Mackup/.tmux.conf
- 0 drwxr-xr-x   5 ejajimn  staff    160 Feb  9 12:15 .vim/
-24 -rw-------   1 ejajimn  staff  11526 Feb 10 10:40 .viminfo
- 0 lrwxr-xr-x   1 ejajimn  staff     36 Feb  9 12:15 .vimrc@ -> /Users/ejajimn/Dropbox/Mackup/.vimrc
- 0 drwxr-xr-x   4 ejajimn  staff    128 Feb 10 10:12 .vscode/
- 0 lrwxr-xr-x   1 ejajimn  staff     40 Feb  9 12:15 .wget-hsts@ -> /Users/ejajimn/Dropbox/Mackup/.wget-hsts
- 0 lrwxr-xr-x   1 ejajimn  staff     37 Feb  9 12:15 .yarnrc@ -> /Users/ejajimn/Dropbox/Mackup/.yarnrc
+ 0 drwxr-xr-x   3 jaime  staff     96 Feb  9 21:53 .tmux/
+ 0 lrwxr-xr-x   1 jaime  staff     40 Feb  9 12:15 .tmux.conf@ -> /Users/jaime/Dropbox/Mackup/.tmux.conf
+ 0 drwxr-xr-x   5 jaime  staff    160 Feb  9 12:15 .vim/
+24 -rw-------   1 jaime  staff  11526 Feb 10 10:40 .viminfo
+ 0 lrwxr-xr-x   1 jaime  staff     36 Feb  9 12:15 .vimrc@ -> /Users/jaime/Dropbox/Mackup/.vimrc
+ 0 drwxr-xr-x   4 jaime  staff    128 Feb 10 10:12 .vscode/
+ 0 lrwxr-xr-x   1 jaime  staff     40 Feb  9 12:15 .wget-hsts@ -> /Users/jaime/Dropbox/Mackup/.wget-hsts
+ 0 lrwxr-xr-x   1 jaime  staff     37 Feb  9 12:15 .yarnrc@ -> /Users/jaime/Dropbox/Mackup/.yarnrc
 ```
 
 Now on M2 run `mackup restore`. That's it, now your vim configuration is back how it was on M1, your settings for emacs... whatever you have tweaked. 
@@ -131,7 +131,7 @@ Therefore what I want is to simply copy everything as it is from M1 to M2. For t
 Both machines are on the same wifi, with M2 having 192.168.1.3 as IP address. I just run the command:
 
 ```sh
-rsync -av ~/code/ 192.168.1.3:ejajimn/
+rsync -av ~/code/ 192.168.1.3:jaime/
 ```
 
 That will copy all folders, git branches and configurations as they are to the new Mac over wifi. Which I find pretty fast and cool.
@@ -154,5 +154,5 @@ pip install -r ~/Dropbox/pipfile
 
 And this on M1 again:
 ```sh
-rsync -av ~/code/ 192.168.1.3:ejajimn/
+rsync -av ~/code/ 192.168.1.3:jaime/
 ```
