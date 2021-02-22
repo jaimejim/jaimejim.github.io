@@ -16,7 +16,7 @@ star: true
 
 I write these lines as a way to cope with the treatment for my baby-boy born the Friday 19th 2021. Writing bits of text is one thing that seems to help me scape from this terrible situation for few minutes.
 
-I would like for this entry to be a bit hidden from the blog posts, with an [inconspicuous title](https://youtu.be/HzU9vVK51-Y?t=23), so that mostly parents in the same situation find through the organic searchers. no point on traumatizing everybody. 
+I would like for this entry to be a bit hidden from the blog posts, with an [inconspicuous title](https://youtu.be/HzU9vVK51-Y?t=23), so that mostly parents in the same situation find through the organic searchers. No point on traumatizing everybody. 
 
 **Warning:** This text is not for the faint hearted. I tell a very painful and brutal experience. If you found this by chance, just stop reading.
 
