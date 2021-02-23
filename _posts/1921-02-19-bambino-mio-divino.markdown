@@ -74,7 +74,7 @@ There is first the Braun injection device, the baby has two of those. The device
 
 There is another screen from Somanetics that has a graph monitoring the oxygen saturation of the brain, it was around 80-87 all the time. 
 
-There are two big monitors that present the heart rate which was around 95-120 or so - due to the cooling process - , the oxygen saturation which was around 100, the blood pressure which was around 50 mmHg and the breathing pattern which includes apnea cycles, inspirations are about around 40-60 per minute, with rapid breathing.
+There are two big monitors that present the heart rate which was around 95 to 120 - due to the cooling process - , the oxygen saturation which was around 100, the blood pressure which was around 50 mmHg and the breathing pattern which includes apnea cycles, inspirations are about around 40-60 per minute, with rapid breathing.
 
 There is a respirator from Dragger which I did not look too much in detail but that essentially helps push a little bit more of air into the babies. I was told the baby could breathe by himself but that they kept the respirator just in case during the cooling process. 
 
@@ -86,29 +86,34 @@ I was told there might be also seizures during the warming, but the baby can als
 
 The baby's bed is small and comfortable, it has a heating panel on top of it. The baby is changed positions every few hours to avoid skin marks. It has a couple of tiny tubes going down is nose and larynx to the stomach and lungs. The lung ones are for the respirator and to drain the lungs of liquid and amniotic fluid (hopefully not much after 24 h) and the stomach one is for the baby food. The respirator tube tends to accumulate liquid. Other than the glucose the baby receives few milliliters of dutifully pumped mother's milk. if you see the milk it looks yellowish as it has high fatty content. It just goes down by gravity into the babies tummy. He seems to like it. At some point I had to spread a bit of mother's milk on the lips, the baby reacted to it with a smirk.
 
-What else... there is also a chair and another table with a computer and a specific software to write down details of the progress of the baby, it is called <https:/maisa.fi>. Nurses and doctors write there all the readings of blood tests and specific events of the child's time in the ICU. 
+What else... there is also a chair and another table with a computer and a specific software to write down details of the progress of the baby, it is called <https:/maisa.fi>. Nurses and doctors write there all the readings of blood tests and specific events of the child's time in the ICU.
 
-The room sounds like a server room, with the motors of the various machinery, and the ventilators cooling the many processors computing stuff in that room. 
+The room sounds like a server room, with the motors of the various machinery, and the ventilators cooling the many processors computing stuff in that room.
 
-This set up is on every room out of which there are 24 rooms I think. And the corridors connecting everything are labyrinthic. It is very easy to get lost as everything looks the same in the long grey corridors with the same masked nurses, white emergency doors and wooden ICU doors. 
+This set up is on every room out of which there are 24 rooms I think. And the corridors connecting everything are labyrinthic. It is very easy to get lost as everything looks the same in the long grey corridors with the same masked nurses, white emergency doors and wooden ICU doors.
 
 The ICU floor is very clean and well taken care off but some of the parts of the Hospital seem run down and disorganized. For example I was told to use the stairs as they were repairing some floors and the elevator did not work. I couldn't get it again and after waiting and knocking I had to go all the way down to take an elevator, walk 100 meters, take another and go back where I was. I noticed all parents had trouble with these things.
 
 ## Al freddo al gelo
 
-The emotional process of accepting the news is the worst experience of my life by far. I had a testicular torsion as a kid and I remember the excruciating pain, wanting to die to relieve it. I would happily and cheerfully suffer that for the rest of my life if I could have the peace of mind of knowing that my child's brain would be fine. The mind-pain is excruciating and superior to any physical pain.
+The emotional process of accepting the news is the worst experience of my life by far. I had a testicular torsion as a kid and I remember the excruciating pain before being treated. I would happily and cheerfully suffer that for the rest of my life if I could have the peace of mind of knowing that my child's brain would be fine. The mind-pain is excruciating and superior to any physical pain.
 
-When it starts, the process is that in addition to receiving the news that your baby is possibly mentally handicapped for life of grieving for the death of a healthy child - a child that never came at the time of receiving the news - . There is no way to cope with it, no training I can think off and no advice I can imagine for those first few hours. It is cruel, it is a surreal unbelievable nightmare. 
+The first minutes you of course receive the news that your baby is very sick, that he might become mentally impaired for life or even die. There is no way to cope with it, no training I can think off and no advice I can imagine for those first few hours. It is cruel, it is a surreal unbelievable nightmare. 
 
 There is an emotional rollercoaster during the first 72 hours, panic, anxiety, fear, happiness, confusion, incomprehension, uncertainty, frustration, anger... It is common for parents to enter into depression in a matter of hours, lose the appetite, act erratic, thinking constantly at what could have happened and what may happen in the future. Thinking about the pain that this fragile baby born has endured, thinking about his state, the painkillers, drugs and catheters as well as the bleak future ahead for this child is excruciating. I fear this will haunt me for life.
 
 We were constantly crying. Back in our room I could only keep my mouth open making loud weeping noises. For minutes and hours. Thinking about my poor baby. Mi pobre hijo, en una camilla, drogado y frío. Un tesoro del cielo que tiembla inconsciente. Toda esperanza y toda fe perdida.
 
+After some time I started some form of grieving process for a healthy child that never happened.
+
 I thought about how perfect our life could have been had we arrived an hour earlier, perhaps only few minutes! The first morning I hold on to the hope that somehow things would be better. I had a constant deep fear un dolor profundo y hondo. Lágrimas y saliva se mezclaban en mi boca. Pero luego perdí la esperanza. No hay manera de expresar el dolor. La cara de piedra que se te queda.
 
 At some point, when all hope is lost I prayed. I think that regardless of faith, creed or beliefs everyone prays to God in this situations, it is an entity rooted in ourselves that you try to awaken in extreme situations, a primordial entity. 
 
-So you pray. We pray because there is absolutely nothing else on this world that can be done. I prayed more intensely than I ever did, I begged to God with a clean heart and I sincerely offered everything I had, health, limbs and life for an improvement of the baby's condition. I cried my heart out. After extenuation, you may fall in a light sleep for few hours. This pattern goes on for at least few days.
+So you pray. We pray because there is absolutely nothing else on this world that we can do. I prayed more intensely than I ever did, I begged to God with a clean heart and I sincerely offered everything I had, health, limbs and life for an improvement of the baby's condition. I cried my heart out. After extenuation, you may fall in a light sleep for few hours. 
+
+This pattern goes on for at least few days. There is nothing normal about it, your face will sometimes be numb from crying and other times when you tell what has happened you will become wobbly and fall apart. But you have to be strong and go on, you hear me? BE STRONG. 
+You need to to do that for your family, for your baby. Be strong, look at the very short term for now and that is it.
 
 ## O mio Signore!
 
@@ -135,15 +140,17 @@ Aside from being life-threatening, Neonatal hypoxic-ischemic encephalopathy (HIE
 
 There are also several [biomarkers](https://helda.helsinki.fi/bitstream/handle/10138/308922/BIOMARKE.pdf?sequence=1&isAllowed=y) that may give you some insights on your specific situation, however as this is very rare, it is still relatively under study.
 
-I could provide a detailed bibliography of the dozen papers or so I found relevant to my case, mention EEG, MRIs and other sources of information. However I really, strongly think it was counter-productive during the first days. So I will not do that. Sometimes is better not to know for a while. 
+I could provide a detailed bibliography of the dozen papers or so I found relevant to my case, mention EEG, MRIs and other sources of information. However I really, strongly think it was counter-productive during the first days. So I will not do that. Sometimes is better not to know for a while.
 
-Besides talking or singing to your baby the second best thing you can do is to talk with your family and friends obviously. I spent ours on the phone as my family is in Spain. I spent ours hugging and crying with my wife. We had moments of rest in this short weekend, although it was mostly a long nightmare. There is nothing normal about it, your face will sometimes be numb from crying and other times when you tell what has happened you will become wobbly and fall apart. But you have to be strong and go on, you hear me? BE STRONG. You need to to do that for your family, for your baby. Be strong, look at the very short term for now and that is it.
+As mentioned before, having very good medical care is mandatory to even start thinking about improvements. If the baby takes too long to be applied the hypothermia, if the c-section happens too late, if there aren't good nurses and doctors or equipment, then nothing helps.
 
-Another thing that I have noticed may help, but that is counterintuitive is to postpone full relaxation. Of course it depends on the situation, check with someone obviously. In our case we have a daughter and the first night I went home she was sobbing and crying for papa, not knowing where we were, wanting attention and care. It may seem a good idea to go back to your home from the Hospital but I think it is worse. It gives you an impression of normality, of hope and warmth that vanishes when you go back to the reality of the ICU. So I advice you to get a Hotel close to the Hospital and arrange to do turns with your wife. Leave job aside and other children with relatives for few days. Kids can recover from having mum and dad away for few nights, but you should not be driving around distances in your current situation, moreover it will create an emotional rollercoaster that will tear you apart every time. If you have to do it, you probably should do it the first night only, which is nightmarish, but I would not go back and forth for a week.
+Besides talking or singing to your baby the second best thing you can do is to talk with your family and friends obviously. I spent ours on the phone, as my family is in Spain and could not be here. I spent ours hugging and crying with my wife.
+
+Another thing that I have noticed may help, but that is counterintuitive is to postpone full relaxation. Of course it depends on the situation, check with someone first. In our case we have a daughter and the first night I went home she was sobbing and crying for papa, not knowing where we were, wanting attention and care. It may seem a good idea to go back to your home from the Hospital but I think it is worse. You should not be driving around distances in your current situation, moreover the impression of normality will create an emotional rollercoaster that will tear you apart every time. So I think a Hotel close to the Hospital and arranging to do turns with the wife is a better idea. 
 
 It also helps to think that right now there are dozens of family members and friends whose thoughts are with your baby in this. There have apparently been entire churches in Spain praying for my baby. I feel we are not entirely alone in this. It is important that you open spiritually, cause it will *alleviare il dolore*.
 
-It helped me to notice after hours of crying that the love for my wife, my daughter and my baby boy also increased. You will appreciate them more intensely. You will feel a lot more love for those closer to you. I think it is a natural compensation for the pain you are being inflicted. It gives strength to continue. 
+It helped me to notice after hours of crying that the love for my wife, my daughter and my baby boy also increased. You will appreciate them more intensely. You will feel a lot more love for those closer to you. I think it is a natural compensation for the pain you are being inflicted. It gives strength to continue.
 
 ## Io ti vedo qui a tremar
 
