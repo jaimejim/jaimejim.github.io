@@ -117,8 +117,6 @@ You need to to do that for your family, for your baby. Be strong, look at the ve
 
 ## O mio Signore!
 
-The happy life I remembered from barely few hours ago somehow becomes a bitter drink when being remembered, so the body learns not to remember. I prepared mentally for the worst, which is a child with cerebral palsy and dedicated care for his whole life. I am not ready to go into that yet, as we still do not know the extend of the injury. I know the statistics, that 1 to 4 in a thousand births suffer hypoxia, that half of those babies die and that if your baby is not on the "mild" hypoxia group he has poor chances of a normal life.
-
 Reading about the topic in this situation does not help. Normally the more information the better, and while I think it might be useful to know about the machines that help your baby and even about the medical terms, it is not good to enter the statistical realm. It feels like a madman's lottery. It is better to focus on every moment, little by little. Focus on your wife/husband focus on finding some relief of the pain, take drugs to relax you have to, force yourself to eat if you have to. Focus on your baby, talk to him, whisper words and caress him. I read him [Æsop fables](https://www.gutenberg.org/files/19994/19994-h/19994-h.htm), sang and told him what was going on.
 
 If you have to know, please ask your doctor, I am just writing from the point of view of a suffering father, I am no doctor, no nothing. I just read literature I should not read in this situation. 
@@ -142,6 +140,8 @@ There are also several [biomarkers](https://helda.helsinki.fi/bitstream/handle/1
 
 I could provide a detailed bibliography of the dozen papers or so I found relevant to my case, mention EEG, MRIs and other sources of information. However I really, strongly think it was counter-productive during the first days. So I will not do that. Sometimes is better not to know for a while.
 
+## O Bambino mio Divino
+
 As mentioned before, having very good medical care is mandatory to even start thinking about improvements. If the baby takes too long to be applied the hypothermia, if the c-section happens too late, if there aren't good nurses and doctors or equipment, then nothing helps.
 
 Besides talking or singing to your baby the second best thing you can do is to talk with your family and friends obviously. I spent ours on the phone, as my family is in Spain and could not be here. I spent ours hugging and crying with my wife.
@@ -158,6 +158,8 @@ As I said at the beginning, I write this for multiple reasons:
 
 To occupy my brain onto something. I spiral out of control into despair if I don't try to sail through the turmoil by doing something. For example writing. Alone I type and weep, type and weep.
 
-To document what has happened and is happening, for myself mostly but perhaps it can be of use as a resource to other parents, even if gloom and doom is prevalent and if there is certainly little hope from this situation. Perhaps you can get some solace in knowing that you are not the only one, that this terrible path has been walked multiple times before by other anonymous suffering parents. Others like you were shocked by the circumstances and that they pushed forward the best they could. Perhaps you can get some advice, or perhaps I am only dropping you a bomb when you were just given the news. I sincerely hope for you, dear reader to never ever have to go through this. And if you are already in this nightmare, I hope you awaken from it soon and with fortitude.
+To document what has happened and is happening for myself, so that maybe one day I can go back to it and remember it as a far away memory of the worst life experience imaginable. 
 
-*I wish for my baby to be healthy. I wish it with all my mind, body and soul at every level of my existence. I pray for him and for all babies in this situation. I pray for their parents and for their siblings and friends. God please help us.*
+Perhaps for a parent like me that stumbles upon thi. I hope you can get some solace in knowing that you are not the only one, that this terrible path has been walked before by other anonymous suffering parents. Others like you were shocked by the circumstances and pushed forward the best they could. Perhaps you can get some advice, or perhaps I am only dropping you a bomb when you were just given the news. I sincerely hope for you, dear reader to never ever have to go through this. And if you are already in this nightmare, I hope you awaken from it soon and with fortitude.
+
+*I wish for my baby to be healthy with all my mind, body and soul. I pray for him and for all babies in this situation. I pray for their parents and for their siblings and friends. God please help us.*
