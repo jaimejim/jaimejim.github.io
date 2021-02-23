@@ -1,5 +1,5 @@
 ---
-title: "⋆"
+title: "∞"
 layout: post
 date: 1921-02-19 9:00
 image: /assets/images/bebe.jpg
@@ -22,11 +22,11 @@ If you are a parent of a neonate who has just been diagnosed with Hypoxic-Ischem
 
 I would like for this entry to be a bit hidden from the blog posts, with an inconspicuous title from a [baby lullaby](https://youtu.be/HzU9vVK51-Y?t=23), so that mostly parents in the same situation find through the organic searcher engines and not by randomly checking my blog, which seldom happens anyways. No point on traumatizing everybody.
 
-**Warning:** The rest of this entry is not just about HIE in general. It is not a parent guideline. I write as a mechanism to cope with the situation. In my mind I am telling it to someone in my situation, partially like a diary. I tell a very painful experience.
+**Warning:** The rest of this entry is not just about HIE in general. It is not a parent guideline. I write as a mechanism to cope with the situation. I narrate a very painful experience while it is happening.
 
 ## Tu scendi dalle stelle
 
-My wife was pregnant of 9 months, the due date was the 24th of February. We live in Finland about 25-30 min ride by car to the maternity Hospital. We have a daughter of 20 months and the coming baby-boy had a perfectly normal development during pregnancy.
+My wife was pregnant of 9 months, the due date was the 24th of February. We live in Finland about 25-30 min ride by car to the Women's Hospital in Helsinki. We have a daughter of 20 months and the coming baby-boy had a perfectly normal development during pregnancy.
 
 The tragedy happened on a icy cold Friday morning. My wife called the Hospital to mention that she felt a bit uneasy, the doctor recommended to go there and get checked. We arrived at around 9 am. I was told to wait outside as we have some restrictions due to covid on how many people can be inside.
 
@@ -42,7 +42,7 @@ After few minutes I was told to get inside and sit at the head of the operation 
 
 They took the baby away, mentioned again vague words about having had hypoxia. I did not know at the time what that meant, just a general idea of lack of breathing. I tried to ask for more information but they could not give many details at the time. Or maybe I just cannot remember. The conversations between the nurses where in finnish so I understood just few common medical terms here and there.
 
-I was taken to another room where I believe they resuscitated the baby. A doctor, the only man I have seen in the Hospital up to that point, turned around and told me that there was an ongoing experimental study in the hospital and that there was a drug that could help my baby and whether *I would give my consent for my baby to be part of the experiment*.
+I was taken to another room where I believe they resuscitated the baby. A doctor, the only man I have seen in the Hospital up to that point, turned around and told me that there was an ongoing [experimental study](http://albino-study.eu/) in the hospital and that there was a drug that could help my baby and whether *I would give my consent for my baby to be part of the experiment*.
 
 Those are the most terrifying words I have ever heard. Even at that point I had little idea of what was happening, as the last hope of a normal birth faded the shock overcame me. I asked more information of what was happening and they explain that the baby had hypoxia and little or no blood flow went to his brain, likely causing brain damage. I didn't know it then but we had been very unlucky as it happens once every thousand births. So, so unlucky.
 
@@ -54,13 +54,15 @@ I went back to the operation room and crying held my wife's hand. She already kn
 
 ## O Re del Cielo 
 
-The hospital is a labyrinth and it has few different elevators going to different floors. The maternity ward, where the mother recovers from childbirth is on the 3rd floor. The baby was on the 6th floor in the Intensive Care Unit (ICU). You cannot take an elevator from 3rd to 6th floor, you have to go down on the 5th floor and walk 100 meters every time, also ring a couple of bells every time and wear the mask at all times. Due to covid only one parent can be at a time in the neonatal Intensive Care Unit (ICU). 
+The hospital is a labyrinth and it has few different elevators going to different floors. The maternity ward, where the mother recovers from childbirth is on the 3rd floor. The baby was at the Neonatal Intensive Care Unit on the 6th floor. As there is some construction work going on you cannot take an elevator from 3rd to 6th floor, you have to go down on the 5th floor and walk 100 meters every time, also ring a couple of bells every time and wear the mask at all times. Due to covid only one parent can be at a time in the neonatal Intensive Care Unit (ICU). That was the unpleasant part.
+
+The ICU itself has top nurses and doctors, and very modern facilities. They treat intensive care babies but also premature ones. At all times the nurses and doctors gave the care that my baby needed. The staff and the high quality of the care provided was a constant that gave me hope that things could get better. 
 
 The ICU has several rooms, ours is number 16. In it you may have up to two babies at a time and one parent per baby. When I got there I saw him intubated, with several cables and machines attached to him. Meanwhile my wife was being stitched on the operation room.
 
-The baby weighted 3.4kg, was warm and almost did not move at all. At some point it cried but the tube through the larynx prevented any noise, his face was that of pain. I was actually relieved for a bit. Some feeling is better than no feeling. 
+The baby weighted 3.4kg, was warm and almost did not move at all. At some point he cried but the tube through the larynx prevented any noise, his face was that of pain. I was actually relieved for a bit. Some feeling is better than no feeling. 
 
-I was told the baby had a APGAR score (it stands for "Appearance, Pulse, Grimace, Activity, and Respiration.") for 1min, 5min and 10min of 2/3/5, that the umbilical pH value was 6.95, that the BE value was -14 and that the blood lactate value was 18.4. Few hours after birth we were told the [S100B](https://en.wikipedia.org/wiki/S100B) levels where >200. Those values now make some sense but when you hear them the first time they give little explanation. By the way, on the S100B it is more important the [rate of decrease](https://pubmed.ncbi.nlm.nih.gov/22592203/) than the initial value. Anyways, it is not a good sign to have twenty times the maximum recommended ammount. 
+I was told the baby had a low  "Appearance, Pulse, Grimace, Activity, and Respiration" or APGAR score of 2/3/5 (1min, 5min and 10min). That the umbilical pH value was 6.95, that the BE value was -14 and that the blood lactate value was 18.4. Few hours after birth we were told the [S100B](https://en.wikipedia.org/wiki/S100B) levels where >200. Those values now make some sense but when you hear them the first time they give little explanation. By the way, on the S100B it is more important the [rate of decrease](https://pubmed.ncbi.nlm.nih.gov/22592203/) than the initial value. Anyways, it is not a good sign to have twenty times the maximum recommended amount. 
  
 After the short oral consent and the tests, the baby started a hypothermia treatment, which lowered his body temperature to 33.5 degrees celsius. It seems that this is the only therapy available for babies with Hypoxic-Ischemic Encephalopathy (HIE) unfortunately, cooling only helps approximately 1 in 8 babies with moderate to severe HIE. The treatment starts before the 6th hour after birth.
 
@@ -68,7 +70,7 @@ After the short oral consent and the tests, the baby started a hypothermia treat
 
 The medical machinery the baby is in is constantly pumping and making noise. It is at first scary but after few days it gives some comfort that some precise mechanical artifacts constantly give the precise amount of everything to your baby. In my own words, the machines were the following.
 
-There is first the Braun injection device, the baby has two of those. The device has 4 some pistons or injectors which are slowly and gently pushing the right amounts of the respective liquids into the various parts of my baby's body. Sometimes the nabel, sometimes the arm or the leg. One is for Glucose at 30% which is the food the baby needs in addition to the mothers' milk, they give him 3.5 ml per hour. They also give him heparin to prevent blood clots, they give him 1ml per hour through the nabel same thing on the arteria. Fentanyl is also administered at 0.48 ml/h to sedate the baby and to control the blood pressure. 
+There is first the Braun injection device, the baby has two of those. The device has 4 some pistons or injectors which are slowly and gently pushing the right amounts of the respective liquids into the various parts of my baby's body. Sometimes the nabel, sometimes the arm or the leg. One is for Glucose at 30% which is the food the baby needs in addition to the mother's milk, they give him 3.5 ml per hour. They also give him heparin to prevent blood clots, they give him 1ml per hour through the nabel same thing on the arteria. Fentanyl is also administered at 0.48 ml/h to sedate the baby and to control the blood pressure. 
 
 There is another screen from Somanetics that has a graph monitoring the oxygen saturation of the brain, it was around 80-87 all the time. 
 
@@ -96,7 +98,7 @@ The ICU floor is very clean and well taken care off but some of the parts of the
 
 The emotional process of accepting the news is the worst experience of my life by far. I had a testicular torsion as a kid and I remember the excruciating pain, wanting to die to relieve it. I would happily and cheerfully suffer that for the rest of my life if I could have the peace of mind of knowing that my child's brain would be fine. The mind-pain is excruciating and superior to any physical pain.
 
-When it starts, the process is that of grieving for the death of a healthy child - a child that never came - in addition to receiving the news that your baby is possibly mentally handicapped for life. There is no way to cope with it, no training I can think off and no advice I can imagine for those first few hours. It is cruel, it is a surreal unbelievable nightmare. 
+When it starts, the process is that in addition to receiving the news that your baby is possibly mentally handicapped for life of grieving for the death of a healthy child - a child that never came at the time of receiving the news - . There is no way to cope with it, no training I can think off and no advice I can imagine for those first few hours. It is cruel, it is a surreal unbelievable nightmare. 
 
 There is an emotional rollercoaster during the first 72 hours, panic, anxiety, fear, happiness, confusion, incomprehension, uncertainty, frustration, anger... It is common for parents to enter into depression in a matter of hours, lose the appetite, act erratic, thinking constantly at what could have happened and what may happen in the future. Thinking about the pain that this fragile baby born has endured, thinking about his state, the painkillers, drugs and catheters as well as the bleak future ahead for this child is excruciating. I fear this will haunt me for life.
 
