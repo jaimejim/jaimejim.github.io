@@ -1,5 +1,5 @@
 ---
-title: "~"
+title: "⋆"
 layout: post
 date: 1921-02-19 9:00
 image: /assets/images/bebe.jpg
