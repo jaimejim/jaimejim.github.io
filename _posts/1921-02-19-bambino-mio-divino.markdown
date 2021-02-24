@@ -190,6 +190,6 @@ In the morning they took him to perform an MRI, which gave us more information o
 
 The preliminary results are now very positive and they are ready to move him out of the ICU into another Hospital.
 
-I have no words to express how it feels. Collapse, happiness, terror and fragility. My thoughts are of course with my two children but even more with other parents that have to go through this. I pray for them to have strength of mind.
+I have no words to express how it feels. Collapse, happiness, terror and fragility. My thoughts are of course with my two children but even more with other parents that have to go through this. I pray for them to have strength of mind and to get closure soon.
 
 My baby has been born a second time.
