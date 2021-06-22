@@ -23,7 +23,7 @@ HC1:NCFOXN%TSMAHN-HMR blablablablablaba :VC/4
 scanned 1 barcode symbols from 1 images in 0.02 seconds
 ```
 
-The QR code encodes a 3-byte header `HC1` for HC1 (Health Certificate Version 1) the rest is compressed Base45 data. After decompressing with zlib, we obtain CBOR/COSE binary data.
+The QR code encodes a 3-byte header `HC1` for HC1 (Health Certificate Version 1) the rest is compressed Base45 data. After decompressing with zlib (does zlib compress CBOR even more??), we obtain CBOR/COSE binary data.
 
 Before I started with that I googled online for the header `HC1:NCFOXN%` and it turned out that you can find the full [EU certificate specification](https://github.com/ehn-dcc-development/hcert-spec/blob/main/README.md) (!!).
 
