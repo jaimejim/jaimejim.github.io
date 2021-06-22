@@ -2,7 +2,7 @@
 title: "Electronic Health Certificates and IETF"
 layout: post
 date: 2021-06-22 11:20
-image: /assets/images/covid.jpg
+image: /assets/images/covid.png
 tag:
 - IETF
 - HCERT
