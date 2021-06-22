@@ -1,5 +1,5 @@
 ---
-title: "IETF and Electronic Health Certificates (HCERT)"
+title: "Electronic Health Certificates and IETF"
 layout: post
 date: 2021-06-22 11:20
 image: /assets/images/covid.jpg
@@ -11,17 +11,23 @@ star: true
 ---
 I have written nothing about COVID and the two annus horribilis we are having. So let this be the first and last post about the topic.
 
-I got today a EU CoVID certificate, which comes with a unique URN identifier and a QR code that encodes the same information and can be verified by a validator application.
+I got today a EU CoVID certificate from the [Finnish Health Service](https://thl.fi/en/web/thlfi-en/-/first-covid-19-vaccination-certificates-now-available-in-my-kanta-pages) (kanta.fi).  The certificate contains some identification information, details of the COVID-19 Vaccination and metadata to identify a valid certificate. It comes with a unique URN identifier and a QR code (or Aztec Code) that encodes the same information and can be verified by a validator application.
 
 ![An EU health Certificate](/assets/images/hcert.jpg)
 
-I could not resist trying to look into the QR code with a well-known tool called `zbar`. The QR code encodes a header`HC1:NCFOXN%TSMAHN-HMRGBGGAYPNFUO2R0II55T 43+$R/EBZLIH17A...`.
+I could not resist trying to look into the QR code with a well-known tool called `zbar`. 
 
-Turns out that when checking online for the header `HC1:NCFOXN%` you can find the full [EU certificate specification](https://github.com/ehn-dcc-development/hcert-spec/blob/main/README.md).
+```sh
+Desktop ~ zbarimg --raw qr.png                                                              (678ms)  
+HC1:NCFOXN%TSMAHN-HMR blablablablablaba :VC/4
+scanned 1 barcode symbols from 1 images in 0.02 seconds
+```
 
-I am few weeks behind as others like [Tobias Girstmair](https://gir.st/blog/greenpass.html) have tinkered much more already on it.
+The QR code encodes a 3-byte header `HC1` for HC1 (Health Certificate Version 1) the rest is compressed Base45 data. After decompressing with zlib, we obtain CBOR/COSE binary data.
 
-On the EHN github repository there are multiple [examples](https://github.com/ehn-dcc-development/ehn-dcc-schema/blob/release/1.3.0/test/valid/T-rat-dates3.json) of what the QR encodes. My QR code encodes a JSON structure similar to this:
+Before I started with that I googled online for the header `HC1:NCFOXN%` and it turned out that you can find the full [EU certificate specification](https://github.com/ehn-dcc-development/hcert-spec/blob/main/README.md) (!!).
+
+Others like [Tobias Girstmair](https://gir.st/blog/greenpass.html) have tinkered much more already on it and you can find lots of [examples](https://github.com/ehn-dcc-development/ehn-dcc-schema/blob/release/1.3.0/test/valid/T-rat-dates3.json) on the EHN github repository of what the QR encodes. My QR code encodes a JSON structure similar to this:
 
 ```json+
 {-260: {1: {'dob': '1983-04-28', date of birth
