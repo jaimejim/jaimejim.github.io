@@ -51,7 +51,7 @@ Others like [Tobias Girstmair](https://gir.st/blog/greenpass.html) have tinkered
  6: 1774452437} QR code generated
  ```
 
-I was pleasantly surprised to see use a lot of IETF-made technologies like [CBOR](https://datatracker.ietf.org/doc/html/rfc7049),  [COSE](https://www.rfc-editor.org/rfc/rfc8152.html), [CWT](https://datatracker.ietf.org/doc/html/rfc8392) [Base45](https://datatracker.ietf.org/doc/html/draft-faltstrom-base45), etc. Most of these have been done in collaboration with Ericsson folks and were initially intended for Internet of Things (IoT) as they focus on being lightweight and require little processing.
+I was pleasantly surprised to see use a lot of IETF-made technologies like [CBOR](https://datatracker.ietf.org/doc/html/rfc7049),  [COSE](https://www.rfc-editor.org/rfc/rfc8152.html), [CWT](https://datatracker.ietf.org/doc/html/rfc8392), [Base45](https://datatracker.ietf.org/doc/html/draft-faltstrom-base45), etc. Many of these have been done in collaboration with Ericsson folks and -as far as I know- were initially intended for Internet of Things (IoT) as they focus on being lightweight and require little processing.
 
 Why did they chose IETF technologies? Well part of their [guiding principles](https://github.com/ehn-dcc-development/hcert-spec/blob/main/README.md#requirements-and-design-principles) are right on the IETF ballpark:
 
