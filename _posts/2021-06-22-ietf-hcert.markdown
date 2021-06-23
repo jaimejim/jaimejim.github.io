@@ -11,54 +11,61 @@ star: true
 ---
 I have written nothing about COVID and the two anni horribiles we are having. So let this be the first and last post about the topic.
 
-I got today a EU CoVID certificate from the [Finnish Health Service](https://thl.fi/en/web/thlfi-en/-/first-covid-19-vaccination-certificates-now-available-in-my-kanta-pages) (kanta.fi).  The certificate contains some identification information, details of the COVID-19 Vaccination and metadata to identify a valid certificate. It comes with a unique URN identifier and a QR code (or Aztec Code) that encodes the same information and can be verified by a validator application.
+I got today a EU CoVID certificate from the [Finnish Health Service](https://thl.fi/en/web/thlfi-en/-/first-covid-19-vaccination-certificates-now-available-in-my-kanta-pages) (kanta.fi).  The certificate pdf contains identification information, details of the COVID-19 Vaccination and metadata to identify a valid certificate. It comes with a unique URN identifier and a QR code (or Aztec Code) that encodes the same information and can be verified by a validator application.
 
 ![An EU health Certificate](/assets/images/hcert.jpg)
 
-I could not resist trying to look into the QR code with a well-known tool called `zbar`. 
+I could not resist trying to look into the QR code with a well-known qr code reader called `zbar`.
 
 ```sh
-Desktop ~ zbarimg --raw qr.png                                                              (678ms)  
+~ zbarimg --raw qr.png                                                              (678ms)  
 HC1:NCFOXN%TSMAHN-HMR blablablablablaba :VC/4
 scanned 1 barcode symbols from 1 images in 0.02 seconds
 ```
 
-The QR code encodes a 3-byte header `HC1` for HC1 (Health Certificate Version 1) the rest is compressed Base45 data. After decompressing with zlib (does zlib compress CBOR even more??), we obtain CBOR/COSE binary data.
+I was curious, as it was not just your average URL encoded there, it had some sort of header, the `HC1:NCFOXN%`, which I promptly googled for. It turned out that you can find the [EU Digital Green Certificates (DGC)](https://github.com/eu-digital-green-certificates/dgc-overview) project as well as the full [certificate specification](https://github.com/ehn-dcc-development/hcert-spec/blob/main/README.md)!. There are even  available [implementations](https://github.com/ehn-dcc-development/hcert-testdata) for Electronic Health Certificates - which I have not tested-. It also comes with a neat [rationale](https://github.com/ehn-dcc-development/hcert-testdata/blob/main/hcert-preso.pdf) for the technology choices they made.
 
-Before I started with that I googled online for the header `HC1:NCFOXN%` and it turned out that you can find the full [EU certificate specification](https://github.com/ehn-dcc-development/hcert-spec/blob/main/README.md) (!!). There are even  available [implementations](https://github.com/ehn-dcc-development/hcert-testdata) for Electronic Health Certificates - which I have not tested-. It also comes with a neat [rationale](https://github.com/ehn-dcc-development/hcert-testdata/blob/main/hcert-preso.pdf) for the technology choices they made.
+You can find lots of [examples](https://github.com/ehn-dcc-development/ehn-dcc-schema/blob/release/1.3.0/test/valid/T-rat-dates3.json) on the EHN github repository. For example here you have a [valid certificate example](https://raw.githubusercontent.com/eu-digital-green-certificates/dgc-testdata/main/FI/2DCode/raw/1.json) of someone with one vaccination. It includes the full chain from the JSON, CBOR, the COSE signed as well as the BASE45 with the HC1 prefix.
 
-People like [Tobias Girstmair](https://gir.st/blog/greenpass.html) have tinkered much more already on it and you can find lots of [examples](https://github.com/ehn-dcc-development/ehn-dcc-schema/blob/release/1.3.0/test/valid/T-rat-dates3.json) on the EHN github repository of what the QR encodes. My QR code encodes a JSON structure similar to this:
+There is also a document by the World Health Organization on the [trust model](https://www.who.int/publications/m/item/interim-guidance-for-developing-a-smart-vaccination-certificate) for these certificates. As I come from the IoT angle, many of the steps are reminiscent of an IoT device onboarding process, but that's another story.
+
+So now I know that the information from the QR code is a base45 data structure with a 3-byte header `HC1` for HC1 (Health Certificate Version 1). It would be expected that after decompressing with zlib (turns out zlib compresses the certificate in cases with many vaccinations and more data so in this case with 2 vaccines might not compress that much), we would obtain CBOR/COSE binary data.
+
+I tinkered around, trying few base45 decoders, removing the header and getting up to the zlib decompression phase. It is at this point that I found the excellent post by [Tobias Girstmair](https://gir.st/blog/greenpass.html) who has tinkered much more already, he provides a [script](https://git.gir.st/greenpass.git/blob_plain/master:/greenpass.py) that reads the qr, extracts the data, transforms the base45, removes the COSE signature and reads the CBOR, presenting the actual data. Which is as follows:
 
 ```json+
-{-260: {1: {'dob': '1983-04-28', date of birth
-            'nam': {'fn': 'Jimenez Bolonio', family name
-                    'fnt': 'JIMENEZ<BOLONIO',
-                    'gn': 'Jaime Antonio', given name
-                    'gnt': 'JAIME'},
-            'v': [{'ci': 'URN:UVCI:01:FI:EA6KGXLJ38XXXXXXXXXXX#Z', certificate ID
-                   'co': 'FI', country of vaccination
-                   'dn': 1, doses received
-                   'dt': '2021-06-11', date of vaccination
-                   'is': 'The Social Insurance Institution of Finland', cert issuer
-                   'ma': 'ORG-100030215', vaccine manufacturer
-                   'mp': 'EU/1/20/1528', vaccine product id
-                   'sd': 2, total number of doses
-                   'tg': '840539006', targeted disease (COVID-19)
-                   'vp': '1119349007'}], vaccine or prophylaxis
-            'ver': '1.2.1'}}, schema version
- 1: 'FI', QR code issuer
- 4: 1655888756, QR code expiry
- 6: 1624363598} QR code generated
- ```
+root@93955752b07d:src/docker-ubuntu# python3 greenpass.py qr.png 
+QR Code Issuer : FI
+QR Code Expiry : 2022-06-22 20:59:59
+QR Code Generated : 2021-06-22 06:48:13
+ Vaccination Group
+   Unique Certificate Identifier: UVCI : URN:UVCI:01:FI:******************#Z
+   Country of Vaccination : FI
+   Dose Number : 1
+   ISO8601 complete date: Date of Vaccination : 2021-06-11
+   Certificate Issuer : The Social Insurance Institution of Finland
+   Marketing Authorization Holder : ORG-100030215
+   vaccine medicinal product : EU/1/20/1528
+   Total Series of Doses : 2
+   disease or agent targeted : 840539006
+   vaccine or prophylaxis : J07BX03
+ Date of birth : 1983-04-28
+ Surname(s), forename(s)
+   Surname : Jimenez Bolonio
+   Forename : Jaime Antonio
+   Standardised surname : JIMENEZ<BOLONIO
+   Standardised forename : JAIME<ANTONIO
+ Schema version : 1.0.0
+```
 
-I was pleasantly surprised to see use a lot of IETF-made technologies like [CBOR](https://datatracker.ietf.org/doc/html/rfc7049),  [COSE](https://www.rfc-editor.org/rfc/rfc8152.html), [CWT](https://datatracker.ietf.org/doc/html/rfc8392), [Base45](https://datatracker.ietf.org/doc/html/draft-faltstrom-base45), etc. Many of these have been done in collaboration with Ericsson folks and -as far as I know- were initially intended for Internet of Things (IoT) as they focus on being lightweight and require little processing.
+The output is self-explanatory for the most part. When it comes to the disease and the vaccine numbers, they are part of some classification system. So [840539006](https://ec.europa.eu/health/sites/default/files/ehealth/docs/digital-green-value-sets_en.pdf) stands for COVID-19 disease and J07BX03 which is used for all Covid19 vaccines (moderna, pfizer, astrazeneca...). The specific vaccine is defined by the [EU/1/20/1528](https://ec.europa.eu/health/documents/community-register/html/h1528.htm) field which is BioNTech Pfizer in my case.
+
+During the tinkering I was pleasantly surprised to see use a lot of IETF-made technologies like [CBOR](https://datatracker.ietf.org/doc/html/rfc7049),  [COSE](https://www.rfc-editor.org/rfc/rfc8152.html), [CWT](https://datatracker.ietf.org/doc/html/rfc8392), [Base45](https://datatracker.ietf.org/doc/html/draft-faltstrom-base45), etc. Many of these have been done in collaboration with Ericsson folks and -as far as I know- were initially intended for Internet of Things (IoT) as they focus on being lightweight and require little processing.
 
 Why did they chose IETF technologies? Well part of their [guiding principles](https://github.com/ehn-dcc-development/hcert-spec/blob/main/README.md#requirements-and-design-principles) are right on the IETF ballpark:
 
 > 2 . Use an encoding which is as compact as practically possible whilst ensuring reliable decoding using optical means.
 > 3 . Use existing, proven and modern open standards, with running code available (when possible) for all common platforms and operating environments to limit implementation efforts and minimise risk of interoperability issues.
-
-The JSON structure I mentioned above is encoded and signed using CBOR and COSE. When they scan the QR at the airport, the application will check the data (i.e. name, surname, vaccine, CertID, etc) and it will only be valid if it was signed with the private key of the health organization issuing the certificate. There is a document by the World Health Organization on the [trust model](https://www.who.int/publications/m/item/interim-guidance-for-developing-a-smart-vaccination-certificate) for this certificates. As I come from the IoT angle, many of these steps are reminiscent of an IoT device onboarding process, but that's another story.
 
 The creators seem also looking at the edge of the standardization as they are using an IETF draft format for the [base45](https://datatracker.ietf.org/doc/draft-faltstrom-base45/) encoding and not an existing RFC. The news were also shared on [a IETF mailing list](https://mailarchive.ietf.org/arch/msg/cbor/M07MvOOyQlw-0P9i2GYYFd8hSbM/) by the creator of CBOR.
 
