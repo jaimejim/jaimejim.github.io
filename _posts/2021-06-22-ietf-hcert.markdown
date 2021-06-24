@@ -23,13 +23,22 @@ HC1:NCFOXN%TSMAHN-HMR blablablablablaba :VC/4
 scanned 1 barcode symbols from 1 images in 0.02 seconds
 ```
 
-I was curious, as this was not just your average URL encoded into a QR, it had some sort of header, the `HC1:NCFOXN%`, which I promptly googled for. It turned out that you can find the [EU Digital Green Certificates (DGC)](https://github.com/eu-digital-green-certificates/dgc-overview) project as well as the full [certificate specification](https://github.com/ehn-dcc-development/hcert-spec/blob/main/README.md)!. There are even  available [implementations](https://github.com/ehn-dcc-development/hcert-testdata) for Electronic Health Certificates - which I have not tested-. It also comes with a neat [rationale](https://github.com/ehn-dcc-development/hcert-testdata/blob/main/hcert-preso.pdf) for the technology choices they made.
+I was curious, as this was not just your average URL encoded into a QR, it had some sort of header, the `HC1:NCFOXN%`, which I promptly googled for. It turned out that you can find the [EU Digital Green Certificates (DGC)](https://github.com/eu-digital-green-certificates/dgc-overview) project as well as the full [certificate specification](https://github.com/ehn-dcc-development/hcert-spec/blob/main/README.md)!. There are even  available [implementations](https://github.com/ehn-dcc-development/hcert-testdata) for Electronic Health Certificates (HCERT) - which I have not tested-. It also comes with a neat [rationale](https://github.com/ehn-dcc-development/hcert-testdata/blob/main/hcert-preso.pdf) for the technology choices they made.
 
-You can find lots of [examples](https://github.com/ehn-dcc-development/ehn-dcc-schema/blob/release/1.3.0/test/valid/T-rat-dates3.json) on the EHN github repository. For example, here you have a [valid certificate example](https://raw.githubusercontent.com/eu-digital-green-certificates/dgc-testdata/main/FI/2DCode/raw/1.json) of someone with one vaccination. It includes the full chain from the JSON, CBOR, the COSE signed as well as the BASE45 with the HC1 prefix.
+You can find lots of [examples](https://github.com/ehn-dcc-development/ehn-dcc-schema/blob/release/1.3.0/test/valid/T-rat-dates3.json) on the EHN github repository. For example, here you have a [valid HCERT example](https://raw.githubusercontent.com/eu-digital-green-certificates/dgc-testdata/main/FI/2DCode/raw/1.json) of someone with one vaccination. It includes the full chain from the JSON, CBOR, the COSE signed as well as the BASE45 with the HC1 prefix.
 
 There is also a document by the World Health Organization on the [trust model](https://www.who.int/publications/m/item/interim-guidance-for-developing-a-smart-vaccination-certificate) for these certificates. As I come from the IoT angle, many of the steps are reminiscent of an IoT device onboarding process, but that's another story.
 
-So now I know that the information from the QR code is a base45 data structure with a 3-byte header `HC1` for Health Certificate Version 1. It would be expected that after decompressing with zlib (turns out zlib compresses the certificate in cases with many vaccinations and more data so in this case with 2 vaccines might not compress that much), we would obtain CBOR/COSE binary data.
+They show the general process and structure of the HCERT creation, signing and validation:
+
+1. Encode vaccination information on a JSON structure using CBOR.
+2. Sign it with COSE and the private key of one of the Country Signing Certificate Authorities (CSCA) Signer Certificates. There are no CAs or other intermediate parties, valid keys are published online. This is the same principle used in over 490 million ePassports in circulation.
+3. The resulting document is compressed some more with zlib. Although this is useful specially in cases with many vaccinations.
+4. They transform it to base45 for certain [reasons](https://github.com/ehn-dcc-development/hcert-spec/blob/main/README.md#base45) and generate a QR with that.
+
+![Health Certificate overview](/assets/images/hcert-overview.png)
+
+So now I know that the information from the QR code is a base45 data structure with a 3-byte header `HC1` for Health Certificate Version 1. It would be expected that after decompressing with zlib , we would obtain CBOR/COSE binary data.
 
 I tinkered around, trying few base45 decoders, removing the header and getting up to the zlib decompression phase. It is at this point that I found the excellent post by [Tobias Girstmair](https://gir.st/blog/greenpass.html) who has worked much more with this already. So I simply run his [script](https://git.gir.st/greenpass.git/blob_plain/master:/greenpass.py) that reads the QR, extracts the data, transforms the base45, removes the COSE signature and reads the CBOR, presenting the actual data. Which is as follows:
 
@@ -58,13 +67,13 @@ QR Code Generated : 2021-06-22 06:48:13
  Schema version : 1.0.0
 ```
 
-The output is self-explanatory for the most part, and matches the paintext information. When it comes to the disease and the vaccine numbers, they are part of a classification system. So [840539006](https://ec.europa.eu/health/sites/default/files/ehealth/docs/digital-green-value-sets_en.pdf) stands for COVID-19 disease and J07BX03 which is used for all Covid19 vaccines (moderna, pfizer, astrazeneca...). The specific vaccine is defined by the [EU/1/20/1528](https://ec.europa.eu/health/documents/community-register/html/h1528.htm) field which is BioNTech Pfizer in my case.
+The output is self-explanatory for the most part, and matches the plaintext information. When it comes to the disease and the vaccine numbers, they are part of a classification system. So [840539006](https://ec.europa.eu/health/sites/default/files/ehealth/docs/digital-green-value-sets_en.pdf) stands for COVID-19 disease and J07BX03 which is used for all Covid19 vaccines (Moderna, Pfizer, Astrazeneca...). The specific vaccine is defined by the [EU/1/20/1528](https://ec.europa.eu/health/documents/community-register/html/h1528.htm) field which is BioNTech Pfizer in my case.
 
 During the tinkering I was pleasantly surprised to see use a lot of IETF-made technologies like [CBOR](https://datatracker.ietf.org/doc/html/rfc7049),  [COSE](https://www.rfc-editor.org/rfc/rfc8152.html), [CWT](https://datatracker.ietf.org/doc/html/rfc8392), [Base45](https://datatracker.ietf.org/doc/html/draft-faltstrom-base45), etc. Many of these -as far as I know- were initially intended for Internet of Things (IoT) as they focus on being lightweight and require little processing. Why did they chose IETF technologies? Well part of their [guiding principles](https://github.com/ehn-dcc-development/hcert-spec/blob/main/README.md#requirements-and-design-principles) are right on the IETF ballpark:
 
 > 2 . Use an encoding which is as compact as practically possible whilst ensuring reliable decoding using optical means.
 
-> 3 . Use existing, proven and modern open standards, with running code available (when possible) for all common platforms and operating environments to limit implementation efforts and minimise risk of interoperability issues.
+> 3 . Use existing, proven and modern open standards, with running code available (when possible) for all common platforms and operating environments to limit implementation efforts and minimize risk of interoperability issues.
 
 The creators seem also looking at the edge of the standardization as they are using an IETF draft format for the [base45](https://datatracker.ietf.org/doc/draft-faltstrom-base45/) encoding and not an existing RFC. The news were also shared on [a IETF mailing list](https://mailarchive.ietf.org/arch/msg/cbor/M07MvOOyQlw-0P9i2GYYFd8hSbM/) by the creator of CBOR.
 
