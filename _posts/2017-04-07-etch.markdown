@@ -1,0 +1,98 @@
+---
+title: Patch and Fetch Methods for CoAP
+layout: post
+date: '2017-04-07 11:00'
+image: /assets/images/patch.jpg
+tag:
+  - CoAP
+  - PATCH
+  - iPTACH
+  - FETCH
+  - IETF
+blog: true
+star: true
+---
+
+Another day and another summary series about a ~~coming~~ current standard, [PATCH and FETCH Methods for the Constrained Application Protocol (CoAP)](https://tools.ietf.org/html/rfc8132). Which just today became RFC8132.
+
+The document adds three new methods to CoAP that enable partial resource modifications and partial resource retrieval from a CoAP Server: FETCH, to perform the equivalent of a GET with a request body; and the twin methods PATCH and iPATCH, to perform partial modifications of an existing CoAP resource (similar to HTTP PATCH).
+
+[FETCH](https://tools.ietf.org/html/draft-ietf-core-etch-04#page-5) is modeled after the HTTP GET operation. The reasoning behind it is that URIs on Web applications tend to overblow in size (they can even be > 2000 characters) when used to bundle together resource identifiers and application specific information. A solution to that problem is to use the request body to specify that information instead.
+
+As an example of long URI from the [Google Map API](https://developers.google.com/maps/documentation/static-maps/intro):
+
+```
+https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap
+&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+&markers=color:red%7Clabel:C%7C40.718217,-73.998284
+&key=YOUR_API_KEY
+```
+
+While a _normal_ GET returns a representation of a resource identified by the URI. In FETCH the server returns a representation as specified by the request parameters. This also means that the resource representation returned cannot be a complete but a partial resource representation.
+FETCH operations, like GET, do not alter the state of the targeted resource, thus are safe and idempotent. Also CoAP Observe can be used on a FETCH request, so you can subscribe to a specific resource.
+
+As explained in [Section 3.1](https://tools.ietf.org/html/rfc8132#section-3.1), being this a resource in JSON format, and assuming your application uses that resource called "object", and hosted in a constrained device:
+
+```c
+{
+  "x-coord": 256,
+  "y-coord": 45,
+  "foo": ["bar","baz"]
+ }
+```
+
+The Request could ask just for part of that representation using FETCH:
+
+```c
+FETCH CoAP://www.example.com/object
+Content-Format: XXX (application/example-map-keys+json)
+Accept: application/json
+[
+    "foo"
+]
+```
+
+The server response would be:
+
+```c
+2.05 Content
+Content-Format: 50 (application/json)
+{
+    "foo": ["bar","baz"]
+}
+```
+This is a very simple example, but applications can benefit from the reduced bandwidth and the decoupling of application and resource location.
+
+[iPATCH and PATCH](https://tools.ietf.org/html/rfc8132#page-9) are mapped after the [HTTP PATCH method](https://tools.ietf.org/html/rfc5789) and follow a similar logic as FETCH.
+
+While a PUT payload normally contains a full representation of a resource, PATCH payload contains instructions telling the server how to modify a resource. There are few caveats to the PATCH method, as collisions of multiple PATCHes can corrupt a resource. To ensure idempotent operations HTTP PATCH clients use a strong ETag [RFC2616](https://tools.ietf.org/html/rfc2616) in an If-Match header on the PATCH request; CoAP uses a new method iPATCH.
+
+Before getting into what iPATCH is, we need to understand the meaning of idempotency is in this context. I understand it as similar to doing an _append_ operation, as you would on an array. If a server hosts `resource=0`, every time you tell the server _append 1_ you are modifying the final representation of the resource `0`, `01`, `011`, etc. Thus the number of times you apply _append 1_ matters. If you apply _change resource to 1_, it wouldn't matter how many times you apply it, you would always get `1` as the new resource value. *(I know this might not be a great example but this is just a blog post :D)*
+
+PATCH and iPATCH are exactly the same except for the idempotency of the operation. Servers will have to apply the full patch before providing the new resource representation to other clients, so that concurrent partial request modifications don't happen.
+
+The interesting part comes when we look at the possible operations we can do with PATCH's payload. Since the semantics are defined by format of the representation you'd need to learn that. At the moment, the example of operations are defined for [JSON PATCH](https://tools.ietf.org/html/rfc6902).
+
+Following with the previous FETCH example. If we wanted to use the operation `replace` from the JSON PATCH document it would look like this:
+
+```c
+REQ: iPATCH CoAP://www.example.com/object
+Content-Format: 51 (application/json-patch+json)
+    [
+      { "op":"replace", "path":"x-coord", "value":45}
+    ]
+```
+
+The JSON document final state will be expressed as below:
+
+``` c
+ {
+	  "x-coord": 45,
+    "y-coord": 45,
+    "foo": ["bar","baz"]
+ }
+```
+
+There is a whole set of [possible errors and how can they be handled](https://tools.ietf.org/html/draft-ietf-core-etch-04#page-13), but in general this is what PATCH and FETCH are about.
+
+What is outside of the scope of this document is the description of the possible content formats and operations that can be applied on a resource, [JSON PATCH](https://tools.ietf.org/html/rfc6902), [JSON Merge PATCH](https://tools.ietf.org/html/rfc7396) are two examples but there is a lengthy [list of content-formats available at IANA core-parameters](https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats). In FETCH, requests can be expressed as form relations on [CoRE Application Descriptions](https://tools.ietf.org/html/draft-hartke-core-apps-07).

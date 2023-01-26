@@ -1,0 +1,172 @@
+---
+title: "Mapping LWM2M, IPSO and YANG models"
+layout: post
+date: 2016-06-10 07:23
+tag:
+- LWM2M
+- Data models
+- YANG
+blog: true
+star: true
+---
+
+One of the outcomes of the [IOTSI Workshop](/iotsi) was to show how unlikely it will be to have one-single-data-model for every device out there. This might sound disheartening at first but it does not mean that interoperability is not possible.
+
+One of the solutions is to create an even higher layer of abstraction, another meta-model, that allows for generating any and all of the other possible data models that are out there. Another solution is to translate between models. This post deals with the latter.
+
+One of the main data models out there is YANG, the IETF has standardized it as the YANG as THE data modeling language for configuration and operation of network elements, devices, networks or pretty much anything you may want.
+
+It is specified on top of different protocols like NETCONF, RESTCONF and now CoAP.
+
+In parallel another albeit simpler data model was also done with the IoT space in mind, the [LWM2M/IPSO Object model](http://ipso-alliance.github.io/pub/), which is one of the *many* out there and that has already been discussed at length.
+
+With the spirit of translation in mind and trying to bridge both worlds, [@peter](http://arkko.com/tools/allstats/petervanderstok.html) and I got to the task of translating LWM2M to YANG.
+
+We will publish a draft on this eventually, but for the time being we did the following rules:
+
+- LWM2M Object IDs and Resources are translated as YANG strings.
+
+- The optional/mandatory aspect of the LWM2M resource is covered by the mandatory "false/true" statement of YANG.
+
+- The R,W access aspects of a data item are translated using config parameter.
+
+- When the YANG rpc is specified the E access is meant. For input parameters, ER access is meant and for output ones ERW access is meant.
+
+- To specify the range of a data resource the YANG range statement is used.
+
+- The YANG units statement is used to express the units.
+
+- In the YANG specification the LWM2M resources are specified as leafs of a YANG list. The instance_number is declared key in the YANG list.
+
+With this in mind **@peter** did the first stab a translation that has been validated and that works for YANG. It models the IPSO Humidity Object (3304). If you thought that the XML looks *unappealing* then welcome to YANG:
+
+
+``` c
+module ietf-humidityNM{
+
+  yang-version 1.1;  // needed for action
+
+  namespace
+      "urn:ietf:params:xml:ns:yang:ietf-humidityNM";
+
+  prefix humid;
+
+  organization
+    "IPSO";
+
+  contact
+     "WG Web:   http://tools.ietf.org/wg/core/
+     WG List:  mailto:core@ietf.org
+
+     WG Chair: Carsten Bormann
+               mailto:cabo@tzi.org
+
+     WG Chair: Jaime Jimenez
+               mailto:jaime.jimenez@ericsson.com
+
+     Editor:   Peter van der Stok
+               mailto:consultancy@vanderstok.org
+
+     Editor:   Jaime Jimenez
+               mailto:jaime.jimenez@ericsson.com";
+
+  description
+    "This module contains information about the operation of the IPSO LWM2M humidity sensor with ID 3301.
+
+     Copyright (c) 2016 IETF Trust and the persons identified as
+     authors of the code.  All rights reserved.
+
+     Redistribution and use in source and binary forms, with or
+
+     without modification, is permitted pursuant to, and subject
+     to the license terms contained in, the Simplified BSD License
+     set forth in Section 4.c of the IETF Trust's Legal Provisions
+     Relating to IETF Documents
+     (http://trustee.ietf.org/license-info).
+
+     This version of this YANG module is part of RFC XXXX; see
+     the RFC itself for full legal notices.";
+
+revision "2016-07-25" {
+      description "Initial revision.";
+      reference
+        "I-D:draft-vanderstok-core-yang-LWM2M: YANG language applied to the LWM2M IPSO humidity sensor specification";
+    }
+
+    list IPSO-humidity {
+        key instance_number;
+        config   false;   //  should be same as key leaf
+        description
+          "3301: The humidity sensor is composed of a set of instances";
+           leaf instance_number {
+               type uint16{
+                    range "0..1";   // only one instance zero (0)
+               }
+               config false;    // R access
+               mandatory "true";
+               description
+                "the number of the humidity sensor instance";
+            }
+            leaf Sensor_Value  {
+               type decimal64{    // YANG has no float
+                       fraction-digits 2;
+                       range "10.0 .. 66.6";}
+               units "Defined by 'Units' resource";
+               config false;    // R access
+               mandatory "true";
+               description
+                "5700: Last or Current Measured Value from the Sensor";
+            }
+            leaf Units {
+               type string;
+               units "Defined by 'Units' resource";
+               config false;    // R access
+               description
+                "5701: Measurement unit definition e.g. 'Cel' for temperature in Celsius";
+            }
+            leaf Min_Measured_Value {
+               type decimal64{    // YANG has no float
+                       fraction-digits 2;
+                       range "10.0 .. 66.6";}
+               units "Defined by 'Units' resource";
+               config false;    // R access
+               description
+                "5601: The minimum value measured by the sensor since power ON or reset";
+            }
+            leaf Max_Measured_Value {
+               type decimal64{    // YANG has no float
+                       fraction-digits 2;
+                       range "10.0 .. 66.6";}
+               units "Defined by 'Units' resource";
+               config false;    // R access
+               description
+                "5602: The maximum value measured by the sensor since power ON or reset";
+            }
+            leaf Min_Range_Value {
+               type decimal64{    // YANG has no float
+                       fraction-digits 2;
+                       range "10.0 .. 66.6";}
+               units "Defined by 'Units' resource";
+               config false;    // R access
+               description
+                "5603: The minimum value that can be measured by the sensor";
+            }
+            leaf Max_Range_Value{
+               type decimal64{    // YANG has no float
+                       fraction-digits 2;
+                       range "10.0 .. 66.6";}
+               units "Defined by 'Units' resource";
+               config false;    // R access
+               description
+                "5604: The maximum value that can be measured by the sensor";
+            }
+            action Reset_Min_and_Max_measured_values {
+               // E access: this is an RPC without input and output parameters
+               description
+                "5605: Reset the Min and Max measured values to current value";
+            }  // rpc
+       }  // list ID3301
+} // module ietf-yang-humidity
+```
+
+In short, I am looking forward for a cleaner [CDDL version](https://www.iab.org/wp-content/IAB-uploads/2016/03/Noise-in-specifications-hurts.pdf) instead and hoping that one data model establishes itself as the way to go, even if only slightly above the many others. For future work I will implement an automatic translator from IPSO XML to YANG.

@@ -1,0 +1,71 @@
+---
+title: IKEA TRÅDFRI smart lights
+layout: post
+date: '2017-04-10 11:00'
+image: /assets/images/ikea.jpg
+tag:
+  - Home Improvement
+  - IKEA
+  - IPSO
+  - LWM2M
+blog: true
+star: true
+---
+
+There have been some press releases on the *IKEA lights*. I actually went yesterday to buy some of them to play around.
+
+![I love IKEA instructions](/assets/images/ikea.jpg)*I love how they used the same instruction design as they use for the furniture*
+
+The articles are interesting for those of us who have spent quite some time building IoT protocols, as it transpires which technologies IKEA chose in order to build their lightning system.
+ - [http://newsroom.inter.ikea.com](http://newsroom.inter.ikea.com/news/ikea-launches-its-first-digital-home-furnishing-product---an-app-to-adjust-lighting/s/b1fef4a2-e152-4ee3-9431-e188d26dfc92)
+
+- <http://press.ikea.se/ikea_smart_belysning/>
+
+One interesting pointer by [bitsex](https://bitsex.net/software/2017/coap-endpoints-on-ikea-tradfri/) is that the gateway uses [CoAP](http://coap.technology) over UDP, and implements DTLS. For those who don't know about [CoAP](https://tools.ietf.org/html/rfc7252), it is a REST protocol much like HTTP but for very constrained devices. This would make it one of the first (I might be wrong, please let me know if so) general-user products out there with CoAP on it. Being CoAP deployed more in industrial settings where being savvy makes a big difference.
+
+*Another interesting bit of information, is that it looks like the payload itself seems to use IPSO-like Objects as data model.*
+
+For those who don't know, LWM2M is a protocol built around CoAP and use for managing devices. So things like firmware upgrades, error reports, etc. Apart form the management interfaces, LWM2M also adds a very simple Object Model for managing those devices. IPSO expands that set of Objects so that you can have application information too (e.g. sensor readings, commands, etc).
+
+IPSO defines objects and resources that map to device properties. If we got to the [IPSO repository](https://github.com/IPSO-Alliance/pub) and look in particular at the
+[Light Control](https://github.com/IPSO-Alliance/pub/blob/master/reg/xml/3311.xml) we can see that it allows a light to be turned on or off and its dimmer setting to be controlled as a % between 0 and 100.
+
+When you see the payload of the GW you can see they are very similar, the resources that change are `5707:Fractional Time` and few others. I have not yet figured out if the rest are part of [OMA's or other registry](http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html) or proprietary ones, [someone posted the IDs online](http://sprunge.us/CCQF) but they provide little info at this point.
+
+```c
+{"5850":1,"5851":127,"5707":0,"5708":0,"5709":24930,"5710":24694,"9003":0,"5711":250,"5706":"f5faf6"}
+```
+
+```c
+//Edited for readability
+<Name>Light Control</Name>
+<Description1>Description: This Object is used to control a light source, such as a LED or other light.  It allows a light to be turned on or off and its dimmer setting to be control as a % between 0 and 100. An optional colour setting enables a string to be used to indicate the desired colour.</Description1>
+<ObjectID>3311</ObjectID>
+<Resources>
+<Item ID="5850">
+<Name>On/Off</Name>
+<Item ID="5851">
+<Name>Dimmer</Name>
+<Item ID="5852">
+<Name>On Time</Name>
+<Item ID="5805">
+<Name>Cumulative active power</Name>
+<Item ID="5820">
+<Name>Power Factor</Name>
+<Item ID="5706">
+<Name>Colour</Name>
+<Item ID="5701">
+<Name>Sensor Units</Name>
+```
+
+I have not yet had time to debug everything as I just bought my own lights yesterday. But I hope that other people looking into what the Trådfri GW can send and parse find it useful. **Kudos to IKEA for their work**. I hope that the next iteration has CoAP all the way to the endpoints. There many more things you can do with CoAP and that you can [expand LWM2M with](/coap-functionality-lwm2m/).
+
+If you want to register your devices by sharing the XML of their Objects, so that others can interoperate with them, you can do so at [IPSO's Github Repository](https://github.com/IPSO-Alliance/pub/).
+
+If you want to know more, please ask. [Michael Koster](http://iot-datamodels.blogspot.fi) is always a great source of information on IoT, data models and IPSO Objects (being its main author).
+
+If you want to know more about the wealth of data models out there you can check the [IoTSI Workshop](https://www.iab.org/activities/workshops/iotsi/) as a reference.
+
+In fact data semantics seem to be a big problem for interoperability at this point, having companies like IKEA that have large deployments and interoperability in mind, rather than data mining is always good news for consumers.
+
+PS: I plan to update this post as I find out more things about the IKEA TRÅDFRI.
