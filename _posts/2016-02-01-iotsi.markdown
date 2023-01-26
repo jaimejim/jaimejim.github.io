@@ -6,8 +6,9 @@ image: /assets/images/iotsi.jpg
 tag:
 - iotsi
 - semantic interoperability
-blog: true
-star: true
+category: blog
+author: jaime
+headerImage: true
 ---
 
 This article is featured at the [Ericsson Research Blog](http://www.ericsson.com/research-blog/internet-of-things/semantic-interoperability-internet-things/).

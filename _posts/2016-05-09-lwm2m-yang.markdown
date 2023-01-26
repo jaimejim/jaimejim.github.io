@@ -6,8 +6,9 @@ tag:
 - LWM2M
 - Data models
 - YANG
-blog: true
-star: true
+category: blog
+author: jaime
+headerImage: true
 ---
 
 One of the outcomes of the [IOTSI Workshop](/iotsi) was to show how unlikely it will be to have one-single-data-model for every device out there. This might sound disheartening at first but it does not mean that interoperability is not possible.

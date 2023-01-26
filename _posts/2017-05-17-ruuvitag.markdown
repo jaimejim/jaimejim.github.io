@@ -8,6 +8,7 @@ tag:
   - Device
 category: blog
 author: jaime
+headerImage: true
 ---
 
 The concept of ["The Physical Web"](https://google.github.io/physical-web/) is an IoT related concept. One realization of it is that things will basically broadcast information using the same beacons used as device identifiers.

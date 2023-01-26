@@ -6,8 +6,9 @@ tag:
 - CoAP
 - HTTP
 - IETF
-blog: true
-star: true
+category: blog
+author: jaime
+headerImage: true
 ---
 
 When discussing the state of current standardization I often find myself having to think through on how to summarize and simplify what a draft is about. I find that exercise very useful and I thought of providing a series of short summaries about the drafts the WG is currently working on.

@@ -6,8 +6,9 @@ tag:
 - JS
 - bot
 - Telegram
-blog: true
-star: true
+category: blog
+author: jaime
+headerImage: true
 ---
 
 I would claim to be a pretty organized person, mostly because I have to if I don't want to go crazy tracking the work happening on various standard orgs, internal projects and mailing lists.

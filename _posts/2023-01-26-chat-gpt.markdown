@@ -9,6 +9,7 @@ tag:
 - ChatGPT
 category: blog
 author: jaime
+headerImage: true
 ---
 
 The hottest new tool in the software world for 2022-2023 are Large Language Models and [ChatGPT](https://beta.openai.com) in particular.

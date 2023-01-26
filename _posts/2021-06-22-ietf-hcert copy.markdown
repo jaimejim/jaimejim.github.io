@@ -2,12 +2,14 @@
 title: "Electronic Health Certificates and IETF"
 layout: post
 date: 2021-06-22 11:20
+headerImage: true
 image: /assets/images/covid.png
 tag:
 - IETF
 - HCERT
 category: blog
 author: jaime
+headerImage: true
 ---
 
 I have written nothing about COVID and the two anni horribiles we are having. So let this be the first and last post about the topic.

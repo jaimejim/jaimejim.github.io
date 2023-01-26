@@ -10,6 +10,7 @@ tag:
   - LWM2M
 category: blog
 author: jaime
+headerImage: true
 ---
 
 There have been some press releases on the *IKEA lights*. I actually went yesterday to buy some of them to play around.

@@ -5,8 +5,9 @@ date: 2016-03-26 12:00
 tag:
 - iotsi
 - semantic interoperability
-blog: true
-star: true
+category: blog
+author: jaime
+headerImage: true
 ---
 
 

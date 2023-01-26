@@ -6,8 +6,9 @@ tag:
 - Web Design
 - HTTP
 - Language
-blog: true
-star: true
+category: blog
+author: jaime
+headerImage: true
 ---
 
 I am having some issues with the language settings of some sites I visit. It seems as if there were no best practices or standard settings for language regionalization.

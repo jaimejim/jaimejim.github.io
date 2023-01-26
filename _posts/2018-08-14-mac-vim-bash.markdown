@@ -10,6 +10,7 @@ tag:
 - Time-saving
 category: blog
 author: jaime
+headerImage: true
 ---
 
 A month ago my Mac SSD drive died due to a water spill. Apparently this is a common problem that will manifest itself even if in a [delayed fashion](https://www.ifixit.com/Wiki/MacBook_water_damage_-_The_definitive_guide). That is, if the spill does not automatically destroy your computer, like it did to mine, the corrosion process will occur when you combine electricity, metal, water and oxygen. It might take a week or two, but it happens eventually.

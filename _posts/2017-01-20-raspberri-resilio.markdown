@@ -9,8 +9,9 @@ tag:
 - File Synchronization
 - P2P
 - NAS
-blog: true
-star: true
+category: blog
+author: jaime
+headerImage: true
 ---
 
 As a pet project of mine, I have been using a spare Raspberry Pi 3 as a back up system for my files. I want to reduce my dependency on *cloud* services like Google Drive, Dropbox, etc and I want to have control over what I share.

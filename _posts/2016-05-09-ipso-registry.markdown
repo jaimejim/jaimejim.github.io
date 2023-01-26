@@ -6,8 +6,9 @@ tag:
 - iot
 - ipso
 - data models
-blog: true
-star: true
+category: blog
+author: jaime
+headerImage: true
 ---
 
 Today we released the [IPSO Registry](http://ipso-alliance.github.io/pub) with all the objects done up to now. Using Github has been something I have been advocating for a long time. It will simplify development and tracking of new issues as they arise.

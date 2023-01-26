@@ -9,6 +9,7 @@ tag:
 - Time-saving
 category: blog
 author: jaime
+headerImage: true
 ---
 
 We all are living very busy lives, with little time to be spend on things that some years ago we didn't mind spending time on. One of those things are scientific publications.

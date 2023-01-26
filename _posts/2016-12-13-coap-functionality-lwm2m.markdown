@@ -9,6 +9,7 @@ tag:
 - IETF
 category: blog
 author: jaime
+headerImage: true
 ---
 
 Last [IETF 97](https://datatracker.ietf.org/meeting/97/agenda.html) has been particularly interesting for me. Not only did CoRE WG had 3 sessions instead of the usual two, which shows how many topics we have ongoing, but also there was a lot of extra discussion around security and management of IoT Devices. In particular there are other IETF groups that are starting to look into the alternatives built around CoAP for managing networks.
