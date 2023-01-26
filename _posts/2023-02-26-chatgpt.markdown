@@ -7,8 +7,8 @@ tag:
 - AI
 - API
 - ChatGPT
-blog: true
-star: true
+category: blog
+author: jaime
 ---
 
 The hotest new tool in the software world for 2022-2023 are Large Language Models and [ChatGPT](https://beta.openai.com) in particular. By the end of the year we will be swamped with new announcements It seems they have been cooking for a decade but -at least for me- it is only now that I get to actually use them for something very useful. I believe they are here to stay and they will change how we work completely.
