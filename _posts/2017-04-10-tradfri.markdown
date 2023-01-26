@@ -8,8 +8,8 @@ tag:
   - IKEA
   - IPSO
   - LWM2M
-blog: true
-star: true
+category: blog
+author: jaime
 ---
 
 There have been some press releases on the *IKEA lights*. I actually went yesterday to buy some of them to play around.
