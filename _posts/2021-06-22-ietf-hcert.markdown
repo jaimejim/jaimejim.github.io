@@ -6,9 +6,10 @@ image: /assets/images/covid.png
 tag:
 - IETF
 - HCERT
-blog: true
-star: true
+category: blog
+author: jaime
 ---
+
 I have written nothing about COVID and the two anni horribiles we are having. So let this be the first and last post about the topic.
 
 I got today a EU CoVID certificate from the [Finnish Health Service](https://thl.fi/en/web/thlfi-en/-/first-covid-19-vaccination-certificates-now-available-in-my-kanta-pages) (kanta.fi).  The certificate pdf contains plaintext identification information, details of the COVID-19 vaccination and metadata to identify a valid certificate. It comes with a unique URN identifier and a QR code (or Aztec Code) that encodes the same information and can be verified by a validator application.
