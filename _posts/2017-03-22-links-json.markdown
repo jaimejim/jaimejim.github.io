@@ -8,9 +8,8 @@ tag:
 - JSON
 - CBOR
 - IETF
-
-blog: true
-star: true
+category: blog
+author: jaime
 ---
 
 Continuing with the summary series about coming standards, I will explain a bit about the [Representing CoRE Formats in JSON and CBOR](https://tools.ietf.org/html/draft-ietf-core-links-json-07) draft. If you are interested on other such posts, please check [Mapping HTTP to CoAP](/coap-http-mapping/) too.

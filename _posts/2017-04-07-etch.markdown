@@ -9,8 +9,8 @@ tag:
   - iPTACH
   - FETCH
   - IETF
-blog: true
-star: true
+category: blog
+author: jaime
 ---
 
 Another day and another summary series about a ~~coming~~ current standard, [PATCH and FETCH Methods for the Constrained Application Protocol (CoAP)](https://tools.ietf.org/html/rfc8132). Which just today became RFC8132.

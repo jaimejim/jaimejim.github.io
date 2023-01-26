@@ -8,8 +8,8 @@ tag:
 - Time-saving
 - Career
 - Life
-blog: true
-star: true
+category: blog
+author: jaime
 ---
 
 Every now and then we get people fresh from the University, usually they are master thesis students or PhD candidates that are trying to figure out what to do with their lives. They often have slightly complicated geographical situation - parents are in another country, visa issues, girlfriend abroad... - and they often have no preferred specialization.
