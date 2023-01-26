@@ -73,7 +73,7 @@ about: true
 blog: true
 
 # do you want to show the "read time" of the posts?
- read-time: true
+read-time: true
 
 # do you want to show the "tags" inside the posts?
 show-tags: true
@@ -94,7 +94,6 @@ animation: true
 defaults:
   - scope:
       path: "" # an empty string here means all files in the project
-      layout: "post"
     values:
       # setting all post to not hidden by default,
       # can be overridden in the front matter for a specific post
