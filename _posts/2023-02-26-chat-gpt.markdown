@@ -1,8 +1,8 @@
 ---
 title: "Structuring ChatGPT responses"
 layout: post
-date: 2023-02-23 12:20
-image: /assets/images/chatgpt.png
+date: 2023-02-25 11:20
+image: /assets/images/chatgpt.jpg
 tag:
 - AI
 - API
@@ -107,8 +107,4 @@ Host          api.openai.com
 
 And the Response would contain a URL to the generated image:
 
-![watercolor horse](/assets/images/horse.png)
-
-Again, I would recommend using httpie for testing interactions, as it really simplifies the interactions.
-
-![HTTPIE request](/assets/images/httpie.png)
+![watercolor horse](/assets/images/horse.jpg)
