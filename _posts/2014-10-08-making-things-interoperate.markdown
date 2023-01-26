@@ -9,6 +9,7 @@ tag:
 - semantic interoperability
 category: blog
 author: jaime
+headerImage: true
 ---
 
 This article is about IPSO Smart Objects and interoperability. It was featured at the [Ericsson Research Blog](http://www.ericsson.com/research-blog/internet-of-things/making-things-interoperate/), you can read there the full version.

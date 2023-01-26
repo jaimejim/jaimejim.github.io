@@ -5,8 +5,9 @@ date: 2015-09-26 12:00
 tag:
 - iotsi
 - semantic interoperability
-blog: true
-star: true
+category: blog
+author: jaime
+headerImage: true
 ---
 
 This article is featured at the [Ericsson Research Blog](http://www.ericsson.com/research-blog/5g/evolved-capillary-networks/).

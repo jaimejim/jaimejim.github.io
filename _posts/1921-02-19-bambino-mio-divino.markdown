@@ -10,8 +10,9 @@ tag:
 - neurology
 - diary
 - baby
-blog: true
-star: true
+category: blog
+author: jaime
+headerImage: true
 ---
 
 ## Tu Scendi dalle Stelle 
