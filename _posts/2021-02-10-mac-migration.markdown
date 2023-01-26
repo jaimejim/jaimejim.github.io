@@ -8,8 +8,8 @@ tag:
 - Mac
 - Time-saving
 - Tools
-blog: true
-star: true
+category: blog
+author: jaime
 ---
 
 I just got a new laptop after 7 years holding to my old Mac. I changed is hard drive few years ago after an unfortunate soft-drink spill, I put some nice stickers on it, changed its battery even. Lately it has been slowing down just too much and is lacking space and power, so it was time to get a new one. I postponed the migration cause I have many installed brew formulae (or formulas?), tweaked `rc` files and little bits of configuration here and there that I was worried I would lose.
