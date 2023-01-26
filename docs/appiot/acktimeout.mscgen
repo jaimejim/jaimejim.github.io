@@ -1,0 +1,25 @@
+
+   msc {
+     hscale="1.4", wordwraparcs=on;
+
+     LC, LS, AP;
+
+   LC<-LS [label="GET (T=CON, Code=0.01, MID=0x7d37, Token: 0x42) URI: /3303/0/5400" , textcolour="blue"];
+   ...;
+   LC-xLS [label="ACK (Code=2.05, MID=0x7d37, Token: 0x42) Content: 22.03 C" , textcolour="blue"];
+   LS -> LS [label="If ACK_TIMEOUT, LS retransmits"];
+
+
+   LC << LS [label="GET (T=CON, Code=0.01, MID=0x7d37, Token: 0x42) URI: /3303/0/5400" , textcolour="blue"];
+   LC => LS [label="ACK (Code=2.05, MID=0x7d37, Token: 0x42) Content: 22.03 C" , textcolour="blue"];
+   LC => LC [label="If ACK_TIMEOUT, Client goes offline"];
+   AP rbox AP[label="Administrator clicks read multiple times on the interface."];
+   LS => LS [label="Start Queuing"];
+   AP >> LS [label="GET /3303/0/5400"];
+   AP >> LS [label="GET /3303/0/5400"];
+   AP >> LS [label="GET /3303/0/5400"];
+
+   ...;
+
+
+   }

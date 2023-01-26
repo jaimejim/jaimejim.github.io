@@ -1,0 +1,26 @@
+msc {
+  hscale="1.4", wordwraparcs=on;
+
+  LC, LS, AP;
+
+LC >> LS [label="POST /rd?ep=epname&b=UQ" , textcolour="blue"];
+LC << LS [label="ACK 2.01 /rd/5a3f" , textcolour="blue"];
+LC => LC [label="If ACK_TIMEOUT, Client goes offline"];
+--- [label="Administrator clicks read multiple times on the interface."];
+LS => LS [label="Start Queuing"];
+AP >> LS [label="GET /3303/0/5400"];
+AP >> LS [label="GET /3303/0/5400"];
+AP >> LS [label="GET /3303/0/5400"];
+
+LC rbox LC[label="Registration Update: Either because lifetime about to expire or because previous observation triggers it"];
+LC >> LS [label="POST /rd/5a3f" , textcolour="blue"];
+LC << LS [label="ACK 2.04 /rd/5a3f" , textcolour="blue"];
+
+LS rbox LS[label="LS forwards queued messages, it can also filter also filter out repeated commands, or use some other mechanism/logic"];
+LC << LS [label="GET /3303/0/5400"];
+LC >> LS [label="ACK 2.05 Content: 43"];
+LC => LC [label="if ACK_TIMEOUT, go offline"];
+...;
+
+
+}

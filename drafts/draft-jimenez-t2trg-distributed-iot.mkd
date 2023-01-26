@@ -1,0 +1,203 @@
+---
+title: Distributed CoAP endpoints
+abbrev: draft-jimenez-t2trg-distributed-coap
+docname: draft-jimenez-t2trg-distributed-coap
+date: 2017-05-22
+category: info
+
+ipr: trust200902
+area: T2TRG
+
+stand_alone: yes
+pi: [toc, sortrefs, symrefs, iprnotified]
+
+author:
+ -
+    ins: J. Jimenez
+    name: Jaime Jimenez
+    organization: Ericsson
+    phone: "+358-442-992-827"
+    email: jaime@iki.fi
+
+    ins: F. Caturano
+    name: Francesco Caturano
+    organization: Ericsson
+    email: francesco.caturano@ericsson.com
+
+normative:
+
+informative:
+  RFC7252:
+  RFC7390:
+  RFC7641:
+  RFC6690:
+  RFC7049:
+  I-D.ietf-core-resource-directory:
+  I-D.ietf-core-http-mapping:
+  I-D.ietf-core-coap-tcp-tls:
+  I-D.ietf-core-etch:
+  I-D.ietf-core-yang-cbor:
+  I-D.ietf-core-links-json:
+  I-D.ietf-core-object-security:
+  I-D.ietf-ace-oauth-authz:
+  LWM2M:
+    title: LWM2M specification
+    author:
+        org: OMA
+    target: http://technical.openmobilealliance.org/Technical/technical-information/release-program/current-releases/oma-lightweightm2m-v1-0
+  IPSO:
+    title: IPSO Object Model
+    author:
+        org: IPSO
+    target: http://ipso-alliance.github.io/pub/
+  IOTSI:
+    title: IoT Workshop for Semantic Interoperability (IOTSI)
+    author:
+      org: IAB
+    date: 2016
+    target: https://www.iab.org/activities/workshops/iotsi/
+  IOTSU:
+    title: Internet of Things Software Update Workshop (IoTSU)
+    author:
+      org: IAB
+    date: 2016
+    target: https://www.iab.org/activities/workshops/iotsu/
+
+
+--- abstract
+This document provides a strawman summary for guidelines on how to build
+
+that should be used for the LWM2M specification {{LWM2M}}. LWM2M is based on CoAP, on top of which it describes certain management interfaces and data models that go beyond the CoAP specifications itself. However LWM2M does not describe all behavior that should be expected from implementations of the CoAP specifications. This document attempts to clarify what should be present in a LWM2M system beyond what is specified in the LWM2M documents. Additionally, this document also adds information about IPSO Objects {{IPSO}} and their usage with LWM2M as application protocol.
+
+--- middle
+
+Introduction
+============
+
+The current LWM2M protocol is probably the main Device Management protocol based on CoAP today. It defines the application layer communication protocol between a LWM2M Server and a LWM2M Client, which is located in a LWM2M Device.
+
+
+Terminology
+=================
+
+CoAP servient
+Linked device
+
+Interaction Model
+=================
+
+My resources are:
+...........
+[ { href: '/sensors/boh', ct: '40', title: 'Sensor Index' },
+  { href: '/sensors/jesus', rt: 'god', if: 'sensor' },
+  { href: '/sensors/foo', rt: 'whoknows', if: 'sensor' } ]
+Anchored resources are:
+...........
+[ { href: '/sensors', ct: '40', title: 'Sensor Index' },
+  { href: '/sensors/temp', rt: 'temperature-c', if: 'sensor' },
+  { href: '/sensors/light', rt: 'light-lux', if: 'sensor' },
+  { href: 'http://www.example.com/sensors/t123',
+    anchor: '/sensors/temp',
+    rel: 'describedby' },
+  { href: '/t', anchor: '/sensors/temp', rel: 'alternate' },
+  { href: 'coap://127.0.0.3:5683',
+    anchor: '/sensors/light',
+    rel: 'hostedby' },
+  { href: 'coap://127.0.0.1:5683',
+    anchor: '/sensors',
+    rel: 'hostedby' },
+  { href: 'coap://127.0.0.1:5683',
+    anchor: '/sensors/temp',
+    rel: 'hostedby' } ]
+
+
+
+~~~~~~~~~~~
+
+
+~~~~~~~~~~~
+
+## Device and Manager configuration.
+
+This is covered by common LWM2M compliant implementations we have today. However there are upcoming RFCs and drafts that greatly enhance LWM2M with more CoAP features.
+
+For example TCP support is soon going to be added to CoAP. The draft {{I-D.ietf-core-coap-tcp-tls}} outlines the changes required to use CoAP over TCP, TLS, and WebSockets transports.
+
+Support for features like PATCH/FETCH {{I-D.ietf-core-etch}} could be greatly beneficial for things like firmware upgrade or observing relatively large sets of resources.
+
+For systems in which endpoints work behind a gateway or use LWM2M for managing the gateways, it might be good to implement other types of cryptographic protection than DTLS. For example some of the setups using OSCoAP {{I-D.ietf-core-object-security}} allow for “smarter” gateways.
+
+## Device to Device configuration.
+
+Beyond what is described in the LWM2M documentation, devices will often talk to each other. Specially in cases when all devices are under the same subnet, this could be pretty common. For example devices could be more resilient if they did not have to contact their manager constantly; in case of lack of internet connectivity the local IoT network would still function. Managers could just set policies on the devices and they would operate more autonomously.
+
+For this setup to take place, LWM2M would use more of the device-to-device functionality of CoAP. A more complete Resource Directory implementation {{I-D.ietf-core-resource-directory}} would be needed, either on the LWM2M server in addition to the registration interface or standalone. Devices should be able to perform lookup on that RD and get the series of links to resources elsewhere. They should be able to find new functionality through /.well-known/core. If not, they should be able to use IP multicast as expressed on {{RFC7390}}.
+
+Needless to say, it is assumed that devices would be running a CoAP Server on them and would support CoAP Observe {{RFC7641}}, so that devices can subscribe to updates from one another, thus becoming more autonomous.
+
+There are also updates on ACE security framework, that allow for securing the communication between two devices via an Authorization Server {{I-D.ietf-ace-oauth-authz}}.
+
+The current LWM2M Data Model needs more expressiveness when it comes to data types; More on that in {{semantics}}. Also Web Linking will be dealt at {{weblinking}}.
+
+## Device to Application configuration.
+
+In some other cases applications would be running on the phone connecting locally to sensors and/or control actuators. A smartphone can access directly a CoAP home sensor using a mutually authenticated 'https' request, provided its home router runs a HTTP to CoAP (HC) proxy and is configured with the appropriate certificate. For this scenario to happen, the GW should implement a HC proxy. It is highly recommended then that they make use of {{I-D.ietf-core-http-mapping}} to properly do the URI mapping and specific ABNF queries.
+
+Just like other devices, smartphone applications should be able to discover devices using standard methods, thus they would need access to the RD as well.
+
+Data Model {#semantics}
+=================
+
+The LWM2M Object Model is specified in {{LWM2M}}. Other models that build on it like IPSOs or OneM2M have spawned out of it. They normally introduce incremental features. They usually allow for performing any set of operations on a device through a CoAP interface. Resources are exposed as Objects using the same data model used for management.
+
+For example, in the case of a temperature sensor we can access and subscribe to the readings of the device (using {{IPSO}}).
+
+~~~~~~~~~~~
+Req: GET /3303/0/5700 Observe_Option=1
+Res: 2.05 Content (25 C)
+Res (Notify): 2.05 Content (26 C)
+~~~~~~~~~~~
+
+There has also been much work on different serialization and compression mechanisms that LWM2M could consider adopting. A serialized JSON file like the one below could be greatly compressed (about 46% max, depending on the case) using CBOR representation format {{RFC7049}} instead.
+
+~~~~~~~~~~~
+{       "e": [{
+        "bn": "/3303/0",
+        "e": [{
+            "n": "5700",
+            "v": 20.0 }, {
+            "n": "5701",
+            "v": "c" }, {
+            "n": "5603",
+            "v": 10 }, {
+            "n": "5604",
+            "v": 40
+        }],    }, {
+        "bn": "/3302/0",
+        "e": [{
+            "n": "5500",
+            "v": true }, {
+            "n": "5501",
+            "v": 23
+}       ]}]}
+~~~~~~~~~~~
+
+LWM2M ResourceIDs at the moment have no specific semantic meaning like ObjectIDs do. Adding a similar registry for ResourceIDs could be useful. Specially to those using LWM2M for their applications. For example IPSO uses such ResourceIDs to register resources univocally, so that the string *5701* consistently represents units.
+
+
+Web Linking {#weblinking}
+=================
+
+One thing that that could be very useful in the future is some form of Web Link resource type. ObjectLinks are not sufficient to represent links between devices or applications. There has been much work on web linking on {{RFC6690}} that could be used in the LWM2M spec. For example a new Data Type named "Web Link" could be a simple, yet useful addition. Instead of the current *ObjectID:InstanceID* expressed now, a full WebLink would be used. That would take advantage of other features like {{I-D.ietf-core-links-json}} or even newer Object Models.
+
+Other use cases contemplate some form of Object Redirection to help decouple management and applications. LWM2M expects that the management servers will observe resources and collect telemetry on the management server itself. If LWM2M is to be used as application protocol as well as management, it should provide a way for applications or CoAP Clients to observe resources on the devices, together with their required credentials. Such credentials should be stored on the device in some way, maybe a new Object.
+
+Collaboration
+=================
+
+To further develop the relationship between the LWM2M specification
+and other specifications based on CoAP, it would also be advisable to foster collaboration between organizations developing CoAP-based standard implementations. At the moment there is no forum for inter group communication nor discussion. That should change.
+
+The IETF CoRE WG has quite some people also interested in device management. Communication would be mutually beneficial. Example of that work is on COMI {{I-D.ietf-core-yang-cbor}} or data model translation.
+
+OMA LWM2M already has benefited from workshops that gather most of the industry, such as {{IOTSI}} and {{IOTSU}}. Similarly, specifications can be developed in the IETF with a view to be directly usable in LWM2M.

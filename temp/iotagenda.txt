@@ -1,0 +1,161 @@
+IoT AGENDA for IETF
+===================
+
+FRIDAY, November 15, 2019
+-- T2TRG/W3C WoT Workshop @ NUSS (https://is.gd/XWSfi8)
+
+SATURDAY, November 16, 2019
+0830-2200  IETF Hackathon - Moor/Morrison
+
+SUNDAY, November 17, 2019
+0830-1600  IETF Hackathon - Moor/Morrison
+1700-1900  Welcome Reception - Fairmont Ballroom Foyer
+1800-2000  Hot RFC Lightning Talks -- Padang
+
+MONDAY, November 18, 2019
+
+1000-1200  Morning Session I
+Sophia        ART     dispatch        Dispatch WG - Joint with ARTAREA
+Olivia        IRTF    icnrg   Information-Centric Networking
+Collyer       SEC     mathmesh        MatheMatical Mesh BOF
+
+1330-1530  Afternoon Session I
+VIP A         INT     dnssd   Extensions for Scalable DNS Service Discovery WG - Joint with HOMENET
+VIP A         INT     homenet Home Networking WG - Joint with DNSSD
+Olivia        IRTF*** dinrg   Decentralized Internet Infrastructure
+Canning       IRTF    pearg   Privacy Enhancements and Assessments Research Group
+Padang        SEC     txauth  Transactional Authorization and Delegation BOF
+Sophia        TSV     tsvwg   Transport Area Working Group WG
+
+1550-1750  Afternoon Session II
+Canning       ART     httpbis Hypertext Transfer Protocol WG
+Padang        IRTF    irtfopen        IRTF Open Meeting
+Collyer       OPS     v6ops   IPv6 Operations WG
+Orchard       RTG *** roll    Routing Over Low power and Lossy networks WG
+
+1810-1910  Afternoon Session III
+Olivia        INT *** lwig    Light-Weight Implementation Guidance WG
+Padang        IRTF    maprg   Measurement and Analysis for Protocols
+
+TUESDAY, November 19, 2019
+
+1000-1200  Morning Session I
+VIP A         INT     tmrid   Trustworthy Multipurpose Remote ID BOF
+Olivia        RTG *** roll    Routing Over Low power and Lossy networks WG
+Sophia        SEC *** teep    Trusted Execution Environment Provisioning WG
+Padang        TSV     quic    QUIC WG
+
+1330-1500  Afternoon Session I
+Padang        ART     abcd    Application Behavior Considering DNS BOF
+VIP A         RTG     babel   Babel routing protocol WG
+Sophia        SEC *** suit    Software Updates for Internet of Things WG
+Hullet        TSV     rmcat   RTP Media Congestion Avoidance Techniques WG
+
+1520-1650  Afternoon Session II
+Sophia        GEN     git     GitHub Integration and Tooling WG
+Collyer       INT *** lpwan   IPv6 over Low Power Wide-Area Networks WG
+Olivia        SEC *** ace     Authentication and Authorization for Constrained Environments WG
+VIP A         SEC *** rats    Remote ATtestation ProcedureS WG
+Hullet        TSV     taps    Transport Services WG
+
+1710-1840  Afternoon Session III                                                                                                                                                                                                            
+Hullet        IRTF    qirg    Quantum Internet Proposed Research Group
+Sophia        OPS     anima   Autonomic Networking Integrated Model and Approach WG
+Padang        SEC     secdispatch     Security Dispatch WG
+
+WEDNESDAY, November 20, 2019
+
+1000-1200  Morning Session I
+Sophia        ART *** core    Constrained RESTful Environments WG
+Canning       RTG     raw     Reliable and Available Wireless BOF
+Olivia        SEC *** teep    Trusted Execution Environment Provisioning WG
+Padang        TSV     quic    QUIC WG
+
+1330-1500  Afternoon Session I
+Collyer       ART     webtrans        WebTransport BOF
+Sophia        INT *** 6lo     IPv6 over Networks of Resource-constrained Nodes WG
+Canning       IRTF    cfrg    Crypto Forum
+Olivia        SEC     oauth   Web Authorization Protocol WG
+
+1520-1650  Afternoon Session II
+Collyer       ART     wpack   Web Packaging BOF
+Hullet        OPS     anima   Autonomic Networking Integrated Model and Approach WG
+Sophia        SEC *** lake    Lightweight Authenticated Key Exchange WG
+
+1710-1940  IETF Plenary - Canning/Padang
+
+THURSDAY, November 21, 2019
+
+1000-1200  Morning Session I
+Sophia        IRTF*** t2trg   Thing-to-Thing
+Orchard       RTG     bier    Bit Indexed Explicit Replication WG
+Padang        SEC     tls     Transport Layer Security WG
+Canning       TSV     tsvwg   Transport Area Working Group WG
+
+1330-1530  Afternoon Session I
+Collyer       ART     httpbis Hypertext Transfer Protocol WG
+Sophia        INT     6man    IPv6 Maintenance WG
+Olivia        RTG     rift    Routing In Fat Trees WG
+Canning       SEC     saag    Security Area Open Meeting
+
+1550-1720  Afternoon Session II
+Padang        INT     intarea Internet Area Working Group WG
+Collyer       RTG     detnet  Deterministic Networking WG
+Sophia        SEC *** cose    CBOR Object Signing and Encryption WG
+Hullet        SEC     oauth   Web Authorization Protocol WG
+
+1740-1840  Afternoon Session III
+Hullet        ART *** cbor    Concise Binary Object Representation Maintenance and Extensions WG
+Sophia        INT     6man    IPv6 Maintenance WG
+Collyer       RTG     detnet  Deterministic Networking WG
+Canning       SEC     tls     Transport Layer Security WG
+Padang        TSV     tsvarea Transport Area Open Meeting
+
+FRIDAY, November 22, 2019
+
+1000-1200  Morning Session I
+Hullet        INT *** 6tisch  IPv6 over the TSCH mode of IEEE 802.15.4e WG
+Sophia        IRTF    coinrg  Computing in the Network Proposed Research Group
+Canning       SEC     mls     Messaging Layer Security WG
+Orchard       SEC *** rats    Remote ATtestation ProcedureS WG
+
+1220-1350  Morning Session II
+Hullet        ART *** core    Constrained RESTful Environments WG
+Sophia        IRTF    panrg   Path Aware Networking RG
+Olivia        SEC     acme    Automated Certificate Management Environment WG
+
+====================================================================
+
+Upcoming IETF Meetings and Hosts ==                                                                                                                                                                          
+                                                                                                                                                                                                                
+IETF 107 Vancouver (Huawei)                                                                                                                                                                                     
+Hyatt Regency                                                                                                                                                                                                   
+21-27 March 2020                                                                                                                                                                                                
+                                                                                                                                                                                                                
+IETF 108 Madrid (Ericsson)                                                                                                                                                                                      
+Melia Castilla                                                                                                                                                                                                  
+25-31 July 2020                                                                                                                                                                                                 
+                                                                                                                                                                                                                
+IETF 109 Bangkok (Cisco)                                                                                                                                                                                        
+Marriott Marquis Queen’s Park                                                                                                                                                                                   
+14-20 November 2020                                                                                                                                                                                             
+                                                                                                                                                                                                                
+IETF 110 Prague (Host TBD)                                                                                                                                                                                      
+Hilton Prague                                                                                                                                                                                                   
+6-12 March 2021                                                                                                                                                                                                 
+                                                                                                                                                                                                                
+IETF 111 San Francisco (Juniper)                                                                                                                                                                                
+Hilton Union Square                                                                                                                                                                                             
+24-30 July 2021                                                                                                                                                                                                 
+                                                                                                                                                                                                                
+IETF 112 Europe (Host TBD)                                                                                                                                                                                      
+TBD                                                                                                                                                                                                             
+6-12 November 2021                                                                                                                                                                                              
+                                                                                                                                                                                                                
+IETF 113 Asia (Host TBD)                                                                                                                                                                                        
+TBD                                                                                                                                                                                                             
+19-25 March 2022                                                                                                                                                                                                
+                                                                                                                                                                                                                
+IETF 114 Philadelphia (Comcast/NBCUniversal)                                                                                                                                                                    
+Philadelphia 201 Hotel                                                                                                                                                                                          
+23-29 July 2022 

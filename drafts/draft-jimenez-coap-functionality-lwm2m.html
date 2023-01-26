@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head profile="http://www.w3.org/2006/03/hcard http://dublincore.org/documents/2008/08/04/dc-html/">
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+
+  <title>CoAP functionality expected in a LWM2M system</title>
+
+  <style type="text/css" title="Xml2Rfc (sans serif)">
+  /*<![CDATA[*/
+	  a {
+	  text-decoration: none;
+	  }
+      /* info code from SantaKlauss at http://www.madaboutstyle.com/tooltip2.html */
+      a.info {
+          /* This is the key. */
+          position: relative;
+          z-index: 24;
+          text-decoration: none;
+      }
+      a.info:hover {
+          z-index: 25;
+          color: #FFF; background-color: #900;
+      }
+      a.info span { display: none; }
+      a.info:hover span.info {
+          /* The span will display just on :hover state. */
+          display: block;
+          position: absolute;
+          font-size: smaller;
+          top: 2em; left: -5em; width: 15em;
+          padding: 2px; border: 1px solid #333;
+          color: #900; background-color: #EEE;
+          text-align: left;
+      }
+	  a.smpl {
+	  color: black;
+	  }
+	  a:hover {
+	  text-decoration: underline;
+	  }
+	  a:active {
+	  text-decoration: underline;
+	  }
+	  address {
+	  margin-top: 1em;
+	  margin-left: 2em;
+	  font-style: normal;
+	  }
+	  body {
+	  color: black;
+	  font-family: verdana, helvetica, arial, sans-serif;
+	  font-size: 10pt;
+	  max-width: 55em;
+	  
+	  }
+	  cite {
+	  font-style: normal;
+	  }
+	  dd {
+	  margin-right: 2em;
+	  }
+	  dl {
+	  margin-left: 2em;
+	  }
+	
+	  ul.empty {
+	  list-style-type: none;
+	  }
+	  ul.empty li {
+	  margin-top: .5em;
+	  }
+	  dl p {
+	  margin-left: 0em;
+	  }
+	  dt {
+	  margin-top: .5em;
+	  }
+	  h1 {
+	  font-size: 14pt;
+	  line-height: 21pt;
+	  page-break-after: avoid;
+	  }
+	  h1.np {
+	  page-break-before: always;
+	  }
+	  h1 a {
+	  color: #333333;
+	  }
+	  h2 {
+	  font-size: 12pt;
+	  line-height: 15pt;
+	  page-break-after: avoid;
+	  }
+	  h3, h4, h5, h6 {
+	  font-size: 10pt;
+	  page-break-after: avoid;
+	  }
+	  h2 a, h3 a, h4 a, h5 a, h6 a {
+	  color: black;
+	  }
+	  img {
+	  margin-left: 3em;
+	  }
+	  li {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  ol {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  ol p {
+	  margin-left: 0em;
+	  }
+	  p {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  pre {
+	  margin-left: 3em;
+	  background-color: lightyellow;
+	  padding: .25em;
+	  }
+	  pre.text2 {
+	  border-style: dotted;
+	  border-width: 1px;
+	  background-color: #f0f0f0;
+	  width: 69em;
+	  }
+	  pre.inline {
+	  background-color: white;
+	  padding: 0em;
+	  }
+	  pre.text {
+	  border-style: dotted;
+	  border-width: 1px;
+	  background-color: #f8f8f8;
+	  width: 69em;
+	  }
+	  pre.drawing {
+	  border-style: solid;
+	  border-width: 1px;
+	  background-color: #f8f8f8;
+	  padding: 2em;
+	  }
+	  table {
+	  margin-left: 2em;
+	  }
+	  table.tt {
+	  vertical-align: top;
+	  }
+	  table.full {
+	  border-style: outset;
+	  border-width: 1px;
+	  }
+	  table.headers {
+	  border-style: outset;
+	  border-width: 1px;
+	  }
+	  table.tt td {
+	  vertical-align: top;
+	  }
+	  table.full td {
+	  border-style: inset;
+	  border-width: 1px;
+	  }
+	  table.tt th {
+	  vertical-align: top;
+	  }
+	  table.full th {
+	  border-style: inset;
+	  border-width: 1px;
+	  }
+	  table.headers th {
+	  border-style: none none inset none;
+	  border-width: 1px;
+	  }
+	  table.left {
+	  margin-right: auto;
+	  }
+	  table.right {
+	  margin-left: auto;
+	  }
+	  table.center {
+	  margin-left: auto;
+	  margin-right: auto;
+	  }
+	  caption {
+	  caption-side: bottom;
+	  font-weight: bold;
+	  font-size: 9pt;
+	  margin-top: .5em;
+	  }
+	
+	  table.header {
+	  border-spacing: 1px;
+	  width: 95%;
+	  font-size: 10pt;
+	  color: white;
+	  }
+	  td.top {
+	  vertical-align: top;
+	  }
+	  td.topnowrap {
+	  vertical-align: top;
+	  white-space: nowrap; 
+	  }
+	  table.header td {
+	  background-color: gray;
+	  width: 50%;
+	  }
+	  table.header a {
+	  color: white;
+	  }
+	  td.reference {
+	  vertical-align: top;
+	  white-space: nowrap;
+	  padding-right: 1em;
+	  }
+	  thead {
+	  display:table-header-group;
+	  }
+	  ul.toc, ul.toc ul {
+	  list-style: none;
+	  margin-left: 1.5em;
+	  margin-right: 0em;
+	  padding-left: 0em;
+	  }
+	  ul.toc li {
+	  line-height: 150%;
+	  font-weight: bold;
+	  font-size: 10pt;
+	  margin-left: 0em;
+	  margin-right: 0em;
+	  }
+	  ul.toc li li {
+	  line-height: normal;
+	  font-weight: normal;
+	  font-size: 9pt;
+	  margin-left: 0em;
+	  margin-right: 0em;
+	  }
+	  li.excluded {
+	  font-size: 0pt;
+	  }
+	  ul p {
+	  margin-left: 0em;
+	  }
+	
+	  .comment {
+	  background-color: yellow;
+	  }
+	  .center {
+	  text-align: center;
+	  }
+	  .error {
+	  color: red;
+	  font-style: italic;
+	  font-weight: bold;
+	  }
+	  .figure {
+	  font-weight: bold;
+	  text-align: center;
+	  font-size: 9pt;
+	  }
+	  .filename {
+	  color: #333333;
+	  font-weight: bold;
+	  font-size: 12pt;
+	  line-height: 21pt;
+	  text-align: center;
+	  }
+	  .fn {
+	  font-weight: bold;
+	  }
+	  .hidden {
+	  display: none;
+	  }
+	  .left {
+	  text-align: left;
+	  }
+	  .right {
+	  text-align: right;
+	  }
+	  .title {
+	  color: #990000;
+	  font-size: 18pt;
+	  line-height: 18pt;
+	  font-weight: bold;
+	  text-align: center;
+	  margin-top: 36pt;
+	  }
+	  .vcardline {
+	  display: block;
+	  }
+	  .warning {
+	  font-size: 14pt;
+	  background-color: yellow;
+	  }
+	
+	
+	  @media print {
+	  .noprint {
+		display: none;
+	  }
+	
+	  a {
+		color: black;
+		text-decoration: none;
+	  }
+	
+	  table.header {
+		width: 90%;
+	  }
+	
+	  td.header {
+		width: 50%;
+		color: black;
+		background-color: white;
+		vertical-align: top;
+		font-size: 12pt;
+	  }
+	
+	  ul.toc a::after {
+		content: leader('.') target-counter(attr(href), page);
+	  }
+	
+	  ul.ind li li a {
+		content: target-counter(attr(href), page);
+	  }
+	
+	  .print2col {
+		column-count: 2;
+		-moz-column-count: 2;
+		column-fill: auto;
+	  }
+	  }
+	
+	  @page {
+	  @top-left {
+		   content: "Internet-Draft"; 
+	  } 
+	  @top-right {
+		   content: "December 2010"; 
+	  } 
+	  @top-center {
+		   content: "Abbreviated Title";
+	  } 
+	  @bottom-left {
+		   content: "Doe"; 
+	  } 
+	  @bottom-center {
+		   content: "Expires June 2011"; 
+	  } 
+	  @bottom-right {
+		   content: "[Page " counter(page) "]"; 
+	  } 
+	  }
+	
+	  @page:first { 
+		@top-left {
+		  content: normal;
+		}
+		@top-right {
+		  content: normal;
+		}
+		@top-center {
+		  content: normal;
+		}
+	  }
+  /*]]>*/
+  </style>
+
+  <link href="#rfc.toc" rel="Contents"/>
+<link href="#rfc.section.1" rel="Chapter" title="1 Introduction"/>
+<link href="#rfc.section.2" rel="Chapter" title="2 Terminology"/>
+<link href="#rfc.section.3" rel="Chapter" title="3 Interaction Model"/>
+<link href="#rfc.section.3.1" rel="Chapter" title="3.1 Device and Manager configuration."/>
+<link href="#rfc.section.3.2" rel="Chapter" title="3.2 Device to Device configuration."/>
+<link href="#rfc.section.3.3" rel="Chapter" title="3.3 Device to Application configuration."/>
+<link href="#rfc.section.4" rel="Chapter" title="4 Data Model"/>
+<link href="#rfc.section.5" rel="Chapter" title="5 Web Linking"/>
+<link href="#rfc.section.6" rel="Chapter" title="6 Collaboration"/>
+<link href="#rfc.references" rel="Chapter" title="7 Informative References"/>
+<link href="#rfc.authors" rel="Chapter"/>
+
+
+  <meta name="generator" content="xml2rfc version 2.4.8 - http://tools.ietf.org/tools/xml2rfc" />
+  <link rel="schema.dct" href="http://purl.org/dc/terms/" />
+
+  <meta name="dct.creator" content="Jimenez, J." />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-jimenez-t2trg-coap-functionality-lwm2m" />
+  <meta name="dct.issued" scheme="ISO8601" content="2016-10-25" />
+  <meta name="dct.abstract" content="This document provides a strawman summary of information that should be used for the LWM2M specification " />
+  <meta name="description" content="This document provides a strawman summary of information that should be used for the LWM2M specification " />
+
+</head>
+
+<body>
+
+  <table class="header">
+    <tbody>
+    
+    	<tr>
+  <td class="left">Network Working Group</td>
+  <td class="right">J. Jimenez</td>
+</tr>
+<tr>
+  <td class="left">Internet-Draft</td>
+  <td class="right">Ericsson</td>
+</tr>
+<tr>
+  <td class="left">Intended status: Informational</td>
+  <td class="right">October 25, 2016</td>
+</tr>
+<tr>
+  <td class="left">Expires: April 28, 2017</td>
+  <td class="right"></td>
+</tr>
+
+    	
+    </tbody>
+  </table>
+
+  <p class="title">CoAP functionality expected in a LWM2M system<br />
+  <span class="filename">draft-jimenez-t2trg-coap-functionality-lwm2m</span></p>
+  
+  <h1 id="rfc.abstract">
+  <a href="#rfc.abstract">Abstract</a>
+</h1>
+<p>This document provides a strawman summary of information that should be used for the LWM2M specification <a href="#LWM2M">[LWM2M]</a>. LWM2M is based on CoAP, on top of which it describes certain management interfaces and data models that go beyond the CoAP specifications itself. However LWM2M does not describe all behavior that should be expected from implementations of the CoAP specifications. This document attempts to clarify what should be present in a LWM2M system beyond what is specified in the LWM2M documents. Additionally, this document also adds information about IPSO Objects <a href="#IPSO">[IPSO]</a> and their usage with LWM2M as application protocol.</p>
+<h1 id="rfc.status">
+  <a href="#rfc.status">Status of This Memo</a>
+</h1>
+<p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
+<p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
+<p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
+<p>This Internet-Draft will expire on April 28, 2017.</p>
+<h1 id="rfc.copyrightnotice">
+  <a href="#rfc.copyrightnotice">Copyright Notice</a>
+</h1>
+<p>Copyright (c) 2016 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
+
+  
+  <hr class="noprint" />
+  <h1 class="np" id="rfc.toc"><a href="#rfc.toc">Table of Contents</a></h1>
+  <ul class="toc">
+
+  	<li>1.   <a href="#rfc.section.1">Introduction</a></li>
+<li>2.   <a href="#rfc.section.2">Terminology</a></li>
+<li>3.   <a href="#rfc.section.3">Interaction Model</a></li>
+<li>3.1.   <a href="#rfc.section.3.1">Device and Manager configuration.</a></li>
+<li>3.2.   <a href="#rfc.section.3.2">Device to Device configuration.</a></li>
+<li>3.3.   <a href="#rfc.section.3.3">Device to Application configuration.</a></li>
+<li>4.   <a href="#rfc.section.4">Data Model</a></li>
+<li>5.   <a href="#rfc.section.5">Web Linking</a></li>
+<li>6.   <a href="#rfc.section.6">Collaboration</a></li>
+<li>7.   <a href="#rfc.references">Informative References</a></li>
+<li><a href="#rfc.authors">Author's Address</a></li>
+
+
+  </ul>
+
+  <h1 id="rfc.section.1"><a href="#rfc.section.1">1.</a> <a href="#introduction" id="introduction">Introduction</a></h1>
+<p id="rfc.section.1.p.1">The current LWM2M protocol is probably the main Device Management protocol based on CoAP today. It defines the application layer communication protocol between a LWM2M Server and a LWM2M Client, which is located in a LWM2M Device.</p>
+<h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> <a href="#terminology" id="terminology">Terminology</a></h1>
+<p id="rfc.section.2.p.1">The LWM2M Specification tends to use its own terminology for client, server, etc. In this document, we use the existing terminology from <a href="#RFC7252">[RFC7252]</a>.</p>
+<p id="rfc.section.2.p.2">For example the use of LWM2M &#8220;Client&#8221; and &#8220;Server&#8221; and the roles they play has confused developers that are initiating on the protocol, mainly because a CoAP server runs on the device, just like a LWM2M client does. Moreover, most LWM2M devices will often work both as client and server depending on the interfaces used, it would be good to explore the use of terms like &#8220;servients&#8221; for devices that regularly support both.</p>
+<p id="rfc.section.2.p.3">Similarly, the reference to existing drafts of RFCs often can mislead the reader to believe that the full RFC has been implemented. It would be better to state the support to an IETF CoRE WG document when applicable.</p>
+<p id="rfc.section.2.p.4">For example, the Registration interface in LWM2M is based on the CoAP Resource Directory.  However, it is not sufficient to implement just the interface described to obtain the benefits provided by the CoAP Resource Directory.</p>
+<h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#interaction-model" id="interaction-model">Interaction Model</a></h1>
+<p id="rfc.section.3.p.1">LWM2M has been created with a strong focus on centralizing control and management. Devices set associations with their manager and all traffic is directed to the cloud. All this is fine but in the process some functionalities that could be used locally device to device and device to application have not been explicitly described.</p>
+<p id="rfc.section.3.p.2">Below we have common configurations that make use of LWM2M.</p>
+<p/>
+
+<ul>
+  <li>(1) Device and Manager configuration.</li>
+  <li>(2) Device to Device configuration.</li>
+  <li>(3) Device to Application configuration.</li>
+</ul>
+<pre>
+    Device               +
+    +--------+--------+  |     (1)         +----------+--------------+
+    |        |        |  |    LWM2M        |          | LWM2M Server |
+    | LWM2M  | IPSO   |  | &lt;-------------&gt; |  Manager +--------------+
+    +--------+--------+  |                 |          | BS Server    |
+    |                 |  |                 +----------+--------------+
+    |      CoAP       |  |     (2)
+    +--------+--------+  |    CoAP+IPSO    +----------+
+    |        |        |  | &lt;-------------&gt; | Device   |
+    | UDP    |  TCP   |  |                 +----------+
+    +-----------------+  |     (3)
+    |      IPv6       |  |    CoAP+IPSO    +-------------------------+
+    |                 |  | &lt;-------------&gt; | User / Application      |
+    +-----------------+  |                 +-------------------------+
+                         +    
+</pre>
+<h1 id="rfc.section.3.1"><a href="#rfc.section.3.1">3.1.</a> <a href="#device-and-manager-configuration" id="device-and-manager-configuration">Device and Manager configuration.</a></h1>
+<p id="rfc.section.3.1.p.1">This is covered by common LWM2M compliant implementations we have today. However there are upcoming RFCs and drafts that greatly enhance LWM2M with more CoAP features.</p>
+<p id="rfc.section.3.1.p.2">For example TCP support is soon going to be added to CoAP. The draft <a href="#I-D.ietf-core-coap-tcp-tls">[I-D.ietf-core-coap-tcp-tls]</a> outlines the changes required to use CoAP over TCP, TLS, and WebSockets transports.</p>
+<p id="rfc.section.3.1.p.3">Support for features like PATCH/FETCH <a href="#I-D.ietf-core-etch">[I-D.ietf-core-etch]</a> could be greatly beneficial for things like firmware upgrade or observing relatively large sets of resources.</p>
+<p id="rfc.section.3.1.p.4">For systems in which endpoints work behind a gateway or use LWM2M for managing the gateways, it might be good to implement other types of cryptographic protection than DTLS. For example some of the setups using OSCoAP <a href="#I-D.ietf-core-object-security">[I-D.ietf-core-object-security]</a> allow for &#8220;smarter&#8221; gateways.</p>
+<h1 id="rfc.section.3.2"><a href="#rfc.section.3.2">3.2.</a> <a href="#device-to-device-configuration" id="device-to-device-configuration">Device to Device configuration.</a></h1>
+<p id="rfc.section.3.2.p.1">Beyond what is described in the LWM2M documentation, devices will often talk to each other. Specially in cases when all devices are under the same subnet, this could be pretty common. For example devices could be more resilient if they did not have to contact their manager constantly; in case of lack of internet connectivity the local IoT network would still function. Managers could just set policies on the devices and they would operate more autonomously.</p>
+<p id="rfc.section.3.2.p.2">For this setup to take place, LWM2M would use more of the device-to-device functionality of CoAP. A more complete Resource Directory implementation <a href="#I-D.ietf-core-resource-directory">[I-D.ietf-core-resource-directory]</a> would be needed, either on the LWM2M server in addition to the registration interface or standalone. Devices should be able to perform lookup on that RD and get the series of links to resources elsewhere. They should be able to find new functionality through /.well-known/core. If not, they should be able to use IP multicast as expressed on <a href="#RFC7390">[RFC7390]</a>.</p>
+<p id="rfc.section.3.2.p.3">Needless to say, it is assumed that devices would be running a CoAP Server on them and would support CoAP Observe <a href="#RFC7641">[RFC7641]</a>, so that devices can subscribe to updates from one another, thus becoming more autonomous.</p>
+<p id="rfc.section.3.2.p.4">There are also updates on ACE security framework, that allow for securing the communication between two devices via an Authorization Server <a href="#I-D.ietf-ace-oauth-authz">[I-D.ietf-ace-oauth-authz]</a>.</p>
+<p id="rfc.section.3.2.p.5">The current LWM2M Data Model needs more expressiveness when it comes to data types; More on that in <a href="#semantics">Section 4</a>. Also Web Linking will be dealt at <a href="#weblinking">Section 5</a>.</p>
+<h1 id="rfc.section.3.3"><a href="#rfc.section.3.3">3.3.</a> <a href="#device-to-application-configuration" id="device-to-application-configuration">Device to Application configuration.</a></h1>
+<p id="rfc.section.3.3.p.1">In some other cases applications would be running on the phone connecting locally to sensors and/or control actuators. A smartphone can access directly a CoAP home sensor using a mutually authenticated &#8216;https&#8217; request, provided its home router runs a HTTP to CoAP (HC) proxy and is configured with the appropriate certificate. For this scenario to happen, the GW should implement a HC proxy. It is highly recommended then that they make use of <a href="#I-D.ietf-core-http-mapping">[I-D.ietf-core-http-mapping]</a> to properly do the URI mapping and specific ABNF queries.</p>
+<p id="rfc.section.3.3.p.2">Just like other devices, smartphone applications should be able to discover devices using standard methods, thus they would need access to the RD as well.</p>
+<h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> <a href="#semantics" id="semantics">Data Model</a></h1>
+<p id="rfc.section.4.p.1">The LWM2M Object Model is specified in <a href="#LWM2M">[LWM2M]</a>. Other models that build on it like IPSOs or OneM2M have spawned out of it. They normally introduce incremental features. They usually allow for performing any set of operations on a device through a CoAP interface. Resources are exposed as Objects using the same data model used for management.</p>
+<p id="rfc.section.4.p.2">For example, in the case of a temperature sensor we can access and subscribe to the readings of the device (using <a href="#IPSO">[IPSO]</a>).</p>
+<pre>
+Req: GET /3303/0/5700 Observe_Option=1
+Res: 2.05 Content (25 C)
+Res (Notify): 2.05 Content (26 C)
+</pre>
+<p id="rfc.section.4.p.3">There has also been much work on different serialization and compression mechanisms that LWM2M could consider adopting. A serialized JSON file like the one below could be greatly compressed (about 46% max, depending on the case) using CBOR representation format <a href="#RFC7049">[RFC7049]</a> instead.</p>
+<pre>
+{       "e": [{
+        "bn": "/3303/0",
+        "e": [{
+            "n": "5700",
+            "v": 20.0 }, {
+            "n": "5701",
+            "v": "c" }, {
+            "n": "5603",
+            "v": 10 }, {
+            "n": "5604",
+            "v": 40
+        }],    }, {
+        "bn": "/3302/0",
+        "e": [{
+            "n": "5500",
+            "v": true }, {
+            "n": "5501",
+            "v": 23
+}       ]}]}
+</pre>
+<p id="rfc.section.4.p.4">LWM2M ResourceIDs at the moment have no specific semantic meaning like ObjectIDs do. Adding a similar registry for ResourceIDs could be useful. Specially to those using LWM2M for their applications. For example IPSO uses such ResourceIDs to register resources univocally, so that the string <em>5701</em> consistently represents units.</p>
+<h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> <a href="#weblinking" id="weblinking">Web Linking</a></h1>
+<p id="rfc.section.5.p.1">One thing that that could be very useful in the future is some form of Web Link resource type. ObjectLinks are not sufficient to represent links between devices or applications. There has been much work on web linking on <a href="#RFC6690">[RFC6690]</a> that could be used in the LWM2M spec. For example a new Data Type named &#8220;Web Link&#8221; could be a simple, yet useful addition. Instead of the current <em>ObjectID:InstanceID</em> expressed now, a full WebLink would be used. That would take advantage of other features like <a href="#I-D.ietf-core-links-json">[I-D.ietf-core-links-json]</a> or even newer Object Models.</p>
+<p id="rfc.section.5.p.2">Other use cases contemplate some form of Object Redirection to help decouple management and applications. LWM2M expects that the management servers will observe resources and collect telemetry on the management server itself. If LWM2M is to be used as application protocol as well as management, it should provide a way for applications or CoAP Clients to observe resources on the devices, together with their required credentials. Such credentials should be stored on the device in some way, maybe a new Object.</p>
+<h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> <a href="#collaboration" id="collaboration">Collaboration</a></h1>
+<p id="rfc.section.6.p.1">To further develop the relationship between the LWM2M specification and other specifications based on CoAP, it would also be advisable to foster collaboration between organizations developing CoAP-based standard implementations. At the moment there is no forum for inter group communication nor discussion. That should change.</p>
+<p id="rfc.section.6.p.2">The IETF CoRE WG has quite some people also interested in device management. Communication would be mutually beneficial. Example of that work is on COMI <a href="#I-D.ietf-core-yang-cbor">[I-D.ietf-core-yang-cbor]</a> or data model translation.</p>
+<p id="rfc.section.6.p.3">OMA LWM2M already has benefited from workshops that gather most of the industry, such as <a href="#IOTSI">[IOTSI]</a> and <a href="#IOTSU">[IOTSU]</a>. Similarly, specifications can be developed in the IETF with a view to be directly usable in LWM2M.</p>
+<h1 id="rfc.references"><a href="#rfc.references">7.</a> Informative References</h1>
+<table>
+  <tbody>
+    <tr>
+      <td class="reference">
+        <b id="I-D.ietf-ace-oauth-authz">[I-D.ietf-ace-oauth-authz]</b>
+      </td>
+      <td class="top"><a>Seitz, L.</a>, <a>Selander, G.</a>, <a>Wahlstroem, E.</a>, <a>Erdtman, S.</a> and <a>H. Tschofenig</a>, "<a href="http://tools.ietf.org/html/draft-ietf-ace-oauth-authz-07">Authentication and Authorization for Constrained Environments (ACE)</a>", Internet-Draft draft-ietf-ace-oauth-authz-07, August 2017.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="I-D.ietf-core-coap-tcp-tls">[I-D.ietf-core-coap-tcp-tls]</b>
+      </td>
+      <td class="top"><a>Bormann, C.</a>, <a>Lemay, S.</a>, <a>Tschofenig, H.</a>, <a>Hartke, K.</a>, <a>Silverajan, B.</a> and <a>B. Raymor</a>, "<a href="http://tools.ietf.org/html/draft-ietf-core-coap-tcp-tls-09">CoAP (Constrained Application Protocol) over TCP, TLS, and WebSockets</a>", Internet-Draft draft-ietf-core-coap-tcp-tls-09, May 2017.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="I-D.ietf-core-etch">[I-D.ietf-core-etch]</b>
+      </td>
+      <td class="top"><a>Stok, P.</a>, <a>Bormann, C.</a> and <a>A. Sehgal</a>, "<a href="http://tools.ietf.org/html/draft-ietf-core-etch-04">Patch and Fetch Methods for Constrained Application Protocol (CoAP)</a>", Internet-Draft draft-ietf-core-etch-04, November 2016.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="I-D.ietf-core-http-mapping">[I-D.ietf-core-http-mapping]</b>
+      </td>
+      <td class="top"><a>Castellani, A.</a>, <a>Loreto, S.</a>, <a>Rahman, A.</a>, <a>Fossati, T.</a> and <a>E. Dijk</a>, "<a href="http://tools.ietf.org/html/draft-ietf-core-http-mapping-17">Guidelines for HTTP-to-CoAP Mapping Implementations</a>", Internet-Draft draft-ietf-core-http-mapping-17, November 2016.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="I-D.ietf-core-links-json">[I-D.ietf-core-links-json]</b>
+      </td>
+      <td class="top"><a>Li, K.</a>, <a>Rahman, A.</a> and <a>C. Bormann</a>, "<a href="http://tools.ietf.org/html/draft-ietf-core-links-json-09">Representing Constrained RESTful Environments (CoRE) Link Format in JSON and CBOR</a>", Internet-Draft draft-ietf-core-links-json-09, July 2017.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="I-D.ietf-core-object-security">[I-D.ietf-core-object-security]</b>
+      </td>
+      <td class="top"><a>Selander, G.</a>, <a>Mattsson, J.</a>, <a>Palombini, F.</a> and <a>L. Seitz</a>, "<a href="http://tools.ietf.org/html/draft-ietf-core-object-security-04">Object Security of CoAP (OSCOAP)</a>", Internet-Draft draft-ietf-core-object-security-04, July 2017.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="I-D.ietf-core-resource-directory">[I-D.ietf-core-resource-directory]</b>
+      </td>
+      <td class="top"><a>Shelby, Z.</a>, <a>Koster, M.</a>, <a>Bormann, C.</a>, <a>Stok, P.</a> and <a>C. Amsuess</a>, "<a href="http://tools.ietf.org/html/draft-ietf-core-resource-directory-11">CoRE Resource Directory</a>", Internet-Draft draft-ietf-core-resource-directory-11, July 2017.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="I-D.ietf-core-yang-cbor">[I-D.ietf-core-yang-cbor]</b>
+      </td>
+      <td class="top"><a>Veillette, M.</a>, <a>Pelov, A.</a>, <a>Somaraju, A.</a>, <a>Turner, R.</a> and <a>A. Minaburo</a>, "<a href="http://tools.ietf.org/html/draft-ietf-core-yang-cbor-05">CBOR Encoding of Data Modeled with YANG</a>", Internet-Draft draft-ietf-core-yang-cbor-05, August 2017.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="IOTSI">[IOTSI]</b>
+      </td>
+      <td class="top"><a>IAB</a>, "<a href="https://www.iab.org/activities/workshops/iotsi/">IoT Workshop for Semantic Interoperability (IOTSI)</a>", 2016.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="IOTSU">[IOTSU]</b>
+      </td>
+      <td class="top"><a>IAB</a>, "<a href="https://www.iab.org/activities/workshops/iotsu/">Internet of Things Software Update Workshop (IoTSU)</a>", 2016.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="IPSO">[IPSO]</b>
+      </td>
+      <td class="top"><a>IPSO</a>, "<a href="http://ipso-alliance.github.io/pub/">IPSO Object Model</a>", n.d..</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="LWM2M">[LWM2M]</b>
+      </td>
+      <td class="top"><a>OMA</a>, "<a href="http://technical.openmobilealliance.org/Technical/technical-information/release-program/current-releases/oma-lightweightm2m-v1-0">LWM2M specification</a>", n.d..</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC6690">[RFC6690]</b>
+      </td>
+      <td class="top"><a>Shelby, Z.</a>, "<a href="http://tools.ietf.org/html/rfc6690">Constrained RESTful Environments (CoRE) Link Format</a>", RFC 6690, DOI 10.17487/RFC6690, August 2012.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC7049">[RFC7049]</b>
+      </td>
+      <td class="top"><a>Bormann, C.</a> and <a>P. Hoffman</a>, "<a href="http://tools.ietf.org/html/rfc7049">Concise Binary Object Representation (CBOR)</a>", RFC 7049, DOI 10.17487/RFC7049, October 2013.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC7252">[RFC7252]</b>
+      </td>
+      <td class="top"><a>Shelby, Z.</a>, <a>Hartke, K.</a> and <a>C. Bormann</a>, "<a href="http://tools.ietf.org/html/rfc7252">The Constrained Application Protocol (CoAP)</a>", RFC 7252, DOI 10.17487/RFC7252, June 2014.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC7390">[RFC7390]</b>
+      </td>
+      <td class="top"><a>Rahman, A.</a> and <a>E. Dijk</a>, "<a href="http://tools.ietf.org/html/rfc7390">Group Communication for the Constrained Application Protocol (CoAP)</a>", RFC 7390, DOI 10.17487/RFC7390, October 2014.</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="RFC7641">[RFC7641]</b>
+      </td>
+      <td class="top"><a>Hartke, K.</a>, "<a href="http://tools.ietf.org/html/rfc7641">Observing Resources in the Constrained Application Protocol (CoAP)</a>", RFC 7641, DOI 10.17487/RFC7641, September 2015.</td>
+    </tr>
+  </tbody>
+</table>
+<h1 id="rfc.authors">
+  <a href="#rfc.authors">Author's Address</a>
+</h1>
+<div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Jaime Jimenez</span> 
+	  <span class="n hidden">
+		<span class="family-name">Jimenez</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Ericsson</span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality"></span> 
+		<span class="region"></span>
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline"></span>
+	</span>
+	<span class="vcardline">Phone: +358-442-992-827</span>
+
+<span class="vcardline">EMail: <a href="mailto:jaime.jimenez@ericsson.com">jaime.jimenez@ericsson.com</a></span>
+
+  </address>
+</div>
+
+</body>
+</html>

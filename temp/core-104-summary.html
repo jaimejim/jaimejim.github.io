@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>core-104-summary</title>
+
+
+<style type="text/css">
+*{margin:0;padding:0;}
+body {
+	font:13.34px helvetica,arial,freesans,clean,sans-serif;
+	color:black;
+	line-height:1.4em;
+	background-color: #F8F8F8;
+	padding: 0.7em;
+}
+p {
+	margin:1em 0;
+	line-height:1.5em;
+}
+table {
+	font-size:inherit;
+	font:100%;
+	margin:1em;
+}
+table th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+table td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+input[type=text],input[type=password],input[type=image],textarea{font:99% helvetica,arial,freesans,sans-serif;}
+select,option{padding:0 .25em;}
+optgroup{margin-top:.5em;}
+pre,code{font:12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;}
+pre {
+	margin:1em 0;
+	font-size:12px;
+	background-color:#eee;
+	border:1px solid #ddd;
+	padding:5px;
+	line-height:1.5em;
+	color:#444;
+	overflow:auto;
+	-webkit-box-shadow:rgba(0,0,0,0.07) 0 1px 2px inset;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;border-radius:3px;
+}
+pre code {
+	padding:0;
+	font-size:12px;
+	background-color:#eee;
+	border:none;
+}
+code {
+	font-size:12px;
+	background-color:#f8f8ff;
+	color:#444;
+	padding:0 .2em;
+	border:1px solid #dedede;
+}
+img{border:0;max-width:100%;}
+abbr{border-bottom:none;}
+a{color:#4183c4;text-decoration:none;}
+a:hover{text-decoration:underline;}
+a code,a:link code,a:visited code{color:#4183c4;}
+h2,h3{margin:1em 0;}
+h1,h2,h3,h4,h5,h6{border:0;}
+h1{font-size:170%;border-top:4px solid #aaa;padding-top:.5em;margin-top:1.5em;}
+h1:first-child{margin-top:0;padding-top:.25em;border-top:none;}
+h2{font-size:150%;margin-top:1.5em;border-top:4px solid #e0e0e0;padding-top:.5em;}
+h3{margin-top:1em;}
+hr{border:1px solid #ddd;}
+ul{margin:1em 0 1em 2em;}
+ol{margin:1em 0 1em 2em;}
+ul li,ol li{margin-top:.5em;margin-bottom:.5em;}
+ul ul,ul ol,ol ol,ol ul{margin-top:0;margin-bottom:0;}
+blockquote{margin:1em 0;border-left:5px solid #ddd;padding-left:.6em;color:#555;}
+dt{font-weight:bold;margin-left:1em;}
+dd{margin-left:2em;margin-bottom:1em;}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+kbd {
+  display: inline-block;padding: 3px 5px;font-size: 11px;line-height: 10px;color: #555;vertical-align: middle;background-color: #fcfcfc;border: solid 1px #ccc;border-bottom-color: #bbb;border-radius: 3px;box-shadow: inset 0 -1px 0 #bbb;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">CoRE WG - Summary IETF104</h1>
+
+<h2 id="toc_1">Working Group Document Status</h2>
+
+<ul>
+<li><p>draft-ietf-core-object-security-16 was approved and is now in the Editor Queue. The option number to be used is <code>9</code>.</p></li>
+<li><p>draft-ietf-core-multipart-ct-03 is now in WGLC, which ends at 2019-04-08.</p></li>
+<li><p>draft-ietf-core-senml-etch has now finished its WGLC, its pending the shepherd&#39;s writeup.</p></li>
+<li><p>draft-ietf-core-echo-request-tag-03 is in WGLC, already received a chair&#39;s review. It is pending a new version due to a submit glitch and few editorial comments, the WGLC ends at 2019-04-17.</p></li>
+<li><p>draft-ietf-core-stateless-01 is pending the chairs&#39; review and then it will move to WGLC.</p></li>
+</ul>
+
+<h2 id="toc_2">Security</h2>
+
+<ul>
+<li><p>draft-ietf-core-oscore-groupcomm-04 had a new revision based on Jim&#39;s comments. There are now several implementations which the authors will test at next IETF.</p></li>
+<li><p>draft-tiloca-core-oscore-discovery-02 the draft has incorporated the latest RD-group usage pattern and clarified some of the text with examples. The registration of oscore-gid and app-gp are still open points, the use of link format would need to be revised. Concepts from CoRAL Reef could be brought here. More reviews are needed in order to decide for WGA.</p></li>
+<li><p>draft-dijk-core-groupcomm-bis-00 the document updates RFC 7390 considering changes brought by blockwise transfer and obseve. The section on REST interface usage for group management will be removed. The target is to finalize the draft by next meeting.</p></li>
+<li><p>There was a pubsub security hallway meeting where three challenges where identified: multicast use, ComSec and potential DoS. The AD has to discuss with the SEC ADs where this new work would fit. </p></li>
+</ul>
+
+<h2 id="toc_3">Data Formats</h2>
+
+<ul>
+<li><p>draft-keranen-core-senml-data-ct-01 proposes a new SenML field for indicating the Content-Format of the data. It would need more reviews. Brought up the issue of fragmentation of senml documents, and whether it is the time to do it in CoRE.</p></li>
+<li><p>draft-ietf-core-senml-etch-03 was in WGLC, now closed. Please provide some more reviews.</p></li>
+<li><p>draft-bormann-senml-more-units-00 this draft proposes the creation of a registry for units. Bluetooth has its own unit registry and IPSO uses UCUM, the idea would be to reuse the SenML Units registry that will contain the units.</p></li>
+</ul>
+
+<h2 id="toc_4">CoRECONF</h2>
+
+<ul>
+<li><p>draft-ietf-core-yang-cbor-07 a latest version was presented with few changes. The group is looking for reviewers. From the discussion, the intention is to get the NETCONF people involved by doing WGLC on the core-yang-cbor document soon, also since YANG is evolving and every change implies a new revision.</p></li>
+<li><p>draft-ietf-core-comi-04 no changes since last IETF an interp was arranged during it. No real changes since last IETf, interop at last IETF.</p></li>
+<li><p>draft-ietf-core-sid-05 the authors have been working out the details for the SID registry with IANA. There are a lot of little modifications that require finetuning.</p></li>
+<li><p>draft-veillette-core-yang-library-04 the document is rather stable at the moment but requires more reviews before adoption.</p></li>
+</ul>
+
+<h2 id="toc_5">CoRE Applications and extensions</h2>
+
+<ul>
+<li><p>draft-ietf-core-coap-pubsub-08 part of the discussion was on the handling of empty topics and the lifetime of data and topics. Maybe it si time to think about whether extending the architecture to support long-polling is a good idea.</p></li>
+<li><p>draft-ietf-core-dynlink-08 is close to WGLC, we are pending a chair&#39;s review and contacting OMA to see their opinion on the conditional observation attributes and the binding table.</p></li>
+<li><p>draft-ietf-core-interfaces-14 has had little literal adoption but the text might have been overtaken by other work inspired on it. Thus some of the text will be moved to other documents and to be continued on the Research Group.</p></li>
+<li><p>draft-ietf-core-resource-directory-20 is mature and under WGLC at the moment. Few errors and clarifications to be added during this time.</p></li>
+<li><p>draft-ietf-core-rd-dns-sd-04 was not presented but it is progressing. It has been simplified by introducing explicit service types rather than doing any automatic conversion. A new revision will come by july.</p></li>
+</ul>
+
+<h2 id="toc_6">New Work</h2>
+
+<ul>
+<li><p>draft-bormann-core-media-content-type-format-00 the document tries to clear the confusion between media-types, content-types, content-coding, content-format, and related terminology. It was found very useful by the group, the WGA call will be confirmed on the list.</p></li>
+<li><p>draft-birkholz-core-coid-01 was discussed at SECDISPATCH, the document represents <q>claim sets</q> as CBOR Web Tokens to support secure device identification.</p></li>
+<li><p>draft-amsuess-core-resource-directory-extensions-00 brings some extensions to the Resource Directory. The bulk of the work is reverse-proxying. While there was limited interest by the group, some of the extensionscould be used by other SDOs.</p></li>
+<li><p>draft-jarvinen-core-fasor-00 has IPR licensed as FRAND. The authors were concerned about interest and energy in the group even if the document is adopted. The WGA call will be taken to the list.</p></li>
+<li><p>draft-selander-ace-cose-ecdhe-13 proposes an Ephemeral Diffie-Hellman Over COSE (EDHOC) lightweight authenticated Diffie-Hellman key exchange with ephemeral keys. The document could be done in its own WG, the group is invited to join secdispatch.</p></li>
+<li><p>draft-amsuess-core-rd-replication-02 is an exploratory work on how to scale up resource directories. It might fit better at the T2TRG. It is expected to come back to core eventually.</p></li>
+<li><p>CoRAL has been worked at the T2TRG and has reached a level of maturity making it apt for CoRE. it is composed of several documents:</p>
+
+<ul>
+<li>draft-hartke-t2trg-ciri</li>
+<li>draft-hartke-t2trg-coral</li>
+<li>draft-hartke-t2trg-coral-reef
+CIRIs and CoRAL are now stable, with RIOT adding its support during this hakathon. The working group has decided on the WGA of the first two drafts, which will be reported on the mailing list.</li>
+</ul></li>
+<li><p>draft-zcao-core-speedy-blocktran-00 specifies a method to speed up block-wise transfer in CoAP. It creates a new option that specifies the window size.</p></li>
+</ul>
+
+<h2 id="toc_7">Other</h2>
+
+<ul>
+<li><p>The possibility of deepening the use of GitHub in CoRE was discussed. Some discussion topics were:</p>
+
+<ul>
+<li>Other SDOs use Github partially.</li>
+<li>Hard to draw the line on how deep to go.</li>
+<li>Need for a best practices document.</li>
+<li>Availability of GitHub and possibility of IETF running its own GitLab.</li>
+<li>Archiving discussions and following drafts.
+The intention is to first try with few documents in agreement with the authors and move forward from there.</li>
+</ul></li>
+<li><p>draft-ietf-core-dev-urn-03 Seems ready for WGLC but was not discussed during the IETF 104.</p></li>
+<li><p>draft-ietf-core-hop-limit-03 Seems ready for WGLC but was not discussed during the IETF 104.</p></li>
+</ul>
+
+<h1 id="toc_8">Raw minutes</h1>
+
+<p>0.1 Core@IETF104 agenda</p>
+
+<h1 id="toc_9">Constrained RESTful Environments (CoRE) WG</h1>
+
+<p>Agenda: <a href="https://datatracker.ietf.org/meeting/104/materials/agenda-104-core-00">https://datatracker.ietf.org/meeting/104/materials/agenda-104-core-00</a>
+Note takers: Ludwig, Jaime, Ivaylo + 4 unnamed</p>
+
+<p>Chairs (<a href="mailto:core-chairs@ietf.org">core-chairs@ietf.org</a>):</p>
+
+<ul>
+<li>Jaime Jiménez</li>
+<li>Carsten Bormann</li>
+</ul>
+
+<p>Numbers in parentheses are minutes of time allocated.</p>
+
+<h1 id="toc_10">TUESDAY, March 26, 2019</h1>
+
+<p>1350-1550 Berlin/Brussels</p>
+
+<p>(conflicts with anima, mls, tsvarea;
+Absent: Michael Koster)</p>
+
+<h2 id="toc_11">Intro (9)</h2>
+
+<ul>
+<li>WG and document status
+
+<ul>
+<li>Approved (in RFC-editor queue):  draft-ietf-core-object-security-16</li>
+<li>In IETF Last Call (ends 2019-04-08):     draft-ietf-core-multipart-ct-03</li>
+</ul></li>
+<li>Quick recap of related work, pointers</li>
+</ul>
+
+<p>Ivo: Friday some time for the SID draft?
+Carsten: Yes, let&#39;s see after CoRECONF</p>
+
+<ul>
+<li>CoRAL: Wed, 1500 - 1700, Tyrolka</li>
+</ul>
+
+<p>Klaus Hartke [KH]: Interest from CoRE, e.g., RD, idea to replace Link-Format with CoRAL
+if interested come to T2TRG meeting on Wednesday
+Bill Silverjan [BS]: Will discuss this tomorrow, will send mail to organize side-meeting
+* PubSub security: Pre-discussion at Hackathon
+Chistian Amsuess [CA]: Had some discussions, side-meeting Friday 8--9
+Carsten Bormann [CB]: Listing some of the upcoming hallway discussions. </p>
+
+<p>CB: OSCORE now in RFC editor queue. (Clapping)
+Francesca Palombini [FP]: Thanks for help!
+KH: Confusion on which option number you want.
+All: 9
+KH: IANA picked 10
+FP: From IANA  we were told to ask the designated expert, thus 9.
+CB: Hint for future draft authors: Use TBD (9) to indicate preferences</p>
+
+<p>CB: WGLC for multipart-ct ends soon
+CB: WGLC for senml-etch finished</p>
+
+<h2 id="toc_12">Documents nearing WGLC</h2>
+
+<h3 id="toc_13">draft-ietf-core-echo-request-tag-03: (10)</h3>
+
+<p>(Please check <a href="https://github.com/core-wg/echo-request-tag">github for -04</a> version due to a submit glitch, in particular the text for Token processing. ➔ WGLC! until 2019-04-17)</p>
+
+<p>Christian Amsuess [CA] Presenting. 
+Received Chair review, remaining issue: Token processing
+Document now requires to prevent request response mismatch and gives recommendations</p>
+
+<p>CB: sent message to list 30 min ago; mostly editorial comments on sec 5. Then ready for WGLC. Fine with token processing; 2 editorial comments on that.</p>
+
+<h3 id="toc_14">draft-ietf-core-stateless-01 (3): (Chairs&#39; review? WGLC!)</h3>
+
+<p>Klaus Hartke [KH] presenting.
+Draft about how to create CoAP proxies without state. Request from 6tisch. Now draft <q>stateless</q>. IMHO ready for WGLC. No open issues. Have a look and let know what you think.</p>
+
+<p>Malisa Vucninc [MV]: Thank you for work. Good progress. We&#39;re still blocking 6tisch work for other reasons. Will review</p>
+
+<h2 id="toc_15">group communication: security and bis</h2>
+
+<h3 id="toc_16">draft-ietf-core-oscore-groupcomm-04 (15): registry vs. cose-bis, what needs to be integrity-protected?</h3>
+
+<p>Marco Tiloca [MT] presenting
+Revision based on review by Jim Schaad and discussions.</p>
+
+<div><pre class="line-numbers"><code class="language-none">o Singature bit reverted to Reserved and set to 0
+
+o New counter-signature parameters, should IANA registry for this go to COSE-bis?
+
+o Should Context ID be in external_aad
+
+o Reception of malformed messages
+
+o Newly created recipient contexts
+
+o Handle repeated responses on clients
+
+o Github issue #6 : kid parameter
+
+o #7 What countersignature alg
+
+o #8 Use cases with a gateway
+
+
+Implementations: RISE, Peter van der Stok, Jim Schaad
+
+Aiming for more interops at next meetings
+
+
+Remaining issues?</code></pre></div>
+
+<p>CB: About MTI curve: which is it? Need to be careful how we handle this
+John Mattsson [JM]: P25519 benefit: speed, P256: good tooling support
+CB: Widening the rift between OSCORE and DTLS
+JM: Interesting question: What kind of latency do applications need</p>
+
+<h3 id="toc_17">draft-tiloca-core-oscore-discovery-02 (12): Points raised by Jim:</h3>
+
+<p>Marco Tiloca presenting</p>
+
+<p>Recap: newly deployed device uses RD to find groups and group manager</p>
+
+<p>Updates after reviews from Jim Schaad (JS) and FP.
+o Now based on latest RD-group usage pattern
+o difference between app groups and oscore security groups
+o oscore-gp -&gt; app-gp
+o clarified parameter semantics
+o Updated examples</p>
+
+<p>presents example for RD use</p>
+
+<p>Open points: Register oscore-gid and app-gp e.g. as Link Target Attributes
+What is the right place to register this?</p>
+
+<p>KH: Usecase beyond what RD was intended for, funky use of link format, needs review (adding base URI as a payload on the lookup response for a multicast addres).
+One problem with link format: extensibility story is thin. Trying to improve with CoRAL the extension story. One exercise: how to do the same thing with CoRAL.
+CA: Agree that use of attr values is weird, would like to have all as URIs in links. Could look here how CoRAL reef is done.
+KH: Discovering multicast IP addr from base URL, that&#39;s weird
+CA: We have to look into it but it is hard to see how the timescales would easilly allign.
+Peter van der Stok [PS]: What is the timeline of CoRAL
+KH: if sent review by tomorrow, it&#39;s done day after
+CB: when want this stuff to be published?
+PS: Next year would be good
+CB: Obvious question. Who has read a version of this document? 5. And the most recent? 1. Time to start reading it in order to decide for WGA.
+KH: If link format works it is fine to use of link format. The document currently needs review. 
+CB: Who want to review  (4) Jim, Carsten, Bill and Klaus volunteered to review. </p>
+
+<h3 id="toc_18">draft-dijk-core-groupcomm-bis-00 (10): RFC7390 update (EXP!),</h3>
+
+<p>Discuss objectives, 10 minutes: Marco Tiloca; can we remove the REST
+interface for managing groups as nobody is using it?</p>
+
+<p>MT presenting:
+Update to 7390, What has changed: More CoAP functions (Block-wise, Observe)
+Group OSCORE kinda normatively refers to 7390 (which is Experimental) -&gt; need new standards track doc</p>
+
+<p>Implementations of 7390:</p>
+
+<div><pre class="line-numbers"><code class="language-none">o Californium
+
+o OCF</code></pre></div>
+
+<p>In scope:</p>
+
+<div><pre class="line-numbers"><code class="language-none">o New use cases
+
+o CoAP functionalities for groups
+
+o Both secured and unsecured comm
+
+o Principles for secure group configuration</code></pre></div>
+
+<p>Next steps
+CB: How many people have read Blockwise? 5 and this document? 3 Who would volunteer to review?
+Review volunteers: KH, JS, CA  , Thomas Fossati.</p>
+
+<p>CB: Timeline
+MT: Finalize draft by next meeting</p>
+
+<p>MK: How do network groups related to app groups?
+MT: We keep the RFC 7390 definition, where network groups only include the servers, unlike app groups, which also include the clients</p>
+
+<h3 id="toc_19">pubsub security hallway meeting results (8) Francesca:</h3>
+
+<p>summarize/discuss any results</p>
+
+<p>FP presenting:</p>
+
+<p>Want to use multicast notification in pubSub
+Want security mechanisms</p>
+
+<p>Identified 3 challenges:</p>
+
+<div><pre class="line-numbers"><code class="language-none">1. Plumbing = How to make pub/sub work with multicast
+2. Protect against DoS
+3. CommSec</code></pre></div>
+
+<p>Where does it fit? CoRE, ACE?</p>
+
+<p>Dave Wheeler (DW): Is inference considered in the security model? What can attacker infer from victims with this?
+FP: Not specifically considered, have a look at slides from side-meeting
+FP: Asking the group about interest. Option is to have it in ACE.
+MK: We had these Unsolicitied Responses/Notifications, discussed with OCF, but it could be related as an topic. 
+Alexey Melinkov(AD): Don&#39;t have answer, but mail me and I&#39;ll talk to Sec ADs and work it out</p>
+
+<h2 id="toc_20">SenML</h2>
+
+<h3 id="toc_21">draft-keranen-core-senml-data-ct-01 (10): Ari.  Check for adoption.</h3>
+
+<p>Discuss potential fragmentation of SenML into many documents.</p>
+
+<p>Ari Keranen (AK) presenting:
+    o content-format indication
+    o content-type and content-encoding
+    o Base value challenge(s)</p>
+
+<p>Does the group think this makes sense?
+(some nodding from the audience)</p>
+
+<p>CB: Just now came up with a sick way of solving this problem: define negative content-format numbers
+AK: Where to do this? Would like to do it in CoRE
+CB: Brought up the issue of fragmentation of senml documents, and whether it is the time to do it in CoRE. 
+CB: Who read this? Klaus, Ari and Carsten. Riot implemented it, look there</p>
+
+<h3 id="toc_22">draft-ietf-core-senml-etch-03 (10): Ari. WGLC will have closed 24:00 CET on Monday, March 25, 2019.  Please review.</h3>
+
+<h3 id="toc_23">draft-bormann-senml-more-units-00 (3): Carsten.  Adopt?</h3>
+
+<p>AK presenting: At the moment there are other SDOs, in particular OMA that have a unit resource. The reference for that resource is UCUM, but there is no registry for that. The idea would be to reuse the SenML Units registry that will contain the units.  Have unit attribute in LwM2M and IPSO.SenML units registry would be good fit. 
+AK: For the time being we could collect these units on the drafts. 
+Hauke Petersen (HP): there is a registry on the bluetooth. 
+AK: We are looking for short strings instead of integers, also need to add units that may not be interesting for Bluetooth. But need to align long term. There are other registries too like UCUM we looked at.
+MK: In terms of converge, this ucum work was of interest but somehow never progressed. I see now that UCUM has been implemented, and will arrive to the JDK, so that you can also work with scale factors, converting between units, etc. Interesting for m2m for compatibility.
+AK: Discussed in OMA what the right place to express the scales, some env don&#39;t support floats very well, but having scale in number is rather easy using the exponent in SenML JSON/CBOR formats. Don&#39;t need floating point implementation for that.
+CB: Different registries good way to learn how to arrive at different conclusions for similar problems. Also to see how different registries work, for example UCUM has several different definitions for thermal units, due to the evolution and how they have changed. UCUM is big in a way that maybe we don&#39;t like, they are also missing some units. However the IETF is not in that business, it would be better to export to someone else. ISO8000 is the group that needs to do that, and it needs to be translated into ASCII.</p>
+
+<h2 id="toc_24">CoRECONF</h2>
+
+<h3 id="toc_25">draft-ietf-core-yang-cbor-07 (3): Ivaylo.</h3>
+
+<p>Ivaylo Petrov (IP) presenting, asking for reviews. </p>
+
+<h3 id="toc_26">draft-ietf-core-comi-04 (3):</h3>
+
+<p>No real changes since last IETf, interop at last IETF </p>
+
+<h3 id="toc_27">draft-ietf-core-sid-05 (4): Ivaylo. (Get misunderstandings with IANA out of the way.)</h3>
+
+<p>Received comments from Peter, adapted draft accordingly
+Discussions with IANA to simplify things.</p>
+
+<p>Non-editorial changes: 
+    Moving things to appendix that are non-normative
+    Removed section 5 -&gt; was potentially confusing</p>
+
+<p>Michelle Cotton (MC): We might change where we put the SID model, discussion ongoing
+Alexander Pelov (AP): Talking with IANA people to understand how things work. There are a lot of little modifications that require finetuning. 
+IP: Will have to revert some of the commits. 
+CB: Complexity comes from having different stakeholders with subgroups</p>
+
+<h3 id="toc_28">draft-veillette-core-yang-library-03 (4): Adopt?</h3>
+
+<p>IP presenting</p>
+
+<p>rather stable, modulo recent reviews (multiple enums inside unions)
+How do we resolve this? Proposal by CB
+AP: CBOR getting interest, people were doing things that were not well defined, figuring out problems in Yang2CBOR
+CB: Now RESTconf people found out CBOR would make servers faster and want to use it. In our interest to have the communities onboard so we get much better software support. What&#39;s going on with annotations sub-module?
+IP: have not looked into yet. No solution worth mentioning yet.
+AP: question to chairs; how we proceed with YANG2CBOR. Leave it open until get more questions from YANG people? Or freeze and when have new things there will be new revision? So we can focus on something.
+CB: Good question, if we come up with solutions that require changes in SID files we need to do that now. If can stick with same SID files may have partial solution. Still in the process of finding out. Last time said ready for WGLC except for interop testing. How much further with that?
+AP: Late on interop, did 1 year ago, then changed, not done new tests yet. Focus on that before the next IETF. 
+CB: To parallelize: get Netconf involved by doing WGLC (to get their attention)
+AP: Yang keeps also changing and at some point we need to release this. WGLC and in case the NETCONF people give feedback then we proceed with the changes. 
+IP: SID document will require some work, by the end of the week it will be ready. 
+AP: IANA move non normative text to the appendix. To me it is all done, minor review and ready by the end of the week. 
+CB: plan is to WGLC this. Little detail: YANG library doc. Not even WG doc yet. Hard to do LC for such. Who has read? (1,5 hands) Better to have more people for that.
+AP: very straightforward doc. YANG model that tells you how you get info of models. Place more in CoRE since we know how to interact with constrained devices. Logical continuation of CoRECONF.
+CB: Expect resubmission, we try to be ready by end of week
+[NOTE: draft-veillette-core-yang-library has apparently expired.]</p>
+
+<h2 id="toc_29">New work</h2>
+
+<h3 id="toc_30">draft-bormann-core-media-content-type-format-00 (3) Worthwhile?</h3>
+
+<p>CB presenting: </p>
+
+<p>Who has read this document? &gt; 8+1 Of the readers:  who did not like it? 0
+KH: It is useful and helpful and clarifies things that were not clear in the past. Maybe it is better to expand the audience. 
+CB: important for getting interest from other people is to not load too much IoT. Then could get HTTPbis involved.
+AK: Found very useful, very good terminology
+JJ: WGA on the mailing list</p>
+
+<h3 id="toc_31">draft-birkholz-core-coid-01 (5) will have been discussed in secdispatch on Mon 1350-1550</h3>
+
+<p>CB presenting
+SECDISPATCH was meeting yesterday, who attended (9 hands).</p>
+
+<p>Can we explain how to express assertions as CWTs?
+Two documents about similar looking things: this &amp; (draft-raza-ace-cbor-certificates-01)
+Raza draft translates ASN.1 X.509 to CBOR and back, also profiles X.509
+Which WG should do this? ACE and CoRE charters don&#39;t fit well. Will be a bit delayed until we know where to do this
+Who has seen any of the two drafts? 7 people
+Who would contribute to get a new WG going? 6 people</p>
+
+<h3 id="toc_32">draft-amsuess-core-resource-directory-extensions-00 (5) Christian: [5—10 optional]</h3>
+
+<p>target: informational; collection of things that might have been
+specified in RD but don&#39;t need to be part of RD proper</p>
+
+<p>CA presenting</p>
+
+<p>Largest part: reverse-proxying
+Other part: registering with infinite lifetime, can be extension
+Question: Is there interest in the WG?
+CB: Who has a problem solved by these extensions, no answers
+JS: About infinite lifetime. 3rd party puts device into RD, makes sense to let lifetime be infinite instead of forcing device to renew registration.
+JJ: Will review, infinite lifetime seems useful for OMA LWM2M client registration.</p>
+
+<p>CB concludes</p>
+
+<p>(hallway on observation: see <a href="https://etherpad.ietf.org/p/notes-ietf-104-core-observation?useMonospaceFont=true">https://etherpad.ietf.org/p/notes-ietf-104-core-observation?useMonospaceFont=true</a>)</p>
+
+<p>Σ 120</p>
+
+<h1 id="toc_33">FRIDAY, March 29, 2019</h1>
+
+<p>0900-1030 Grand BR</p>
+
+<p>(conflicts with 6man, cacao BOF)</p>
+
+<h2 id="toc_34">Intro (5)</h2>
+
+<p>CB: Agenda bashing. Some unscheduled stuff right after intro.</p>
+
+<p>core-fasor: Has an IPR on the datatracker. Not enough information in it, stopped discussing it at IETF103. Since statement has been updated with assertion of patent claim, and claim owner makes it available for essential parts of IETF standard, ie. would only work with standards track document. So far congestion control was informational, but can be made standards track. Defensive patent construction (license expires when Huawei sued). Job of WG to decide whether can continue persuing. Not deciding now, but do we have enough info to make decision? Congestion control is fringe topic and so are patents, but anyone in intersection?
+CB: My opinion is that construction has been used and has been deemed acceptable, so I think we are in position to take decision. To list.
+Markku: Not commenting on the IPR, but case WG decides to take up document: how are we able to get enough interest among ppl in WG given this is congestion control where experise is in transport? Should be more liaison in transport, also w/ COCOA. Concerned about interest and energy in WG for document, if at all passes IPR questions.
+CB: Next step is WG adoption call. 
+CB: Hesitant to pass it on because it&#39;s our protocol. So far done things here by pulling in transport area, and should continue.
+MG: Just posing the question, not asking to push over.
+CB: For COCOA Alexey even delegated IESG shepering to transport AD, expect same to happen here.
+CB: Adoption call on list, would ask room but we all need to consider IPR first.</p>
+
+<p>EDHOC</p>
+
+<p>CB: Underlying background: had DTLS as mandatory-to-implement 6y ago, but now have OSCORE which needs key exchange to cover what DTLS does.
+Have discussed EDHOC as a proposal (also in ACE) but never found official home. Security and ART area have dispatch working groups that dispatch documents to WGs or start groups with community input, and secdispatch had interim meeting for EDHOC a few weeks ago, and ADs have since taken in results and are now proposing short-term WG with EDHOC as starting document.
+CB: On interest, join secdispatch list and file support.
+CB: In-room consensus to support individual WG or want to keep this in?
+Ivaylo: Good way to go.
+PvdS: If have OSCORE, EDHOC should be there. No opinion on dedicated WG or here.
+Lauren Toutain LT (adapted for LPWAN): 
+AK: Good way to go.</p>
+
+<p>CB: Who things it is the right way to go? 15 hands + 2 on jabber
+CB: For another better arrangement? [nobody]</p>
+
+<p>Github use on CoRE</p>
+
+<p>JJ: comparing approaches of TEEP (issue tracker rather than mailing list, but list curated by author into what to present), CoRE (preliminary tagging but kind of ad-hoc and no discuss tags), HTTP (discuss tags, topic based tags, using milestones)
+Proposing track documents over lifetime over Github, could have batch mails every week or so, can assign issues to expert, could have milestones based on draft lifetime, start using tagging (<q>discuss</q> for asking WG, <q>editorial</q> etc). Not supported by IETF, but possible future could also be having IETF run Gitlab server.
+Trial with guineapig documents.
+DT: Comment on discussion on github. WG needs to decide where active debate happens. Either can be done, WG decide, some WG say active debate on ML and summary in github (policy in TEEP but not followed). This WG should specifically decide where arbitrary responses, inline quotes etc go to.
+JJ: Some items are now on Github where authors collaborate, nothing formal yet. Should formalzie.
+CB: Dave, what experience do SDOs have, what do we best use to get their data in? List, github?
+DT: From OCF perspective, no significant difference. They don&#39;t use github for issue discussion right now. OCF uses mailing lists and document management system. Maybe github for data models. IoTivity: Uses mailing list and github and issue tracking on mailing list, but has no good issue tracking mailing list.
+JJ: OMA uses github and had painful transition. Drafting and discussion on github, some on lists but moving to github.
+BS: Much confusion on how we can use github. Could come up with best practice in WG, guidelines change btwn WGs. Getting a discussion fromlist into issues is hard. Have been using tagging and it&#39;s good to have more than issue tracking in github. Continuous integration, activity on drafts. Hard to draw line how deep to go in.
+JJ: Reason for tryout: See what is outcome, feasibility, do experimentation, not switch everything.
+JS: Two concerns about issue discussion. I don&#39;t know if IETF policy on archiving of discussion on mailing list has changed. Don&#39;t know that I need to go and follow new project when starts up. Could never find out if anything goes on. If it&#39;s big project with all on tracker. If different project for each document, then don&#39;t see discussions. That worries me.
+JJ: if all docs in same repo, that would be a mess
+Barry Leiba (BL). AD interrput, HTTPbis WG has handled by having separate mailing list and have GH sending all notifications to that list. All archived. And don&#39;t have to go to 15 repos. May not work for everyone though. Also the new wg <q>git</q> looking into this.
+JS: SACM made a list observing the repos, that was also a bit messy</p>
+
+<p>Brendan M: github has not always been available to everyone. Most of the time it is, but not alwasy.
+JJ: This is why having our own gitlab will make a lot of sence.
+CB: should not second guess here results from git wg; will wait to hear more from their results. As WG we could start our own small experiment. Not swapping the model completely but setting small experiment. Would propose RD draft. Handling LC comments could be easier that way.
+Christian Amsuess (CA): There is already tagging and the discussions are already been duplicated on the tracker, so that would be fine for me.
+DT: I was at git WG. Should not expect guidance <q>WGs should do X</q>. Don&#39;t need to wait for anything from them. Mostly providing guidance for git n00bs. 
+BL: didn&#39;t mean to imply that either
+PvdS: It should not change the process and it should be very clear to everyone how this will work.
+JJ: not planning to change any of IETF process
+CB: (?)</p>
+
+<h2 id="toc_35">CoRE Applications</h2>
+
+<h3 id="toc_36">draft-ietf-core-coap-pubsub-08 (15):</h3>
+
+<p>(Changes still needed, left over issue: see github; new github version
+by Monday! Michael Koster -&gt; Friday)</p>
+
+<p>MK presenting via meetecho:
+Issues: no new status code and figure out how to handle empty topics</p>
+
+<p>Empty topic: created but not published to. Response could wait with result CON. Application layer would work that out.
+Problem: Pubsub only transmits representations, and can&#39;t construct empty payload. Depend on things like Accept-All / application/nothing-to-see-here documents. With SenML can have empty payload []; don&#39;t think there&#39;s any severe issue. Can explain that in document.
+Topic lifetime: query parameter tlt on topic creation, counting down from publish or create repetition. Topic removed at zero.</p>
+
+<p>Data lifetime: Max-Age, already in place. Default is 60s as per CoAP. dlt= additional option to have long-lived values.</p>
+
+<p>Topic contents lifetime: Max-Age=0 still sent but cache can&#39;t re-use. [???] Cache subscribing to broker could use max-age as supposed.</p>
+
+<p>Proposed profile: broker won&#39;t respond until data is there, topic creator should send empty representation soon.
+Defaults for tlt and dlt. [???]
+If tlt, topic will be removed when no updates sent. Subscribers get 4.04 and end of subscription.</p>
+
+<p>KH: @profile1: we have talked about pub/sub conf; if we have things like publishining interim thing; may make sense to update this rep at later date. One idea is to spread topic to two resources: one config resource and a data resource (where pubs and subs done). You create the config resource but if no content the data resource not there yet. Would give you CRUD resource for creating and deleting topics. Second comment on (2) max age: when published hasn&#39;t published for some time, say no data after 24 hours. Do we want to say <q>I can&#39;t give resp now, unlikely to get soon, you should not cache this</q>. We should be able to tell apart and not generaate unnessecary traffic.
+CA: I think on having empty representation it can be done more smoothly. Either as options for the creation or ... 
+CA: Could be testament, last will, that would align nicely with metadata on resources that are not topics. </p>
+
+<p>CA queueing notes: tlt in metadata? Tombstone in metadata? Dont understand Data lifetime != max-age</p>
+
+<p>CB (hat off): profile (1), we seem to be extensing architecture with long polls. May or may not be good thing, good to be conscious. Having broker not immediately responding might be right thing. Could also be topic create and 2 days later data; we have to consider whether that is evolution of architecture we like. Another observation on arch: if pub needs to include dlt query option, that&#39;s in URI and hence cache key. Doesn&#39;t replace any caches. Having no-cache-key option could make sense. Adding option also impacts the architecture. Obs 3) having control and data resource might be a good thing. If I would design from scracth, would make control resource multi-part core, could have control and initial value there.</p>
+
+<p>CA: if understand correctly, control resource is implemented using different contnent format. Doing that has been problematic in RD. Having separate resource makes sense. Frees also pub/sub to use link format data on the topic.</p>
+
+<p>PvdS: still intend to use broker proxy for sleeping nodes. Seems to be disappearing. Hope still can do that.
+Ari: There is a subscribe and read interface. The latter is exactly for that use case. The idea of this update was to simplify the procedures so that vanilla CoAP client can be used for the basic functionality. </p>
+
+<p>PvdS: something about observe??
+AK: Mostly talking about the observe interface, but read is still there and left and just same thing w/o observe, but the observe is more complicated due to lifetime issues and therefore discussed a lot.</p>
+
+<h3 id="toc_37">draft-ietf-core-dynlink-08 (5): Update now with clear separation; needs review -- close to WGLC</h3>
+
+<p>BS presenting.
+big chunk of work finished. Much activity after joint call w/ OMA LwM2M, current draft reflects that.
+Clarifications done that restructured draft into conditional attributes and ….
+pmin and pmax changed to decimal for fractional.
+Question for when notifications sent was clarified.
+LwM2M discussion about band attribute, anyone here from there? Consensus was for info from LwM2M whether contribute.</p>
+
+<p>Binding table changed, introduced rt rather than if.</p>
+
+<p>Table in -07: resource collection POSTed to; still looking at it.
+Right now discover entry point, GET/PUT.</p>
+
+<p>Next: link bindings completed, binding table needs work. Looking for input from the LwM2M folks.</p>
+
+<p>CA: like to point out that should be mail in the list about particular binding types that were not comprehensive. 
+BS: also use of pmin was clarified on which value should be sent when it expires</p>
+
+<p>CB: When ready for WGLC?
+BS: Should have been ready, needs work on binding table and listen to LwM2M; two weeks for updated binding table maybe?</p>
+
+<p>CB: procedure: we wait for next version, in parallel chairs&#39; review and contacting OMA people. 
+BS: Don&#39;t anticipate much problems.</p>
+
+<h3 id="toc_38">draft-ietf-core-interfaces-14 (10): Last call for burying?</h3>
+
+<p>CB on core-interfaces.</p>
+
+<p>One of the first drafts, from ~2012. Early draft that consolidated our ideas about how this was going to work. Has been influential, taken over by SDOs that adapted it, changed and enhanced. No literal adoption, just standing there with recommendations overtaken by events.
+Looked at it, found some useful text, eg. on collection -- would fit into T2TRG documents that non-normatively describe restful design. Charter mentions this document as place for interaction with research group -- interaction here is to push the good parts over.
+Want to hear opinion of the room. Asked on list and have one response. 
+BS: as having worked on it: Think this is a good idea. Well-written and small and easy to understand, some ideas fit well with T2TRG, others are well taken by SDOs.
+PvdS: have found the doc very useful in early days of work. Fantastic text on that. Should be maintained. 
+CB: we all agree around these lines. Taking over to RG and publish it there in different form.
+BS: Not burying it, throwing over to RG.</p>
+
+<h2 id="toc_39">CoRE Applications: RD</h2>
+
+<h3 id="toc_40">draft-ietf-core-resource-directory-20 (20): WGLC til April 17th!</h3>
+
+<p>two interops done, meet again at IETF104 hackathon, report</p>
+
+<p>CA: Klaus has requested additions to the security considerations section. Should not pose problems to update. Still found some errors in the draft examples, will fix them.</p>
+
+<p>Multiple interops done, found issues that have been fixed. Now looking into using CoRAL for RD. No spec issues. </p>
+
+<p>BS: thanks for the good draft; clarified lots of things. And good discussions in OMA meeting. Some text in RD that says about cardinality of registration. May want in future to have multiple base values. High chance that protocol neg will not have multiple base values. Our semantics might be a bit different for base.
+CA: case for forward reference; we should adapt to state of the art and possible remove from the doc.</p>
+
+<h3 id="toc_41">draft-ietf-core-rd-dns-sd-04 (10): Peter van der Stok; how to get DNS context into RD</h3>
+
+<p>PvdS: Will be done by July</p>
+
+<h3 id="toc_42">draft-amsuess-core-rd-replication-02 (3)</h3>
+
+<p>(Will have been discussed in T2TRG meeting, quick feedback)</p>
+
+<p>CA: was earlier decided this work fits better to RG. Possible to replicate RD using many RDs meshed together. Mainly notifying this is going on at the RG.
+PvdS: some text in the front what is the purpose of the replication for would be good. Very different consequences.
+CA: coping with great load, tolerance to failure, and third one (don&#39;t remember now). Will make sure the doc outlines <em>why</em> this is done. Will leave to protocol neg the part on integrating crypto IDs to have URIs across interested ---- in the overlap area of this group and RG. Some things to be address how can be done luke URI aliasing. Trust mode that allows switching transport without getting to problems. Github repo on this. If interested in topic whatch the repo <a href="https://github.com/t2trg/transports">https://github.com/t2trg/transports</a>. Will eventually be relevant to CoRE again but now in RG since variety of directions this could go. Some experimentation needed. </p>
+
+<ul>
+<li>CoRAL side meeting results (7) Klaus: summarize/discuss any results</li>
+</ul>
+
+<p>KH: at RG have been working on CoRAL. Four drafts. CIRIs and CoRAL getting interest in use in CoRE apps. Idea is to move these to CoRE WG. CIRIs: CBOR encoding of URIs similar to CoAP options. Want constrained devices be able to do URI arithmetics, including corner cases. Could also be used outside of CoRAL, like SenML CBOR format or SUIT. </p>
+
+<p>CoRAL is link format on steroids. Can also describe operations on resources with forms. CoRAL doc tells what is the resource, what can you do with it, and how it relates to other resources. Also fixes bunch of link format issues. Like weird rules of link anchor. CoRAL comes with two serialization formats: CBOR for constrained devices (typical doc only few bytes and can be used by devices with minimal RAM), and compact textual format for examples that is more human-friendly.</p>
+
+<p>CIRIs and CoRAL stable. Two meetings this IETF: hackathon (new parser, RIOT OS support, examples and uses cases done, thing description conversion and python implementation updated). Also side meeting where discussed using CIRIs and CoRAL RDF-link format interop. Discussed also if real hypermedia apps are feasible and WG adoption.</p>
+
+<p>Klaus showed CoRAL examples of link-format, Carsten&#39;s coffee machine, and TD in CoRAL. For TD example, if assume using CoAP, the representation comes nicely much shorter. Also IPSO vocabulary for CoRAL based apps. Conclusions: CoRAL works! Also did interop between two RD implementations. Also github repo with examples with CDDL and ABNF, test vectors for unit tests. Plan to create more examples and tutorials. Started collecting issues.</p>
+
+<p>CB: given we have reached the state as reported, is it time for WG adoption? Lots of docs, not all for this group, but the two docs we see candidates for going for engineering phase are CoRAL and CIRI docs. Are we ready for adopting? 9 yes +2 jabber, no one against.
+CB: To report on mailing list to verify consensus.</p>
+
+<p>PvdS: About rd-dns-sd. Progressing well. Simplified a lot by introducing explicit service types rather than doing any automatic conversion. Should be done by July.</p>
+
+<h2 id="toc_43">New work</h2>
+
+<ul>
+<li>draft-zcao-core-speedy-blocktran-00 (10)</li>
+</ul>
+
+<p>Needs to request continuously, exact segment every time, many round trips.
+Can we speed that up when loading a large file onto a device, and [other case].
+Server may be more capable and more stateful in handling these.
+Proposeing to speed up block option. Speed-up option specifies window size. Sever sends several segments.
+More tricky when client is constrained [??].
+Each five segments, the client ACKs and server can send more. Speeds up conversations and keeps clients constrained.
+Certainly more can be done (speedy block option etc).</p>
+
+<p>[CA queuing up: Looked into NSTART&gt;1? Nontraditional responses?]
+CA: two things, see the use cases, have run to them myself, but think this could profit from looking into two areas: using NSTART &gt; 1. Was always envisioned possible. Would simplify model by simply sending many requests. Would not give all the efficiency but might give speedup without making the model more complicated. If then turns out not enough, maybe want to have look at non-traditional responses. There all topics of <q>which token to reply etc</q>. Would not need to come to this with NSTART &gt; 1 for 80% of apps. With that don&#39;t need to lock-step.</p>
+
+<p>ZC: is that solution documented anywhere?
+CA: not aware of docs that would describe this</p>
+
+<p>Hannes T: did you do analysis on performance improvements?
+ZC: have done some simple evaluation. Obvious benefits. </p>
+
+<p>Hannes Tschofening: [...] This is a congestion control issue, transport could be interested in that. I don&#39;t think, rather am sure, it&#39;s not easy.
+ZC: On TCP you don&#39;t need to worry.
+HT: So TCP only?
+ZC: Also UDP with COCOA.</p>
+
+<p>CB: some interest in the group to explore this space and alternative approaches</p>
+
+<p>CB: Announcing interims (late Wednesday CEST) in schedule with other WGs (weekly but not each WG every week)</p>
+
+<p>Σ 90</p>
+
+<h1 id="toc_44">Hallway discussions envisioned</h1>
+
+<ul>
+<li>protocol negotiation: Bill.</li>
+<li><p>on pubsub security: Francesca.
+This work was done in ACE, but might fit better in CoRE than in ACE.
+<q>group oscore</q> vs. the construction of pubsub.
+Francesca: summarize hallway meeting if there is a result, 10 minutes</p></li>
+<li><p>observation and pubsub: Christian</p></li>
+</ul>
+
+<h2 id="toc_45">IETF103:</h2>
+
+<div><pre class="line-numbers"><code class="language-none">draft-bhattacharyya-core-a-realist-02           2019-02-05
+draft-bormann-core-corr-clar-00         2018-10-23
+draft-hartke-core-apps-08           2018-10-22
+draft-jarvinen-core-fasor-01    ipr     2018-10-22
+draft-jhjung-core-sensor-streaming-00           2018-10-22
+draft-mattsson-core-coap-actuators-06           2018-09-17</code></pre></div>
+
+<h2 id="toc_46">Unrelated:</h2>
+
+<div><pre class="line-numbers"><code class="language-none">draft-yangcan-core-web-software-built-in-cloud-00           2018-10-23
+draft-urien-core-blockchain-transaction-protocol-02         2019-03-04
+draft-urien-core-identity-module-coap-05            2018-12-27
+draft-urien-core-racs-12            2018-12-12</code></pre></div>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+
+</body>
+
+</html>

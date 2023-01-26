@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>riotnotes</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">RIOT KEYNOTE</h1>
+
+<h1 id="toc_1"> 1</h1>
+
+<p>My name is Jaime Jiménez, I work for Ericsson Research in Finland. I have been working in areas related to IoT for several years now, ranging from academic research, prototyping, standardization to some customer cases.</p>
+
+<p>First of all thank you to the RIOT community for the opportunity to be here today. I have been following your work for several years and I am obviously impressed with it. I remember the first time I went to the RIOT Summit in 2016 and how easy it was to get started with RIOT. After that I have been seeing some of your on various venues, mostly related to standardization. </p>
+
+<h1 id="toc_2">2</h1>
+
+<p>I&#39;d like to briefly mention what Ericsson and Ericsson Research is for those who don&#39;t know about it.</p>
+
+<h1 id="toc_3">3</h1>
+
+<p>Ericsson as a whole is a 100K company that provided Telco equipment (base stations and other network elements) as well as services on top. We have a research group of about 650 researchers, divided in several continents. Out of those a fraction works on Internet of Things.</p>
+
+<p>We have a long and a short-term focus, normally 2-5 years time for Ericsson Research and of 10 year time for academic collaboration. 
+Product Collaboration are also short-term.</p>
+
+<p>Needless to say, Ericsson and other companies like us are focusing on Research more and more, and specially on closer collaboration between research and development. So that you get an idea it is usually from 15% to 20% of the company&#39;s revenue dedicated to R&amp;D.</p>
+
+<h1 id="toc_4">4</h1>
+
+<p>And how is working in Research outside academia you ask? 
+In theory you have focus to detail and great concentration to a specific single task. Like Didie Lockwood playing the violin. You focus on your very specific research topic, go deep into the intricacies of a protocol or a piece of code, end of the story. </p>
+
+<h1 id="toc_5">5</h1>
+
+<p>However in practice you are more like Bert from Mary Poppins. You need have some skills with one instrument but ideally you should be able to play several with some skill.</p>
+
+<p>In my case I do research but focusing a bit more on the product side.  You need to be dependable in multiple areas and do some development, some scientific research, some standardization, some marketing, some sales pitches of your ideas. You also need to know how the business works and how to work with various types of people. Moreover your research topics can change and you need to be flexible about it.  </p>
+
+<p>This pattern, seems to be applicable to other fields and does not seem specific to researchers. This might be of application to an Open Source community like RIOT, where it is fundamental to have good running code, but also to <q>sell</q> the code, have some vision of where you want to go as well as create and care for a community.</p>
+
+<h1 id="toc_6">6</h1>
+
+<p>Core to Open Source there are also standards, which are also key for interoperability. </p>
+
+<h1 id="toc_7">7</h1>
+
+<p>I would say that we have had about 18 years of standardization around IoT. The IETF started with a head start when the IoT trend began back around 2005 (I wasn&#39;t there of course). There have been about 14 groups that have handled the various problems around IoT, form the initial basic connectivity at first, then on the application side and now, when some IoT systems are running security. </p>
+
+<p>To name a few, 6LoWPAN completed its work on running IP on 802.15.4 networks. LPWAN looking into making the internet work on networks like sigfox and lora, with very low throughput. ROLL which focused on routing in such networks. 6Lo was looking into the many radios are capable of doing IoT traffic (802.15.4, zwave, ble, nfc... and what not). LWIG giving implementation guidance for developers.</p>
+
+<p>In the application side we have CoRE, which created an REST application layer protocol for constrained devices, similar to HTTP, together with its extensions (i.e. resource discovery very important in IoT, application layer security, etc..) being a reference on many other SDOs. We have CBOR for payload compression where JSON is too expensive, and I like to add T2TRG there since they are very good at providing the longer term perspective I mentioned before. </p>
+
+<p>On the security side, there was a lot of work on protecting the connection between endpoints on DICE which was task to improve DTLS. 
+COSE specified how to create and process signatures and encryption using CBOR for serialization. </p>
+
+<p>Now the focus is on making sure that the devices are accessed by the right parties with focus on authentication and authorization (ACE). Then you also have two new groups, TEEP and SUIT, SUIT basically defining the metadata needed for firmware upgrades, so that devices&#39; bootloader can verify that the binary comes from the right source. </p>
+
+<p>We have a lot of collaboration with other SDOs like W3C, OMA or OCF. W3C is also looking into areas like semantic interoperability and the best way to represent device data in the long term (think about like inventing HTML for sensors). OMA has a group working on managing these devices (bootstrapping, upgrading firmware, etc) and also on defining an extremely simple data model for them (IPSO). OCF is also there for specific use cases.</p>
+
+<h1 id="toc_8">8</h1>
+
+<p>In this one slider you have essentially the main RFCs that have been produced over the years in a somewhat cronological order. </p>
+
+<h1 id="toc_9">9</h1>
+
+<p>With these standards and set of technologies, the current device stack for several companies would look at the protocol level like this. At least this is the preferred one for Ericsson. </p>
+
+<p>For us we want interoperability cause it helps us to compete, I will talk more about that later. We also needed device management cause it is what our customers where asking for and we need a common data model to simplify data ingestion as well as for interoperability. We do not want to reinvent the wheel for every customer and we don&#39;t want mistakes on the security side due to design flaws.</p>
+
+<p>Maybe some differentiator here is that we also bet also on NB-IoT which is a 3GPP standard for LPWAN.</p>
+
+<p>This stack is the same for many other players in the industry. </p>
+
+<h1 id="toc_10">10</h1>
+
+<p>So, with this background, you might want to know how is the competition between the big players. I will mention it briefly to provide some background.</p>
+
+<h1 id="toc_11">11</h1>
+
+<p>Forgive me my simplicity but I am not an expert business analysis. You see how we have to play the violin sometimes and other times the drums. </p>
+
+<p>You have basically four main backgrouns, the Telco providers like Ericsson, which are focusing above all on 5G at the moment and that on the IoT side have experience from mainly connectivity management. They have good customer relationship with service providers, but often lack experience from industry segments and working directly with enterprises.</p>
+
+<p>You have System Integrators (so, everyone seems to have an IoT platform) but these seem to lack a strong platform product. However they are very good at doing dedicated solutions for specific customers. </p>
+
+<p>You have the pure IT Players, which are the ones the end user often knows about. They are very strong at providing generic platforms and they are also very good on the data aggregation and handling side. Not so strong on the connectivity side. They also have piles of cash which always helps. </p>
+
+<p>A fourth area would be operators themselves. Traditionally customers of the ones I mentioned, many are building their own IoT platforms or solutions. These platforms are often a combination of in house development with some components sourced from vendors. This makes it really complicated to manouver for the other three players. However these homegrown solutions can be costly to maintain and might not evolve fast enough to handle new technology that is coming out. So we will see.</p>
+
+<p>So, what is happening is that Telecom infrastructure providers want to get out of the bytepipe role that they have had so far, managing networks and base stations, and they want to get into other segments involving device, data and connectivity management. That&#39;s the summary.</p>
+
+<h1 id="toc_12">12</h1>
+
+<p>But it is not all big players out there, because precisely this competition is leaving a lot of space for smaller companies. I have tried to gather some examples of many of those that have gone from pure research, from academia, that use standards and open source heavily, that are still in business or growing and that I have had some first contact with, not so much focus on billion-making companies but companies that do exist, some of them definitely making millions. So no second hand news here. I hope they inspire you to create something new too.</p>
+
+<h1 id="toc_13">13</h1>
+
+<p>First of all, Yanzi networks. Yanzi started looking at IoT relatively early, their original problem was the lack of interoperable standards. They did focus on helping creating them originally and contributing to them. So essentially they have a similar stack as the one I mentioned before. They do have a lot of other added features of course but they were heavily using IEEE and IETF standards, as well as Contiki as Open Source OS.</p>
+
+<p>As an outcome, they sell sensors and actuators for <q>smart building cases</q> they have a strong collaboration with Contiki and the RISE institute in Sweden. They have contributed to standards and now they decided to sell a control portion of their stock to an American investment company for about 40 million euros. </p>
+
+<h1 id="toc_14">14</h1>
+
+<p>The Smartbolt case is one I like a lot. Here it is presented as if there was a challenge that needed solving however it actually was a bit more complex than that. Jens, in the picture was working at the Lulea university, he has several papers and contributions to standards and has worked in many EU projects form where I know him. One was the PIMM project, that aimed at providing more info on mines. They make a prototype of a rockbolt with a led, an accelerometer and an antenna. The led will go red, visually showning structural damage in the mine. </p>
+
+<p>Jens then made a spinoff company out of it called Thingwave. When preparing the presentation I asked him what was the status and he said he will be leaving the uni to work on that full time. </p>
+
+<h1 id="toc_15">15</h1>
+
+<p>So, again a group of people from the university of Leuvem in Belgium got together to find problems in the IoT space. They focused on PnP deployments, making it easy for people to set the devices. They used the usual set of standards I mentioned and to offer differentiation they built and in-house device identification mechanism to identify and install their drivers. They claim that is a million times more efficient than USB or FireWire. They also wanted to avoid vendor lock-in. So ultimately they made the company, I met them when they were looking into a standard device data model (IPSO) and later on they rebranded as versasense and they keep working on it as well as selling their devices, focusing on data center customers but also industrial facilities or even farms.</p>
+
+<h1 id="toc_16">16</h1>
+
+<p>The Husqvarna case is a bit different context. So this is a stablished company working on landmowers, chainsaws and similar smart gardening solutions. Back in the day we got an RFQ for a project that at the end didn&#39;t happen with Ericsson connected to the Gardena solution. This RFQ had essentially everything we already pitch, LWM2M, CoAP ... they also used contiki ... actually the RFQ was done by Joakim Eriksson, the main guy behind the current Contiki-NG... so of course I thought, yeah this is good! </p>
+
+<p>Essentially they have it now in the Gardena portfolio, I am sure with many additions and changes that I don&#39;t know off. Interestingly Husqvarna lost almost 20% of their price last month. There is a silver lining to it though, as the areas of growth are precisely the <q>IoT type</q> like Gardena, and the ones gbeing slashed are petrol powered lawnmowers and garden tractors&quot;. So I am taking it as a plus. </p>
+
+<h1 id="toc_17">17</h1>
+
+<p>Next one is Acklio. The main person behind it is Alexander there in yellow. They have been contributing to IETF LPWAN, 6lo and CoRE for quite some time now. They started at Télécom Bretagne, reoriented the company a couple of times and focused on compression over various radios. They seem to be doing very well, selling to Cisco, Sigfox, and other big players. And they do contribute back to standards.</p>
+
+<h1 id="toc_18">18</h1>
+
+<p>IoTEROP is a company started by an ex-intel guy, David Navarro who was developing Wakaama and decided to simply quit and make his own company. Their challenge is to integrate constrained device management on legacy devices. So now their company has grown to 8 people team, they focus on selling their lwm2m client implementation and adaptation layer to telco vendors and providers and they seem to be doing well enough. They also contribute back to OMA, which is rare for a company that small.</p>
+
+<h1 id="toc_19">19</h1>
+
+<p>The IKEA Trodfi was an interesting case back in 2017.<br>
+Essentially IKEA wanted to get into the Smart lightning control with some product for the home. They hired a consulting company that implemented a solution based on these open standards.  We found out by chance since someone debugging the DTLS traffic from the GW to their phone (with the right keys) copy pasted the payload he was seeing on a website. I saw the post on hackernews by chance and noticed that they used IPSO TLV format, which means they use IPSO, which means they probably used LWM2M, which means they use CoAP too. After that I met some of the developers and they confirmed it.</p>
+
+<p>It is an anecdote but most people working in IETF, OMA or IPSO did not know about this, it was quite a surprise for us. Which shows how standards allow for <q>permissionless innovation</q>.</p>
+
+<p>By the way, RIOT can run on this lightbulb, as it has already been ported. </p>
+
+<h1 id="toc_20">20</h1>
+
+<p>This is another case of a medium sized company doing environmental monitoring. There is an NDA so I shouldn&#39;t say the name, however it is easy to guess. They are a segment leader when it comes to precision monitoring, weather balloons, road sensors and the like. They have about 1500 people make good revenue and have been growing. They have done a lot of in-house development but they&#39;d like to reduce complexity by using standards. And that&#39;s essentially what they are doing, we did come work with them on a PoC to use these standards and they were happy with them, so much that they will use it in their product line. They have also considered to give back to the Open source and Open standards community.</p>
+
+<h1 id="toc_21">21</h1>
+
+<p>Another case I shouldn&#39;t mention are these two utilities companies that specialize in smart metering. I don&#39;t know much of the business aspects of this, however what it is clear from their technical folks is that they have problems with connectivity in some cases due to PLC, which has very poor bandwidth when electricity consumption is high. PLC bands are regulated, essentially it shouldn&#39;t matter how many devices are at home, however they create a lot of noise since some other devices use might use that band. And also that they use a protocol call DLMS, and COSEM which they would like to upgrade with some of the latest standards form IETF and elsewhere, or at least study the viability. Together with them we have been looking into the state of the art and other potential radio technologies. Radiowise they are happy with nb-iot and they will look into these towards the new product line.</p>
+
+<h1 id="toc_22">22</h1>
+
+<p>Lastly, this year I got my hands on an early prototype of a ruuvitag from one of the founders at IETF. This example is not very good when it comes to standards as it missuses the URI format to send measurements over a bluetooth beacon (using eddystone format). Every time the measurement changes, the uri changes... so essentially the uri means nothing and does not point to a resource, but to a measurement. Anyways, the point here is that the hardware is open source and so is the software. They have grown rapidly to a sizeable community and they are already selling hundreds of thousands of these beacons. Little by little they have built up the business and now they sell ruuvitag as a platform on top of which other companies have built some form of business. The main drive behind it is its community and the fact that is also permissionless.</p>
+
+<p>Interesting how sometimes when you build the technology you don&#39;t really know how will it be used, the type of beacons used by the ruuvitag where originally intended for advertising to your phone (cinema tickets), instead they use it for broadcasting telemetry data from the device. </p>
+
+<p>The ruuvitag can also run RIOT btw.</p>
+
+<h1 id="toc_23">23</h1>
+
+<p>So, again, these are only a handful of cherry-picked cases that I have gather to show that standards and research matter very much. That they are the source of these new businesses and ideas.</p>
+
+<h1 id="toc_24">Conclusion I</h1>
+
+<p>It is clear that Standards and Open Source have played a key role in these projects and seems to be a key towards their future, as well as a common pattern in the R&amp;D process.</p>
+
+<h1 id="toc_25">Conclusion II</h1>
+
+<p>I think it is clear that the IoT field is really vibrant today. There is scarcity of good technical people with deep expertise in the implementation of certain protocols or libraries, like you. There is also scarcity of those who can sum that up to some concrete idea and bring it to a product. </p>
+
+<p>And that is all, thank to all for listening.</p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+
+</body>
+
+</html>
