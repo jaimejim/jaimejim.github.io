@@ -14,7 +14,7 @@ headerImage: true
 
 The hottest new tool in the software world for 2022-2023 are Large Language Models and [ChatGPT](https://beta.openai.com) in particular.
 
-For other newcomers, language models are a type of Artificial Intelligence model trained to understand and generate natural language text. The training process involves feeding the model with large amounts of text data, such as books, articles, and other written content. Once trained, you can ask them to generate code, poetry or to understand contextual information given some input. I have been playing with ChatGPT and came up with quite a lot of applications for Research; summarizing PDFs, brainstorming (!) for ideas, fixing code, providing background information, writing blog posts about GPT, ... so many things.
+Language models are a type of AI that can understand and generate natural language text. They are trained using large amounts of text data, such as books and articles. Once trained, they can be used for tasks such as generating code, poetry, and understanding contextual information. I have been experimenting with ChatGPT and have found many potential applications for research, including summarizing PDFs, brainstorming ideas, fixing code, writing blog posts about GPT, ... so many things!
 
 ### Returning JSON
 
