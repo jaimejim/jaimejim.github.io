@@ -83,7 +83,7 @@ Response:
 }
 ```
 
-Later on I added this as an Apple Shortcut so that I can use it while actually doing the cooking. I uploaded it to [this blog](/assets/files/heytom.shortcut), it just needs an API key.
+Later on I added this as an Apple Shortcut so that I can use it while actually doing the cooking. I uploaded it to [this blog](/assets/files/hey\ tom.shortcut), it just needs an API key.
 
 Finally, as a bonus, you can also use the ChatGPT API to generate images. Like the one below or the one illustrating this blog post. The request payload is as simple as:
 
