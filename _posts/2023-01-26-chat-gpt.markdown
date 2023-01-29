@@ -41,7 +41,7 @@ To make this work, it is important to properly configure the following elements 
 - **Application Logic**: Defining a set of actions and linking them to the responses allows the AI to understand the intent and how to behave accordingly.
 - **Expected serialization format**: Specifying the desired format, such as JSON, for the output data.
 - **Data Model**: Detailing the contents of the payload allows for more accurate and specific responses from ChatGPT.
-- **Command**: Detailing the action to be taken by ChatGPT. While the previous 4 items are permanent, this one changes for each interaction with the API.
+- **Command**: Detailing the action to be taken by ChatGPT. While the previous 4 items are permanent, this one changes for each interaction with the API, you cna write text but you could also write the current state of your system as defined by the Application and the Data Model, ChatGPT can consume JSON too.
 
 When put together a configuration text would look like this:
 
@@ -59,7 +59,7 @@ Yes? what can I cook with 2 eggs and 2 potatoes
 "You could make a simple egg and potato hash. Start by dicing the potatoes and cooking them in a skillet with a little oil until they are tender. Then add the eggs and scramble them together with the potatoes. Season with salt and pepper"
 ```
 
-Later one I found the actual [OpenAPI Playground](https://beta.openai.com/playground?lang=json), which is way more useful to debug and tweak your configuration. I encourage you to go there and use better tools than just `curl`. Use [httpie](httpie.io/app) or similar instead.
+Later on I found the actual [OpenAI Playground](https://beta.openai.com/playground?lang=json), which is way more useful to debug and tweak your configuration; for example you can tweak the `temperature` field to the least random setting and make the responses more deterministic, an added benefit is that the engine seems to be faster that way too. I encourage you to go use the playground or other better tools than just `curl`, like [httpie](httpie.io/app) or similar instead.
 
 The model request for this example can be found [here](https://beta.openai.com/playground/p/g2BQuDVc51W9W1MVMaceRDwL?model=text-davinci-003). ChatGPT will then give a JSON structure that can be parsed, for example:
 
