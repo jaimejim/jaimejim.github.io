@@ -1,0 +1,30 @@
+---
+title: "Generating art with AI"
+layout: post
+date: 2023-01-231 11:20
+image: /assets/images/aiart.png
+tag:
+- AI
+- art
+category: blog
+author: jaime
+headerImage: true
+---
+
+After the previous post about ChatGPT I have continued tinkering with AI tools, this time for image generation. Once in the rabbithole, it is a very addictive endeavour and there are quite many available AI front tools such as ChatGPT Image Generation, Lexica Art, Dream Studio (Stable Diffusion) and Midjourney.
+
+Some more advanced users on Twitter, like [@dymokomi](https://twitter.com/dymokomi), have been able to create authentic works of art with the help of AI tools. By building off of an original idea, a texture, a seed image, an artistic style and maybe some scripting, they have been able to generate images through trial and error.
+
+I will not go into the details of how to use each of the previously mentioned tools and websites, this post is just to show some of the fascinating AI-generated images you can generate with just very simple prompts.
+
+![icy veins](/assets/images/aeral1.png)
+*based on an ice texture*
+
+![wooden land](/assets/images/aeral2.png)
+*wooden land based on a seed idea from @dymokomi*
+
+![icy veins](/assets/images/aeral3.png)
+*also based on an ice texture*
+
+![wooden lake](/assets/images/aeral4.png)
+*a wooden lake*
