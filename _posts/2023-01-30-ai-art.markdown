@@ -1,7 +1,7 @@
 ---
 title: "Generating art with AI"
 layout: post
-date: 2023-01-30 11:50
+date: 2023-01-30 19:50
 image: /assets/images/aiart.jpg
 tag:
 - AI
@@ -15,7 +15,7 @@ After the previous post about ChatGPT I have continued tinkering with AI tools, 
 
 Some more advanced users on Twitter, like [@dymokomi](https://twitter.com/dymokomi), have been able to create authentic works of art with the help of AI tools. By building off of an original idea, a texture, a seed image, an artistic style and maybe some scripting, they have been able to generate images through trial and error.
 
-I will not go into the details of how to use each of the previously mentioned tools and websites, this post is just to show some of the fascinating AI-generated images you can generate with just very simple prompts.
+I will not go into the details of how to use each of the previously mentioned tools and websites, this post is just to show some of the fascinating images I generated with just very simple prompts to Midjourney and little editing.
 
 ![icy veins](/assets/images/aeral1.png)
 
