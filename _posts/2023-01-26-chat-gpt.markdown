@@ -83,7 +83,9 @@ Response:
 }
 ```
 
-Later on I added this as an Apple Shortcut so that I can use it while actually doing the cooking. I uploaded it to [this blog](/assets/files/hey\ tom.shortcut), it just needs an API key.
+In fact under the hood we could go further and ask ChatGPT also for the headers for a specific request to a URL, so that a trivial application would simply be *forwarding* ChatGPT responses to the right destinations (!).
+
+In any case, later on I added this as an Apple Shortcut so that I can use it while actually doing the cooking. I uploaded it to [this blog](/assets/files/talk.shortcut), it just needs an API key.
 
 Finally, as a bonus, you can also use the ChatGPT API to generate images. Like the one below or the one illustrating this blog post. The request payload is as simple as:
 
