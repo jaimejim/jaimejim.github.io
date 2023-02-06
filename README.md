@@ -1,3 +1,5 @@
+[![pages-build-deployment](https://github.com/jaimejim/jaimejim.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jaimejim/jaimejim.github.io/actions/workflows/pages/pages-build-deployment)
+
 This is my personal website, you can visit it at [jaime.win](http://jaime.win)
 
 Test locally:
