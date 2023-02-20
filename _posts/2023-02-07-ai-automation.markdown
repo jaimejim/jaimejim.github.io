@@ -11,11 +11,11 @@ author: jaime
 headerImage: true
 ---
 
-It's been a couple of very hectic weeks where have been completely obsessed with everything AI. Specially on the process of task automation with AI. I have been experimenting with AI image generation AIs, coding enhancing AIs, several different web APIs, my own server and half a dozen `npm` libraries that were completely new to me. So far tooling in the AI world is very solid and fun!
+The past few weeks have been extremely busy for me as I've been fully immersed in the world of AI. Specifically, I've been focused on automating tasks with AI, experimenting with image generation AIs, coding-enhancing AIs, various web APIs, my own server, and a handful of new `npm` libraries. I have found that the tooling in the AI world is both reliable and enjoyable.
 
-One of the projects was a news generation site called <espoo.today> I wrote it as a challenge from a journalist friend back in Spain. I wanted to show that it is very easy today to have a domain running and that the AI can start writing articles, read them and add relevant pictures just by itself.
+As part of my exploration, I decided to take on a challenge from a journalist friend in Spain and create a news generation site called [espoo.today](https://espoo.today). My goal was to demonstrate how easy it is to have a functioning domain and how AI can write articles, find relevant images, and publish them on its own.
 
-Here below is an example article about [Runeberg Day](https://espoo.today/2023/02/05/Celebrating-Johan-Ludvig-591/), the text is still very simple, but good enough IMO. 
+As an example, one of the articles it generated is a piece about Runeberg Day, which you can view here: [Runeberg Day](https://espoo.today/2023/02/05/Celebrating-Johan-Ludvig-591/). While the text is still relatively simple, I think it's good enough for what I wanted to achieve as a proof of concept.
 
 ![espoo](/assets/images/espoo-today.png)
 
