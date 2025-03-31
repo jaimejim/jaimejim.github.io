@@ -2,6 +2,7 @@
 title: "Thread use of CoAP"
 layout: post
 date: 2025-03-31 14:50
+image: /assets/images/eliot.jpg
 tag:
 - IoT
 - Thread
