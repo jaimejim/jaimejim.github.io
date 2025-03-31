@@ -11,11 +11,10 @@ author: jaime
 headerImage: true
 ---
 
-I have read the Thread v1.4.0 Specification (from sept 26,2024) and focused a bit on Chapter 10, these are my notes about it based only on the spec, as I am not a member of Thread.
+
+I have read the Thread v1.4.0 Specification (from sept 26,2024) and focused a bit on how they use CoAP. Every [iPhone 16](https://www.apple.com/iphone-16/specs/) model onwards as well as new iPads and MacBooks quietly already come with Thread networking enabled. It is present already in Android [smart hubs](https://www.androidauthority.com/google-tv-streamer-smart-hub-3467634/) and new home routers will include Thread from the factory. So it is a very relevant standard for those interested in the IoT domain.
 
 First, for high level context [Thread](https://www.threadgroup.org/) is a standard for low-power, wireless communication of IP-meshed devices with a throughput in the range of the 250 kbps. The network is designed explicitly to avoid single points of failure. It is widely used for home automation, but also in smart buildings ([KNX IoT](https://www.knx.org/knx-en/for-professionals/benefits/knx-iot/)), smart lightning ([DALI+](https://www.dali-alliance.org/daliplus/)) and in other products via [Matter](https://csa-iot.org/all-solutions/matter/).
-
-Every [iPhone 16](https://www.apple.com/iphone-16/specs/) model as well as new iPads and MacBooks quietly already come with Thread networking enabled. Also many home routers will also include Thread from the factory and it is present in Android [smart hubs](https://www.androidauthority.com/google-tv-streamer-smart-hub-3467634/). So it is a very relevant standard for those intereste din the IoT domain.
 
 At a high level, Thread Devices can be Full Thread Devices (FTDs), like a router or a device acting as one on ocassion or End Devices (EDs); which can be always on or sleepy ones that do not route or forward messages and capable of running several years on AA batteries through optimized power cycles. Limited devices attach to more powerful router-like ones as the network topology or the device conditions change. See below a sample topology where a phone acts as commissioning tool.
 
