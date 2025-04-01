@@ -19,7 +19,7 @@ First, for high level context [Thread](https://www.threadgroup.org/) is a standa
 
 At a high level, Thread Devices can be Full Thread Devices (FTDs), like a router or a device acting as one on ocassion or End Devices (EDs); which can be always on or sleepy ones that do not route or forward messages and capable of running several years on AA batteries through optimized power cycles. Limited devices attach to more powerful router-like ones as the network topology or the device conditions change. See below a sample topology where a phone acts as commissioning tool.
 
-![thread](/assets/images/thread-stack.png)
+![thread](/assets/images/thread-stack.jpg)
 
 Thread uses several protocols standarized at the IETF; DHCP, URIs, URNs, UDP, DTLS, mDNS, DNS-SD, IPv6 and CoAP among many others. At the lowest layers (Physical and MAC) it uses IEEE 802.15.4 and IETF's IPv6 6LowPAN adaptation layers on top.
 
@@ -31,7 +31,7 @@ Thread also has a **Thread Management Framework (TMF)** for Thread devices to ex
 
 TMF is founded on the **Constrained Application Protocol (CoAP)**. All Thread Management messages are carried over CoAP. There are some particularities:
 
-- CoAP URIs: TMF uses specialized URIs (`coap://[<address>]:<port>/<api>/<message>`) where the scheme can be coap (when using underlying layer's security) or coaps over DTLS. No OSCORE is used atm, which would be beneficial for cases of untrusted gateways.
+- CoAP URIs: TMF uses specialized URIs (`coap://[<address>]:<port>/<api>/<message>`) where the scheme can be coap (when using underlying layer's security) or coaps over DTLS. No OSCORE is used atm, which could be beneficial for cases of untrusted gateways.
 - Thread uses specialized ports: “Management Port” (abbreviated `:MM`) and "Commissioner Port" (:MC) depending on the transaction. It is unclear to me if those are used to identify the transactions.
 - CoAP Methods: Only the `POST` method is used for Thread Management messages, no GET/PUT/DELETE and no PATCH or FETCH either. Also unclear to me atm why this was the design choice.
 - CoAP Options: only a handful are used, Uri-Path, Content-Format, Accept and Block2 from the blockwise transfer RFC. It seems this is for retrieving large diagnostic files but could also be used for firmware updates.
