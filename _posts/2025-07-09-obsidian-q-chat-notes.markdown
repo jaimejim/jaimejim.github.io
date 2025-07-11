@@ -13,16 +13,15 @@ author: jaime
 headerImage: true
 ---
 
+Like many researchers, I've struggled with information overload. Between work projects, technical deep-dives, and random ideas worth remembering, I needed a system that could handle it all without becoming a burden.
 
-Many people either take no notes at all or document their work poorly. I try to keep a knowledge management setup that combines work, research, and personal life documentation. I keep a diary but also have deep dives on specific technologies, projects I work on, technical ideas, or random thoughts. I also use todos and reminders, similar to how I used org-mode in the past. This type of information management is usual when you work in research.
+About a year ago, I switched from org-mode to [Obsidian](https://obsidian.md/). The goal was simple: create an external memory system where I could dump everything and actually find it later. It's become the single place where I store work notes, research findings, meeting summaries, and even daily observations.
 
-I used to use orgmode but migrated to [Obsidian](https://obsidian.md/) about a year ago. I try to store everything in Obsidian and I use search, templates, and tags to find specific information. It basically functions as an external memory; once written, I do not need to keep it in my own memory all the time.
+The setup is straightforward. Each day gets its own markdown file (`2025-07-09.md`) with basic info like weather, location, and meetings, plus whatever happened that day.
 
-My setup is pretty straightforward. Every day gets its own markdown file like `2025-07-09.md`. I include basic templated stuff like weather, location, meetings, and write down whatever happened that day.
+The real power comes from linking. Obsidian's wikilinks let you create connections on the fly: `[[John Doe]]` for people, `[[Project X]]` for projects, `[[Company Name]]` for organizations. Over time, this builds a knowledge graph that connects everything automatically.
 
-The magic is in the linking. With wikilinks you can create entries like `[[John Doe]]` to link to people, `[[Project X]]` for projects, `[[Company Name]]` for companies. Obsidian builds a knowledge graph automatically, connecting everything.
-
-Although not needed, I also structure things in folders, like:
+I organize things in folders for easier navigation:
 
 ```sh
 /Events/           # Conferences and workshops
@@ -35,11 +34,11 @@ Although not needed, I also structure things in folders, like:
 ....               # and more
 ```
 
-Nothing fancy, but consistent and more importantly, linked with each other when relevant, so that if I check `[[John Doe]]`, in the entry I can also see the references to meetings or project discussions we had. For that I use `dataview` scripting.
+Nothing revolutionary, but it works. The key is consistency and linking related content. When I check `[[John Doe]]`, I can see all the meetings and project discussions we've had thanks to `dataview` scripting.
 
-Recently started combining it with **Amazon Q Chat**. The result is pretty interesting. I can ask very specific questions and get answers from my own notes or generate specific reports or insights that span multiple days and documents. Amazon Q Chat can read my files and answer questions about them; I have a profile configured just for that. Instead of searching manually, I just ask. Q Chat searches through my daily notes using common CLI commands like `rg`, `find` and so on.
+Recently, I started experimenting with **Amazon Q Chat** as a way to query my notes. The combination has been surprisingly useful. Instead of manually searching through files, I can ask specific questions and get answers pulled from my own documentation. Q Chat reads my files and uses standard CLI tools like `rg` and `find` to search through everything.
 
-For example, maybe I have the vague notion that there was a chip company in Boise from a book I read called "Chip Wars". This would be the interaction:
+Here's a typical interaction. I had a vague memory of reading about a chip company in Boise in "Chip Wars":
 
 ```sh
 [obsidian] > I remember there was a chip company in Boise
@@ -83,7 +82,7 @@ Another example:
 
 ![robodog](/assets/images/robodog.png)
 
-Maybe there are things you saw on previous occasions and you don't want to dig through your notes like:
+Or when I need to recall technical details from conferences:
 
 ```sh
 [obsidian] > what was ECDH PSI?
@@ -115,4 +114,4 @@ You can also do more complex queries like:
 [obsidian] > What was the outcome of draft xyz?
 ```
 
-In summary, combining Obsidian with Amazon Q Chat transforms personal note-taking into a powerful, searchable knowledge base. It is hacky still but I am sure this will be incorporated into future voice-enabled assistants that are always available and always contextualized to your own information.
+The system isn't perfect, but it's been genuinely helpful. Combining structured note-taking with AI search has made my personal knowledge base much more accessible. It's still a bit hacky, but I suspect this kind of contextual AI assistance will become standard in future productivity tools.
