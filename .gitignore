@@ -4,3 +4,10 @@ _site
 Gemfile.lock
 .bundle
 vendor/
+assets/files/jaime_cv.aux
+assets/files/jaime_cv.fdb_latexmk
+assets/files/jaime_cv.fls
+assets/files/jaime_cv.log
+assets/files/jaime_cv.out
+assets/files/jaime_cv.synctex.gz
+assets/files/jaime_cv.tex

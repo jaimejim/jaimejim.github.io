@@ -5,45 +5,7 @@ layout: page
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 --
 
-I am originally from Madrid, Spain. I moved to Helsinki, Finland about eleven years ago. I currently live there.
+I am a **Master Researcher at Ericsson Research**, currently focusing on *Applied AI, IoT, and Web technologies*.
 
-During this time I have been working on M2M and Internet of Things related topics. I have been doing a bit of everything related to IoT for almost a decade already, from prototyping to scientific publications, standardization, architecture and design as well as project management and inventions/IPR. For more details, please see my [full CV](/assets/files/jaime_cv.pdf).
-
-As you can see below, I contribute to various standards. Currently I focus IoT REST-type of communications, Device Management and Data models.
-
-### IoT Protocol Design and Architecture
-
-**The Internet Engineering Task Force (IETF)**
-
-I am currently co-chairing the [CoRE Working Group](https://datatracker.ietf.org/wg/core/charter/) which takes care of standardizing the Constrained Application Protocol (CoAP) and CoAP related standards. The point of [CoAP](https://tools.ietf.org/html/rfc7252) is to have a HTTP-like protocol for very resource constrained devices, thus connecting devices and the larger Internet. Before that I have been a contributor of these and other IETF groups and drafts. I am also the main author of [RFC7650](https://tools.ietf.org/html/rfc7650), [RFC8477](https://tools.ietf.org/html/rfc8477) and other drafts.
-I am also member of the IETF [Internet-of-Things Directorate](https://trac.ietf.org/trac/int/wiki/IOTDirWiki). Here is a video of [me sponsoring IETF](https://www.youtube.com/watch?v=uhnEG7_fCEs&feature=youtu.be) in case you are curious.
-If you want to know more about CoAP and the IETF, I have some [lecture material](https://jaime.win/lecture) available.
-
-**Open Mobile Alliance - Lightweight Machine to Machine (OMA-LWM2M)**
-
-[OMA-LWM2M](http://openmobilealliance.org) is another group to which I have contributed. LWM2M is a protocol built on top of CoAP, adding a set of interfaces for managing devices.
-
-I also follow as much as I can the [Thing-to-Thing Research Group](https://github.com/t2trg), W3C's [WoT Interest Group](https://github.com/w3c/wot/) and the [Open Connectivity Foundation](https://openconnectivity.org). Moreover, I am one of the four authors of the [Industrial Internet Consortium (IIC)](https://www.iiconsortium.org/pdf/IIC_PUB_G5_V1.0_PB_20170228.pdf) Connectivity Framework specification.
-
-**IP for Smart Objects (IPSO)**
-
-I am also a contributor and chair of the [IPSO Semantic Group](http://www.ipso-alliance.org). IPSO has been working on enabling IoT for about a decade already. Originally tasked with fostering the introduction of IPv6 it then produced data models to enable interoperable devices, agnostic of the application layer. In addition to chairing the semantics working group I also helped [mentoring other companies](http://www.ipsochallenge.com/judges-mentors/), built the [IPSO SO Github Registry](http://ipso-alliance.github.io/pub/) with the XML definitions and documentation as well as [continuous validation support](https://travis-ci.org/IPSO-Alliance/pub). During this time I also built relations with other related groups such as OMA LWM2M or [BIPSO](http://bluetoother.github.io/bipso/#/). Home products like the [Ikea Tradfi](https://www.domoticz.com/forum/viewtopic.php?t=13882&start=20) also use this data model.
-
-### Studies
-
-During my studies I did performance analysis and development of applications that can use both [P2P and Session Initiation Protocol (SIP)](/assets/files/thesis_reload.pdf) and later on [adapting DHTs to benefit M2M environments](/assets/files/thesis_dht_m2m.pdf).
-
-### Programming
-
-* JS, Go
-* Jekyll, Travis, Jenkins, Docker...
-* Git, SVN
-* Latex, Markdown, HTML, CSS...
-
-### IPR
-
-As a researcher I often stumble upon good ideas in our projects. Companies tend to do patents for those ideas that their products are based on. Thus I have done several [patents](https://patents.google.com/?inventor=Jaime+Jiménez&assignee=Ericsson&language=ENGLISH&num=50&sort=new) over the years.
-
-### Consulting
-
-Depending on the case I also do consulting work, please just contact me per email or phone.
+For career history , publications and patents, see my  
+[CV](/assets/files/jaime_cv.pdf) • [Google Scholar](https://scholar.google.com/citations?user=Xkx153YAAAAJ) • [Google Patents](https://patents.google.com/?inventor=Jaime+Jiménez&assignee=Ericsson&language=ENGLISH&num=50&sort=new)
