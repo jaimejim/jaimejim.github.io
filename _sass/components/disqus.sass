@@ -2,3 +2,15 @@
     margin: 0 auto
     max-width: 100%
     padding: 40px 0
+
+// Hide Disqus ads and sponsored content
+#disqus_thread
+    iframe[src*="ads-iframe"]
+        display: none !important
+    a[href*="disqus.com/recommendations"]
+        display: none !important
+    div[id*="dsq-app"]
+        div[data-role="sponsored"]
+            display: none !important
+    div[class*="dsq-brlink"]
+        display: none !important
