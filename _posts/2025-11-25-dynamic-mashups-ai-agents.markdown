@@ -11,7 +11,7 @@ tag:
 - CPaaS
 category: blog
 author: jaime
-headerImage: false
+headerImage: true
 ---
 
 A quiet change that AI agents are bringing is how we think about user interfaces. The traditiona old concept of **web mashups** might make a comeback with AI Agents. When agents interact with APIs dynamically (with no a priori knowledge of the subset of APIs they will use), something more fluid emerges: interfaces that generate themselves based on what the agent discovers and decides to do!
