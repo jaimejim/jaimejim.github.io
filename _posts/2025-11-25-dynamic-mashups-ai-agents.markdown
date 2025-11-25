@@ -1,5 +1,5 @@
 ---
-title: "Self-Generated UX"
+title: "Context-Driven Interface Generation"
 layout: post
 date: 2025-11-25 10:00
 image: /assets/images/web-agent.png
@@ -16,7 +16,7 @@ headerImage: true
 
 A quiet change that AI agents are bringing is how we think about user interfaces. The traditiona old concept of **web mashups** might make a comeback with AI Agents. When agents interact with APIs dynamically (with no a priori knowledge of the subset of APIs they will use), something more fluid emerges: interfaces that generate themselves based on what the agent discovers and decides to do!
 
-These **dynamic mashups** are such that the experience isn't predetermined by frontend code but composed in real-time as agents interact with services.
+These context-driven **dynamic mashups** are such that the experience isn't predetermined by frontend code but composed in real-time as agents interact with services.
 
 At [Ericsson Research](https://www.ericsson.com/en/blog/2025/11/network-apis-for-ai-agents), together with [Vonage](https://www.vonage.com), we've been exploring how [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) enables agents to access both Communications Platform as a Service (CPaaS) APIs and Network APIs. MCP is an open standard that lets AI systems discover and use external tools without manual integration.
 
@@ -40,5 +40,3 @@ But agents don't just call APIs. They also compose the **user interface**, when 
 No developer wrote "if location query, then show map". The agent made that compositional decision based on available tools and context. The UX was generated from the interface descriptions and the user intents.
 
 In a future where you have [agentic browsers like Atlas](https://openai.com/index/introducing-chatgpt-atlas/) we will see more interfaces that assemble themselves based on runtime context, available services, and agent reasoning rather than static frontend templates and side-chatbots.
-
-
