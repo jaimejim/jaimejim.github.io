@@ -2,7 +2,7 @@
 title: "Self-Generated UX"
 layout: post
 date: 2025-11-25 10:00
-image: /assets/images/web-agents.png
+image: /assets/images/web-agent.png
 tag:
 - agents
 - MCP
