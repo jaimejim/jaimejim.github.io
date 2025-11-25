@@ -18,7 +18,7 @@ A quiet change that AI agents are bringing is how we think about user interfaces
 
 These **dynamic mashups** are such that the experience isn't predetermined by frontend code but composed in real-time as agents interact with services.
 
-For at [Ericsson Research](https://www.ericsson.com/en/blog/2025/11/network-apis-for-ai-agents), working with [Vonage](https://www.vonage.com), we've been exploring how the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) enables agents to access both Communications Platform as a Service (CPaaS) APIs and network APIs. MCP is an open standard that lets AI systems discover and use external tools without manual integration.
+At [Ericsson Research](https://www.ericsson.com/en/blog/2025/11/network-apis-for-ai-agents), together with [Vonage](https://www.vonage.com), we've been exploring how [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) enables agents to access both Communications Platform as a Service (CPaaS) APIs and Network APIs. MCP is an open standard that lets AI systems discover and use external tools without manual integration.
 
 The technical implementation is straightforward: wrap APIs as MCP tools with defined schemas. For example, Vonage's SMS API becomes a `send_sms` tool. The agent sees it's available, understands its purpose from the schema, and can invoke it when needed. No hardcoded integration, no custom prompts—just dynamic capability discovery. Same thing goes for `device_location`, `contact_information` and others.
 
@@ -41,9 +41,9 @@ But there is more, since agents don't just call APIs. They also compose the **us
 3. Automatically crafted the HTML/CSS/JS bits to visualize the location
 4. Added the embedded map as the response in the chat
 
-No developer wrote "if location query, then show map". The agent made that compositional decision based on available tools and context. The UX emerged from the agent's reasoning about what would be helpful.
+No developer wrote "if location query, then show map". The agent made that compositional decision based on available tools and context. The UX was generated from the interface descriptions and the user intents.
 
-This is the core of dynamic mashups: **interfaces that assemble themselves based on runtime context, available services, and agent reasoning rather than static frontend templates.**
+In a future where you have [agentic browsers like Atlas](https://openai.com/index/introducing-chatgpt-atlas/) we will see more interfaces that assemble themselves based on runtime context, available services, and agent reasoning rather than static frontend templates and side-chatbots.
 
 <div style="text-align: center; margin: 2em 0;">
   <video width="100%" controls>
