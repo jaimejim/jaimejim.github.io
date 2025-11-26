@@ -23,7 +23,7 @@ At [Ericsson Research](https://www.ericsson.com/en/blog/2025/11/network-apis-for
 The technical implementation is straightforward: wrap APIs as MCP tools with defined schemas. For example, Vonage's SMS API becomes a `send_sms` tool. The agent sees it's available, understands its purpose from the schema, and can invoke it when needed. No hardcoded integration, no custom prompts—just dynamic capability discovery. Same thing goes for `device_location`, `contact_information` and others.
 
 <div style="text-align: center; margin: 2em 0;">
-  <video width="100%" controls preload="metadata" playsinline>
+  <video width="100%" controls playsinline webkit-playsinline>
     <source src="/assets/videos/vonage-final-mobile.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
