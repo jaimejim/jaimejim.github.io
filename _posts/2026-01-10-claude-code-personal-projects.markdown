@@ -12,41 +12,16 @@ author: jaime
 headerImage: true
 ---
 
-This Christmas I built [cuentos.jaime.win](https://cuentos.jaime.win/) from my phone. My daughter was learning to read and I wanted something interactive for her practice. The entire stack was just Claude Code Premium, Vercel, and a CNAME subdomain. Built it between family dinners.
+This Christmas I built [cuentos.jaime.win](https://cuentos.jaime.win/) from my phone. My daughter was learning to read and I wanted something interactive for her practice. The entire stack was just my iPhone, Claude Code Premium, Midjourney for some images, Vercel, and a CNAME subdomain. Built it between family dinners.
 
-She's been using it almost daily now. Reading is less of a struggle. I can see her confidence when she recognizes words from the stories.
+She liked it a lot. She plays with it and keeps asking for more stories, so nice outcome.
 
-### The Stack
+The way I worked was describing what I wanted, giving feedback, adjusting prompts. The traditional programming was mostly absent. Making a good plan and verifying the output of the agent is fundamental, but you can vibecode a lot with confidence. Some errors are hard for Claude to debug simply because it lacks a feedback loop to the error. When errors persist you need to start doing actual debugging. So far for me it's been mostly old libraries, lack of Vercel feedback on some CI/CD issues, and misunderstandings in the planning phase.
 
-- iPhone
-- Claude Code Premium
-- Vercel
-- CNAME subdomain
+The numbers are interesting. Claude Code went from zero to [a million users](https://x.com/sammcallister/status/2004999397923598841) in under two years. Sam McAllister called the growth "physically impossible" - exponential for 11 straight quarters. This time last year it didn't exist publicly. Research preview came February 2025. Now Anthropic is [preparing for an IPO](https://archive.is/MrZMg) potentially valuing the company at $300+ billion. They've appointed Wilson Sonsini for preparations.
 
-I described what I wanted, gave feedback, adjusted prompts. The traditional programming was mostly absent. I have only a vague understanding of how it works internally - if something breaks unexpectedly, I'm probably stuck asking Claude Code to fix it.
+While OpenAI gets the headlines, the Claude Code adoption feels more real to me. My impression is that in the developer community Claude Code seems to be the most popular one. These are people actually building things, not just enterprise contracts.
 
-### Growth
-
-The numbers are interesting. Claude Code went from zero to a million users in under two years. [Sam McAllister](https://x.com/sammcallister/status/2004999397923598841) called the growth "physically impossible" - exponential for 11 straight quarters.
-
-This time last year it didn't exist publicly. Research preview came February 2025. Now Anthropic is preparing for an IPO potentially valuing the company at $300+ billion, according to the [Financial Times](https://archive.is/MrZMg). They've appointed Wilson Sonsini for preparations.
-
-While OpenAI gets the headlines, the Claude Code adoption feels more real to me. These are people actually building things, not just enterprise contracts.
-
-### Not Learning to Code
-
-The obvious problem: this teaches you nothing about programming. You miss the architecture decisions, debugging patterns, trade-offs. You become a spec writer, not a programmer.
-
-For personal projects and quick prototypes, it's excellent. For actually learning to code or maintaining complex systems, it's terrible. The abstraction is powerful but you're building on top of something you don't understand.
-
-It's good for parents building tools for their kids, researchers needing quick proofs of concept, domain experts with no coding background. It's bad for anyone trying to learn programming or needing to deeply understand their systems.
-
-### The Shift
-
-In one year we went from "this doesn't exist" to "I built something useful from my phone on holiday." The bottleneck moved from technical ability to knowing what's worth building.
+The downside is that as it abstracts away the actual coding, it's not great for very junior people if they want to learn. However it is good to build things quickly if you know what you want. For professional developers that work on huge codebases there are different challenges - the scale and complexity introduce problems that are harder for the agent to navigate.
 
 I didn't learn to code from this project. But I did build something my daughter needed when she needed it. For a holiday project, that was enough.
-
----
-
-*[Growth data](https://x.com/sammcallister/status/2004999397923598841) • [FT: Anthropic IPO preparations](https://archive.is/MrZMg)*
