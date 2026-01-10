@@ -12,9 +12,9 @@ author: jaime
 headerImage: true
 ---
 
-This Christmas I built [cuentos.jaime.win](https://cuentos.jaime.win/) from my phone. My daughter was learning to read and I wanted something interactive for her practice. The entire stack was just my iPhone, Claude Code Premium, Midjourney for some images, Vercel, and a CNAME subdomain. Built it between family dinners. I also made [mira.jaime.win](https://mira.jaime.win), a food scanner for when I go grocery shopping in Finnish.
+This Christmas I built [cuentos.jaime.win](https://cuentos.jaime.win/) from my phone. My daughter was learning to read and I wanted something interactive for her practice. The entire stack was just my iPhone, Claude Code Premium, Midjourney for some images, Vercel, and a CNAME subdomain. Built it between family dinners. I also made [mira.jaime.win](https://mira.jaime.win), a food scanner I use when grocery shopping in Finnish - convenient for finding food labels I don't know.
 
-She liked the stories a lot. She plays with them and keeps asking for more, so nice outcome.
+My daughter liked the stories a lot. She plays with them and keeps asking for more, so nice outcome.
 
 The way I worked was describing what I wanted, giving feedback, adjusting prompts. The traditional programming was mostly absent. Making a good plan and verifying the output of the agent is fundamental, but you can vibecode a lot with confidence. Some errors are hard for Claude to debug simply because it lacks a feedback loop to the error. When errors persist you need to start doing actual debugging. So far for me it's been mostly old libraries, lack of Vercel feedback on some CI/CD issues, and misunderstandings in the planning phase.
 
