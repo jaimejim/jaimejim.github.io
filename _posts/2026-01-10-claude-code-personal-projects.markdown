@@ -23,5 +23,3 @@ The numbers are interesting. Claude Code went from zero to [a million users](htt
 While OpenAI gets the headlines, the Claude Code adoption feels more real to me. My impression is that in the developer community Claude Code seems to be the most popular one. These are people actually building things, not just enterprise contracts.
 
 The downside is that as it abstracts away the actual coding, it's not great for very junior people if they want to learn. However it is good to build things quickly if you know what you want. For professional developers that work on huge codebases there are different challenges - the scale and complexity introduce problems that are harder for the agent to navigate.
-
-I didn't learn to code from this project. But I did build something my daughter needed when she needed it. For a holiday project, that was enough.
