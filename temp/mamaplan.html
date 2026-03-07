@@ -44,8 +44,8 @@ h1 { font-size: 28px; text-align: center; margin: 30px 0 6px; color: #c06070; }
   <p class="subtitle">Tap, talk, get organized</p>
 
   <div class="api-setup" id="apiSetup">
-    <label>OpenAI API key (stored locally only)</label>
-    <input type="password" id="apiKey" placeholder="sk-..." />
+    <label>OpenAI API key (saved in your browser only)</label>
+    <input type="password" id="apiKey" placeholder="sk-..." oninput="localStorage.setItem('mamaplan_key',this.value)" />
   </div>
 
   <div class="mic-area">
@@ -64,6 +64,10 @@ h1 { font-size: 28px; text-align: center; margin: 30px 0 6px; color: #c06070; }
 
 <script>
 let recognition, recording = false, finalTranscript = '';
+
+// Restore saved key
+const savedKey = localStorage.getItem('mamaplan_key');
+if (savedKey) document.getElementById('apiKey').value = savedKey;
 
 function toggleRecord() {
   recording ? stopRecord() : startRecord();
