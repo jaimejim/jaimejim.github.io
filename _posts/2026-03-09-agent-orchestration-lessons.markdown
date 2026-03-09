@@ -1,7 +1,7 @@
 ---
 title: "Experiments on building Agentic Systems"
 layout: post
-date: 2026-03-09 17:00
+date: 2026-03-09 12:00
 tag:
 - agents
 - orchestration
