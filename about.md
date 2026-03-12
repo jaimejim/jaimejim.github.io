@@ -15,4 +15,4 @@ Outside of tech, my wife and I are raising three kids together. I co-own two piz
 
 I speak Spanish, English, Italian, and German.
 
-[CV](/assets/files/jaime_cv.pdf) | [Google Scholar](https://scholar.google.com/citations?user=Xkx153YAAAAJ) | [GitHub](https://github.com/jaimejim) | [Patents](https://patents.google.com/?inventor=Jaime+Jiménez&assignee=Ericsson)
+[CV](/assets/files/jaime_cv.pdf) | [Google Scholar](https://scholar.google.com/citations?user=Xkx153YAAAAJ) | [GitHub](https://github.com/jaimejim) | [Patents](https://patents.google.com/?inventor=Jaime+Jim%C3%A9nez&assignee=Ericsson&sort=new)
