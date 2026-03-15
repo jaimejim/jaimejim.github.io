@@ -1,5 +1,5 @@
 ---
-title: "A personal AI knowledge assistant"
+title: "Obsidian as a Personal AI Knowledge Assistant"
 layout: post
 date: 2025-07-09 14:00
 image: /assets/images/obsidian-q.png
