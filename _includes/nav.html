@@ -9,6 +9,11 @@
                 <a class="link" href="{{ site.url }}/blog">Blog</a>
             </li>
         {% endif %}
+        {% if page.title != "About" %}
+            <li class="item">
+                <a class="link" href="{{ site.url }}/about">About</a>
+            </li>
+        {% endif %}
     </ul>
 </nav>
 {% endif %}
