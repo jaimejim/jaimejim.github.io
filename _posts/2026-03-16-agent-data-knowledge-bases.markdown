@@ -1,7 +1,7 @@
 ---
 title: "Emails, vCons, and the Knowledge Base Problem"
 layout: post
-date: 2026-03-16 16:00
+date: 2026-03-16 08:00
 tag:
 - agents
 - email
