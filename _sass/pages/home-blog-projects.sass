@@ -43,11 +43,19 @@
         font-weight: 500
         transition: all ease-in-out .2s
 
+    > .item > .url > .excerpt
+        margin: 4px 0 0
+        font-size: 1.4rem
+        color: $gama
+        font-weight: 300
+        line-height: 1.5
+
     > .item:hover > .url > .title
         color: $delta
 
-    // maybe we can't nest html5 elements
-    // can you help me?
+    > .item:hover > .url > .excerpt
+        color: $alpha
+
     aside
         position: relative
         top: 2px
@@ -62,6 +70,24 @@
     .item:hover .url aside
         color: $alpha
 
+    > .all-posts-link
+        display: block
+        text-align: center
+        font-size: 1.4rem
+        margin-top: 20px
+        text-decoration: none
+        color: $gama
+        &:hover
+            color: $delta
+
+    > .section-title
+        font-size: 1.6rem
+        text-transform: uppercase
+        letter-spacing: 1px
+        color: $gama
+        font-weight: 400
+        margin-bottom: 0
+
 .blog > .list > .item > .url,
 .projects > .list > .item > .url
     > .title
@@ -72,3 +98,32 @@
         position: relative
         top: -4px
         margin-right: 10px
+
+// About section on homepage
+.about-home
+    text-align: center
+    margin-bottom: 10px
+
+    > .selfie
+        width: 100px
+        height: 100px
+        border-radius: 100%
+        margin-bottom: 15px
+
+    > .name
+        font-size: 3rem
+        margin: 0 0 10px
+        letter-spacing: -1px
+
+    > .bio-text
+        max-width: 420px
+        margin: 0 auto
+
+        p
+            font-size: 1.5rem
+            line-height: 1.6
+            color: $alpha
+            margin-bottom: 8px
+
+        a
+            font-weight: 400
