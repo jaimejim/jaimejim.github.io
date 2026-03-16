@@ -14,7 +14,7 @@ author: jaime
 headerImage: false
 ---
 
-Agents will need to work with human conversation data. Emails, call transcripts, chat logs. The naive approach is to dump everything into the LLM's context window and hope for the best. That doesn't scale, and it's expensive. The better approach is to build a knowledge base first, then let the agent query it.
+Agents will need to work with human conversation data. Emails, call transcripts, chat logs. The naive approach is to dump everything into the LLM's context window and hope for the best. That doesn't scale, and it's expensive. Better to build a knowledge base first, then let the agent query it.
 
 ## What emails actually are
 
@@ -28,7 +28,7 @@ A [vCon](https://datatracker.ietf.org/doc/draft-ietf-vcon-vcon-container/) (Virt
 
 Think of it as: email is the letter, vCon is the phone call. Both are conversation records. Both have structured metadata. Both are terrible to search through at scale.
 
-The [vCon community](https://www.vonevolution.com/spring26vcon) (Jeff Pulver's crowd, Vonage, Vconic) is pushing these as "robot food for AI," which is the right framing. Raw audio is useless to an agent. A structured vCon with transcript, participants, and timestamps is something an agent can actually reason over.
+The [vCon community](https://www.vonevolution.com/spring26vcon) (Jeff Pulver's crowd, Vonage, Vconic) is pushing these as "robot food for AI," and that framing is right. Raw audio is useless to an agent. A structured vCon with transcript, participants, and timestamps? That an agent can work with.
 
 ## The token problem
 
@@ -40,7 +40,7 @@ The problem isn't reading the data. The problem is knowing which 3 emails and 1 
 
 ## Building a knowledge base to reduce tokens
 
-The solution is a distillation layer between raw conversation data and the LLM. Instead of feeding the agent 200K tokens of emails, you build a knowledge base that captures the entity relationships, key decisions, and conversation threads in a structured, navigable form. The agent queries the knowledge base, finds the 3-5 relevant items, and only then reads the full content.
+The solution I've been exploring is a distillation layer between raw conversation data and the LLM. Instead of feeding the agent 200K tokens of emails, you build a knowledge base that captures entity relationships, key decisions, and conversation threads in a structured, navigable form. The agent queries the knowledge base, finds the 3-5 relevant items, and only then reads the full content.
 
 This is what I've been experimenting with using [Fastmail's CLI tool](https://github.com/fastmail/fm) (`fm`) and Obsidian.
 
@@ -56,31 +56,31 @@ The pipeline looks like this:
 4. The email summary goes into a daily note or meeting note with wikilinks to all entities
 5. Next time the agent needs context on Acme Corp, it reads the `[[Acme Corp]]` note, follows links to related conversations, and only fetches the 2-3 full emails that matter
 
-The token reduction is dramatic. Instead of 200K tokens of raw email, the agent reads maybe 2K tokens of linked notes to understand the relationship graph, then 5-10K tokens of the specific emails it needs. That's a 10-20x reduction.
+The token reduction is significant. Instead of 200K tokens of raw email, the agent reads maybe 2K tokens of linked notes to understand the relationship graph, then 5-10K of the specific emails it needs. 10-20x less.
 
 ### Obsidian as the distilled knowledge base
 
 My [Obsidian vault](https://jaime.win/obsidian-q-chat-notes/) already works this way for IETF meetings, research, and daily work. The agent navigates it by following wikilinks: a meeting note links to `[[Person Name]]`, which links to their company, their drafts, their previous conversations. The vault is a graph of entity relationships that the agent traverses instead of re-reading raw source material.
 
-What the `fm` experiment showed is that the same pattern works for email. The vault becomes the distilled memory layer:
+What the `fm` experiment showed is that the same pattern works for email. The vault becomes a distilled memory layer:
 
-- **People notes** accumulate context across emails, calls, and meetings. The agent reads one note instead of scanning 50 emails to understand a relationship.
+- **People notes** accumulate context across emails, calls, and meetings. One note instead of scanning 50 emails to understand a relationship.
 - **Project notes** track decisions and action items extracted from conversations. The agent checks the project note before searching email.
-- **Daily notes** capture what happened chronologically, with links to the entities involved. The agent can reconstruct a day's context from a single file.
+- **Daily notes** capture what happened chronologically, with links to the entities involved. One file reconstructs a day's context.
 
-The wikilink graph is the key. It's what lets the agent do 2-hop lookups ("find all conversations with people from Acme Corp about pricing") without scanning every email in the mailbox.
+The wikilink graph is what makes this work. It lets the agent do 2-hop lookups ("find all conversations with people from Acme Corp about pricing") without scanning every email in the mailbox.
 
 ## vCons fit the same pattern
 
-vCons slot into this pipeline naturally. A call transcript gets the same treatment as an email thread: extract participants, decisions, action items, and write linked notes. The vCon's structured metadata (participants, timestamps, analysis) makes extraction easier than email, where you're parsing unstructured text.
+vCons slot right into this pipeline. A call transcript gets the same treatment as an email thread: extract participants, decisions, action items, and write linked notes. The vCon's structured metadata (participants, timestamps, analysis) makes extraction easier than email, where you're parsing unstructured text.
 
-The combination would look like: `fm` for email, a vCon processor for calls, both feeding into the same Obsidian knowledge graph. The agent doesn't care whether a decision came from an email or a phone call. It follows `[[Acme Corp]]` → `[[Pricing Discussion 2026-03-10]]` and gets the context it needs.
+So: `fm` for email, a vCon processor for calls, both feeding into the same Obsidian knowledge graph. The agent doesn't care whether a decision came from an email or a phone call. It follows `[[Acme Corp]]` → `[[Pricing Discussion 2026-03-10]]` and gets the context it needs.
 
-Henk Birkholz's [Verifiable Agent Conversation Records](https://datatracker.ietf.org/doc/draft-birkholz-verifiable-agent-conversations/) draft (presented at IETF 125 DISPATCH this morning) adds another layer: tamper-evident logs of what agents themselves did. So you'd have human conversations (email, vCon) feeding into a knowledge base, agents querying that knowledge base and acting, and verifiable records of those agent actions feeding back in. The full loop.
+Henk Birkholz's [Verifiable Agent Conversation Records](https://datatracker.ietf.org/doc/draft-birkholz-verifiable-agent-conversations/) draft (presented at IETF 125 DISPATCH this morning) adds another layer: tamper-evident logs of what agents themselves did. Human conversations (email, vCon) feed into a knowledge base, agents query it and act, verifiable records of those actions feed back in. Full loop.
 
 ## What's missing
 
-The tooling to do this end-to-end doesn't exist yet. `fm` gives you email access. vCon gives you a container format. Obsidian gives you the knowledge graph. But the extraction pipeline (conversation → structured entities → linked notes) is still manual or semi-automated with LLM calls.
+None of the tooling to do this end-to-end exists yet. `fm` gives you email access. vCon gives you a container format. Obsidian gives you the knowledge graph. But the extraction pipeline (conversation → structured entities → linked notes) is still manual or semi-automated with LLM calls.
 
 What would make this real:
 
@@ -88,4 +88,4 @@ What would make this real:
 - Incremental updates: new emails and calls should update existing entity notes, not create duplicates
 - Bidirectional links from the knowledge base back to source material, so the agent can always drill down to the original email or call recording when it needs full context
 
-The pattern is clear though. Raw conversation data is too expensive and too noisy to feed directly to agents. A distilled knowledge base with entity relationships, navigable via links, is the right intermediate layer. Emails and vCons are the input. The knowledge graph is the output. The agent queries the graph, not the inbox.
+The pattern is clear enough though: raw conversation data is too expensive and too noisy to feed directly to agents. A distilled knowledge base with entity relationships, navigable via links, sits in between. Emails and vCons go in. A knowledge graph comes out. The agent queries the graph, not the inbox.
