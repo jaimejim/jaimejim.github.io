@@ -2,7 +2,7 @@
 title: "Structuring ChatGPT responses"
 layout: post
 date: 2023-01-26 11:20
-image: /assets/images/chatgpt.png
+image: /assets/images/chatgpt.webp
 tag:
 - AI
 - API
@@ -102,4 +102,4 @@ Host          api.openai.com
 
 And the Response would contain a URL to the generated image:
 
-![watercolor horse](/assets/images/horse.png)
+![watercolor horse](/assets/images/horse.webp)

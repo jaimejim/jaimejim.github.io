@@ -2,7 +2,7 @@
 title: "AI automated content generation"
 layout: post
 date: 2023-02-07 21:50
-image: /assets/images/automation.png
+image: /assets/images/automation.webp
 tag:
 - AI
 - art
@@ -17,7 +17,7 @@ As part of my exploration, I decided to take on a challenge from a journalist fr
 
 As an example, one of the articles it generated is a piece about Runeberg Day, which you can view here: [Runeberg Day](https://espoo.today/2023/02/05/Celebrating-Johan-Ludvig-591/). While the text is still relatively simple, I think it's good enough for what I wanted to achieve as a proof of concept.
 
-![espoo](/assets/images/espoo-today.png)
+![espoo](/assets/images/espoo-today.webp)
 
 The process to generate is now very straightfoward as shown in the script below: 
 1. The script retrieves local tweets and sort them to select the right tweet candidate.

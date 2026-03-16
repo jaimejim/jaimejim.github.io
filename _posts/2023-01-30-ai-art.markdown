@@ -17,10 +17,10 @@ Some more advanced users on Twitter, like [@dymokomi](https://twitter.com/dymoko
 
 I will not go into the details of how to use each of the previously mentioned tools and websites, this post is just to show some of the fascinating images I generated with just very simple prompts to Midjourney, textures and little editing.
 
-![aeral1](/assets/images/aeral1.png)
+![aeral1](/assets/images/aeral1.webp)
 
-![aeral2](/assets/images/aeral2.png)
+![aeral2](/assets/images/aeral2.webp)
 
-![aeral3](/assets/images/aeral3.png)
+![aeral3](/assets/images/aeral3.webp)
 
-![aeral4](/assets/images/aeral5.png)
+![aeral4](/assets/images/aeral5.webp)

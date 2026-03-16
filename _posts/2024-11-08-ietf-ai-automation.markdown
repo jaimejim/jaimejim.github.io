@@ -2,7 +2,7 @@
 title: "AI-Generated IETF Reports"
 layout: post
 date: 2024-11-08 14:00
-image: /assets/images/ietf-ai.png
+image: /assets/images/ietf-ai.webp
 tag:
 - IETF
 - AI

@@ -2,7 +2,7 @@
 title: "Obsidian as a Personal AI Knowledge Assistant"
 layout: post
 date: 2025-07-09 14:00
-image: /assets/images/obsidian-q.png
+image: /assets/images/obsidian-q.webp
 tag:
 - AI
 - productivity
@@ -80,7 +80,7 @@ starting in a Boise dentist's basement!
 
 Another example:
 
-![robodog](/assets/images/robodog.png)
+![robodog](/assets/images/robodog.webp)
 
 Or when I need to recall technical details from conferences:
 

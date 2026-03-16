@@ -2,7 +2,7 @@
 title: "Semantic Interoperability Workshop I"
 layout: post
 date: 2016-02-01 09:00
-image: /assets/images/iotsi.jpg
+image: /assets/images/iotsi.webp
 tag:
 - iotsi
 - semantic interoperability

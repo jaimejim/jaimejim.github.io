@@ -2,7 +2,7 @@
 title: "Dynamic Mashups with Vonage and MCP"
 layout: post
 date: 2025-09-25 10:00
-image: /assets/images/web-agent.png
+image: /assets/images/web-agent.webp
 tag:
 - agents
 - MCP
