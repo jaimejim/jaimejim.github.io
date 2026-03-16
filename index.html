@@ -2,3 +2,11 @@
 layout: page
 title: Home
 ---
+
+<section class="list">
+    {% for post in site.posts limit:5 %}
+        {% if post.hidden != true and post.category == 'blog' %}
+            {% include blog-post.html %}
+        {% endif %}
+    {% endfor %}
+</section>

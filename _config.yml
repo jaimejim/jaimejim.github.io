@@ -25,14 +25,14 @@ permalink: /:title/
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-83023169-1'
 
-# if you don't want comments in your posts, leave categories empty
-disqus:
-  shortname: github # enter this from your disqus account
-  categories: [] # only show disqus for posts that have these categories
+# comments disabled
+# disqus:
+#   shortname: github
+#   categories: []
 
 # if you don't have any of social below, comment the line
 #facebook: myfacebook
-twitter: jaim
+#twitter: jaim
 #instagram: myinstagram
 linkedin: jaimejimenezbolonio
 github: jaimejim
