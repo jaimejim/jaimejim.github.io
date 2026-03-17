@@ -42,7 +42,7 @@ The problem isn't reading the data. The problem is knowing which 3 emails and 1 
 
 The solution I've been exploring is a distillation layer between raw conversation data and the LLM. Instead of feeding the agent 200K tokens of emails, you build a knowledge base that captures entity relationships, key decisions, and conversation threads in a structured, navigable form. The agent queries the knowledge base, finds the 3-5 relevant items, and only then reads the full content.
 
-This is what I've been experimenting with using Fastmail's CLI tool (`fm`) and Obsidian.
+This is what I've been experimenting with using `fm`, a CLI tool I built for Fastmail, and Obsidian.
 
 ### The fm experiment
 
