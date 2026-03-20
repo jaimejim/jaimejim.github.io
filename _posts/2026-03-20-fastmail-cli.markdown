@@ -1,7 +1,7 @@
 ---
 title: "An Agentic Email Client"
 layout: post
-date: 2026-03-20 08:30
+date: 2026-03-20
 tag:
 - email
 - CLI
