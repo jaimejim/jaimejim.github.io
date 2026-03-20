@@ -17,20 +17,7 @@ headerImage: false
 
 I built a terminal email client for [Fastmail](https://www.fastmail.com). It started as a stateless CLI for scripting and agent workflows, then grew a TUI with vim keys and an AI chat pane. It talks JMAP ([RFC 8620](https://www.rfc-editor.org/rfc/rfc8620), [RFC 8621](https://www.rfc-editor.org/rfc/rfc8621)) directly.
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/asciinema-player@3.8.0/dist/bundle/asciinema-player.css">
-<script src="https://cdn.jsdelivr.net/npm/asciinema-player@3.8.0/dist/bundle/asciinema-player.min.js"></script>
-<div id="player"></div>
-<script>
-AsciinemaPlayer.create('/assets/tui.cast', document.getElementById('player'), {
-  cols: 155,
-  rows: 50,
-  autoPlay: true,
-  loop: true,
-  speed: 1.5,
-  theme: 'monokai',
-  fit: 'width'
-});
-</script>
+![TUI demo](/assets/tui.gif)
 
 ## Why
 
