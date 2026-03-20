@@ -27,6 +27,7 @@ AsciinemaPlayer.create('/assets/tui.cast', document.getElementById('player'), {
   autoPlay: true,
   loop: true,
   speed: 1.5,
+  startAt: 30,
   theme: 'monokai',
   fit: 'width'
 });
