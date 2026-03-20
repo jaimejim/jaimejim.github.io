@@ -64,8 +64,10 @@ Search runs server-side via JMAP's `text` filter, so there's no local index and 
 
 The TUI is Python, built with [Textual](https://textual.textualize.io/). Textual gives you focus management, key routing, CSS layout, and async workers out of the box, so I didn't have to wire any of that up myself.
 
-The bottom pane is a chat interface. The agent sees which folder is selected, which email is open, and the body text. It can summarize what you're looking at, draft replies, and answer questions about the current message.
+The bottom pane is a chat interface. The agent sees which folder is selected, which email is open, and the body text. But the real value is what it can reach beyond the inbox. The agent subprocess is a full CLI chat session with access to tools; it can pull notes from my Obsidian vault, check today's daily note for meeting context, or look up a topic I've written about before. When I'm replying to someone about a draft we discussed last week, the agent already knows what I said because it can search my sent folder and my notes in the same turn.
 
-When you ask for a reply, the pane splits: chat on the left, compose editor on the right. The agent writes a draft in `<reply>` tags, which fills the editor. Edit it, ask for revisions then `Ctrl+D` to send.
+This is what makes it more than a mail client with a chatbot bolted on. The agent doesn't just see the email in front of you, **it sees your whole working context**. A reply about a document review can reference the meeting notes where you discussed it. A follow-up on a thread can pull in what you wrote three weeks ago. The context is there because the agent has the same tools you do.
+
+When you ask for a reply, the pane splits: chat on the left, compose editor on the right. The agent writes a draft in `<reply>` tags, which fills the editor. Edit it, ask for revisions, then `Ctrl+D` to send.
 
 The agent runs as a subprocess that can fetch context from my vault. Other agents can use the CLI + the associated SKILL to get current context too `fm inbox`, `fm search`, `fm read`, anything that can shell out can read and reply to email without opening a browser.
