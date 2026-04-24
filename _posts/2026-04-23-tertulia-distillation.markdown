@@ -51,7 +51,7 @@ aumento demográfico, no a una mejora en la productividad.
 https://www.youtube.com/watch?v=-5l7FdzSFwg
 ```
 
-**Pass 2, per topic.** For every `[[topic]]` that shows up in at least three notes, a second pass reads all the notes that mention it and writes a consolidated concept note. Position, recurring arguments, date-keyed nuances when the view has shifted, and citations back to the source notes. The prompt is "state the consolidated position, argue for it, cite the evidence", not "summarise these notes". This is where the heavy lifting happens.
+**Pass 2, per topic.** For every `[[topic]]` that shows up in at least three notes, a second pass reads all the notes that mention it and writes a consolidated concept note. Position, recurring arguments, date-keyed nuances when the view has shifted, and citations back to the source notes. The prompt is "state the consolidated position, argue for it, cite the evidence", not "summarise these notes".
 
 ```markdown
 # Inflación
