@@ -73,20 +73,18 @@ política fiscal expansiva que el BCE no puede compensar sola. ...
 
 That second pass is what makes the "what do you think about X" questions work. At query time the model isn't stitching fragments, the synthesis is already on disk.
 
-## What I didn't expect
+## Learnings
 
-**The graph falls out of the notes.** The `[[topic]]` links aren't decoration. The union across 200 notes is a 665-topic index with the expected power law: `inflación` hits 21 notes, `deuda pública` 11, a long tail of one-offs. No taxonomy, no clustering, the hubs just emerge. I built the graph as a retrieval signal and ended up using it as the main way to browse the corpus. Click any `[[topic]]` in any answer and you get every note tagged with it.
+The `[[topic]]` links aren't decoration. Across 200 notes, the union of all those links is a 665-topic index of the whole corpus: `inflación` shows up in 21 notes, `deuda pública` in 11, and a long tail of one-offs. The power law is what you'd expect, and the hubs emerged on their own without any taxonomy or clustering.
 
-**Closed palettes beat open prompts.** "Add relevant topic links" produces made-up terms that link nowhere. Handing the model the closed list of topics present in the retrieved notes, in the same message as the question, roughly doubled the density of real, clickable links.
-
-**Format rules at the end of the user message.** In longer contexts Gemini quietly stops following rules that live in the system prompt. Moving the format reminder to the end of the user message brought compliance back. System prompt for voice and identity, user message for format.
-
-**Fallback chain before you need it.** Halfway through building this, one of the tools I code with went down. Ten minutes later there was an alternate path, and the same pattern ended up in the Worker: Gemini → OpenRouter → Workers AI, three nested `try/catch`, same SSE envelope on the way out so the frontend never knows which model answered.
+I added the graph as a retrieval signal. I ended up using it as the main way to browse. Click any `[[topic]]` in any answer and you get every note tagged with it, which turned out to be more useful than the chat.
 
 ## Stack
 
-The two passes run locally with Ollama. Serving is one Cloudflare Worker, the full knowledge base is a 187 KB JSON bundled inside it, retrieval is a keyword walk over the topic graph. No vector DB at this size, and the walk runs sub-millisecond inside V8.
+Both distillation passes run locally through Ollama. Serving is a single Cloudflare Worker. The entire knowledge base, notes and graph, fits in a 187 KB JSON that's bundled into the Worker, so retrieval is a keyword walk over the topic graph that runs in sub-millisecond time. No vector DB, no separate storage.
 
-Past ~2,000 notes this wants a semantic pass (`bge-m3` through Workers AI, distilled note as the retrieval unit) and pass 2 wants to be incremental so new videos don't re-synthesise every concept. The version I actually want is two or three authors in the same UI bridged through the topic graph, so `[[inflación]]` reads through one voice versus another.
+## Work in progress
+
+Past ~2,000 notes the keyword walk stops being enough and a semantic pass (likely `bge-m3` through Workers AI) makes sense, with the distilled note staying as the retrieval unit. Pass 2 also wants to be incremental so adding a new video doesn't re-synthesise every concept. The version I actually want has two or three authors in the same UI, bridged through the topic graph, so `[[inflación]]` can be read through one voice versus another.
 
 Code lives in `~/code/apps/personas/` and `~/code/apps/kb/`. The site is [tertulia.jaime.win](https://tertulia.jaime.win). Ask it something specific.
