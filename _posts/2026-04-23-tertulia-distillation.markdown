@@ -79,13 +79,13 @@ That second pass is what makes the "what do you think about X" questions work. A
 
 ## Learnings
 
-The `[[topic]]` links aren't decoration. Across 200 notes, the union of all those links is a 665-topic index of the whole corpus: `inflación` shows up in 21 notes, `deuda pública` in 11, and a long tail of one-offs. The power law is what you'd expect, and the hubs emerged on their own without any taxonomy or clustering.
+The `[[topic]]` links aren't decoration. Across 200 notes, the union of all those links is a ~660-topic index of the whole corpus: `inflación` shows up in 55 notes, `deuda pública` in 47, and a long tail of one-offs. The power law is what you'd expect, and the hubs emerged on their own without any taxonomy or clustering.
 
 I added the graph as a retrieval signal. I ended up using it as the main way to browse. Click any `[[topic]]` in any answer and you get every note tagged with it, which turned out to be more useful than the chat.
 
 ## Stack
 
-Both distillation passes run locally through Ollama. Serving is a single Cloudflare Worker. The entire knowledge base, notes and graph, fits in a 187 KB JSON that's bundled into the Worker, so retrieval is a keyword walk over the topic graph that runs in sub-millisecond time. No vector DB, no separate storage.
+Both distillation passes run locally through Ollama. Serving is a single Cloudflare Worker. The whole corpus (notes, concepts, and graph) is a ~5 MB JSON bundled into the Worker, 1.6 MB on the wire. The retrieval index itself is small, around 180 KB, and the keyword walk over it is linear in notes and comfortably fast at this size. No vector DB, no separate storage.
 
 ## Work in progress
 
