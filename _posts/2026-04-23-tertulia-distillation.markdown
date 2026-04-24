@@ -19,13 +19,17 @@ I wanted to talk to a corpus of YouTube videos the way I talk to my Obsidian vau
   <source src="/assets/videos/tertulia-demo.mp4" type="video/mp4">
 </video>
 
-## Why not RAG
+## A knowledge base, not a pile of chunks
 
-I tried chunk-RAG first. It works for factual lookups, "what was March 2025 CPI in Spain?" hits the right chunk and the model reads it back. Ask for an opinion and retrieval returns thirty sentence fragments from thirty videos, the model looks at the pile, decides it doesn't have enough context, and refuses.
+My [Obsidian vault]({% post_url 2025-07-09-obsidian-q-chat-notes %}) works because every note is a claim about something, and `[[wikilinks]]` connect those claims into a graph. When I ask "what have I written about housing?", I'm not searching through raw text, I'm walking a small, hand-curated structure where each node already says what it's about. That's what a wiki-style knowledge base is: a set of small authored notes linked to each other, where the links carry as much meaning as the notes.
 
-The retrieval found the right documents. The representation was the problem. A transcript is a sequence of utterances, an opinion is a synthesis across many of them, and chunks only ever index the utterances.
+Chunk-RAG does the opposite. You cut a transcript into 60-second windows, embed them, and at query time you pull back the windows whose vectors are closest to the question. There's no structure, no authored claim per chunk, just similar-looking text.
 
-[Karpathy made this point more generally](https://x.com/karpathy/status/2039805659525644595) and [domleca's llm-wiki](https://github.com/domleca/llm-wiki) does it nicely for Obsidian. I wanted the same for a video corpus.
+It works for factual lookups. "What was March 2025 CPI in Spain?" hits the right window and the model reads the number back. It falls apart on anything synthetic. Ask for an opinion and you get thirty sentence fragments from thirty videos, the model looks at the pile, decides it doesn't have enough to go on, and refuses.
+
+The retrieval was finding the right documents. The representation was wrong. A transcript is a sequence of utterances, an opinion is a synthesis across many of them, and a chunk only ever holds the utterance.
+
+[Karpathy made this point more generally](https://x.com/karpathy/status/2039805659525644595) and [domleca's llm-wiki](https://github.com/domleca/llm-wiki) is a nice implementation for Obsidian. I wanted the same shape for a video corpus: turn each video into an authored note with explicit topic links, then let the graph do the work.
 
 ## Two passes
 
