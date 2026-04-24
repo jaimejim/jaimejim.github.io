@@ -85,8 +85,6 @@ That second pass is what makes the "what do you think about X" questions work. A
 
 ## Stack
 
-<img src="/assets/images/tertulia-stack.svg" alt="Tertulia stack diagram" style="width:100%; max-width:720px; background:#f4efe4; padding:1rem; border-radius:8px;">
-
 The two passes run locally with Ollama. Serving is one Cloudflare Worker, the full knowledge base is a 187 KB JSON bundled inside it, retrieval is a keyword walk over the topic graph. No vector DB at this size, and the walk runs sub-millisecond inside V8.
 
 Past ~2,000 notes this wants a semantic pass (`bge-m3` through Workers AI, distilled note as the retrieval unit) and pass 2 wants to be incremental so new videos don't re-synthesise every concept. The version I actually want is two or three authors in the same UI bridged through the topic graph, so `[[inflación]]` reads through one voice versus another.
