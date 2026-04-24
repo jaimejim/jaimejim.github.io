@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="488" viewBox="0 0 488 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+<g class="text">
+<text x="308" y="20" textLength="352" lengthAdjust="spacingAndGlyphs">┌──────────────────────────────────────────┐</text>
+<text x="136" y="36" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="280" y="36" textLength="104" lengthAdjust="spacingAndGlyphs">Browser (SPA)</text>
+<text x="480" y="36" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="136" y="52" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="292" y="52" textLength="240" lengthAdjust="spacingAndGlyphs">newspaper UI · [[topic]] panel</text>
+<text x="480" y="52" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="136" y="68" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="292" y="68" textLength="240" lengthAdjust="spacingAndGlyphs">inline youtube-nocookie iframe</text>
+<text x="480" y="68" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="308" y="84" textLength="352" lengthAdjust="spacingAndGlyphs">└─────────────────┬────────────────────────┘</text>
+<text x="296" y="100" textLength="40" lengthAdjust="spacingAndGlyphs">│ SSE</text>
+<text x="280" y="116" textLength="8" lengthAdjust="spacingAndGlyphs">▼</text>
+<text x="244" y="132" textLength="480" lengthAdjust="spacingAndGlyphs">┌──────────────────────────────────────────────────────────┐</text>
+<text x="8" y="148" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="160" y="148" textLength="136" lengthAdjust="spacingAndGlyphs">Cloudflare Worker</text>
+<text x="324" y="148" textLength="160" lengthAdjust="spacingAndGlyphs">(tertulia.jaime.win)</text>
+<text x="480" y="148" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="8" y="164" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="480" y="164" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="8" y="180" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="68" y="180" textLength="64" lengthAdjust="spacingAndGlyphs">/api/ask</text>
+<text x="268" y="180" textLength="256" lengthAdjust="spacingAndGlyphs">graph-nav retrieval → LLM stream</text>
+<text x="480" y="180" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="8" y="196" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="76" y="196" textLength="80" lengthAdjust="spacingAndGlyphs">/api/topic</text>
+<text x="248" y="196" textLength="216" lengthAdjust="spacingAndGlyphs">notes tagged with [[topic]]</text>
+<text x="480" y="196" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="8" y="212" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="76" y="212" textLength="80" lengthAdjust="spacingAndGlyphs">/api/share</text>
+<text x="220" y="212" textLength="160" lengthAdjust="spacingAndGlyphs">KV-backed short URLs</text>
+<text x="480" y="212" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="8" y="228" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="480" y="228" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="8" y="244" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="92" y="244" textLength="112" lengthAdjust="spacingAndGlyphs">┌────────────┐</text>
+<text x="180" y="244" textLength="32" lengthAdjust="spacingAndGlyphs">fail</text>
+<text x="284" y="244" textLength="112" lengthAdjust="spacingAndGlyphs">┌────────────┐</text>
+<text x="372" y="244" textLength="32" lengthAdjust="spacingAndGlyphs">fail</text>
+<text x="444" y="244" textLength="80" lengthAdjust="spacingAndGlyphs">┌──────┐ │</text>
+<text x="8" y="260" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="40" y="260" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="84" y="260" textLength="48" lengthAdjust="spacingAndGlyphs">Gemini</text>
+<text x="292" y="260" textLength="304" lengthAdjust="spacingAndGlyphs">│ ───────▶ │ OpenRouter │ ─────▶ │ WAI</text>
+<text x="472" y="260" textLength="24" lengthAdjust="spacingAndGlyphs">│ │</text>
+<text x="8" y="276" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="40" y="276" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="104" y="276" textLength="88" lengthAdjust="spacingAndGlyphs">2.5 Flash │</text>
+<text x="232" y="276" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="276" y="276" textLength="48" lengthAdjust="spacingAndGlyphs">Sonnet</text>
+<text x="336" y="276" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="444" y="276" textLength="80" lengthAdjust="spacingAndGlyphs">│ Llama│ │</text>
+<text x="8" y="292" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="92" y="292" textLength="112" lengthAdjust="spacingAndGlyphs">└────────────┘</text>
+<text x="284" y="292" textLength="112" lengthAdjust="spacingAndGlyphs">└────────────┘</text>
+<text x="444" y="292" textLength="80" lengthAdjust="spacingAndGlyphs">└──────┘ │</text>
+<text x="244" y="308" textLength="480" lengthAdjust="spacingAndGlyphs">└─────────────────────┬────────────────────────────────────┘</text>
+<text x="216" y="324" textLength="72" lengthAdjust="spacingAndGlyphs">│ imports</text>
+<text x="184" y="340" textLength="8" lengthAdjust="spacingAndGlyphs">▼</text>
+<text x="212" y="356" textLength="288" lengthAdjust="spacingAndGlyphs">┌──────────────────────────────────┐</text>
+<text x="72" y="372" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="128" y="372" textLength="72" lengthAdjust="spacingAndGlyphs">data.json</text>
+<text x="248" y="372" textLength="136" lengthAdjust="spacingAndGlyphs">(bundled, 4.7 MB)</text>
+<text x="352" y="372" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="72" y="388" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="204" y="388" textLength="224" lengthAdjust="spacingAndGlyphs">notes · chunks · topic index</text>
+<text x="352" y="388" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="212" y="404" textLength="288" lengthAdjust="spacingAndGlyphs">└─────────────────▲────────────────┘</text>
+<text x="268" y="420" textLength="112" lengthAdjust="spacingAndGlyphs">│ export-kb.py</text>
+<text x="216" y="436" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="244" y="452" textLength="480" lengthAdjust="spacingAndGlyphs">┌──────────────────────────────────────────────────────────┐</text>
+<text x="8" y="468" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="196" y="468" textLength="112" lengthAdjust="spacingAndGlyphs">Local pipeline</text>
+<text x="300" y="468" textLength="64" lengthAdjust="spacingAndGlyphs">(laptop)</text>
+<text x="480" y="468" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="8" y="484" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="480" y="484" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="8" y="500" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="208" y="500" textLength="344" lengthAdjust="spacingAndGlyphs">yt-dlp ──▶ SQLite FTS5 ──▶ Ollama (qwen3.5)</text>
+<text x="480" y="500" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="8" y="516" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="68" y="516" textLength="32" lengthAdjust="spacingAndGlyphs">subs</text>
+<text x="188" y="516" textLength="80" lengthAdjust="spacingAndGlyphs">60s chunks</text>
+<text x="356" y="516" textLength="160" lengthAdjust="spacingAndGlyphs">distilled notes (MD)</text>
+<text x="480" y="516" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="8" y="532" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="480" y="532" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="8" y="548" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="76" y="548" textLength="80" lengthAdjust="spacingAndGlyphs">200 videos</text>
+<text x="136" y="548" textLength="8" lengthAdjust="spacingAndGlyphs">→</text>
+<text x="216" y="548" textLength="120" lengthAdjust="spacingAndGlyphs">~90 min compute</text>
+<text x="296" y="548" textLength="8" lengthAdjust="spacingAndGlyphs">→</text>
+<text x="356" y="548" textLength="80" lengthAdjust="spacingAndGlyphs">665 topics</text>
+<text x="480" y="548" textLength="8" lengthAdjust="spacingAndGlyphs">│</text>
+<text x="244" y="564" textLength="480" lengthAdjust="spacingAndGlyphs">└──────────────────────────────────────────────────────────┘</text>
+</g>
+</svg>
