@@ -1,0 +1,34 @@
+/* C2 font override — Commit Mono (designed for code, clean) */
+/* Also not on Google Fonts by default, substituting with Fira Code which has the same sharp modern shape */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap");
+
+:root { --mono: "Fira Code", ui-monospace, monospace; }
+
+.masthead .sub { font-size: 14px; font-family: var(--mono); }
+
+/* h3 is now serif in base; only the sigil + count are mono */
+h3 .sigil, h3 .count { font-family: var(--mono); font-size: 12.5px; }
+
+/* tag row in post-head */
+body.long article .post-head .date,
+body.long article .post-head .tags,
+body.long article .post-head .tags a { font-family: var(--mono); font-size: 13px; }
+
+ul.projects .k { font-family: var(--mono); font-size: 15px; }
+ul.projects .v .u { font-size: 12.5px; font-family: var(--mono); }
+
+ul.entries .d { font-size: 12.5px; font-family: var(--mono); }
+
+ul.now li::before { font-family: var(--mono); }
+
+.more { font-family: var(--mono); font-size: 13.5px; }
+
+p.credit { font-family: var(--mono); font-size: 12.5px; }
+
+body.long p.nav { font-family: var(--mono); font-size: 13px; }
+body.long article p.meta { font-family: var(--mono); font-size: 13px; }
+body.long article code { font-family: var(--mono); font-size: 0.88em; font-variant-ligatures: none; }
+body.long article pre { font-family: var(--mono); font-size: 14px; line-height: 1.6; font-variant-ligatures: none; }
+body.long dl.cv dt { font-family: var(--mono); font-size: 12.5px; }
+
+code, pre { font-family: var(--mono); }

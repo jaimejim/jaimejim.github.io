@@ -1,31 +1,37 @@
 ---
-# blog page must be named index.html and in its own folder to support pagination
-# https://jekyllrb.com/docs/pagination/
 layout: page
 title: Blog
 pagination:
   enabled: true
 ---
-<section class="list">
-	{% if site.posts.size == 0 %}
-		<p class="text-center">Nothing published yet!</p>
-	{% elsif site.pagination.enabled %}
-		{% for post in paginator.posts %}
-			{% if post.category == 'blog' %}
-				{% if post.hidden != true %}
-					{% include blog-post.html %}
-				{% endif %}
-			{% endif %}
-		{% endfor %}
 
-		{% include pagination.html%}
-	{% else %}
-		{% for post in site.posts %}
-			{% if post.category == 'blog' %}
-				{% if post.hidden != true %}
-					{% include blog-post.html %}
-				{% endif %}
-			{% endif %}
-		{% endfor %}
-	{% endif %}
-</section>
+<h1>Blog</h1>
+
+<ul class="entries">
+{% if site.pagination.enabled %}
+    {% for post in paginator.posts %}
+        {% if post.category == 'blog' and post.hidden != true %}
+        <li>
+            <span class="d">{{ post.date | date: "%Y-%m-%d" }}</span>
+            <div>
+                <h4 class="t"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h4>
+                <p class="e">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+            </div>
+        </li>
+        {% endif %}
+    {% endfor %}
+    {% include pagination.html %}
+{% else %}
+    {% for post in site.posts %}
+        {% if post.category == 'blog' and post.hidden != true %}
+        <li>
+            <span class="d">{{ post.date | date: "%Y-%m-%d" }}</span>
+            <div>
+                <h4 class="t"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h4>
+                <p class="e">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+            </div>
+        </li>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+</ul>

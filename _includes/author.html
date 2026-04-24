@@ -1,14 +1,7 @@
-<section class="author">
-    <div class="toleft">
-        <img
-            class="selfie"
-            src="{% if site.authors[page.author].external-image == true %}{{ site.authors[page.author].picture }}{% else %}{{ site.url }}/{{ site.authors[page.author].picture }}{% endif %}"
-            alt="{{ site.authors[page.author].name }}"
-        />
-    </div>
-
-    <div class="toright">
-        <h4 class="name">{{ site.authors[page.author].name }}</h4>
-        <p class="bio">{{ site.authors[page.author].bio }}</p>
-    </div>
+<section class="author-block">
+  <img class="selfie" src="{{ site.url }}/{{ site.picture }}" alt="{{ site.title }}">
+  <div>
+    <h5>{{ site.title }}</h5>
+    <p>{{ site.bio | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+  </div>
 </section>

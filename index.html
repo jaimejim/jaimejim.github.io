@@ -1,29 +1,96 @@
 ---
-layout: page
+layout: default
 title: Home
 ---
 
-<section class="about-home">
-    <img class="selfie" alt="{{ site.title }}" src="{{ site.url }}/{{ site.picture }}" />
-    <h1 class="name">Jaime Jiménez</h1>
-    <div class="bio-text">
-        <p>Researcher at Ericsson Research, working on Applied AI, IoT, and Web Standards. Co-chair of the <a href="https://datatracker.ietf.org/wg/core/about/">IETF CoRE Working Group</a>. Based in Helsinki.</p>
-        <p><a href="{{ site.url }}/about">About</a> · <a href="https://github.com/{{ site.github }}">GitHub</a> · <a href="https://scholar.google.com/citations?user=Xkx153YAAAAJ">Google Scholar</a></p>
-    </div>
-</section>
+<header class="masthead">
+  <div class="avatar"><img src="{{ site.url }}/{{ site.picture }}" alt="{{ site.title }}"></div>
+  <div>
+    <h1>Jaime Jim&eacute;nez</h1>
+    <div class="sub">researcher &middot; standards &middot; helsinki</div>
+  </div>
+</header>
 
-<section class="list">
-    <h2 class="section-title">Recent Writing</h2>
-    {% for post in site.posts limit:5 %}
-        {% if post.hidden != true and post.category == 'blog' %}
-            <div class="item">
-                <a class="url" href="{{ site.url }}{{ post.url }}">
-                    <aside class="date"><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
-                    <h3 class="title">{{ post.title }}</h3>
-                    <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-                </a>
-            </div>
+<p class="intro">Researcher at <a href="https://www.ericsson.com/en/ericsson-research">Ericsson Research</a>, working on Applied AI, IoT, and Web Standards. Co-chair of the <a href="https://datatracker.ietf.org/wg/core/about/">IETF CoRE Working Group</a>. Based in Helsinki. More <a href="{{ site.url }}/about">about me</a> &middot; <a href="{{ site.url }}/assets/files/jaime_cv.pdf">CV</a>.</p>
+
+{% assign post_count = 0 %}
+{% for post in site.posts %}
+  {% unless post.hidden %}
+    {% assign post_count = post_count | plus: 1 %}
+  {% endunless %}
+{% endfor %}
+
+<div class="columns">
+
+  <div class="column">
+
+    <h3><span>Recent projects</span> <span class="count">6 projects</span></h3>
+    <ul class="sep">
+      <li>
+        <a href="https://camara.jaime.win">Camara Sandbox</a>
+        <span class="excerpt">A sandbox of CAMARA network APIs built to test agent readiness: discovery, auth, and invocation from an LLM, all at a high level.</span>
+      </li>
+      <li>
+        <a href="https://ad.jaime.win/">Agent Directory</a>
+        <span class="excerpt">A mechanism for agents to register and discover each other, inspired by <a href="https://www.rfc-editor.org/rfc/rfc9176.html">RFC&nbsp;9176</a>.</span>
+      </li>
+      <li>
+        <a href="https://tertulia.jaime.win">Tertulia</a>
+        <span class="excerpt">Testbed for large-corpus distillation, modelled on how I use Obsidian. The question: can an LLM find answers faster over a distilled graph than over raw chunks?</span>
+      </li>
+      <li>
+        <a href="https://github.com/jaimejim/ref">ref</a>
+        <span class="excerpt">Local Q&amp;A against a personal corpus. Lightweight, pipeable from other tools, hides source files from remote LLMs, and saves tokens on questions you ask constantly.</span>
+      </li>
+      <li>
+        <a href="https://recetario.jaime.win">Recetario</a>
+        <span class="excerpt">Family and friends&rsquo; recipes I&rsquo;ve collected over the years, now published in one place.</span>
+      </li>
+      <li>
+        <a href="https://mates.jaime.win">Mates</a>
+        <span class="excerpt">An iPad-only maths practice app for my kids, so they can have fun while learning.</span>
+      </li>
+    </ul>
+    <p><em><a href="{{ site.url }}/projects">more&hellip;</a></em></p>
+
+    <h3><span>Recent talks</span></h3>
+    <ul class="sep">
+      <li>
+        <a href="https://ietf.jaime.win/building-agentic-iot-systems.pdf">Building AI Agents for the Internet of Things</a>
+        <span class="excerpt">Guest lecture at <a href="https://hkust.edu.hk/">HKUST</a>, <a href="https://www.tuni.fi/en">Tampere University</a>, and <a href="https://www.helsinki.fi/en">University of Helsinki</a>. How a ReAct agent can interact with an IoT system in a RESTful way, with minimal abstractions and no changes on the device side.</span>
+      </li>
+      <li>
+        <a href="{{ site.url }}/assets/files/matter-ext.pdf">An Introduction to the Matter Protocol</a>
+        <span class="excerpt">Internal presentation based on the Matter specification: what it is, how commissioning works, and why the stack ended up the way it did.</span>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="column">
+
+    <h3><span>Recent writing</span> <span class="count">{{ post_count }} posts</span></h3>
+    <ul class="sep">
+      {% assign shown = 0 %}
+      {% for post in site.posts %}
+        {% if post.hidden != true and shown < 8 %}
+        <li>
+          <a href="{{ site.url }}{{ post.url }}" title="{{ post.date | date: '%A, %B %-d %Y' }}">{{ post.title }}</a>
+          <span class="excerpt">{{ post.excerpt | strip_html | truncatewords: 22 }}</span>
+        </li>
+        {% assign shown = shown | plus: 1 %}
         {% endif %}
-    {% endfor %}
-    <a class="all-posts-link" href="{{ site.url }}/blog">All posts →</a>
-</section>
+      {% endfor %}
+    </ul>
+    <p><em><a href="{{ site.url }}/blog">more&hellip;</a></em></p>
+
+  </div>
+
+</div>
+
+<p class="credit">
+  <span class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-mode="auto" aria-pressed="true">auto</button><button type="button" data-mode="light" aria-pressed="false">light</button><button type="button" data-mode="dark" aria-pressed="false">dark</button>
+  </span>
+  &nbsp; jaime.win &middot; helsinki 60.17&deg;N 24.94&deg;E &middot; <a href="{{ site.url }}/feed.xml">rss</a> &middot; <a href="https://github.com/jaimejim/jaime.win">source</a>
+</p>

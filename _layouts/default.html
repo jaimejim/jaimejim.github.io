@@ -4,59 +4,29 @@ layout: compress
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     {% if site.analytics-google %}
         {% include analytics-google.html %}
     {% endif %}
 
     <meta charset="utf-8">
-    <meta name=viewport content="width=device-width, initial-scale=1">
-    <meta name=author content="{{ site.title }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ site.title }}">
 
     {% seo %}
 
     {% include favicon.html %}
 
     <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ "/feed.xml" }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
 
-
-    <style>
-    
-    {% if site.dark-theme == "auto" %}
-        {% capture scss_sheet %}
-            {% include style.scss %}
-            @media (prefers-color-scheme: dark) {
-                {% include style-dark.scss %}
-            }
-        {% endcapture %}
-    {% elsif site.dark-theme %}
-        {% capture scss_sheet %}{% include style-dark.scss %}{% endcapture %}
-    {% else %}
-        {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
-    {% endif %}
-
-    {{ scss_sheet | scssify }}
-    </style>
-
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/c2.css">
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/c2-font-cm.css">
+    <script src="{{ site.url }}/assets/js/c2-theme.js"></script>
 </head>
-<body>
-    <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
-        {% if page.layout == "post" %}
-            <div class="post">
-        {% else %}
-            {% if showHeader != true %}
-                <div class="page {{ page.title | downcase }}">
-            {% else %}
-                <div class="{{ page.title | downcase }}">
-            {% endif %}
-        {% endif %}
+<body{% if page.layout == 'post' or page.title == 'About' or page.title == 'Projects' or page.title == 'Tags' or page.title == 'Blog' %} class="long"{% elsif page.title == 'Home' %} class="home"{% endif %}>
 
-            {{ content }}
-            </div>
-                </div>
-            </div>
-    </div>
+{{ content }}
+
 <script>document.querySelectorAll('.post img:not(.title-image)').forEach(i=>{i.loading='lazy';i.decoding='async'})</script>
 </body>
 </html>

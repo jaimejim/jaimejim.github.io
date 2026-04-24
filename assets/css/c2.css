@@ -1,0 +1,666 @@
+/* Variant C2 — hybrid, less mnot
+   Single-column home · warm paper · deeper navy link · RFC §-numbered heads */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap");
+
+:root {
+  --bg: #fafaf7;
+  --ink: #2a2724;                  /* warmer brown instead of near-black */
+  --soft: #4a4541;
+  --dim: #9a9488;                  /* warmer mid-tone */
+  --rule: #e4e0d4;
+  --soft-rule: #efece3;
+  --link: #1d4a80;
+  --link-under: #aabacf;           /* quiet resting underline */
+  --accent: #0f3061;
+  --pre-bg: #f2efe4;
+  --avatar-bg: #fff;
+}
+
+html[data-theme="dark"] {
+  --bg: #14130f;                   /* deep warm charcoal */
+  --ink: #e8e3d6;                  /* warm cream text */
+  --soft: #c9c3b3;
+  --dim: #8a8374;
+  --rule: #2a2721;
+  --soft-rule: #1e1c18;
+  --link: #8fb3e0;                 /* brighter navy for contrast */
+  --link-under: #3f5a82;
+  --accent: #bfd4f0;
+  --pre-bg: #1c1a16;
+  --avatar-bg: #1c1a16;
+}
+html[data-theme="dark"] img.portrait,
+html[data-theme="dark"] .masthead .avatar,
+html[data-theme="dark"] .author-block .selfie { filter: brightness(0.92) contrast(1.02); }
+html[data-theme="dark"] body.long article .post-header .tags a:hover { color: var(--bg); }
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: "Source Serif 4", Charter, Georgia, serif;
+  font-size: 19px;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--ink);
+  max-width: 720px;                 /* single column on home too */
+  margin: 72px auto;
+  padding: 0 24px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "onum", "kern", "liga";
+}
+
+/* always-underlined links, quiet underline at rest, bolder on hover (no background halo) */
+a:link, a:visited, a:active {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: var(--link-under);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  background: transparent;
+  border: none;
+}
+a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1.5px;
+  background: transparent;
+}
+
+/* headings */
+h1, h2 {
+  font-family: "Source Serif 4", Charter, Georgia, serif;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 20px 0 8px;
+}
+h1 { font-size: 38px; }
+h1 .hi { color: var(--accent); }
+
+/* section heads — lowercase serif label + dim number, no sigil, no uppercase */
+h3 {
+  font-family: "Source Serif 4", serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  text-transform: none;
+  color: var(--ink);
+  margin-top: 52px;
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+h3 .sigil {
+  color: var(--dim);
+  margin-right: 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+h3 .count {
+  color: var(--dim);
+  font-weight: 400;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* masthead — portrait inline with title */
+.masthead {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 22px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.masthead .avatar {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: #fff;
+}
+.masthead .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.masthead h1 { margin: 0 0 4px; font-size: 36px; }
+.masthead .sub { color: var(--dim); font-size: 13px; font-family: "JetBrains Mono", monospace; letter-spacing: 0.03em; }
+
+p { margin: 0 0 12px; max-width: 62ch; }
+body.long p { max-width: none; }   /* inside long-form, paragraphs fill the container */
+
+p.intro {
+  font-size: 19px;
+  margin: 8px 0 28px;
+  max-width: 56ch;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+/* project list */
+ul.projects { list-style: none; padding-left: 0; margin: 0 0 8px; }
+ul.projects li {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--rule);
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  align-items: baseline;
+  font-size: 17px;
+  line-height: 1.5;
+}
+ul.projects li:last-child { border-bottom: none; }
+ul.projects .k {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+}
+ul.projects .k a { color: inherit; }
+ul.projects .v { color: var(--ink); }
+ul.projects .v .u {
+  display: block;
+  margin-top: 2px;
+  color: var(--dim);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+/* writing list */
+ul.entries { list-style: none; padding-left: 0; margin: 0 0 8px; }
+ul.entries li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--soft-rule);
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  align-items: baseline;
+}
+ul.entries li:last-child { border-bottom: none; }
+ul.entries .d {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--dim);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+}
+ul.entries .t {
+  font-family: "Source Serif 4", serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 4px;
+  letter-spacing: -0.005em;
+}
+ul.entries .t a { color: var(--ink); }
+ul.entries .t a:hover { color: var(--link); background: var(--link-hover-bg); }
+ul.entries .e {
+  color: var(--dim);
+  font-size: 15.5px;
+  line-height: 1.5;
+  margin: 0;
+  font-family: "Source Serif 4", serif;
+}
+
+.more {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12.5px;
+  color: var(--link);
+}
+.more:hover { background: var(--link-hover-bg); }
+
+/* ---------- home: two-column landing (mnot-inspired) ---------- */
+.columns { display: flex; flex-direction: column; gap: 0; width: 100%; }
+.column { max-width: 100%; min-width: 0; }
+
+ul.compact { list-style: none; padding-left: 0; margin: 0 0 16px; }
+ul.compact li {
+  padding: 4px 0;
+  font-size: 17px;
+  line-height: 1.5;
+  max-width: 58ch;
+}
+ul.compact li::before {
+  content: "— ";
+  color: var(--dim);
+  font-family: "JetBrains Mono", monospace;
+}
+ul.compact li .detail {
+  color: var(--dim);
+  font-size: 13px;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+ul.sep { list-style: none; padding-left: 0; margin: 0 0 12px; }
+ul.sep li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--soft-rule);
+  font-size: 16px;
+  line-height: 1.5;
+}
+ul.sep li:last-child { border-bottom: none; }
+ul.sep li a {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  display: inline;
+  margin-right: 6px;
+}
+ul.sep li a:hover { color: var(--link); background: var(--link-hover-bg); }
+ul.sep li .excerpt {
+  color: var(--dim);
+  font-size: 15.5px;
+  display: block;
+  margin-top: 2px;
+}
+
+/* now list */
+ul.now { list-style: none; padding-left: 0; margin: 0; font-family: "Source Serif 4", serif; font-size: 16px; color: var(--ink); }
+ul.now li { padding: 4px 0; }
+ul.now li::before {
+  content: "— ";
+  color: var(--dim);
+  font-family: "JetBrains Mono", monospace;
+  margin-right: 4px;
+}
+
+em { font-style: italic; }
+code, pre { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.85em; }
+
+/* credit line — now LEFT-aligned (not mnot's right-aligned) */
+p.credit {
+  margin-top: 64px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  color: var(--dim);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+p.credit a { color: var(--dim); }
+p.credit a:hover { color: var(--link); background: var(--link-hover-bg); }
+
+/* ---------- long-form pages: about, résumé, post ---------- */
+body.long { max-width: 640px; }  /* tuned to 62ch of body text; video + paragraphs + code all share this measure */
+body.long p.nav {
+  margin-top: 0;
+  margin-bottom: 44px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--soft-rule);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--dim);
+}
+body.long p.nav a { color: var(--dim); }
+body.long article h1,
+body.long > h1 {
+  font-family: "Source Serif 4", serif;
+  font-weight: 400;
+  font-size: 44px;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin: 0 0 12px;
+  display: block;
+  text-wrap: balance;
+  color: var(--ink);
+}
+
+/* centered post header — image · title · date · tags, all centered */
+body.long article .post-header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--rule);
+}
+body.long article .post-header .title-image {
+  display: block;
+  max-height: 110px;
+  max-width: 160px;
+  margin: 0 auto 24px;
+  border-radius: 4px;
+}
+body.long article .post-header .title-icon {
+  display: block;
+  font-size: 56px;
+  line-height: 1;
+  margin: 0 auto 20px;
+  color: var(--accent);
+}
+body.long article .post-header h1 {
+  margin: 0 auto 16px;
+  max-width: 22ch;
+}
+body.long article .post-header .date {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--dim);
+  margin-bottom: 14px;
+}
+body.long article .post-header .tags {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12.5px;
+}
+body.long article .post-header .tags a {
+  display: inline-block;
+  padding: 3px 10px;
+  margin: 0 3px 4px;
+  background: var(--soft-rule);
+  color: var(--soft);
+  text-decoration: none;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+  transition: background 0.15s, color 0.15s;
+}
+body.long article .post-header .tags a:hover {
+  background: var(--link);
+  color: #fff;
+}
+
+/* post meta line — split into date-row + tags-row so the line wraps cleanly */
+body.long article .post-head {
+  margin-bottom: 36px;
+}
+body.long article .post-head .date {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--dim);
+  text-transform: none;                /* sentence-case */
+  letter-spacing: 0;
+  margin-bottom: 6px;
+}
+body.long article .post-head .tags {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--dim);
+  letter-spacing: 0;
+}
+body.long article .post-head .tags a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: var(--link-under);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  margin-right: 14px;
+  white-space: nowrap;
+}
+body.long article .post-head .tags a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* legacy support for old p.meta structure */
+body.long article p.meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--dim);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 28px;
+}
+
+/* body text fills the container — no 62ch narrowing so width matches nav, meta, and video */
+body.long article p,
+body.long article ol,
+body.long article ul { font-size: 19px; line-height: 1.65; }
+body.long article strong { font-weight: 600; }
+
+body.long article h3 {
+  /* override section-head flex for post headings; keep mono but with serif in-body body heads */
+  display: block;
+  padding: 0;
+  border: none;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-family: "Source Serif 4", serif;
+  font-weight: 600;
+  font-size: 22px;
+  text-transform: none;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+body.long article code {
+  background: var(--pre-bg);
+  padding: 2px 5px;
+  font-size: 0.85em;
+  border: 1px solid var(--soft-rule);
+  border-radius: 2px;
+}
+body.long article pre {
+  background: var(--pre-bg);
+  border: 1px solid var(--rule);
+  padding: 16px;
+  overflow-x: auto;
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin: 0 0 22px;
+  border-radius: 2px;
+}
+body.long article pre code { background: transparent; border: none; padding: 0; font-size: inherit; }
+body.long article video { width: 100%; height: auto; border: 1px solid var(--rule); margin: 4px 0 22px; display: block; border-radius: 2px; }
+
+body.long p.pager {
+  margin-top: 56px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--dim);
+  letter-spacing: 0.04em;
+}
+body.long p.pager a { color: var(--link); }
+
+/* prev/next blog navigation */
+body.long .blog-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin: 48px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+}
+body.long .blog-nav .prev, body.long .blog-nav .next { color: var(--link); max-width: 48%; }
+body.long .blog-nav .next { text-align: right; color: var(--dim); }
+
+/* related posts */
+body.long .related {
+  margin: 40px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--soft-rule);
+}
+body.long .related h4 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--dim);
+  text-transform: none;
+  margin: 0 0 10px;
+}
+body.long .related ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+body.long .related li {
+  padding: 4px 0;
+  font-size: 16px;
+}
+body.long .related li a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--link-under);
+}
+body.long .related li a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* author block */
+body.long .author-block {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  align-items: center;
+  margin: 48px 0 0;
+  padding: 24px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+body.long .author-block .selfie {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+}
+body.long .author-block h5 {
+  margin: 0 0 4px;
+  font-family: "Source Serif 4", serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+body.long .author-block p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--dim);
+  font-family: "Source Serif 4", serif;
+}
+
+/* footer with social icons */
+body.long .footer-main, body .footer-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 40px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--soft-rule);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  color: var(--dim);
+  letter-spacing: 0.02em;
+  flex-wrap: wrap;
+}
+body.long .footer-main .link, body .footer-main .link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: var(--dim);
+  text-decoration: none;
+  border: none;
+  transition: color 0.15s;
+}
+body.long .footer-main .link:hover, body .footer-main .link:hover {
+  color: var(--link);
+  background: transparent;
+}
+body.long .footer-main .link svg, body .footer-main .link svg { display: block; }
+body.long .footer-main .copyright, body .footer-main .copyright {
+  margin-left: auto;
+  color: var(--dim);
+}
+
+/* theme toggle (three-state: auto · light · dark) */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--dim);
+  border: 1px solid var(--soft-rule);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.theme-toggle button {
+  background: transparent;
+  border: none;
+  padding: 4px 8px;
+  color: var(--dim);
+  font: inherit;
+  cursor: pointer;
+  letter-spacing: inherit;
+  text-transform: lowercase;
+}
+.theme-toggle button[aria-pressed="true"] {
+  background: var(--soft-rule);
+  color: var(--ink);
+}
+.theme-toggle button:hover { color: var(--ink); }
+
+/* résumé dl.cv */
+body.long dl.cv { margin: 0 0 8px; }
+body.long dl.cv dt {
+  color: var(--dim);
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.04em;
+  margin-top: 12px;
+  font-variant-numeric: tabular-nums;
+}
+body.long dl.cv dd {
+  margin: 2px 0 10px;
+  padding-left: 0;
+  font-size: 17px;
+  line-height: 1.55;
+}
+body.long dl.cv strong { color: var(--ink); font-weight: 600; }
+body.long dl.cv em { color: var(--dim); font-size: 14px; }
+@media (min-width: 700px) {
+  body.long dl.cv { display: grid; grid-template-columns: 160px 1fr; column-gap: 24px; row-gap: 2px; }
+  body.long dl.cv dt { margin-top: 0; padding-top: 4px; }
+  body.long dl.cv dd { margin: 0; padding: 4px 0; border-top: 1px solid var(--soft-rule); }
+  body.long dl.cv dt { border-top: 1px solid var(--soft-rule); padding-top: 8px; }
+  body.long dl.cv dt:first-of-type,
+  body.long dl.cv dd:first-of-type { border-top: none; padding-top: 0; }
+}
+
+body.long p.intro { color: var(--soft); font-size: 18px; max-width: 60ch; margin-bottom: 32px; font-family: "Source Serif 4", serif; line-height: 1.5; }
+
+img.portrait { border-radius: 50%; border: 1px solid var(--rule); float: right; margin: 0 0 16px 24px; }
+
+/* wide: home goes to two columns */
+@media screen and (min-width: 1000px) {
+  body.home { max-width: 1040px; }
+  body.home .columns { flex-direction: row; gap: 56px; justify-content: space-between; }
+  body.home .column { flex: 1; max-width: 48%; }
+  body.home .masthead { margin-bottom: 12px; }
+}
+
+/* mobile */
+@media (max-width: 560px) {
+  body { padding: 0 18px; margin: 36px auto; font-size: 18px; }
+  .masthead { grid-template-columns: 64px 1fr; gap: 14px; }
+  .masthead .avatar { width: 64px; height: 64px; }
+  .masthead h1 { font-size: 26px; }
+  ul.projects li, ul.entries li { grid-template-columns: 1fr; gap: 4px; padding: 12px 0; }
+  ul.projects .k, ul.entries .d { font-size: 12px; }
+  h3 { font-size: 11px; }
+  h1 { font-size: 26px; }
+  body.long article h1, body.long > h1 { font-size: 30px; }
+  body.long article p, body.long article ol, body.long article ul { font-size: 17.5px; }
+  img.portrait { float: none; display: block; margin: 8px auto 18px; width: 120px; height: 120px; }
+}

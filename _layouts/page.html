@@ -1,8 +1,12 @@
 ---
 layout: default
 ---
-{% include header.html %}
+{% if page.title != "Home" %}
+{% include nav.html %}
+{% endif %}
 
-{{content}}
+{{ content }}
 
+{% if page.title != "Home" %}
 {% include footer.html %}
+{% endif %}

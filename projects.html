@@ -2,15 +2,70 @@
 layout: page
 title: Projects
 ---
-<section class="list">
-    {% for post in site.posts %}
-        {% if post.projects %}
-            <div class="item {% if post.star %}star{% endif %}">
-                <a class="url" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">
-                    <aside><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
-                    <h3 class="title">{{ post.title }}</h3>
-                </a>
-            </div>
-        {% endif %}
-    {% endfor %}
-</section>
+
+<h1>Projects</h1>
+
+<p class="intro">A handful of side projects I maintain outside work. Mostly small things I build for myself, my family, or to test an idea end-to-end. Work at Ericsson lives <a href="{{ site.url }}/about">elsewhere</a>.</p>
+
+<h3><span><span class="sigil">01 &middot;</span> Agentic systems</span></h3>
+<ul class="entries">
+  <li>
+    <span class="d">ad.jaime.win</span>
+    <div>
+      <h4 class="t"><a href="https://ad.jaime.win">Agent Directory</a></h4>
+      <p class="e">Live instance of a draft I-D for agent registration and discovery. Register agents, query against them, load the SKILL.md to try from an agent.</p>
+    </div>
+  </li>
+  <li>
+    <span class="d">camara.jaime.win</span>
+    <div>
+      <h4 class="t"><a href="https://camara.jaime.win">Camara Sandbox</a></h4>
+      <p class="e">Agentic sandbox around CAMARA network APIs. A place to poke at network exposure from an LLM.</p>
+    </div>
+  </li>
+  <li>
+    <span class="d">tertulia.jaime.win</span>
+    <div>
+      <h4 class="t"><a href="https://tertulia.jaime.win">Tertulia</a></h4>
+      <p class="e">Chat over a YouTube corpus using local distillation and a topic graph instead of chunk RAG. 202 videos in, 200 linked notes out, served from a single Cloudflare Worker.</p>
+    </div>
+  </li>
+  <li>
+    <span class="d">coap agents</span>
+    <div>
+      <h4 class="t"><a href="{{ site.url }}/agentic-iot-coap">Agentic IoT over CoAP</a></h4>
+      <p class="e">Experiments wiring LLM agents to real constrained devices over CoAP, instead of pretending everything speaks HTTP + JSON.</p>
+    </div>
+  </li>
+</ul>
+
+<h3><span><span class="sigil">02 &middot;</span> Home &amp; kids</span></h3>
+<ul class="entries">
+  <li>
+    <span class="d">mates.jaime.win</span>
+    <div>
+      <h4 class="t"><a href="https://mates.jaime.win">Mates</a></h4>
+      <p class="e">Tiny maths practice site I built for my kids. Fast, no accounts, runs on whatever tablet is nearby.</p>
+    </div>
+  </li>
+  <li>
+    <span class="d">recetario.jaime.win</span>
+    <div>
+      <h4 class="t"><a href="https://recetario.jaime.win">Recetario</a></h4>
+      <p class="e">Family recipe book. Spanish-first, no ads, no tracking, no 2,000-word intro about someone's grandmother.</p>
+    </div>
+  </li>
+</ul>
+
+<h3><span><span class="sigil">03 &middot;</span> Offline</span></h3>
+<ul class="entries">
+  <li>
+    <span class="d">capperi.fi</span>
+    <div>
+      <h4 class="t"><a href="https://capperi.fi">Capperi</a></h4>
+      <p class="e">Two pizzerias in Helsinki I co-own. Napoletana, wood-fired, not a side project in the software sense but definitely a side project.</p>
+    </div>
+  </li>
+</ul>
+
+<p class="intro" style="margin-top: 48px; color: var(--dim); font-size: 15.5px;">More experiments live under <code>*.jaime.win</code>. Some are public, some are half-broken, some both.</p>
