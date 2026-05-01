@@ -456,6 +456,7 @@ body.long article pre {
 }
 body.long article pre code { background: transparent; border: none; padding: 0; font-size: inherit; }
 body.long article video { width: 100%; height: auto; border: 1px solid var(--rule); margin: 4px 0 22px; display: block; border-radius: 2px; }
+body.long article p img { max-width: 100%; height: auto; display: block; margin: 18px auto 22px; border: 1px solid var(--rule); border-radius: 2px; }
 
 body.long p.pager {
   margin-top: 56px;
