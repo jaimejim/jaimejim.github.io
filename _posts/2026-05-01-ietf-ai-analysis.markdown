@@ -88,5 +88,22 @@ heuristics, let me know and I can re-run that part.
 
 The LLMs do the real work, and they do not fully agree with each other.
 
+One caveat I want to be upfront about: the signals this tool flags
+(uniform sentence structure, hedging language, Latinate vocabulary)
+overlap heavily with how non-native English speakers write. Liang et al.
+showed this in 2023 ([paper](https://arxiv.org/abs/2304.02819)), and it
+is directly relevant for the IETF where many contributors write in their
+second or third language. A high score does not mean AI; it means the
+writing deviates from the typical IETF style, for whatever reason.
+
+More broadly, reliable AI detection in technical prose may not be a
+solvable problem. Sadasivan et al.
+([paper](https://arxiv.org/abs/2303.11156)) proved that detector
+accuracy degrades toward a coin flip as models improve, and that
+paraphrasing defeats every detector they tested. For low-entropy text
+like protocol specs, where the writing is formulaic by nature, the
+ceiling is even lower. So think of this as a stylistic outlier detector,
+not an oracle.
+
 The tool is live, the raw data is available on the page. If you find a
 draft whose verdict looks off to you, let me know.
