@@ -102,6 +102,9 @@ compress_html:
       - development
       - stage
 
+# Jekyll drops dot-directories by default; force-publish Discord domain verification
+include: [".well-known"]
+
 exclude:
   [
     "README.md",
