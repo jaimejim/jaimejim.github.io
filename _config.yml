@@ -112,7 +112,4 @@ exclude:
     "Gemfile.lock",
     "FAQ.md",
     "vendor",
-    "temp",
-    "drafts",
-    "docs",
   ]
