@@ -36,7 +36,7 @@ p  = path-abempty
 q  = query           
 qq = [ "?" query ]      
 ```
-The ABNF forms make use of RFC5234, RFC7252 and RFC6690, for ~~morbid curiosity~~ simplicity you can check the [list of CoAP-related ABNF forms I made](http://jaimejim.github.io/temp/coap-abnf). Thanks to all this, we can specify for example that we want to use secure CoAP and query for lights that are *on*.
+The ABNF forms make use of RFC5234, RFC7252 and RFC6690. Thanks to all this, we can specify for example that we want to use secure CoAP and query for lights that are *on*.
 
 ```c
 Req:  GET http://p.example.com/hc?s=coaps&hp=s.example.com&p=/light&q=on

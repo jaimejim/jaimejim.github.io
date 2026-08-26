@@ -15,7 +15,7 @@ I would claim to be a pretty organized person, mostly because I have to if I don
 
 As I only have ten fingers I am sadly not capable of using [orgmode](http://orgmode.org) efficiently. If you are one of the *chosen ones* that can exclusively use Emacs I strongly recommend it. Instead, I use **[PlainTasks](https://github.com/aziz/PlainTasks)** (first on Sublime, now on Atom), kudos to [@aziz](https://github.com/aziz) for doing them BTW.
 
-A fairly active IETF working Group has a relatively large number of items that need to be done, for example these are the [tasks for CoRE](http://jaimejim.github.io/temp/coretodo.txt). I aggregate them by draft/RFC, for example ETCH would be:
+A fairly active IETF working Group has a relatively large number of items that need to be done, for example these are the [tasks for CoRE](https://datatracker.ietf.org/wg/core/documents/). I aggregate them by draft/RFC, for example ETCH would be:
 
 ```
 ETCH draft-ietf-core-etch:
@@ -45,7 +45,7 @@ As it turns out, it was very quick and simple to put together a bot to fetch the
 
 ``` js
 // Belvedere Bot 0.1
-// @jaimejim http://jaimejim.github.io
+// @jaimejim https://jaime.win
 var http = require('http')
 var fs = require('fs')
 var tg = require('telegram-node-bot')('insert-your-token-here')

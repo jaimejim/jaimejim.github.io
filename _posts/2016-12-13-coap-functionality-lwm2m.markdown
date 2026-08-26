@@ -20,7 +20,7 @@ One thing that has proven problematic for some use cases has been that LWM2M was
 
 Reusing LWM2M for applications seemed straighforward at first but perhaps the best way to present it is using LWM2M purely for management and CoAP with the same Object Model (i.e. IPSO) for Applications.
 
-I gave a short presentation at the "Managing Networks of Things workshop", organized by the Network Management Research Group. The [presentation slides](http://jaimejim.github.io/slides/nmrgsoulfinal.pdf) present the possible CoAP usages for Device Management available and illustrates the [draft-jimenez-t2trg-coap-functionality-lwm2m internet draft](https://datatracker.ietf.org/doc/draft-jimenez-t2trg-coap-functionality-lwm2m/) with the same title that I recently submitted to the T2TRG.
+I gave a short presentation at the "Managing Networks of Things workshop", organized by the Network Management Research Group. The presentation covered the possible CoAP usages for Device Management and illustrated the [draft-jimenez-t2trg-coap-functionality-lwm2m internet draft](https://datatracker.ietf.org/doc/draft-jimenez-t2trg-coap-functionality-lwm2m/) with the same title that I recently submitted to the T2TRG.
 
 The diagram below shows some of the cases. (1) would be the pure LWM2M, for device management, (2) would be device to device and (3) would be for applications on the browser or phone.
 
