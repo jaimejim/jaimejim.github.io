@@ -13,7 +13,7 @@ author: jaime
 headerImage: true
 ---
 
-**Note:** *AI-generated reports from this research are available at [ietf-ai-report](https://jaime.win/ietf-ai-report/) as a proof of concept, including downloadable PDFs and source LaTeX files.*
+**Note:** *AI-generated reports from this research are available in the [accompanying paper](https://arxiv.org/abs/2410.13301) as a proof of concept, including downloadable PDFs and source LaTeX files.*
 
 As a side project, I've been exploring how AI can automate **IETF report generation**. I [presented this work at RASPRG](https://datatracker.ietf.org/meeting/121/materials/slides-121-rasprg-automating-ietf-insights-generation-with-ai-01) during IETF 121, with the [full technical details](https://arxiv.org/pdf/2410.13301) available in the accompanying paper.
 

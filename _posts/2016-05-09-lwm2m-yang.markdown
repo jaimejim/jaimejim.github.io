@@ -11,7 +11,7 @@ author: jaime
 headerImage: true
 ---
 
-One of the outcomes of the [IOTSI Workshop](/iotsi) was to show how unlikely it will be to have one-single-data-model for every device out there. This might sound disheartening at first but it does not mean that interoperability is not possible.
+One of the outcomes of the [IOTSI Workshop](/iotsi/) was to show how unlikely it will be to have one-single-data-model for every device out there. This might sound disheartening at first but it does not mean that interoperability is not possible.
 
 One of the solutions is to create an even higher layer of abstraction, another meta-model, that allows for generating any and all of the other possible data models that are out there. Another solution is to translate between models. This post deals with the latter.
 
