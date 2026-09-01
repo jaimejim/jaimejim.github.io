@@ -36,7 +36,7 @@ Retrieval was finding the right documents. The representation was the problem. A
 
 The build is two distillation passes, both done before anyone asks a question.
 
-**Pass 1, per video.** A local Ollama model (`qwen3.5`) reads each transcript and produces a fixed-format markdown note: thesis, arguments, data cited, 3 to 8 `[[topic]]` links. About 30 seconds per video, 90 minutes for 200, nothing leaves the laptop.
+**Pass 1, per video.** A local Ollama model (`qwen3.5`) reads each transcript and produces a fixed-format markdown note: thesis, arguments, data cited, 3 to 8 `[[topic]]` links. About 30 seconds per video, so a bit over an hour and a half for 200, nothing leaves the laptop.
 
 ```markdown
 # Sobre el crecimiento económico...
@@ -77,6 +77,14 @@ política fiscal expansiva que el BCE no puede compensar sola. ...
 ```
 
 That second pass is what makes the "what do you think about X" questions work. At query time the model isn't stitching fragments, the synthesis is already on disk.
+
+## Answering a question
+
+When you ask something, your words are matched against the concept notes, the two closest concepts come back along with the video notes they cite, and that small set goes to a hosted LLM (Gemini, with OpenRouter and Workers AI as fallbacks) to write the answer. So the distillation runs on my laptop, but answering sends the question and the matching notes to that model.
+
+The matching is plain keyword scoring, no embeddings, which is enough at this size. Citations are the one place chunks survive: each numbered source is a snippet from the original transcript with its timestamp, so the answer reasons over the notes but points back to the exact moment in the video.
+
+One caveat worth stating: every note is the model's reading of a video, not the raw words. That is what makes the graph possible, but it adds a layer of interpretation, so an answer is only as good as the distillation behind it.
 
 ## Learnings
 
