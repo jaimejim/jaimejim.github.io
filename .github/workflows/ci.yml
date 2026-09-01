@@ -1,0 +1,51 @@
+name: CI
+
+# Runs alongside GitHub Pages' own build. Catches broken internal links and
+# performance/accessibility regressions before they ship.
+on:
+  push:
+    branches: [gh-pages]
+  pull_request:
+    branches: [gh-pages]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    env:
+      JEKYLL_ENV: production
+      # Make jekyll-github-metadata resolve production URLs (empty baseurl for
+      # the user page), matching the live jaime.win build.
+      PAGES_ENV: dotcom
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      - name: Check internal links
+        run: bundle exec rake proof:internal
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Lighthouse CI
+        run: npm install
+
+      - name: Serve site
+        run: |
+          bundle exec jekyll serve --detach --port 4000 --skip-initial-build
+          npx --yes wait-on http://localhost:4000/ --timeout 60000
+
+      - name: Run Lighthouse CI
+        run: npx lhci autorun

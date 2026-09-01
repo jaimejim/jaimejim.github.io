@@ -1,9 +1,10 @@
 .DS_Store
 _site
 .sass-cache
-Gemfile.lock
 .bundle
 vendor/
+node_modules/
+.lighthouseci/
 assets/files/jaime_cv.aux
 assets/files/jaime_cv.fdb_latexmk
 assets/files/jaime_cv.fls

@@ -112,4 +112,10 @@ exclude:
     "Gemfile.lock",
     "FAQ.md",
     "vendor",
+    "node_modules",
+    "package.json",
+    "package-lock.json",
+    "lighthouserc.json",
+    "Rakefile",
+    ".github",
   ]

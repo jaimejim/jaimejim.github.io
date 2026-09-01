@@ -1,0 +1,28 @@
+{
+  "ci": {
+    "collect": {
+      "url": [
+        "http://localhost:4000/",
+        "http://localhost:4000/blog/",
+        "http://localhost:4000/reshaping-the-software-you-use/",
+        "http://localhost:4000/about/",
+        "http://localhost:4000/tags/"
+      ],
+      "numberOfRuns": 1,
+      "settings": {
+        "preset": "desktop"
+      }
+    },
+    "assert": {
+      "assertions": {
+        "categories:accessibility": ["error", { "minScore": 0.9 }],
+        "categories:seo": ["error", { "minScore": 0.9 }],
+        "categories:best-practices": ["warn", { "minScore": 0.9 }],
+        "categories:performance": ["warn", { "minScore": 0.85 }]
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}
