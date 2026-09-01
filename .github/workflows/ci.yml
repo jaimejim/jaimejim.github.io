@@ -19,6 +19,7 @@ jobs:
       # Make jekyll-github-metadata resolve production URLs (empty baseurl for
       # the user page), matching the live jaime.win build.
       PAGES_ENV: dotcom
+      PAGES_REPO_NWO: ${{ github.repository }}
     steps:
       - uses: actions/checkout@v4
 
