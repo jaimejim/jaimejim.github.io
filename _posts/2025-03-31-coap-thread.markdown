@@ -12,13 +12,13 @@ author: jaime
 headerImage: true
 ---
 
-Thread networking is quietly becoming ubiquitous. Every [iPhone 16](https://www.apple.com/iphone-16/specs/) and newer iPad already has Thread support built-in, Android smart hubs are shipping with it, and [home routers](https://www.androidauthority.com/google-tv-streamer-smart-hub-3467634/) increasingly include it by default. Given this momentum, I wanted to understand how Thread actually works under the hood—specifically, how it uses CoAP.
+Thread networking is quietly becoming ubiquitous. Every [iPhone 16](https://www.apple.com/iphone-16/specs/) and newer iPad already has Thread support built-in, Android smart hubs are shipping with it, and [home routers](https://www.androidauthority.com/google-tv-streamer-smart-hub-3467634/) increasingly include it by default. Given this momentum, I wanted to understand how Thread actually works, specifically how it uses CoAP.
 
 I spent some time with the Thread v1.4.0 specification (September 2024) and found the CoAP implementation quite interesting. Here's what I learned.
 
-[Thread](https://www.threadgroup.org/) is designed for low-power, wireless mesh networks running at around 250 kbps. The key design principle is avoiding single points of failure—if one device goes down, the network routes around it. You'll find Thread in home automation, smart buildings ([KNX IoT](https://www.knx.org/knx-en/for-professionals/benefits/knx-iot/)), lighting systems ([DALI+](https://www.dali-alliance.org/daliplus/)), and increasingly in [Matter](https://csa-iot.org/all-solutions/matter/) devices.
+[Thread](https://www.threadgroup.org/) is designed for low-power, wireless mesh networks running at around 250 kbps. The key design principle is avoiding single points of failure. If one device goes down, the network routes around it. You'll find Thread in home automation, smart buildings ([KNX IoT](https://www.knx.org/knx-en/for-professionals/benefits/knx-iot/)), lighting systems ([DALI+](https://www.dali-alliance.org/daliplus/)), and increasingly in [Matter](https://csa-iot.org/all-solutions/matter/) devices.
 
-Thread networks have two main device types: Full Thread Devices (FTDs) that can route traffic, and End Devices (EDs) that connect to the network but don't forward messages. End devices can be always-on or "sleepy"—the sleepy ones use optimized power cycles to run for years on AA batteries. The network topology adapts as devices join, leave, or change roles.
+Thread networks have two main device types: Full Thread Devices (FTDs) that can route traffic, and End Devices (EDs) that connect to the network but don't forward messages. End devices can be always-on or "sleepy". The sleepy ones use optimized power cycles to run for years on AA batteries. The network topology adapts as devices join, leave, or change roles.
 
 ![thread](/assets/images/thread-stack.jpg)
 
