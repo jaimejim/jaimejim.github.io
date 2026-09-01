@@ -2,6 +2,7 @@
 title: "An Agentic Email Client"
 layout: post
 date: 2026-03-20
+image: /assets/images/2026-03-20-header.webp
 tag:
 - email
 - CLI
@@ -12,7 +13,7 @@ tag:
 - Textual
 category: blog
 author: jaime
-headerImage: false
+headerImage: true
 ---
 
 I built a terminal email client for [Fastmail](https://www.fastmail.com). It started as a stateless CLI for scripting and agent workflows, then grew a TUI with vim keys and an AI chat pane. It talks JMAP ([RFC 8620](https://www.rfc-editor.org/rfc/rfc8620), [RFC 8621](https://www.rfc-editor.org/rfc/rfc8621)) directly.

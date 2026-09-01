@@ -2,6 +2,7 @@
 title: "Emails, vCons, and the Knowledge Base Problem"
 layout: post
 date: 2026-03-16 08:00
+image: /assets/images/2026-03-16-header.webp
 tag:
 - agents
 - email
@@ -11,7 +12,7 @@ tag:
 - LLM
 category: blog
 author: jaime
-headerImage: false
+headerImage: true
 ---
 
 Agents will need to work with human conversation data. Emails, call transcripts, chat logs. The naive approach is to dump everything into the LLM's context window and hope for the best. That doesn't scale, and it's expensive. Better to build a knowledge base first, then let the agent query it.

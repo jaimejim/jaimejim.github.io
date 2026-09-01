@@ -2,6 +2,7 @@
 title: "Distilling YouTube Into a Queryable Graph"
 layout: post
 date: 2026-04-23 02:00
+image: /assets/images/2026-04-23-header.webp
 tag:
 - distillation
 - LLM
@@ -10,7 +11,7 @@ tag:
 - knowledge-graph
 category: blog
 author: jaime
-headerImage: false
+headerImage: true
 ---
 
 I wanted to talk to a corpus of YouTube videos the way I talk to my Obsidian vault. One author, a few hundred videos, questions like "what do you think about housing?" that chunk-based RAG is never going to answer well. That became [tertulia.jaime.win](https://tertulia.jaime.win): 202 videos in, 200 structured notes and a topic graph out, served as a chat from a single Cloudflare Worker.
@@ -21,13 +22,13 @@ I wanted to talk to a corpus of YouTube videos the way I talk to my Obsidian vau
 
 ## A knowledge base, not a pile of chunks
 
-My [Obsidian vault]({% post_url 2025-07-09-obsidian-q-chat-notes %}) works because every note is a claim about something, and `[[wikilinks]]` connect those claims into a graph. When I ask "what have I written about housing?", I'm not searching through raw text, I'm walking a small, hand-curated structure where each node already says what it's about. That's what a wiki-style knowledge base is: a set of small authored notes linked to each other, where the links carry as much meaning as the notes.
+My [Obsidian vault]({% post_url 2025-07-09-obsidian-q-chat-notes %}) works because every note is a claim about something, and `[[wikilinks]]` connect those claims into a graph. When I ask "what have I written about housing?", I'm walking a small, hand-curated structure where each node already says what it's about.
 
 Chunk-RAG does the opposite. You cut a transcript into 60-second windows, embed them, and at query time you pull back the windows whose vectors are closest to the question. There's no structure, no authored claim per chunk, just similar-looking text.
 
-It works for factual lookups. "What was March 2025 CPI in Spain?" hits the right window and the model reads the number back. It falls apart on anything synthetic. Ask for an opinion and you get thirty sentence fragments from thirty videos, the model looks at the pile, decides it doesn't have enough to go on, and refuses.
+It works for factual lookups. "What was March 2025 CPI in Spain?" hits the right window and the model reads the number back. It falls apart on anything synthetic: ask for an opinion and you get 30 fragments from 30 videos, none of them holding the actual opinion. The model sees the pile and refuses.
 
-The retrieval was finding the right documents. The representation was wrong. A transcript is a sequence of utterances, an opinion is a synthesis across many of them, and a chunk only ever holds the utterance.
+Retrieval was finding the right documents. The representation was the problem. A transcript is a sequence of utterances, an opinion is a synthesis across many of them, and a chunk only ever holds the utterance.
 
 [Karpathy made this point more generally](https://x.com/karpathy/status/2039805659525644595) and [domleca's llm-wiki](https://github.com/domleca/llm-wiki) is a nice implementation for Obsidian. I wanted the same shape for a video corpus: turn each video into an authored note with explicit topic links, then let the graph do the work.
 
@@ -35,7 +36,7 @@ The retrieval was finding the right documents. The representation was wrong. A t
 
 The build is two distillation passes, both done before anyone asks a question.
 
-**Pass 1, per video.** A local Ollama model (`qwen3.5`) reads each transcript and produces a fixed-format markdown note: thesis, arguments, data cited, three to eight `[[topic]]` links. About thirty seconds per video, ninety minutes for two hundred, nothing leaves the laptop.
+**Pass 1, per video.** A local Ollama model (`qwen3.5`) reads each transcript and produces a fixed-format markdown note: thesis, arguments, data cited, 3 to 8 `[[topic]]` links. About 30 seconds per video, 90 minutes for 200, nothing leaves the laptop.
 
 ```markdown
 # Sobre el crecimiento económico...
@@ -55,7 +56,7 @@ aumento demográfico, no a una mejora en la productividad.
 https://www.youtube.com/watch?v=-5l7FdzSFwg
 ```
 
-**Pass 2, per topic.** For every `[[topic]]` that shows up in at least three notes, a second pass reads all the notes that mention it and writes a consolidated concept note. Position, recurring arguments, date-keyed nuances when the view has shifted, and citations back to the source notes. The prompt is "state the consolidated position, argue for it, cite the evidence", not "summarise these notes".
+**Pass 2, per topic.** For every `[[topic]]` that shows up in at least 3 notes, a second pass reads all the notes that mention it and writes a consolidated concept note. Position, recurring arguments, date-keyed nuances when the view has shifted, and citations back to the source notes. The prompt is "state the consolidated position, argue for it, cite the evidence", not "summarise these notes".
 
 ```markdown
 # Inflación
@@ -81,14 +82,18 @@ That second pass is what makes the "what do you think about X" questions work. A
 
 The `[[topic]]` links aren't decoration. Across 200 notes, the union of all those links is a ~660-topic index of the whole corpus: `inflación` shows up in 55 notes, `deuda pública` in 47, and a long tail of one-offs. The power law is what you'd expect, and the hubs emerged on their own without any taxonomy or clustering.
 
-I added the graph as a retrieval signal. I ended up using it as the main way to browse. Click any `[[topic]]` in any answer and you get every note tagged with it, which turned out to be more useful than the chat.
+I added the graph as a retrieval signal, but it ended up being the main way to browse. Click any `[[topic]]` in any answer and you get every note tagged with it. That turned out more useful than the chat itself.
 
 ## Stack
 
-Both distillation passes run locally through Ollama. Serving is a single Cloudflare Worker. The whole corpus (notes, concepts, and graph) is a ~5 MB JSON bundled into the Worker, 1.6 MB on the wire. The retrieval index itself is small, around 180 KB, and the keyword walk over it is linear in notes and comfortably fast at this size. No vector DB, no separate storage.
+Both distillation passes run locally through Ollama. Serving is a single Cloudflare Worker. The whole corpus (notes, concepts, and graph) is ~5 MB JSON bundled into the Worker, 1.5 MB on the wire. The retrieval index is ~120 KB; the keyword walk over it is linear in notes and fast enough at this scale. No vector DB, no separate storage.
 
 ## Work in progress
 
-Past ~2,000 notes the keyword walk stops being enough and a semantic pass (likely `bge-m3` through Workers AI) makes sense, with the distilled note staying as the retrieval unit. Pass 2 also wants to be incremental so adding a new video doesn't re-synthesise every concept. The version I actually want has two or three authors in the same UI, bridged through the topic graph, so `[[inflación]]` can be read through one voice versus another.
+Past ~2,000 notes the keyword walk stops being enough. A semantic pass (likely `bge-m3` through Workers AI) makes sense there, with the distilled note staying as the retrieval unit.
 
-Code lives in `~/code/apps/personas/` and `~/code/apps/kb/`. The site is [tertulia.jaime.win](https://tertulia.jaime.win). Ask it something specific.
+Pass 2 also wants to be incremental: adding a new video shouldn't re-synthesise every concept it touches.
+
+The version I actually want has 2 or 3 authors in the same UI, bridged through the topic graph, so `[[inflación]]` can be read through one voice versus another.
+
+

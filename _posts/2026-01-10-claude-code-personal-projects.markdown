@@ -2,7 +2,7 @@
 title: "Building with Claude Code"
 layout: post
 date: 2026-01-10 13:30
-image: https://cdn.midjourney.com/977d305e-6456-40ac-acf1-4772ab24e5ff/0_1.png
+image: /assets/images/2026-01-10-header.webp
 tag:
 - AI
 - Claude Code
