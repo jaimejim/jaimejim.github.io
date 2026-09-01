@@ -2,7 +2,7 @@
 title: "Making things interoperate"
 layout: post
 date: 2014-10-08 09:00
-image: /assets/images/interop.jpg
+image: /assets/images/interop.webp
 tag:
 - iot
 - ipso

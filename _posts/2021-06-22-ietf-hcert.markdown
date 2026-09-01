@@ -16,7 +16,7 @@ I have written nothing about COVID and the two anni horribiles we are having. So
 
 I got today a EU CoVID certificate from the [Finnish Health Service](https://thl.fi/en/web/thlfi-en/-/first-covid-19-vaccination-certificates-now-available-in-my-kanta-pages) (kanta.fi).  The certificate pdf contains plaintext identification information, details of the COVID-19 vaccination and metadata to identify a valid certificate. It comes with a unique URN identifier and a QR code (or Aztec Code) that encodes the same information and can be verified by a validator application.
 
-![An EU health Certificate](/assets/images/hcert.jpg)
+![An EU health Certificate](/assets/images/hcert.webp)
 
 I could not resist trying to look into the QR code with a well-known qr code reader called `zbar`.
 
@@ -39,7 +39,7 @@ They show the general process and structure of the HCERT creation, signing and v
 3. The resulting document is compressed some more with zlib. Although this is useful specially in cases with many vaccinations.
 4. They transform it to base45 for certain [reasons](https://github.com/ehn-dcc-development/hcert-spec/blob/main/README.md#base45) and generate a QR with that.
 
-![Health Certificate overview](/assets/images/hcert-overview.jpg)
+![Health Certificate overview](/assets/images/hcert-overview.webp)
 
 So now I know that the information from the QR code is a base45 data structure with a 3-byte header `HC1` for Health Certificate Version 1. It would be expected that after decompressing with zlib , we would obtain CBOR/COSE binary data.
 

@@ -45,6 +45,6 @@ Once you grade it `0..10` just place it in a compass whose coordinates are the t
 
 Once you connect the dots and colour the space an arrow would appear and show you the right path for you. This will show what you are competent at and what you can improve. It can be that you feel you already maximized all the skills and lack a clear goal in your current role, then maybe it is time to try something else. It could also show that you are definitely lacking on an important skills which is expected on your current role, then maybe you can start improving on it. Or it might show that you really love to do some thing in particular and that you should move on to a further specialization in that path. It might be that you are a well-round professional in your current role, so you can just periodically repeat the exercise to know how is the ground where you are standing.
 
-![The Career Compass ©](/assets/images/career/2.png)
+![The Career Compass ©](/assets/images/career/2.webp)
 
 You might find out that perhaps it is time for a complete change of scenery. Many people do change professions and, although it takes time, it is of course possible. It is also the right thing to do if you feel you are stalled. Many of the happiest and most successful people I have met had an [inflection point](https://en.wikipedia.org/wiki/Inflection_point) in their lives that pushed them to do something new.

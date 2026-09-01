@@ -2,7 +2,7 @@
 title: "Generating art with AI"
 layout: post
 date: 2023-01-30 19:50
-image: /assets/images/aiart.jpg
+image: /assets/images/aiart.webp
 tag:
 - AI
 - art

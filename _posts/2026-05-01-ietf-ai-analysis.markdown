@@ -2,7 +2,7 @@
 title: "Analyzing AI usage in IETF drafts"
 layout: post
 date: 2026-05-01 12:00
-image: /assets/images/vangogh-noon-rest.jpg
+image: /assets/images/vangogh-noon-rest.webp
 tag:
 - IETF
 - AI
@@ -51,7 +51,7 @@ draft and tell if it has too much AI in it to begin with, so that we can
 filter out the ones that clearly have not been reviewed by the author.
 It is at [ietf.jaime.win/is-it-ai](https://ietf.jaime.win/is-it-ai).
 
-![Dashboard of the batch scan over about 1,400 recent IETF drafts]({{ site.url }}/assets/images/is-it-ai-dashboard.png)
+![Dashboard of the batch scan over about 1,400 recent IETF drafts]({{ site.url }}/assets/images/is-it-ai-dashboard.webp)
 
 This is a bit of an AI arms race in the sense that you could always make
 an AI-generated text look less AI, but at some point the effort of trying
@@ -78,7 +78,7 @@ those are the ones worth looking at more carefully. No draft in the
 corpus is unanimously flagged by all four models, which tells you how
 fuzzy this whole thing is.
 
-![Per-draft page showing the four-model breakdown, per-dimension scores and the statistical signals]({{ site.url }}/assets/images/is-it-ai-sample-draft.png)
+![Per-draft page showing the four-model breakdown, per-dimension scores and the statistical signals]({{ site.url }}/assets/images/is-it-ai-sample-draft.webp)
 
 One detail worth mentioning, of the eight statistical heuristics only
 *hedging density* is actually discriminative. The others are decorative.

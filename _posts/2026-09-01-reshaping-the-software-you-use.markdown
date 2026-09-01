@@ -2,7 +2,7 @@
 title: "You can shape your Internet content"
 layout: post
 date: 2026-09-01 09:00
-image: /assets/images/2026-09-01-header.png
+image: /assets/images/2026-09-01-header.webp
 tag:
 - ai
 - userscripts
@@ -36,7 +36,7 @@ The second script solves a daily annoyance rather than a temptation. Chrome has 
 
 Doing **site translation** properly means translating inside the HTML content and rendering in real time, and nowadays it is trivial to write a script that does that. Not so long ago, that would have been tricky to script. 
 
-![A Finnish yle.fi article and, beside it, the same article translated to English in place](/assets/images/2026-09-01-translate-fi-en.jpg)
+![A Finnish yle.fi article and, beside it, the same article translated to English in place](/assets/images/2026-09-01-translate-fi-en.webp)
 *The same yle.fi article before and after, side by side: identical layout, photo and working links, only the words turn English.*
 
 The setup itself is just Safari on the phone, the free **Userscripts** extension, and one folder holding the scripts so they sync across my devices. Each script is a small file I can read top to bottom, so I know *exactly* what it does and what it sends where. You cannot say that about most extensions you install.

@@ -2,7 +2,7 @@
 title: IKEA TRÅDFRI smart lights
 layout: post
 date: '2017-04-10 11:00'
-image: /assets/images/ikea.jpg
+image: /assets/images/ikea.webp
 tag:
   - Home Improvement
   - IKEA
@@ -15,7 +15,7 @@ headerImage: true
 
 There have been some press releases on the *IKEA lights*. I actually went yesterday to buy some of them to play around.
 
-![I love IKEA instructions](/assets/images/ikea.jpg)*I love how they used the same instruction design as they use for the furniture*
+![I love IKEA instructions](/assets/images/ikea.webp)*I love how they used the same instruction design as they use for the furniture*
 
 The articles are interesting for those of us who have spent quite some time building IoT protocols, as it transpires which technologies IKEA chose in order to build their lightning system.
  - [http://newsroom.inter.ikea.com](http://newsroom.inter.ikea.com/news/ikea-launches-its-first-digital-home-furnishing-product---an-app-to-adjust-lighting/s/b1fef4a2-e152-4ee3-9431-e188d26dfc92)

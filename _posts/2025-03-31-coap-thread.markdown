@@ -24,7 +24,7 @@ Thread networks have two main device types: Full Thread Devices (FTDs) that can 
 
 The protocol stack builds on familiar IETF standards: IPv6, UDP, DTLS, mDNS, and CoAP, running over IEEE 802.15.4 with 6LoWPAN adaptation. Thread adds its own Mesh Link Establishment (MLE) protocol for setting up and maintaining the mesh network using IANA-registered commands and TLV parameters.
 
-![thread](/assets/images/thread-net.png)
+![thread](/assets/images/thread-net.webp)
 
 Thread also has a **Thread Management Framework (TMF)** for Thread devices to exchange network-wide configuration and operational data. These management procedures cover tasks such as commissioning (joining and authenticating devices), propagating shared network parameters (channel/PAN ID changes), maintaining connectivity, and collecting diagnostic information about devices and links.
 

@@ -25,6 +25,6 @@ I'm a spaniard in Finland but I use a Swedish proxy server. Often, I am forced t
 
 The trend I have discovered is that options 1 and 2 are slowly disappearing. Service providers have found a nifty excuse to track their users by forcing them to register in order to get the content in the language they want. For example I was just checking the [Google Store](https://store.google.com/product/pixel_phone) (because of the new phone they announced) and I was surprised that I couldn't change the language anywhere, cause they usually have very clear guidelines for [multilingual URLs](https://support.google.com/webmasters/answer/189077). There is no URL path for me to edit and there is no user interface either. It assumes that the [natural language field is FI](https://www.w3.org/TR/WCAG10-TECHS/#tech-identify-lang) I have to register with Google so that I can read the english version of the site.
 
-![Google Store assumes I speak finnish](/assets/images/google_store.jpg)
+![Google Store assumes I speak finnish](/assets/images/google_store.webp)
 
 I am no web developer but I personally prefer option 1, as it is independent of the website implementation and it lets me decide, moreover it **decouples language from nationality, billing information or country of residence** while maintaining some form of anonymity.

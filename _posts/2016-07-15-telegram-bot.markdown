@@ -121,4 +121,4 @@ $jaime:~$ crontab -e
 ```
 
 And that's all, this is how the bot looks like once running.
-![Telegram Bot running]({{ site.url }}/assets/images/telegram_bot.png)
+![Telegram Bot running]({{ site.url }}/assets/images/telegram_bot.webp)

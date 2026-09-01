@@ -35,6 +35,6 @@ I tested both local and API-based models:
 
 The system produces **generally accurate reports** with correct event descriptions, participant affiliations, and discussion summaries. For example, the generated report correctly identifies that the AIPREF Working Group had 98 participants from organizations like Google, Apple, and Cisco, and accurately summarizes key discussion points, the presenters and the topics (vocabulary scope and attachment mechanisms for example).
 
-![Sample snippet](/assets/images/aipref.png)
+![Sample snippet](/assets/images/aipref.webp)
 
 Timewise, I spent most effort on the preprocessing and data normalization than on anything else. For future work I could try adding better reasoning strategies (e.g., ReAct, CoT), perform some cross-working group analysis, and potentially integrating this approach into the official IETF toolchain.

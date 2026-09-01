@@ -22,7 +22,7 @@ I remembered Bittorrent Sync from few years back and found out two versions of i
 
 Both allow you to back up files of your computer on any other device or share a large folder among friends or colleagues. If you have a NAS, you can also back it up there and sync the files between your computer and NAS. Finally, they also provide encryption, which is handy in the corporate environment.
 
-![Sexy insides of the Raspberry 3](/assets/images/resilio_raspberry.jpg)
+![Sexy insides of the Raspberry 3](/assets/images/resilio_raspberry.webp)
 
 ### 1. Installing Raspbian on Raspberry 3
 
@@ -62,7 +62,7 @@ sudo apt-get install apt-transport-https
 ```
 After this you should be able to access Syncthing's GUI at `localhost:8888`, it'd look like below.
 
-![Syncthing Web Gui](/assets/images/syncthing_gui.jpg)
+![Syncthing Web Gui](/assets/images/syncthing_gui.webp)
 
 #### 2.2 Installing Resilio on Raspbian
 
@@ -72,7 +72,7 @@ Once installed we need to create the configuration file with its basic informati
 
 After this you can reboot the Raspberry, after reboot you should be able to access Resilio's GUI at `0.0.0.0:8888`, it'd look like below.
 
-![Resilio Web Gui](/assets/images/resilio_gui.png)
+![Resilio Web Gui](/assets/images/resilio_gui.webp)
 
 Now is it a good time to verify that you have networking, NATing and firewalls properly configured in your network.
 
@@ -134,7 +134,7 @@ UUID=MYUUID /mnt/MYHD exfat defaults,auto,umask=000,users,rw 0 0
 
 Now every time the Pi starts it knows how to mount your drive. Now that all is ready and running, you have yourself an excellent back up and file sharing system.  Here is the final Set Up with Bad Piggy included.
 
-![Final setup with Bad Piggy watching](/assets/images/raspberry_setup.jpg)
+![Final setup with Bad Piggy watching](/assets/images/raspberry_setup.webp)
 
 #### Issue 1: Overheating
 

@@ -2,7 +2,7 @@
 title: Patch and Fetch Methods for CoAP
 layout: post
 date: '2017-04-07 11:00'
-image: /assets/images/patch.jpg
+image: /assets/images/patch.webp
 tag:
   - CoAP
   - PATCH

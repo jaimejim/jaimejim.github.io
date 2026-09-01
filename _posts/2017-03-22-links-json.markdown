@@ -2,7 +2,7 @@
 title: "Representing CoRE Formats in JSON and CBOR"
 layout: post
 date: 2017-03-22 11:00
-image: /assets/images/dolls.jpg
+image: /assets/images/dolls.webp
 tag:
 - CoAP
 - JSON

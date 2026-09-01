@@ -2,7 +2,7 @@
 title: Emulating sensors with ELIOT
 layout: post
 date: '2017-11-28 14:00'
-image: /assets/images/eliot.jpg
+image: /assets/images/eliot.webp
 tag:
   - Emulation
   - Docker
@@ -19,7 +19,7 @@ Over the years, those working with "IoT" or "M2M" have had the pleasure of worki
 
 The positive side is that is getting easier and easier to build and deploy IoT devices; using Jerryscript, Espruino, etc has really streamlined the work on hardware devices. Nevertheless, those interested exclusively on the cloud side of IoT would still need to deploy and maintain thousands of nodes even if it is outside of their scope of interest.
 
-![Hardware gallore!](/assets/images/devices.jpg)*By the time you read this another hardware platform would have appeared*
+![Hardware gallore!](/assets/images/devices.webp)*By the time you read this another hardware platform would have appeared*
 
 That's why we have built an [Emulated IoT Platform (ELIOT)](https://github.com/Alliasd/ELIoT) for those interested mostly in the software and server side of things and that just want to have endpoints that are addressable and can be interacted with over common application protocols.
 
@@ -27,7 +27,7 @@ ELIoT has its own docker image - **alliasd/eliot4** - where we store device appl
 
 ELIoT is built on top of [Leshan](https://github.com/eclipse/leshan) for the server side, and [coap-node](https://github.com/PeterEB/coap-node), which is a nodejs implementation of LWM2M for the client side.
 
-![ELIOT Stack](/assets/images/eliotstack.jpg)*In ELIOT we emulate CoAP, LwM2M and a generate simple device logic*
+![ELIOT Stack](/assets/images/eliotstack.webp)*In ELIOT we emulate CoAP, LwM2M and a generate simple device logic*
 
 We used ELIOT to test the scalability of the LWM2M Server. In the first scalability test, we used the bridge mode as network setup, and scheduled the launch of fifty weather observer devices every ten seconds (the ten seconds delay was necessary to avoid HTTP timeout errors from the Leshan Web Interface). As expected, as a result of the use of docker in bridge mode we could only run *1023 containers* (1 server, 1022 devices).
 
