@@ -1,8 +1,9 @@
 ---
 title: "Dynamic Mashups with Vonage and MCP"
 layout: post
+header: 2025-09-25
+image: /assets/images/2025-09-25-header.webp
 date: 2025-09-25 10:00
-image: /assets/images/web-agent.webp
 tag:
 - agents
 - MCP
@@ -11,7 +12,6 @@ tag:
 - CPaaS
 category: blog
 author: jaime
-headerImage: true
 ---
 
 A quiet change that AI agents are bringing is how we think about user interfaces. The old concept of **web mashups** might make a comeback with AI Agents. When agents interact with APIs dynamically (with no a priori knowledge of the subset of APIs they will use), something more fluid emerges: interfaces that generate themselves based on what the agent discovers and decides to do!

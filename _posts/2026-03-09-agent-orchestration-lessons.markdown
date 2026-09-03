@@ -1,8 +1,9 @@
 ---
 title: "Experiments on building Agentic Systems"
 layout: post
-date: 2026-03-09 12:00
+header: 2026-03-09
 image: /assets/images/2026-03-09-header.webp
+date: 2026-03-09 12:00
 tag:
 - agents
 - orchestration
@@ -11,7 +12,6 @@ tag:
 - LLM
 category: blog
 author: jaime
-headerImage: true
 ---
 
 Over the past few weeks I built several agent systems. I kept notes on what worked, what failed, and what made them practical to use day to day.

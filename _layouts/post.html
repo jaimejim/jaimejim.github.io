@@ -5,7 +5,10 @@ layout: default
 
 <article>
 <header class="post-header">
-  {% if page.image and page.headerImage %}
+  {% if page.header %}
+  {% capture header_svg %}headers/{{ page.header }}.svg{% endcapture %}
+  {% include {{ header_svg }} %}
+  {% elsif page.image and page.headerImage %}
   <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}" loading="eager" decoding="async">
   {% else %}
   <span class="title-icon">¶</span>

@@ -1,15 +1,15 @@
 ---
 title: "Analyzing AI usage in IETF drafts"
 layout: post
+header: 2026-05-01
+image: /assets/images/2026-05-01-header.webp
 date: 2026-05-01 12:00
-image: /assets/images/vangogh-noon-rest.webp
 tag:
 - IETF
 - AI
 - research
 category: blog
 author: jaime
-headerImage: true
 ---
 
 During the last IETF in Shenzhen, on a Saturday after the meeting, I went

@@ -1,8 +1,9 @@
 ---
 title: "Obsidian as a Personal AI Knowledge Assistant"
 layout: post
+header: 2025-07-09
+image: /assets/images/2025-07-09-header.webp
 date: 2025-07-09 14:00
-image: /assets/images/obsidian-q.webp
 tag:
 - AI
 - productivity
@@ -10,7 +11,6 @@ tag:
 - obsidian
 category: blog
 author: jaime
-headerImage: true
 ---
 
 Like many researchers, I've struggled with information overload. Between work projects, technical deep-dives, and random ideas worth remembering, I needed a system that could handle it all without becoming a burden.

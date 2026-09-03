@@ -1,8 +1,9 @@
 ---
 title: "AI Agents Don't Need to Know Your Devices"
 layout: post
-date: 2025-07-21 14:00
+header: 2025-07-21
 image: /assets/images/2025-07-21-header.webp
+date: 2025-07-21 14:00
 tag:
 - IoT
 - agents
@@ -11,7 +12,6 @@ tag:
 - HATEOAS
 category: blog
 author: jaime
-headerImage: true
 ---
 
 I presented at [IETF 123 T2TRG](https://datatracker.ietf.org/meeting/123/session/t2trg) in Madrid on agentic AI operation of IoT systems. The talk showed a working system where an AI agent discovers, reads, writes, and subscribes to IoT devices over CoAP with zero prior knowledge of the deployment. No configuration files. No device manifests. No MCP bridge. Just an entry point and standardized affordances.

@@ -1,15 +1,15 @@
 ---
 title: "Building with Claude Code"
 layout: post
-date: 2026-01-10 13:30
+header: 2026-01-10
 image: /assets/images/2026-01-10-header.webp
+date: 2026-01-10 13:30
 tag:
 - AI
 - Claude Code
 - personal projects
 category: blog
 author: jaime
-headerImage: true
 ---
 
 This Christmas I built [cuentos.jaime.win](https://cuentos.jaime.win/) from my phone. My daughter was learning to read and I wanted something interactive for her practice. The entire stack was just my iPhone, Claude Code Premium, Midjourney for some images, Vercel, and a CNAME subdomain. Built it between family dinners. I also made [mira.jaime.win](https://mira.jaime.win), a food scanner I use when grocery shopping in Finnish - convenient for finding food labels I don't know.

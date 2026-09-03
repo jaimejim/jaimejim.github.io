@@ -1,8 +1,9 @@
 ---
 title: "Distilling YouTube Into a Queryable Graph"
 layout: post
-date: 2026-04-23 02:00
+header: 2026-04-23
 image: /assets/images/2026-04-23-header.webp
+date: 2026-04-23 02:00
 tag:
 - distillation
 - LLM
@@ -11,7 +12,6 @@ tag:
 - knowledge-graph
 category: blog
 author: jaime
-headerImage: true
 ---
 
 I wanted to talk to a corpus of YouTube videos the way I talk to my Obsidian vault. One author, a few hundred videos, questions like "what do you think about housing?" that chunk-based RAG is never going to answer well. That became [tertulia.jaime.win](https://tertulia.jaime.win): 202 videos in, 200 structured notes and a topic graph out, served as a chat from a single Cloudflare Worker.

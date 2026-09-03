@@ -1,8 +1,9 @@
 ---
 title: "You can shape your Internet content"
 layout: post
-date: 2026-09-01 09:00
+header: 2026-09-01
 image: /assets/images/2026-09-01-header.webp
+date: 2026-09-01 09:00
 tag:
 - ai
 - userscripts
@@ -10,7 +11,6 @@ tag:
 - youtube
 category: blog
 author: jaime
-headerImage: true
 ---
 
 User interfaces feel a bit hostile at times, but we can now shape the content we consume in ways we couldn't before. For the last ten or twenty years software has consolidated into a handful of big vendors, and somewhere along the way the user stopped mattering much. Especially for anything paid for by ads, but not only there. We turned into data points to study, attention to grab, and someone to sell a product to. IMO there is no respect for the user anymore.
