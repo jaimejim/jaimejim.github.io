@@ -648,7 +648,16 @@ img.portrait { border-radius: 50%; border: 1px solid var(--rule); float: right; 
   body.home { max-width: 1040px; }
   body.home .columns { flex-direction: row; gap: 56px; justify-content: space-between; }
   body.home .column { flex: 1; max-width: 48%; }
+  body.home .column-writing { order: 2; } /* DOM puts writing first for mobile; keep it on the right on wide screens */
   body.home .masthead { margin-bottom: 12px; }
+}
+
+/* narrow (single column): writing first, then 4 projects, then talks; more… links stay */
+@media (max-width: 999px) {
+  body.home ul.home-posts li:nth-child(n+5),
+  body.home ul.home-projects li:nth-child(n+5) { display: none; }
+  body.home ul.home-posts li:nth-child(4),
+  body.home ul.home-projects li:nth-child(4) { border-bottom: none; }
 }
 
 /* mobile */

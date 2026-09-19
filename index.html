@@ -22,10 +22,29 @@ title: Home
 
 <div class="columns">
 
-  <div class="column">
+  <div class="column column-writing">
+
+    <h3><span>Recent writing</span> <span class="count">{{ post_count }} posts</span></h3>
+    <ul class="sep home-posts">
+      {% assign shown = 0 %}
+      {% for post in site.posts %}
+        {% if post.hidden != true and shown < 8 %}
+        <li>
+          <a href="{{ site.url }}{{ post.url }}" title="{{ post.date | date: '%A, %B %-d %Y' }}">{{ post.title }}</a>
+          <span class="excerpt">{{ post.excerpt | strip_html | truncatewords: 22 }}</span>
+        </li>
+        {% assign shown = shown | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <p><em><a href="{{ site.url }}/blog">more&hellip;</a></em></p>
+
+  </div>
+
+  <div class="column column-projects">
 
     <h3><span>Recent projects</span> <span class="count">7 projects</span></h3>
-    <ul class="sep">
+    <ul class="sep home-projects">
       <li>
         <a href="https://ietf.jaime.win/is-it-ai">Is it AI?</a>
         <span class="excerpt">A tool that rates how AI-written an IETF draft looks, using a small ensemble of LLMs and a handful of stylometry metrics. Also a batch scan of around 1,400 recent drafts.</span>
@@ -68,25 +87,6 @@ title: Home
         <span class="excerpt">Internal presentation based on the Matter specification: what it is, how commissioning works, and why the stack ended up the way it did.</span>
       </li>
     </ul>
-
-  </div>
-
-  <div class="column">
-
-    <h3><span>Recent writing</span> <span class="count">{{ post_count }} posts</span></h3>
-    <ul class="sep">
-      {% assign shown = 0 %}
-      {% for post in site.posts %}
-        {% if post.hidden != true and shown < 8 %}
-        <li>
-          <a href="{{ site.url }}{{ post.url }}" title="{{ post.date | date: '%A, %B %-d %Y' }}">{{ post.title }}</a>
-          <span class="excerpt">{{ post.excerpt | strip_html | truncatewords: 22 }}</span>
-        </li>
-        {% assign shown = shown | plus: 1 %}
-        {% endif %}
-      {% endfor %}
-    </ul>
-    <p><em><a href="{{ site.url }}/blog">more&hellip;</a></em></p>
 
   </div>
 
