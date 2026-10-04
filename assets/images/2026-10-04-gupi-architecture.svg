@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="464" width="472" viewBox="0 0 472 464" class="diagram" text-anchor="middle" font-family="Menlo, Courier New, monospace" font-size="13px" stroke-linecap="round">
+<path d="M 8,224 L 8,288" fill="none" stroke="black"/>
+<path d="M 80,176 L 80,216" fill="none" stroke="black"/>
+<path d="M 80,296 L 80,320" fill="none" stroke="black"/>
+<path d="M 144,224 L 144,288" fill="none" stroke="black"/>
+<path d="M 152,16 L 152,48" fill="none" stroke="black"/>
+<path d="M 152,96 L 152,144" fill="none" stroke="black"/>
+<path d="M 152,368 L 152,432" fill="none" stroke="black"/>
+<path d="M 168,224 L 168,288" fill="none" stroke="black"/>
+<path d="M 232,48 L 232,88" fill="none" stroke="black"/>
+<path d="M 232,144 L 232,216" fill="none" stroke="black"/>
+<path d="M 232,296 L 232,360" fill="none" stroke="black"/>
+<path d="M 304,224 L 304,288" fill="none" stroke="black"/>
+<path d="M 312,16 L 312,48" fill="none" stroke="black"/>
+<path d="M 312,96 L 312,144" fill="none" stroke="black"/>
+<path d="M 312,368 L 312,432" fill="none" stroke="black"/>
+<path d="M 328,224 L 328,288" fill="none" stroke="black"/>
+<path d="M 384,176 L 384,216" fill="none" stroke="black"/>
+<path d="M 384,296 L 384,320" fill="none" stroke="black"/>
+<path d="M 464,224 L 464,288" fill="none" stroke="black"/>
+<path d="M 152,16 L 312,16" fill="none" stroke="black"/>
+<path d="M 152,48 L 312,48" fill="none" stroke="black"/>
+<path d="M 152,96 L 312,96" fill="none" stroke="black"/>
+<path d="M 152,144 L 312,144" fill="none" stroke="black"/>
+<path d="M 80,176 L 384,176" fill="none" stroke="black"/>
+<path d="M 8,224 L 144,224" fill="none" stroke="black"/>
+<path d="M 168,224 L 304,224" fill="none" stroke="black"/>
+<path d="M 328,224 L 464,224" fill="none" stroke="black"/>
+<path d="M 8,288 L 144,288" fill="none" stroke="black"/>
+<path d="M 168,288 L 304,288" fill="none" stroke="black"/>
+<path d="M 328,288 L 464,288" fill="none" stroke="black"/>
+<path d="M 80,320 L 384,320" fill="none" stroke="black"/>
+<path d="M 152,368 L 312,368" fill="none" stroke="black"/>
+<path d="M 152,432 L 312,432" fill="none" stroke="black"/>
+<path d="M 60,280 L 72,256" fill="none" stroke="black"/>
+<polygon class="arrowhead" points="392,216 380,210.4 380,221.6" fill="black" transform="rotate(90,384,216)"/>
+<polygon class="arrowhead" points="240,360 228,354.4 228,365.6" fill="black" transform="rotate(90,232,360)"/>
+<polygon class="arrowhead" points="240,216 228,210.4 228,221.6" fill="black" transform="rotate(90,232,216)"/>
+<polygon class="arrowhead" points="240,88 228,82.4 228,93.6" fill="black" transform="rotate(90,232,88)"/>
+<polygon class="arrowhead" points="88,216 76,210.4 76,221.6" fill="black" transform="rotate(90,80,216)"/>
+<g class="text">
+<text x="236" y="36">Phone call</text>
+<text x="224" y="116">Gupi (daemon)</text>
+<text x="232" y="132">voice call loop</text>
+<text x="72" y="244">MCP servers</text>
+<text x="220" y="244">worker</text>
+<text x="388" y="244">coding-agent</text>
+<text x="48" y="260">vault</text>
+<text x="104" y="260">history</text>
+<text x="220" y="260">subagent</text>
+<text x="392" y="260">pane (routed)</text>
+<text x="44" y="276">pane</text>
+<text x="88" y="276">panes</text>
+<text x="236" y="276">(background)</text>
+<text x="232" y="388">graceful fallback</text>
+<text x="228" y="404">say what failed,</text>
+<text x="224" y="420">offer next step</text>
+</g>
+</svg>
