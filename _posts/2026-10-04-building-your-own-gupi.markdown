@@ -1,5 +1,5 @@
 ---
-title: "Building Your Own Gupi"
+title: "Voice Agents are useful again"
 layout: post
 date: 2026-10-04 10:00
 tag:
