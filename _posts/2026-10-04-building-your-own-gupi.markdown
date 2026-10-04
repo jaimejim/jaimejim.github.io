@@ -13,13 +13,13 @@ author: jaime
 
 I'm a big fan of the Bobiverse, Dennis E. Taylor's series that starts with *We Are Legion (We Are Bob)*. Bob Johansson is a software engineer who signs up for cryonic preservation, gets hit by a car the next day, and wakes up a hundred-odd years later as a replicant, a scanned copy of his mind running an interstellar Von Neumann probe. The ship comes with GUPPI, the General Unit Primary Peripheral Interface, which handles the mundane parts of running a probe so Bob can think. Bob gives it Admiral Ackbar's face and voice, because he can. GUPPI does the boring work, reports back in a sentence, and says so when something won't work.
 
-That's the assistant I wanted, so I built one that answers my phone and called it GUPPI.
+That's the assistant I wanted, so I built one I can talk to from my phone and called it GUPPI.
 
 ## The call
 
-GUPPI is a single FastAPI app (`app.py`) on a Mac Mini, doing WebRTC signalling for the phone app. Login happens before any model is involved: `tailscale serve` adds a `Tailscale-User-Login` header to each request, and it has to match me exactly. No tailnet identity, no call, and that's the whole security model.
+GUPPI is a single FastAPI app (`app.py`) on a Mac Mini. I call a session a call, but there's no phone network involved: an app on my phone streams audio to the daemon over WebRTC, with a plain WebSocket as fallback. Login happens before any model is involved: `tailscale serve` adds a `Tailscale-User-Login` header to each request, and it has to match me exactly. No tailnet identity, no call, and that's the whole security model.
 
-Once a call connects there's a persistent `Brain` wrapping a `ClaudeSDKClient` session. Audio comes in, gets transcribed, becomes a turn, and the brain turns SDK events into speech, with tool calls shown on screen but never read aloud. Hanging up doesn't end the session; the next call picks up where the last one stopped. The system prompt is blunt about the medium: no markdown, no bullet lists, 2 short sentences out loud at most, then a line with 3 dashes and everything after it goes to the screen, because voice fails the second you read a file path aloud.
+Once a call connects there's a persistent `Brain` wrapping a `ClaudeSDKClient` session. Audio comes in, gets transcribed, becomes a turn, and the brain turns SDK events into speech, with tool calls shown on screen but never read aloud. Closing the app doesn't end the session; the next call picks up where the last one stopped. The system prompt is blunt about the medium: no markdown, no bullet lists, 2 short sentences out loud at most, then a line with 3 dashes and everything after it goes to the screen, because voice fails the second you read a file path aloud.
 
 ## What's inside
 
@@ -27,7 +27,7 @@ Once a call connects there's a persistent `Brain` wrapping a `ClaudeSDKClient` s
 
 The thinking is a [`claude-agent-sdk`](https://github.com/anthropics/claude-agent-sdk-python) session with the Claude Code system prompt plus a short role prompt for the phone, so it inherits my skills, rules and agents from `~/.claude`. On top of that, 4 small MCP servers run inside the daemon and get handed to the session for the call: `vault` (daily notes, search, todos, append), `history` (past calls and transcripts), and `pane`/`panes` (read, send and press keys on the Claude Code and Kiro panes on my machine). They exist because the `obsidian` CLI hangs under Claude Code's Bash sandbox until the tool times out, while the same lookups in-process take about 0.06 s. There's no mcp.json for them; the daemon builds them at call time, so the in-call tool surface is exactly as big as it needs to be.
 
-<img src="/assets/images/2026-10-04-gupi-call.webp" alt="A GUPPI call on the phone: I ask about a TLS termination flaw, GUPPI speaks the short answer and the rest lands on screen in grey" style="width:45%;display:block;margin:1.2rem auto 0.2rem;">
+<img src="/assets/images/2026-10-04-gupi-call.webp" alt="A GUPPI session in the phone app: I ask about a TLS termination flaw, GUPPI speaks the short answer and the rest lands on screen in grey" style="width:45%;display:block;margin:1.2rem auto 0.2rem;">
 
 ## Handing off
 
