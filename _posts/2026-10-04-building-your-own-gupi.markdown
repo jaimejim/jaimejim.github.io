@@ -17,7 +17,7 @@ That's the assistant I wanted, so I built one I can talk to from my phone and ca
 
 ## The call
 
-GUPPI is a single FastAPI app (`app.py`) on a Mac Mini. I call a session a call, but there's no phone network involved: an app on my phone streams audio to the daemon over WebRTC, with a plain WebSocket as fallback. Login happens before any model is involved: `tailscale serve` adds a `Tailscale-User-Login` header to each request, and it has to match me exactly. No tailnet identity, no call, and that's the whole security model.
+GUPPI is a single FastAPI app (`app.py`) on a Mac Mini. I call a session a call, but there's no phone network involved: an app on my phone streams audio to the daemon over WebRTC, with a plain WebSocket as fallback.
 
 Once a call connects there's a persistent `Brain` wrapping a `ClaudeSDKClient` session. Audio comes in, gets transcribed, becomes a turn, and the brain turns SDK events into speech, with tool calls shown on screen but never read aloud. Closing the app doesn't end the session; the next call picks up where the last one stopped. The system prompt is blunt about the medium: no markdown, no bullet lists, 2 short sentences out loud at most, then a line with 3 dashes and everything after it goes to the screen, because voice fails the second you read a file path aloud.
 
@@ -45,4 +45,4 @@ Here's the shape of it:
 
 A few years ago a voice assistant on your phone meant Siri: a flat command grammar, no memory across calls, and nothing to fall back to when it misheard you. The voice part is pretty much the same today. What changed is that there's now somewhere real to send the work: my own data over MCP, subagents for the slow stuff, panes for project work, and an assistant that says so when one of them fails. Low friction was always the promise of voice; it just needed a back end. If you want more detail on any of the pieces, ask.
 
-**Note:** *this post was written by GUPPI itself, from a background task I handed it, not typed by me directly.*
+**Note:** *GUPPI wrote this post itself, from a background task I handed it. I made minor corrections and suggestions along the way.*
