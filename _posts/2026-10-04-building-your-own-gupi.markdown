@@ -19,7 +19,7 @@ That's the assistant I wanted, so I built one I can talk to from my phone and ca
 
 GUPPI is a single FastAPI app (`app.py`) on a Mac Mini. I call a session a call, but there's no phone network involved: an app on my phone streams audio to the daemon over WebRTC, with a plain WebSocket as fallback.
 
-Once a call connects there's a persistent `Brain` wrapping a `ClaudeSDKClient` session. Audio comes in, gets transcribed, becomes a turn, and the brain turns SDK events into speech, with tool calls shown on screen but never read aloud. Closing the app doesn't end the session; the next call picks up where the last one stopped. The system prompt is blunt about the medium: no markdown, no bullet lists, 2 short sentences out loud at most, then a line with 3 dashes and everything after it goes to the screen, because voice fails the second you read a file path aloud.
+Once a call connects there's a persistent `Brain` wrapping a `ClaudeSDKClient` session. Audio comes in, gets transcribed, becomes a turn, and the brain turns SDK events into speech, with tool calls shown on screen but never read aloud. Closing the app doesn't end the session; the next call picks up where the last one stopped. Part of GUPPI's job is to filter the massive output these systems produce down to what I need to hear: a sentence or two out loud, the rest on screen.
 
 ## What's inside
 
