@@ -17,13 +17,13 @@ That's the assistant I wanted, so I built one I can talk to from my phone and ca
 
 ## The call
 
-GUPPI is a single FastAPI app (`app.py`) on a Mac Mini. I call a session a call, but there's no phone network involved: an app on my phone streams audio to the daemon over WebRTC, with a plain WebSocket as fallback.
+GUPPI is a single FastAPI app (`app.py`) on the host. I call a session a call, but there's no phone network involved: an app on my phone streams audio to the daemon over WebRTC, with a plain WebSocket as fallback.
 
 Once a call connects there's a persistent `Brain` wrapping a `ClaudeSDKClient` session. Audio comes in, gets transcribed, becomes a turn, and the brain turns SDK events into speech, with tool calls shown on screen but never read aloud. Closing the app doesn't end the session; the next call picks up where the last one stopped. Part of GUPPI's job is to filter the massive output these systems produce down to what I need to hear: a sentence or two out loud, the rest on screen.
 
 ## What's inside
 
-[Pipecat](https://github.com/pipecat-ai/pipecat) runs the audio as a pipeline of stages: Silero VAD and smart-turn decide when I've stopped talking, Whisper on MLX turns the audio into text (Parakeet and whisper.cpp are the fallbacks), and [Kokoro](https://github.com/hexgrad/kokoro) turns the reply back into speech. Kokoro's voice quality is fantastic for a local model; I expected to need a cloud voice and never did. All of it runs on the Mac from local model files; nothing in the audio path touches the network.
+[Pipecat](https://github.com/pipecat-ai/pipecat) runs the audio as a pipeline of stages: Silero VAD and smart-turn decide when I've stopped talking, Whisper on MLX turns the audio into text (Parakeet and whisper.cpp are the fallbacks), and [Kokoro](https://github.com/hexgrad/kokoro) turns the reply back into speech. Kokoro's voice quality is fantastic for a local model; I expected to need a cloud voice and never did. All of it runs on the host from local model files; nothing in the audio path touches the network.
 
 The thinking is a [`claude-agent-sdk`](https://github.com/anthropics/claude-agent-sdk-python) session with the Claude Code system prompt plus a short role prompt for the phone, so it inherits my skills, rules and agents from `~/.claude`. On top of that, 4 small MCP servers run inside the daemon and get handed to the session for the call: `vault` (daily notes, search, todos, append), `history` (past calls and transcripts), and `pane`/`panes` (read, send and press keys on the Claude Code and Kiro panes on my machine). They exist because the `obsidian` CLI hangs under Claude Code's Bash sandbox until the tool times out, while the same lookups in-process take about 0.06 s. There's no mcp.json for them; the daemon builds them at call time, so the in-call tool surface is exactly as big as it needs to be.
 
