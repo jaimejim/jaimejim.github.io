@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 448" style="display:block;width:100%;max-width:472px;margin:1.2rem auto;" role="img" aria-label="Gupi's building blocks: a phone call reaches the daemon's call loop, which uses in-call MCP servers, launches background subagents, or routes to coding-agent panes, all converging on graceful fallback when something fails" text-anchor="middle" font-family="JetBrains Mono, Menlo, monospace" font-size="13" stroke-linecap="round" stroke-linejoin="round">
+<defs><marker id="gupi-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker></defs>
+<g fill="none" stroke="var(--accent)" stroke-width="1.5">
+<path d="M232,48 L232,90" marker-end="url(#gupi-arrow)"/>
+<path d="M232,144 L232,218" marker-end="url(#gupi-arrow)"/>
+<path d="M80,176 L384,176"/>
+<path d="M80,176 L80,218" marker-end="url(#gupi-arrow)"/>
+<path d="M384,176 L384,218" marker-end="url(#gupi-arrow)"/>
+<path d="M80,288 L80,320 L384,320 L384,288"/>
+<path d="M232,288 L232,362" marker-end="url(#gupi-arrow)"/>
+</g>
+<g fill="var(--pre-bg)" stroke="var(--link)" stroke-width="1.5">
+<rect x="152" y="16" width="160" height="32" rx="6"/>
+<rect x="8" y="224" width="136" height="64" rx="6"/>
+<rect x="168" y="224" width="136" height="64" rx="6"/>
+<rect x="328" y="224" width="136" height="64" rx="6"/>
+</g>
+<rect x="152" y="96" width="160" height="48" rx="6" fill="var(--pre-bg)" stroke="var(--accent)" stroke-width="2.5"/>
+<rect x="152" y="368" width="160" height="64" rx="6" fill="var(--pre-bg)" stroke="var(--link-under)" stroke-width="1.5" stroke-dasharray="5 4"/>
+<g fill="var(--ink)">
+<text x="232" y="37">Phone call</text>
+<text x="232" y="116" font-weight="700" fill="var(--accent)">Gupi (daemon)</text>
+<text x="232" y="132" fill="var(--soft)">voice call loop</text>
+<text x="76" y="244" font-weight="600" fill="var(--link)">MCP servers</text>
+<text x="76" y="261">vault history</text>
+<text x="76" y="277">pane/panes</text>
+<text x="236" y="244" font-weight="600" fill="var(--link)">worker</text>
+<text x="236" y="261">subagent</text>
+<text x="236" y="277" fill="var(--soft)">(background)</text>
+<text x="396" y="244" font-weight="600" fill="var(--link)">coding-agent</text>
+<text x="396" y="261">pane</text>
+<text x="396" y="277" fill="var(--soft)">(routed)</text>
+<text x="232" y="390" font-weight="600" fill="var(--link)">graceful fallback</text>
+<text x="232" y="406">say what failed,</text>
+<text x="232" y="422">offer next step</text>
+</g>
+</svg>

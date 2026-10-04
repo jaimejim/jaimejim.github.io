@@ -23,6 +23,8 @@ Once a call connects, there's one persistent `Brain` wrapping a `ClaudeSDKClient
 
 Three MCP servers run in-process and get handed straight to the session for the duration of a call: `vault` (todos, daily notes, search, context, append), `history` (past calls and transcripts), and `pane`/`panes` (read, send, answer dialogs on the Claude Code and Kiro panes running on my machine). None of these are configured anywhere, there's no mcp.json for them. The voice daemon just builds them in Python and hands them to the session at call time. The in-call tool surface ends up exactly as big as it needs to be and nothing more.
 
+<img src="/assets/images/2026-10-04-gupi-call.webp" alt="A Gupi call on the phone: I ask about a TLS termination flaw, Gupi speaks the short answer and the rest lands on screen in grey" style="width:45%;display:block;margin:1.2rem auto 0.2rem;">
+
 ## Delegation, not doing everything in-turn
 
 The real design decision is when Gupi reaches for the tools herself versus when she hands off. Quick things, a lookup, a status check, a small edit, happen right there in the turn. Anything longer, a note that needs real drafting, research, several steps, gets launched as a background subagent (the Agent tool with `run_in_background`), so the call stays open and I keep talking while it works. Project-specific work gets routed to whichever coding-agent pane owns that project instead, with Gupi acting as interpreter: tightening what I said, sending it, reading back the pane's dialogs and outcomes. A note or research question never goes to a pane. If it's unsure, it's not a pane's job.
@@ -33,7 +35,7 @@ The part that took the most iteration was what happens when something doesn't wo
 
 Here's the shape of it:
 
-![Gupi's building blocks: a phone call reaches the daemon's call loop, which uses in-call MCP servers, launches background subagents, or routes to coding-agent panes, all converging on graceful fallback when something fails](/assets/images/2026-10-04-gupi-architecture.svg)
+{% include diagrams/2026-10-04-gupi-architecture.svg %}
 
 ## Why "Gupi"
 
