@@ -1,37 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 448" style="display:block;width:100%;max-width:472px;margin:1.2rem auto;" role="img" aria-label="Gupi's building blocks: a phone call reaches the daemon's call loop, which uses in-call MCP servers, launches background subagents, or routes to coding-agent panes, all converging on graceful fallback when something fails" text-anchor="middle" font-family="JetBrains Mono, Menlo, monospace" font-size="13" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 448" style="display:block;width:100%;max-width:472px;margin:1.2rem auto;" role="img" aria-label="Animated: a phone call reaches Gupi, the voice daemon, which fans work out to in-call MCP servers, a background subagent or a coding-agent pane; when one of them fails, the failure flows into a graceful fallback that says what failed and offers the next step" text-anchor="middle" font-family="JetBrains Mono, Menlo, monospace" font-size="13" stroke-linecap="round" stroke-linejoin="round">
+<style>
+.g-bar{transform-box:fill-box;transform-origin:50% 100%;animation:g-bounce 1.1s ease-in-out infinite}
+@keyframes g-bounce{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
+@media (prefers-reduced-motion:reduce){.g-bar{animation:none;transform:scaleY(.6)}.g-dot,.g-ring{display:none}}
+</style>
 <defs><marker id="gupi-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker></defs>
-<g fill="none" stroke="var(--accent)" stroke-width="1.5">
+<g fill="none" stroke="var(--accent)" stroke-width="1.5" opacity=".55">
 <path d="M232,48 L232,90" marker-end="url(#gupi-arrow)"/>
-<path d="M232,144 L232,218" marker-end="url(#gupi-arrow)"/>
-<path d="M80,176 L384,176"/>
-<path d="M80,176 L80,218" marker-end="url(#gupi-arrow)"/>
-<path d="M384,176 L384,218" marker-end="url(#gupi-arrow)"/>
-<path d="M80,288 L80,320 L384,320 L384,288"/>
-<path d="M232,288 L232,362" marker-end="url(#gupi-arrow)"/>
+<path d="M232,152 L232,218" marker-end="url(#gupi-arrow)"/>
+<path d="M80,176 L384,176"/><path d="M80,176 L80,218" marker-end="url(#gupi-arrow)"/><path d="M384,176 L384,218" marker-end="url(#gupi-arrow)"/>
+<path d="M80,288 L80,320 L384,320 L384,288"/><path d="M232,288 L232,362" marker-end="url(#gupi-arrow)"/>
 </g>
-<g fill="var(--pre-bg)" stroke="var(--link)" stroke-width="1.5">
-<rect x="152" y="16" width="160" height="32" rx="6"/>
-<rect x="8" y="224" width="136" height="64" rx="6"/>
-<rect x="168" y="224" width="136" height="64" rx="6"/>
-<rect x="328" y="224" width="136" height="64" rx="6"/>
-</g>
-<rect x="152" y="96" width="160" height="48" rx="6" fill="var(--pre-bg)" stroke="var(--accent)" stroke-width="2.5"/>
-<rect x="152" y="368" width="160" height="64" rx="6" fill="var(--pre-bg)" stroke="var(--link-under)" stroke-width="1.5" stroke-dasharray="5 4"/>
-<g fill="var(--ink)">
-<text x="232" y="37">Phone call</text>
+<circle class="g-ring" cx="232" cy="32" r="10" fill="none" stroke="var(--link)" stroke-width="1.5" opacity="0"><animate attributeName="r" values="10;10;44;10;10;44;10;10;44;10;10" keyTimes="0;0.00000;0.03810;0.03857;0.33333;0.37143;0.37190;0.66667;0.70476;0.70524;1" dur="21.0s" repeatCount="indefinite" /><animate attributeName="opacity" values="0;0.7;0;0;0.7;0;0;0.7;0;0;0" keyTimes="0;0.00000;0.03810;0.03857;0.33333;0.37143;0.37190;0.66667;0.70476;0.70524;1" dur="21.0s" repeatCount="indefinite" /></circle>
+<circle class="g-ring" cx="232" cy="32" r="10" fill="none" stroke="var(--link)" stroke-width="1.5" opacity="0"><animate attributeName="r" values="10;10;44;10;10;44;10;10;44;10;10" keyTimes="0;0.01429;0.05238;0.05286;0.34762;0.38571;0.38619;0.68095;0.71905;0.71952;1" dur="21.0s" repeatCount="indefinite" /><animate attributeName="opacity" values="0;0;0.7;0;0;0;0.7;0;0;0;0.7;0;0;0" keyTimes="0;0.01381;0.01429;0.05238;0.05286;0.34714;0.34762;0.38571;0.38619;0.68048;0.68095;0.71905;0.71952;1" dur="21.0s" repeatCount="indefinite" /></circle>
+<rect x="152" y="16" width="160" height="32" rx="6" fill="var(--pre-bg)" stroke="var(--link)" stroke-width="1.5"/>
+<text x="232" y="37" fill="var(--ink)">Phone call</text>
+<circle class="g-dot" r="4.5" fill="var(--accent)" opacity="0"><animateMotion path="M232,48 L232,96" dur="21.0s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;0;0;1;0;0;1;0;0" keyTimes="0;0.04286;0.07143;0.07190;0.37619;0.40476;0.40524;0.70952;0.73810;0.73857;1"/><animate attributeName="opacity" values="0;0;1;1;0;0;1;1;0;0;1;1;0;0" keyTimes="0;0.04238;0.04286;0.07143;0.07190;0.37571;0.37619;0.40476;0.40524;0.70905;0.70952;0.73810;0.73857;1" dur="21.0s" repeatCount="indefinite"/></circle>
+<rect x="152" y="96" width="160" height="56" rx="6" fill="var(--pre-bg)" stroke="var(--accent)" stroke-width="2.5"/>
+<rect x="152" y="96" width="160" height="56" rx="6" fill="var(--accent)" opacity="0"><animate attributeName="opacity" values="0;0;0.12;0.12;0;0;0.12;0.12;0;0;0.12;0.12;0;0" keyTimes="0;0.07095;0.07143;0.13810;0.15714;0.40429;0.40476;0.47143;0.49048;0.73762;0.73810;0.80476;0.82381;1" dur="21.0s" repeatCount="indefinite" /></rect>
 <text x="232" y="116" font-weight="700" fill="var(--accent)">Gupi (daemon)</text>
-<text x="232" y="132" fill="var(--soft)">voice call loop</text>
-<text x="76" y="244" font-weight="600" fill="var(--link)">MCP servers</text>
-<text x="76" y="261">vault history</text>
-<text x="76" y="277">pane/panes</text>
-<text x="236" y="244" font-weight="600" fill="var(--link)">worker</text>
-<text x="236" y="261">subagent</text>
-<text x="236" y="277" fill="var(--soft)">(background)</text>
-<text x="396" y="244" font-weight="600" fill="var(--link)">coding-agent</text>
-<text x="396" y="261">pane</text>
-<text x="396" y="277" fill="var(--soft)">(routed)</text>
-<text x="232" y="390" font-weight="600" fill="var(--link)">graceful fallback</text>
-<text x="232" y="406">say what failed,</text>
-<text x="232" y="422">offer next step</text>
+<g><rect class="g-bar" x="202.5" y="124" width="3" height="18" rx="1.5" fill="var(--link)" style="animation-delay:-0.48s"/><rect class="g-bar" x="209.5" y="124" width="3" height="18" rx="1.5" fill="var(--link)" style="animation-delay:-0.36s"/><rect class="g-bar" x="216.5" y="124" width="3" height="18" rx="1.5" fill="var(--link)" style="animation-delay:-0.24s"/><rect class="g-bar" x="223.5" y="124" width="3" height="18" rx="1.5" fill="var(--link)" style="animation-delay:-0.12s"/><rect class="g-bar" x="230.5" y="124" width="3" height="18" rx="1.5" fill="var(--link)" style="animation-delay:-0.00s"/><rect class="g-bar" x="237.5" y="124" width="3" height="18" rx="1.5" fill="var(--link)" style="animation-delay:-0.12s"/><rect class="g-bar" x="244.5" y="124" width="3" height="18" rx="1.5" fill="var(--link)" style="animation-delay:-0.24s"/><rect class="g-bar" x="251.5" y="124" width="3" height="18" rx="1.5" fill="var(--link)" style="animation-delay:-0.36s"/><rect class="g-bar" x="258.5" y="124" width="3" height="18" rx="1.5" fill="var(--link)" style="animation-delay:-0.48s"/></g>
+<circle class="g-dot" r="4.5" fill="var(--accent)" opacity="0"><animateMotion path="M232,152 L232,176 L80,176 L80,224" dur="21.0s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;0;0;1;0;0;1;0;0" keyTimes="0;0.13810;0.17143;0.17190;0.47143;0.50476;0.50524;0.80476;0.83810;0.83857;1"/><animate attributeName="opacity" values="0;0;1;1;0;0;1;1;0;0;1;1;0;0" keyTimes="0;0.13762;0.13810;0.17143;0.17190;0.47095;0.47143;0.50476;0.50524;0.80429;0.80476;0.83810;0.83857;1" dur="21.0s" repeatCount="indefinite"/></circle>
+<circle class="g-dot" r="4.5" fill="var(--accent)" opacity="0"><animateMotion path="M232,152 L232,224" dur="21.0s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;0;0;1;0;0;1;0;0" keyTimes="0;0.13810;0.17143;0.17190;0.47143;0.50476;0.50524;0.80476;0.83810;0.83857;1"/><animate attributeName="opacity" values="0;0;1;1;0;0;1;1;0;0;1;1;0;0" keyTimes="0;0.13762;0.13810;0.17143;0.17190;0.47095;0.47143;0.50476;0.50524;0.80429;0.80476;0.83810;0.83857;1" dur="21.0s" repeatCount="indefinite"/></circle>
+<circle class="g-dot" r="4.5" fill="var(--accent)" opacity="0"><animateMotion path="M232,152 L232,176 L384,176 L384,224" dur="21.0s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;0;0;1;0;0;1;0;0" keyTimes="0;0.13810;0.17143;0.17190;0.47143;0.50476;0.50524;0.80476;0.83810;0.83857;1"/><animate attributeName="opacity" values="0;0;1;1;0;0;1;1;0;0;1;1;0;0" keyTimes="0;0.13762;0.13810;0.17143;0.17190;0.47095;0.47143;0.50476;0.50524;0.80429;0.80476;0.83810;0.83857;1" dur="21.0s" repeatCount="indefinite"/></circle>
+<g opacity=".4"><animate attributeName="opacity" values="0.4;0.4;1;1;0.4;0.4;1;1;0.4;0.4;1;1;0.4;0.4" keyTimes="0;0.17095;0.17143;0.31429;0.33286;0.50429;0.50476;0.64762;0.66619;0.83762;0.83810;0.98095;0.99952;1" dur="21.0s" repeatCount="indefinite" />
+<rect x="8" y="224" width="136" height="64" rx="6" fill="var(--pre-bg)" stroke="var(--link)" stroke-width="1.5"/>
+<text x="76.0" y="244" font-weight="600" fill="var(--link)">MCP servers</text><text x="76.0" y="261" fill="var(--ink)">vault history</text><text x="76.0" y="277" fill="var(--soft)">pane/panes</text>
+</g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.53762;0.53810;0.64762;0.66190;1" dur="21.0s" repeatCount="indefinite"/><rect x="8" y="224" width="136" height="64" rx="6" fill="none" stroke="#b5563a" stroke-width="2.5"/><circle cx="142" cy="226" r="8" fill="#b5563a"/><text x="142" y="230.5" font-size="11" font-weight="700" fill="#fafaf7">!</text></g>
+<circle class="g-dot" r="4.5" fill="#b5563a" opacity="0"><animateMotion path="M80,288 L80,320 L232,320 L232,368" dur="21.0s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;0;0;1;0;0;1;0;0" keyTimes="0;0.22381;0.25714;0.25762;0.55714;0.59048;0.59095;0.89048;0.92381;0.92429;1"/><animate attributeName="opacity" values="0;0;0;0;0;0;1;1;0;0;0;0;0;0" keyTimes="0;0.22333;0.22381;0.25714;0.25762;0.55667;0.55714;0.59048;0.59095;0.89000;0.89048;0.92381;0.92429;1" dur="21.0s" repeatCount="indefinite"/></circle>
+<g opacity=".4"><animate attributeName="opacity" values="0.4;0.4;1;1;0.4;0.4;1;1;0.4;0.4;1;1;0.4;0.4" keyTimes="0;0.17095;0.17143;0.31429;0.33286;0.50429;0.50476;0.64762;0.66619;0.83762;0.83810;0.98095;0.99952;1" dur="21.0s" repeatCount="indefinite" />
+<rect x="168" y="224" width="136" height="64" rx="6" fill="var(--pre-bg)" stroke="var(--link)" stroke-width="1.5"/>
+<text x="236.0" y="244" font-weight="600" fill="var(--link)">worker</text><text x="236.0" y="261" fill="var(--ink)">subagent</text><text x="236.0" y="277" fill="var(--soft)">(background)</text>
+</g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.87095;0.87143;0.98095;0.99524;1" dur="21.0s" repeatCount="indefinite"/><rect x="168" y="224" width="136" height="64" rx="6" fill="none" stroke="#b5563a" stroke-width="2.5"/><circle cx="302" cy="226" r="8" fill="#b5563a"/><text x="302" y="230.5" font-size="11" font-weight="700" fill="#fafaf7">!</text></g>
+<circle class="g-dot" r="4.5" fill="#b5563a" opacity="0"><animateMotion path="M232,288 L232,368" dur="21.0s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;0;0;1;0;0;1;0;0" keyTimes="0;0.22381;0.25714;0.25762;0.55714;0.59048;0.59095;0.89048;0.92381;0.92429;1"/><animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;1;1;0;0" keyTimes="0;0.22333;0.22381;0.25714;0.25762;0.55667;0.55714;0.59048;0.59095;0.89000;0.89048;0.92381;0.92429;1" dur="21.0s" repeatCount="indefinite"/></circle>
+<g opacity=".4"><animate attributeName="opacity" values="0.4;0.4;1;1;0.4;0.4;1;1;0.4;0.4;1;1;0.4;0.4" keyTimes="0;0.17095;0.17143;0.31429;0.33286;0.50429;0.50476;0.64762;0.66619;0.83762;0.83810;0.98095;0.99952;1" dur="21.0s" repeatCount="indefinite" />
+<rect x="328" y="224" width="136" height="64" rx="6" fill="var(--pre-bg)" stroke="var(--link)" stroke-width="1.5"/>
+<text x="396.0" y="244" font-weight="600" fill="var(--link)">coding-agent</text><text x="396.0" y="261" fill="var(--ink)">pane</text><text x="396.0" y="277" fill="var(--soft)">(routed)</text>
+</g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20429;0.20476;0.31429;0.32857;1" dur="21.0s" repeatCount="indefinite"/><rect x="328" y="224" width="136" height="64" rx="6" fill="none" stroke="#b5563a" stroke-width="2.5"/><circle cx="462" cy="226" r="8" fill="#b5563a"/><text x="462" y="230.5" font-size="11" font-weight="700" fill="#fafaf7">!</text></g>
+<circle class="g-dot" r="4.5" fill="#b5563a" opacity="0"><animateMotion path="M384,288 L384,320 L232,320 L232,368" dur="21.0s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;0;0;1;0;0;1;0;0" keyTimes="0;0.22381;0.25714;0.25762;0.55714;0.59048;0.59095;0.89048;0.92381;0.92429;1"/><animate attributeName="opacity" values="0;0;1;1;0;0;0;0;0;0;0;0;0;0" keyTimes="0;0.22333;0.22381;0.25714;0.25762;0.55667;0.55714;0.59048;0.59095;0.89000;0.89048;0.92381;0.92429;1" dur="21.0s" repeatCount="indefinite"/></circle>
+<g opacity=".4"><animate attributeName="opacity" values="0.4;0.4;1;1;0.4;0.4;1;1;0.4;0.4;1;1;0.4;0.4" keyTimes="0;0.25667;0.25714;0.31429;0.33286;0.59000;0.59048;0.64762;0.66619;0.92333;0.92381;0.98095;0.99952;1" dur="21.0s" repeatCount="indefinite" />
+<rect x="152" y="368" width="160" height="64" rx="6" fill="var(--pre-bg)" stroke="var(--link-under)" stroke-width="1.5" stroke-dasharray="5 4"/>
+<rect x="152" y="368" width="160" height="64" rx="6" fill="none" stroke="var(--accent)" stroke-width="2.5" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0;1;1;0;0;1;1;0;0" keyTimes="0;0.25667;0.25714;0.31429;0.32857;0.59000;0.59048;0.64762;0.66190;0.92333;0.92381;0.98095;0.99524;1" dur="21.0s" repeatCount="indefinite" /></rect>
+<text x="232" y="390" font-weight="600" fill="var(--link)">graceful fallback</text><text x="232" y="406" fill="var(--ink)">say what failed,</text><text x="232" y="422" fill="var(--ink)">offer next step</text>
 </g>
 </svg>
