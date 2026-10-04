@@ -27,7 +27,7 @@ Once a call connects there's a persistent `Brain` wrapping a `ClaudeSDKClient` s
 
 The thinking is a [`claude-agent-sdk`](https://github.com/anthropics/claude-agent-sdk-python) session with the Claude Code system prompt plus a short role prompt for the phone, so it inherits my skills, rules and agents from `~/.claude`. On top of that, 4 small MCP servers run inside the daemon and get handed to the session for the call: `vault` (daily notes, search, todos, append), `history` (past calls and transcripts), and `pane`/`panes` (read, send and press keys on the Claude Code and Kiro panes on my machine). They exist because the `obsidian` CLI hangs under Claude Code's Bash sandbox until the tool times out, while the same lookups in-process take about 0.06 s. There's no mcp.json for them; the daemon builds them at call time, so the in-call tool surface is exactly as big as it needs to be.
 
-<img src="/assets/images/2026-10-04-gupi-call.webp" alt="A GUPPI session in the phone app: I ask about a TLS termination flaw, GUPPI speaks the short answer and the rest lands on screen in grey" style="width:45%;display:block;margin:1.2rem auto 0.2rem;">
+<img src="/assets/images/2026-10-04-guppi-call.webp" alt="A GUPPI session in the phone app: I ask about a TLS termination flaw, GUPPI speaks the short answer and the rest lands on screen in grey" style="width:45%;display:block;margin:1.2rem auto 0.2rem;">
 
 ## Handing off
 
@@ -39,7 +39,7 @@ Sometimes processes fail. A blocked write, a cancelled pane message, a dialog as
 
 Here's the shape of it:
 
-{% include diagrams/2026-10-04-gupi-architecture.svg %}
+{% include diagrams/2026-10-04-guppi-architecture.svg %}
 
 ## Why now
 
