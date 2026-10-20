@@ -45,4 +45,20 @@ Here's the shape of it:
 
 A few years ago a voice assistant on your phone meant Siri: a flat command grammar, no memory across calls, and nothing to fall back to when it misheard you. The voice part is pretty much the same today. What changed is that there's now somewhere real to send the work: my own data over MCP, subagents for the slow stuff, panes for project work, and an assistant that says so when one of them fails. Low friction was always the promise of voice; it just needed a back end. If you want more detail on any of the pieces, ask.
 
+## What it sounds like
+
+GUPPI has since moved from Kokoro to Drama 3, which clones a voice from a short reference clip. Two samples, both rendered on the host. The first is GUPPI's everyday voice, Ben, reporting back:
+
+<audio controls preload="none" style="width:100%;">
+  <source src="/assets/audio/2026-10-04-guppi-benedict.mp3" type="audio/mpeg">
+</audio>
+
+The second is Romero, the voice I switch to for fun, sending me to bed when I try to start one more thing late at night:
+
+<audio controls preload="none" style="width:100%;">
+  <source src="/assets/audio/2026-10-04-guppi-romero.mp3" type="audio/mpeg">
+</audio>
+
+*"Then rest, my friend. The x402 will wait. Even the greatest hero needs the night."*
+
 **Note:** *GUPPI wrote this post itself, from a background task I handed it. I made minor corrections and suggestions along the way.*
