@@ -47,13 +47,21 @@ A few years ago a voice assistant on your phone meant Siri: a flat command gramm
 
 ## What it sounds like
 
-GUPPI has since moved from Kokoro to Drama 3, which clones a voice from a short reference clip. Two samples, both rendered on the host. The first is GUPPI's everyday voice, Ben, reporting back:
+GUPPI has since moved from Kokoro to Drama 3, which clones a voice from a short reference clip. Three samples, all rendered on the host. The first is GUPPI's everyday voice, Ben, reporting back:
 
 <audio controls preload="none" style="width:100%;">
   <source src="/assets/audio/2026-10-04-guppi-benedict.mp3" type="audio/mpeg">
 </audio>
 
-The second is Romero, the voice I switch to for fun, sending me to bed when I try to start one more thing late at night:
+Drama 3 also takes delivery directions written into the text, in brackets. GUPPI chooses them per sentence, so bad news sounds different from good news. Here is Ben saying the same line three ways, `[cheerful, upbeat, smiling]`, `[tired, flat, end of a long day]` and `[urgent, fast, alarmed]`:
+
+<audio controls preload="none" style="width:100%;">
+  <source src="/assets/audio/2026-10-04-guppi-intonation.mp3" type="audio/mpeg">
+</audio>
+
+*"The build is green, and the deploy is waiting for your yes."*
+
+The third is Romero, the voice I switch to for fun, sending me to bed when I try to start one more thing late at night:
 
 <audio controls preload="none" style="width:100%;">
   <source src="/assets/audio/2026-10-04-guppi-romero.mp3" type="audio/mpeg">
