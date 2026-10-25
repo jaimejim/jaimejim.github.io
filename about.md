@@ -19,7 +19,6 @@ I speak Spanish, English, Italian, and German.
 
 ### Elsewhere
 
-- [Download CV (PDF)](/assets/files/jaime_cv.pdf)
 - [Google Scholar](https://scholar.google.com/citations?user=Xkx153YAAAAJ)
 - [GitHub](https://github.com/jaimejim)
 - [Patents](https://patents.google.com/?inventor=Jaime+Jimenez,Jaime+Jim%C3%A9nez&assignee=Ericsson&sort=new)
