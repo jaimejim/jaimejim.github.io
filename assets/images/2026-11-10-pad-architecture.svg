@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .box{fill:#161a35;stroke-width:2}
+      .t{fill:#e8ebff;font-size:15px;font-weight:700;text-anchor:middle}
+      .s{fill:#9aa3d6;font-size:11px;text-anchor:middle}
+      .w{fill:none;stroke:#5b64a0;stroke-width:2}
+      .l{fill:#8d96cc;font-size:11px;text-anchor:middle}
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5b64a0"/>
+    </marker>
+  </defs>
+  <rect width="900" height="420" rx="14" fill="#0f1226"/>
+
+  <!-- editor -->
+  <rect x="30" y="120" width="180" height="160" rx="12" class="box" stroke="#6ee7b7"/>
+  <text x="120" y="150" class="t">Kiro</text>
+  <text x="120" y="168" class="s">the author's editor</text>
+  <g font-family="Menlo, monospace" font-size="10.5" fill="#cbd5ff">
+    <text x="46" y="200">## Method</text>
+    <text x="46" y="218">a&gt; add literature</text>
+    <text x="46" y="236" fill="#c4b5fd">C: added [1]</text>
+    <text x="46" y="254">We built the</text>
+  </g>
+
+  <!-- bridge -->
+  <rect x="280" y="140" width="150" height="120" rx="12" class="box" stroke="#a78bfa"/>
+  <text x="355" y="172" class="t">Bridge</text>
+  <text x="355" y="192" class="s">extension in Kiro</text>
+  <text x="355" y="208" class="s">serves the live buffer</text>
+  <text x="355" y="224" class="s">applies anchor edits</text>
+  <text x="355" y="240" class="s">one queue, line owners</text>
+
+  <!-- temporal container around the agents -->
+  <rect x="500" y="22" width="190" height="318" rx="14" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="595" y="40" class="s" fill="#38bdf8">Temporal activities</text>
+
+  <!-- agents -->
+  <rect x="520" y="52" width="150" height="50" rx="10" class="box" stroke="#f9a8d4"/>
+  <text x="595" y="73" class="t">pink</text><text x="595" y="90" class="s">copy editor, direct</text>
+  <rect x="520" y="118" width="150" height="50" rx="10" class="box" stroke="#fde047"/>
+  <text x="595" y="139" class="t">yellow</text><text x="595" y="156" class="s">structure, direct</text>
+  <rect x="520" y="184" width="150" height="50" rx="10" class="box" stroke="#86efac"/>
+  <text x="595" y="205" class="t">green</text><text x="595" y="222" class="s">references, suggest</text>
+  <rect x="520" y="262" width="150" height="50" rx="10" class="box" stroke="#c4b5fd"/>
+  <text x="595" y="283" class="t">responder</text><text x="595" y="300" class="s">answers one a&gt; line with C:</text>
+
+  <!-- models -->
+  <rect x="740" y="85" width="130" height="50" rx="10" class="box" stroke="#2c335f"/>
+  <text x="805" y="106" class="t" style="font-size:13px">Haiku</text><text x="805" y="123" class="s">simple</text>
+  <rect x="740" y="184" width="130" height="50" rx="10" class="box" stroke="#2c335f"/>
+  <text x="805" y="205" class="t" style="font-size:13px">Opus</text><text x="805" y="222" class="s">smart</text>
+  <rect x="740" y="262" width="130" height="50" rx="10" class="box" stroke="#2c335f"/>
+  <text x="805" y="283" class="t" style="font-size:13px">Sonnet</text><text x="805" y="300" class="s">default</text>
+
+  <!-- orchestrator -->
+  <rect x="280" y="310" width="150" height="80" rx="12" class="box" stroke="#38bdf8"/>
+  <text x="355" y="338" class="t">Orchestrator</text>
+  <text x="355" y="356" class="s">daemon: reads the pad block,</text>
+  <text x="355" y="370" class="s">starts and stops the runs,</text>
+  <text x="355" y="384" class="s">dispatches a&gt; lines</text>
+
+  <!-- wires -->
+  <path class="w" d="M210 200 H280" marker-end="url(#a)" marker-start="url(#a)"/>
+  <text x="245" y="190" class="l">edits</text>
+  <path class="w" d="M430 185 C470 160 480 85 520 77" marker-end="url(#a)" marker-start="url(#a)"/>
+  <path class="w" d="M430 195 C470 180 480 145 520 143" marker-end="url(#a)" marker-start="url(#a)"/>
+  <path class="w" d="M430 205 C470 215 480 209 520 209" marker-end="url(#a)" marker-start="url(#a)"/>
+  <path class="w" d="M430 215 C470 250 480 287 520 287" marker-end="url(#a)" marker-start="url(#a)"/>
+  <text x="462" y="128" class="l">pad CLI</text>
+  <path class="w" d="M670 77 C705 77 705 110 740 110" marker-end="url(#a)"/>
+  <path class="w" d="M670 143 C705 143 705 110 740 110" marker-end="url(#a)"/>
+  <path class="w" d="M670 209 H740" marker-end="url(#a)"/>
+  <path class="w" d="M670 287 H740" marker-end="url(#a)"/>
+  <path class="w" d="M355 310 V260"/>
+  <text x="385" y="290" class="l">reads</text>
+  <path class="w" d="M430 350 H500" marker-end="url(#a)"/>
+  <text x="465" y="340" class="l">starts</text>
+</svg>
