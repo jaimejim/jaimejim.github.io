@@ -253,6 +253,27 @@ def nautilus(t):
         th -= 0.30 + 0.02*(T-th)**0.5; k += 1
     return card(body, clip=False, title=t)
 
+def braid(t):
+    """Several strands, each its own writer, converge into one line: one buffer, many agents."""
+    out = []; n = 7
+    for k in range(n):
+        off = (k - (n-1)/2) * 36
+        pts = []
+        for i in range(0, W+1, 4):
+            u = i / W
+            spread = 0.5 + 0.5*math.cos(u*math.pi*2)          # apart at the edges, together mid-card
+            y = H/2 + off*spread + 9*math.sin(i/23 + k*1.3)*spread
+            pts.append((i, y))
+        if k == 3:
+            col, w = C["hi"], 2.4
+        else:
+            col, w = (C["p1"] if k % 2 else C["p3"]), 1.4
+        out.append(poly(pts, col, w))
+    for i in range(12, W, 44):
+        u = i / W; spread = 0.5 + 0.5*math.cos(u*math.pi*2)
+        out.append(dot(i, H/2 + 9*math.sin(i/23 + 3*1.3)*spread, 2.6, C["p2"]))
+    return card("".join(out), title=t)
+
 # ---------------------------------------------------------------- posts
 
 POSTS = [
@@ -268,6 +289,7 @@ POSTS = [
     ("2026-05-01", waves,      "Analyzing AI usage in IETF drafts"),
     ("2026-08-20", orbits,     "Notifications for agents: cue, observe, or query"),
     ("2026-09-01", nautilus,   "You can shape your Internet content"),
+    ("2026-11-10", braid,      "Collaborative editor for humans and AI Agents"),
 ]
 
 if __name__ == "__main__":
